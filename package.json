@@ -1,0 +1,59 @@
+{
+  "name": "UXCORE",
+  "version": "0.0.1",
+  "description": "UXCORE UI Framework",
+  "author": "zhouquan.yezq",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uxcore"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --progress --colors --port  9090",
+    "site": "webpack --progress --colors --config site.config.js"
+  },
+  "dependencies": {
+    "classnames": "^2.1.1",
+    "moment": "^2.10.3"
+  },
+  "devDependencies": {
+    "babel-core": "^5.1.13",
+    "babel-loader": "^5.0.0",
+    "css-loader": "^0.9.0",
+    "exports-loader": "^0.6.2",
+    "extract-text-webpack-plugin": "^0.3.8",
+    "faker": "^2.1.2",
+    "file-loader": "^0.8.1",
+    "guid": "0.0.12",
+    "gulp": "^3.8.11",
+    "gulp-gh-pages":"0.5.2",
+    "gulp-react": "^3.0.0",
+    "jsdom": "5.1.0",
+    "jquery": "2.1.4",
+    "mocha": "^2.2.1",
+    "raw-loader": "^0.5.1",
+    "react-hot-loader": "^1.2.4",
+    "should": "^6.0.1",
+    "sorty": "^1.2.0",
+    "style-loader": "^0.8.2",
+    "stylus-loader": "^0.4.0",
+    "webpack": "^1.8.4",
+    "webpack-dev-middleware": "^1.0.11",
+    "webpack-dev-server": "1.6.6",
+    "react-router": "^0.13.3",
+    "uxcore-form":"1.0.0"
+  },
+  "peerDependencies": {
+    "react": "^0.13.0"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "ui",
+    "framework",
+    "controls",
+    "element",
+    "css",
+    "less"
+  ]
+}

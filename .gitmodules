@@ -1,0 +1,3 @@
+[submodule "kuma"]
+	path = kuma
+	url = https://github.com/uxcore/kuma.git
