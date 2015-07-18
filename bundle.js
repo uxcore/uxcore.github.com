@@ -125,7 +125,7 @@
 	    rootPath = '/';
 	if (__location.lastIndexOf('site/src') != -1) {
 		devmode = true;
-		rootPath = '/site/src/index.html';
+		rootPath = __location;
 	}
 
 	var routes = React.createElement(

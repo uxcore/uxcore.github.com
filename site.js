@@ -63,7 +63,7 @@ var App = React.createClass({
 var __location= window.location.pathname, devmode=false, rootPath="/";
 if(__location.lastIndexOf("site/src")!=-1) {
 	devmode=true;
-	rootPath="/site/src/index.html";
+	rootPath=__location;
 }
 
 var routes = (
