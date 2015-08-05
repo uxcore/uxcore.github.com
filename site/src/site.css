@@ -1,0 +1,51 @@
+body {
+	color: #333;
+}
+
+.kuma-button{
+    margin-left: 50%;
+}
+.kuma-label{
+    width:100px;
+}
+
+.primary-nav {
+	background-color: #fff;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	margin: 0 auto;
+	width: 1000px;
+}
+
+.primary-nav__item {
+	transition: all 140ms;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    border-bottom: 1px solid transparent;
+    color: #999999;
+    cursor: pointer;
+    padding: 0px 12px;
+}
+
+.primary-nav__item-inner{
+	
+}
+
+.demo-box {
+	margin: 0 auto;
+	width: 1000px;
+}
+.demo-type {
+	font-size: 22px;
+    border-bottom: 1px solid #f60;
+    float: left;
+    padding: 8px 8px;
+    clear: both;
+    margin-bottom: 30px;
+}
+.demo-container {
+	padding: 10px 0px;
+	width: 800px;
+	clear: both;
+}
