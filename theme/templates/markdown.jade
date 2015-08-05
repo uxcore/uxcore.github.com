@@ -1,0 +1,15 @@
+mixin markdown
+	header.post-title
+		h1 #{post.title}
+		section.meta
+			span.github
+				b github：
+				|#{post.pkg.repository.url}
+			span.description
+				b 描述：
+				|#{post.pkg.description}
+			span.version 
+				b 版本：
+				|#{post.pkg.version}
+	#J-markdown.markdown
+		!{post.html}

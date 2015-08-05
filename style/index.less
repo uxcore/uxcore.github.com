@@ -1,0 +1,131 @@
+@blue: #288df0;
+@oranage: #f80;
+@head-height: 48px;
+@borderColor: #e0e0e0;
+html, body {
+	height: 100%;
+}
+.site-main {
+	display: flex;
+	height: 100%;
+	padding-top: @head-height;
+	box-sizing: border-box;
+}
+.site-nav {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: @head-height;
+	background-color: @blue;
+	border-bottom: 1px solid @borderColor;
+	.nav-list {
+		margin-left: 160px;
+		display: flex;
+		font-size: 16px;
+		li {
+			padding: 0 20px;
+			line-height: 48px;
+			transition: background-color ease-in .2s;
+			&:hover {
+				background-color: rgba(255, 255, 255, .1);
+			}
+		}
+		a {
+			color: #fff;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+.site-aside {
+	width: 160px;
+	background-color: #f0f0f0;
+	border-right: 1px solid @borderColor;
+	li {
+		padding: 0 8px;
+		height: 36px;
+		font-size: 14px;
+		line-height: 36/14;
+		&.current {
+			background-color: #fff;
+			border-left: 2px solid #f80;
+			a {
+				color: #f80;
+			}
+		}
+	}
+	a {
+		color: #666;
+		&:hover {
+			text-decoration: none;
+			color: #f80;
+		}
+	}
+}
+.site-content {
+	padding: 16px;
+	flex-grow: 1;
+	overflow-y: scroll;
+	.post-title {
+		margin-bottom: 8px;
+		padding-bottom: 8px;
+		border-bottom: 1px solid @oranage;
+		h1 {
+			font-size: 18px;
+			line-height: 1.5;
+		}
+		.meta {
+			display: flex;
+			color: #666;
+			span {
+				flex-grow: 1;
+			}
+			b {
+				color: #ad8400;
+				font-weight: 400;
+			}
+		}
+	}
+}
+.markdown {
+	@baseFontSize: 12px;
+	h1, h2, h3, h4, h5, h6, p {
+		margin: 6px 0;
+	}
+	h1 {
+		font-size: @baseFontSize * 1.5;
+	}
+	h2 {
+		font-size: @baseFontSize * 1.4;
+	}
+	h3 {
+		font-size: @baseFontSize * 1.3;
+	}
+	h4 {
+		font-size: @baseFontSize * 1.2;
+	}
+	h5 {
+		font-size: @baseFontSize * 1.1;
+	}
+	h6 {
+		font-size: @baseFontSize;
+	}
+	table {
+		width: 100%;
+		border: 1px solid @borderColor;
+		th, td {
+			padding: 4px 6px;
+			border: 1px solid @borderColor;
+		}
+		th {
+			background-color: #f0f0f0;
+			font-weight: 700;
+		}
+	}
+	pre {
+		padding: 4px;
+		border: 1px solid @borderColor;
+	}
+}

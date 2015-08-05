@@ -1,0 +1,8 @@
+extends layout
+include aside
+include markdown
+
+block content
+	+aside('components')
+	article.site-content
+		+markdown(post)

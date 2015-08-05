@@ -1,0 +1,47 @@
+{
+  "name": "uxcore",
+  "version": "0.0.1",
+  "description": "UXCORE UI Framework",
+  "author": "zhouquan.yezq",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uxcore"
+  },
+  "bugs": {
+    "url": "http://github.com/uxcore/uxcore/issues"
+  },
+  "scripts": {},
+  "dependencies": {
+    "highlight.js": "~8.7.0",
+    "react": "^0.13.3",
+    "uxcore-button": "^0.1.2",
+    "uxcore-calendar": "^0.1.0",
+    "uxcore-dialog": "^0.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "~2.0.0",
+    "babel": "~5.8.20",
+    "babel-core": "~5.8.20",
+    "babel-loader": "~5.3.2",
+    "css-loader": "~0.15.6",
+    "extract-text-webpack-plugin": "~0.8.2",
+    "less": "~2.5.1",
+    "less-loader": "~2.2.0",
+    "markit": "^0.2.0",
+    "nico-jsx": "~0.5.10",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.10.5",
+    "webpack-dev-middleware": "^1.2.0"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "ui",
+    "framework",
+    "controls",
+    "element",
+    "css",
+    "less"
+  ]
+}

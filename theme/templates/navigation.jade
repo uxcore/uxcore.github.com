@@ -1,0 +1,5 @@
+nav.site-nav
+	ul.nav-list
+		each item in config.site.navigation
+			li
+				a(href="#{item.link}")= item.text

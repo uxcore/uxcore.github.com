@@ -1,0 +1,11 @@
+mixin aside(type)
+	aside.site-aside
+		ul
+			each page in resource.pages
+				if page.directory.indexOf(type) === 0
+					if post.title === page.title
+						li.current
+							a(href="/#{page.directory}") #{page.title}
+					else
+						li
+							a(href="/#{page.directory}") #{page.title}
