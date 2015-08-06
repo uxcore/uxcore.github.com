@@ -1,3 +1,6 @@
 [submodule "kuma"]
 	path = style/kuma
 	url = git@github.com:uxcore/kuma.git
+[submodule ".publish"]
+	path = .publish
+	url = git@github.com:uxcore/uxcore.github.io.git
