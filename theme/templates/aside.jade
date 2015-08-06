@@ -2,7 +2,7 @@ mixin aside(type)
 	aside.site-aside
 		ul
 			each page in resource.pages
-				if page.directory.indexOf(type) === 0
+				if page.directory.indexOf(type) === 0 && page.directory.indexOf('/demo') === -1
 					if post.title === page.title
 						li.current
 							a(href="/#{page.directory}") #{page.title}

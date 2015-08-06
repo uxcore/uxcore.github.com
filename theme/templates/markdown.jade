@@ -2,14 +2,20 @@ mixin markdown
 	header.post-title
 		h1 #{post.title}
 		section.meta
+			span.author
+				b author:
+				if post.pkg.author.name
+					|#{post.pkg.author.name}
+				else
+					|#{post.pkg.author}
 			span.github
-				b github：
-				|#{post.pkg.repository.url}
-			span.description
-				b 描述：
-				|#{post.pkg.description}
+				b github:
+				a(href="#{post.pkg.repository.url}", target="_blank") #{post.title}
 			span.version 
-				b 版本：
+				b 版本:
 				|#{post.pkg.version}
+			span.description
+				b 描述:
+				|#{post.pkg.description}
 	#J-markdown.markdown
 		!{post.html}

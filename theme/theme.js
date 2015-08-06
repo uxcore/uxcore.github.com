@@ -49,27 +49,32 @@ exports.reader = function(post){
     if (filepath.indexOf('site/css') === 0) {
       post.template = post.meta.template = 'css';
     }
-    if (post.template === 'components' || post.template === 'css') {
-        var moduleName = 'uxcore-' + post.directory.replace(post.template + '/', '');
-        var pkg = readFileFromNodeModules('package.json', moduleName);
-        if (pkg) {
-            post.pkg = JSON.parse(pkg);
-            post.name = post.pkg.name;
-            if (!post.title) {
-                post.title = post.pkg.name;
+    if (filepath.indexOf('/demo/') > 0) {
+        post.template = post.meta.template = 'demos';
+    } else {
+        if (post.template === 'components' || post.template === 'css') {
+            var moduleName = 'uxcore-' + post.directory.replace(post.template + '/', '');
+            var pkg = readFileFromNodeModules('package.json', moduleName);
+            if (pkg) {
+                post.pkg = JSON.parse(pkg);
+                post.name = post.pkg.name;
+                if (!post.title) {
+                    post.title = post.pkg.name;
+                }
             }
-        }
-        if (!post.html) {
-            var readme = readFileFromNodeModules('README.md', moduleName);
-            if (readme) {
-                post.html = marked(parseContent(readme));
+            if (!post.html) {
+                var readme = readFileFromNodeModules('README.md', moduleName);
+                if (readme) {
+                    post.html = marked(parseContent(readme));
+                }
             }
         }
     }
+    post.meta.html = post.html;
     if (filepath === 'site/home.md') {
       post.filename = post.meta.filename = 'index';
       post.template = post.meta.template = 'home';
     }
-    console.log(post);
+    // console.log(post);
     return post;
 };

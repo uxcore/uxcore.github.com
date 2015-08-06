@@ -16,7 +16,7 @@
     "highlight.js": "~8.7.0",
     "react": "^0.13.3",
     "uxcore-button": "^0.1.2",
-    "uxcore-calendar": "^0.1.0",
+    "uxcore-calendar": "^0.1.1",
     "uxcore-dialog": "^0.1.0"
   },
   "devDependencies": {
