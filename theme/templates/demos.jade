@@ -1,13 +1,20 @@
 mixin demos
-	each page in resource.pages
-		if page.filepath.indexOf('site/' + post.directory + '/demo/') === 0 
-			.code-box(id="code-box-#{page.meta.id}")
-				.code-box-meta
-					.code-box-title
-						i.kuma-icon.kuma-icon-tag
-						em #{page.title}
-						| #{post.meta.description}
-				.code-box-demo
-					div(id="#{page.meta.id}")
-					.markdown !{page.meta.html}
-					span.collapse
+	- var demos = []
+	- for page in resource.pages
+		- if (page.filepath.indexOf('site/' + post.directory + '/demo/') === 0)
+			- demos.push(page)
+			- demos.sort(function(a, b){
+				- var oa = a.meta.order || 100;
+				- var ob = b.meta.order || 100;
+				- return parseInt(oa, 10) - parseInt(ob, 10)
+			- })
+	each demo in demos
+		.code-box(id="code-box-#{demo.meta.id}")
+			.code-box-meta
+				.code-box-title
+					i.kuma-icon.kuma-icon-tag
+					em #{demo.title}
+					//- | #{post.meta.description}
+			.code-box-demo
+				div(id="#{demo.meta.id}")
+			.code-box-markdown.markdown !{demo.meta.html}

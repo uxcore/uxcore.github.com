@@ -1,5 +1,6 @@
 # uxcore-button
 
+- order: 2
 - tags: uxcore, button
 - description: uxcore button
 - maintainers: vincent.bian

@@ -13,7 +13,7 @@ module.exports = {
   },
 
   output: {
-    path: path.join(process.cwd(), 'dist'),
+    path: path.join(process.cwd(), 'theme/static'),
     filename: '[name].js',
     libraryTarget: 'umd'
   },

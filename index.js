@@ -4,7 +4,8 @@ require('./style/index.less');
 var hljs = require('highlight.js');
 
 window.UXCORE = {
-	'uxcore-calendar': require('uxcore-calendar')
+	'uxcore-calendar': require('uxcore-calendar'),
+	'uxcore-button': require('uxcore-button')
 };
 
 /*

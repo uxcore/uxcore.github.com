@@ -1,8 +1,10 @@
 extends layout
 include aside
 include markdown
+include demos
 
 block content
 	+aside('css')
 	article.site-content
 		+markdown(post)
+		+demos()

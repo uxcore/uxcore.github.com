@@ -5,11 +5,14 @@
 html, body {
 	height: 100%;
 }
+body {
+	font-family: 'Helvetica Neue', Helvetica, "Hiragino Sans GB", "Microsoft YaHei",
+             "WenQuanYi Micro Hei", sans-serif;
+}
 .site-main {
 	display: flex;
 	height: 100%;
 	padding-top: @head-height;
-	box-sizing: border-box;
 }
 .site-nav {
 	position: fixed;
@@ -40,7 +43,7 @@ html, body {
 	}
 }
 .site-aside {
-	width: 160px;
+	min-width: 160px;
 	background-color: #f0f0f0;
 	border-right: 1px solid @borderColor;
 	li {
@@ -91,8 +94,14 @@ html, body {
 }
 .markdown {
 	@baseFontSize: 12px;
-	h1, h2, h3, h4, h5, h6, p {
-		margin: 6px 0;
+	h1, h2, h3, h4, h5, h6 {
+		margin: 12px 0;
+	}
+	p {
+		margin: 10px 0;
+	}
+	ul, ol, dl, blockquote, pre, address, fieldset, figure {
+		margin: 1.6rem 0;
 	}
 	h1 {
 		font-size: @baseFontSize * 1.5;
@@ -112,6 +121,16 @@ html, body {
 	h6 {
 		font-size: @baseFontSize;
 	}
+	hr {
+		height: 1px;
+		background-color: #dfdfdf;
+		border: 0 none;
+		overflow: hidden;
+	}
+	blockquote {
+		padding: 5px 0 5px 15px;
+		border-left: 2px solid #ddd;
+	}
 	table {
 		width: 100%;
 		border: 1px solid @borderColor;
@@ -124,6 +143,14 @@ html, body {
 			font-weight: 700;
 		}
 	}
+	code {
+		margin: 0 3px;
+		padding: 2px 4px;
+		background-color: #f7f7f7;
+		border-radius: 3px;
+		color: #c7254e;
+		font-family: Consolas, monospace;
+	}
 	pre {
 		padding: 4px;
 		border: 1px solid @borderColor;
@@ -131,7 +158,11 @@ html, body {
 }
 .code-box {
 	margin-top: 20px;
+	padding: 10px;
+	background-color: #f3f3f3;
+	border: 1px solid @borderColor;
 	.code-box-meta {
+		margin-bottom: 8px;
 		.code-box-title {
 			font-size: 14px;
 		}
@@ -141,5 +172,10 @@ html, body {
 		.kuma-icon {
 			color: #888;
 		}
+	}
+	.code-box-demo {
+		margin-bottom: 12px;
+		padding: 12px;
+    	background-color: #fff;
 	}
 }

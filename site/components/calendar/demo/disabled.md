@@ -7,9 +7,9 @@
 ---
 
 ````jsx
-var Datepicker = antd.Datepicker;
+var Calendar = require('uxcore-calendar');
 
 React.render(
-  <Datepicker value="2015-06-06" disabled={true} />
-, document.getElementById('components-datepicker-demo-disabled'));
+  <Calendar value="2015-06-06" disabled={true} />
+, document.getElementById('components-calendar-demo-disabled'));
 ````

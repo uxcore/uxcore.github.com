@@ -41,7 +41,7 @@ exports.middlewares = [{
   filter: /\.(js|css)(\.map)?$/,
   handle: function(req, res, next) {
     handler = handler || webpackMiddleware(webpackCompiler, {
-      publicPath: '/dist/',
+      publicPath: '/static/',
       lazy: true,
       stats: {
         hash: false,
