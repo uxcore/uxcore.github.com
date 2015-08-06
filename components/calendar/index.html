@@ -1,0 +1,160 @@
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/dist/uxcore.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react.js"></script><script src="/dist/uxcore.js"></script><script>(function(w){
+	w.require = function(name){
+		return w.UXCORE[name];
+	}
+})(window)</script></head><body><nav class="site-nav"><ul class="nav-list"><li><a href="/">home</a></li><li><a href="/css/layout/">css</a></li><li><a href="/components/dialog/">components</a></li></ul></nav><div class="kuma-layout-full site-main"><aside class="site-aside"><ul><li class="current"><a href="/components/calendar">uxcore-calendar</a></li><li><a href="/components/dialog">uxcore-dialog</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>uxcore-calendar</h1><section class="meta"><span class="author"><b>author:</b>vincent.bian</span><span class="github"><b>github:</b><a href="https://github.com/uxcore/uxcore-calendar.git" target="_blank">uxcore-calendar</a></span><span class="version"> <b>版本:</b>0.1.1</span><span class="description"><b>描述:</b>calendar componment for react</span></section></header><div id="J-markdown" class="markdown"><h2 id="tl-dr">TL;DR</h2>
+<h4 id="setup-develop-environment">setup develop environment</h4>
+<pre><code class="lang-sh">$ git clone https://github.com/uxcore/uxcore-calendar
+$ cd uxcore-calendar
+$ npm install
+$ npm run dev
+</code></pre>
+<p>nav <a href="http://localhost:9090/webpack-dev-server/example/">http://localhost:9090/webpack-dev-server/example/</a> to see the demo</p>
+<h4 id="deploy-to-gh-pages">deploy to gh-pages</h4>
+<p><a href="http://stackoverflow.com/questions/17643381/how-to-upload-my-angularjs-static-site-to-github-pages">refer to</a></p>
+<pre><code class="lang-sh">$ npm run build
+$ git add build &amp; git commit -m &#39;update deploy files&#39;
+$ npm run deploy
+</code></pre>
+<h2 id="usage">Usage</h2>
+<pre><code class="lang-js">var Calendar = require(&#39;uxcore-calendar&#39;);
+React.render(
+  (&lt;Calendar /&gt;),
+  document.getElementById(&#39;content&#39;)
+);
+</code></pre>
+<h3 id="demo">demo</h3>
+<p><a href="http://uxcore.github.io/uxcore-calendar/">http://uxcore.github.io/uxcore-calendar/</a></p>
+<h2 id="api">API</h2>
+<h3 id="props">props</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>日期</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td>name</td>
+<td>表单name值</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td>format</td>
+<td>展示的日期格式</td>
+<td>string</td>
+<td>&#39;yyyy-MM-dd&#39;</td>
+</tr>
+<tr>
+<td>disabledDate</td>
+<td>日期</td>
+<td>function</td>
+<td>无</td>
+</tr>
+<tr>
+<td>onSelect</td>
+<td>日期</td>
+<td>function</td>
+<td>无</td>
+</tr>
+<tr>
+<td>showTime</td>
+<td>日期</td>
+<td>boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>日期</td>
+<td>boolean</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div><div id="code-box-components-calendar-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>基本</em></div></div><div class="code-box-demo"><div id="components-calendar-demo-basic"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Calendar = require('uxcore-calendar');
+
+React.render(React.createElement(Calendar, { value: '' }), document.getElementById('components-calendar-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Calendar = require(<span class="string">'uxcore-calendar'</span>);
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span>
+, document.getElementById('components-calendar-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-formatter" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>日期格式</em></div></div><div class="code-box-demo"><div id="components-calendar-demo-formatter"></div></div><div class="code-box-markdown markdown"><script>(function(){"use strict";
+
+var Calendar = require('uxcore-calendar');
+
+React.render(React.createElement(Calendar, { value: "2015/01/01", format: "yyyy/MM/dd" }), document.getElementById('components-calendar-demo-formatter'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Calendar = require(<span class="string">'uxcore-calendar'</span>);
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">value</span>=<span class="value">"2015/01/01"</span> <span class="attribute">format</span>=<span class="value">"yyyy/MM/dd"</span> /&gt;</span>
+, document.getElementById('components-calendar-demo-formatter'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-select" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>选择日期</em></div></div><div class="code-box-demo"><div id="components-calendar-demo-select"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Calendar = require('uxcore-calendar');
+
+var Picker = React.createClass({
+  displayName: 'Picker',
+
+  handleChange: function handleChange(value) {
+    console.log(new Date(value.getTime()));
+  },
+  render: function render() {
+    return React.createElement(Calendar, { onSelect: this.handleChange });
+  }
+});
+
+React.render(React.createElement(Picker, null), document.getElementById('components-calendar-demo-select'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Calendar = require(<span class="string">'uxcore-calendar'</span>);
+
+<span class="keyword">var</span> Picker = React.createClass({
+  handleChange: <span class="function"><span class="keyword">function</span><span class="params">(value)</span> {</span>
+    console.log(<span class="keyword">new</span> Date(value.getTime()));
+  },
+  render: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">onSelect</span>=<span class="value">{this.handleChange}</span> /&gt;</span>
+  }
+});
+
+React.render(
+  <span class="tag">&lt;<span class="title">Picker</span> /&gt;</span>
+, document.getElementById('components-calendar-demo-select'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-range" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>范围</em></div></div><div class="code-box-demo"><div id="components-calendar-demo-range"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Calendar = require('uxcore-calendar');
+var disabledDate = function disabledDate(current, value) {
+  // can not select days after today
+  return current.getTime() > Date.now();
+};
+
+React.render(React.createElement(Calendar, { disabledDate: disabledDate }), document.getElementById('components-calendar-demo-range'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Calendar = require(<span class="string">'uxcore-calendar'</span>);
+<span class="keyword">var</span> disabledDate = <span class="function"><span class="keyword">function</span><span class="params">(current, value)</span> {</span>
+  <span class="comment">// can not select days after today</span>
+  <span class="keyword">return</span> current.getTime() &gt; Date.now();
+};
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">disabledDate</span>=<span class="value">{disabledDate}</span> /&gt;</span>
+, document.getElementById('components-calendar-demo-range'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-time" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>时间选择</em></div></div><div class="code-box-demo"><div id="components-calendar-demo-time"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Calendar = require('uxcore-calendar');
+
+React.render(React.createElement(Calendar, { showTime: true, format: 'yyyy-MM-dd HH:mm:ss' }), document.getElementById('components-calendar-demo-time'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Calendar = require(<span class="string">'uxcore-calendar'</span>);
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">showTime</span>=<span class="value">{true}</span> <span class="attribute">format</span>=<span class="value">"yyyy-MM-dd HH:mm:ss"</span> /&gt;</span>
+, document.getElementById('components-calendar-demo-time'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-disabled" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>禁用</em></div></div><div class="code-box-demo"><div id="components-calendar-demo-disabled"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Calendar = require('uxcore-calendar');
+
+React.render(React.createElement(Calendar, { value: '2015-06-06', disabled: true }), document.getElementById('components-calendar-demo-disabled'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Calendar = require(<span class="string">'uxcore-calendar'</span>);
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">value</span>=<span class="value">"2015-06-06"</span> <span class="attribute">disabled</span>=<span class="value">{true}</span> /&gt;</span>
+, document.getElementById('components-calendar-demo-disabled'));</span></code></pre></div></div></div></article></div></body></html>

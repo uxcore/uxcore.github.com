@@ -1,0 +1,124 @@
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/dist/uxcore.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react.js"></script><script src="/dist/uxcore.js"></script><script>(function(w){
+	w.require = function(name){
+		return w.UXCORE[name];
+	}
+})(window)</script></head><body><nav class="site-nav"><ul class="nav-list"><li><a href="/">home</a></li><li><a href="/css/layout/">css</a></li><li><a href="/components/dialog/">components</a></li></ul></nav><div class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">uxcore-calendar</a></li><li class="current"><a href="/components/dialog">uxcore-dialog</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>uxcore-dialog</h1><section class="meta"><span class="author"><b>author:</b>vincent.bian</span><span class="github"><b>github:</b><a href="https://github.com/uxcore/uxcore-dialog.git" target="_blank">uxcore-dialog</a></span><span class="version"> <b>版本:</b>0.1.0</span><span class="description"><b>描述:</b>uxcore-dialog ui componment for react</span></section></header><div id="J-markdown" class="markdown"><ul>
+<li>tags: uxcore, dialog</li>
+<li>description: uxcore dialog</li>
+<li>maintainers: vincent.bian</li>
+<li>version: 1.0.0</li>
+<li>lastupdate: 2015/7/12</li>
+<li>screenshots:</li>
+</ul>
+<h2 id="tl-dr">TL;DR</h2>
+<h4 id="setup-develop-environment">setup develop environment</h4>
+<pre><code class="lang-sh">$ git clone https://github.com/uxcore/uxcore-dialog
+$ cd uxcore-dialog
+$ npm install
+$ npm run dev
+</code></pre>
+<p>nav <a href="http://localhost:9090/webpack-dev-server/example/">http://localhost:9090/webpack-dev-server/example/</a> to see the demo</p>
+<h4 id="deploy-to-gh-pages">deploy to gh-pages</h4>
+<p><a href="http://stackoverflow.com/questions/17643381/how-to-upload-my-angularjs-static-site-to-github-pages">refer to</a></p>
+<pre><code class="lang-sh">$ npm run build
+$ git add build &amp; git commit -m &#39;update deploy files&#39;
+$ npm run deploy
+</code></pre>
+<h2 id="usage">Usage</h2>
+<pre><code class="lang-js">var Dialog = require(&#39;uxcore-dialog&#39;);
+React.render(
+  (&lt;Dialog title={title} onClose={callback1} onShow={callback2}&gt;
+    &lt;p&gt;dialog content&lt;/p&gt;
+  &lt;/Dialog&gt;),
+  document.getElementById(&#39;content&#39;)
+);
+</code></pre>
+<h3 id="demo">demo</h3>
+<p><a href="http://uxcore.github.io/uxcore-dialog/">http://uxcore.github.io/uxcore-dialog/</a></p>
+<h2 id="api">API</h2>
+<h3 id="props">props</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prefixCls</td>
+<td>String</td>
+<td>kuma-dialog</td>
+<td>The dialog dom node&#39;s prefixCls</td>
+</tr>
+<tr>
+<td>visible</td>
+<td>Boolean</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>mask</td>
+<td>Boolean</td>
+<td></td>
+<td>whether show mask</td>
+</tr>
+<tr>
+<td>renderToBody</td>
+<td>Boolean</td>
+<td>true</td>
+<td>whether render dialog to body</td>
+</tr>
+<tr>
+<td>animation</td>
+<td>String</td>
+<td></td>
+<td>part of dialog animation css class name</td>
+</tr>
+<tr>
+<td>maskAnimation</td>
+<td>String</td>
+<td></td>
+<td>part of dialog&#39;s mask animation css class name</td>
+</tr>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>React.Element</td>
+<td>Title of the dialog</td>
+</tr>
+<tr>
+<td>footer</td>
+<td>React.Element</td>
+<td></td>
+<td>footer of the dialog</td>
+</tr>
+<tr>
+<td>closable</td>
+<td>Boolean</td>
+<td>true</td>
+<td>whether show close button and click mask to close</td>
+</tr>
+<tr>
+<td>onBeforeClose</td>
+<td>function(close)</td>
+<td></td>
+<td>when click close button or mask. argument is a close function</td>
+</tr>
+<tr>
+<td>onShow</td>
+<td>function</td>
+<td></td>
+<td>called on dialog show</td>
+</tr>
+<tr>
+<td>onClose</td>
+<td>function</td>
+<td></td>
+<td>called on dialog close</td>
+</tr>
+</tbody>
+</table>
+</div></article></div></body></html>
