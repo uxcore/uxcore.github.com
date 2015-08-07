@@ -1,0 +1,339 @@
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/uxcore/static/uxcore.css"><link rel="stylesheet" href="/uxcore/static/github-gist.min.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react.js"></script><script src="/uxcore/static/highlight.min.js"></script><script src="/uxcore/static/uxcore.js"></script><script>(function(w){
+	w.require = function(name){
+		return w.UXCORE[name];
+	}
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/kuma/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/components/calendar">Calendar</a></li><li><a href="/uxcore/components/dialog">Dialog</a></li><li class="current"><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li><a href="/uxcore/components/tooltip">Tooltip</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Select2</h1><section class="meta"><span class="author"><b>author:</b></span><span class="github"><b>github:</b><a href="git@github.com:uxcore/select.git" target="_blank">Select2</a></span><span class="version"> <b>版本:</b>0.1.1</span><span class="description"><b>描述:</b>select ui component for react</span></section></header><div id="J-markdown" class="markdown"><p>类似 Select2 的选择器。</p>
+<h2 id="何时使用">何时使用</h2><p>弹出一个下拉菜单给用户选择操作，用于代替原生的选择器，或者需要一个更优雅的多选器时。</p>
+<div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">Select</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">Select</span>&gt;</span></code></pre></div><h2 id="api">API</h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>指定默认选中的条目</td>
+<td>string/Array</td>
+<td>无</td>
+</tr>
+<tr>
+<td>multiple</td>
+<td>支持多选</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>filterOption</td>
+<td>是否根据输入项进行筛选</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>可以把随意输入的条目作为tag，输入项不需要与下拉选项匹配</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>onSelect</td>
+<td>被选中时调用，参数为选中的option value值</td>
+<td>function</td>
+<td>无</td>
+</tr>
+<tr>
+<td>onDeselect</td>
+<td>取消选中时调用，参数为选中的option value值，仅在multiple或tags模式下生效</td>
+<td>function</td>
+<td>无</td>
+</tr>
+<tr>
+<td>onChange</td>
+<td>选中option，或input的value变化(combobox模式下)时，调用此函数</td>
+<td>function</td>
+<td>无</td>
+</tr>
+<tr>
+<td>allowClear</td>
+<td>显示清除按钮</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>选择框默认文字</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td>searchPlaceholder</td>
+<td>搜索框默认文字</td>
+<td>string</td>
+<td>无</td>
+</tr>
+<tr>
+<td>combobox</td>
+<td>输入框自动提示模式</td>
+<td></td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-select2-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>基本使用</em></div></div><div class="code-box-demo"><div id="components-select2-demo-basic"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Select = require('uxcore-select2');
+var Option = Select.Option;
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(React.createElement(
+  Select,
+  { value: 'lucy', style: { width: 200 }, onChange: handleChange },
+  React.createElement(
+    Option,
+    { value: 'jack' },
+    'Jack'
+  ),
+  React.createElement(
+    Option,
+    { value: 'lucy' },
+    'Lucy'
+  ),
+  React.createElement(
+    Option,
+    { value: 'disabled', disabled: true },
+    'Disabled'
+  ),
+  React.createElement(
+    Option,
+    { value: 'yiminghe' },
+    'yiminghe'
+  )
+), document.getElementById('components-select-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = require(<span class="string">'uxcore-select2'</span>);
+<span class="keyword">var</span> Option = Select.Option;
+
+<span class="function"><span class="keyword">function</span> <span class="title">handleChange</span><span class="params">(value)</span> {</span>
+  console.log(<span class="string">'selected '</span> + value);
+}
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Select</span> <span class="attribute">value</span>=<span class="value">"lucy"</span> <span class="attribute">style</span>=<span class="value">{{width:200}}</span> <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"jack"</span>&gt;</span>Jack<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>Lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"disabled"</span> <span class="attribute">disabled</span>&gt;</span>Disabled<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"yiminghe"</span>&gt;</span>yiminghe<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+, document.getElementById('components-select-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-select2-demo-search" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>带搜索框</em></div></div><div class="code-box-demo"><div id="components-select2-demo-search"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Select = require('uxcore-select2');
+var Option = Select.Option;
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(React.createElement(
+  Select,
+  { value: 'lucy', showSearch: true, style: { width: 200 }, onChange: handleChange },
+  React.createElement(
+    Option,
+    { value: 'jack' },
+    'jack'
+  ),
+  React.createElement(
+    Option,
+    { value: 'lucy' },
+    'lucy'
+  ),
+  React.createElement(
+    Option,
+    { value: 'disabled', disabled: true },
+    'disabled'
+  ),
+  React.createElement(
+    Option,
+    { value: 'yiminghe' },
+    'yiminghe'
+  )
+), document.getElementById('components-select-demo-search'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = require(<span class="string">'uxcore-select2'</span>);
+<span class="keyword">var</span> Option = Select.Option;
+
+<span class="function"><span class="keyword">function</span> <span class="title">handleChange</span><span class="params">(value)</span> {</span>
+  console.log(<span class="string">'selected '</span> + value);
+}
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Select</span> <span class="attribute">value</span>=<span class="value">"lucy"</span> <span class="attribute">showSearch</span>=<span class="value">{true}</span> <span class="attribute">style</span>=<span class="value">{{width:200}}</span> <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"jack"</span>&gt;</span>jack<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"disabled"</span> <span class="attribute">disabled</span>&gt;</span>disabled<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"yiminghe"</span>&gt;</span>yiminghe<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+, document.getElementById('components-select-demo-search'));</span></code></pre></div></div></div><div id="code-box-components-select2-demo-multiple" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>多选</em></div></div><div class="code-box-demo"><div id="components-select2-demo-multiple"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Select = require('uxcore-select2');
+var Option = Select.Option;
+
+var children = [];
+for (var i = 10; i < 36; i++) {
+  children.push(React.createElement(
+    Option,
+    { key: i.toString(36) + i },
+    i.toString(36) + i
+  ));
+}
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(React.createElement(
+  Select,
+  { multiple: true,
+    style: { width: 400 },
+    value: ['a10', 'c12'], onChange: handleChange },
+  children
+), document.getElementById('components-select-demo-multiple'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = require(<span class="string">'uxcore-select2'</span>);
+<span class="keyword">var</span> Option = Select.Option;
+
+<span class="keyword">var</span> children = [];
+<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">10</span>; i &lt; <span class="number">36</span>; i++) {
+  children.push(<span class="xml"><span class="tag">&lt;<span class="title">Option</span> <span class="attribute">key</span>=<span class="value">{i.toString(36)</span> + <span class="attribute">i</span>}&gt;</span>{i.toString(36) + i}<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>);
+}
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(
+  <span class="tag">&lt;<span class="title">Select</span> <span class="attribute">multiple</span>
+  <span class="attribute">style</span>=<span class="value">{{width:400}}</span>
+  <span class="attribute">value</span>=<span class="value">{['a10',</span> '<span class="attribute">c12</span>']} <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+    {children}
+  <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+, document.getElementById('components-select-demo-multiple'));</span></code></pre></div></div></div><div id="code-box-components-select2-demo-tags" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>标签</em></div></div><div class="code-box-demo"><div id="components-select2-demo-tags"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Select = require('uxcore-select2');
+var Option = Select.Option;
+
+var children = [];
+for (var i = 10; i < 36; i++) {
+  children.push(React.createElement(
+    Option,
+    { key: i.toString(36) + i },
+    i.toString(36) + i
+  ));
+}
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(React.createElement(
+  Select,
+  {
+    style: { width: 400 },
+    tags: true, value: ['name2', 'name3'], onChange: handleChange },
+  children
+), document.getElementById('components-select-demo-tags'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = require(<span class="string">'uxcore-select2'</span>);
+<span class="keyword">var</span> Option = Select.Option;
+
+<span class="keyword">var</span> children = [];
+<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">10</span>; i &lt; <span class="number">36</span>; i++) {
+  children.push(<span class="xml"><span class="tag">&lt;<span class="title">Option</span> <span class="attribute">key</span>=<span class="value">{i.toString(36)</span> + <span class="attribute">i</span>}&gt;</span>{i.toString(36) + i}<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>);
+}
+
+function handleChange(value) {
+  console.log('selected ' + value);
+}
+
+React.render(
+  <span class="tag">&lt;<span class="title">Select
+</span>   <span class="attribute">style</span>=<span class="value">{{width:400}}</span>
+  <span class="attribute">tags</span> <span class="attribute">value</span>=<span class="value">{['name2',</span> '<span class="attribute">name3</span>']} <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+    {children}
+  <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+, document.getElementById('components-select-demo-tags'));</span></code></pre></div></div></div><div id="code-box-components-select2-demo-combobox" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>智能提示</em></div></div><div class="code-box-demo"><div id="components-select2-demo-combobox"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Select = require('uxcore-select2');
+var Option = Select.Option;
+
+var Test = React.createClass({
+  displayName: 'Test',
+
+  getInitialState: function getInitialState() {
+    return {
+      options: []
+    };
+  },
+  handleChange: function handleChange(value) {
+    var options;
+    if (!value || value.indexOf('@') >= 0) {
+      options = [];
+    } else {
+      options = ['gmail.com', '163.com', 'qq.com'].map(function (domain) {
+        var email = value + '@' + domain;
+        return React.createElement(
+          Option,
+          { key: email },
+          email
+        );
+      });
+    }
+    this.setState({
+      options: options
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      Select,
+      { combobox: true,
+        style: { width: 200 },
+        onChange: this.handleChange,
+        searchPlaceholder: '请输入账户名' },
+      this.state.options
+    );
+  }
+});
+
+React.render(React.createElement(Test, null), document.getElementById('components-select-demo-combobox'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = require(<span class="string">'uxcore-select2'</span>);
+<span class="keyword">var</span> Option = Select.Option;
+
+<span class="keyword">var</span> Test = React.createClass({
+  getInitialState() {
+    <span class="keyword">return</span> {
+      options: []
+    };
+  },
+  handleChange(value) {
+    <span class="keyword">var</span> options;
+    <span class="keyword">if</span> (!value || value.indexOf(<span class="string">'@'</span>) &gt;= <span class="number">0</span>) {
+      options = [];
+    } <span class="keyword">else</span> {
+      options = [<span class="string">'gmail.com'</span>, <span class="string">'163.com'</span>, <span class="string">'qq.com'</span>].map(<span class="function"><span class="keyword">function</span><span class="params">(domain)</span> {</span>
+        <span class="keyword">var</span> email = value + <span class="string">'@'</span> + domain;
+        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">Option</span> <span class="attribute">key</span>=<span class="value">{email}</span>&gt;</span>{email}<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>;</span>
+      });
+    }
+    <span class="keyword">this</span>.setState({
+      options: options
+    });
+  },
+  render() {
+    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">Select</span> <span class="attribute">combobox</span>
+      <span class="attribute">style</span>=<span class="value">{{width:200}}</span>
+      <span class="attribute">onChange</span>=<span class="value">{this.handleChange}</span>
+      <span class="attribute">searchPlaceholder</span>=<span class="value">"请输入账户名"</span>&gt;</span>
+      {this.state.options}
+    <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>;</span>
+  }
+});
+
+React.render(<span class="xml"><span class="tag">&lt;<span class="title">Test</span> /&gt;</span>, document.getElementById('components-select-demo-combobox'));</span></code></pre></div></div></div></article></div></body></html>

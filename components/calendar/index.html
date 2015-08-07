@@ -2,32 +2,9 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav class="site-nav"><ul class="nav-list"><li><a href="/uxcore/">home</a></li><li><a href="/uxcore/css/layout/">css</a></li><li><a href="/uxcore/components/dialog/">components</a></li></ul></nav><div class="kuma-layout-full site-main"><aside class="site-aside"><ul><li class="current"><a href="/uxcore/components/calendar">uxcore-calendar</a></li><li><a href="/uxcore/components/dialog">uxcore-dialog</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>uxcore-calendar</h1><section class="meta"><span class="author"><b>author:</b>vincent.bian</span><span class="github"><b>github:</b><a href="https://github.com/uxcore/uxcore-calendar.git" target="_blank">uxcore-calendar</a></span><span class="version"> <b>版本:</b>0.1.1</span><span class="description"><b>描述:</b>calendar componment for react</span></section></header><div id="J-markdown" class="markdown"><h2 id="tl-dr">TL;DR</h2>
-<h4 id="setup-develop-environment">setup develop environment</h4>
-<pre><code class="lang-sh">$ git clone https://github.com/uxcore/uxcore-calendar
-$ cd uxcore-calendar
-$ npm install
-$ npm run dev
-</code></pre>
-<p>nav <a href="http://localhost:9090/webpack-dev-server/example/">http://localhost:9090/webpack-dev-server/example/</a> to see the demo</p>
-<h4 id="deploy-to-gh-pages">deploy to gh-pages</h4>
-<p><a href="http://stackoverflow.com/questions/17643381/how-to-upload-my-angularjs-static-site-to-github-pages">refer to</a></p>
-<pre><code class="lang-sh">$ npm run build
-$ git add build &amp; git commit -m &#39;update deploy files&#39;
-$ npm run deploy
-</code></pre>
-<h2 id="usage">Usage</h2>
-<pre><code class="lang-js">var Calendar = require(&#39;uxcore-calendar&#39;);
-React.render(
-  (&lt;Calendar /&gt;),
-  document.getElementById(&#39;content&#39;)
-);
-</code></pre>
-<h3 id="demo">demo</h3>
-<p><a href="http://uxcore.github.io/uxcore-calendar/">http://uxcore.github.io/uxcore-calendar/</a></p>
-<h2 id="api">API</h2>
-<h3 id="props">props</h3>
-<table>
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/kuma/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li class="current"><a href="/uxcore/components/calendar">Calendar</a></li><li><a href="/uxcore/components/dialog">Dialog</a></li><li><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li><a href="/uxcore/components/tooltip">Tooltip</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Calendar</h1><section class="meta"><span class="author"><b>author:</b>vincent.bian</span><span class="github"><b>github:</b><a href="https://github.com/uxcore/uxcore-calendar.git" target="_blank">Calendar</a></span><span class="version"> <b>版本:</b>0.1.1</span><span class="description"><b>描述:</b>calendar componment for react</span></section></header><div id="J-markdown" class="markdown"><p>输入或选择日期/时间的控件。</p>
+<h2 id="何时使用">何时使用</h2><p>当用户需要输入一个日期/时间，可以点击标准输入框，弹出日期面板进行选择。支持键盘操作。</p>
+<div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">value</span>=<span class="value">"2015-01-01"</span> /&gt;</span></code></pre></div><h2 id="api">API</h2><table>
 <thead>
 <tr>
 <th>参数</th>
@@ -81,7 +58,7 @@ React.render(
 </tr>
 </tbody>
 </table>
-</div><div id="code-box-components-calendar-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>基本</em></div></div><div class="code-box-demo"><div id="components-calendar-demo-basic"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-calendar-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>基本</em></div></div><div class="code-box-demo"><div id="components-calendar-demo-basic"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
 var Calendar = require('uxcore-calendar');
 
