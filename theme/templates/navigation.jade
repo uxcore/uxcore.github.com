@@ -1,5 +1,6 @@
 nav.site-nav
+	h1.logo UXCORE
 	ul.nav-list
 		each item in config.site.navigation
 			li
-				a(href="#{item.link}")= item.text
+				a(href="#{config.site.urlPrefix}#{item.link}")= item.text

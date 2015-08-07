@@ -2,6 +2,7 @@
 @oranage: #f80;
 @head-height: 48px;
 @borderColor: #e0e0e0;
+@import "./font.less";
 html, body {
 	height: 100%;
 }
@@ -22,6 +23,19 @@ body {
 	height: @head-height;
 	background-color: @blue;
 	border-bottom: 1px solid @borderColor;
+
+	.logo {
+		float: left;
+		width: 160px;
+		color: #fff;
+		font-size: 26px;
+		font-family: 'Sigmar One', cursive;
+		font-weight: 400;
+		text-align: center;
+		line-height: 48px;
+	    text-shadow: 1px 2px 3px #333;
+	}
+
 	.nav-list {
 		margin-left: 160px;
 		display: flex;

@@ -12,17 +12,19 @@
     "url": "http://github.com/uxcore/uxcore/issues"
   },
   "scripts": {
-      "start": "npm run clean && nico server --watch",
-      "clean": "rm -rf _site",
-      "deploy": "npm run clean && webpack --config webpack.config.min.js && nico build && gulp"
+    "start": "npm run clean && nico server --watch",
+    "clean": "rm -rf _site",
+    "deploy": "npm run clean && webpack --config webpack.config.min.js && nico build -C nico.production.js && gulp"
   },
   "dependencies": {
-    "highlight.js": "~8.7.0",
     "react": "^0.13.3",
     "uxcore-button": "^0.1.2",
     "uxcore-calendar": "^0.1.1",
     "uxcore-dialog": "^0.1.0",
-    "uxcore-kuma": "^1.0.3"
+    "uxcore-kuma": "^1.0.3",
+    "uxcore-pagination": "^0.1.0",
+    "uxcore-select2": "^0.1.1",
+    "uxcore-tooltip": "^0.1.0"
   },
   "devDependencies": {
     "autoprefixer-loader": "~2.0.0",
@@ -33,6 +35,7 @@
     "extract-text-webpack-plugin": "~0.8.2",
     "gulp": "^3.9.0",
     "gulp-gh-pages": "^0.5.2",
+    "jade": "~1.11.0",
     "less": "~2.5.1",
     "less-loader": "~2.2.0",
     "markit": "^0.2.0",

@@ -13,7 +13,7 @@ mixin aside(type)
 			each page in pages
 				if post.title === page.title
 					li.current
-						a(href="/#{page.directory}") #{page.title}
+						a(href="#{config.site.urlPrefix}/#{page.directory}") #{page.title}
 				else
 					li
-						a(href="/#{page.directory}") #{page.title}
+						a(href="#{config.site.urlPrefix}/#{page.directory}") #{page.title}

@@ -14,18 +14,19 @@ exports.site = {
   issues: package.bugs.url,
   navigation: [
     {
-        text: 'home',
+        text: '首页',
         link: '/'
     },
     {
         text: 'css',
-        link: '/css/layout/'
+        link: '/css/kuma/'
     },
     {
-        text: 'components',
-        link: '/components/dialog/'
+        text: '组件',
+        link: '/components/calendar/'
     }
-  ]
+  ],
+  urlPrefix: ''
 };
 exports.engine = 'jade';
 exports.package = package;
