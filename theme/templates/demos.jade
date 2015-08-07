@@ -8,6 +8,10 @@ mixin demos
 				- var ob = b.meta.order || 100;
 				- return parseInt(oa, 10) - parseInt(ob, 10)
 			- })
+	if demos.length > 0
+		h2.site-demos 
+			i.kuma-icon.kuma-icon-graph
+			|组件演示
 	each demo in demos
 		.code-box(id="code-box-#{demo.meta.id}")
 			.code-box-meta

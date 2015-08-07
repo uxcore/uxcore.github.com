@@ -1,8 +1,10 @@
 @blue: #288df0;
-@oranage: #f80;
-@head-height: 48px;
+@oranage: #FFB73E;
+@head-height: 60px;
 @borderColor: #e0e0e0;
+@collapseTransition: ease-out .25s;
 @import "./font.less";
+@import "./animation.less";
 html, body {
 	height: 100%;
 }
@@ -10,10 +12,28 @@ body {
 	font-family: 'Helvetica Neue', Helvetica, "Hiragino Sans GB", "Microsoft YaHei",
              "WenQuanYi Micro Hei", sans-serif;
 }
+.head-collapse {
+	@collapse-height: @head-height * 2 / 3;
+	.site-nav {
+		height: @collapse-height;
+		.nav-list {
+			line-height: @collapse-height;
+		}
+		.logo {
+			width: 160px;
+			font-size: 26px;
+			line-height: @collapse-height;
+		}
+	}
+	.site-main {
+		padding-top: @collapse-height;
+	}
+}
 .site-main {
 	display: flex;
 	height: 100%;
 	padding-top: @head-height;
+	transition: padding @collapseTransition;
 }
 .site-nav {
 	position: fixed;
@@ -23,26 +43,29 @@ body {
 	height: @head-height;
 	background-color: @blue;
 	border-bottom: 1px solid @borderColor;
+	transition: height @collapseTransition;
 
 	.logo {
 		float: left;
-		width: 160px;
+		width: 200px;
 		color: #fff;
-		font-size: 26px;
+		font-size: 30px;
 		font-family: 'Sigmar One', cursive;
 		font-weight: 400;
 		text-align: center;
-		line-height: 48px;
+		line-height: @head-height;
 	    text-shadow: 1px 2px 3px #333;
+		transition: all @collapseTransition;
 	}
 
 	.nav-list {
 		margin-left: 160px;
 		display: flex;
 		font-size: 16px;
+		line-height: @head-height;
+		transition: line-height @collapseTransition;
 		li {
 			padding: 0 20px;
-			line-height: 48px;
 			transition: background-color ease-in .2s;
 			&:hover {
 				background-color: rgba(255, 255, 255, .1);
@@ -51,6 +74,40 @@ body {
 		a {
 			color: #fff;
 			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+.site-home {
+	position: relative;
+	.site-text {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		height: 200px;
+		text-align: center;
+		font-family: 'Sigmar One', cursive;
+		span {
+			color: #4CA6FD;
+			font-size: 120px;
+			animation: breathing 5s ease-out infinite normal;
+		}
+		.x, .o, .e {
+			color: @oranage;
+		}
+		a {
+			display: block;
+			margin: 0 auto;
+			width: 100px;
+			font-size: 24px;
+			color: #4CA6FD;
+			text-shadow: 0 0 3px #ffb73e;
+			&:hover {
+				color: @oranage;
 				text-decoration: none;
 			}
 		}
@@ -67,17 +124,17 @@ body {
 		line-height: 36/14;
 		&.current {
 			background-color: #fff;
-			border-left: 2px solid #f80;
+			border-left: 2px solid @oranage;
 			a {
-				color: #f80;
+				color: @oranage;
 			}
 		}
 	}
 	a {
-		color: #666;
+		color: #333;
 		&:hover {
 			text-decoration: none;
-			color: #f80;
+			color: @oranage;
 		}
 	}
 }
@@ -170,6 +227,15 @@ body {
 		border: 1px solid @borderColor;
 	}
 }
+.site-demos {
+	margin-top: 20px;
+	font-size: 16px;
+	.kuma-icon {
+		margin-right: 4px;
+		font-size: 18px;
+		color: #888;
+	}
+}
 .code-box {
 	margin-top: 20px;
 	padding: 10px;
@@ -192,4 +258,46 @@ body {
 		padding: 12px;
     	background-color: #fff;
 	}
+}
+.highlight {
+	position: relative;
+	pre {
+		max-height: 150px;
+		overflow: hidden;
+	}
+	.code-toggle {
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    padding: 0 4px;
+	    border: 1px solid #d0d0d0;
+	    background-color: #dfdfdf;
+	    color: #999;
+		visibility: hidden;
+		&:after {
+			content: '展开';
+		}
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	&.toggle-down {
+		.code-toggle {
+			&:after {
+				content: '收起';
+			}
+		}
+		pre {
+			max-height: initial;
+		}
+	}
+	&:hover {
+		.code-toggle {
+			visibility: visible;
+		}
+	}
+}
+.site-home {
+	flex-grow: 1;
+	height: 100%;
 }

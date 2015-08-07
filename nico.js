@@ -12,6 +12,7 @@ exports.site = {
   description: package.description,
   repo: package.repository.url,
   issues: package.bugs.url,
+  homeLink: '/css/kuma/',
   navigation: [
     {
         text: '首页',
