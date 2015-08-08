@@ -26,5 +26,5 @@ React.render(
   tags value={['name2', 'name3']} onChange={handleChange}>
     {children}
   </Select>
-, document.getElementById('components-select-demo-tags'));
+, document.getElementById('components-select2-demo-tags'));
 ````

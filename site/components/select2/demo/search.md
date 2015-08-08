@@ -21,5 +21,5 @@ React.render(
     <Option value="disabled" disabled>disabled</Option>
     <Option value="yiminghe">yiminghe</Option>
   </Select>
-, document.getElementById('components-select-demo-search'));
+, document.getElementById('components-select2-demo-search'));
 ````

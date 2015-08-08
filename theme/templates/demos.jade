@@ -1,7 +1,10 @@
 mixin demos
 	- var demos = []
 	- for page in resource.pages
-		- if (page.filepath.indexOf('site/' + post.directory + '/demo/') === 0)
+		- var pd = post.directory.replace(/\\/g, '/')
+		- if (pd.indexOf('/') !== 0)
+			- pd = '/' + pd;
+		- if (page.filepath.indexOf('site' + pd + '/demo/') === 0)
 			- demos.push(page)
 			- demos.sort(function(a, b){
 				- var oa = a.meta.order || 100;

@@ -41,5 +41,5 @@ var Test = React.createClass({
   }
 });
 
-React.render(<Test />, document.getElementById('components-select-demo-combobox'));
+React.render(<Test />, document.getElementById('components-select2-demo-combobox'));
 ````

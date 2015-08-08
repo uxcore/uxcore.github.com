@@ -21,5 +21,5 @@ React.render(
     <Option value="disabled" disabled>Disabled</Option>
     <Option value="yiminghe">yiminghe</Option>
   </Select>
-, document.getElementById('components-select-demo-basic'));
+, document.getElementById('components-select2-demo-basic'));
 ````
