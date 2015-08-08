@@ -9,6 +9,7 @@ window.UXCORE = {
 	'uxcore-pagination': require('uxcore-pagination'),
 	'uxcore-tooltip': require('uxcore-tooltip'),
 	'uxcore-tabs': require('uxcore-tabs'),
+	'uxcore-form': require('uxcore-form'),
 	'uxcore-grid': require('uxcore-grid')
 };
 

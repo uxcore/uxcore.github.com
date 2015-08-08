@@ -1,6 +1,7 @@
-# uxcore-button
+# Button
 
 - order: 2
+- chinese:　按钮
 - tags: uxcore, button
 - description: uxcore button
 - maintainers: vincent.bian
