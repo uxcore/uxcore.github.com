@@ -26,5 +26,5 @@ React.render(
   value={['a10', 'c12']} onChange={handleChange}>
     {children}
   </Select>
-, document.getElementById('components-select-demo-multiple'));
+, document.getElementById('components-select2-demo-multiple'));
 ````
