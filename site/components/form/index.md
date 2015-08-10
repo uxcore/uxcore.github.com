@@ -18,7 +18,7 @@
 ## Feature List/特性
 
 
-## Usage 最佳实践 [demo](http://uxcore.github.io/uxcore-form/)
+## Usage 最佳实践
 
 ```sh
 $ git clone https://github.com/uxcore/uxcore-form

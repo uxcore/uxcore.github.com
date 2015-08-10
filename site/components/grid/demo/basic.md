@@ -10,25 +10,25 @@ var gen = (function(){
 
     var cache = {}
 
-    return function(len){
+    return function(len,pageIndex){
 
         if (cache[len]){
             // return cache[len]
         }
 
-        var arr = []
-
+        var arr = [], started= (pageIndex-1)*len;
         for (var i = 0; i < len; i++){
+            var num= started+i+1;
             arr.push({
                 //jsxchecked: i % 3 === 0,
-                id       : i + 1,
+                id       : num,
                 grade      : Math.round(Math.random() * 10),
-                email    : i + '@gmail.com',
-                firstName: i + '_firstName',
-                lastName : i + '_lastName',
-                birthDate: i + '_birthDate',
-                country  : i + '_country',
-                city  : i + '_city',
+                email    : num + '@gmail.com',
+                firstName: num + '_firstName',
+                lastName : num + '_lastName',
+                birthDate: num + '_birthDate',
+                country  : num + '_country',
+                city  : num + '_city',
             })
         }
 
@@ -49,7 +49,7 @@ var columns = [
     { dataKey: 'email',title:"Email",width: 200 ,type:"text"}
 ]
 
-var data= gen(20);
+var data= gen(20,1);
 
 // 通过 rowSelection 对象表明需要行选择
 var rowSelection = {
@@ -70,7 +70,7 @@ var App = React.createClass({
       },
       onPageChange: function(pageIndex) {
           this.setState({
-             data: gen(20)
+             data: gen(20,pageIndex)
           })
       },
       onModifyRow: function(record) {

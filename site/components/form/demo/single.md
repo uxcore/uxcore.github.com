@@ -52,9 +52,6 @@ React.render(<div>
                   <option value="xj">西京</option>
           </SelectFormField>
       </FormRow>
-      <FormRow>
-          <Button jsxtext="提交" onClick={_doClick} />
-      </FormRow>
     </Form>
   </div>
 </div>, document.getElementById('components-form-demo-single'))
