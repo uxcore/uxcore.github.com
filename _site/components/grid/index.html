@@ -1,0 +1,199 @@
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/uxcore.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react.js"></script><script src="/static/highlight.min.js"></script><script src="/static/uxcore.js"></script><script>(function(w){
+	w.require = function(name){
+		return w.UXCORE[name];
+	}
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/">首页</a></li><li><a href="/css/kuma/">css</a></li><li><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li class="current"><a href="/components/grid">Grid</a></li><li><a href="/components/form">Form</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Grid</h1><section class="meta"><span class="author"><b>author: </b></span><span class="github"><b>github: </b><a href="git+ssh://git@github.com/uxcore/grid.git" target="_blank">Grid</a></span><span class="version"> <b>版本: </b>1.0.0</span><span class="description"><b>描述: </b>grid ui component for react</span></section></header><div id="J-markdown" class="markdown"><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Grid = require(<span class="string">'uxcore-grid'</span>);
+
+<span class="keyword">var</span> renderProps={
+    headerHeight:<span class="number">50</span>,
+    width:<span class="number">700</span>,
+    height:<span class="number">500</span>,
+    columnPicker: <span class="literal">true</span>,
+    onPageChange: <span class="keyword">this</span>.onPageChange,
+    onModifyRow: <span class="keyword">this</span>.onModifyRow,
+    rowSelection: rowSelection,
+    jsxdata:<span class="keyword">this</span>.state.data,
+    jsxcolumns:columns
+};
+
+React.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Grid</span> {<span class="attribute">...renderProps</span>} /&gt;</span>,
+  document.getElementById('target'));</span></code></pre></div><h2 id="development">development</h2><pre>$ git clone https://github.com/uxcore/grid
+$ cd grid
+$ npm install
+$ npm run dev</pre><h2 id="api">API</h2><p>todo</p>
+</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-grid-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>基本</em></div></div><div class="code-box-demo"><div id="components-grid-demo-basic"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var Grid = require('uxcore-grid');
+var gen = (function () {
+
+    var cache = {};
+
+    return function (len, pageIndex) {
+
+        if (cache[len]) {
+            // return cache[len]
+        }
+
+        var arr = [],
+            started = (pageIndex - 1) * len;
+        for (var i = 0; i < len; i++) {
+            var num = started + i + 1;
+            arr.push({
+                //jsxchecked: i % 3 === 0,
+                id: num,
+                grade: Math.round(Math.random() * 10),
+                email: num + '@gmail.com',
+                firstName: num + '_firstName',
+                lastName: num + '_lastName',
+                birthDate: num + '_birthDate',
+                country: num + '_country',
+                city: num + '_city'
+            });
+        }
+
+        cache[len] = arr;
+
+        return arr;
+    };
+})();
+
+// title, width, type, hidden,dataKey
+var columns = [{ dataKey: 'id', title: 'ID', width: 50, hidden: true }, { dataKey: 'country', title: '国家', width: 200, type: 'text' }, { dataKey: 'city', title: '城市', width: 150 }, { dataKey: 'firstName', title: "FristName" }, { dataKey: 'lastName', title: "LastName", type: 'text' }, { dataKey: 'email', title: "Email", width: 200, type: "text" }];
+
+var data = gen(20, 1);
+
+// 通过 rowSelection 对象表明需要行选择
+var rowSelection = {
+    onSelect: function onSelect(record, selected, selectedRows) {
+        console.log(record, selected, selectedRows);
+    },
+    onSelectAll: function onSelectAll(selected, selectedRows) {
+        console.log(selected, selectedRows);
+    }
+};
+
+var App = React.createClass({
+    displayName: 'App',
+
+    getInitialState: function getInitialState() {
+        return {
+            data: this.props.data
+        };
+    },
+    onPageChange: function onPageChange(pageIndex) {
+        this.setState({
+            data: gen(20, pageIndex)
+        });
+    },
+    onModifyRow: function onModifyRow(record) {
+        //doValidate
+        return true;
+    },
+    render: function render() {
+        var renderProps = {
+            headerHeight: 50,
+            width: 700,
+            height: 500,
+            columnPicker: true,
+            onPageChange: this.onPageChange,
+            onModifyRow: this.onModifyRow,
+            rowSelection: rowSelection,
+            jsxdata: this.state.data,
+            jsxcolumns: columns
+        };
+        return React.createElement(Grid, _extends({}, renderProps, { ref: 'grid' }));
+    }
+});
+
+React.render(React.createElement(App, { data: data }), document.getElementById('components-grid-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Grid = require(<span class="string">'uxcore-grid'</span>);
+<span class="keyword">var</span> gen = (<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+
+    <span class="keyword">var</span> cache = {}
+
+    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">(len,pageIndex)</span>{</span>
+
+        <span class="keyword">if</span> (cache[len]){
+            <span class="comment">// return cache[len]</span>
+        }
+
+        <span class="keyword">var</span> arr = [], started= (pageIndex-<span class="number">1</span>)*len;
+        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++){
+            <span class="keyword">var</span> num= started+i+<span class="number">1</span>;
+            arr.push({
+                <span class="comment">//jsxchecked: i % 3 === 0,</span>
+                id       : num,
+                grade      : Math.round(Math.random() * <span class="number">10</span>),
+                email    : num + <span class="string">'@gmail.com'</span>,
+                firstName: num + <span class="string">'_firstName'</span>,
+                lastName : num + <span class="string">'_lastName'</span>,
+                birthDate: num + <span class="string">'_birthDate'</span>,
+                country  : num + <span class="string">'_country'</span>,
+                city  : num + <span class="string">'_city'</span>,
+            })
+        }
+
+        cache[len] = arr
+
+        <span class="keyword">return</span> arr
+    }
+})()
+
+
+<span class="comment">// title, width, type, hidden,dataKey</span>
+<span class="keyword">var</span> columns = [
+    { dataKey: <span class="string">'id'</span>, title: <span class="string">'ID'</span>, width: <span class="number">50</span>,hidden:<span class="literal">true</span>},
+    { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">200</span>, type:<span class="string">'text'</span>},
+    { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span> },
+    { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span> },  
+    { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>,type:<span class="string">'text'</span>},
+    { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span> ,type:<span class="string">"text"</span>}
+]
+
+<span class="keyword">var</span> data= gen(<span class="number">20</span>,<span class="number">1</span>);
+
+<span class="comment">// 通过 rowSelection 对象表明需要行选择</span>
+<span class="keyword">var</span> rowSelection = {
+  onSelect: <span class="function"><span class="keyword">function</span><span class="params">(record, selected, selectedRows)</span> {</span>
+    console.log(record, selected, selectedRows);
+  },
+  onSelectAll: <span class="function"><span class="keyword">function</span><span class="params">(selected, selectedRows)</span> {</span>
+    console.log(selected, selectedRows);
+  }
+};
+
+<span class="keyword">var</span> App = React.createClass({
+
+      getInitialState: <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+        <span class="keyword">return</span> {
+            data:<span class="keyword">this</span>.props.data
+        }
+      },
+      onPageChange: <span class="function"><span class="keyword">function</span><span class="params">(pageIndex)</span> {</span>
+          <span class="keyword">this</span>.setState({
+             data: gen(<span class="number">20</span>,pageIndex)
+          })
+      },
+      onModifyRow: <span class="function"><span class="keyword">function</span><span class="params">(record)</span> {</span>
+        <span class="comment">//doValidate</span>
+        <span class="keyword">return</span> <span class="literal">true</span>;
+      },
+      render: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+        <span class="keyword">var</span> renderProps={
+            headerHeight:<span class="number">50</span>,
+            width:<span class="number">700</span>,
+            height:<span class="number">500</span>,
+            columnPicker: <span class="literal">true</span>,
+            onPageChange: <span class="keyword">this</span>.onPageChange,
+            onModifyRow: <span class="keyword">this</span>.onModifyRow,
+            rowSelection: rowSelection,
+            jsxdata:<span class="keyword">this</span>.state.data,
+            jsxcolumns:columns
+        };
+        <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="title">Grid</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"grid"</span>/&gt;</span>);
+      }
+});
+
+React.render(<span class="tag">&lt;<span class="title">App</span> <span class="attribute">data</span>=<span class="value">{data}</span>/&gt;</span>, document.getElementById('components-grid-demo-basic'))</span></code></pre></div></div></div></article></div></body></html>

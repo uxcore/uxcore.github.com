@@ -6,6 +6,7 @@
 
 ````jsx
 var Dialog = require('uxcore-dialog');
+var Button = require('uxcore-button').Button;
 
 var container;
 
@@ -44,8 +45,8 @@ var DialogContent = React.createClass({
       <p>第二个弹出框内容</p>
       <p>第二个弹出框内容</p>
       <div className="modal-footer">
-        <button className="kuma-button kuma-button-mwhite" onClick={this.props.handleClose} >Close</button>
-        <button className="kuma-button kuma-button-mblue" onClick={this.props.handleSave}>Save changes</button>
+        <Button color="white" onClick={this.props.handleClose}>Close</Button>
+        <Button onClick={this.props.handleSave}>Save changes</Button>
       </div>
     </div>);
   }
@@ -85,7 +86,7 @@ var MyControl = React.createClass({
   render: function () {
     return (
       <div>
-        <button className="kuma-button kuma-button-mblue" onClick={this.handleTrigger}>show dialog</button>
+        <Button onClick={this.handleTrigger}>show dialog</Button>
       </div>
     );
   }

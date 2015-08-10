@@ -7,7 +7,10 @@ window.UXCORE = {
 	'uxcore-dialog': require('uxcore-dialog'),
 	'uxcore-select2': require('uxcore-select2'),
 	'uxcore-pagination': require('uxcore-pagination'),
-	'uxcore-tooltip': require('uxcore-tooltip')
+	'uxcore-tooltip': require('uxcore-tooltip'),
+	'uxcore-tabs': require('uxcore-tabs'),
+	'uxcore-form': require('uxcore-form'),
+	'uxcore-grid': require('uxcore-grid')
 };
 
 /*

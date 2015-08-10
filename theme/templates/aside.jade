@@ -3,7 +3,7 @@ mixin aside(type)
 		ul
 			- var pages = [];
 			- for page in resource.pages
-				- if (page.directory.indexOf(type) === 0 && page.directory.indexOf('/demo') === -1)
+				- if (page.directory.indexOf(type) === 0 && page.directory.indexOf('/demo') === -1 && page.directory.indexOf('\demo') === -1)
 					- pages.push(page);
 					- pages.sort(function(a, b){
 						- var oa = a.meta.order || 100;

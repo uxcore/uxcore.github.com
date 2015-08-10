@@ -1,0 +1,699 @@
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/uxcore.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react.js"></script><script src="/static/highlight.min.js"></script><script src="/static/uxcore.js"></script><script>(function(w){
+	w.require = function(name){
+		return w.UXCORE[name];
+	}
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/">首页</a></li><li><a href="/css/kuma/">css</a></li><li><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li class="current"><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li><a href="/components/grid">Grid</a></li><li><a href="/components/form">Form</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Dialog</h1><section class="meta"><span class="author"><b>author: </b>vincent.bian</span><span class="github"><b>github: </b><a href="git+https://github.com/uxcore/uxcore-dialog.git" target="_blank">Dialog</a></span><span class="version"> <b>版本: </b>0.1.0</span><span class="description"><b>描述: </b>uxcore-dialog ui componment for react</span></section></header><div id="J-markdown" class="markdown"><p>模态对话框。</p>
+<h2 id="何时使用">何时使用</h2><p>需要用户处理事务，又不希望跳转页面以致打断工作流程时，可以使用 <code>Dialog</code> 在当前页面正中打开一个浮层，承载相应的操作。</p>
+<h2 id="api">API</h2><table>
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prefixCls</td>
+<td>String</td>
+<td>kuma-dialog</td>
+<td>The dialog dom node&#39;s prefixCls</td>
+</tr>
+<tr>
+<td>visible</td>
+<td>Boolean</td>
+<td>false</td>
+<td></td>
+</tr>
+<tr>
+<td>mask</td>
+<td>Boolean</td>
+<td></td>
+<td>whether show mask</td>
+</tr>
+<tr>
+<td>renderToBody</td>
+<td>Boolean</td>
+<td>true</td>
+<td>whether render dialog to body</td>
+</tr>
+<tr>
+<td>animation</td>
+<td>String</td>
+<td></td>
+<td>part of dialog animation css class name</td>
+</tr>
+<tr>
+<td>maskAnimation</td>
+<td>String</td>
+<td></td>
+<td>part of dialog&#39;s mask animation css class name</td>
+</tr>
+<tr>
+<td>title</td>
+<td>String</td>
+<td>React.Element</td>
+<td>Title of the dialog</td>
+</tr>
+<tr>
+<td>footer</td>
+<td>React.Element</td>
+<td></td>
+<td>footer of the dialog</td>
+</tr>
+<tr>
+<td>closable</td>
+<td>Boolean</td>
+<td>true</td>
+<td>whether show close button and click mask to close</td>
+</tr>
+<tr>
+<td>onBeforeClose</td>
+<td>function(close)</td>
+<td></td>
+<td>when click close button or mask. argument is a close function</td>
+</tr>
+<tr>
+<td>onShow</td>
+<td>function</td>
+<td></td>
+<td>called on dialog show</td>
+</tr>
+<tr>
+<td>onClose</td>
+<td>function</td>
+<td></td>
+<td>called on dialog close</td>
+</tr>
+</tbody>
+</table>
+</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-dialog-demo-simple" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>简单的用法</em></div></div><div class="code-box-demo"><div id="components-dialog-demo-simple"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Dialog = require('uxcore-dialog');
+
+function close() {
+    console.log('close');
+}
+function show() {
+    console.log('show');
+}
+
+React.render(React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'p',
+        null,
+        'does not support render visible on server!'
+    ),
+    React.createElement(
+        Dialog,
+        {
+            title: '第一个弹框',
+            width: '500',
+            zIndex: 100,
+            visible: true,
+            onClose: close,
+            onShow: show
+        },
+        React.createElement(
+            'p',
+            null,
+            '第一个dialog'
+        )
+    )
+), document.getElementById('components-dialog-demo-simple'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Dialog = require(<span class="string">'uxcore-dialog'</span>);
+
+<span class="function"><span class="keyword">function</span> <span class="title">close</span><span class="params">()</span>{</span>
+    console.log(<span class="string">'close'</span>);
+}
+<span class="function"><span class="keyword">function</span> <span class="title">show</span><span class="params">()</span>{</span>
+    console.log(<span class="string">'show'</span>);
+}
+
+React.render(
+    <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span>does not support render visible on server!<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Dialog
+</span>          <span class="attribute">title</span>=<span class="value">"第一个弹框"</span>
+          <span class="attribute">width</span>=<span class="value">"500"</span>
+          <span class="attribute">zIndex</span>=<span class="value">{100}</span>
+          <span class="attribute">visible</span>=<span class="value">{true}</span>
+          <span class="attribute">onClose</span>=<span class="value">{close}</span>
+          <span class="attribute">onShow</span>=<span class="value">{show}</span>
+        &gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>第一个dialog<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">Dialog</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>, document.getElementById('components-dialog-demo-simple'));</span></code></pre></div></div></div><div id="code-box-components-dialog-demo-inline" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>点击按钮触发</em></div></div><div class="code-box-demo"><div id="components-dialog-demo-inline"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Dialog = require('uxcore-dialog');
+var Button = require('uxcore-button').Button;
+
+var DialogContent = React.createClass({
+  displayName: 'DialogContent',
+
+  getInitialState: function getInitialState() {
+    return {
+      value: ''
+    };
+  },
+
+  onChange: function onChange(e) {
+    this.props.onChange(e.target.value);
+    this.setState({
+      value: e.target.value
+    });
+  },
+
+  onHandleSave: function onHandleSave() {
+    alert('are you sure to save change?');
+  },
+
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement('input', { onChange: this.onChange, value: this.state.value, className: 'kuma-input' }),
+      React.createElement(
+        'p',
+        null,
+        '第二个弹出框内容'
+      ),
+      React.createElement(
+        'p',
+        null,
+        '第二个弹出框内容'
+      ),
+      React.createElement(
+        'p',
+        null,
+        '第二个弹出框内容'
+      ),
+      React.createElement(
+        'p',
+        null,
+        '第二个弹出框内容'
+      ),
+      React.createElement(
+        'p',
+        null,
+        '第二个弹出框内容'
+      ),
+      React.createElement(
+        'p',
+        null,
+        '第二个弹出框内容'
+      ),
+      React.createElement(
+        'p',
+        null,
+        '第二个弹出框内容'
+      ),
+      React.createElement(
+        'div',
+        { className: 'modal-footer' },
+        React.createElement(
+          Button,
+          { color: 'white', onClick: this.props.onClose },
+          'Close'
+        ),
+        React.createElement(
+          Button,
+          { onClick: this.props.onDestroy },
+          'destroy'
+        ),
+        React.createElement(
+          Button,
+          { onClick: this.onHandleSave },
+          'Save changes'
+        )
+      )
+    );
+  }
+});
+
+var MyControl = React.createClass({
+  displayName: 'MyControl',
+
+  getInitialState: function getInitialState() {
+    return {
+      visible: false,
+      closable: true
+    };
+  },
+
+  onChange: function onChange(v) {
+    this.dialogContentInput = v;
+  },
+
+  handleClose: function handleClose() {
+    this.setState({
+      visible: false
+    });
+  },
+
+  handleDestroy: function handleDestroy() {
+    this.setState({
+      destroy: true
+    });
+  },
+
+  handleTrigger: function handleTrigger() {
+    var _this = this;
+
+    this.setState({
+      visible: true
+    });
+
+    // test rerender
+    setTimeout(function () {
+      _this.setState({
+        visible: true
+      });
+    }, 100);
+  },
+
+  toggleClosable: function toggleClosable() {
+    this.setState({
+      closable: !this.state.closable
+    });
+  },
+
+  render: function render() {
+    if (this.state.destroy) {
+      return null;
+    }
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        Button,
+        { onClick: this.handleTrigger },
+        'show dialog'
+      ),
+      '   ',
+      React.createElement(
+        'label',
+        null,
+        React.createElement('input', { type: 'checkbox', checked: this.state.closable, onChange: this.toggleClosable }),
+        'closable'
+      ),
+      '   ',
+      React.createElement(
+        Button,
+        { onClick: this.handleDestroy },
+        'destroy'
+      ),
+      React.createElement(
+        Dialog,
+        {
+          ref: 'dialog',
+          title: '第二个弹框',
+          mask: true,
+          closable: this.state.closable,
+          visible: this.state.visible,
+          onClose: this.handleClose,
+          style: { width: 600 }
+        },
+        React.createElement(DialogContent, { onChange: this.onChange, onClose: this.handleClose,
+          onDestroy: this.handleDestroy })
+      )
+    );
+  }
+});
+
+React.render(React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h2',
+    null,
+    'render dialog inside component'
+  ),
+  React.createElement(MyControl, null)
+), document.getElementById('components-dialog-demo-inline'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Dialog = require(<span class="string">'uxcore-dialog'</span>);
+<span class="keyword">var</span> Button = require(<span class="string">'uxcore-button'</span>).Button;
+
+<span class="keyword">var</span> DialogContent = React.createClass({
+  getInitialState() {
+    <span class="keyword">return</span> {
+      value: <span class="string">''</span>
+    };
+  },
+
+  onChange(e) {
+    <span class="keyword">this</span>.props.onChange(e.target.value);
+    <span class="keyword">this</span>.setState({
+      value: e.target.value
+    });
+  },
+
+  onHandleSave() {
+    alert(<span class="string">'are you sure to save change?'</span>);
+  },
+
+  render() {
+    <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">input</span> <span class="attribute">onChange</span>=<span class="value">{this.onChange}</span> <span class="attribute">value</span>=<span class="value">{this.state.value}</span> <span class="attribute">className</span>=<span class="value">"kuma-input"</span>/&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>第二个弹出框内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>第二个弹出框内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>第二个弹出框内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>第二个弹出框内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>第二个弹出框内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>第二个弹出框内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>第二个弹出框内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"modal-footer"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">color</span>=<span class="value">"white"</span> <span class="attribute">onClick</span>=<span class="value">{this.props.onClose}</span>&gt;</span>Close<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">onClick</span>=<span class="value">{this.props.onDestroy}</span> &gt;</span>destroy<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">onClick</span>=<span class="value">{this.onHandleSave}</span>&gt;</span>Save changes<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>);
+  }
+});
+
+var MyControl = React.createClass({
+  getInitialState() {
+    return {
+      visible: false,
+      closable: true
+    };
+  },
+
+  onChange(v) {
+    this.dialogContentInput = v;
+  },
+
+  handleClose() {
+    this.setState({
+      visible: false
+    });
+  },
+
+  handleDestroy() {
+    this.setState({
+      destroy: true
+    });
+  },
+
+  handleTrigger() {
+    this.setState({
+      visible: true
+    });
+
+    // test rerender
+    setTimeout(()=&gt; {
+      this.setState({
+        visible: true
+      });
+    }, 100);
+  },
+
+  toggleClosable() {
+    this.setState({
+      closable: !this.state.closable
+    });
+  },
+
+  render() {
+    if (this.state.destroy) {
+      return null;
+    }
+    return (
+      <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">onClick</span>=<span class="value">{this.handleTrigger}</span>&gt;</span>show dialog<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
+      &amp;nbsp;&amp;nbsp;&amp;nbsp;
+        <span class="tag">&lt;<span class="title">label</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">checked</span>=<span class="value">{this.state.closable}</span> <span class="attribute">onChange</span>=<span class="value">{this.toggleClosable}</span>/&gt;</span>
+          closable
+        <span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+      &amp;nbsp;&amp;nbsp;&amp;nbsp;
+        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">onClick</span>=<span class="value">{this.handleDestroy}</span>&gt;</span>destroy<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Dialog
+</span>          <span class="attribute">ref</span>=<span class="value">'dialog'</span>
+          <span class="attribute">title</span>= "第二个弹框"
+          <span class="attribute">mask</span>=<span class="value">{true}</span>
+          <span class="attribute">closable</span>=<span class="value">{this.state.closable}</span>
+          <span class="attribute">visible</span>=<span class="value">{this.state.visible}</span>
+          <span class="attribute">onClose</span>=<span class="value">{this.handleClose}</span>
+          <span class="attribute">style</span>=<span class="value">{{width:</span> <span class="attribute">600</span>}}
+        &gt;</span>
+          <span class="tag">&lt;<span class="title">DialogContent</span> <span class="attribute">onChange</span>=<span class="value">{this.onChange}</span> <span class="attribute">onClose</span>=<span class="value">{this.handleClose}</span>
+            <span class="attribute">onDestroy</span>=<span class="value">{this.handleDestroy}</span>/&gt;</span>
+        <span class="tag">&lt;/<span class="title">Dialog</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    );
+  }
+});
+
+React.render(
+  <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">h2</span>&gt;</span>render dialog inside component<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">MyControl</span>/&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>,
+  document.getElementById('components-dialog-demo-inline')
+);</span></code></pre></div></div></div><div id="code-box-components-dialog-demo-standalone" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>standalone</em></div></div><div class="code-box-demo"><div id="components-dialog-demo-standalone"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var Dialog = require('uxcore-dialog');
+var Button = require('uxcore-button').Button;
+
+var container;
+
+function showDialog(content, props) {
+  if (!container) {
+    container = document.createElement('div');
+    document.body.appendChild(container);
+  }
+  var dialog = React.render(React.createElement(
+    Dialog,
+    _extends({}, props, { renderToBody: false, visible: true }),
+    content
+  ), container);
+  return dialog;
+}
+
+var DialogContent = React.createClass({
+  displayName: 'DialogContent',
+
+  getInitialState: function getInitialState() {
+    return {
+      value: ''
+    };
+  },
+
+  onChange: function onChange(e) {
+    this.props.onChange(e.target.value);
+    this.setState({
+      value: e.target.value
+    });
+  },
+
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement('input', { onChange: this.onChange, value: this.state.value, className: 'kuma-input' }),
+      React.createElement(
+        'p',
+        null,
+        '第二个弹出框内容'
+      ),
+      React.createElement(
+        'p',
+        null,
+        '第二个弹出框内容'
+      ),
+      React.createElement(
+        'p',
+        null,
+        '第二个弹出框内容'
+      ),
+      React.createElement(
+        'p',
+        null,
+        '第二个弹出框内容'
+      ),
+      React.createElement(
+        'p',
+        null,
+        '第二个弹出框内容'
+      ),
+      React.createElement(
+        'p',
+        null,
+        '第二个弹出框内容'
+      ),
+      React.createElement(
+        'p',
+        null,
+        '第二个弹出框内容'
+      ),
+      React.createElement(
+        'div',
+        { className: 'modal-footer' },
+        React.createElement(
+          Button,
+          { color: 'white', onClick: this.props.handleClose },
+          'Close'
+        ),
+        React.createElement(
+          Button,
+          { onClick: this.props.handleSave },
+          'Save changes'
+        )
+      )
+    );
+  }
+});
+
+var MyControl = React.createClass({
+  displayName: 'MyControl',
+
+  onChange: function onChange(v) {
+    this.dialogContentInput = v;
+  },
+
+  beforeClose: function beforeClose() {
+    var _this = this;
+
+    return new Promise(function (resolve) {
+      setTimeout(function () {
+        if (!_this.dialogContentInput) {
+          if (confirm('input is empty, decide to close?')) {
+            resolve(true);
+          }
+        }
+      }, 100);
+    });
+  },
+
+  requestClose: function requestClose() {
+    this.d.requestClose();
+  },
+
+  handleTrigger: function handleTrigger() {
+    this.d = showDialog(React.createElement(DialogContent, { onChange: this.onChange, handleClose: this.requestClose, handleSave: this.requestClose }), {
+      title: "第二个弹框",
+      onBeforeClose: this.beforeClose,
+      style: { width: 600 }
+    });
+  },
+
+  render: function render() {
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        Button,
+        { onClick: this.handleTrigger },
+        'show dialog'
+      )
+    );
+  }
+});
+
+React.render(React.createElement(
+  'div',
+  null,
+  React.createElement(
+    'h1',
+    null,
+    'render dialog standalone'
+  ),
+  React.createElement(MyControl, null)
+), document.getElementById('components-dialog-demo-standalone'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Dialog = require(<span class="string">'uxcore-dialog'</span>);
+<span class="keyword">var</span> Button = require(<span class="string">'uxcore-button'</span>).Button;
+
+<span class="keyword">var</span> container;
+
+<span class="function"><span class="keyword">function</span> <span class="title">showDialog</span><span class="params">(content, props)</span> {</span>
+  <span class="keyword">if</span> (!container) {
+    container = document.createElement(<span class="string">'div'</span>);
+    document.body.appendChild(container);
+  }
+  <span class="keyword">var</span> dialog = React.render(
+    <span class="xml"><span class="tag">&lt;<span class="title">Dialog</span> {<span class="attribute">...props</span>} <span class="attribute">renderToBody</span>=<span class="value">{false}</span> <span class="attribute">visible</span>=<span class="value">{true}</span>&gt;</span>{content}<span class="tag">&lt;/<span class="title">Dialog</span>&gt;</span>, container);
+  return dialog;
+}
+
+var DialogContent = React.createClass({
+  getInitialState: function () {
+    return {
+      value: ''
+    };
+  },
+
+  onChange: function (e) {
+    this.props.onChange(e.target.value);
+    this.setState({
+      value: e.target.value
+    });
+  },
+
+  render: function () {
+    return (<span class="tag">&lt;<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">input</span> <span class="attribute">onChange</span>=<span class="value">{this.onChange}</span> <span class="attribute">value</span>=<span class="value">{this.state.value}</span> <span class="attribute">className</span>=<span class="value">"kuma-input"</span>/&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>第二个弹出框内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>第二个弹出框内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>第二个弹出框内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>第二个弹出框内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>第二个弹出框内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>第二个弹出框内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">p</span>&gt;</span>第二个弹出框内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"modal-footer"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">color</span>=<span class="value">"white"</span> <span class="attribute">onClick</span>=<span class="value">{this.props.handleClose}</span>&gt;</span>Close<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">onClick</span>=<span class="value">{this.props.handleSave}</span>&gt;</span>Save changes<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>);
+  }
+});
+
+var MyControl = React.createClass({
+  onChange: function (v) {
+    this.dialogContentInput = v;
+  },
+
+  beforeClose: function () {
+    return new Promise((resolve) =&gt; {
+      setTimeout(()=&gt; {
+        if (!this.dialogContentInput) {
+          if (confirm('input is empty, decide to close?')) {
+            resolve(true);
+          }
+        }
+      }, 100);
+    });
+  },
+
+  requestClose: function () {
+    this.d.requestClose();
+  },
+
+  handleTrigger: function () {
+    this.d = showDialog(
+      <span class="tag">&lt;<span class="title">DialogContent</span> <span class="attribute">onChange</span>=<span class="value">{this.onChange}</span> <span class="attribute">handleClose</span>=<span class="value">{this.requestClose}</span> <span class="attribute">handleSave</span>=<span class="value">{this.requestClose}</span>/&gt;</span>, {
+      title: "第二个弹框",
+      onBeforeClose: this.beforeClose,
+      style: {width: 600}
+    });
+  },
+
+
+  render: function () {
+    return (
+      <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">onClick</span>=<span class="value">{this.handleTrigger}</span>&gt;</span>show dialog<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    );
+  }
+});
+
+React.render(
+  <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">h1</span>&gt;</span>render dialog standalone<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">MyControl</span>/&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>,
+  document.getElementById('components-dialog-demo-standalone')
+);</span></code></pre></div></div></div></article></div></body></html>

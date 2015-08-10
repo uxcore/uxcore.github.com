@@ -8,6 +8,7 @@
 
 ````jsx
 var Dialog = require('uxcore-dialog');
+var Button = require('uxcore-button').Button;
 
 var DialogContent = React.createClass({
   getInitialState() {
@@ -23,8 +24,12 @@ var DialogContent = React.createClass({
     });
   },
 
+  onHandleSave() {
+    alert('are you sure to save change?');
+  },
+
   render() {
-    return <div>
+    return (<div>
       <input onChange={this.onChange} value={this.state.value} className="kuma-input"/>
       <p>第二个弹出框内容</p>
       <p>第二个弹出框内容</p>
@@ -34,11 +39,11 @@ var DialogContent = React.createClass({
       <p>第二个弹出框内容</p>
       <p>第二个弹出框内容</p>
       <div className="modal-footer">
-        <button className="kuma-button kuma-button-mwhite" onClick={this.props.onClose}>Close</button>
-        <button className="kuma-button kuma-button-mwhite" onClick={this.props.onDestroy} >destroy</button>
-        <button className="kuma-button kuma-button-mblue" onClick={this.props.handleSave}>Save changes</button>
+        <Button color="white" onClick={this.props.onClose}>Close</Button>
+        <Button onClick={this.props.onDestroy} >destroy</Button>
+        <Button onClick={this.onHandleSave}>Save changes</Button>
       </div>
-    </div>;
+    </div>);
   }
 });
 
@@ -91,14 +96,14 @@ var MyControl = React.createClass({
     }
     return (
       <div>
-        <button className="kuma-button kuma-button-mblue" onClick={this.handleTrigger}>show dialog</button>
+        <Button onClick={this.handleTrigger}>show dialog</Button>
       &nbsp;&nbsp;&nbsp;
         <label>
           <input type="checkbox" checked={this.state.closable} onChange={this.toggleClosable}/>
           closable
         </label>
       &nbsp;&nbsp;&nbsp;
-        <button className="kuma-button kuma-button-mblue" onClick={this.handleDestroy}>destroy</button>
+        <Button onClick={this.handleDestroy}>destroy</Button>
         <Dialog
           ref='dialog'
           title= "第二个弹框"

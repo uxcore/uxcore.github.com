@@ -1,8 +1,4 @@
-@blue: #288df0;
-@oranage: #FFB73E;
-@head-height: 60px;
-@borderColor: #e0e0e0;
-@collapseTransition: ease-out .25s;
+@import "./variables.less";
 @import "./font.less";
 @import "./animation.less";
 html, body {
@@ -256,6 +252,8 @@ body {
 		margin-bottom: 12px;
 		padding: 12px;
     	background-color: #fff;
+    	float:left;
+    	width:100%;
 	}
 }
 .highlight {
@@ -299,4 +297,23 @@ body {
 .site-home {
 	flex-grow: 1;
 	height: 100%;
+}
+.code-box-markdown{
+	clear:both;
+}
+
+tr{
+    border-bottom: 1px solid #666;
+    height:40px;
+}
+td{
+    width: 300px;
+}
+input[type='text'] {
+    min-width: 200px;
+    height: 30px;
+    line-height: 30px;
+}
+.kuma-form-row .kuma-button{
+	margin-left:50%;
 }

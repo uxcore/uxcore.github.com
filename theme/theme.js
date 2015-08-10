@@ -53,7 +53,8 @@ exports.reader = function(post){
         post.template = post.meta.template = 'demos';
     } else {
         if (post.template === 'components' || post.template === 'css') {
-            var moduleName = 'uxcore-' + post.directory.replace(post.template + '/', '');
+            var moduleName = 'uxcore-' + post.directory.replace(post.template, '');
+            moduleName = moduleName.replace(/[/\\]/g, '');
             var pkg = readFileFromNodeModules('package.json', moduleName);
             if (pkg) {
                 post.pkg = JSON.parse(pkg);
