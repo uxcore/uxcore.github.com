@@ -1,0 +1,36 @@
+#  触发事件
+
+- order: 3
+
+触发事件
+
+---
+
+````jsx
+var UD = require('uxcore-dropdown');
+var Dropdown = UD.Dropdown;
+var Menu = UD.Menu;
+
+var onClick = function ({key}){
+  alert('选中了菜单' + key);
+};
+
+var menu = <Menu onClick={onClick}>
+  <Menu.Item>
+    <a target="_blank" href="http://www.alipay.com/">第一个菜单项</a>
+  </Menu.Item>
+  <Menu.Item>
+    <a target="_blank" href="http://www.taobao.com/">第二个菜单项</a>
+  </Menu.Item>
+  <Menu.Item>
+    <a target="_blank" href="http://www.tmall.com/">第三个菜单项</a>
+  </Menu.Item>
+</Menu>;
+
+React.render(
+    <Dropdown overlay={menu}>
+        <button className="kuma-button kuma-button-sblue">触发事件</button>
+    </Dropdown>,
+    document.getElementById('components-dropdown-demo-events')
+);
+````

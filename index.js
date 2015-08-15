@@ -10,7 +10,8 @@ window.UXCORE = {
 	'uxcore-tooltip': require('uxcore-tooltip'),
 	'uxcore-tabs': require('uxcore-tabs'),
 	'uxcore-form': require('uxcore-form'),
-	'uxcore-grid': require('uxcore-grid')
+	'uxcore-grid': require('uxcore-grid'),
+	'uxcore-dropdown': require('uxcore-dropdown')
 };
 
 /*
