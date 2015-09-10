@@ -1,4 +1,4 @@
-require('./style/kuma/dist/uxcore-kuma.css');
+require('./style/kuma/src/less/kuma-webpack.less');
 require('./style/index.less');
 
 window.UXCORE = {
@@ -11,7 +11,8 @@ window.UXCORE = {
 	'uxcore-tabs': require('uxcore-tabs'),
 	'uxcore-form': require('uxcore-form'),
 	'uxcore-grid': require('uxcore-grid'),
-	'uxcore-dropdown': require('uxcore-dropdown')
+	'uxcore-dropdown': require('uxcore-dropdown'),
+	'uxcore-mention': require('uxcore-mention')
 };
 
 /*

@@ -10,169 +10,235 @@
 
 ---
 
-![](example/screenshot.png)
-
+## uxcore-form [![Dependency Status](http://img.shields.io/david/uxcore/uxcore-form.svg?style=flat-square)](https://david-dm.org/uxcore/uxcore-form) [![devDependency Status](http://img.shields.io/david/dev/uxcore/uxcore-form.svg?style=flat-square)](https://david-dm.org/uxcore/uxcore-form#info=devDependencies)
 
 ## TL;DR
 
-## Feature List/特性
+uxcore-form ui component for react
 
-
-## Usage 最佳实践
+#### setup develop environment
 
 ```sh
 $ git clone https://github.com/uxcore/uxcore-form
 $ cd uxcore-form
 $ npm install
-$ npm run dev
+$ gulp server
 ```
 
-### Apply scope
+## Usage
 
-* uxcore-form, including form common validation, layout etc
+> see demo/FormDemo.js for details  
+> 每一个 field 需要按照 Form -> FormRow -> FormField 的方式进行嵌套，允许 Form -> FormField 的嵌套，会自动增加 FormRow 这一层，并默认占一整行。
+
+```
+let classnames = require('classnames');
+let {Button, ButtonGroup} = require('uxcore-button');
+
+let Form = require('../src');
+let {
+    Constants,
+    FormRowTitle,
+    FormRow,
+    FormField,
+    InputFormField,
+    Validators,
+    RadioGroupFormField,
+    SelectFormField,
+    TextAreaFormField,
+    NumberInputFormField,
+    DateFormField,
+    CheckboxGroupFormField,
+    CascadeSelectFormField,
+    UploadFormField,
+    OtherFormField
+} = Form;
+
+let CheckboxItem = CheckboxGroupFormField.Item;
+
+class Demo extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+        }
+    }
+
+    handleClick() {
+        let me = this;
+        console.log(me.refs.form.getValues());
+    }
+
+    handleChange(value) {
+        console.log(value);
+    }
+
+    render() {
+        let me = this;
+        let data = {
+            test1: "我是测试",
+            fruit: "apple",
+            city: "nj",
+            textArea: "我是多行文本",
+            date: "2015-09-01",
+            checkbox: ["sea"]
+        }
+
+        return (
+            <div>
+                <Form ref="form" jsxmode={Constants.MODE.EDIT} jsxvalues={data} jsxonChange={me.handleChange.bind(me)}>
+                    <FormRowTitle jsxtitle="我是行标题"/>
+                    <FormRow>
+                        <InputFormField  
+                         jsxname="test1"
+                         jsxlabel="测试输入框"
+                         jsxplaceholder="请输入"
+                         jsxtips="请输入数字"
+                         jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}/>
+                        <RadioGroupFormField jsxname="fruit" jsxlabel="Fruit Type" jsxflex={1}>
+                                <input type="radio" value="apple" />Apple
+                                <input type="radio" value="orange" />Orange
+                                <input type="radio" value="watermelon" />Watermelon
+                        </RadioGroupFormField>
+                    </FormRow>
+                    <OtherFormField className="button-group">
+                        <ButtonGroup>
+                            <Button size="medium" onClick={me.handleClick.bind(me)}>提交</Button>
+                            <Button size="medium">重置</Button>
+                        </ButtonGroup>
+                    </OtherFormField>
+                </Form>
+            </div>
+        );
+    }
+};
+
+module.exports = Demo;
+```
+
+## Demo
+http://uxcore.github.io/uxcore/
 
 ## API
 
-*  Attr
+### Form
 
-    * jsxname
-    * jsxdata
-    * jsxmode
-    * jsxprefixCls
-    * jsxrule
-    * jsxvalue
-    * jsxdisabled
+* getValues() 获取目前的 values 和 pass（是否通过检测），在使用 onChange 函数监听的情况下意义不大。  
+* isDirty() 获取目前的数据是否没有通过检测。
 
-* Form API
+## props
 
-    * doValidate
-    * isDirty
+### Form
 
-* Form Field API
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|jsxprefixCls|string|optional|"kuma-form"|默认类名，用户可以通过修改此项来完成样式的定制|
+|jsxmode|string|optional|"EDIT"|Form 编辑和只读模式，传值方式见 demo|
+|jsxvalues|object|optional|-|传入表单的初始值，格式见 Usage，每一个 key 与 formField 中的 jsxname 相对应|
+|jsxonChange|function|optional|noop|当表单中值有变化时触发，传回 values，格式同 jsxvalues|
 
-    * handleChange
-    * doValidate
-    * renderField
-    * renderViewField
-    * isDirty
+### FormRow
 
-## how to contribute common form field
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|jsxprefixCls|string|optional|"kuma-form-row"|默认类名，用户可以通过修改此项来完成样式的定制|
 
-    ```
+### FormField 通用配置
 
-     right now just have input/select/radio FormField, missing like select2/checkbox/calendar etc
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|jsxshow|bool|optional|true|是否显示该表单域，不显示的表单域将不占宽度|
+|jsxname|string|required|-|表单字段，返回值时该字段将作为 key|
+|jsxlabel|string|required|-|左侧的说明文字，不写即为留白|
+|jsxprefixCls|string|optional|"kuma-form-field"|默认类名，用户可以通过修改此项来完成样式的定制|
+|jsxflex|number|optional|1|占 FormRow 宽的比例，类似于 css3 中的 flex-box|
+|jsxtips|string|optional|""|说明文字|
+|jsxrules|object/array|optional|-|validators，具体用法和格式见 Usage，Form 已经提供了一些现成的 validator 供使用。也可以自己编写|
 
-    ```
+### Validators
 
-    * extends FormField
-    * overwrite renderField/handleChange/getValue , see inputFormField.js implementation
+> Form 提供了一些通用的 validator，通过 Form.Validators 来引入。用法还是见 Usage 和 `demo/formDemo.js` 包括：
+> 所有的 validator 返回 true，表示通过。
+> validator 也可以自己定义，会传入相应的表单值，根据判断，返回 true，表示通过。
 
-## how to add custom form field
+* isNotEmpty
+* isNum
+* isInt: 是否是整数
+* isDecimal: 是否是小数
+* isArray
+* isRegExp
+* isObject
+* isFunc
+* isEmail
+* isUrl
+* isHex
+* isIdCard: 是否是中国身份证。
+* isCNMobile: 是否是中国手机号。
 
- - see the demo code
+### FormField 专属配置
+> 所有的 FormField 都共享通用配置，所有的专属配置在 `demo/formDemo.js`，均有体现。
 
-    ```
-     <FormRow>
-        <FormField jsxtext="Custom grid" jsxname="table" jsxtips="pls note" jsxrule={{required: true,message:"not empty"}} jsxvalue="table test">
-            <TableTest/>
-        </FormField>
-    </FormRow>
-    ```
+RadioGroupFormField
 
-- FormField prepare jsxmode, jsxvalue,handleDataChange callback and context for custom formfield
+* children：需要传入 input 来完成初始化
 
-    ```
-        return React.cloneElement(child, {
-            jsxmode:me.props.jsxmode,
-            jsxvalue: me.state.value,
-            handleDataChange: me.handleDataChange,
-            context: me
-        });
-    ```
- - so custom formfield use below data ,callback , do self logic implementation
+SelectFormField
 
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|jsxdata|object|optional|-|传入用于生成列表的数据，格式为{value: text}|
+|jsxfetchUrl|string|optional|-|如果 Select 是通过搜索异步获取选项，则需要填入此项，目前指支持 jsonp。|
+|jsxstyle|obj|optional|-|与 react 传入 style 的方式相同，修改 Field 的样式|
+|beforeFetch|func|optional|-|会传入 {q: value}， value 为搜索框中变化的值，在发出 ajax 请求之前，将数据处理为应该发送的格式，并需返回该数据。|
+|afterFetch|func|optional|-|会传入返回的数据， 将其处理为 jsxdata 的格式并返回|
+|jsxshowSearch|func|optional|true|是否显示搜索栏|
+|jsxtags|bool|optional|false|是否启用 tag 模式|
+|jsxmultiple|bool|optional|false|是否启用 multiple 模式|
+|jsxallowClear|bool|optional|false|是否显示清除按钮|
+|jsxsearchPlaceholder|string|optional|""|搜索框默认文字|
 
-## Vaidate mechanism
+see datails in [uxcore-select2](https://www.npmjs.com/package/uxcore-select2)
 
-*  jsxrule have the frist priority
-*  if no jsxrule, that's should be the custom field, so we invoke the
-custom field doValidate(data) method, and same time pass the whole form
-data for it, that should be enough for custom field validate requirement
-*  more information ,please see fieldField.js source code
+CheckboxGroupFormField
 
-## work flow
+* Item：通过 CheckboxGroupFormField.Item 取的，有两个 props
+    * value
+    * text：显示的值
 
-* Form-> Render-> FormField register to Form (this.fields) by jsxname
-* FormField -> Render -> view UI or Edit UI
-* FormField -> data Change -> use handleDataChange hook method pass back to Form
+DateFormField
 
-## Demo code
+支持出 onSelect 外，[uxcore-calendar](https://www.npmjs.com/package/uxcore-calendar) 的所有 props。
 
-* see example/demo.html when launch the webpack server
+NumberInputFormField
 
-````
-import React from 'react';
-import ExampleCode from "examplecode";
-import RCForm from "../index";
-import TableTest from "../__test/table"
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|jsxtype|string|optional|""|目前支持 "money", "cnmobile" 和 "card", 提供三种格式化显示的方法|
 
-let Form = RCForm.Form;
-let InputFormField = RCForm.InputFormField;
-let TextAreaFormField = RCForm.TextAreaFormField;
-let FormField = RCForm.FormField;
-let Button = RCForm.Button;
-let FormRow = RCForm.FormRow;
-let RadioGroupFormField= RCForm.RadioGroupFormField;
-let SelectFormField= RCForm.SelectFormField;
-let FormRowTitle= RCForm.FormRowTitle;
+UploadFormField
 
-var  Form1 = React.createClass({
-  doClick: function(){
-     this.refs.myform.doSave();
-  },
-  render: function() {
-    return <div>
-                <div className="site-type">多列表单22</div>
-                <div className="site-container">
-                <Form jsxmode="EDIT" ref="myform">
-                    <FormRowTitle title="Basic Information">sss</FormRowTitle>
-                    <FormRow>
-                        <InputFormField  jsxdisabled className="one-half"  jsxtext="Name"  jsxname="name" jsxtips="中文名称" jsxvalue="sss" jsxrule={{required: true , message: "not empty"}}/>
-                        <InputFormField  className="one-half"  jsxtext="Email" jsxname="email" jsxtips="Email格式"  jsxrule={{required: true,type:"email",message:"should be email"}}/>
-                    </FormRow>
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|jsxaction|string|required|-|上传文件的 url|
+|jsxparams|object|optional|-|随文件上传时传的参数|
+|jsxfileName|string|optional|原文件名|文件上传时的文件名|
+|jsxonStart|func|optional|noop|文件上传时触发|
+|jsxonError|func|optional|noop|上传失败时触发|
+|jsxonSuccess|func|optional|noop|上传成功时触发|
+|jsxonProgress|func|optional|noop|上传过程中触发|
 
-                    <FormRow>
-                        <TextAreaFormField  className="one-half" jsxtext="Introduce" jsxname="introduce" ></TextAreaFormField>
-                        <RadioGroupFormField  className="one-half" jsxtext="Fruit Type" jsxname="fruit"  jsxvalue=""   jsxrule={{required: true , message: "not empty"}}>
-                            <input type="radio" value="apple" />Apple
-                            <input type="radio" value="orange" />Orange
-                            <input type="radio" value="watermelon" />Watermelon
-                        </RadioGroupFormField>
-                    </FormRow>
+> 具体说明参考：https://github.com/uxcore/uxcore-rc-upload
 
-                    <FormRow>
-                        <InputFormField  className="one-half"  jsxtext="LALA" jsxname="lala" />
-                        <SelectFormField className="one-half"  jsxtext="City" jsxname="city">
-                            <option >请选择</option>
-                            <option value="bj" selected>北京</option>
-                            <option value="nj">南京</option>
-                            <option value="dj">东京</option>
-                            <option value="xj">西京</option>
-                        </SelectFormField>
-                    </FormRow>
-                    <FormRowTitle title="Grid">sss</FormRowTitle>
+CascadeSelectFormField
 
-                    <FormRow>
-                        <FormField jsxtext="Grid" jsxname="table" jsxtips="please note the grid cell input type" jsxrule={{required: true,message:"not empty"}} jsxvalue="table test">
-                            <TableTest/>
-                        </FormField>
-                    </FormRow>
-                    <FormRow><Button jsxtext="Submit" onClick={this.doClick.bind(this)} /></FormRow>
-                </Form>
-                </div>
-        </div>
-  }
-});
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|jsxstyle|obj|optional|-|与 react 传入 style 的方式相同，修改 Field 的样式|
 
-React.render(<Form1/>, document.getElementById('box1'))
-````
+### OtherFormField
+
+> OtherFormField 是一个特殊的 FormField，它用来和其他 FormField 一起完成布局（比如在一行排列等），如果需要一些装饰类的东西，可以以子元素的形式传入到这个 Field 里。
+> 他也可以用于布局中的占位。
+
+### ButtonGroupField
+
+> ButtonGroupField 是一个特殊的 FormField，它用来生成一些特定的表单按钮，这是为了与 Grid 相结合而准备的。如果需要自定义一些按钮，请使用 OtherFormField 和 uxcore-button 相结合来使用。
