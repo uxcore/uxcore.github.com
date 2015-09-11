@@ -1,199 +1,475 @@
-<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/uxcore/static/uxcore.css"><link rel="stylesheet" href="/uxcore/static/github-gist.min.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react.js"></script><script src="/uxcore/static/highlight.min.js"></script><script src="/uxcore/static/uxcore.js"></script><script>(function(w){
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/uxcore/static/uxcore.css"><link rel="stylesheet" href="/uxcore/static/github-gist.min.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react-with-addons.min.js"></script><script src="/uxcore/static/highlight.min.js"></script><script src="/uxcore/static/rangy-core.min.js"></script><script src="/uxcore/static/uxcore.js"></script><script>(function(w){
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/kuma/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/components/calendar">Calendar</a></li><li><a href="/uxcore/components/dialog">Dialog</a></li><li><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li><a href="/uxcore/components/tooltip">Tooltip</a></li><li><a href="/uxcore/components/tabs">Tabs</a></li><li class="current"><a href="/uxcore/components/grid">Grid</a></li><li><a href="/uxcore/components/form">Form</a></li><li><a href="/uxcore/components/dropdown">Dropdown</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Grid</h1><section class="meta"><span class="author"><b>author: </b></span><span class="github"><b>github: </b><a href="git+ssh://git@github.com/uxcore/grid.git" target="_blank">Grid</a></span><span class="version"> <b>版本: </b>1.0.0</span><span class="description"><b>描述: </b>grid ui component for react</span></section></header><div id="J-markdown" class="markdown"><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Grid = require(<span class="string">'uxcore-grid'</span>);
-
-<span class="keyword">var</span> renderProps={
-    headerHeight:<span class="number">50</span>,
-    width:<span class="number">700</span>,
-    height:<span class="number">500</span>,
-    columnPicker: <span class="literal">true</span>,
-    onPageChange: <span class="keyword">this</span>.onPageChange,
-    onModifyRow: <span class="keyword">this</span>.onModifyRow,
-    rowSelection: rowSelection,
-    jsxdata:<span class="keyword">this</span>.state.data,
-    jsxcolumns:columns
-};
-
-React.render(
-  <span class="xml"><span class="tag">&lt;<span class="title">Grid</span> {<span class="attribute">...renderProps</span>} /&gt;</span>,
-  document.getElementById('target'));</span></code></pre></div><h2 id="development">development</h2><pre>$ git clone https://github.com/uxcore/grid
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/kuma/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/components/calendar">Calendar</a></li><li><a href="/uxcore/components/dialog">Dialog</a></li><li><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li><a href="/uxcore/components/tooltip">Tooltip</a></li><li><a href="/uxcore/components/tabs">Tabs</a></li><li class="current"><a href="/uxcore/components/grid">Grid</a></li><li><a href="/uxcore/components/form">Form</a></li><li><a href="/uxcore/components/dropdown">Dropdown</a></li><li><a href="/uxcore/components/mention">Mention</a></li><li><a href="/uxcore/components/tree">Tree</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Grid</h1><section class="meta"><span class="author"><b>author: </b>zhouquan.yezq</span><span class="github"><b>github: </b><a href="git+https://github.com/uxcore/uxcore-grid.git" target="_blank">Grid</a></span><span class="version"> <b>版本: </b>1.0.3</span><span class="description"><b>描述: </b>grid ui component for react</span></section></header><div id="J-markdown" class="markdown"><p><img src="https://github.com/uxcore/uxcore-grid/raw/master/demo/screenshot.png" alt=""></p>
+<h2 id="how-to-run">How to run</h2><pre>$ git clone https://github.com/uxcore/uxcore-grid
 $ cd grid
 $ npm install
-$ npm run dev</pre><h2 id="api">API</h2><p>todo</p>
+$ gulp server</pre><h2 id="best-practice">Best Practice</h2><div class="highlight"><pre><code class="javascript">
+    <span class="keyword">let</span> columns = [
+        { dataKey: <span class="string">'id'</span>, title: <span class="string">'ID'</span>, width: <span class="number">50</span>,hidden:<span class="literal">true</span>},
+        { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">200</span>,ordered:<span class="literal">true</span>},
+        { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>,ordered:<span class="literal">true</span> },
+        { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span> },  
+        { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
+        { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,ordered:<span class="literal">true</span> }
+    ],
+
+
+    rowSelection = {
+      onSelect: <span class="function"><span class="keyword">function</span><span class="params">(record, selected, selectedRows)</span> {</span>
+        console.log(record, selected, selectedRows);
+      },
+      onSelectAll: <span class="function"><span class="keyword">function</span><span class="params">(selected, selectedRows)</span> {</span>
+        console.log(selected, selectedRows);
+      }
+    },
+
+    renderProps={
+        actionBar: {
+           <span class="string">'new'</span>: <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span> alert(<span class="string">'new'</span>); },
+           <span class="string">'import'</span>: <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span> alert(<span class="string">'import'</span>); },
+           <span class="string">'export'</span>: <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span> alert(<span class="string">'export'</span>); },
+           <span class="string">'search'</span>: <span class="literal">true</span>,
+           <span class="string">'subComp'</span>:<span class="string">''</span> <span class="comment">//TODO</span>
+        },
+        fetchUrl:<span class="string">"http://localhost:3000/demo/data.json"</span>,
+        jsxcolumns:columns,
+        subComp:(<span class="xml"><span class="tag">&lt;<span class="title">Grid</span> {<span class="attribute">...renderSubProps</span>}  <span class="attribute">ref</span>=<span class="value">"subGrid"</span>/&gt;</span>),
+        rowSelection: rowSelection
+    },
+
+    renderSubProps={
+        jsxcolumns:columns,
+        fetchUrl:"http://localhost:3000/demo/data.json",
+        queryKeys:["dataKey","firstName"],
+        onModifyRow: this.onModifyRow
+    };
+
+    <span class="tag">&lt;<span class="title">Grid</span> {<span class="attribute">...renderProps</span>} /&gt;</span></span></code></pre></div><h3 id="props">Props</h3><table>
+<thead>
+<tr>
+<th>props name</th>
+<th>defalut Value</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>100%</td>
+<td>grid width</td>
+<td></td>
+</tr>
+<tr>
+<td>height</td>
+<td>100%</td>
+<td>gird height</td>
+<td></td>
+</tr>
+<tr>
+<td>showColumnPicker</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>showPager</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>pageSize</td>
+<td>10</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>showHeader</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>headerHeight</td>
+<td>50</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>showMask</td>
+<td>true</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>queryKeys</td>
+<td>[]</td>
+<td>like subComp,it need some query key/value form parent</td>
+<td></td>
+</tr>
+<tr>
+<td>fetchUrl</td>
+<td>&quot;&quot;</td>
+<td>dynamic get data from server</td>
+<td></td>
+</tr>
+<tr>
+<td>fetchParams</td>
+<td>&quot;&quot;</td>
+<td>in form-grid mode, form will pass fetch params for grid</td>
+<td></td>
+</tr>
+<tr>
+<td>actionBar</td>
+<td>null</td>
+<td>actionBar configuration</td>
+<td></td>
+</tr>
+<tr>
+<td>jsxcolumns</td>
+<td>null</td>
+<td>columns config</td>
+<td></td>
+</tr>
+<tr>
+<td>jsxdata</td>
+<td>null</td>
+<td>grid data</td>
+<td></td>
+</tr>
+<tr>
+<td>passedData</td>
+<td>null</td>
+<td>Parent Component passed data</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="columns">Columns</h3><table>
+<thead>
+<tr>
+<th>Key Name</th>
+<th>require</th>
+<th>value type</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dataKey</td>
+<td>yes</td>
+<td>string</td>
+<td>use key</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>yes</td>
+<td>string</td>
+<td>column display name</td>
+<td></td>
+</tr>
+<tr>
+<td>width</td>
+<td>yes</td>
+<td>number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>optional</td>
+<td>boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>order</td>
+<td>optional</td>
+<td>boolean</td>
+<td>need order feature or not</td>
+<td></td>
+</tr>
+<tr>
+<td>type</td>
+<td>optional</td>
+<td>string</td>
+<td>right now support {type:&#39;action&#39;}</td>
+<td></td>
+</tr>
+<tr>
+<td>items</td>
+<td>yes</td>
+<td>array</td>
+<td>when type==&#39;action&#39;, we need this attr</td>
+<td></td>
+</tr>
+<tr>
+<td>render</td>
+<td>optional</td>
+<td>function</td>
+<td>for custom cell</td>
+</tr>
+</tbody>
+</table>
+<pre>
+let columns = [
+            { dataKey: &#39;id&#39;, title: &#39;ID&#39;, width: 50,hidden:true},
+            { dataKey: &#39;country&#39;, title:&#39;国家&#39;, width: 200,ordered:true},
+            { dataKey: &#39;city&#39;,title:&#39;城市&#39;, width: 150,ordered:true },
+            { dataKey: &#39;firstName&#39;,title:&quot;FristName&quot; },  
+            { dataKey: &#39;lastName&#39; ,title:&quot;LastName&quot;},
+            { dataKey: &#39;email&#39;,title:&quot;Email&quot;,width: 200,ordered:true },
+            { dataKey: &#39;action1&#39;, title:&#39;操作1&#39;, width:100, type:&quot;action&quot;,items:[
+              {title:&#39;编辑&#39;, type:&quot;inlineEdit&quot;, cb: function(rowData){console.info(rowData)}},
+              {title:&#39;删除&#39;, type:&quot;del&quot;, cb: function(rowData){console.info(rowData)}}
+            ]},
+            { dataKey: &#39;action&#39;, title:&#39;链接&#39;, width:100,render: function(rowData){
+               return &lt;div&gt;&lt;a href=&quot;#&quot;&gt;{rowData.email}&lt;/a&gt;&lt;/div&gt;
+              }
+            }
+     ]</pre><h3 id="rules">Rules</h3><ul>
+<li><p>return data format <a href="http://gitlab.alibaba-inc.com/alinw/yosemite/issues/18">here</a></p>
+<pre>{
+&quot;content&quot;:{
+        &quot;datas&quot;:[
+            {
+                &quot;id&quot;:&#39;1&#39;
+                &quot;grade&quot;:&quot;grade1&quot;,
+                &quot;email&quot;:&quot;email1&quot;,
+                &quot;firstName&quot;:&quot;firstName1&quot;,
+                &quot;lastName&quot;:&quot;lastName1&quot;,
+                &quot;birthDate&quot;:&quot;birthDate1&quot;,
+                &quot;country&quot;:&quot;country1&quot;,
+                &quot;city&quot;:&quot;city1&quot;
+            }
+            ...
+
+        ],
+        &quot;currentPage&quot;:1,
+        &quot;totalCount&quot;:30
+    },
+    &quot;success&quot;:true,
+    &quot;errorCode&quot;:&quot;&quot;,
+    &quot;errorMsg&quot;:&quot;&quot;
+}</pre></li>
+</ul>
 </div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-grid-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>基本</em></div></div><div class="code-box-demo"><div id="components-grid-demo-basic"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var Grid = require('uxcore-grid');
-var gen = (function () {
 
-    var cache = {};
+var Demo = (function (_React$Component) {
+  _inherits(Demo, _React$Component);
 
-    return function (len, pageIndex) {
+  function Demo(props) {
+    _classCallCheck(this, Demo);
 
-        if (cache[len]) {
-            // return cache[len]
-        }
-
-        var arr = [],
-            started = (pageIndex - 1) * len;
-        for (var i = 0; i < len; i++) {
-            var num = started + i + 1;
-            arr.push({
-                //jsxchecked: i % 3 === 0,
-                id: num,
-                grade: Math.round(Math.random() * 10),
-                email: num + '@gmail.com',
-                firstName: num + '_firstName',
-                lastName: num + '_lastName',
-                birthDate: num + '_birthDate',
-                country: num + '_country',
-                city: num + '_city'
-            });
-        }
-
-        cache[len] = arr;
-
-        return arr;
+    _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+    this.state = {
+      data: this.props.data
     };
-})();
-
-// title, width, type, hidden,dataKey
-var columns = [{ dataKey: 'id', title: 'ID', width: 50, hidden: true }, { dataKey: 'country', title: '国家', width: 200, type: 'text' }, { dataKey: 'city', title: '城市', width: 150 }, { dataKey: 'firstName', title: "FristName" }, { dataKey: 'lastName', title: "LastName", type: 'text' }, { dataKey: 'email', title: "Email", width: 200, type: "text" }];
-
-var data = gen(20, 1);
-
-// 通过 rowSelection 对象表明需要行选择
-var rowSelection = {
-    onSelect: function onSelect(record, selected, selectedRows) {
-        console.log(record, selected, selectedRows);
-    },
-    onSelectAll: function onSelectAll(selected, selectedRows) {
-        console.log(selected, selectedRows);
-    }
-};
-
-var App = React.createClass({
-    displayName: 'App',
-
-    getInitialState: function getInitialState() {
-        return {
-            data: this.props.data
-        };
-    },
-    onPageChange: function onPageChange(pageIndex) {
-        this.setState({
-            data: gen(20, pageIndex)
-        });
-    },
-    onModifyRow: function onModifyRow(record) {
-        //doValidate
-        return true;
-    },
-    render: function render() {
-        var renderProps = {
-            headerHeight: 50,
-            width: 700,
-            height: 500,
-            columnPicker: true,
-            onPageChange: this.onPageChange,
-            onModifyRow: this.onModifyRow,
-            rowSelection: rowSelection,
-            jsxdata: this.state.data,
-            jsxcolumns: columns
-        };
-        return React.createElement(Grid, _extends({}, renderProps, { ref: 'grid' }));
-    }
-});
-
-React.render(React.createElement(App, { data: data }), document.getElementById('components-grid-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Grid = require(<span class="string">'uxcore-grid'</span>);
-<span class="keyword">var</span> gen = (<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
-
-    <span class="keyword">var</span> cache = {}
-
-    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">(len,pageIndex)</span>{</span>
-
-        <span class="keyword">if</span> (cache[len]){
-            <span class="comment">// return cache[len]</span>
-        }
-
-        <span class="keyword">var</span> arr = [], started= (pageIndex-<span class="number">1</span>)*len;
-        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++){
-            <span class="keyword">var</span> num= started+i+<span class="number">1</span>;
-            arr.push({
-                <span class="comment">//jsxchecked: i % 3 === 0,</span>
-                id       : num,
-                grade      : Math.round(Math.random() * <span class="number">10</span>),
-                email    : num + <span class="string">'@gmail.com'</span>,
-                firstName: num + <span class="string">'_firstName'</span>,
-                lastName : num + <span class="string">'_lastName'</span>,
-                birthDate: num + <span class="string">'_birthDate'</span>,
-                country  : num + <span class="string">'_country'</span>,
-                city  : num + <span class="string">'_city'</span>,
-            })
-        }
-
-        cache[len] = arr
-
-        <span class="keyword">return</span> arr
-    }
-})()
-
-
-<span class="comment">// title, width, type, hidden,dataKey</span>
-<span class="keyword">var</span> columns = [
-    { dataKey: <span class="string">'id'</span>, title: <span class="string">'ID'</span>, width: <span class="number">50</span>,hidden:<span class="literal">true</span>},
-    { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">200</span>, type:<span class="string">'text'</span>},
-    { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span> },
-    { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span> },  
-    { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>,type:<span class="string">'text'</span>},
-    { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span> ,type:<span class="string">"text"</span>}
-]
-
-<span class="keyword">var</span> data= gen(<span class="number">20</span>,<span class="number">1</span>);
-
-<span class="comment">// 通过 rowSelection 对象表明需要行选择</span>
-<span class="keyword">var</span> rowSelection = {
-  onSelect: <span class="function"><span class="keyword">function</span><span class="params">(record, selected, selectedRows)</span> {</span>
-    console.log(record, selected, selectedRows);
-  },
-  onSelectAll: <span class="function"><span class="keyword">function</span><span class="params">(selected, selectedRows)</span> {</span>
-    console.log(selected, selectedRows);
   }
+
+  _createClass(Demo, [{
+    key: 'onModifyRow',
+    value: function onModifyRow(value, dataKey, record) {
+      //doValidate
+      //debugger;
+      //return false;
+      return true;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      console.log("demo render");
+      var me = this;
+      // 通过 rowSelection 对象表明需要行选择
+      var rowSelection = {
+        onSelect: function onSelect(record, selected, selectedRows) {
+          console.log(record, selected, selectedRows);
+        },
+        onSelectAll: function onSelectAll(selected, selectedRows) {
+          console.log(selected, selectedRows);
+        }
+      };
+
+      var doAction = function doAction(rowData, e) {
+        var el = $(e.target);
+        if (el.hasClass('action')) {
+          if (el.data('type') == 'edit') {
+            console.info(rowData, el.data('type'));
+          } else if (el.data('type') == 'del') {
+            console.info(rowData, el.data('type'));
+          }
+        }
+      };
+      // title, width, type, hidden,dataKey
+      var columns = [{ dataKey: 'id', title: 'ID', width: 50, hidden: true }, { dataKey: 'country', title: '国家', width: 200, ordered: true }, { dataKey: 'city', title: '城市', width: 150, ordered: true }, { dataKey: 'firstName', title: "FristName" }, { dataKey: 'lastName', title: "LastName" }, { dataKey: 'email', title: "Email", width: 200, ordered: true }, { dataKey: 'action1', title: '操作1', width: 100, type: "action", items: [{ title: '编辑', type: "inlineEdit", cb: function cb(rowData) {
+            console.info(rowData);
+          } }, { title: '删除', type: "del", cb: function cb(rowData) {
+            console.info(rowData);
+          } }] }, { dataKey: 'action', title: '链接', width: 100, render: function render(rowData) {
+          return React.createElement(
+            'div',
+            null,
+            React.createElement(
+              'a',
+              { href: '#' },
+              rowData.email
+            )
+          );
+        }
+      }];
+
+      var renderSubProps = {
+        showHeader: false,
+        showPager: false,
+        //showMask:false,
+        jsxcolumns: columns,
+        fetchUrl: "/static/data.json",
+        queryKeys: ["dataKey", "firstName"],
+        onModifyRow: this.onModifyRow
+      };
+
+      var renderProps = {
+        height: 400,
+        actionBar: {
+          'new': function _new() {
+            alert('new');
+          },
+          'import': function _import() {
+            alert('import');
+          },
+          'export': function _export() {
+            alert('export');
+          },
+          'search': true,
+          'subComp': '' //TODO
+        },
+        actionColumn: {
+          'edit': function edit() {},
+          'del': function del() {}
+        },
+        fetchParams: '',
+        fetchUrl: "/static/data.json",
+        jsxcolumns: columns,
+        subComp: React.createElement(Grid, _extends({}, renderSubProps, { ref: 'subGrid' })),
+        //onModifyRow: this.onModifyRow,
+        rowSelection: rowSelection
+      };
+      return React.createElement(Grid, _extends({}, renderProps, { ref: 'grid' }));
+    }
+  }]);
+
+  return Demo;
+})(React.Component);
+
+;
+
+React.render(React.createElement(Demo, null), document.getElementById('components-grid-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Grid = require(<span class="string">'uxcore-grid'</span>);
+
+class Demo extends React.Component {
+
+    constructor(props) {
+        super(props);
+        <span class="keyword">this</span>.state = {
+           data:<span class="keyword">this</span>.props.data
+        }
+    }
+
+    onModifyRow(value,dataKey,record) {
+        <span class="comment">//doValidate</span>
+        <span class="comment">//debugger;</span>
+        <span class="comment">//return false;</span>
+        <span class="keyword">return</span> <span class="literal">true</span>;
+    }
+
+      render () {
+        console.log(<span class="string">"demo render"</span>);
+        <span class="keyword">let</span> me=<span class="keyword">this</span>;
+        <span class="comment">// 通过 rowSelection 对象表明需要行选择</span>
+        <span class="keyword">let</span> rowSelection = {
+          onSelect: <span class="function"><span class="keyword">function</span><span class="params">(record, selected, selectedRows)</span> {</span>
+            console.log(record, selected, selectedRows);
+          },
+          onSelectAll: <span class="function"><span class="keyword">function</span><span class="params">(selected, selectedRows)</span> {</span>
+            console.log(selected, selectedRows);
+          }
+        };
+
+        <span class="keyword">let</span> doAction= <span class="function"><span class="keyword">function</span><span class="params">(rowData,e)</span> {</span>
+            <span class="keyword">let</span> el=$(e.target);
+            <span class="keyword">if</span>(el.hasClass(<span class="string">'action'</span>)) {
+               <span class="keyword">if</span>( el.data(<span class="string">'type'</span>) ==<span class="string">'edit'</span>) {
+                  console.info(rowData,el.data(<span class="string">'type'</span>));
+               }<span class="keyword">else</span> <span class="keyword">if</span>(el.data(<span class="string">'type'</span>) ==<span class="string">'del'</span>) {
+                 console.info(rowData,el.data(<span class="string">'type'</span>));
+               }
+            }
+        }
+        <span class="comment">// title, width, type, hidden,dataKey</span>
+        <span class="keyword">let</span> columns = [
+            { dataKey: <span class="string">'id'</span>, title: <span class="string">'ID'</span>, width: <span class="number">50</span>,hidden:<span class="literal">true</span>},
+            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">200</span>,ordered:<span class="literal">true</span>},
+            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>,ordered:<span class="literal">true</span> },
+            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span> },  
+            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
+            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,ordered:<span class="literal">true</span> },
+            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,items:[
+              {title:<span class="string">'编辑'</span>, type:<span class="string">"inlineEdit"</span>, cb: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>console.info(rowData)}},
+              {title:<span class="string">'删除'</span>, type:<span class="string">"del"</span>, cb: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>console.info(rowData)}}
+            ]},
+            { dataKey: <span class="string">'action'</span>, title:<span class="string">'链接'</span>, width:<span class="number">100</span>,render: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>
+               <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>{rowData.email}<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+              }
+            }
+        ]
+
+        let renderSubProps={
+            showHeader:false,
+            showPager:false,
+            //showMask:false,
+            jsxcolumns:columns,
+            fetchUrl:"/static/data.json",
+            queryKeys:["dataKey","firstName"],
+            onModifyRow: this.onModifyRow
+        };
+
+        let renderProps={
+            height: 400,
+            actionBar: {
+               'new': function(){ alert('new'); },
+               'import': function(){ alert('import'); },
+               'export': function(){ alert('export'); },
+               'search': true,
+               'subComp':'' //TODO
+            },
+            actionColumn: {
+               'edit': function() {},
+               'del': function() {}
+            },
+            fetchParams:'',
+            fetchUrl: "/static/data.json",
+            jsxcolumns:columns,
+            subComp:(<span class="tag">&lt;<span class="title">Grid</span> {<span class="attribute">...renderSubProps</span>}  <span class="attribute">ref</span>=<span class="value">"subGrid"</span>/&gt;</span>),
+            //onModifyRow: this.onModifyRow,
+            rowSelection: rowSelection
+        };
+        return (<span class="tag">&lt;<span class="title">Grid</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"grid"</span>/&gt;</span>);
+      }
 };
 
-<span class="keyword">var</span> App = React.createClass({
-
-      getInitialState: <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
-        <span class="keyword">return</span> {
-            data:<span class="keyword">this</span>.props.data
-        }
-      },
-      onPageChange: <span class="function"><span class="keyword">function</span><span class="params">(pageIndex)</span> {</span>
-          <span class="keyword">this</span>.setState({
-             data: gen(<span class="number">20</span>,pageIndex)
-          })
-      },
-      onModifyRow: <span class="function"><span class="keyword">function</span><span class="params">(record)</span> {</span>
-        <span class="comment">//doValidate</span>
-        <span class="keyword">return</span> <span class="literal">true</span>;
-      },
-      render: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
-        <span class="keyword">var</span> renderProps={
-            headerHeight:<span class="number">50</span>,
-            width:<span class="number">700</span>,
-            height:<span class="number">500</span>,
-            columnPicker: <span class="literal">true</span>,
-            onPageChange: <span class="keyword">this</span>.onPageChange,
-            onModifyRow: <span class="keyword">this</span>.onModifyRow,
-            rowSelection: rowSelection,
-            jsxdata:<span class="keyword">this</span>.state.data,
-            jsxcolumns:columns
-        };
-        <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="title">Grid</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"grid"</span>/&gt;</span>);
-      }
-});
-
-React.render(<span class="tag">&lt;<span class="title">App</span> <span class="attribute">data</span>=<span class="value">{data}</span>/&gt;</span>, document.getElementById('components-grid-demo-basic'))</span></code></pre></div></div></div></article></div></body></html>
+React.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-grid-demo-basic'))</span></code></pre></div></div></div></article></div></body></html>
