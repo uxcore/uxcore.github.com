@@ -6,7 +6,6 @@
 
 ````jsx
 let {Button, ButtonGroup} = require('uxcore-button');
-
 let Form = require('uxcore-form');
 let {
     Constants,
@@ -23,7 +22,8 @@ let {
     CheckboxGroupFormField,
     CascadeSelectFormField,
     UploadFormField,
-    OtherFormField
+    OtherFormField,
+    ButtonGroupFormField
 } = Form;
 
 let CheckboxItem = CheckboxGroupFormField.Item;
@@ -39,6 +39,10 @@ class Demo extends React.Component {
     handleClick() {
         let me = this;
         console.log(me.refs.form.getValues());
+    }
+
+    handleFormClick(data) {
+        console.log(data)
     }
 
     handleChange(value) {
@@ -134,7 +138,7 @@ class Demo extends React.Component {
 
         return (
             <div>
-                <Form ref="form" jsxmode={Constants.MODE.EDIT} jsxvalues={data} jsxonChange={me.handleChange.bind(me)}>
+                <Form ref="form" jsxmode={Constants.MODE.EDIT} passedData={data} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField  
@@ -148,7 +152,9 @@ class Demo extends React.Component {
                                 <input type="radio" value="orange" />Orange
                                 <input type="radio" value="watermelon" />Watermelon
                         </RadioGroupFormField>
-
+                        <ButtonGroupFormField jsxshow={false}>
+                            <Button size="medium" type="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
+                        </ButtonGroupFormField>
                     </FormRow>
                     <FormRow>
                         <SelectFormField
@@ -205,13 +211,9 @@ class Demo extends React.Component {
                      jsxstyle={{
                         width: 200
                      }}/>
-
-                    <OtherFormField className="button-group">
-                        <ButtonGroup>
-                            <Button size="medium" onClick={me.handleClick.bind(me)}>提交</Button>
-                            <Button size="medium">重置</Button>
-                        </ButtonGroup>
-                    </OtherFormField>
+                    <ButtonGroupFormField>
+                        <Button size="medium" type="submit" onClick={me.handleFormClick.bind(me)}>提交</Button>
+                    </ButtonGroupFormField>
                 </Form>
             </div>
         );

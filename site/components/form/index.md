@@ -4,8 +4,8 @@
 - tag: uxcore, form
 - description: stupid form
 - maintainers: 骁勇
-- version: 1.0.1
-- lastupdate: 8/8/2015
+- version: 1.0.5
+- lastupdate: 2015/9/10
 - screenshots: example/screenshot.png
 
 ---

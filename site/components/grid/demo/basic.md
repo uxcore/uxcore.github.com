@@ -5,93 +5,99 @@
 ---
 
 ````jsx
-var Grid = require('uxcore-grid');
-var gen = (function(){
+let Grid = require('uxcore-grid');
 
-    var cache = {}
+class Demo extends React.Component {
 
-    return function(len,pageIndex){
-
-        if (cache[len]){
-            // return cache[len]
+    constructor(props) {
+        super(props);
+        this.state = {
+           data:this.props.data
         }
-
-        var arr = [], started= (pageIndex-1)*len;
-        for (var i = 0; i < len; i++){
-            var num= started+i+1;
-            arr.push({
-                //jsxchecked: i % 3 === 0,
-                id       : num,
-                grade      : Math.round(Math.random() * 10),
-                email    : num + '@gmail.com',
-                firstName: num + '_firstName',
-                lastName : num + '_lastName',
-                birthDate: num + '_birthDate',
-                country  : num + '_country',
-                city  : num + '_city',
-            })
-        }
-
-        cache[len] = arr
-
-        return arr
     }
-})()
 
-
-// title, width, type, hidden,dataKey
-var columns = [
-    { dataKey: 'id', title: 'ID', width: 50,hidden:true},
-    { dataKey: 'country', title:'国家', width: 200, type:'text'},
-    { dataKey: 'city',title:'城市', width: 150 },
-    { dataKey: 'firstName',title:"FristName" },  
-    { dataKey: 'lastName' ,title:"LastName",type:'text'},
-    { dataKey: 'email',title:"Email",width: 200 ,type:"text"}
-]
-
-var data= gen(20,1);
-
-// 通过 rowSelection 对象表明需要行选择
-var rowSelection = {
-  onSelect: function(record, selected, selectedRows) {
-    console.log(record, selected, selectedRows);
-  },
-  onSelectAll: function(selected, selectedRows) {
-    console.log(selected, selectedRows);
-  }
-};
-
-var App = React.createClass({
-
-      getInitialState: function(){
-        return {
-            data:this.props.data
-        }
-      },
-      onPageChange: function(pageIndex) {
-          this.setState({
-             data: gen(20,pageIndex)
-          })
-      },
-      onModifyRow: function(record) {
+    onModifyRow(value,dataKey,record) {
         //doValidate
+        //debugger;
+        //return false;
         return true;
-      },
-      render: function() {
-        var renderProps={
-            headerHeight:50,
-            width:700,
-            height:500,
-            columnPicker: true,
-            onPageChange: this.onPageChange,
-            onModifyRow: this.onModifyRow,
-            rowSelection: rowSelection,
-            jsxdata:this.state.data,
-            jsxcolumns:columns
+    }
+
+      render () {
+        console.log("demo render");
+        let me=this;
+        // 通过 rowSelection 对象表明需要行选择
+        let rowSelection = {
+          onSelect: function(record, selected, selectedRows) {
+            console.log(record, selected, selectedRows);
+          },
+          onSelectAll: function(selected, selectedRows) {
+            console.log(selected, selectedRows);
+          }
+        };
+
+        let doAction= function(rowData,e) {
+            let el=$(e.target);
+            if(el.hasClass('action')) {
+               if( el.data('type') =='edit') {
+                  console.info(rowData,el.data('type'));
+               }else if(el.data('type') =='del') {
+                 console.info(rowData,el.data('type'));
+               }
+            }
+        }
+        // title, width, type, hidden,dataKey
+        let columns = [
+            { dataKey: 'id', title: 'ID', width: 50,hidden:true},
+            { dataKey: 'country', title:'国家', width: 200,ordered:true},
+            { dataKey: 'city',title:'城市', width: 150,ordered:true },
+            { dataKey: 'firstName',title:"FristName" },  
+            { dataKey: 'lastName' ,title:"LastName"},
+            { dataKey: 'email',title:"Email",width: 200,ordered:true },
+            { dataKey: 'action1', title:'操作1', width:100, type:"action",items:[
+              {title:'编辑', type:"inlineEdit", cb: function(rowData){console.info(rowData)}},
+              {title:'删除', type:"del", cb: function(rowData){console.info(rowData)}}
+            ]},
+            { dataKey: 'action', title:'链接', width:100,render: function(rowData){
+               return <div><a href="#">{rowData.email}</a></div>
+              }
+            }
+        ]
+
+        let fetchUrl = '../../static/data.json';
+        let renderSubProps={
+            showHeader:false,
+            showPager:false,
+            //showMask:false,
+            jsxcolumns:columns,
+            fetchUrl: fetchUrl,
+            queryKeys:["dataKey","firstName"],
+            onModifyRow: this.onModifyRow
+        };
+
+        let renderProps={
+            height: 400,
+            actionBar: {
+               'new': function(){ alert('new'); },
+               'import': function(){ alert('import'); },
+               'export': function(){ alert('export'); },
+               'search': true,
+               'subComp':'' //TODO
+            },
+            actionColumn: {
+               'edit': function() {},
+               'del': function() {}
+            },
+            fetchParams:'',
+            fetchUrl: fetchUrl,
+            jsxcolumns:columns,
+            subComp:(<Grid {...renderSubProps}  ref="subGrid"/>),
+            //onModifyRow: this.onModifyRow,
+            rowSelection: rowSelection
         };
         return (<Grid {...renderProps}  ref="grid"/>);
       }
-});
+};
 
-React.render(<App data={data}/>, document.getElementById('components-grid-demo-basic'))
+React.render(<Demo />, document.getElementById('components-grid-demo-basic'))
 ````

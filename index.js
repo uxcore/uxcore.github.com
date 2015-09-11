@@ -12,7 +12,8 @@ window.UXCORE = {
 	'uxcore-form': require('uxcore-form'),
 	'uxcore-grid': require('uxcore-grid'),
 	'uxcore-dropdown': require('uxcore-dropdown'),
-	'uxcore-mention': require('uxcore-mention')
+	'uxcore-mention': require('uxcore-mention'),
+	'uxcore-tree': require('uxcore-tree')
 };
 
 /*

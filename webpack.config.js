@@ -19,18 +19,8 @@ module.exports = {
     },
 
     externals: {
-        'react': {
-            root: 'React',
-            commonjs2: 'react',
-            commonjs: 'react',
-            amd: 'react'
-        },
-        'jquery': {
-            root: 'jQuery',
-            commonjs2: 'jquery',
-            commonjs: 'jquery',
-            amd: 'jquery'
-        }
+        react: 'var React',
+        rangy: 'var rangy'
     },
 
     module: {
