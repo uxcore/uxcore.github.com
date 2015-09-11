@@ -334,12 +334,13 @@ var Demo = (function (_React$Component) {
         }
       }];
 
+      var fetchUrl = '../../static/data.json';
       var renderSubProps = {
         showHeader: false,
         showPager: false,
         //showMask:false,
         jsxcolumns: columns,
-        fetchUrl: "/static/data.json",
+        fetchUrl: fetchUrl,
         queryKeys: ["dataKey", "firstName"],
         onModifyRow: this.onModifyRow
       };
@@ -364,7 +365,7 @@ var Demo = (function (_React$Component) {
           'del': function del() {}
         },
         fetchParams: '',
-        fetchUrl: "/static/data.json",
+        fetchUrl: fetchUrl,
         jsxcolumns: columns,
         subComp: React.createElement(Grid, _extends({}, renderSubProps, { ref: 'subGrid' })),
         //onModifyRow: this.onModifyRow,
@@ -438,12 +439,13 @@ class Demo extends React.Component {
             }
         ]
 
+        let fetchUrl = '../../static/data.json';
         let renderSubProps={
             showHeader:false,
             showPager:false,
             //showMask:false,
             jsxcolumns:columns,
-            fetchUrl:"/static/data.json",
+            fetchUrl: fetchUrl,
             queryKeys:["dataKey","firstName"],
             onModifyRow: this.onModifyRow
         };
@@ -462,7 +464,7 @@ class Demo extends React.Component {
                'del': function() {}
             },
             fetchParams:'',
-            fetchUrl: "/static/data.json",
+            fetchUrl: fetchUrl,
             jsxcolumns:columns,
             subComp:(<span class="tag">&lt;<span class="title">Grid</span> {<span class="attribute">...renderSubProps</span>}  <span class="attribute">ref</span>=<span class="value">"subGrid"</span>/&gt;</span>),
             //onModifyRow: this.onModifyRow,
