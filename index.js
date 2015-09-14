@@ -13,7 +13,8 @@ window.UXCORE = {
 	'uxcore-grid': require('uxcore-grid'),
 	'uxcore-dropdown': require('uxcore-dropdown'),
 	'uxcore-mention': require('uxcore-mention'),
-	'uxcore-tree': require('uxcore-tree')
+	'uxcore-tree': require('uxcore-tree'),
+	'uxcore-transfer': require('uxcore-transfer')
 };
 
 /*
