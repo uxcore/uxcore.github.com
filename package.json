@@ -29,7 +29,7 @@
     "uxcore-pagination": "^0.1.1",
     "uxcore-popover": "^0.1.0",
     "uxcore-select2": "~0.1.4",
-    "uxcore-tabs": "^0.1.1",
+    "uxcore-tabs": "^0.2.0",
     "uxcore-tooltip": "^0.1.1",
     "uxcore-transfer": "~0.1.0",
     "uxcore-tree": "^0.1.1"

@@ -37,12 +37,11 @@ npm run dev
 |name|type|default|description|
 |----|----|-------|-----------|
 |activeKey |String| |current active tabPanel's key|
-|tabPosition|	String|	|	tab nav 's position. one of ['left','right','top','bottom']|
-|animation|	String|	|	tabPane's animation. current only support slide-horizontal in assets/index.css|
-|transitionName|	Object|	|	specify backward and forward transitionName. such as ```js { backward:'rc-tabs-slide-horizontal-backward', forward:'rc-tabs-slide-horizontal-forward' } ```|
 |defaultActiveKey|	String|	first active tabPanel's key|	initial active tabPanel's key if activeKey is absent|
 |onChange|	Function|(key)		|called when tabPanel is changed|
 |onTabClick|	Function|(key)		|called when tab is clicked|
+|size|string|normal|set tab size:mini, normal, large|
+|tabStyle|string|underline|set tab style: underline, line, topline, brick|
 
 ### TabPane
 |name|type|default|description|
