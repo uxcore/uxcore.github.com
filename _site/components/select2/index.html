@@ -1,12 +1,12 @@
-<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/uxcore.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react-with-addons.min.js"></script><script src="/static/highlight.min.js"></script><script src="/static/rangy-core.min.js"></script><script src="/static/uxcore.js"></script><script>(function(w){
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/uxcore/static/uxcore.css"><link rel="stylesheet" href="/uxcore/static/github-gist.min.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react-with-addons.min.js"></script><script src="/uxcore/static/highlight.min.js"></script><script src="/uxcore/static/rangy-core.min.js"></script><script src="/uxcore/static/uxcore.js"></script><script>(function(w){
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/">首页</a></li><li><a href="/css/kuma/">css</a></li><li><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li class="current"><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li><a href="/components/grid">Grid</a></li><li><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/uploader">Uploader</a></li><li><a href="/components/popover">Popover</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Select2</h1><section class="meta"><span class="author"><b>author: </b></span><span class="github"><b>github: </b><a href="git@github.com:uxcore/select.git" target="_blank">Select2</a></span><span class="version"> <b>版本: </b>0.1.4</span><span class="description"><b>描述: </b>select ui component for react</span></section></header><div id="J-markdown" class="markdown"><p>类似 Select2 的选择器。</p>
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/kuma/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/components/calendar">Calendar</a></li><li><a href="/uxcore/components/dialog">Dialog</a></li><li class="current"><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li><a href="/uxcore/components/tooltip">Tooltip</a></li><li><a href="/uxcore/components/tabs">Tabs</a></li><li><a href="/uxcore/components/grid">Grid</a></li><li><a href="/uxcore/components/form">Form</a></li><li><a href="/uxcore/components/dropdown">Dropdown</a></li><li><a href="/uxcore/components/mention">Mention</a></li><li><a href="/uxcore/components/tree">Tree</a></li><li><a href="/uxcore/components/transfer">Transfer</a></li><li><a href="/uxcore/components/popover">Popover</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Select2</h1><section class="meta"><span class="author"><b>author: </b></span><span class="github"><b>github: </b><a href="git+ssh://git@github.com/uxcore/select.git" target="_blank">Select2</a></span><span class="version"> <b>版本: </b>0.1.5</span><span class="description"><b>描述: </b>select ui component for react</span></section></header><div id="J-markdown" class="markdown"><p>类似 Select2 的选择器。</p>
 <h2 id="何时使用">何时使用</h2><p>弹出一个下拉菜单给用户选择操作，用于代替原生的选择器，或者需要一个更优雅的多选器时。</p>
 <div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">Select</span>&gt;</span>
   <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">Select</span>&gt;</span></code></pre></div><h2 id="api">API</h2><table>
+<span class="tag">&lt;/<span class="title">Select</span>&gt;</span></code></pre></div><h2 id="api">API</h2><h3 id="select-props">Select props</h3><table>
 <thead>
 <tr>
 <th>参数</th>
@@ -18,6 +18,12 @@
 <tbody>
 <tr>
 <td>value</td>
+<td>指定当前选中的条目</td>
+<td>string/Array</td>
+<td>无</td>
+</tr>
+<tr>
+<td>defaultValue</td>
 <td>指定默认选中的条目</td>
 <td>string/Array</td>
 <td>无</td>
@@ -77,10 +83,76 @@
 <td>无</td>
 </tr>
 <tr>
+<td>optionFilterProp</td>
+<td>输入项过滤对应的 option 属性</td>
+<td>string</td>
+<td>value</td>
+</tr>
+<tr>
 <td>combobox</td>
 <td>输入框自动提示模式</td>
 <td></td>
 <td>false</td>
+</tr>
+<tr>
+<td>size</td>
+<td>选择框大小</td>
+<td>String</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="option-props">Option props</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>disabled</td>
+<td>是否禁用</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>key</td>
+<td>如果react需要你设置此项，此项值与value的值相同，然后可以省略value设置</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td>默认根据此属性值进行筛选</td>
+<td>String</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="optgroup-props">OptGroup props</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>label</td>
+<td>组名</td>
+<td>String/React.Element</td>
+<td>无</td>
+</tr>
+<tr>
+<td>key</td>
+<td></td>
+<td>String</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
@@ -95,7 +167,7 @@ function handleChange(value) {
 
 React.render(React.createElement(
   Select,
-  { value: 'lucy', style: { width: 200 }, onChange: handleChange },
+  { defaultValue: 'lucy', style: { width: 200 }, onChange: handleChange },
   React.createElement(
     Option,
     { value: 'jack' },
@@ -124,7 +196,7 @@ React.render(React.createElement(
 }
 
 React.render(
-  <span class="xml"><span class="tag">&lt;<span class="title">Select</span> <span class="attribute">value</span>=<span class="value">"lucy"</span> <span class="attribute">style</span>=<span class="value">{{width:200}}</span> <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+  <span class="xml"><span class="tag">&lt;<span class="title">Select</span> <span class="attribute">defaultValue</span>=<span class="value">"lucy"</span> <span class="attribute">style</span>=<span class="value">{{width:200}}</span> <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
     <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"jack"</span>&gt;</span>Jack<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
     <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>Lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
     <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"disabled"</span> <span class="attribute">disabled</span>&gt;</span>Disabled<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
@@ -141,7 +213,7 @@ function handleChange(value) {
 
 React.render(React.createElement(
   Select,
-  { value: 'lucy', showSearch: true, style: { width: 200 }, onChange: handleChange },
+  { defaultValue: 'lucy', showSearch: true, style: { width: 200 }, onChange: handleChange },
   React.createElement(
     Option,
     { value: 'jack' },
@@ -170,7 +242,7 @@ React.render(React.createElement(
 }
 
 React.render(
-  <span class="xml"><span class="tag">&lt;<span class="title">Select</span> <span class="attribute">value</span>=<span class="value">"lucy"</span> <span class="attribute">showSearch</span>=<span class="value">{true}</span> <span class="attribute">style</span>=<span class="value">{{width:200}}</span> <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+  <span class="xml"><span class="tag">&lt;<span class="title">Select</span> <span class="attribute">defaultValue</span>=<span class="value">"lucy"</span> <span class="attribute">showSearch</span>=<span class="value">{true}</span> <span class="attribute">style</span>=<span class="value">{{width:200}}</span> <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
     <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"jack"</span>&gt;</span>jack<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
     <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
     <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"disabled"</span> <span class="attribute">disabled</span>&gt;</span>disabled<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
@@ -198,7 +270,7 @@ React.render(React.createElement(
   Select,
   { multiple: true,
     style: { width: 400 },
-    value: ['a10', 'c12'], onChange: handleChange },
+    defaultValue: ['a10', 'c12'], onChange: handleChange },
   children
 ), document.getElementById('components-select2-demo-multiple'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = require(<span class="string">'uxcore-select2'</span>);
 <span class="keyword">var</span> Option = Select.Option;
@@ -215,7 +287,7 @@ function handleChange(value) {
 React.render(
   <span class="tag">&lt;<span class="title">Select</span> <span class="attribute">multiple</span>
   <span class="attribute">style</span>=<span class="value">{{width:400}}</span>
-  <span class="attribute">value</span>=<span class="value">{['a10',</span> '<span class="attribute">c12</span>']} <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+  <span class="attribute">defaultValue</span>=<span class="value">{['a10',</span> '<span class="attribute">c12</span>']} <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
     {children}
   <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
 , document.getElementById('components-select2-demo-multiple'));</span></code></pre></div></div></div><div id="code-box-components-select2-demo-tags" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>标签</em></div></div><div class="code-box-demo"><div id="components-select2-demo-tags"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
@@ -240,7 +312,7 @@ React.render(React.createElement(
   Select,
   {
     style: { width: 400 },
-    tags: true, value: ['name2', 'name3'], onChange: handleChange },
+    tags: true, defaultValue: ['name2', 'name3'], onChange: handleChange },
   children
 ), document.getElementById('components-select2-demo-tags'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Select = require(<span class="string">'uxcore-select2'</span>);
 <span class="keyword">var</span> Option = Select.Option;
@@ -257,7 +329,7 @@ function handleChange(value) {
 React.render(
   <span class="tag">&lt;<span class="title">Select
 </span>   <span class="attribute">style</span>=<span class="value">{{width:400}}</span>
-  <span class="attribute">tags</span> <span class="attribute">value</span>=<span class="value">{['name2',</span> '<span class="attribute">name3</span>']} <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+  <span class="attribute">tags</span> <span class="attribute">defaultValue</span>=<span class="value">{['name2',</span> '<span class="attribute">name3</span>']} <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
     {children}
   <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
 , document.getElementById('components-select2-demo-tags'));</span></code></pre></div></div></div><div id="code-box-components-select2-demo-combobox" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>智能提示</em></div></div><div class="code-box-demo"><div id="components-select2-demo-combobox"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
@@ -336,4 +408,172 @@ React.render(React.createElement(Test, null), document.getElementById('component
   }
 });
 
-React.render(<span class="xml"><span class="tag">&lt;<span class="title">Test</span> /&gt;</span>, document.getElementById('components-select2-demo-combobox'));</span></code></pre></div></div></div></article></div></body></html>
+React.render(<span class="xml"><span class="tag">&lt;<span class="title">Test</span> /&gt;</span>, document.getElementById('components-select2-demo-combobox'));</span></code></pre></div></div></div><div id="code-box-components-select2-demo-group" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>分组</em></div></div><div class="code-box-demo"><div id="components-select2-demo-group"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Select = require('uxcore-select2');
+var Option = Select.Option;
+var OptGroup = Select.OptGroup;
+
+function handleChange(value) {
+    console.log('selected ' + value);
+}
+
+React.render(React.createElement(
+    Select,
+    { defaultValue: 'lucy',
+        style: { width: 200 },
+        showSearch: false,
+        onChange: handleChange },
+    React.createElement(
+        OptGroup,
+        { label: 'Manager' },
+        React.createElement(
+            Option,
+            { value: 'jack' },
+            'jack'
+        ),
+        React.createElement(
+            Option,
+            { value: 'lucy' },
+            'lucy'
+        )
+    ),
+    React.createElement(
+        OptGroup,
+        { label: 'Engineer' },
+        React.createElement(
+            Option,
+            { value: 'yiminghe' },
+            'yiminghe'
+        )
+    )
+), document.getElementById('components-select2-demo-group'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Select = require(<span class="string">'uxcore-select2'</span>);
+<span class="keyword">let</span> {Option, OptGroup} = Select;
+
+<span class="function"><span class="keyword">function</span> <span class="title">handleChange</span><span class="params">(value)</span> {</span>
+  console.log(<span class="string">'selected '</span> + value);
+}
+
+React.render(
+    <span class="xml"><span class="tag">&lt;<span class="title">Select</span> <span class="attribute">defaultValue</span>=<span class="value">"lucy"</span>
+        <span class="attribute">style</span>=<span class="value">{{width:200}}</span>
+        <span class="attribute">showSearch</span>=<span class="value">{false}</span>
+        <span class="attribute">onChange</span>=<span class="value">{handleChange}</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">OptGroup</span> <span class="attribute">label</span>=<span class="value">"Manager"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"jack"</span>&gt;</span>jack<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"lucy"</span>&gt;</span>lucy<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">OptGroup</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">OptGroup</span> <span class="attribute">label</span>=<span class="value">"Engineer"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Option</span> <span class="attribute">value</span>=<span class="value">"yiminghe"</span>&gt;</span>yiminghe<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">OptGroup</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>, document.getElementById('components-select2-demo-group'));</span></code></pre></div></div></div><div id="code-box-components-select2-demo-coordinate" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>联动</em></div></div><div class="code-box-demo"><div id="components-select2-demo-coordinate"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Select = require('uxcore-select2');
+var Option = Select.Option;
+
+var provinceData = ['浙江', '江苏'];
+var cityData = {
+  '浙江': ['杭州', '宁波', '温州'],
+  '江苏': ['南京', '苏州', '镇江']
+};
+
+var App = React.createClass({
+  displayName: 'App',
+
+  getInitialState: function getInitialState() {
+    return {
+      cities: cityData[provinceData[0]],
+      secondCity: cityData[provinceData[0]][0]
+    };
+  },
+  handleProvinceChange: function handleProvinceChange(value) {
+    this.setState({
+      cities: cityData[value],
+      secondCity: cityData[value][0]
+    });
+  },
+  onSecondCityChange: function onSecondCityChange(value) {
+    this.setState({
+      secondCity: value
+    });
+  },
+  render: function render() {
+    var provinceOptions = provinceData.map(function (province) {
+      return React.createElement(
+        Option,
+        { key: province },
+        province
+      );
+    });
+    var cityOptions = this.state.cities.map(function (city) {
+      return React.createElement(
+        Option,
+        { key: city },
+        city
+      );
+    });
+    return React.createElement(
+      'div',
+      null,
+      React.createElement(
+        Select,
+        { defaultValue: provinceData[0], style: { width: 150 }, onChange: this.handleProvinceChange },
+        provinceOptions
+      ),
+      ' ',
+      React.createElement(
+        Select,
+        { value: this.state.secondCity, style: { width: 150 }, onChange: this.onSecondCityChange },
+        cityOptions
+      )
+    );
+  }
+});
+
+React.render(React.createElement(App, null), document.getElementById('components-select2-demo-coordinate'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Select = require(<span class="string">'uxcore-select2'</span>);
+<span class="keyword">let</span> {Option} = Select;
+
+<span class="keyword">var</span> provinceData = [<span class="string">'浙江'</span>, <span class="string">'江苏'</span>];
+<span class="keyword">var</span> cityData = {
+  <span class="string">'浙江'</span>: [<span class="string">'杭州'</span>, <span class="string">'宁波'</span>, <span class="string">'温州'</span>],
+  <span class="string">'江苏'</span>: [<span class="string">'南京'</span>, <span class="string">'苏州'</span>, <span class="string">'镇江'</span>]
+};
+
+<span class="keyword">var</span> App = React.createClass({
+  getInitialState() {
+    <span class="keyword">return</span> {
+      cities: cityData[provinceData[<span class="number">0</span>]],
+      secondCity:cityData[provinceData[<span class="number">0</span>]][<span class="number">0</span>]
+    };
+  },
+  handleProvinceChange(value) {
+    <span class="keyword">this</span>.setState({
+      cities: cityData[value],
+      secondCity:cityData[value][<span class="number">0</span>]
+    });
+  },
+  onSecondCityChange(value) {
+    <span class="keyword">this</span>.setState({
+      secondCity: value
+    });
+  },
+  render() {
+    <span class="keyword">var</span> provinceOptions = provinceData.map(<span class="function"><span class="keyword">function</span><span class="params">(province)</span> {</span>
+      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">Option</span> <span class="attribute">key</span>=<span class="value">{province}</span>&gt;</span>{province}<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>;</span>
+    });
+    <span class="keyword">var</span> cityOptions = <span class="keyword">this</span>.state.cities.map(<span class="function"><span class="keyword">function</span><span class="params">(city)</span> {</span>
+      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">Option</span> <span class="attribute">key</span>=<span class="value">{city}</span>&gt;</span>{city}<span class="tag">&lt;/<span class="title">Option</span>&gt;</span>;</span>
+    });
+    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Select</span> <span class="attribute">defaultValue</span>=<span class="value">{provinceData[0]}</span> <span class="attribute">style</span>=<span class="value">{{width:150}}</span> <span class="attribute">onChange</span>=<span class="value">{this.handleProvinceChange}</span>&gt;</span>
+        {provinceOptions}
+      <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+      &amp;nbsp;
+      <span class="tag">&lt;<span class="title">Select</span> <span class="attribute">value</span>=<span class="value">{this.state.secondCity}</span> <span class="attribute">style</span>=<span class="value">{{width:150}}</span> <span class="attribute">onChange</span>=<span class="value">{this.onSecondCityChange}</span>&gt;</span>
+        {cityOptions}
+      <span class="tag">&lt;/<span class="title">Select</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>;</span>
+  }
+});
+
+React.render(<span class="xml"><span class="tag">&lt;<span class="title">App</span> /&gt;</span>, document.getElementById('components-select2-demo-coordinate'));</span></code></pre></div></div></div></article></div></body></html>
