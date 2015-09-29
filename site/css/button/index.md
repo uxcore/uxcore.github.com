@@ -34,7 +34,7 @@ $ npm run deploy
 ## Usage
 
 ```js
-import {Button, ButtonGroup} from 'uxcore-button';
+import Button from 'uxcore-button';
 React.render(todo, document.getElementById('target'));
 ```
 
@@ -48,5 +48,5 @@ http://uxcore.github.io/button/
 |参数|说明|类型|默认值|
 |---|----|---|------|
 |size|按钮大小(large medium small)|string|medium|
-|color|颜色(blue white orange)|string|blue|
+|type|类型(primary secondary)|string|blue|
 |disabled|是否禁用(disabled或true false)|string|false|
