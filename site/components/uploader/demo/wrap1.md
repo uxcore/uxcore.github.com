@@ -8,7 +8,7 @@
 
 ````jsx
 import Uploader from 'uxcore-uploader';
-import {Button} from 'uxcore-button';
+import Button from 'uxcore-button';
 
 
 React.render((

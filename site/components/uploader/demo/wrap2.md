@@ -7,7 +7,7 @@
 ---
 
 <style>
-.mydroparea .icon-upload {
+.mydroparea .kuma-icon-uploading {
    font-size: 60px;
    color:#57c5f7;
    display: block;
@@ -16,7 +16,7 @@
 </style>
 
 ```css
-.mydroparea .icon-upload {
+.mydroparea .kuma-icon-uploading {
    font-size: 60px;
    color:#57c5f7;
    display: block;
@@ -25,12 +25,12 @@
 ```
 
 ````jsx
-import {Droparea} from 'uxcore-uploader';
+import {Dropzoom} from 'uxcore-uploader';
 
 React.render((
-    <Droparea autoPending={false} className="mydroparea" multiple={true} queueCapcity={20} name='file' url='http://test.yanbingbing.com/upload.php'>
-        <i className="kuma-upload-icon icon-upload" />
+    <Dropzoom autoPending={false} className="mydroparea" multiple={true} queueCapcity={20} name='file' url='http://test.yanbingbing.com/upload.php'>
+        <i className="kuma-icon kuma-icon-uploading" />
         <p>点击或将文件拖拽到此区域上传</p>
-    </Droparea>
+    </Dropzoom>
 ), document.getElementById('components-uploader-demo-wrap2'));
 ````

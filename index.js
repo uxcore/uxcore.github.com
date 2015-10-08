@@ -16,6 +16,7 @@ window.UXCORE = {
 	'uxcore-tree': require('uxcore-tree'),
 	'uxcore-transfer': require('uxcore-transfer'),
 	'uxcore-popover': require('uxcore-popover'),
+	'uxcore-hovercard': require('uxcore-hovercard'),
 	'uxcore-uploader': require('uxcore-uploader')
 };
 

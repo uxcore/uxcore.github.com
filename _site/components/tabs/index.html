@@ -1,8 +1,8 @@
-<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/uxcore.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react-with-addons.min.js"></script><script src="/static/highlight.min.js"></script><script src="/static/rangy-core.min.js"></script><script src="/static/uxcore.js"></script><script>(function(w){
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/uxcore.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react-with-addons.min.js"></script><script src="/static/highlight.min.js"></script><script src="/static/rangy-core.min.js"></script><script src="/static/uxcore.js"></script><script src="//g.alicdn.com//uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/">首页</a></li><li><a href="/css/kuma/">css</a></li><li><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li class="current"><a href="/components/tabs">Tabs</a></li><li><a href="/components/grid">Grid</a></li><li><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/uploader">Uploader</a></li><li><a href="/components/popover">Popover</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Tabs</h1><section class="meta"><span class="author"><b>author: </b>vincent.bian</span><span class="github"><b>github: </b><a href="https://github.com/uxcore/tabs.git" target="_blank">Tabs</a></span><span class="version"> <b>版本: </b>0.2.0</span><span class="description"><b>描述: </b>easy tab component based on react</span></section></header><div id="J-markdown" class="markdown"><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Tabs = require(<span class="string">'uxcore-tabs'</span>);
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/">首页</a></li><li><a href="/css/kuma/">css</a></li><li><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li class="current"><a href="/components/tabs">Tabs</a></li><li><a href="/components/grid">Grid</a></li><li><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/popover">Popover</a></li><li><a href="/components/hovercard">Hovercard</a></li><li><a href="/components/uploader">Uploader</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Tabs</h1><section class="meta"><span class="author"><b>author: </b>vincent.bian</span><span class="github"><b>github: </b><a href="git+https://github.com/uxcore/tabs.git" target="_blank">Tabs</a></span><span class="version"> <b>版本: </b>0.2.0</span><span class="description"><b>描述: </b>easy tab component based on react</span></section></header><div id="J-markdown" class="markdown"><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Tabs = require(<span class="string">'uxcore-tabs'</span>);
 <span class="keyword">var</span> TabPane = Tabs.TabPane;
 
 <span class="keyword">var</span> callback = <span class="function"><span class="keyword">function</span><span class="params">(key)</span>{</span>
@@ -17,9 +17,7 @@ React.render(
       <span class="tag">&lt;<span class="title">TabPane</span> <span class="attribute">tab</span>=<span class="value">'tab 3'</span> <span class="attribute">key</span>=<span class="value">"3"</span>&gt;</span>third<span class="tag">&lt;/<span class="title">TabPane</span>&gt;</span>
     <span class="tag">&lt;/<span class="title">Tabs</span>&gt;</span>
   ),
-  document.getElementById('t2'));</span></code></pre></div><h2 id="development">development</h2><pre>npm install
-npm run dev
-// nav to http://localhost:9090/example/</pre><h2 id="api">API</h2><h3 id="tabs">Tabs</h3><table>
+  document.getElementById('t2'));</span></code></pre></div><h2 id="api">API</h2><h3 id="tabs">Tabs</h3><table>
 <thead>
 <tr>
 <th>name</th>
@@ -57,13 +55,13 @@ npm run dev
 <td>size</td>
 <td>string</td>
 <td>normal</td>
-<td>set tab size:mini, normal, large</td>
+<td>set tab size: <code>mini</code>, <code>normal</code>, <code>large</code></td>
 </tr>
 <tr>
 <td>tabStyle</td>
 <td>string</td>
 <td>underline</td>
-<td>set tab style: underline, line, topline, brick</td>
+<td>set tab style: <code>underline</code>, <code>line</code>, <code>topline</code>, <code>brick</code></td>
 </tr>
 </tbody>
 </table>

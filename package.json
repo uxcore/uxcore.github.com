@@ -22,8 +22,9 @@
     "uxcore-calendar": "^0.1.6",
     "uxcore-dialog": "^0.2.1",
     "uxcore-dropdown": "^0.1.3",
-    "uxcore-form": "^1.0.5",
-    "uxcore-grid": "~1.0.5",
+    "uxcore-form": "~1.0.6",
+    "uxcore-grid": "~1.0.7",
+    "uxcore-hovercard": "^1.0.0",
     "uxcore-kuma": "~1.0.7",
     "uxcore-mention": "^0.1.1",
     "uxcore-pagination": "^0.1.2",
@@ -33,8 +34,8 @@
     "uxcore-tooltip": "^0.1.1",
     "uxcore-transfer": "~0.1.0",
     "uxcore-tree": "^0.1.2",
-    "uxcore-uploadcore": "^2.0.1",
-    "uxcore-uploader": "^1.0.0"
+    "uxcore-uploadcore": "~2.0.2",
+    "uxcore-uploader": "~1.0.0-beta.2"
   },
   "devDependencies": {
     "autoprefixer-loader": "~2.0.0",

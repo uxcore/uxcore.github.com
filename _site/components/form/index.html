@@ -1,99 +1,20 @@
-<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/uxcore.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react-with-addons.min.js"></script><script src="/static/highlight.min.js"></script><script src="/static/rangy-core.min.js"></script><script src="/static/uxcore.js"></script><script>(function(w){
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/uxcore.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react-with-addons.min.js"></script><script src="/static/highlight.min.js"></script><script src="/static/rangy-core.min.js"></script><script src="/static/uxcore.js"></script><script src="//g.alicdn.com//uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/">首页</a></li><li><a href="/css/kuma/">css</a></li><li><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li><a href="/components/grid">Grid</a></li><li class="current"><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/uploader">Uploader</a></li><li><a href="/components/popover">Popover</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Form</h1><section class="meta"><span class="author"><b>author: </b>eternalsky</span><span class="github"><b>github: </b><a href="https://github.com/uxcore/uxcore-form.git" target="_blank">Form</a></span><span class="version"> <b>版本: </b>1.0.5</span><span class="description"><b>描述: </b>form component for uxcore</span></section></header><div id="J-markdown" class="markdown"><h2 id="uxcore-form">uxcore-form <a href="https://david-dm.org/uxcore/uxcore-form"><img src="http://img.shields.io/david/uxcore/uxcore-form.svg?style=flat-square" alt="Dependency Status"></a> <a href="https://david-dm.org/uxcore/uxcore-form#info=devDependencies"><img src="http://img.shields.io/david/dev/uxcore/uxcore-form.svg?style=flat-square" alt="devDependency Status"></a></h2><h2 id="tl-dr">TL;DR</h2><p>uxcore-form ui component for react</p>
-<h4 id="setup-develop-environment">setup develop environment</h4><pre>$ git clone https://github.com/uxcore/uxcore-form
-$ cd uxcore-form
-$ npm install
-$ gulp server</pre><h2 id="usage">Usage</h2><blockquote>
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/">首页</a></li><li><a href="/css/kuma/">css</a></li><li><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li><a href="/components/grid">Grid</a></li><li class="current"><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/popover">Popover</a></li><li><a href="/components/hovercard">Hovercard</a></li><li><a href="/components/uploader">Uploader</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Form</h1><section class="meta"><span class="author"><b>author: </b>eternalsky</span><span class="github"><b>github: </b><a href="git+https://github.com/uxcore/uxcore-form.git" target="_blank">Form</a></span><span class="version"> <b>版本: </b>1.0.6</span><span class="description"><b>描述: </b>form component for uxcore</span></section></header><div id="J-markdown" class="markdown"><h2 id="uxcore-form">uxcore-form <a href="https://david-dm.org/uxcore/uxcore-form"><img src="http://img.shields.io/david/uxcore/uxcore-form.svg?style=flat-square" alt="Dependency Status"></a> <a href="https://david-dm.org/uxcore/uxcore-form#info=devDependencies"><img src="http://img.shields.io/david/dev/uxcore/uxcore-form.svg?style=flat-square" alt="devDependency Status"></a></h2><h2 id="usage">Usage</h2><blockquote>
 <p>see demo/FormDemo.js for details<br>每一个 field 需要按照 Form -&gt; FormRow -&gt; FormField 的方式进行嵌套，允许 Form -&gt; FormField 的嵌套，会自动增加 FormRow 这一层，并默认占一整行。</p>
 </blockquote>
-<pre>let classnames = require(&#39;classnames&#39;);
-let {Button, ButtonGroup} = require(&#39;uxcore-button&#39;);
-
-let Form = require(&#39;../src&#39;);
-let {
-    Constants,
-    FormRowTitle,
-    FormRow,
-    FormField,
-    InputFormField,
-    Validators,
-    RadioGroupFormField,
-    SelectFormField,
-    TextAreaFormField,
-    NumberInputFormField,
-    DateFormField,
-    CheckboxGroupFormField,
-    CascadeSelectFormField,
-    UploadFormField,
-    OtherFormField
-} = Form;
-
-let CheckboxItem = CheckboxGroupFormField.Item;
-
-class Demo extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    }
-
-    handleClick() {
-        let me = this;
-        console.log(me.refs.form.getValues());
-    }
-
-    handleChange(value) {
-        console.log(value);
-    }
-
-    render() {
-        let me = this;
-        let data = {
-            test1: &quot;我是测试&quot;,
-            fruit: &quot;apple&quot;,
-            city: &quot;nj&quot;,
-            textArea: &quot;我是多行文本&quot;,
-            date: &quot;2015-09-01&quot;,
-            checkbox: [&quot;sea&quot;]
-        }
-
-        return (
-            &lt;div&gt;
-                &lt;Form ref=&quot;form&quot; jsxmode={Constants.MODE.EDIT} jsxvalues={data} jsxonChange={me.handleChange.bind(me)}&gt;
-                    &lt;FormRowTitle jsxtitle=&quot;我是行标题&quot;/&gt;
-                    &lt;FormRow&gt;
-                        &lt;InputFormField  
-                         jsxname=&quot;test1&quot;
-                         jsxlabel=&quot;测试输入框&quot;
-                         jsxplaceholder=&quot;请输入&quot;
-                         jsxtips=&quot;请输入数字&quot;
-                         jsxrules={{validator: Validators.isNotEmpty, errMsg: &quot;不能为空&quot;}}/&gt;
-                        &lt;RadioGroupFormField jsxname=&quot;fruit&quot; jsxlabel=&quot;Fruit Type&quot; jsxflex={1}&gt;
-                                &lt;input type=&quot;radio&quot; value=&quot;apple&quot; /&gt;Apple
-                                &lt;input type=&quot;radio&quot; value=&quot;orange&quot; /&gt;Orange
-                                &lt;input type=&quot;radio&quot; value=&quot;watermelon&quot; /&gt;Watermelon
-                        &lt;/RadioGroupFormField&gt;
-                    &lt;/FormRow&gt;
-                    &lt;OtherFormField className=&quot;button-group&quot;&gt;
-                        &lt;ButtonGroup&gt;
-                            &lt;Button size=&quot;medium&quot; onClick={me.handleClick.bind(me)}&gt;提交&lt;/Button&gt;
-                            &lt;Button size=&quot;medium&quot;&gt;重置&lt;/Button&gt;
-                        &lt;/ButtonGroup&gt;
-                    &lt;/OtherFormField&gt;
-                &lt;/Form&gt;
-            &lt;/div&gt;
-        );
-    }
-};
-
-module.exports = Demo;</pre><h2 id="demo">Demo</h2><p><a href="http://uxcore.github.io/uxcore/">http://uxcore.github.io/uxcore/</a></p>
-<h2 id="api">API</h2><h3 id="form">Form</h3><ul>
-<li>getValues() 获取目前的 values 和 pass（是否通过检测），在使用 onChange 函数监听的情况下意义不大。  </li>
-<li>isDirty() 获取目前的数据是否没有通过检测。</li>
+<pre>// see demo</pre><h2 id="api">API</h2><h3 id="form">Form</h3><ul>
+<li><p>getValues(data) 获取目前的 values 和 pass（是否通过检测）。<br>参数：</p>
+<ul>
+<li>data <code>Object</code>: 数据格式为 {values: {}, pass: false}。</li>
+</ul>
+</li>
+<li><p>resetValues() 重置所有的 FormField，如果有默认值则重置为默认值。</p>
+</li>
+<li><p>isDirty() 获取目前的数据是否没有通过检测，返回 true 或 false。</p>
+</li>
 </ul>
 <h2 id="props">props</h2><h3 id="form">Form</h3><table>
 <thead>
@@ -106,6 +27,13 @@ module.exports = Demo;</pre><h2 id="demo">Demo</h2><p><a href="http://uxcore.git
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>className</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>加入额外的类名，在使用 kuma 的基础上进行适当的定制时会用得到</td>
+</tr>
 <tr>
 <td>jsxprefixCls</td>
 <td>string</td>
@@ -148,6 +76,13 @@ module.exports = Demo;</pre><h2 id="demo">Demo</h2><p><a href="http://uxcore.git
 </thead>
 <tbody>
 <tr>
+<td>className</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>加入额外的类名，在使用 kuma 的基础上进行适当的定制时会用得到</td>
+</tr>
+<tr>
 <td>jsxprefixCls</td>
 <td>string</td>
 <td>optional</td>
@@ -168,11 +103,32 @@ module.exports = Demo;</pre><h2 id="demo">Demo</h2><p><a href="http://uxcore.git
 </thead>
 <tbody>
 <tr>
+<td>className</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>加入额外的类名，在使用 kuma 的基础上进行适当的定制时会用得到</td>
+</tr>
+<tr>
 <td>jsxshow</td>
 <td>bool</td>
 <td>optional</td>
 <td>true</td>
 <td>是否显示该表单域，不显示的表单域将不占宽度</td>
+</tr>
+<tr>
+<td>jsxmode</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;EDIT&quot;</td>
+<td>FormField 的编辑和只读模式，优先级高于 Form，传值方式见 demo</td>
+</tr>
+<tr>
+<td>jsxshowLabel</td>
+<td>bool</td>
+<td>optional</td>
+<td>true</td>
+<td>是否显示 label</td>
 </tr>
 <tr>
 <td>jsxname</td>
@@ -241,12 +197,59 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 <h3 id="formfield-专属配置">FormField 专属配置</h3><blockquote>
 <p>所有的 FormField 都共享通用配置，所有的专属配置在 <code>demo/formDemo.js</code>，均有体现。</p>
 </blockquote>
-<p>RadioGroupFormField</p>
-<ul>
-<li>children：需要传入 input 来完成初始化</li>
+<h3 id="inputformfield">InputFormField</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jsxplaceholder</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>占位符</td>
+</tr>
+</tbody>
+</table>
+<h3 id="textareaformfield">TextAreaFormField</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jsxplaceholder</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>占位符</td>
+</tr>
+</tbody>
+</table>
+<h3 id="radiogroupformfield">RadioGroupFormField</h3><ul>
+<li>Item：通过 RadioGroupFormField.Item 取得，有两个 props<ul>
+<li>value</li>
+<li>text：显示的值</li>
 </ul>
-<p>SelectFormField</p>
-<table>
+</li>
+<li>使用方式：<pre>&lt;RadioGroupFormField&gt;
+&lt;Item value=&quot;1&quot; text=&quot;a&quot;&gt;
+&lt;Item value=&quot;2&quot; text=&quot;b&quot;&gt;
+&lt;Item value=&quot;3&quot; text=&quot;c&quot;&gt;
+&lt;/RadioGroupFormField&gt;</pre></li>
+</ul>
+<h3 id="selectformfield">SelectFormField</h3><table>
 <thead>
 <tr>
 <th>配置项</th>
@@ -276,7 +279,7 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 <td>obj</td>
 <td>optional</td>
 <td>-</td>
-<td>与 react 传入 style 的方式相同，修改 Field 的样式</td>
+<td>与 react 传入 style 的方式相同，修改选择框的样式</td>
 </tr>
 <tr>
 <td>beforeFetch</td>
@@ -327,21 +330,37 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 <td>&quot;&quot;</td>
 <td>搜索框默认文字</td>
 </tr>
+<tr>
+<td>jsxcombobox</td>
+<td>bool</td>
+<td>optional</td>
+<td>false</td>
+<td>标准搜索模式，在该模式下没有下拉框，通过输入产生提示</td>
+</tr>
+<tr>
+<td>jsxplaceholder</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;请下拉选择&quot;</td>
+<td>占位符</td>
+</tr>
 </tbody>
 </table>
 <p>see datails in <a href="https://www.npmjs.com/package/uxcore-select2">uxcore-select2</a></p>
-<p>CheckboxGroupFormField</p>
-<ul>
+<h3 id="checkboxgroupformfield">CheckboxGroupFormField</h3><ul>
 <li>Item：通过 CheckboxGroupFormField.Item 取的，有两个 props<ul>
 <li>value</li>
 <li>text：显示的值</li>
 </ul>
 </li>
+<li>使用方式：<pre>&lt;CheckboxGroupFormField&gt;
+&lt;Item value=&quot;1&quot; text=&quot;a&quot;&gt;
+&lt;Item value=&quot;2&quot; text=&quot;b&quot;&gt;
+&lt;Item value=&quot;3&quot; text=&quot;c&quot;&gt;
+&lt;/CheckboxGroupFormField&gt;</pre></li>
 </ul>
-<p>DateFormField</p>
-<p>支持出 onSelect 外，<a href="https://www.npmjs.com/package/uxcore-calendar">uxcore-calendar</a> 的所有 props。</p>
-<p>NumberInputFormField</p>
-<table>
+<h3 id="dateformfield">DateFormField</h3><p>支持出 onSelect 外，<a href="https://www.npmjs.com/package/uxcore-calendar">uxcore-calendar</a> 的所有 props。</p>
+<h3 id="numberinputformfield">NumberInputFormField</h3><table>
 <thead>
 <tr>
 <th>配置项</th>
@@ -352,17 +371,27 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>jsxplaceholder</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>占位符</td>
+</tr>
 <tr>
 <td>jsxtype</td>
 <td>string</td>
 <td>optional</td>
 <td>&quot;&quot;</td>
-<td>目前支持 &quot;money&quot;, &quot;cnmobile&quot; 和 &quot;card&quot;, 提供三种格式化显示的方法</td>
+<td>目前支持 &quot;money&quot;, &quot;cnmobile&quot; 和 &quot;card&quot;, 提供三种格式化显示的方法。&quot;money&quot;的格式为<code>123 121 121.213 121</code>,&quot;cnmobile&quot;的格式为 <code>86 1565 7263 8223</code>, &quot;card&quot; 的格式为 <code>3321 3123 3243 4343</code></td>
 </tr>
 </tbody>
 </table>
-<p>UploadFormField</p>
-<table>
+<h3 id="uploadformfield">UploadFormField</h3><blockquote>
+<p>支持 uxcore-uploader 的所有配置项。
+具体说明参考：<a href="https://github.com/uxcore/uxcore-uploader">https://github.com/uxcore/uxcore-uploader</a></p>
+</blockquote>
+<h3 id="cascadeselectformfield">CascadeSelectFormField</h3><table>
 <thead>
 <tr>
 <th>配置项</th>
@@ -374,61 +403,29 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 </thead>
 <tbody>
 <tr>
-<td>jsxaction</td>
-<td>string</td>
+<td>jsxdata</td>
+<td>object</td>
 <td>required</td>
 <td>-</td>
-<td>上传文件的 url</td>
+<td>目前级联选择框，只支持直接传入 data 初始化，格式见 Usage 中的 casData，length 为必须传的 key，告诉 field 有几层级联。</td>
 </tr>
 <tr>
-<td>jsxparams</td>
+<td>jsxplaceholder</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;请下拉选择&quot;</td>
+<td>占位符</td>
+</tr>
+<tr>
+<td>jsxstyle</td>
 <td>object</td>
 <td>optional</td>
 <td>-</td>
-<td>随文件上传时传的参数</td>
-</tr>
-<tr>
-<td>jsxfileName</td>
-<td>string</td>
-<td>optional</td>
-<td>原文件名</td>
-<td>文件上传时的文件名</td>
-</tr>
-<tr>
-<td>jsxonStart</td>
-<td>func</td>
-<td>optional</td>
-<td>noop</td>
-<td>文件上传时触发</td>
-</tr>
-<tr>
-<td>jsxonError</td>
-<td>func</td>
-<td>optional</td>
-<td>noop</td>
-<td>上传失败时触发</td>
-</tr>
-<tr>
-<td>jsxonSuccess</td>
-<td>func</td>
-<td>optional</td>
-<td>noop</td>
-<td>上传成功时触发</td>
-</tr>
-<tr>
-<td>jsxonProgress</td>
-<td>func</td>
-<td>optional</td>
-<td>noop</td>
-<td>上传过程中触发</td>
+<td>与 react 传入 style 的方式相同，修改选择框的样式</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>具体说明参考：<a href="https://github.com/uxcore/uxcore-rc-upload">https://github.com/uxcore/uxcore-rc-upload</a></p>
-</blockquote>
-<p>CascadeSelectFormField</p>
-<table>
+<h3 id="editorformfield">EditorFormField</h3><table>
 <thead>
 <tr>
 <th>配置项</th>
@@ -440,14 +437,25 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 </thead>
 <tbody>
 <tr>
-<td>jsxstyle</td>
-<td>obj</td>
+<td>jsxcontent</td>
+<td>string</td>
 <td>optional</td>
-<td>-</td>
-<td>与 react 传入 style 的方式相同，修改 Field 的样式</td>
+<td>&quot;&quot;</td>
+<td>由于 tinymce 的默认值传法的特殊性，EditorFormField 的默认值通过此 prop 传入</td>
+</tr>
+<tr>
+<td>jsxconfig</td>
+<td>object</td>
+<td>optional</td>
+<td>{}</td>
+<td>用户自定义的配置项，tinyMCE 的配置项，官方文档中所有 init 部分的配置在这里完成，详细见 <a href="http://www.tinymce.com/wiki.php/Configuration">http://www.tinymce.com/wiki.php/Configuration</a></td>
 </tr>
 </tbody>
 </table>
+<h3 id="gridformfield">GridFormField</h3><blockquote>
+<p>支持 uxcore-grid 的全部配置项，在 Form 中通常只需要传入 column 来生成配置项，见 Usage 中的使用。
+具体说明参考：<a href="https://github.com/uxcore/uxcore-grid">https://github.com/uxcore/uxcore-grid</a></p>
+</blockquote>
 <h3 id="otherformfield">OtherFormField</h3><blockquote>
 <p>OtherFormField 是一个特殊的 FormField，它用来和其他 FormField 一起完成布局（比如在一行排列等），如果需要一些装饰类的东西，可以以子元素的形式传入到这个 Field 里。
 他也可以用于布局中的占位。</p>
@@ -457,6 +465,8 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 </blockquote>
 </div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-form-demo-single" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>单列表单</em></div></div><div class="code-box-demo"><div id="components-form-demo-single"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
@@ -465,11 +475,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _require = require('uxcore-button');
-
-var Button = _require.Button;
-var ButtonGroup = _require.ButtonGroup;
-
+var Button = require('uxcore-button');
 var Form = require('uxcore-form');
 var Constants = Form.Constants;
 var FormRowTitle = Form.FormRowTitle;
@@ -487,8 +493,11 @@ var CascadeSelectFormField = Form.CascadeSelectFormField;
 var UploadFormField = Form.UploadFormField;
 var OtherFormField = Form.OtherFormField;
 var ButtonGroupFormField = Form.ButtonGroupFormField;
+var EditorFormField = Form.EditorFormField;
+var GridFormField = Form.GridFormField;
 
 var CheckboxItem = CheckboxGroupFormField.Item;
+var RadioItem = RadioGroupFormField.Item;
 
 var Demo = (function (_React$Component) {
     _inherits(Demo, _React$Component);
@@ -497,7 +506,29 @@ var Demo = (function (_React$Component) {
         _classCallCheck(this, Demo);
 
         _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
-        this.state = {};
+        this.state = {
+            jsxvalues: {
+                test1: "我是测试",
+                fruit: "apple",
+                city: "nj",
+                textArea: "我是多行文本",
+                date: "2015-09-01",
+                checkbox: ["sea"],
+                dicts: {
+                    datas: [{
+                        city: "hz",
+                        email: "333",
+                        name: "33"
+                    }, {
+                        city: "bj",
+                        email: "33322",
+                        name: "3322"
+                    }]
+                },
+                cascade: ["a", "ab"],
+                editor: "a"
+            }
+        };
     }
 
     _createClass(Demo, [{
@@ -509,7 +540,9 @@ var Demo = (function (_React$Component) {
     }, {
         key: 'handleFormClick',
         value: function handleFormClick(data) {
-            console.log(data);
+            this.refs.form.setState({
+                mode: 'VIEW'
+            });
         }
     }, {
         key: 'handleChange',
@@ -517,7 +550,23 @@ var Demo = (function (_React$Component) {
             console.log(value);
         }
     }, {
+        key: 'handleValueChange',
+        value: function handleValueChange() {
+            var me = this;
+            me.setState({
+                jsxvalues: {
+                    test1: "我是测试22",
+                    fruit: "apple",
+                    city: "nj",
+                    textArea: "我是多行文本",
+                    date: "2015-09-01",
+                    checkbox: ["sea"]
+                }
+            });
+        }
+    }, {
         key: 'render',
+        // cascade: ["a", "ab"]
         value: function render() {
             var me = this;
             var data = {
@@ -526,61 +575,76 @@ var Demo = (function (_React$Component) {
                 city: "nj",
                 textArea: "我是多行文本",
                 date: "2015-09-01",
-                checkbox: ["sea"],
-                cascade: ["a", "ab"]
+                checkbox: ["sea"]
             };
 
+            // cascade: ["a", "ab"]
             var casData = {
                 length: 3,
                 contents: [{
                     value: "a",
-                    text: "a",
+                    text: "A",
                     contents: [{
                         value: "ab",
-                        text: "ab",
+                        text: "AB",
                         contents: [{
                             value: "abc",
-                            text: "abc"
+                            text: "ABC"
                         }, {
                             value: "abd",
-                            text: "abd"
+                            text: "ABD"
                         }]
                     }, {
                         value: "ac",
-                        text: "ac",
+                        text: "AC",
                         contents: [{
                             value: "acb",
-                            text: "acb"
+                            text: "ACB"
                         }, {
                             value: "acd",
-                            text: "acd"
+                            text: "ACD"
                         }]
                     }]
                 }, {
                     value: "b",
-                    text: "b",
+                    text: "B",
                     contents: [{
                         value: "ba",
-                        text: "ba",
+                        text: "BA",
                         contents: [{
                             value: "bab",
-                            text: "bab"
+                            text: "BAB"
                         }, {
                             value: "bad",
-                            text: "bad"
+                            text: "BAD"
                         }]
                     }, {
                         value: "bc",
-                        text: "bc",
+                        text: "BC",
                         contents: [{
                             value: "bca",
-                            text: "bca"
+                            text: "BCA"
                         }, {
                             value: "bcd",
-                            text: "bcd"
+                            text: "BCD"
                         }]
                     }]
                 }]
+            };
+
+            var columns = [{ dataKey: 'jsxid', title: "jsxid", width: 40 }, { dataKey: 'city', title: '城市', width: 180, type: 'select', options: {
+                    'hz': '杭州',
+                    'bj': '北京',
+                    'sh': '上海',
+                    'ah': '安徽'
+                } }, { dataKey: 'name', title: "姓名", width: 200, type: "text" }, { dataKey: 'email', title: "Email", width: 200, type: "text" }, { dataKey: 'action1', title: '操作1', width: 100, type: "action", items: [{ title: '增加', type: "addRow", cb: function cb(rowData) {
+                        console.info(rowData);
+                    } }, { title: '删除', type: "delRow", cb: function cb(rowData) {
+                        console.info(rowData);
+                    } }] }];
+
+            var renderProps = {
+                jsxcolumns: columns
             };
 
             return React.createElement(
@@ -588,26 +652,23 @@ var Demo = (function (_React$Component) {
                 null,
                 React.createElement(
                     Form,
-                    { ref: 'form', jsxmode: Constants.MODE.EDIT, passedData: data, jsxonChange: me.handleChange.bind(me) },
+                    { ref: 'form', jsxmode: Constants.MODE.EDIT, jsxvalues: me.state.jsxvalues, jsxonChange: me.handleChange.bind(me) },
                     React.createElement(FormRowTitle, { jsxtitle: '我是行标题' }),
                     React.createElement(
                         FormRow,
                         null,
                         React.createElement(InputFormField, {
                             jsxname: 'test1',
-                            jsxlabel: '测试输入框',
-                            jsxplaceholder: '请输入',
+                            jsxlabel: '普通输入框',
+                            jsxmode: Constants.MODE.VIEW,
                             jsxtips: '请输入数字',
                             jsxrules: { validator: Validators.isNotEmpty, errMsg: "不能为空" } }),
                         React.createElement(
                             RadioGroupFormField,
-                            { jsxname: 'fruit', jsxlabel: 'Fruit Type', jsxflex: 1 },
-                            React.createElement('input', { type: 'radio', value: 'apple' }),
-                            'Apple',
-                            React.createElement('input', { type: 'radio', value: 'orange' }),
-                            'Orange',
-                            React.createElement('input', { type: 'radio', value: 'watermelon' }),
-                            'Watermelon'
+                            { jsxname: 'fruit', jsxlabel: 'Radio', jsxflex: 1 },
+                            React.createElement(RadioItem, { value: 'apple', text: 'Apple' }),
+                            React.createElement(RadioItem, { value: 'orange', text: 'Orange' }),
+                            React.createElement(RadioItem, { value: 'watermelon', text: 'Watermelon' })
                         ),
                         React.createElement(
                             ButtonGroupFormField,
@@ -616,6 +677,11 @@ var Demo = (function (_React$Component) {
                                 Button,
                                 { size: 'medium', type: 'submit', onClick: me.handleFormClick.bind(me) },
                                 '提交'
+                            ),
+                            React.createElement(
+                                Button,
+                                { size: 'medium', type: 'reset' },
+                                '取消'
                             )
                         )
                     ),
@@ -623,7 +689,7 @@ var Demo = (function (_React$Component) {
                         FormRow,
                         null,
                         React.createElement(SelectFormField, {
-                            jsxlabel: 'City',
+                            jsxlabel: '单选',
                             jsxname: 'city',
                             jsxfetchUrl: 'http://suggest.taobao.com/sug',
                             afterFetch: function (obj) {
@@ -645,11 +711,28 @@ var Demo = (function (_React$Component) {
                             } }),
                         React.createElement(NumberInputFormField, {
                             jsxname: 'number',
-                            jsxlabel: '数字输入',
+                            jsxlabel: '数字输入框',
                             jsxtype: 'money',
                             jsxplaceholder: '输入数字',
                             jsxtips: '数字和一般的输入框不同',
                             jsxrules: [{ validator: Validators.isNotEmpty, errMsg: "不能为空" }, { validator: Validators.isNum, errMsg: "请输入数字" }] })
+                    ),
+                    React.createElement(
+                        FormRow,
+                        null,
+                        React.createElement(SelectFormField, {
+                            jsxlabel: '单选 combo 模式',
+                            jsxname: 'goods',
+                            jsxfetchUrl: 'http://suggest.taobao.com/sug',
+                            jsxcombobox: true,
+                            afterFetch: function (obj) {
+                                var data = {};
+                                obj.result.forEach(function (item, index) {
+                                    data[item[1]] = item[0];
+                                });
+                                return data;
+                            },
+                            jsxstyle: { width: 200 } })
                     ),
                     React.createElement(FormRowTitle, { jsxtitle: '我是行标题2' }),
                     React.createElement(
@@ -658,27 +741,24 @@ var Demo = (function (_React$Component) {
                         React.createElement(TextAreaFormField, { jsxname: 'textArea', jsxlabel: '多行文本框' }),
                         React.createElement(
                             CheckboxGroupFormField,
-                            { jsxname: 'checkbox', jsxlabel: '多选' },
+                            { jsxname: 'checkbox', jsxlabel: '复选框' },
                             React.createElement(CheckboxItem, { value: 'air', text: '天空' }),
                             React.createElement(CheckboxItem, { value: 'sea', text: '大海' })
                         )
                     ),
-                    React.createElement(
-                        FormRow,
-                        null,
-                        React.createElement(DateFormField, { jsxname: 'date', jsxlabel: '日期' }),
-                        React.createElement(UploadFormField, {
-                            jsxname: 'upload',
-                            jsxlabel: '上传',
-                            jsxaction: 'http://demo.nwux.taobao.net/file/upload' })
-                    ),
+                    React.createElement(FormRowTitle, { jsxtitle: '级联类' }),
+                    React.createElement(DateFormField, { jsxtype: 'cascade', jsxname: 'casDate', jsxlabel: '级联日期', jsxfrom: '2015-10-2', jsxto: '2015-10-10' }),
                     React.createElement(CascadeSelectFormField, {
                         jsxdata: casData,
                         jsxname: 'cascade',
-                        jsxlabel: '级联',
+                        jsxlabel: '级联选择',
                         jsxstyle: {
                             width: 200
                         } }),
+                    React.createElement(EditorFormField, { jsxname: 'editor',
+                        jsxlabel: '富文本编辑器',
+                        jsxcontent: '1' }),
+                    React.createElement(GridFormField, _extends({ jsxname: 'dicts', jsxlabel: '薪酬字典' }, renderProps)),
                     React.createElement(
                         ButtonGroupFormField,
                         null,
@@ -686,6 +766,16 @@ var Demo = (function (_React$Component) {
                             Button,
                             { size: 'medium', type: 'submit', onClick: me.handleFormClick.bind(me) },
                             '提交'
+                        ),
+                        React.createElement(
+                            Button,
+                            { size: 'medium', type: 'reset' },
+                            '取消'
+                        ),
+                        React.createElement(
+                            Button,
+                            { size: 'medium', onClick: me.handleValueChange.bind(me) },
+                            '修改 props'
                         )
                     )
                 )
@@ -698,7 +788,7 @@ var Demo = (function (_React$Component) {
 
 ;
 
-React.render(React.createElement(Demo, null), document.getElementById('components-form-demo-single'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> {Button, ButtonGroup} = require(<span class="string">'uxcore-button'</span>);
+React.render(React.createElement(Demo, null), document.getElementById('components-form-demo-single'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Button = require(<span class="string">'uxcore-button'</span>);
 <span class="keyword">let</span> Form = require(<span class="string">'uxcore-form'</span>);
 <span class="keyword">let</span> {
     Constants,
@@ -716,16 +806,42 @@ React.render(React.createElement(Demo, null), document.getElementById('component
     CascadeSelectFormField,
     UploadFormField,
     OtherFormField,
-    ButtonGroupFormField
+    ButtonGroupFormField,
+    EditorFormField,
+    GridFormField
 } = Form;
 
 <span class="keyword">let</span> CheckboxItem = CheckboxGroupFormField.Item;
+<span class="keyword">let</span> RadioItem = RadioGroupFormField.Item;
 
 class Demo extends React.Component {
 
     constructor(props) {
         super(props);
         <span class="keyword">this</span>.state = {
+            jsxvalues: {
+                test1: <span class="string">"我是测试"</span>,
+                fruit: <span class="string">"apple"</span>,
+                city: <span class="string">"nj"</span>,
+                textArea: <span class="string">"我是多行文本"</span>,
+                date: <span class="string">"2015-09-01"</span>,
+                checkbox: [<span class="string">"sea"</span>],
+                dicts:{
+                   datas:[
+                      {
+                        city: <span class="string">"hz"</span>,
+                        email: <span class="string">"333"</span>,
+                        name: <span class="string">"33"</span>
+                      }, {
+                        city: <span class="string">"bj"</span>,
+                        email: <span class="string">"33322"</span>,
+                        name: <span class="string">"3322"</span>
+                      }
+                   ]
+                },
+                cascade: [<span class="string">"a"</span>, <span class="string">"ab"</span>],
+                editor: <span class="string">"a"</span>
+            }
         }
     }
 
@@ -735,11 +851,28 @@ class Demo extends React.Component {
     }
 
     handleFormClick(data) {
-        console.log(data)
+        <span class="keyword">this</span>.refs.form.setState({
+           mode:<span class="string">'VIEW'</span>
+        })
     }
 
     handleChange(value) {
         console.log(value);
+    }
+
+    handleValueChange() {
+        <span class="keyword">let</span> me = <span class="keyword">this</span>;
+        me.setState({
+            jsxvalues: {
+                test1: <span class="string">"我是测试22"</span>,
+                fruit: <span class="string">"apple"</span>,
+                city: <span class="string">"nj"</span>,
+                textArea: <span class="string">"我是多行文本"</span>,
+                date: <span class="string">"2015-09-01"</span>,
+                checkbox: [<span class="string">"sea"</span>],
+                <span class="comment">// cascade: ["a", "ab"]</span>
+            }
+        })
     }
 
     render() {
@@ -751,7 +884,7 @@ class Demo extends React.Component {
             textArea: <span class="string">"我是多行文本"</span>,
             date: <span class="string">"2015-09-01"</span>,
             checkbox: [<span class="string">"sea"</span>],
-            cascade: [<span class="string">"a"</span>, <span class="string">"ab"</span>]
+            <span class="comment">// cascade: ["a", "ab"]</span>
         }
 
         <span class="keyword">let</span> casData = {
@@ -759,33 +892,33 @@ class Demo extends React.Component {
             contents: [
                 {
                     value: <span class="string">"a"</span>,
-                    text: <span class="string">"a"</span>,
+                    text: <span class="string">"A"</span>,
                     contents: [
                         {
                             value: <span class="string">"ab"</span>,
-                            text: <span class="string">"ab"</span>,
+                            text: <span class="string">"AB"</span>,
                             contents: [
                                 {
                                     value: <span class="string">"abc"</span>,
-                                    text: <span class="string">"abc"</span>
+                                    text: <span class="string">"ABC"</span>
                                 },
                                 {
                                     value: <span class="string">"abd"</span>,
-                                    text: <span class="string">"abd"</span>
+                                    text: <span class="string">"ABD"</span>
                                 }
                             ]
                         },
                         {
                             value: <span class="string">"ac"</span>,
-                            text: <span class="string">"ac"</span>,
+                            text: <span class="string">"AC"</span>,
                             contents: [
                                 {
                                     value: <span class="string">"acb"</span>,
-                                    text: <span class="string">"acb"</span>
+                                    text: <span class="string">"ACB"</span>
                                 },
                                 {
                                     value: <span class="string">"acd"</span>,
-                                    text: <span class="string">"acd"</span>
+                                    text: <span class="string">"ACD"</span>
                                 }
                             ]
                         }
@@ -793,33 +926,33 @@ class Demo extends React.Component {
                 },
                 {
                     value: <span class="string">"b"</span>,
-                    text: <span class="string">"b"</span>,
+                    text: <span class="string">"B"</span>,
                     contents: [
                         {
                             value: <span class="string">"ba"</span>,
-                            text: <span class="string">"ba"</span>,
+                            text: <span class="string">"BA"</span>,
                             contents: [
                                 {
                                     value: <span class="string">"bab"</span>,
-                                    text: <span class="string">"bab"</span>
+                                    text: <span class="string">"BAB"</span>
                                 },
                                 {
                                     value: <span class="string">"bad"</span>,
-                                    text: <span class="string">"bad"</span>
+                                    text: <span class="string">"BAD"</span>
                                 }
                             ]
                         },
                         {
                             value: <span class="string">"bc"</span>,
-                            text: <span class="string">"bc"</span>,
+                            text: <span class="string">"BC"</span>,
                             contents: [
                                 {
                                     value: <span class="string">"bca"</span>,
-                                    text: <span class="string">"bca"</span>
+                                    text: <span class="string">"BCA"</span>
                                 },
                                 {
                                     value: <span class="string">"bcd"</span>,
-                                    text: <span class="string">"bcd"</span>
+                                    text: <span class="string">"BCD"</span>
                                 }
                             ]
                         }
@@ -829,29 +962,52 @@ class Demo extends React.Component {
         }
 
 
+        <span class="keyword">let</span> columns = [
+            { dataKey: <span class="string">'jsxid'</span>,title:<span class="string">"jsxid"</span>,width: <span class="number">40</span> },
+            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">180</span>,type:<span class="string">'select'</span> ,options:{
+               <span class="string">'hz'</span>:<span class="string">'杭州'</span>,
+               <span class="string">'bj'</span>:<span class="string">'北京'</span>,
+               <span class="string">'sh'</span>:<span class="string">'上海'</span>,
+               <span class="string">'ah'</span>:<span class="string">'安徽'</span>
+            }},
+            { dataKey: <span class="string">'name'</span>,title:<span class="string">"姓名"</span>,width: <span class="number">200</span>,type:<span class="string">"text"</span>},
+            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,type:<span class="string">"text"</span>},
+            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,items:[
+              {title:<span class="string">'增加'</span>, type:<span class="string">"addRow"</span>, cb: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>console.info(rowData)}},
+              {title:<span class="string">'删除'</span>, type:<span class="string">"delRow"</span>, cb: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>console.info(rowData)}}
+            ]}
+        ];
+
+
+        <span class="keyword">let</span> renderProps={
+            jsxcolumns:columns
+        };
+
+
         <span class="keyword">return</span> (
             <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Form</span> <span class="attribute">ref</span>=<span class="value">"form"</span> <span class="attribute">jsxmode</span>=<span class="value">{Constants.MODE.EDIT}</span> <span class="attribute">passedData</span>=<span class="value">{data}</span> <span class="attribute">jsxonChange</span>=<span class="value">{me.handleChange.bind(me)}</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Form</span> <span class="attribute">ref</span>=<span class="value">"form"</span> <span class="attribute">jsxmode</span>=<span class="value">{Constants.MODE.EDIT}</span> <span class="attribute">jsxvalues</span>=<span class="value">{me.state.jsxvalues}</span> <span class="attribute">jsxonChange</span>=<span class="value">{me.handleChange.bind(me)}</span>&gt;</span>
                     <span class="tag">&lt;<span class="title">FormRowTitle</span> <span class="attribute">jsxtitle</span>=<span class="value">"我是行标题"</span>/&gt;</span>
                     <span class="tag">&lt;<span class="title">FormRow</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">InputFormField</span>  
-                         <span class="attribute">jsxname</span>=<span class="value">"test1"</span>
-                         <span class="attribute">jsxlabel</span>=<span class="value">"测试输入框"</span>
-                         <span class="attribute">jsxplaceholder</span>=<span class="value">"请输入"</span>
+                        <span class="tag">&lt;<span class="title">InputFormField
+</span>                         <span class="attribute">jsxname</span>=<span class="value">"test1"</span>
+                         <span class="attribute">jsxlabel</span>=<span class="value">"普通输入框"</span>
+                         <span class="attribute">jsxmode</span>=<span class="value">{Constants.MODE.VIEW}</span>
                          <span class="attribute">jsxtips</span>=<span class="value">"请输入数字"</span>
                          <span class="attribute">jsxrules</span>=<span class="value">{{validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "不能为空"}}/&gt;</span>
-                        <span class="tag">&lt;<span class="title">RadioGroupFormField</span> <span class="attribute">jsxname</span>=<span class="value">"fruit"</span> <span class="attribute">jsxlabel</span>=<span class="value">"Fruit Type"</span> <span class="attribute">jsxflex</span>=<span class="value">{1}</span>&gt;</span>
-                                <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">value</span>=<span class="value">"apple"</span> /&gt;</span>Apple
-                                <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">value</span>=<span class="value">"orange"</span> /&gt;</span>Orange
-                                <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"radio"</span> <span class="attribute">value</span>=<span class="value">"watermelon"</span> /&gt;</span>Watermelon
+                        <span class="tag">&lt;<span class="title">RadioGroupFormField</span> <span class="attribute">jsxname</span>=<span class="value">"fruit"</span> <span class="attribute">jsxlabel</span>=<span class="value">"Radio"</span> <span class="attribute">jsxflex</span>=<span class="value">{1}</span>&gt;</span>
+                                <span class="tag">&lt;<span class="title">RadioItem</span> <span class="attribute">value</span>=<span class="value">"apple"</span> <span class="attribute">text</span>=<span class="value">"Apple"</span>/&gt;</span>
+                                <span class="tag">&lt;<span class="title">RadioItem</span> <span class="attribute">value</span>=<span class="value">"orange"</span> <span class="attribute">text</span>=<span class="value">"Orange"</span>/&gt;</span>
+                                <span class="tag">&lt;<span class="title">RadioItem</span> <span class="attribute">value</span>=<span class="value">"watermelon"</span> <span class="attribute">text</span>=<span class="value">"Watermelon"</span>/&gt;</span>
                         <span class="tag">&lt;/<span class="title">RadioGroupFormField</span>&gt;</span>
                         <span class="tag">&lt;<span class="title">ButtonGroupFormField</span> <span class="attribute">jsxshow</span>=<span class="value">{false}</span>&gt;</span>
                             <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"medium"</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">onClick</span>=<span class="value">{me.handleFormClick.bind(me)}</span>&gt;</span>提交<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
+                            <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"medium"</span> <span class="attribute">type</span>=<span class="value">"reset"</span>&gt;</span>取消<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
                         <span class="tag">&lt;/<span class="title">ButtonGroupFormField</span>&gt;</span>
                     <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
                     <span class="tag">&lt;<span class="title">FormRow</span>&gt;</span>
                         <span class="tag">&lt;<span class="title">SelectFormField
-</span>                         <span class="attribute">jsxlabel</span>=<span class="value">"City"</span>
+</span>                         <span class="attribute">jsxlabel</span>=<span class="value">"单选"</span>
                          <span class="attribute">jsxname</span>=<span class="value">"city"</span>
                          <span class="attribute">jsxfetchUrl</span>=<span class="value">"http://suggest.taobao.com/sug"</span>
                          <span class="attribute">afterFetch</span>=<span class="value">{(obj)</span> =&gt;</span> {
@@ -873,7 +1029,7 @@ class Demo extends React.Component {
                          }}/&gt;
                          <span class="tag">&lt;<span class="title">NumberInputFormField
 </span>                          <span class="attribute">jsxname</span>=<span class="value">"number"</span>
-                          <span class="attribute">jsxlabel</span>=<span class="value">"数字输入"</span>
+                          <span class="attribute">jsxlabel</span>=<span class="value">"数字输入框"</span>
                           <span class="attribute">jsxtype</span>=<span class="value">"money"</span>
                           <span class="attribute">jsxplaceholder</span>=<span class="value">"输入数字"</span>
                           <span class="attribute">jsxtips</span>=<span class="value">"数字和一般的输入框不同"</span>
@@ -882,30 +1038,48 @@ class Demo extends React.Component {
                             {<span class="attribute">validator:</span> <span class="attribute">Validators.isNum</span>, <span class="attribute">errMsg:</span> "请输入数字"}
                          ]}/&gt;</span>
                     <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">FormRow</span>&gt;</span>
+                        <span class="tag">&lt;<span class="title">SelectFormField
+</span>                         <span class="attribute">jsxlabel</span>=<span class="value">"单选 combo 模式"</span>
+                         <span class="attribute">jsxname</span>=<span class="value">"goods"</span>
+                         <span class="attribute">jsxfetchUrl</span>=<span class="value">"http://suggest.taobao.com/sug"</span>
+                         <span class="attribute">jsxcombobox</span>=<span class="value">{true}</span>
+                         <span class="attribute">afterFetch</span>=<span class="value">{(obj)</span> =&gt;</span> {
+                            let data = {};
+                            obj.result.forEach((item, index) =&gt; {
+                                data[item[1]] = item[0];
+                            });
+                            return data;
+                         }}
+                         jsxstyle={{width: 200}}/&gt;
+
+                    <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
                     <span class="tag">&lt;<span class="title">FormRowTitle</span> <span class="attribute">jsxtitle</span>=<span class="value">"我是行标题2"</span>/&gt;</span>
                     <span class="tag">&lt;<span class="title">FormRow</span>&gt;</span>
                         <span class="tag">&lt;<span class="title">TextAreaFormField</span> <span class="attribute">jsxname</span>=<span class="value">"textArea"</span> <span class="attribute">jsxlabel</span>=<span class="value">"多行文本框"</span>/&gt;</span>
-                        <span class="tag">&lt;<span class="title">CheckboxGroupFormField</span> <span class="attribute">jsxname</span>=<span class="value">"checkbox"</span> <span class="attribute">jsxlabel</span>=<span class="value">"多选"</span>&gt;</span>
+                        <span class="tag">&lt;<span class="title">CheckboxGroupFormField</span> <span class="attribute">jsxname</span>=<span class="value">"checkbox"</span> <span class="attribute">jsxlabel</span>=<span class="value">"复选框"</span>&gt;</span>
                           <span class="tag">&lt;<span class="title">CheckboxItem</span> <span class="attribute">value</span>=<span class="value">"air"</span> <span class="attribute">text</span>=<span class="value">"天空"</span>/&gt;</span>
                           <span class="tag">&lt;<span class="title">CheckboxItem</span> <span class="attribute">value</span>=<span class="value">"sea"</span> <span class="attribute">text</span>=<span class="value">"大海"</span>/&gt;</span>
                         <span class="tag">&lt;/<span class="title">CheckboxGroupFormField</span>&gt;</span>
                     <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">FormRow</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">DateFormField</span> <span class="attribute">jsxname</span>=<span class="value">"date"</span> <span class="attribute">jsxlabel</span>=<span class="value">"日期"</span>/&gt;</span>
-                        <span class="tag">&lt;<span class="title">UploadFormField
-</span>                          <span class="attribute">jsxname</span>=<span class="value">"upload"</span>
-                          <span class="attribute">jsxlabel</span>=<span class="value">"上传"</span>
-                          <span class="attribute">jsxaction</span>=<span class="value">"http://demo.nwux.taobao.net/file/upload"</span>/&gt;</span>
-                    <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">FormRowTitle</span> <span class="attribute">jsxtitle</span>=<span class="value">"级联类"</span>/&gt;</span>
+                    <span class="tag">&lt;<span class="title">DateFormField</span> <span class="attribute">jsxtype</span>=<span class="value">"cascade"</span> <span class="attribute">jsxname</span>=<span class="value">"casDate"</span> <span class="attribute">jsxlabel</span>=<span class="value">"级联日期"</span> <span class="attribute">jsxfrom</span>=<span class="value">"2015-10-2"</span> <span class="attribute">jsxto</span>=<span class="value">"2015-10-10"</span>/&gt;</span>
                     <span class="tag">&lt;<span class="title">CascadeSelectFormField
 </span>                     <span class="attribute">jsxdata</span>=<span class="value">{casData}</span>
                      <span class="attribute">jsxname</span>=<span class="value">"cascade"</span>
-                     <span class="attribute">jsxlabel</span>=<span class="value">"级联"</span>
+                     <span class="attribute">jsxlabel</span>=<span class="value">"级联选择"</span>
                      <span class="attribute">jsxstyle</span>=<span class="value">{{</span>
                         <span class="attribute">width:</span> <span class="attribute">200</span>
                      }}/&gt;</span>
+                    <span class="tag">&lt;<span class="title">EditorFormField</span> <span class="attribute">jsxname</span>=<span class="value">"editor"</span>
+                                     <span class="attribute">jsxlabel</span>=<span class="value">"富文本编辑器"</span>
+                                     <span class="attribute">jsxcontent</span>=<span class="value">"1"</span>/&gt;</span>
+                    <span class="tag">&lt;<span class="title">GridFormField</span> <span class="attribute">jsxname</span>=<span class="value">"dicts"</span> <span class="attribute">jsxlabel</span>=<span class="value">"薪酬字典"</span> {<span class="attribute">...renderProps</span>}&gt;</span>
+                    <span class="tag">&lt;/<span class="title">GridFormField</span>&gt;</span>
                     <span class="tag">&lt;<span class="title">ButtonGroupFormField</span>&gt;</span>
                         <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"medium"</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">onClick</span>=<span class="value">{me.handleFormClick.bind(me)}</span>&gt;</span>提交<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
+                        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"medium"</span> <span class="attribute">type</span>=<span class="value">"reset"</span>&gt;</span>取消<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
+                        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"medium"</span> <span class="attribute">onClick</span>=<span class="value">{me.handleValueChange.bind(me)}</span>&gt;</span>修改 props<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
                     <span class="tag">&lt;/<span class="title">ButtonGroupFormField</span>&gt;</span>
                 <span class="tag">&lt;/<span class="title">Form</span>&gt;</span>
             <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
