@@ -14,7 +14,7 @@
 
 | name     | description    | type     | default      |
 |----------|----------------|----------|--------------|
-|className |
+|className |                |          |              |
 |core      | 唯一标识或者UploadCore对象, 防止重复创建, 当传入UploadCore对象时,下列参数和事件设置均无效 | string, `UploadCore` | null |
 |name      | 上传文件字段名称 | string | 'file' |
 |url       | 响应上传服务器地址 | string | '' |
