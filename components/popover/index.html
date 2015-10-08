@@ -2,7 +2,7 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/kuma/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/components/calendar">Calendar</a></li><li><a href="/uxcore/components/dialog">Dialog</a></li><li><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li><a href="/uxcore/components/tooltip">Tooltip</a></li><li><a href="/uxcore/components/tabs">Tabs</a></li><li><a href="/uxcore/components/grid">Grid</a></li><li><a href="/uxcore/components/form">Form</a></li><li><a href="/uxcore/components/dropdown">Dropdown</a></li><li><a href="/uxcore/components/mention">Mention</a></li><li><a href="/uxcore/components/tree">Tree</a></li><li><a href="/uxcore/components/transfer">Transfer</a></li><li class="current"><a href="/uxcore/components/popover">Popover</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Popover</h1><section class="meta"><span class="author"><b>author: </b>eternalsky</span><span class="github"><b>github: </b><a href="git+https://github.com/uxcore/uxcore-popover.git" target="_blank">Popover</a></span><span class="version"> <b>版本: </b>0.1.0</span><span class="description"><b>描述: </b>uxcore-popover component for uxcore.</span></section></header><div id="J-markdown" class="markdown"><p>uxcore-popover ui component for react</p>
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/kuma/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/components/calendar">Calendar</a></li><li><a href="/uxcore/components/dialog">Dialog</a></li><li><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li><a href="/uxcore/components/tooltip">Tooltip</a></li><li><a href="/uxcore/components/tabs">Tabs</a></li><li><a href="/uxcore/components/grid">Grid</a></li><li><a href="/uxcore/components/form">Form</a></li><li><a href="/uxcore/components/dropdown">Dropdown</a></li><li><a href="/uxcore/components/mention">Mention</a></li><li><a href="/uxcore/components/tree">Tree</a></li><li><a href="/uxcore/components/transfer">Transfer</a></li><li><a href="/uxcore/components/uploader">Uploader</a></li><li class="current"><a href="/uxcore/components/popover">Popover</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Popover</h1><section class="meta"><span class="author"><b>author: </b>eternalsky</span><span class="github"><b>github: </b><a href="https://github.com/uxcore/uxcore-popover.git" target="_blank">Popover</a></span><span class="version"> <b>版本: </b>0.1.0</span><span class="description"><b>描述: </b>uxcore-popover component for uxcore.</span></section></header><div id="J-markdown" class="markdown"><p>uxcore-popover ui component for react</p>
 <h2 id="usage">Usage</h2><pre>let Popover = require(&#39;uxcore-popover&#39;);
 let overlay = &lt;div&gt;
     &lt;div className=&quot;demoContent&quot;&gt;
@@ -80,8 +80,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 
 var _uxcoreButton = require('uxcore-button');
 
-var _uxcoreButton2 = _interopRequireDefault(_uxcoreButton);
-
 var _uxcorePopover = require('uxcore-popover');
 
 var _uxcorePopover2 = _interopRequireDefault(_uxcorePopover);
@@ -116,12 +114,12 @@ var HoverDemo = (function (_React$Component) {
                     'div',
                     { className: 'demoButton' },
                     React.createElement(
-                        _uxcoreButton2['default'],
+                        _uxcoreButton.Button,
                         { size: 'medium' },
                         '确定'
                     ),
                     React.createElement(
-                        _uxcoreButton2['default'],
+                        _uxcoreButton.Button,
                         { size: 'medium', color: 'orange' },
                         '取消'
                     )
@@ -134,7 +132,7 @@ var HoverDemo = (function (_React$Component) {
                     _uxcorePopover2['default'],
                     { title: '测试', overlay: overlay, placement: 'top' },
                     React.createElement(
-                        _uxcoreButton2['default'],
+                        _uxcoreButton.Button,
                         null,
                         '从上弹出'
                     )
@@ -143,7 +141,7 @@ var HoverDemo = (function (_React$Component) {
                     _uxcorePopover2['default'],
                     { title: '测试', overlay: overlay, placement: 'bottom' },
                     React.createElement(
-                        _uxcoreButton2['default'],
+                        _uxcoreButton.Button,
                         null,
                         '从下弹出'
                     )
@@ -152,7 +150,7 @@ var HoverDemo = (function (_React$Component) {
                     _uxcorePopover2['default'],
                     { title: '测试', overlay: overlay, placement: 'left' },
                     React.createElement(
-                        _uxcoreButton2['default'],
+                        _uxcoreButton.Button,
                         null,
                         '从左弹出'
                     )
@@ -161,7 +159,7 @@ var HoverDemo = (function (_React$Component) {
                     _uxcorePopover2['default'],
                     { title: '测试', overlay: overlay, placement: 'right' },
                     React.createElement(
-                        _uxcoreButton2['default'],
+                        _uxcoreButton.Button,
                         null,
                         '从右弹出'
                     )
@@ -175,7 +173,7 @@ var HoverDemo = (function (_React$Component) {
 
 ;
 
-React.render(React.createElement(HoverDemo, null), document.getElementById('components-popover-demo-hover'));})()</script><div class="highlight"><pre><code class="javascript">import Button from <span class="string">'uxcore-button'</span>;
+React.render(React.createElement(HoverDemo, null), document.getElementById('components-popover-demo-hover'));})()</script><div class="highlight"><pre><code class="javascript">import {Button, ButtonGroup} from <span class="string">'uxcore-button'</span>;
 import Popover from <span class="string">'uxcore-popover'</span>;
 
 class HoverDemo extends React.Component {
@@ -219,7 +217,7 @@ class HoverDemo extends React.Component {
 React.render(
     <span class="tag">&lt;<span class="title">HoverDemo</span> /&gt;</span>,
       document.getElementById('components-popover-demo-hover')
-);</span></code></pre></div></div></div><div id="code-box-components-popover-demo-click" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>点击弹出</em></div></div><div class="code-box-demo"><div id="components-popover-demo-click"></div></div><div class="code-box-markdown markdown"><script>(function(){import Button from 'uxcore-button';
+);</span></code></pre></div></div></div><div id="code-box-components-popover-demo-click" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>点击弹出</em></div></div><div class="code-box-demo"><div id="components-popover-demo-click"></div></div><div class="code-box-markdown markdown"><script>(function(){import {Button, ButtonGroup} from 'uxcore-button';
 import Popover from 'uxcore-popover';
 
 class ClickDemo extends React.Component {
@@ -252,7 +250,7 @@ class ClickDemo extends React.Component {
 React.render(
     <ClickDemo />,
       document.getElementById('components-popover-demo-click')
-);})()</script><div class="highlight"><pre><code class="javascript">import Button from <span class="string">'uxcore-button'</span>;
+);})()</script><div class="highlight"><pre><code class="javascript">import {Button, ButtonGroup} from <span class="string">'uxcore-button'</span>;
 import Popover from <span class="string">'uxcore-popover'</span>;
 
 class ClickDemo extends React.Component {
@@ -299,8 +297,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 
 var _uxcoreButton = require('uxcore-button');
 
-var _uxcoreButton2 = _interopRequireDefault(_uxcoreButton);
-
 var _uxcorePopover = require('uxcore-popover');
 
 var _uxcorePopover2 = _interopRequireDefault(_uxcorePopover);
@@ -335,12 +331,12 @@ var NoTitleDemo = (function (_React$Component) {
                     'div',
                     { className: 'demoButton' },
                     React.createElement(
-                        _uxcoreButton2['default'],
+                        _uxcoreButton.Button,
                         { size: 'medium' },
                         '确定'
                     ),
                     React.createElement(
-                        _uxcoreButton2['default'],
+                        _uxcoreButton.Button,
                         { size: 'medium', color: 'orange' },
                         '取消'
                     )
@@ -350,7 +346,7 @@ var NoTitleDemo = (function (_React$Component) {
                 _uxcorePopover2['default'],
                 { overlay: overlay, placement: 'right' },
                 React.createElement(
-                    _uxcoreButton2['default'],
+                    _uxcoreButton.Button,
                     null,
                     '从右弹出'
                 )
@@ -363,7 +359,7 @@ var NoTitleDemo = (function (_React$Component) {
 
 ;
 
-React.render(React.createElement(NoTitleDemo, null), document.getElementById('components-popover-demo-notitle'));})()</script><div class="highlight"><pre><code class="javascript">import Button from <span class="string">'uxcore-button'</span>;
+React.render(React.createElement(NoTitleDemo, null), document.getElementById('components-popover-demo-notitle'));})()</script><div class="highlight"><pre><code class="javascript">import {Button, ButtonGroup} from <span class="string">'uxcore-button'</span>;
 import Popover from <span class="string">'uxcore-popover'</span>;
 
 class NoTitleDemo extends React.Component {

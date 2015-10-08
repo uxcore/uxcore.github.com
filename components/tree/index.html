@@ -2,7 +2,7 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/kuma/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/components/calendar">Calendar</a></li><li><a href="/uxcore/components/dialog">Dialog</a></li><li><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li><a href="/uxcore/components/tooltip">Tooltip</a></li><li><a href="/uxcore/components/tabs">Tabs</a></li><li><a href="/uxcore/components/grid">Grid</a></li><li><a href="/uxcore/components/form">Form</a></li><li><a href="/uxcore/components/dropdown">Dropdown</a></li><li><a href="/uxcore/components/mention">Mention</a></li><li class="current"><a href="/uxcore/components/tree">Tree</a></li><li><a href="/uxcore/components/transfer">Transfer</a></li><li><a href="/uxcore/components/popover">Popover</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Tree</h1><section class="meta"><span class="author"><b>author: </b></span><span class="github"><b>github: </b><a href="git+ssh://git@github.com/uxcore/uxcore-tree.git" target="_blank">Tree</a></span><span class="version"> <b>版本: </b>0.1.2</span><span class="description"><b>描述: </b>uxcore-tree ui component for react</span></section></header><div id="J-markdown" class="markdown"><p>类似ztree的树组件</p>
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/kuma/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/components/calendar">Calendar</a></li><li><a href="/uxcore/components/dialog">Dialog</a></li><li><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li><a href="/uxcore/components/tooltip">Tooltip</a></li><li><a href="/uxcore/components/tabs">Tabs</a></li><li><a href="/uxcore/components/grid">Grid</a></li><li><a href="/uxcore/components/form">Form</a></li><li><a href="/uxcore/components/dropdown">Dropdown</a></li><li><a href="/uxcore/components/mention">Mention</a></li><li class="current"><a href="/uxcore/components/tree">Tree</a></li><li><a href="/uxcore/components/transfer">Transfer</a></li><li><a href="/uxcore/components/uploader">Uploader</a></li><li><a href="/uxcore/components/popover">Popover</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Tree</h1><section class="meta"><span class="author"><b>author: </b></span><span class="github"><b>github: </b><a href="git@github.com:uxcore/uxcore-tree.git" target="_blank">Tree</a></span><span class="version"> <b>版本: </b>0.1.1</span><span class="description"><b>描述: </b>uxcore-tree ui component for react</span></section></header><div id="J-markdown" class="markdown"><p>类似ztree的树组件</p>
 <h2 id="api">API</h2><h3 id="tree-props">Tree props</h3><table>
 <thead>
 <tr>
@@ -29,7 +29,13 @@
 <td>showLine</td>
 <td>whether show line</td>
 <td>bool</td>
-<td>false</td>
+<td>true</td>
+</tr>
+<tr>
+<td>showIcon</td>
+<td>whether show icon</td>
+<td>bool</td>
+<td>true</td>
 </tr>
 <tr>
 <td>multiple</td>
@@ -117,7 +123,7 @@
 </tr>
 </tbody>
 </table>
-</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-tree-demo-simple" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>基本用法</em></div></div><div class="code-box-demo"><div id="components-tree-demo-simple"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-tree-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>基本用法</em></div></div><div class="code-box-demo"><div id="components-tree-demo-basic"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -137,266 +143,92 @@ React.render(React.createElement(
   React.createElement(
     'h2',
     null,
-    'simple'
+    'tree'
   ),
   React.createElement(
     _uxcoreTree2['default'],
-    { className: 'myCls', onSelect: handleSelect, defaultSelectedKeys: ['0-1', '0-1-1'], multiple: true,
-      defaultExpandAll: true, showLine: true },
+    { className: 'myCls', onSelect: handleSelect, checkable: true },
     React.createElement(
       TreeNode,
-      { title: 'parent 1', key: '0-1' },
+      { title: 'parent 1', expanded: false, onSelect: handleSelect },
       React.createElement(
         TreeNode,
-        { title: 'parent 1-0', key: '0-1-1' },
-        React.createElement(TreeNode, { title: 'leaf' }),
-        React.createElement(TreeNode, { title: 'leaf' })
+        null,
+        'leaf '
       ),
       React.createElement(
         TreeNode,
         { title: 'parent 1-1' },
-        React.createElement(TreeNode, { title: 'leaf' })
-      )
-    )
-  )
-), document.getElementById('components-tree-demo-simple'));})()</script><div class="highlight"><pre><code class="javascript">import Tree from <span class="string">'uxcore-tree'</span>;
-<span class="keyword">let</span> TreeNode = Tree.TreeNode;
-
-<span class="function"><span class="keyword">function</span> <span class="title">handleSelect</span><span class="params">(e)</span> {</span>
-  console.log(e.event, e.node, <span class="string">'selected:'</span>, e.selected);
-}
-
-React.render(
-    <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">h2</span>&gt;</span>simple<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">Tree</span> <span class="attribute">className</span>=<span class="value">"myCls"</span> <span class="attribute">onSelect</span>=<span class="value">{handleSelect}</span> <span class="attribute">defaultSelectedKeys</span>=<span class="value">{['0-1',</span> '<span class="attribute">0-1-1</span>']} <span class="attribute">multiple</span>=<span class="value">{true}</span>
-          <span class="attribute">defaultExpandAll</span>=<span class="value">{true}</span> <span class="attribute">showLine</span>=<span class="value">{true}</span>&gt;</span>
-          <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"parent 1"</span> <span class="attribute">key</span>=<span class="value">"0-1"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"parent 1-0"</span> <span class="attribute">key</span>=<span class="value">"0-1-1"</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"leaf"</span> /&gt;</span>
-              <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"leaf"</span> /&gt;</span>
-            <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"parent 1-1"</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"leaf"</span> /&gt;</span>
-            <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
-          <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">Tree</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>,
-      document.getElementById('components-tree-demo-simple')
-);</span></code></pre></div></div></div><div id="code-box-components-tree-demo-expanded" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>expanded</em></div></div><div class="code-box-demo"><div id="components-tree-demo-expanded"></div></div><div class="code-box-markdown markdown"><script>(function(){"use strict";
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-var _uxcoreTree = require('uxcore-tree');
-
-var _uxcoreTree2 = _interopRequireDefault(_uxcoreTree);
-
-var TreeNode = _uxcoreTree2["default"].TreeNode;
-
-React.render(React.createElement(
-  "div",
-  null,
-  React.createElement(
-    _uxcoreTree2["default"],
-    { defaultExpandAll: false },
-    React.createElement(
-      TreeNode,
-      { title: "parent 1", key: "p1" },
-      React.createElement(TreeNode, { key: "p10", title: "leaf" }),
-      React.createElement(
-        TreeNode,
-        { title: "parent 1-1", key: "p11" },
         React.createElement(
           TreeNode,
-          { title: "parent 2-1", key: "p21" },
-          React.createElement(TreeNode, { title: "leaf" }),
-          React.createElement(TreeNode, { title: "leaf" })
-        ),
-        React.createElement(TreeNode, { key: "p22", title: "leaf" })
-      )
-    )
-  )
-), document.getElementById('components-tree-demo-expanded'));})()</script><div class="highlight"><pre><code class="javascript">import Tree from <span class="string">'uxcore-tree'</span>;
-<span class="keyword">let</span> TreeNode = Tree.TreeNode;
-
-React.render(
-    <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">Tree</span> <span class="attribute">defaultExpandAll</span>=<span class="value">{false}</span>&gt;</span>
-          <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"parent 1"</span> <span class="attribute">key</span>=<span class="value">"p1"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">key</span>=<span class="value">"p10"</span> <span class="attribute">title</span>=<span class="value">"leaf"</span>/&gt;</span>
-            <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"parent 1-1"</span> <span class="attribute">key</span>=<span class="value">"p11"</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"parent 2-1"</span> <span class="attribute">key</span>=<span class="value">"p21"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"leaf"</span>/&gt;</span>
-                <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"leaf"</span>/&gt;</span>
-              <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">key</span>=<span class="value">"p22"</span> <span class="attribute">title</span>=<span class="value">"leaf"</span>/&gt;</span>
-            <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
-          <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">Tree</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>,
-      document.getElementById('components-tree-demo-expanded')
-);</span></code></pre></div></div></div><div id="code-box-components-tree-demo-checked" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>checked</em></div></div><div class="code-box-demo"><div id="components-tree-demo-checked"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _uxcoreTree = require('uxcore-tree');
-
-var _uxcoreTree2 = _interopRequireDefault(_uxcoreTree);
-
-var TreeNode = _uxcoreTree2['default'].TreeNode;
-
-function handleSelect(e) {
-  console.log(e.event, e.node, 'selected:', e.selected);
-}
-function handleCheck(info) {
-  console.log('check: ', info);
-}
-
-var CheckedDemo = (function (_React$Component) {
-  _inherits(CheckedDemo, _React$Component);
-
-  function CheckedDemo(props) {
-    var _this = this;
-
-    _classCallCheck(this, CheckedDemo);
-
-    _get(Object.getPrototypeOf(CheckedDemo.prototype), 'constructor', this).call(this, props);
-    ['handleClick'].forEach(function (m) {
-      _this[m] = _this[m].bind(_this);
-    });
-    this.state = {
-      checkedKeys: [],
-      selectedKeys: []
-    };
-  }
-
-  _createClass(CheckedDemo, [{
-    key: 'handleClick',
-    value: function handleClick() {
-      this.setState({
-        checkedKeys: ['p11'],
-        selectedKeys: ['p21', 'p11']
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'div',
-        null,
-        React.createElement(
-          'div',
-          null,
+          { title: 'parent 2-1' },
           React.createElement(
-            'h2',
+            TreeNode,
             null,
-            'checked'
+            'leaf '
           ),
           React.createElement(
-            _uxcoreTree2['default'],
-            { showLine: true, defaultExpandAll: true, checkable: true,
-              onCheck: handleCheck, defaultCheckedKeys: ['p1', 'p22'], checkedKeys: this.state.checkedKeys,
-              defaultSelectedKeys: ['p11'], selectedKeys: this.state.selectedKeys, multiple: true },
-            React.createElement(
-              TreeNode,
-              { title: 'parent 1', key: 'p1' },
-              React.createElement(TreeNode, { key: 'p10', title: 'leaf' }),
-              React.createElement(
-                TreeNode,
-                { title: 'parent 1-1', key: 'p11' },
-                React.createElement(
-                  TreeNode,
-                  { title: 'parent 2-1', key: 'p21' },
-                  React.createElement(
-                    TreeNode,
-                    null,
-                    'test'
-                  ),
-                  React.createElement(TreeNode, { title: React.createElement(
-                      'span',
-                      null,
-                      'sss'
-                    ) })
-                ),
-                React.createElement(TreeNode, { key: 'p22', title: 'leaf' })
-              )
-            ),
-            React.createElement(TreeNode, { key: 'p12', title: 'leaf' })
+            TreeNode,
+            null,
+            'leaf '
           )
         ),
         React.createElement(
-          'button',
-          { className: 'kuma-button kuma-button-sm', onClick: this.handleClick },
-          'check sth'
+          TreeNode,
+          null,
+          'leaf '
+        ),
+        React.createElement(
+          TreeNode,
+          null,
+          'leaf '
         )
-      );
-    }
-  }]);
-
-  return CheckedDemo;
-})(React.Component);
-
-React.render(React.createElement(CheckedDemo, null), document.getElementById('components-tree-demo-checked'));})()</script><div class="highlight"><pre><code class="javascript">import Tree from <span class="string">'uxcore-tree'</span>;
+      )
+    ),
+    React.createElement(
+      TreeNode,
+      null,
+      'leaf '
+    ),
+    React.createElement(
+      TreeNode,
+      null,
+      React.createElement(
+        TreeNode,
+        null,
+        'leaf '
+      )
+    )
+  )
+), document.getElementById('components-tree-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript">import Tree from <span class="string">'uxcore-tree'</span>;
 <span class="keyword">let</span> TreeNode = Tree.TreeNode;
 
 <span class="function"><span class="keyword">function</span> <span class="title">handleSelect</span><span class="params">(e)</span> {</span>
   console.log(e.event, e.node, <span class="string">'selected:'</span>, e.selected);
 }
-<span class="function"><span class="keyword">function</span> <span class="title">handleCheck</span><span class="params">(info)</span> {</span>
-  console.log(<span class="string">'check: '</span>, info);
-}
-
-class CheckedDemo extends React.Component {
-  constructor(props) {
-    super(props);
-    [<span class="string">'handleClick'</span>].forEach((m)=&gt; {
-      <span class="keyword">this</span>[m] = <span class="keyword">this</span>[m].bind(<span class="keyword">this</span>);
-    });
-    <span class="keyword">this</span>.state = {
-      checkedKeys: [],
-      selectedKeys: []
-    };
-  }
-  handleClick() {
-    <span class="keyword">this</span>.setState({
-      checkedKeys: [<span class="string">'p11'</span>],
-      selectedKeys: [<span class="string">'p21'</span>, <span class="string">'p11'</span>]
-    });
-  }
-  render() {
-    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">div</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">h2</span>&gt;</span>checked<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">Tree</span> <span class="attribute">showLine</span>=<span class="value">{true}</span> <span class="attribute">defaultExpandAll</span>=<span class="value">{true}</span> <span class="attribute">checkable</span>=<span class="value">{true}</span>
-              <span class="attribute">onCheck</span>=<span class="value">{handleCheck}</span> <span class="attribute">defaultCheckedKeys</span>=<span class="value">{['p1',</span> '<span class="attribute">p22</span>']} <span class="attribute">checkedKeys</span>=<span class="value">{this.state.checkedKeys}</span>
-              <span class="attribute">defaultSelectedKeys</span>=<span class="value">{['p11']}</span> <span class="attribute">selectedKeys</span>=<span class="value">{this.state.selectedKeys}</span> <span class="attribute">multiple</span>&gt;</span>
-          <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"parent 1"</span> <span class="attribute">key</span>=<span class="value">"p1"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">key</span>=<span class="value">"p10"</span> <span class="attribute">title</span>=<span class="value">"leaf"</span>/&gt;</span>
-            <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"parent 1-1"</span> <span class="attribute">key</span>=<span class="value">"p11"</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"parent 2-1"</span> <span class="attribute">key</span>=<span class="value">"p21"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">TreeNode</span>&gt;</span>test<span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">{&lt;span</span>&gt;</span>sss<span class="tag">&lt;/<span class="title">span</span>&gt;</span>}/&gt;
-              <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">key</span>=<span class="value">"p22"</span> <span class="attribute">title</span>=<span class="value">"leaf"</span>/&gt;</span>
-            <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
-          <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
-          <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">key</span>=<span class="value">"p12"</span> <span class="attribute">title</span>=<span class="value">"leaf"</span>/&gt;</span>
-        <span class="tag">&lt;/<span class="title">Tree</span>&gt;</span>
-      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"kuma-button kuma-button-sm"</span> <span class="attribute">onClick</span>=<span class="value">{this.handleClick}</span>&gt;</span>check sth<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-  }
-}
 
 React.render(
-    <span class="tag">&lt;<span class="title">CheckedDemo</span> /&gt;</span>,
-      document.getElementById('components-tree-demo-checked')
+    <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">h2</span>&gt;</span>tree<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
+
+      <span class="tag">&lt;<span class="title">Tree</span> <span class="attribute">className</span>=<span class="value">"myCls"</span> <span class="attribute">onSelect</span>=<span class="value">{handleSelect}</span> <span class="attribute">checkable</span>=<span class="value">{true}</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"parent 1"</span> <span class="attribute">expanded</span>=<span class="value">{false}</span> <span class="attribute">onSelect</span>=<span class="value">{handleSelect}</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">TreeNode</span>&gt;</span>leaf <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"parent 1-1"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">TreeNode</span> <span class="attribute">title</span>=<span class="value">"parent 2-1"</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">TreeNode</span>&gt;</span>leaf <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
+              <span class="tag">&lt;<span class="title">TreeNode</span>&gt;</span>leaf <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">TreeNode</span>&gt;</span>leaf <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">TreeNode</span>&gt;</span>leaf <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">TreeNode</span>&gt;</span>leaf <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">TreeNode</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">TreeNode</span>&gt;</span>leaf <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">TreeNode</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">Tree</span>&gt;</span>
+
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>,
+      document.getElementById('components-tree-demo-basic')
 );</span></code></pre></div></div></div></article></div></body></html>
