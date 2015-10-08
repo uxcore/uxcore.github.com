@@ -33,6 +33,7 @@
     "uxcore-tooltip": "^0.1.1",
     "uxcore-transfer": "~0.1.0",
     "uxcore-tree": "^0.1.1",
+    "uxcore-hovercard": "^1.0.0",
     "uxcore-uploadcore": "^2.0.2",
     "uxcore-uploader": "^1.0.0"
   },

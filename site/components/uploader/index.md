@@ -2,15 +2,13 @@
 
 - category: Components
 - chinese: Uploader组件
-- order: 11
+- order: 14
 
 ---
 
 上传组件, 封装[UploadCore](https://github.com/uxcore/uxcore-uploadcore/)核心组件, 作为UI层.
 
-## API
-
-### Uploader props
+## Props
 
 | name     | description    | type     | default      |
 |----------|----------------|----------|--------------|
@@ -34,7 +32,7 @@
 |sizeLimit | 文件大小限制, 0表示不限制 | size | 0 |
 |preventDuplicate | 是否防止文件重复 | bool | false |
 
-### Uploader Events
+## Events
 
 | name     | arguments    | description      |
 |----------|--------------|------------------|
