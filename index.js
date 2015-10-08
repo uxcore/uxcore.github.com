@@ -15,7 +15,8 @@ window.UXCORE = {
 	'uxcore-mention': require('uxcore-mention'),
 	'uxcore-tree': require('uxcore-tree'),
 	'uxcore-transfer': require('uxcore-transfer'),
-	'uxcore-popover': require('uxcore-popover')
+	'uxcore-popover': require('uxcore-popover'),
+	'uxcore-uploader': require('uxcore-uploader')
 };
 
 /*

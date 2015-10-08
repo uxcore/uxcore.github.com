@@ -32,7 +32,9 @@
     "uxcore-tabs": "^0.2.0",
     "uxcore-tooltip": "^0.1.1",
     "uxcore-transfer": "~0.1.0",
-    "uxcore-tree": "^0.1.2"
+    "uxcore-tree": "^0.1.2",
+    "uxcore-uploadcore": "^2.0.1",
+    "uxcore-uploader": "^1.0.0"
   },
   "devDependencies": {
     "autoprefixer-loader": "~2.0.0",
