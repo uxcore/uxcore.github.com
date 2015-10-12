@@ -2,7 +2,7 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/kuma/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/components/calendar">Calendar</a></li><li><a href="/uxcore/components/dialog">Dialog</a></li><li><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li><a href="/uxcore/components/tooltip">Tooltip</a></li><li><a href="/uxcore/components/tabs">Tabs</a></li><li><a href="/uxcore/components/grid">Grid</a></li><li><a href="/uxcore/components/form">Form</a></li><li><a href="/uxcore/components/dropdown">Dropdown</a></li><li><a href="/uxcore/components/mention">Mention</a></li><li><a href="/uxcore/components/tree">Tree</a></li><li><a href="/uxcore/components/transfer">Transfer</a></li><li><a href="/uxcore/components/popover">Popover</a></li><li><a href="/uxcore/components/hovercard">Hovercard</a></li><li class="current"><a href="/uxcore/components/uploader">Uploader</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Uploader</h1><section class="meta"><span class="author"><b>author: </b>onbing</span><span class="github"><b>github: </b><a href="git@github.com:uxcore/uxcore-uploader.git" target="_blank">Uploader</a></span><span class="version"> <b>版本: </b>1.0.0-beta.2</span><span class="description"><b>描述: </b>uxcore-uploader component for react</span></section></header><div id="J-markdown" class="markdown"><p>上传组件, 封装<a href="https://github.com/uxcore/uxcore-uploadcore/">UploadCore</a>核心组件, 作为UI层.</p>
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/kuma/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/components/calendar">Calendar</a></li><li><a href="/uxcore/components/dialog">Dialog</a></li><li><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li><a href="/uxcore/components/tooltip">Tooltip</a></li><li><a href="/uxcore/components/tabs">Tabs</a></li><li><a href="/uxcore/components/grid">Grid</a></li><li><a href="/uxcore/components/form">Form</a></li><li><a href="/uxcore/components/dropdown">Dropdown</a></li><li><a href="/uxcore/components/mention">Mention</a></li><li><a href="/uxcore/components/tree">Tree</a></li><li><a href="/uxcore/components/transfer">Transfer</a></li><li><a href="/uxcore/components/popover">Popover</a></li><li><a href="/uxcore/components/hovercard">Hovercard</a></li><li class="current"><a href="/uxcore/components/uploader">Uploader</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Uploader</h1><section class="meta"><span class="author"><b>author: </b>onbing</span><span class="github"><b>github: </b><a href="git@github.com:uxcore/uxcore-uploader.git" target="_blank">Uploader</a></span><span class="version"> <b>版本: </b>1.0.0-beta.3</span><span class="description"><b>描述: </b>uxcore-uploader component for react</span></section></header><div id="J-markdown" class="markdown"><p>上传组件, 封装<a href="https://github.com/uxcore/uxcore-uploadcore/">UploadCore</a>核心组件, 作为UI层.</p>
 <h2 id="props">Props</h2><table>
 <thead>
 <tr>
@@ -238,99 +238,111 @@
 <p>具体配置信息见<a href="https://github.com/uxcore/uxcore-uploadcore/blob/master/README.md">https://github.com/uxcore/uxcore-uploadcore/blob/master/README.md</a>.</p>
 </div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-uploader-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>基本用法</em></div></div><div class="code-box-demo"><div id="components-uploader-demo-basic"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+var Uploader = require('uxcore-uploader');
 
-var _uxcoreUploader = require('uxcore-uploader');
-
-var _uxcoreUploader2 = _interopRequireDefault(_uxcoreUploader);
-
-React.render(React.createElement(_uxcoreUploader2['default'], { autoPending: false, multiple: false, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript">import Uploader from <span class="string">'uxcore-uploader'</span>;
+React.render(React.createElement(Uploader, { multiple: false, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
 
 React.render(
-    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">autoPending</span>=<span class="value">{false}</span> <span class="attribute">multiple</span>=<span class="value">{false}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>,
+    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">multiple</span>=<span class="value">{false}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>,
       document.getElementById('components-uploader-demo-basic')
-);</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-auto" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>自动上传</em></div></div><div class="code-box-demo"><div id="components-uploader-demo-auto"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+);</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-tips" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>附带提示文字</em></div></div><div class="code-box-demo"><div id="components-uploader-demo-tips"></div></div><div class="code-box-markdown markdown"><style>
+.tips {
+   color:#666;
+   margin-left:20px;
+}
+.tips em {
+   color:#999;
+   font-style:normal;
+   font-weight:normal;
+}
+</style>
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+<div class="highlight"><pre><code class="css"><span class="class">.tips</span> <span class="rules">{
+   <span class="rule"><span class="attribute">color</span>:<span class="value"><span class="hexcolor">#666</span></span></span>;
+   <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">20</span>px</span></span>;
+<span class="rule">}</span></span>
+<span class="class">.tips</span> <span class="tag">em</span> <span class="rules">{
+   <span class="rule"><span class="attribute">color</span>:<span class="value"><span class="hexcolor">#999</span></span></span>;
+   <span class="rule"><span class="attribute">font-style</span>:<span class="value">normal</span></span>;
+   <span class="rule"><span class="attribute">font-weight</span>:<span class="value">normal</span></span>;
+<span class="rule">}</span></span></code></pre></div><script>(function(){'use strict';
 
-var _uxcoreUploader = require('uxcore-uploader');
+var Uploader = require('uxcore-uploader');
 
-var _uxcoreUploader2 = _interopRequireDefault(_uxcoreUploader);
+var tips = React.createElement(
+  'span',
+  { className: 'tips' },
+  '限制0.5M以内',
+  React.createElement(
+    'em',
+    null,
+    '（支持格式：.doc; .docx; .xls; .xlsx）'
+  )
+);
 
-React.render(React.createElement(_uxcoreUploader2['default'], { autoPending: true, multiple: false, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-auto'));})()</script><div class="highlight"><pre><code class="javascript">import Uploader from <span class="string">'uxcore-uploader'</span>;
+React.render(React.createElement(Uploader, { tips: tips, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-tips'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
+
+<span class="keyword">const</span> tips = <span class="xml"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">className</span>=<span class="value">"tips"</span>&gt;</span>限制0.5M以内<span class="tag">&lt;<span class="title">em</span>&gt;</span>（支持格式：.doc; .docx; .xls; .xlsx）<span class="tag">&lt;/<span class="title">em</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>;</span>
+
+React.render(
+    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">tips</span>=<span class="value">{tips}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>,
+      document.getElementById('components-uploader-demo-tips')
+);</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-image" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>图片上传</em></div></div><div class="code-box-demo"><div id="components-uploader-demo-image"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Uploader = require('uxcore-uploader');
+
+React.render(React.createElement(Uploader, { multiple: false, accept: 'images', name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-image'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
 
 React.render((
-    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">autoPending</span>=<span class="value">{true}</span> <span class="attribute">multiple</span>=<span class="value">{false}</span>  <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
-), document.getElementById('components-uploader-demo-auto'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-image" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>图片上传</em></div></div><div class="code-box-demo"><div id="components-uploader-demo-image"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _uxcoreUploader = require('uxcore-uploader');
-
-var _uxcoreUploader2 = _interopRequireDefault(_uxcoreUploader);
-
-React.render(React.createElement(_uxcoreUploader2['default'], { autoPending: false, multiple: false, accept: 'images', name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-image'));})()</script><div class="highlight"><pre><code class="javascript">import Uploader from <span class="string">'uxcore-uploader'</span>;
-
-React.render((
-    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">autoPending</span>=<span class="value">{false}</span> <span class="attribute">multiple</span>=<span class="value">{false}</span> <span class="attribute">accept</span>=<span class="value">"images"</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
+    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">multiple</span>=<span class="value">{false}</span> <span class="attribute">accept</span>=<span class="value">"images"</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
 ), document.getElementById('components-uploader-demo-image'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-video" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>视频上传</em></div></div><div class="code-box-demo"><div id="components-uploader-demo-video"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+var Uploader = require('uxcore-uploader');
 
-var _uxcoreUploader = require('uxcore-uploader');
-
-var _uxcoreUploader2 = _interopRequireDefault(_uxcoreUploader);
-
-React.render(React.createElement(_uxcoreUploader2['default'], { autoPending: false, multiple: false, accept: 'videos', name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-video'));})()</script><div class="highlight"><pre><code class="javascript">import Uploader from <span class="string">'uxcore-uploader'</span>;
+React.render(React.createElement(Uploader, { multiple: false, accept: 'videos', name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-video'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
 
 React.render((
-    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">autoPending</span>=<span class="value">{false}</span> <span class="attribute">multiple</span>=<span class="value">{false}</span> <span class="attribute">accept</span>=<span class="value">"videos"</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
+    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">multiple</span>=<span class="value">{false}</span> <span class="attribute">accept</span>=<span class="value">"videos"</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
 ), document.getElementById('components-uploader-demo-video'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-multi" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>多文件</em></div></div><div class="code-box-demo"><div id="components-uploader-demo-multi"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+var Uploader = require('uxcore-uploader');
 
-var _uxcoreUploader = require('uxcore-uploader');
-
-var _uxcoreUploader2 = _interopRequireDefault(_uxcoreUploader);
-
-React.render(React.createElement(_uxcoreUploader2['default'], { autoPending: false, multiple: true, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-multi'));})()</script><div class="highlight"><pre><code class="javascript">import Uploader from <span class="string">'uxcore-uploader'</span>;
+React.render(React.createElement(Uploader, { multiple: true, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-multi'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
 
 React.render((
-    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">autoPending</span>=<span class="value">{false}</span> <span class="attribute">multiple</span>=<span class="value">{true}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
+    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">multiple</span>=<span class="value">{true}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
 ), document.getElementById('components-uploader-demo-multi'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-dropzoom" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>拖拽上传</em></div></div><div class="code-box-demo"><div id="components-uploader-demo-dropzoom"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
-var _uxcoreUploader = require('uxcore-uploader');
+var _require = require('uxcore-uploader');
 
-React.render(React.createElement(_uxcoreUploader.Dropzoom, { autoPending: false, multiple: true, queueCapcity: 20, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-dropzoom'));})()</script><div class="highlight"><pre><code class="javascript">import {Dropzoom} from <span class="string">'uxcore-uploader'</span>;
+var Dropzoom = _require.Dropzoom;
+
+React.render(React.createElement(Dropzoom, { autoPending: false, multiple: true, queueCapcity: 20, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-dropzoom'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> {Dropzoom} = require(<span class="string">'uxcore-uploader'</span>);
 
 React.render((
     <span class="xml"><span class="tag">&lt;<span class="title">Dropzoom</span> <span class="attribute">autoPending</span>=<span class="value">{false}</span> <span class="attribute">multiple</span>=<span class="value">{true}</span> <span class="attribute">queueCapcity</span>=<span class="value">{20}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
 ), document.getElementById('components-uploader-demo-dropzoom'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-wrap1" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>包裹按钮</em></div></div><div class="code-box-demo"><div id="components-uploader-demo-wrap1"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+var Uploader = require('uxcore-uploader');
 
-var _uxcoreUploader = require('uxcore-uploader');
+var _require = require('uxcore-button');
 
-var _uxcoreUploader2 = _interopRequireDefault(_uxcoreUploader);
-
-var _uxcoreButton = require('uxcore-button');
-
-var _uxcoreButton2 = _interopRequireDefault(_uxcoreButton);
+var Button = _require.Button;
 
 React.render(React.createElement(
-    _uxcoreUploader2['default'],
-    { autoPending: false, name: 'file', url: 'http://test.yanbingbing.com/upload.php' },
+    Uploader,
+    { name: 'file', url: 'http://test.yanbingbing.com/upload.php' },
     React.createElement(
-        _uxcoreButton2['default'],
+        Button,
         { size: 'large' },
         '自定义上传按钮'
     )
-), document.getElementById('components-uploader-demo-wrap1'));})()</script><div class="highlight"><pre><code class="javascript">import Uploader from <span class="string">'uxcore-uploader'</span>;
-import Button from <span class="string">'uxcore-button'</span>;
+), document.getElementById('components-uploader-demo-wrap1'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
+<span class="keyword">const</span> {Button} = require(<span class="string">'uxcore-button'</span>);
 
 
 React.render((
-    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">autoPending</span>=<span class="value">{false}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span>&gt;</span>
+    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span>&gt;</span>
         <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"large"</span>&gt;</span>自定义上传按钮<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
     <span class="tag">&lt;/<span class="title">Uploader</span>&gt;</span>
 ), document.getElementById('components-uploader-demo-wrap1'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-wrap2" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>包裹区域</em></div></div><div class="code-box-demo"><div id="components-uploader-demo-wrap2"></div></div><div class="code-box-markdown markdown"><style>
@@ -349,10 +361,12 @@ React.render((
    <span class="rule"><span class="attribute">margin-top</span>:<span class="value"> <span class="number">35</span>px</span></span>;
 <span class="rule">}</span></span></code></pre></div><script>(function(){'use strict';
 
-var _uxcoreUploader = require('uxcore-uploader');
+var _require = require('uxcore-uploader');
+
+var Dropzoom = _require.Dropzoom;
 
 React.render(React.createElement(
-    _uxcoreUploader.Dropzoom,
+    Dropzoom,
     { autoPending: false, className: 'mydroparea', multiple: true, queueCapcity: 20, name: 'file', url: 'http://test.yanbingbing.com/upload.php' },
     React.createElement('i', { className: 'kuma-icon kuma-icon-uploading' }),
     React.createElement(
@@ -360,7 +374,7 @@ React.render(React.createElement(
         null,
         '点击或将文件拖拽到此区域上传'
     )
-), document.getElementById('components-uploader-demo-wrap2'));})()</script><div class="highlight"><pre><code class="javascript">import {Dropzoom} from <span class="string">'uxcore-uploader'</span>;
+), document.getElementById('components-uploader-demo-wrap2'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> {Dropzoom} = require(<span class="string">'uxcore-uploader'</span>);
 
 React.render((
     <span class="xml"><span class="tag">&lt;<span class="title">Dropzoom</span> <span class="attribute">autoPending</span>=<span class="value">{false}</span> <span class="attribute">className</span>=<span class="value">"mydroparea"</span> <span class="attribute">multiple</span>=<span class="value">{true}</span> <span class="attribute">queueCapcity</span>=<span class="value">{20}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span>&gt;</span>
