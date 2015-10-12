@@ -7,12 +7,12 @@
 ---
 
 ````jsx
-import Uploader from 'uxcore-uploader';
-import {Button} from 'uxcore-button';
+const Uploader = require('uxcore-uploader');
+const {Button} = require('uxcore-button');
 
 
 React.render((
-    <Uploader autoPending={false} name='file' url='http://test.yanbingbing.com/upload.php'>
+    <Uploader name='file' url='http://test.yanbingbing.com/upload.php'>
         <Button size="large">自定义上传按钮</Button>
     </Uploader>
 ), document.getElementById('components-uploader-demo-wrap1'));
