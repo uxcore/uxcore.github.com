@@ -19,7 +19,7 @@ Kuma是一只轻松可爱休闲的小熊，也常常被唤作“轻松熊”，�
 
 ---
 
-`Kuma` 服务于我们大家，所以它需要我们大家共同维护，大家可以一起贡献模块样式和Review，发现有任何问题或建议都可以提到 [Kuma issue](http://gitlab.alibaba-inc.com/alinw/kuma/issues)
+`Kuma` 服务于我们大家，所以它需要我们大家共同维护，大家可以一起贡献模块样式和Review，发现有任何问题或建议都可以提到 [Kuma issue](https://github.com/uxcore/kuma/issues)
 
 ---
 
@@ -30,17 +30,18 @@ Kuma是一只轻松可爱休闲的小熊，也常常被唤作“轻松熊”，�
 - 内外边距通常让各个浏览器样式的表现位置不同，所以我们会重新Reset部分元素的边距样式。
 
 ```css
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,
-    margin:0;padding:0;
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0;
 }
 ```
 
 - 标题排版自定义默认样式
 
 ```css
-h1,h2,h3,h4,h5,h6 {
-    font-size:100%;
-    font-weight:500;
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: 500;
 }
 ```
 
@@ -48,19 +49,8 @@ h1,h2,h3,h4,h5,h6 {
 - 重设 HTML5 标签
 
 ```css
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,
-    display:block;
-}
-```
-
-- 要注意表单元素并不继承父级 `font` 的问题
-
-```css
-body,button,input,select,textarea {
-    font:12px/1.5 tahoma,arial,"Hiragino Sans GB",\5b8b\4f53;
-}
-input,select,textarea {
-    font-size:100%;
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
 }
 ```
 
@@ -68,21 +58,22 @@ input,select,textarea {
 
 ```css
 table {
-    border-collapse:collapse;border-spacing:0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 ```
 - 解决ie下`th`不继承`text-align`
 
 ```css
 th {
-    text-align:inherit;
+    text-align: inherit;
 }
 ```
 - 去除图片、表单元素等的默认边框
 
 ```css
 fieldset,img {
-    border:0;
+    border: 0;
 }
 ```
 - 去掉列表前的默认标识符号, li会继承
@@ -144,10 +135,6 @@ samp {
 }
 
 /*左-右浮动*/
-.fn-left,
-.fn-right {
-    display:inline;
-}
 .fn-left {
     float:left;
 }
@@ -160,33 +147,6 @@ samp {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-
-/*简单的渐变*/
-.fn-linear {
-    background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f1f1f1));
-    background: -moz-linear-gradient(top, #fcfcfc, #f1f1f1);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f1f1f1');
-    background:-o-linear-gradient(top, #fcfcfc, #f1f1f1);
-    background:-ms-linear-gradient(top, #fcfcfc, #f1f1f1);
-    background: linear-gradient(to bottom, #fcfcfc, #f1f1f1);
-}
-
-/*浅色的渐变*/
-.fn-linear-light {
-    background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f9f9f9));
-    background: -moz-linear-gradient(top, #fcfcfc, #f9f9f9);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f9f9f9');
-    background:-o-linear-gradient(top, #fcfcfc, #f9f9f9);
-    background:-ms-linear-gradient(top, #fcfcfc, #f9f9f9);
-    background: linear-gradient(to bottom, #fcfcfc, #f9f9f9);
-}
-
-/*人民币符号样式*/
-.fn-rmb {
-    font-family: arial;
-    font-style: normal;
-    padding-right: 4px;
 }
 
 /*高亮文案颜色*/
@@ -226,52 +186,18 @@ samp {
 
 使用起来也非常简单，只需要在包含有浮动属性元素的父级层添加`fn-clear`即可轻松清除并触发`hasLayout`。
 
-```html
+````html
 <div class="parent fn-clear">
     <div class="fn-left">child-1</div>
     <div class="fn-right">child-2</div>
 </div>
-```
-
-
-
-
-## 下拉框
-
-> 下拉框基础样式。
-
-
-```html
-<style>
-.demo-wrap{
-    position: relative;
-    height: 200px;
-    font-size:12px;
-}
-</style>
-<div class="demo-wrap" style="position:relative;">
-    <div class="kuma-select kuma-select-trigger" style="width: 117px;">
-        <a href="javascript:void(0);">
-            <span data-role="trigger-content">--请选择--</span><i class="kuma-icon kuma-icon-triangle-down" title="下拉"></i>
-        </a>
-    </div>
-    <div class="kuma-select" style="width: 119px; z-index: 999; position: absolute; left: 0; top: 29px; display: block;">
-        <ul class="kuma-select-content">
-            <li class="kuma-select-item">--请选择--</li>
-            <li class="kuma-select-item">这里是第一个选择</li>
-            <li class="kuma-select-item">这里是第二个选择</li>
-            <li class="kuma-select-item">这里是第三个选择</li>
-            <li class="kuma-select-item">这里是第四个选择</li>
-        </ul>
-    </div>
-</div>
-```
+````
 
 ## 单、复选框 `Update`
 
 > 单选框、复选框基础样式。默认蓝色主题，但是可以分别通过添加 `radio-primary`和`checkbox-primary`来将单、复选框切换到灰色主体。
 
-```html
+````html
 <label>
     <input class="kuma-checkbox" type="radio" checked> <s></s>
     单选项
@@ -288,11 +214,11 @@ samp {
     <input class="kuma-checkbox checkbox-primary" type="checkbox" checked> <s></s>
     多选项
 </label>
-```
+````
 
 ### 默认为蓝色主题
 
-```html
+````html
 <style>
 label {display: inline-block;line-height: 2em;font-size: 12px;vertical-align: middle;}
 </style>
@@ -336,7 +262,7 @@ label {display: inline-block;line-height: 2em;font-size: 12px;vertical-align: mi
         </td>
     </tr>
 </table>
-```
+````
 
 ## 表格
 
@@ -351,7 +277,7 @@ label {display: inline-block;line-height: 2em;font-size: 12px;vertical-align: mi
 
 > 通过添加 .kuma-table-condensed 类可以让表格更加紧凑，单元格中的内补（padding）均会减半。
 
-```html
+````html
 <table class="kuma-table kuma-table-condensed">
     <thead>
         <tr>
@@ -391,13 +317,13 @@ label {display: inline-block;line-height: 2em;font-size: 12px;vertical-align: mi
         </tr>
     </tbody>
 </table>
-```
+````
 
 ### 有 Hover 样式
 
 > 通过添加 `.kuma-table-hover` 类可以让 <tbody> 中的每一行对鼠标悬停状态作出响应。
 
-```html
+````html
 <table class="kuma-table kuma-table-hover">
     <thead>
         <tr>
@@ -437,13 +363,13 @@ label {display: inline-block;line-height: 2em;font-size: 12px;vertical-align: mi
         </tr>
     </tbody>
 </table>
-```
+````
 
 ### 斑马格的表格
 
 > 通过 `.kuma-table-striped` 类可以给 <tbody> 之内的每一行增加斑马条纹样式。
 
-```html
+````html
 <table class="kuma-table kuma-table-striped">
     <thead>
         <tr>
@@ -494,13 +420,13 @@ label {display: inline-block;line-height: 2em;font-size: 12px;vertical-align: mi
         </tr>
     </tbody>
 </table>
-```
+````
 
 ### 有边框的表格
 
 > 添加 `.kuma-table-bordered` 类为表格和其中的每个单元格增加边框。
 
-```html
+````html
 <table class="kuma-table kuma-table-bordered">
     <thead>
         <tr>
@@ -540,13 +466,13 @@ label {display: inline-block;line-height: 2em;font-size: 12px;vertical-align: mi
         </tr>
     </tbody>
 </table>
-```
+````
 
 ### 带附加项的表格 `New`
 
 > 外面包的结构是为了交互功能的,可以不管
 
-```html
+````html
 <div class="J_TableWrapper">
 <div class="kuma-table-action J_TableFoldWrapper"><a href="javascript:;" class="kuma-table-fold active J_TableFoldToggleTrigger" data-type="fold"></a><a href="javascript:;" class="kuma-table-unfold J_TableFoldToggleTrigger" data-type="unfold"></a></div>
 <table class="kuma-table kuma-table-bordered J_Table">
@@ -645,28 +571,7 @@ seajs.use('$',function($){
    })
 })
 </script>
-```
-
-## 回到顶部 `New`
-
-> 在实际使用过程中需要设定 `kuma-back-totop` 元素的定位属性为 `position:fixed`
-
-```html
-
-<style>
-.kuma-back-totop { position: relative; left: 130px; }
-</style>
-
-<div class="kuma-back-totop fn-clear">
-	<a id="j-go-top" class="btn gotop" style="display: inline;">totop</a>
-	<a href="https://xz.alibaba-inc.com" class="btn mobile trigger-show-barcode" target="_blank">
-    <div class="barcode"><img src="https://aliwork.alicdn.com/tps/i3/TB15QvAHXXXXXaCXXXXkpw8JVXX-96-96.png"></div>
-	</a>
-	<a href="http://yunpan.alibaba-inc.com/share/link/S65gBDHk" target="_blank" class="btn pc"></a>
-	<a href="/work/group/groupDetail?groupId=441" target="_blank" class="btn feedback"></a>
-</div>
-
-```
+````
 
 ## 按钮
 
@@ -674,28 +579,28 @@ seajs.use('$',function($){
 
 > 使用下面列出的类可以快速创建一个带有预定义样式的按钮。
 
-```html
+````html
 <button type="button" class="kuma-button kuma-button-primary">一级按钮</button>
 <button type="button" class="kuma-button kuma-button-secondary">一级按钮</button>
 <button type="button" class="kuma-button kuma-button-disabled">橙色按钮</button>
-```
+````
 
 
 ### 按钮尺寸
 
 > 需要让按钮具有不同尺寸吗？使用 `.kuma-button-lg`、`.kuma-button-sm `可以获得大-中-小三种不同尺寸的按钮。
 
-```html
+````html
 <div class="kuma-button-group">
     <a href="javascript:;" class="kuma-button kuma-button-primary kuma-button-lg">大按钮</a>
     <a href="javascript:;" class="kuma-button kuma-button-primary">中按钮</a>
     <a href="javascript:;" class="kuma-button kuma-button-primary kuma-button-sm">小按钮</a>
 </div>
-```
+````
 
 ### Segment-button `New`
 
-```html
+````html
 <ul class="kuma-segment-button">
 	<li class="first selected"><span>全员</span></li><li class="last"><span>直接下属</span></li>
 </ul>
@@ -703,11 +608,11 @@ seajs.use('$',function($){
 <ul class="kuma-segment-button">
 	<li class="first"><span>全员</span></li><li class="last selected"><span>直接下属</span></li>
 </ul>
-```
+````
 
 ### Switch-button(开关按钮) `New`
 
-```html
+````html
 <div class="kuma-switch-button close">
 	<span class="kuma-switch-txt">显示</span>
 	<div class="kuma-switch-circle"></div>
@@ -717,13 +622,13 @@ seajs.use('$',function($){
 	<span class="kuma-switch-txt">隐藏</span>
 	<div class="kuma-switch-circle"></div>
 </div>
-```
+````
 
 ## 表单
 
 > 通用表单样式。可基于此表单样式构建各类功能表单。
 
-```html
+````html
 <style>
 .kuma-form-text {
     width: 80px;
@@ -909,8 +814,8 @@ seajs.use('$',function($){
         </div>
 
         <div class="kuma-form-item">
-            <input type="submit" class="kuma-button kuma-button-mblue" value="确 定">
-            <input type="button" class="kuma-button kuma-button-mwhite" value="取 消">
+            <input type="submit" class="kuma-button" value="确 定">
+            <input type="button" class="kuma-button kuma-button-secondary" value="取 消">
         </div>
     </fieldset>
 </form>
@@ -984,13 +889,13 @@ seajs.use(['$', 'validator', 'select'], function($, Validator, Select) {
     });
 });
 </script>
-```
+````
 
 ### 表单多列展示
 
 > 可在 `.kuma-form` 中增加样式 `.kuma-form-column` 来实现多列表单，具体宽度需要自定义覆盖
 
-```html
+````html
 <style>
 .kuma-form-column .kuma-form-item{
     width:250px;
@@ -1040,12 +945,12 @@ seajs.use(['$', 'validator', 'select'], function($, Validator, Select) {
         </div>
 
         <div class="kuma-form-item" style="padding-left:300px;">
-            <input type="submit" class="kuma-button kuma-button-mblue" value="确 定">
-            <input type="button" class="kuma-button kuma-button-mwhite" value="取 消">
+            <input type="submit" class="kuma-button" value="确 定">
+            <input type="button" class="kuma-button kuma-button-secondary" value="取 消">
         </div>
     </fieldset>
 </form>
-```
+````
 
 ## 条件
 
@@ -1053,7 +958,7 @@ seajs.use(['$', 'validator', 'select'], function($, Validator, Select) {
 
 ### 多维度筛选
 
-```html
+````html
 <style>
 .demo-wrapper {
     margin: 20px 0;
@@ -1166,317 +1071,16 @@ seajs.use(['$', 'validator', 'select'], function($, Validator, Select) {
 </div>
 
 </div>
-```
-
-### 常用筛选组合一
-
-```html
-<div class="kuma-filter-sh">
-	<ul class="fn-clear">
-		<li class="sh-item">
-			<span>员工：</span>
-			<input type="text" class="kuma-input" placeholder="请输入工号" />
-		</li>
-		<li class="sh-item">
-			<span>主管：</span>
-			<input type="text" class="kuma-input" placeholder="请输入工号" />
-		</li>
-		<li class="sh-item">
-			<span>主管：</span>
-			<input type="text" class="kuma-input" placeholder="请输入工号" />
-		</li>
-		<li class="sh-item">
-			<span>主管：</span>
-			<input type="text" class="kuma-input" placeholder="请输入工号" />
-		</li>
-		<li class="sh-item">
-			<span>主管：</span>
-			<input type="text" class="kuma-input" placeholder="请输入工号" />
-		</li>
-		<li class="sh-item">
-			<label><input class="kuma-checkbox kuma-input checkbox-primary" type="checkbox"> <s></s>  带人主管</label>
-		</li>
-		<li class="sh-item item-option">
-			<span class="kuma-button kuma-button-morange">查询</span>
-			<span class="kuma-button kuma-button-mwhite">重置</span>
-		</li>
-	</ul>
-</div>
-```
-
-### 筛选组合二
-
-```html
-<div class="kuma-filter-screen">
-	<ul class="fn-clear">
-		<li class="kuma-screen-item active">
-			<span class="kuma-screen-title">全部文档</span>
-			<span class="kuma-screen-line"></span>
-		</li>
-		<li class="kuma-screen-item">
-			<span class="kuma-screen-title">全部文档</span>
-			<span class="kuma-screen-line"></span>
-		</li>
-		<li class="kuma-screen-item">
-			<span class="kuma-screen-title">全部文档</span>
-			<span class="kuma-screen-line"></span>
-		</li>
-		<li class="kuma-screen-item">
-			<span class="kuma-screen-title">全部文档</span>
-			<span class="kuma-screen-line"></span>
-		</li>
-		<li class="kuma-screen-item">
-			<span class="kuma-screen-title">全部文档</span>
-			<span class="kuma-screen-line"></span>
-		</li>
-		<li class="kuma-screen-item">
-			<span class="kuma-screen-title">全部文档</span>
-			<span class="kuma-screen-line"></span>
-		</li>
-		<li class="kuma-screen-item">
-			<span class="kuma-screen-title">全部文档</span>
-			<span class="kuma-screen-line"></span>
-		</li>
-	</ul>
-	<div class="kuma-center-line"></div>
-</div>
-```
-
-### 筛选查询组合三
-
-```html
-<div class="kuma-search-filter">
-	<div class="kuma-filter-block">
-		<div class="kuma-filter-floor fn-clear">
-			<a class="kuma-button kuma-navigation-btn" href="#">团队导航</a>
-			<span class="kuma-filter-label">员工: </span>
-			<div class="kuma-search-field">
-				<input type="text" class="kuma-input" placeholder="姓名/花名/工号" size="60">
-			</div>
-			<a class="kuma-button kuma-button-sblue search-person-button" href="#">搜索</a>
-		</div>
-		<div class="kuma-filter-floor fn-clear">
-			<span class="kuma-filter-label">多项条件:</span>
-			<div class="kuma-filter-items">
-				<div class="kuma-filter-item">
-					<div class="kuma-multiselect-wrapper kuma-select" style="width:75px;"><a href="javascript:void(0);">
-                                <span data-role="trigger-content">-请选择-</span><i class="kuma-icon kuma-icon-triangle-down" title="下拉"></i>
-                            </a></div>
-				</div>
-				<div class="kuma-filter-item">
-					<div class="kuma-multiselect-wrapper kuma-select" style="width:75px;"><a href="javascript:void(0);">
-                                <span data-role="trigger-content">-请选择-</span><i class="kuma-icon kuma-icon-triangle-down" title="下拉"></i>
-                            </a></div>
-				</div>
-				<div class="kuma-filter-item">
-					<div class="kuma-multiselect-wrapper kuma-select" style="width:75px;"><a href="javascript:void(0);">
-                                <span data-role="trigger-content">-请选择-</span><i class="kuma-icon kuma-icon-triangle-down" title="下拉"></i>
-                            </a></div>
-				</div>
-				<div class="kuma-filter-item">
-					<div class="kuma-multiselect-wrapper kuma-select" style="width:75px;"><a href="javascript:void(0);">
-                                <span data-role="trigger-content">-请选择-</span><i class="kuma-icon kuma-icon-triangle-down" title="下拉"></i>
-                            </a></div>
-				</div>
-				<div class="kuma-filter-item">
-					<div class="kuma-multiselect-wrapper kuma-select" style="width:75px;"><a href="javascript:void(0);">
-                                <span data-role="trigger-content">-请选择-</span><i class="kuma-icon kuma-icon-triangle-down" title="下拉"></i>
-                            </a></div>
-				</div>
-			</div>
-			<div class="kuma-filter-items">
-				<label><input type="checkbox" class="kuma-checkbox"><s></s> 有处分记录</label>
-				<label><input type="checkbox" class="kuma-checkbox"><s></s> 查看盲区人员</label>
-			</div>
-		</div>
-	</div>
-	<ul class="kuma-tag-removeable fn-clear">
-		<li class="kuma-tag">
-			<span>层级: M10、M6</span>
-			<a href="#" class="kuma-icon-close kuma-icon"></a>
-		</li>
-		<li class="kuma-tag">
-			<span>职务: 法务、销售及支持</span>
-			<a href="#" class="kuma-icon-close kuma-icon"></a>
-		</li>
-		<li class="kuma-tag">
-			<span>年度绩效: 4、4A、4B、4C、3.75、3.75A、3.75B、3.75C、3.5A</span>
-			<a href="#" class="kuma-icon-close kuma-icon"></a>
-		</li>
-		<li class="kuma-tag-clear"><a href="#">清空条件</a></li>
-	</ul>
-</div>
-```
-
-### 筛选查询组合四
-
-```html
-<div class="kuma-search-fold">
-        <form action="#" class="J_Form">
-            <label class="code-label">候选人信息: </label>
-            <div class="small-search-form fn-left">
-                <input type="text" name="q" class="small-search-input J_CodeSearch" placeholder="申请编号/姓名/手机号（支持批量扫码）" autocomplete="off">
-                <input name="mainType" type="hidden" value="">
-                <button type="submit" class="small-btn-submit-large J_BtnQuery">查询</button>
-            </div>
-
-            <a href="javascript:;" class="J_HideMoreSearch moreSearch" style="display: inline;">精简筛选条件<i class="kuma-icon kuma-icon-chevron-up"></i></a>
-            <a href="javascript:;" class="J_ShowMoreSearch moreSearch" style="display: none;">更多筛选条件<i class="kuma-icon kuma-icon-chevron-down"></i></a>
-
-            <div class="more-condition-search fn-clear J_MoreConditionSearch" style="display: block;">
-                <div class="g-rows">
-                    <div class="g-columns">
-                        <label class="label">预约时间: </label>
-                        <input type="text" name="appointStartTime" placeholder="开始时间" class="kuma-input"> -
-                        <input type="text" name="appointEndTime" placeholder="结束时间" class="kuma-input">
-                    </div>
-                </div>
-                <div class="g-rows">
-                    <div class="g-columns">
-                        <label class="label">签到时间: </label>
-                        <input type="text" name="signStartTime" placeholder="开始时间" class="kuma-input"> -
-                        <input type="text" name="signEndTime" placeholder="结束时间" class="kuma-input">
-                    </div>
-                </div>
-                <div class="g-rows">
-                    <div class="g-columns">
-                        <label class="label">职位名称: </label>
-                        <div class="kuma-select kuma-select-trigger" style="width: 117px;">
-                            <a href="javascript:void(0);">
-                                <span data-role="trigger-content">请选择职位</span><i class="kuma-icon kuma-icon-triangle-down" title="下拉"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="g-columns">
-                        <label class="label">归属BU: </label>
-                        <div class="kuma-select kuma-select-trigger" style="width: 117px;">
-                            <a href="javascript:void(0);">
-                                <span data-role="trigger-content">请选择BU</span><i class="kuma-icon kuma-icon-triangle-down" title="下拉"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="g-columns">
-                        <label class="label">专场状态: </label>
-                        <div class="kuma-select kuma-select-trigger" style="width: 117px;">
-                            <a href="javascript:void(0);">
-                                <span data-role="trigger-content">全部</span><i class="kuma-icon kuma-icon-triangle-down" title="下拉"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="g-rows">
-                    <div class="g-columns">
-                        <label class="label">当前处理人: </label>
-                        <input type="text" class="kuma-input" style="width:98px;">
-                    </div>
-                    <div class="g-columns">
-                        <label class="label">霸王面: </label>
-                        <label class="g-checkbox-label">
-                            <input type="radio" name="isForceSignIn" class="kuma-checkbox" value="" checked=""> <s></s> 全部
-                        </label>
-                        <label class="g-checkbox-label">
-                            <input type="radio" name="isForceSignIn" class="kuma-checkbox" value="true"> <s></s> 是
-                        </label>
-                        <label class="g-checkbox-label">
-                            <input type="radio" name="isForceSignIn" class="kuma-checkbox" value="false"> <s></s> 否
-                        </label>
-                    </div>
-                </div>
-                <div class="g-rows">
-                    <button type="submit" class="kuma-button kuma-button-mblue J_BtnQuery more-search-query-btn">查询</button>
-                    <button type="button" class="kuma-button kuma-button-mwhite J_BtnReset more-search-reset-btn">重置</button>
-                </div>
-            </div>
-        </form>
-    </div>
-```
-
-### 筛选查询组合五
-
-```html
-<div class="kuma-filter-group">
-        <div class="filter-hd">
-            <a href="#" class="fn-right">清空所选</a>
-            <h4>岗位分布:</h4>
-        </div>
-        <div class="filter-bd">
-            <dl class="fn-clear">
-                <dt>工作地点:</dt>
-                <dd>
-                    <ul>
-                        <li class="filter-group"><a href="#" class="item">杭州市<span class="item-num">(947)</span></a></li>
-                        <li class="filter-group"><a href="#" class="item">北京市<span class="item-num">(179)</span></a></li>
-                        <li class="filter-group"><a href="#" class="item">上海市<span class="item-num">(108)</span></a></li>
-                        <li class="filter-group"><a href="#" class="item">深圳市<span class="item-num">(14)</span></a></li>
-                        <li class="filter-group"><a href="#" class="item">广州市<span class="item-num">(14)</span></a></li>
-                    </ul>
-                </dd>
-            </dl>
-            <dl class="fn-clear">
-                <dt>学历要求:</dt>
-                <dd>
-                    <ul>
-                        <li class="filter-group"><a href="#" class="item">本科以下<span class="item-num">(37)</span></a></li>
-                        <li class="filter-group"><a href="#" class="item">本科<span class="item-num">(1240)</span></a></li>
-                        <li class="filter-group"><a href="#" class="item">硕士<span class="item-num">(21)</span></a></li>
-                    </ul>
-
-                </dd>
-            </dl>
-            <dl class="fn-clear">
-                <dt>职位类别:</dt>
-                <dd>
-                    <ul>
-                        <li class="filter-group"><a href="#" class="item active">产品类<span class="item-num">(125)</span></a></li>
-
-                        <li class="filter-group"><a href="#" class="item">运营类<span class="item-num">(197)</span></a></li>
-                    </ul>
-                </dd>
-            </dl>
-            <div class="search-bar">
-                <div class="position-sub-container fn-clear" data-type="产品类">
-                    <a href="#" class="close kuma-icon kuma-icon-close"></a>
-                    <span class="position-sub-title">产品类:</span>
-                    <a href="#" class="item active">技术PD</a>
-                    <a href="#" class="item">金融PD</a>
-                </div>
-            </div>
-            <dl class="fn-clear">
-                <dt>BU/部门:</dt>
-                <dd>
-                    <a href="#" class="J_FilterShowMore filter-more" style="display: inline;">更多<i class="kuma-icon kuma-icon-triangle-down"></i></a>
-                    <ul>
-                        <li class="filter-group"><a href="#" class="item">蚂蚁金服<span class="item-num">(291)</span></a></li>
-
-                        <li class="filter-group"><a href="#" class="item">菜鸟<span class="item-num">(165)</span></a></li>
-
-                        <li class="filter-group"><a href="#" class="item">阿里云事业群<span class="item-num">(86)</span></a></li>
-
-                        <li class="filter-group"><a href="#" class="item">集团客户服务<span class="item-num">(82)</span></a></li>
-
-                        <li class="filter-group"><a href="#" class="item">数字娱乐事业群<span class="item-num">(54)</span></a></li>
-
-                        <li class="filter-group"><a href="#" class="item">UC移动事业群<span class="item-num">(41)</span></a></li>
-
-                        <li class="filter-group"><a href="#" class="item">阿里妈妈事业部<span class="item-num">(37)</span></a></li>
-
-                        <li class="filter-group"><a href="#" class="item">天猫事业部<span class="item-num">(34)</span></a></li>
-                    </ul>
-                </dd>
-            </dl>
-        </div>
-    </div>
-```
-
+````
 
 ## 带图标提示文案 `Update`
 
 > 带各类图标的提示文案。
 
-```html
+````html
 <p class="kuma-tiptext kuma-tiptext-message">
     <i class="kuma-tiptext-icon kuma-icon kuma-icon-information"></i>
-    提示
+    信息
 </p>
 
 <p class="kuma-tiptext kuma-tiptext-error">
@@ -1508,10 +1112,9 @@ seajs.use(['$', 'validator', 'select'], function($, Validator, Select) {
     <i class="kuma-tiptext-icon kuma-icon kuma-icon-wait"></i>
     等待
 </p>
-```
-<style>.kuma-tiptext{margin:0;}</style>
+````
 
-```html
+````html
 <div class="kuma-tiptext-container kuma-tiptext-container-message">
     <p class="kuma-tiptext kuma-tiptext-message">
         <i class="kuma-tiptext-icon kuma-icon kuma-icon-information"></i>
@@ -1567,8 +1170,8 @@ seajs.use(['$', 'validator', 'select'], function($, Validator, Select) {
         内外前端Demo中心各类图标的提示文案。
     </p>
 </div>
-```
-```html
+````
+````html
 <div class="kuma-tiptext-container kuma-tiptext-container-message">
     <div class="kuma-tiptext-arrow kuma-tiptext-arrowup">
         <em>◆</em>
@@ -1612,23 +1215,23 @@ seajs.use(['$', 'validator', 'select'], function($, Validator, Select) {
         内外前端Demo中心各类图标的提示文案。
     </p>
 </div>
-```
+````
 
 ## 卡片面板 `New`
 
 > 默认卡片面板展示
 
-```html
+````html
 <div class="kuma-card">
     <div class="card-titlebar fn-clear">
         <span class="title">默认布局</span>
     </div>
     <div class="card-content">内容区</div>
 </div>
-```
+````
 > 右侧带有操作的面板
 
-```html
+````html
 <div class="kuma-card">
     <div class="card-titlebar fn-clear">
         <span class="title">右侧操作条</span>
@@ -1639,152 +1242,30 @@ seajs.use(['$', 'validator', 'select'], function($, Validator, Select) {
     </div>
     <div class="card-content">内容区</div>
 </div>
-```
-## 内外审批流 `New`
-
-> 内外业务常用汇报审批流
-
-<style>.kuma-report-path-box .team-list,.kuma-filter-condition {margin-top:0;}</style>
-
-
-```html
-<div class="fn-clear kuma-report-path-box">
-        <div class="fn-left kuma-report-path-order" style="margin-top:32px;">
-            <ul class="kuma-report-path fn-clear">
-                <li>
-                    <a href=""><img class="avatar" src="//work.alibaba-inc.com/photo/000060.50x50.jpg" alt="" title="姜鹏(三丰)"></a><div class="arrow"></div>
-                </li>
-                <li>
-                    <a href=""><img class="avatar" src="//work.alibaba-inc.com/photo/009269.50x50.jpg" alt="" title="李小琼(郭襄)"></a><div class="arrow"></div>
-                </li>
-                <li>
-                    <a href=""><img class="avatar" src="//work.alibaba-inc.com/photo/001469.50x50.jpg" alt="" title="李江华"></a><div class="arrow"></div>
-                </li>
-                <li>
-                    <a href=""><img class="avatar" src="//work.alibaba-inc.com/photo/083311.50x50.jpg" alt="" title="樊华(一孔)"></a><div class="arrow"></div>
-                </li>
-                <li>
-                    <a href=""><img class="avatar" src="//work.alibaba-inc.com/photo/083139.50x50.jpg" alt="" title="彭传军(高朋)"></a><div class="arrow"></div>
-                </li>
-            </ul>
-            <ul class="kuma-report-path-label fn-clear">
-                <li class="fn-text-overflow" title="姜鹏(三丰)">
-                    <a class="c6" href="//work.alibaba-inc.com/u/000060">姜鹏(三丰)</a>
-                </li>
-                <li class="fn-text-overflow" title="李小琼(郭襄)">
-                    <a class="c6" href="//work.alibaba-inc.com/u/009269">李小琼(郭襄)</a>
-                </li>
-                <li class="fn-text-overflow" title="李江华">
-                    <a class="c6" href="//work.alibaba-inc.com/u/001469">李江华</a>
-                </li>
-                <li class="fn-text-overflow" title="樊华(一孔)">
-                    <a class="c6" href="//work.alibaba-inc.com/u/083311">樊华(一孔)</a>
-                </li>
-                <li class="fn-text-overflow" title="彭传军(高朋)">
-                    <a class="c6" href="//work.alibaba-inc.com/u/083139">彭传军(高朋)</a>
-                </li>
-            </ul>
-        </div>
-        <div class="fn-left brace-left"></div>
-        <ul class="fn-left team-list">
-            <li class="nowrap">
-                <i class="kuma-icon kuma-icon-success"></i><a href="">唐韧团队</a>
-                <span class="ml-5">HR系统&amp;工作流</span>
-            </li>
-            <li class="nowrap">
-                <i class="kuma-icon kuma-icon-success"></i><a href="">叶周全(骁勇)团队</a>
-                <span class="ml-5">前端开发</span>
-            </li>
-            <li class="nowrap">
-                <i class="kuma-icon kuma-icon-success"></i><a href="">我的直接下属</a>
-                <span class="ml-5"></span>
-            </li>
-        </ul>
-    </div>
-```
-
-## 添加标签
-
-> 标签展示样式
-
-```html
-<div class="kuma-tags-add fn-clear">
-        <div class="item-tags fn-clear">
-            <label>标　　签：</label>
-            <i class="trigger-tags-add" title="点击添加新标签"></i>
-            <div class="person-tag-new">
-                <input class="kuma-input trigger-newtag-changed" placeholder="请输入标签，最长15个字符">
-                <span class="trigger-tag-submit"></span>
-            </div>
-        </div>
-        <div class="profile-tags fn-clear">
-            <span class="tag-icon"></span>
-            <ul class="trigger-tag-actions">
-                <li class="self-tagged">
-                    <a href="" target="_blank">巴神</a>
-                    <span class="person-tag-num" data-num="0"></span>
-                    <span class="trigger-tag-del" style="display: none;"></span>
-                </li>
-                <li class="self-tagged">
-                    <a href="" target="_blank">javascript</a>
-                    <span class="person-tag-num" data-num="0"></span>
-                    <span class="trigger-tag-del" style="display: none;"></span>
-                </li>
-                <li class="self-tagged">
-                    <a href="" target="_blank">前端与交互设计</a>
-                    <span class="person-tag-num" data-num="0"></span>
-                    <span class="trigger-tag-del" style="display: none;"></span>
-                </li>
-            </ul>
-            <a class="trigger-tags-more" data-status="min" style="display: none;">更多......</a>
-            <div class="person-tag-history" style="display: none;"></div>
-        </div>
-    </div>
-
-<script>
-seajs.use('$',function($){
-   $('.kuma-tags-add').on('click', function(ev) {
-        ev.preventDefault();
-        var tar = $(ev.target);
-        var newTag = $('.person-tag-new');
-
-       if(tar.hasClass('trigger-tags-add')) {
-           tar.css('display','none');
-           newTag.css('display','block');
-       } else {
-           if(!tar.hasClass('trigger-newtag-changed') && newTag.css('display') == 'block') {
-               $('.trigger-tags-add').css('display', 'block');
-               newTag.css('display', 'none');
-           }
-       }
-   })
-})
-</script>
-```
-
+````
 
 ## 面包屑
 
 > 面包屑样式
 
-```html
+````html
 <div class="kuma-crumbs">
     <a href="#">首页</a>
     <a href="#">管理平台 </a>
     <a href="#">流程管理</a>
     <span>编辑流程信息</span>
 </div>
-```
+````
 
 ## 加载指示器 `New`
 
-```html
+````html
 <div class="kuma-loading-s"></div>
 <br>
 <div class="kuma-loading"></div>
 <br>
 <div class="kuma-loading-l"></div>
-```
+````
 
 ## 进度条
 
@@ -1796,7 +1277,7 @@ seajs.use('$',function($){
 > 通过添加 `.kuma-steps` 来创建状态条基础样式，再通过 `.double-s` 和 `.ds-dash` 来区分双状态条的实现和虚线样式形态。
 
 
-```html
+````html
 <div class="kuma-steps">
     <div class="kuma-steps-bd">
         <ul class="fn-clear double-s">
@@ -1828,9 +1309,9 @@ seajs.use('$',function($){
         </ul>
     </div>
 </div>
-```
+````
 
-```html
+````html
 <div class="kuma-steps">
     <div class="kuma-steps-bd">
         <ul class="fn-clear double-s ds-dash">
@@ -1868,13 +1349,13 @@ seajs.use('$',function($){
     </div>
 </div>
 <br />
-```
+````
 
 ### 三状态条
 
 > 通过添加 `.various-s` 来变换三中状态(done/current/wait)展现形式。
 
-```html
+````html
 <div class="kuma-steps">
     <div class="steps-status">
         <span class="status-start"></span>
@@ -1902,11 +1383,11 @@ seajs.use('$',function($){
         </ul>
     </div>
 </div>
-```
+````
 
 ### 竖向动态条 `New`
 
-```html
+````html
 <div class="kuma-steps-vertical">
     <div class="steps-status">
         <ul class="various-s">
@@ -1956,121 +1437,13 @@ seajs.use('$',function($){
         </ul>
     </div>
 </div>
-```
+````
 
-## 各个业务系统统一吊顶头 `New`
-
-> 目前各个业务线支持三种宽度尺寸(100%,1180px,1000px)，所以选择适当的尺寸进行设置调整，可以通过添加 `kuma-container-1180/1000/` 替换 `kuma-container-setXXX`.
-
-```html
-<div class="kuma-top-header">
-        <div class="kuma-container-setXXX fn-clear">
-            <div class="fn-left">
-                <a href="https://work.alibaba-inc.com/" target="_blank" class="logo-box fn-left g-alinw-logo"></a>
-                <span class="logo-box fn-left sub-title">
-                    <s></s>
-                    <a href="">行政</a><nobr>-</nobr><a href="">小邮局系统</a>
-                </span>
-            </div>
-            <div class="top-navigator fn-right fn-clear">
-                <ul class="nav-space fn-left">
-                    <li><a href="" target="_blank">首页</a></li>
-                    <li><a class="active" href="" target="_blank">产品中心</a></li>
-                    <li><a href="" target="_blank">IT知识库</a></li>
-                    <li><a href="" target="_blank">联系我们</a></li>
-                </ul>
-                <div class="extra-space fn-right">
-                    <a href="/tuijian/?_lang=en"><span class="switch-language">English</span></a>
-                </div>
-            </div>
-        </div>
-    </div>
-```
-
-## 低版本浏览器检测提示 `New`
-
-> 当浏览器版本检测到低于IE8时在页面顶通显示提示信息条
-
-`注意：以下demo展示尺寸有所限制，在实际使用过程中需要根据实际情况调整宽度哦！`
-
-
-```html
-<style>
-.kuma-unsupported-browser .wrapper { width: 808px; }
-.kuma-unsupported-browser .container { width: 760px;height:auto; }
-</style>
-<div class="kuma-unsupported-browser" id="unsupportedbrowser" style="position:relative;z-index:99999999">
-    <div class="wrapper">
-        <div class="container">
-            <h5>阿里内外支持ie8+版本浏览器.为了获得最好的用户体验，请更新至最新<a href="http://ie.microsoft.com">Internet
-                Explorer</a>,<a href="http://www.google.cn/intl/zh-CN/chrome/">Google
-                Chrome</a>,<a href="http://mozilla.org/firefox">Firefox</a></h5>
-            <p style="line-height:18px">如果您已经IE8浏览器或者最新的浏览器，还能看到此提示请按照如下步骤：1.在“菜单”栏中打开“工具”选项;2.选择“兼容性视图设置”弹出对话框;
-                3.把“在兼容性视图中显示所有网站”前面的对勾去掉（或者在“已添加到兼容性视图中的网站”的列表中把“alibaba-inc”删除）；4.关闭浏览器重新打开即可。
-            </p>
-            <p>
-               如果您确认当前使用的是IE最新版本，还是不能正常显示<a href="https://work.alibaba-inc.com/work/sns/postDetail.htm?postId=5661673" target="_blank">请点这里</a>
-            </p>
-        </div>
-    </div>
-</div>
-
-```
-
-## 错误提示页 `New`
-
-```html
-
-<div id="kuma-errorpages" class="kuma-errorpages">
-    <div class="kuma-errorpages-inner">
-        <div class="kuma-errorpages-img">
-        		<img src="//aliwork.alicdn.com/tps/i3/TB1QrZKGXXXXXXvaXXX9Df2LpXX-470-360.png" alt="$!{type}" width="470" height="360" />
-        </div>
-        <div class="kuma-errorpages-text">
-            <h1 class="kuma-errorpages-text-t" style="font-size:80px;">Error</h1>
-            <h2 >404</h2>
-            <p class="kuma-errorpages-text-goto" id="gotoWhere">找不到您需要的页面！</p>
-        </div>
-    </div>
-</div>
-
-```
-
-```html
-
-<div id="kuma-errorpages" class="kuma-errorpages">
-    <div class="kuma-errorpages-inner">
-        <div class="kuma-errorpages-img">
-        		<img src="//aliwork.alicdn.com/tps/i1/TB1ZCs3GXXXXXXPXVXX9Df2LpXX-470-360.png" width="470" height="360" />
-        </div>
-        <div class="kuma-errorpages-text">
-            <h1 class="kuma-errorpages-text-t">Sorry</h1>
-            <h2 id="errorView" style="margin-bottom: 50px;word-wrap: break-word;word-break: break-all;">抱歉！您无权访问该页面...</h2>
-        </div>
-    </div>
-</div>
-
-```
-
-## 常见问答 Q&A `new`
-
-```html
-<div class="kuma-qapages">
-    <h4 class="qa-question">
-        <i class="q"></i>
-        公司提供给员工的商业医疗保险对就诊医院是否有要求？
-    </h4>
-    <p class="qa-answer">
-        <span class="qa-answer-left">A:</span>
-        <span class="qa-answer-right">门诊报销的定点医院为大陆地区所有二级或二级以上医保定点医院；住院报销的定点医院为能够医保结算的当地二级或二级以上医保定点医院</span>
-    </p>
-</div>
-```
 ## KUMA字体
 
  - 内部请直接访问 [kuma-icon](http://kuma.nwux.taobao.net/) 来获取字体代码。
 
-```html
+````html
 <style>
 .iconset {
      margin-top: 12px;
@@ -2229,4 +1602,4 @@ seajs.use('$',function($){
 <div class="icon"><i class="kuma-icon kuma-icon-tree-close"></i> 收起树</div>
 <div class="icon"><i class="kuma-icon kuma-icon-tree-open"></i> 展开树</div>
 </div>
-```
+````

@@ -1,4 +1,5 @@
-require('./style/kuma/src/less/kuma-webpack.less');
+require('./style/kuma/src/kuma.less');
+// require('./style/kuma/src/theme/blue.less');
 require('./style/index.less');
 
 window.UXCORE = {

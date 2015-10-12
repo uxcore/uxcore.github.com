@@ -27,7 +27,7 @@ body {
 }
 .site-main {
 	display: flex;
-	height: 100%;
+	min-height: 100%;
 	padding-top: @head-height;
 	transition: padding @collapseTransition;
 }
@@ -40,6 +40,7 @@ body {
 	background-color: @blue;
 	border-bottom: 1px solid @borderColor;
 	transition: height @collapseTransition;
+	z-index: 99;
 
 	.logo {
 		float: left;
@@ -299,7 +300,7 @@ body {
 }
 .site-home {
 	flex-grow: 1;
-	height: 100%;
+	min-height: 100%;
 }
 .code-box-markdown{
 	clear:both;
