@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-import {Button, ButtonGroup} from 'uxcore-button';
+import Button from 'uxcore-button';
 import Popover from 'uxcore-popover';
 
 class NoTitleDemo extends React.Component {

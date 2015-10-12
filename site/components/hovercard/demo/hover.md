@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-import {Button} from 'uxcore-button';
+import Button from 'uxcore-button';
 import Hovercard from 'uxcore-hovercard';
 
 const userInfo = {

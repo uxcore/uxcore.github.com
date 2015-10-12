@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-var Button = require('uxcore-button').Button;
+var Button = require('uxcore-button');
 
 React.render(
   <Button>Confirm</Button>

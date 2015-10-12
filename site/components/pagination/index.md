@@ -24,6 +24,7 @@
 |pageSize|每页条数|number|10|
 |onChange|页码改变的回调，参数是改变后的页码|function|noop|
 |showSizeChanger|是否可以改变 pageSize|bool|false|
+|onShowSizeChange|pageSize 变化的回调|function|noop|
 |showQuickJump|是否可以快速跳转至某页|bool|false|
 |className|当为「mini」时，是小尺寸分页|string||
-|simple|当添加该属性时，显示为简单分页|object||
+|simple|当添加该属性时，显示为简单分页|object|无|

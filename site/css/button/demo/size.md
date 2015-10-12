@@ -1,13 +1,13 @@
 # 不同尺寸
 
-- order: 0
+- order: 2
 
 不同尺寸的按钮。
 
 ---
 
 ````jsx
-var Button = require('uxcore-button').Button;
+var Button = require('uxcore-button');
 
 React.render(
   <div>

@@ -668,213 +668,6 @@ seajs.use('$',function($){
 
 ```
 
-## Tab切换 `New`
-
-### 简约风格
-
-```html
-<div class="kuma-tabs kuma-tabs-line">
-    <dl class="tab-items">
-        <dd class="tab-item tab-item-current">
-            <a href="javascript:;">标题一</a>
-        </dd>
-        <dd class="tab-item">
-            <a href="javascript:;">标题二</a>
-        </dd>
-        <dd class="tab-item">
-            <a href="javascript:;">标题二</a>
-        </dd>
-    </dl>
-</div>
-```
-
-### 下线条风格
-
-```html
-<div class="kuma-tabs kuma-tabs-underline">
-    <dl class="tab-items">
-        <dd class="tab-item tab-item-current">
-            <a href="javascript:;">标题一</a>
-        </dd>
-        <dd class="tab-item">
-            <a href="javascript:;">标题二</a>
-        </dd>
-        <dd class="tab-item">
-            <a href="javascript:;">标题二</a>
-        </dd>
-    </dl>
-</div>
-```
-
-
-### 上线条风格
-
-```html
-<div class="kuma-tabs kuma-tabs-topline">
-    <dl class="tab-items">
-        <dd class="tab-item tab-item-current">
-            <a href="javascript:;">标题一</a>
-        </dd>
-        <dd class="tab-item">
-            <a href="javascript:;">标题二</a>
-        </dd>
-        <dd class="tab-item">
-            <a href="javascript:;">标题二</a>
-        </dd>
-    </dl>
-</div>
-```
-
-### 砖块风格
-
-```html
-<div class="kuma-tabs kuma-tabs-brick">
-    <dl class="tab-items">
-        <dd class="tab-item tab-item-current">
-            <a href="javascript:;">标题一</a>
-        </dd>
-        <dd class="tab-item">
-            <a href="javascript:;">标题二</a>
-        </dd>
-        <dd class="tab-item">
-            <a href="javascript:;">标题二</a>
-        </dd>
-    </dl>
-</div>
-```
-
-### 带标题
-
-```html
-<section>
-    <div class="kuma-tabs kuma-tabs-line">
-        <dl class="tab-items">
-            <dt class="tab-title">大标题</dt>
-            <dd class="tab-item tab-item-current">
-                <a href="javascript:;">标题一</a>
-            </dd>
-            <dd class="tab-item">
-                <a href="javascript:;">标题二</a>
-            </dd>
-            <dd class="tab-item">
-                <a href="javascript:;">标题二</a>
-            </dd>
-        </dl>
-    </div>
-</section>
-<section>
-    <div class="kuma-tabs kuma-tabs-underline">
-        <dl class="tab-items">
-            <dt class="tab-title">大标题</dt>
-            <dd class="tab-item tab-item-current">
-                <a href="javascript:;">标题一</a>
-            </dd>
-            <dd class="tab-item">
-                <a href="javascript:;">标题二</a>
-            </dd>
-            <dd class="tab-item">
-                <a href="javascript:;">标题二</a>
-            </dd>
-        </dl>
-    </div>
-</section>
-<section>
-    <div class="kuma-tabs kuma-tabs-topline">
-        <dl class="tab-items">
-            <dt class="tab-title">大标题</dt>
-            <dd class="tab-item tab-item-current">
-                <a href="javascript:;">标题一</a>
-            </dd>
-            <dd class="tab-item">
-                <a href="javascript:;">标题二</a>
-            </dd>
-            <dd class="tab-item">
-                <a href="javascript:;">标题二</a>
-            </dd>
-        </dl>
-    </div>
-</section>
-<section>
-    <div class="kuma-tabs kuma-tabs-brick">
-        <dl class="tab-items">
-            <dt class="tab-title">大标题</dt>
-            <dd class="tab-item tab-item-current">
-                <a href="javascript:;">标题一</a>
-            </dd>
-            <dd class="tab-item">
-                <a href="javascript:;">标题二</a>
-            </dd>
-            <dd class="tab-item">
-                <a href="javascript:;">标题二</a>
-            </dd>
-        </dl>
-    </div>
-</section>
-```
-
-### 多种尺寸
-
-```html
-<section>
-    <div class="kuma-tabs kuma-tabs-line kuma-tabs-sm">
-        <dl class="tab-items">
-            <dd class="tab-item tab-item-current">
-                <a href="javascript:;">标题一</a>
-            </dd>
-            <dd class="tab-item">
-                <a href="javascript:;">标题二</a>
-            </dd>
-            <dd class="tab-item">
-                <a href="javascript:;">标题二</a>
-            </dd>
-        </dl>
-    </div>
-</section>
-<section>
-    <div class="kuma-tabs kuma-tabs-line">
-        <dl class="tab-items">
-            <dd class="tab-item tab-item-current">
-                <a href="javascript:;">标题一</a>
-            </dd>
-            <dd class="tab-item">
-                <a href="javascript:;">标题二</a>
-            </dd>
-            <dd class="tab-item">
-                <a href="javascript:;">标题二</a>
-            </dd>
-        </dl>
-    </div>
-</section>
-<section>
-    <div class="kuma-tabs kuma-tabs-line kuma-tabs-lg">
-        <dl class="tab-items">
-            <dd class="tab-item tab-item-current">
-                <a href="javascript:;">标题一</a>
-            </dd>
-            <dd class="tab-item">
-                <a href="javascript:;">标题二</a>
-            </dd>
-            <dd class="tab-item">
-                <a href="javascript:;">标题二</a>
-            </dd>
-        </dl>
-    </div>
-</section>
-<style>
-
-    width: 300px;
-    padding: 20px 10px;
-}
-</style>
-<script>
-seajs.use('$', function($) {
-    $('.tab-item').click(function() {
-        $(this).addClass('tab-item-current').siblings().removeClass('tab-item-current');
-    });
-});
-</script>
-```
-
 ## 按钮
 
 ### 预定义按钮
@@ -882,39 +675,22 @@ seajs.use('$', function($) {
 > 使用下面列出的类可以快速创建一个带有预定义样式的按钮。
 
 ```html
-<button type="button" class="kuma-button kuma-button-lwhite">默认按钮</button>
-<button type="button" class="kuma-button kuma-button-lblue">蓝色按钮</button>
-<button type="button" class="kuma-button kuma-button-lorange">橙色按钮</button>
-<button type="button" class="kuma-button kuma-button-ldisable">不可用状态</button>
+<button type="button" class="kuma-button kuma-button-primary">一级按钮</button>
+<button type="button" class="kuma-button kuma-button-secondary">一级按钮</button>
+<button type="button" class="kuma-button kuma-button-disabled">橙色按钮</button>
 ```
 
 
 ### 按钮尺寸
 
-> 需要让按钮具有不同尺寸吗？使用 `.kuma-button-lblue`、`.kuma-button-mblue `或 `.kuma-button-sblue` 可以获得大-中-小三种不同尺寸的按钮。
+> 需要让按钮具有不同尺寸吗？使用 `.kuma-button-lg`、`.kuma-button-sm `可以获得大-中-小三种不同尺寸的按钮。
 
 ```html
 <div class="kuma-button-group">
-    <a href="javascript:;" class="kuma-button kuma-button-lblue">蓝色大按钮</a>
-    <a href="javascript:;" class="kuma-button kuma-button-mblue">蓝色中按钮</a>
-    <a href="javascript:;" class="kuma-button kuma-button-sblue">蓝色中按钮</a>
+    <a href="javascript:;" class="kuma-button kuma-button-primary kuma-button-lg">大按钮</a>
+    <a href="javascript:;" class="kuma-button kuma-button-primary">中按钮</a>
+    <a href="javascript:;" class="kuma-button kuma-button-primary kuma-button-sm">小按钮</a>
 </div>
-```
-
-### 多元素支持a/input/button
-
-```html
-<a href="javascript:;" class="kuma-button kuma-button-lblue">蓝色大按钮</a>
-<input type="button" class="kuma-button kuma-button-lblue" value="蓝色大按钮">
-<button class="kuma-button kuma-button-lblue">蓝色大按钮</button>
-```
-
-### 不可用按钮支持a/input/button
-
-```html
-<a href="javascript:;" class="kuma-button kuma-button-ldisable">灰色大按钮</a>
-<input type="button" class="kuma-button kuma-button-ldisable" value="灰色大按钮">
-<button class="kuma-button kuma-button-ldisable">灰色大按钮</button>
 ```
 
 ### Segment-button `New`
