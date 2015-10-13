@@ -25,7 +25,7 @@
 ```
 
 ````jsx
-import {Dropzoom} from 'uxcore-uploader';
+const {Dropzoom} = require('uxcore-uploader');
 
 React.render((
     <Dropzoom autoPending={false} className="mydroparea" multiple={true} queueCapcity={20} name='file' url='http://test.yanbingbing.com/upload.php'>
