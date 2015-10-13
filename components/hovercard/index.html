@@ -1,0 +1,178 @@
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/uxcore/static/uxcore.css"><link rel="stylesheet" href="/uxcore/static/github-gist.min.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react-with-addons.min.js"></script><script src="/uxcore/static/highlight.min.js"></script><script src="/uxcore/static/rangy-core.min.js"></script><script src="/uxcore/static/uxcore.js"></script><script src="//g.alicdn.com//uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
+	w.require = function(name){
+		return w.UXCORE[name];
+	}
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/kuma/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/components/calendar">Calendar</a></li><li><a href="/uxcore/components/dialog">Dialog</a></li><li><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li><a href="/uxcore/components/tooltip">Tooltip</a></li><li><a href="/uxcore/components/tabs">Tabs</a></li><li><a href="/uxcore/components/grid">Grid</a></li><li><a href="/uxcore/components/form">Form</a></li><li><a href="/uxcore/components/dropdown">Dropdown</a></li><li><a href="/uxcore/components/mention">Mention</a></li><li><a href="/uxcore/components/tree">Tree</a></li><li><a href="/uxcore/components/transfer">Transfer</a></li><li><a href="/uxcore/components/popover">Popover</a></li><li class="current"><a href="/uxcore/components/hovercard">Hovercard</a></li><li><a href="/uxcore/components/uploader">Uploader</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Hovercard</h1><section class="meta"><span class="author"><b>author: </b>jinghong</span><span class="github"><b>github: </b><a href="git+https://github.com/uxcore/uxcore-hovercard.git" target="_blank">Hovercard</a></span><span class="version"> <b>版本: </b>1.0.0</span><span class="description"><b>描述: </b>uxcore-hovercard component for uxcore.</span></section></header><div id="J-markdown" class="markdown"><p>uxcore-hovercard ui component for react</p>
+<h2 id="usage">Usage</h2><pre>let Hovercard = require(&#39;uxcore-hover&#39;);
+
+React.render(
+    &lt;Hovercard emplId={72053} token=&quot;A8de4ec74-1145-4ae9-af1b-d8ff7adfa228C&quot;&gt;
+        &lt;button&gt;自动位置弹出&lt;/button&gt;
+    &lt;/Hovercard&gt;, targetNode)</pre><h2 id="props">Props</h2><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>emplId</td>
+<td>string</td>
+<td>optional</td>
+<td>-</td>
+<td>工号</td>
+</tr>
+<tr>
+<td>token</td>
+<td>string,function</td>
+<td>optional</td>
+<td>-</td>
+<td>配置可以是直接token字符串，也可以是一个函数，函数必须返回字符串格式的accessToken</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>string</td>
+<td>optional</td>
+<td>zh-cn</td>
+<td>语言选择 zh-cn,en可选</td>
+</tr>
+<tr>
+<td>hideJobDesc</td>
+<td>bool</td>
+<td>optional</td>
+<td>false</td>
+<td>隐藏职位信息</td>
+</tr>
+<tr>
+<td>showDelay</td>
+<td>number</td>
+<td>optional</td>
+<td>100ms</td>
+<td>延迟多少显示名片</td>
+</tr>
+<tr>
+<td>showConn</td>
+<td>bool</td>
+<td>optional</td>
+<td>true</td>
+<td>是否显示关注功能区</td>
+</tr>
+<tr>
+<td>userInfo</td>
+<td>object</td>
+<td>optional</td>
+<td>null</td>
+<td>用户信息数据, 可以作为mock数据传递,也可以作为外部传入数据</td>
+</tr>
+<tr>
+<td>placement</td>
+<td>string,object</td>
+<td>optional</td>
+<td>-</td>
+<td>弹窗从那个方向弹出 [&#39;left&#39;,&#39;right&#39;,&#39;top&#39;,&#39;bottom&#39;] or <a href="https://github.com/yiminghe/dom-align">dom-align</a></td>
+</tr>
+</tbody>
+</table>
+</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-hovercard-demo-hover" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>悬浮弹出</em></div></div><div class="code-box-demo"><div id="components-hovercard-demo-hover"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _uxcoreButton = require('uxcore-button');
+
+var _uxcoreButton2 = _interopRequireDefault(_uxcoreButton);
+
+var _uxcoreHovercard = require('uxcore-hovercard');
+
+var _uxcoreHovercard2 = _interopRequireDefault(_uxcoreHovercard);
+
+var userInfo = {
+    "connection": "bilateral",
+    "loginUserId": "85377",
+    "emailAddr": "hanchao.shc@alibaba-inc.com",
+    "jobDesc": "资深前端开发工程师",
+    "aliWW": "",
+    "tbWW": "九神",
+    "extensionPhone": "81178854",
+    "travelInfo": "",
+    "havanaId": 1804320196,
+    "emplId": "67732",
+    "nickNameCn": "九神",
+    "hrStatus": "A",
+    "photoPath": "tfscom\/TB1rddnIpXXXXbBXpXXXXXXXXXX.tfsprivate",
+    "deptEnName": "",
+    "pinyinNick": "jiushen",
+    "deptDesc": "信息平台事业部-EHR-前端开发",
+    "orderNum": "",
+    "virtMobile": "",
+    "pinyin2": "SHAO Hanchao",
+    "mobilePhone": "15088618860",
+    "jobSubCount": 0,
+    "email": "",
+    "officePhone": "",
+    "deptId": "",
+    "hasTeam": false,
+    "leader": false,
+    "jobTeamCount": 0,
+    "name": "邵寒超",
+    "id": "67732",
+    "avatar": "\/photo\/67732.jpg?1401777321",
+    "avatarBig": "",
+    "pinyin": "shaohanchao"
+};
+
+React.render(React.createElement(
+    _uxcoreHovercard2['default'],
+    { emplId: 72053, userInfo: userInfo },
+    React.createElement(
+        _uxcoreButton2['default'],
+        null,
+        '悬浮弹出'
+    )
+), document.getElementById('components-hovercard-demo-hover'));})()</script><div class="highlight"><pre><code class="javascript">import Button from <span class="string">'uxcore-button'</span>;
+import Hovercard from <span class="string">'uxcore-hovercard'</span>;
+
+<span class="keyword">const</span> userInfo = {
+    <span class="string">"connection"</span>: <span class="string">"bilateral"</span>,
+    <span class="string">"loginUserId"</span>: <span class="string">"85377"</span>,
+    <span class="string">"emailAddr"</span>: <span class="string">"hanchao.shc@alibaba-inc.com"</span>,
+    <span class="string">"jobDesc"</span>: <span class="string">"资深前端开发工程师"</span>,
+    <span class="string">"aliWW"</span>: <span class="string">""</span>,
+    <span class="string">"tbWW"</span>: <span class="string">"九神"</span>,
+    <span class="string">"extensionPhone"</span>: <span class="string">"81178854"</span>,
+    <span class="string">"travelInfo"</span>: <span class="string">""</span>,
+    <span class="string">"havanaId"</span>: <span class="number">1804320196</span>,
+    <span class="string">"emplId"</span>: <span class="string">"67732"</span>,
+    <span class="string">"nickNameCn"</span>: <span class="string">"九神"</span>,
+    <span class="string">"hrStatus"</span>: <span class="string">"A"</span>,
+    <span class="string">"photoPath"</span>: <span class="string">"tfscom\/TB1rddnIpXXXXbBXpXXXXXXXXXX.tfsprivate"</span>,
+    <span class="string">"deptEnName"</span>: <span class="string">""</span>,
+    <span class="string">"pinyinNick"</span>: <span class="string">"jiushen"</span>,
+    <span class="string">"deptDesc"</span>: <span class="string">"信息平台事业部-EHR-前端开发"</span>,
+    <span class="string">"orderNum"</span>: <span class="string">""</span>,
+    <span class="string">"virtMobile"</span>: <span class="string">""</span>,
+    <span class="string">"pinyin2"</span>: <span class="string">"SHAO Hanchao"</span>,
+    <span class="string">"mobilePhone"</span>: <span class="string">"15088618860"</span>,
+    <span class="string">"jobSubCount"</span>: <span class="number">0</span>,
+    <span class="string">"email"</span>: <span class="string">""</span>,
+    <span class="string">"officePhone"</span>: <span class="string">""</span>,
+    <span class="string">"deptId"</span>: <span class="string">""</span>,
+    <span class="string">"hasTeam"</span>: <span class="literal">false</span>,
+    <span class="string">"leader"</span>: <span class="literal">false</span>,
+    <span class="string">"jobTeamCount"</span>: <span class="number">0</span>,
+    <span class="string">"name"</span>: <span class="string">"邵寒超"</span>,
+    <span class="string">"id"</span>: <span class="string">"67732"</span>,
+    <span class="string">"avatar"</span>: <span class="string">"\/photo\/67732.jpg?1401777321"</span>,
+    <span class="string">"avatarBig"</span>: <span class="string">""</span>,
+    <span class="string">"pinyin"</span>: <span class="string">"shaohanchao"</span>
+};
+
+React.render(
+    <span class="xml"><span class="tag">&lt;<span class="title">Hovercard</span> <span class="attribute">emplId</span>=<span class="value">{72053}</span> <span class="attribute">userInfo</span>=<span class="value">{userInfo}</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Button</span>&gt;</span>悬浮弹出<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Hovercard</span>&gt;</span>,
+      document.getElementById('components-hovercard-demo-hover')
+);</span></code></pre></div></div></div></article></div></body></html>

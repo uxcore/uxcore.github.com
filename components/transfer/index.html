@@ -1,0 +1,160 @@
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/uxcore/static/uxcore.css"><link rel="stylesheet" href="/uxcore/static/github-gist.min.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react-with-addons.min.js"></script><script src="/uxcore/static/highlight.min.js"></script><script src="/uxcore/static/rangy-core.min.js"></script><script src="/uxcore/static/uxcore.js"></script><script src="//g.alicdn.com//uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
+	w.require = function(name){
+		return w.UXCORE[name];
+	}
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/kuma/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/components/calendar">Calendar</a></li><li><a href="/uxcore/components/dialog">Dialog</a></li><li><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li><a href="/uxcore/components/tooltip">Tooltip</a></li><li><a href="/uxcore/components/tabs">Tabs</a></li><li><a href="/uxcore/components/grid">Grid</a></li><li><a href="/uxcore/components/form">Form</a></li><li><a href="/uxcore/components/dropdown">Dropdown</a></li><li><a href="/uxcore/components/mention">Mention</a></li><li><a href="/uxcore/components/tree">Tree</a></li><li class="current"><a href="/uxcore/components/transfer">Transfer</a></li><li><a href="/uxcore/components/popover">Popover</a></li><li><a href="/uxcore/components/hovercard">Hovercard</a></li><li><a href="/uxcore/components/uploader">Uploader</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Transfer</h1><section class="meta"><span class="author"><b>author: </b></span><span class="github"><b>github: </b><a href="git+ssh://git@github.com/uxcore/transfer.git" target="_blank">Transfer</a></span><span class="version"> <b>版本: </b>0.1.1</span><span class="description"><b>描述: </b>transfer ui component for react</span></section></header><div id="J-markdown" class="markdown"><p>Transfer组件</p>
+<h2 id="usage">Usage</h2><pre>let Transfer = require(&#39;../src&#39;);
+
+let mockData = [];
+let len = Math.random() * 10 + 10;
+for (let i = 0; i &lt; len; i++) {
+    mockData.push({
+        name: &#39;内容&#39; + (i + 1),
+        value: (i + 1),
+        description: &#39;内容&#39; + (i + 1) + &#39;的描述&#39;,
+        chosen: Math.random() * 2 &gt; 1
+    });
+}
+
+class TransferDemo extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
+    _handleChange(data) {
+        console.log(data);
+    }
+
+    render() {
+        var me = this;
+        return (
+            &lt;Transfer data={mockData} onChange={me._handleChange.bind(me)}/&gt;
+        );
+    }
+}</pre><h2 id="api">API</h2><h3 id="props">props</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>必需</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>required</td>
+<td>-</td>
+<td>用于初始化 transfer 的数据，格式见 Usage，四项可以为空，但不能没有</td>
+</tr>
+<tr>
+<td>leftTitle</td>
+<td>string</td>
+<td>optional</td>
+<td>&#39;未选中的&#39;</td>
+<td>左侧标题</td>
+</tr>
+<tr>
+<td>leftTitle</td>
+<td>string</td>
+<td>optional</td>
+<td>&#39;已选中的&#39;</td>
+<td>右侧标题</td>
+</tr>
+<tr>
+<td>onChange</td>
+<td>func</td>
+<td>optional</td>
+<td>noop</td>
+<td>选中情况变化时触发</td>
+</tr>
+</tbody>
+</table>
+</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-transfer-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>基本用法</em></div></div><div class="code-box-demo"><div id="components-transfer-demo-basic"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _uxcoreTransfer = require('uxcore-transfer');
+
+var _uxcoreTransfer2 = _interopRequireDefault(_uxcoreTransfer);
+
+var mockData = [];
+var len = Math.random() * 10 + 10;
+for (var i = 0; i < len; i++) {
+    mockData.push({
+        name: '内容' + (i + 1),
+        value: i + 1,
+        description: '内容' + (i + 1) + '的描述',
+        chosen: Math.random() * 2 > 1
+    });
+}
+
+var TransferDemo = (function (_React$Component) {
+    _inherits(TransferDemo, _React$Component);
+
+    function TransferDemo(props) {
+        _classCallCheck(this, TransferDemo);
+
+        _get(Object.getPrototypeOf(TransferDemo.prototype), 'constructor', this).call(this, props);
+    }
+
+    _createClass(TransferDemo, [{
+        key: '_handleChange',
+        value: function _handleChange(data) {
+            console.log(data);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var me = this;
+            return React.createElement(_uxcoreTransfer2['default'], { data: mockData, onChange: me._handleChange.bind(me) });
+        }
+    }]);
+
+    return TransferDemo;
+})(React.Component);
+
+React.render(React.createElement(TransferDemo, null), document.getElementById('components-transfer-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript">import Transfer from <span class="string">'uxcore-transfer'</span>;
+
+<span class="keyword">let</span> mockData = [];
+<span class="keyword">let</span> len = Math.random() * <span class="number">10</span> + <span class="number">10</span>;
+<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) {
+    mockData.push({
+        name: <span class="string">'内容'</span> + (i + <span class="number">1</span>),
+        value: (i + <span class="number">1</span>),
+        description: <span class="string">'内容'</span> + (i + <span class="number">1</span>) + <span class="string">'的描述'</span>,
+        chosen: Math.random() * <span class="number">2</span> &gt; <span class="number">1</span>
+    });
+}
+
+class TransferDemo extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
+    _handleChange(data) {
+        console.log(data);
+    }
+
+    render() {
+        <span class="keyword">var</span> me = <span class="keyword">this</span>;
+        <span class="keyword">return</span> (
+            <span class="xml"><span class="tag">&lt;<span class="title">Transfer</span> <span class="attribute">data</span>=<span class="value">{mockData}</span> <span class="attribute">onChange</span>=<span class="value">{me._handleChange.bind(me)}</span>/&gt;</span>
+        );
+    }
+}
+
+React.render(
+    <span class="tag">&lt;<span class="title">TransferDemo</span> /&gt;</span>,
+      document.getElementById('components-transfer-demo-basic')
+);</span></code></pre></div></div></div></article></div></body></html>
