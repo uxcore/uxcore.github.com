@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/uxcore/static/uxcore.css"><link rel="stylesheet" href="/uxcore/static/github-gist.min.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react-with-addons.min.js"></script><script src="/uxcore/static/highlight.min.js"></script><script src="/uxcore/static/rangy-core.min.js"></script><script src="/uxcore/static/uxcore.js"></script><script src="//g.alicdn.com//uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/uxcore/static/uxcore.css"><link rel="stylesheet" href="/uxcore/static/github-gist.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-with-addons.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.min.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,rangy/1.3.0/rangy-core.min.js"></script><script src="/uxcore/static/highlight.min.js"></script><script src="/uxcore/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
@@ -240,9 +240,9 @@
 
 var Uploader = require('uxcore-uploader');
 
-React.render(React.createElement(Uploader, { multiple: false, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
+ReactDOM.render(React.createElement(Uploader, { multiple: false, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
 
-React.render(
+ReactDOM.render(
     <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">multiple</span>=<span class="value">{false}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>,
       document.getElementById('components-uploader-demo-basic')
 );</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-tips" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>附带提示文字</em></div></div><div class="code-box-demo"><div id="components-uploader-demo-tips"></div></div><div class="code-box-markdown markdown"><style>
@@ -280,36 +280,36 @@ var tips = React.createElement(
   )
 );
 
-React.render(React.createElement(Uploader, { tips: tips, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-tips'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
+ReactDOM.render(React.createElement(Uploader, { tips: tips, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-tips'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
 
 <span class="keyword">const</span> tips = <span class="xml"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">className</span>=<span class="value">"tips"</span>&gt;</span>限制0.5M以内<span class="tag">&lt;<span class="title">em</span>&gt;</span>（支持格式：.doc; .docx; .xls; .xlsx）<span class="tag">&lt;/<span class="title">em</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>;</span>
 
-React.render(
+ReactDOM.render(
     <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">tips</span>=<span class="value">{tips}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>,
       document.getElementById('components-uploader-demo-tips')
 );</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-image" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>图片上传</em></div></div><div class="code-box-demo"><div id="components-uploader-demo-image"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
 var Uploader = require('uxcore-uploader');
 
-React.render(React.createElement(Uploader, { multiple: false, accept: 'images', name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-image'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
+ReactDOM.render(React.createElement(Uploader, { multiple: false, accept: 'images', name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-image'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
 
-React.render((
+ReactDOM.render((
     <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">multiple</span>=<span class="value">{false}</span> <span class="attribute">accept</span>=<span class="value">"images"</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
 ), document.getElementById('components-uploader-demo-image'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-video" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>视频上传</em></div></div><div class="code-box-demo"><div id="components-uploader-demo-video"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
 var Uploader = require('uxcore-uploader');
 
-React.render(React.createElement(Uploader, { multiple: false, accept: 'videos', name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-video'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
+ReactDOM.render(React.createElement(Uploader, { multiple: false, accept: 'videos', name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-video'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
 
-React.render((
+ReactDOM.render((
     <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">multiple</span>=<span class="value">{false}</span> <span class="attribute">accept</span>=<span class="value">"videos"</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
 ), document.getElementById('components-uploader-demo-video'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-multi" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>多文件</em></div></div><div class="code-box-demo"><div id="components-uploader-demo-multi"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
 var Uploader = require('uxcore-uploader');
 
-React.render(React.createElement(Uploader, { multiple: true, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-multi'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
+ReactDOM.render(React.createElement(Uploader, { multiple: true, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-multi'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
 
-React.render((
+ReactDOM.render((
     <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">multiple</span>=<span class="value">{true}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
 ), document.getElementById('components-uploader-demo-multi'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-dropzoom" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>拖拽上传</em></div></div><div class="code-box-demo"><div id="components-uploader-demo-dropzoom"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
@@ -317,9 +317,9 @@ var _require = require('uxcore-uploader');
 
 var Dropzoom = _require.Dropzoom;
 
-React.render(React.createElement(Dropzoom, { autoPending: false, multiple: true, queueCapcity: 20, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-dropzoom'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> {Dropzoom} = require(<span class="string">'uxcore-uploader'</span>);
+ReactDOM.render(React.createElement(Dropzoom, { autoPending: false, multiple: true, queueCapcity: 20, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-dropzoom'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> {Dropzoom} = require(<span class="string">'uxcore-uploader'</span>);
 
-React.render((
+ReactDOM.render((
     <span class="xml"><span class="tag">&lt;<span class="title">Dropzoom</span> <span class="attribute">autoPending</span>=<span class="value">{false}</span> <span class="attribute">multiple</span>=<span class="value">{true}</span> <span class="attribute">queueCapcity</span>=<span class="value">{20}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
 ), document.getElementById('components-uploader-demo-dropzoom'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-wrap1" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>包裹按钮</em></div></div><div class="code-box-demo"><div id="components-uploader-demo-wrap1"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
@@ -329,7 +329,7 @@ var _require = require('uxcore-button');
 
 var Button = _require.Button;
 
-React.render(React.createElement(
+ReactDOM.render(React.createElement(
     Uploader,
     { name: 'file', url: 'http://test.yanbingbing.com/upload.php' },
     React.createElement(
@@ -341,7 +341,7 @@ React.render(React.createElement(
 <span class="keyword">const</span> {Button} = require(<span class="string">'uxcore-button'</span>);
 
 
-React.render((
+ReactDOM.render((
     <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span>&gt;</span>
         <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"large"</span>&gt;</span>自定义上传按钮<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
     <span class="tag">&lt;/<span class="title">Uploader</span>&gt;</span>
@@ -365,7 +365,7 @@ var _require = require('uxcore-uploader');
 
 var Dropzoom = _require.Dropzoom;
 
-React.render(React.createElement(
+ReactDOM.render(React.createElement(
     Dropzoom,
     { autoPending: false, className: 'mydroparea', multiple: true, queueCapcity: 20, name: 'file', url: 'http://test.yanbingbing.com/upload.php' },
     React.createElement('i', { className: 'kuma-icon kuma-icon-uploading' }),
@@ -376,7 +376,7 @@ React.render(React.createElement(
     )
 ), document.getElementById('components-uploader-demo-wrap2'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> {Dropzoom} = require(<span class="string">'uxcore-uploader'</span>);
 
-React.render((
+ReactDOM.render((
     <span class="xml"><span class="tag">&lt;<span class="title">Dropzoom</span> <span class="attribute">autoPending</span>=<span class="value">{false}</span> <span class="attribute">className</span>=<span class="value">"mydroparea"</span> <span class="attribute">multiple</span>=<span class="value">{true}</span> <span class="attribute">queueCapcity</span>=<span class="value">{20}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span>&gt;</span>
         <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"kuma-icon kuma-icon-uploading"</span> /&gt;</span>
         <span class="tag">&lt;<span class="title">p</span>&gt;</span>点击或将文件拖拽到此区域上传<span class="tag">&lt;/<span class="title">p</span>&gt;</span>

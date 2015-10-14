@@ -1,11 +1,11 @@
-<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/uxcore/static/uxcore.css"><link rel="stylesheet" href="/uxcore/static/github-gist.min.css"><script src="https://a.alipayobjects.com/??jquery/jquery/1.11.1/jquery.js,es5-shim/4.0.5/es5-shim.js,es5-shim/4.0.5/es5-sham.js,html5shiv/3.7.2/src/html5shiv.js,react/0.13.3/react-with-addons.min.js"></script><script src="/uxcore/static/highlight.min.js"></script><script src="/uxcore/static/rangy-core.min.js"></script><script src="/uxcore/static/uxcore.js"></script><script src="//g.alicdn.com//uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/uxcore/static/uxcore.css"><link rel="stylesheet" href="/uxcore/static/github-gist.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-with-addons.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.min.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,rangy/1.3.0/rangy-core.min.js"></script><script src="/uxcore/static/highlight.min.js"></script><script src="/uxcore/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/kuma/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/components/calendar">Calendar</a></li><li class="current"><a href="/uxcore/components/dialog">Dialog</a></li><li><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li><a href="/uxcore/components/tooltip">Tooltip</a></li><li><a href="/uxcore/components/tabs">Tabs</a></li><li><a href="/uxcore/components/grid">Grid</a></li><li><a href="/uxcore/components/form">Form</a></li><li><a href="/uxcore/components/dropdown">Dropdown</a></li><li><a href="/uxcore/components/mention">Mention</a></li><li><a href="/uxcore/components/tree">Tree</a></li><li><a href="/uxcore/components/transfer">Transfer</a></li><li><a href="/uxcore/components/popover">Popover</a></li><li><a href="/uxcore/components/hovercard">Hovercard</a></li><li><a href="/uxcore/components/uploader">Uploader</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Dialog</h1><section class="meta"><span class="author"><b>author: </b>vincent.bian</span><span class="github"><b>github: </b><a href="git+https://github.com/uxcore/uxcore-dialog.git" target="_blank">Dialog</a></span><span class="version"> <b>版本: </b>0.2.1</span><span class="description"><b>描述: </b>uxcore-dialog ui componment for react</span></section></header><div id="J-markdown" class="markdown"><p>模态对话框。</p>
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/kuma/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/components/calendar">Calendar</a></li><li class="current"><a href="/uxcore/components/dialog">Dialog</a></li><li><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li><a href="/uxcore/components/tooltip">Tooltip</a></li><li><a href="/uxcore/components/tabs">Tabs</a></li><li><a href="/uxcore/components/grid">Grid</a></li><li><a href="/uxcore/components/form">Form</a></li><li><a href="/uxcore/components/dropdown">Dropdown</a></li><li><a href="/uxcore/components/mention">Mention</a></li><li><a href="/uxcore/components/tree">Tree</a></li><li><a href="/uxcore/components/transfer">Transfer</a></li><li><a href="/uxcore/components/popover">Popover</a></li><li><a href="/uxcore/components/hovercard">Hovercard</a></li><li><a href="/uxcore/components/uploader">Uploader</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Dialog</h1><section class="meta"><span class="author"><b>author: </b>vincent.bian</span><span class="github"><b>github: </b><a href="git+https://github.com/uxcore/uxcore-dialog.git" target="_blank">Dialog</a></span><span class="version"> <b>版本: </b>0.2.2</span><span class="description"><b>描述: </b>uxcore-dialog ui componment for react</span></section></header><div id="J-markdown" class="markdown"><p>模态对话框。</p>
 <h2 id="何时使用">何时使用</h2><p>需要用户处理事务，又不希望跳转页面以致打断工作流程时，可以使用 <code>Dialog</code> 在当前页面正中打开一个浮层，承载相应的操作。</p>
 <h2 id="usage">Usage</h2><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Dialog = require(<span class="string">'uxcore-dialog'</span>);
-React.render(
+ReactDOM.render(
   (<span class="xml"><span class="tag">&lt;<span class="title">Dialog</span> <span class="attribute">title</span>=<span class="value">"第一个 Dialog"</span>
       <span class="attribute">visible</span>=<span class="value">{this.state.visible}</span>
       <span class="attribute">onOk</span>=<span class="value">{this.handleOk.bind(this)}</span>
@@ -207,7 +207,7 @@ var BasicDemo = (function (_React$Component) {
     return BasicDemo;
 })(React.Component);
 
-React.render(React.createElement(BasicDemo, null), document.getElementById('components-dialog-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript">import Dialog from <span class="string">'uxcore-dialog'</span>;
+ReactDOM.render(React.createElement(BasicDemo, null), document.getElementById('components-dialog-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript">import Dialog from <span class="string">'uxcore-dialog'</span>;
 
 class BasicDemo extends React.Component {
     constructor(props){
@@ -249,7 +249,7 @@ class BasicDemo extends React.Component {
     }
 }
 
-React.render(
+ReactDOM.render(
     <span class="tag">&lt;<span class="title">BasicDemo</span> /&gt;</span>, document.getElementById('components-dialog-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-dialog-demo-asyncclose" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>点击按钮触发</em></div></div><div class="code-box-demo"><div id="components-dialog-demo-asyncclose"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -338,7 +338,7 @@ var AsyncCloseDemo = (function (_React$Component) {
     return AsyncCloseDemo;
 })(React.Component);
 
-React.render(React.createElement(AsyncCloseDemo, null), document.getElementById('components-dialog-demo-asyncclose'));})()</script><div class="highlight"><pre><code class="javascript">import Dialog from <span class="string">'uxcore-dialog'</span>;
+ReactDOM.render(React.createElement(AsyncCloseDemo, null), document.getElementById('components-dialog-demo-asyncclose'));})()</script><div class="highlight"><pre><code class="javascript">import Dialog from <span class="string">'uxcore-dialog'</span>;
 
 class AsyncCloseDemo extends React.Component {
     constructor(props){
@@ -382,7 +382,7 @@ class AsyncCloseDemo extends React.Component {
     }
 }
 
-React.render(
+ReactDOM.render(
   <span class="tag">&lt;<span class="title">AsyncCloseDemo</span> /&gt;</span>,
   document.getElementById('components-dialog-demo-asyncclose')
 );</span></code></pre></div></div></div><div id="code-box-components-dialog-demo-confirm" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>自定义页脚</em></div></div><div class="code-box-demo"><div id="components-dialog-demo-confirm"></div></div><div class="code-box-markdown markdown"><script>(function(){"use strict";
@@ -494,7 +494,7 @@ var CustomFooter = (function (_React$Component) {
     return CustomFooter;
 })(React.Component);
 
-React.render(React.createElement(CustomFooter, null), document.getElementById('components-dialog-demo-confirm'));})()</script><div class="highlight"><pre><code class="javascript">import Dialog from <span class="string">'uxcore-dialog'</span>;
+ReactDOM.render(React.createElement(CustomFooter, null), document.getElementById('components-dialog-demo-confirm'));})()</script><div class="highlight"><pre><code class="javascript">import Dialog from <span class="string">'uxcore-dialog'</span>;
 
 class CustomFooter extends React.Component {
     constructor(props){
@@ -542,7 +542,7 @@ class CustomFooter extends React.Component {
     }
 }
 
-React.render(
+ReactDOM.render(
     <span class="xml"><span class="tag">&lt;<span class="title">CustomFooter</span> /&gt;</span>, document.getElementById('components-dialog-demo-confirm'));</span></code></pre></div></div></div><div id="code-box-components-dialog-demo-custom" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>确认对话框</em></div></div><div class="code-box-demo"><div id="components-dialog-demo-custom"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -595,7 +595,7 @@ var ConfirmDemo = (function (_React$Component) {
   return ConfirmDemo;
 })(React.Component);
 
-React.render(React.createElement(ConfirmDemo, null), document.getElementById('components-dialog-demo-custom'));})()</script><div class="highlight"><pre><code class="javascript">import Dialog from <span class="string">'uxcore-dialog'</span>;
+ReactDOM.render(React.createElement(ConfirmDemo, null), document.getElementById('components-dialog-demo-custom'));})()</script><div class="highlight"><pre><code class="javascript">import Dialog from <span class="string">'uxcore-dialog'</span>;
 <span class="keyword">let</span> confirm = Dialog.confirm;
 
 <span class="function"><span class="keyword">function</span> <span class="title">showConfirm</span><span class="params">()</span>{</span>
@@ -617,7 +617,7 @@ class ConfirmDemo extends React.Component {
     }
 }
 
-React.render(
+ReactDOM.render(
     <span class="tag">&lt;<span class="title">ConfirmDemo</span> /&gt;</span>, document.getElementById('components-dialog-demo-custom'));</span></code></pre></div></div></div><div id="code-box-components-dialog-demo-info" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>信息提示</em></div></div><div class="code-box-demo"><div id="components-dialog-demo-info"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -693,7 +693,7 @@ var InfoDemo = (function (_React$Component) {
   return InfoDemo;
 })(React.Component);
 
-React.render(React.createElement(InfoDemo, null), document.getElementById('components-dialog-demo-info'));})()</script><div class="highlight"><pre><code class="javascript">import Dialog from <span class="string">'uxcore-dialog'</span>;
+ReactDOM.render(React.createElement(InfoDemo, null), document.getElementById('components-dialog-demo-info'));})()</script><div class="highlight"><pre><code class="javascript">import Dialog from <span class="string">'uxcore-dialog'</span>;
 
 <span class="function"><span class="keyword">function</span> <span class="title">info</span><span class="params">()</span> {</span>
   Dialog.info({
@@ -727,5 +727,5 @@ class InfoDemo extends React.Component {
     }
 }
 
-React.render(
+ReactDOM.render(
     <span class="tag">&lt;<span class="title">InfoDemo</span> /&gt;</span>, document.getElementById('components-dialog-demo-info'));</span></code></pre></div></div></div></article></div></body></html>
