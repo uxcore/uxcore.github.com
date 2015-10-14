@@ -11,5 +11,5 @@ var Button = require('uxcore-button');
 
 ReactDOM.render(
   <Button>Confirm</Button>
-, document.getElementById('css-button-demo-basic'));
+, document.getElementById('components-button-demo-basic'));
 ````

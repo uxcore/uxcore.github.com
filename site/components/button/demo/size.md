@@ -15,5 +15,5 @@ ReactDOM.render(
     <Button size="medium">medium</Button>
     <Button size="large">large</Button>
   </div>
-, document.getElementById('css-button-demo-size'));
+, document.getElementById('components-button-demo-size'));
 ````

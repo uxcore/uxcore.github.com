@@ -11,5 +11,5 @@ var Button = require('uxcore-button');
 
 ReactDOM.render(
   <Button disabled>disabled</Button>
-, document.getElementById('css-button-demo-status'));
+, document.getElementById('components-button-demo-status'));
 ````

@@ -14,5 +14,5 @@ ReactDOM.render(
 		<Button type="primary">primary</Button>
 		<Button type="secondary">secondary</Button>
 	</div>
-, document.getElementById('css-button-demo-type'));
+, document.getElementById('components-button-demo-type'));
 ````

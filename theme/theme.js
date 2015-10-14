@@ -52,7 +52,7 @@ exports.reader = function(post){
     if (filepath.indexOf('/demo/') > 0) {
         post.template = post.meta.template = 'demos';
     } else {
-        if (post.template === 'components' || post.template === 'css') {
+        if (post.template === 'components') {
             var moduleName = 'uxcore-' + post.directory.replace(post.template, '');
             moduleName = moduleName.replace(/[/\\]/g, '');
             var pkg = readFileFromNodeModules('package.json', moduleName);
@@ -73,8 +73,8 @@ exports.reader = function(post){
     }
     post.meta.html = post.html;
     if (filepath === 'site/home.md') {
-      post.filename = post.meta.filename = 'index';
-      post.template = post.meta.template = 'home';
+        post.filename = post.meta.filename = 'index';
+        post.template = post.meta.template = 'home';
     }
     // console.log(post);
     return post;

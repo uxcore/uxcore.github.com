@@ -71,7 +71,7 @@ window.UXCORE = {
 	    bg: {r:255, g:255, b:255},
 	    matter: [
 	      {r:76, g:166, b:253}, // blue: 4CA6FD
-	      {r:255, g:183, b: 62} // orange: FFB73E
+	      {r:255, g:153, b: 0} // orange: F90
 	    ]
 	};
 

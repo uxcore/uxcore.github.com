@@ -12,7 +12,7 @@ exports.site = {
   description: package.description,
   repo: package.repository.url,
   issues: package.bugs.url,
-  homeLink: '/css/kuma/',
+  homeLink: '/css/base/',
   navigation: [
     {
         text: '首页',
@@ -20,7 +20,7 @@ exports.site = {
     },
     {
         text: 'css',
-        link: '/css/kuma/'
+        link: '/css/base/'
     },
     {
         text: '组件',
