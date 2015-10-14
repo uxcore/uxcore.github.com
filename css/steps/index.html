@@ -1,0 +1,294 @@
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/uxcore/static/uxcore.css"><link rel="stylesheet" href="/uxcore/static/github-gist.min.css"><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/0.14.0/react-with-addons.min.js,react/0.14.0/react-dom.min.js,rangy/1.3.0/rangy-core.min.js"></script><script src="/uxcore/static/highlight.min.js"></script><script src="/uxcore/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
+	w.require = function(name){
+		return w.UXCORE[name];
+	}
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/base/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/css/base">Base</a></li><li><a href="/uxcore/css/layout">Layout</a></li><li><a href="/uxcore/css/button">Button</a></li><li><a href="/uxcore/css/checkbox">Checkbox Radio</a></li><li><a href="/uxcore/css/table">Table</a></li><li><a href="/uxcore/css/form">Form</a></li><li><a href="/uxcore/css/filter">Filter</a></li><li><a href="/uxcore/css/tip">Tip</a></li><li><a href="/uxcore/css/card">Card</a></li><li class="current"><a href="/uxcore/css/steps">Steps</a></li><li><a href="/uxcore/css/iconfont">iconfont</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Steps</h1></header><div id="J-markdown" class="markdown"><h2 id="进度条">进度条</h2><blockquote>
+<p>各种应用Case中的导航状态或进度条，目前暂分为两种状态和三种状态展现；</p>
+</blockquote>
+<h3 id="双状态条-实现-amp-虚线标注形态">双状态条(实现&amp;虚线标注形态)</h3><blockquote>
+<p>通过添加 <code>.kuma-steps</code> 来创建状态条基础样式，再通过 <code>.double-s</code> 和 <code>.ds-dash</code> 来区分双状态条的实现和虚线样式形态。</p>
+</blockquote>
+<div class="nico-insert-code"><div class="kuma-steps">
+    <div class="kuma-steps-bd">
+        <ul class="fn-clear double-s">
+            <li class="ds-col">
+                <div class="s-item done">
+                    <i class="kuma-icon kuma-icon-number1"></i><strong>步骤1</strong>
+                </div>
+            </li>
+            <li class="ds-col">
+                <div class="s-item">
+                    <i class="kuma-icon kuma-icon-number2"></i><strong>步骤2</strong>
+                </div>
+            </li>
+            <li class="ds-col">
+                <div class="s-item">
+                    <i class="kuma-icon kuma-icon-number3"></i><strong>步骤3</strong>
+                </div>
+            </li>
+            <li class="ds-col">
+                <div class="s-item">
+                    <i class="kuma-icon kuma-icon-number4"></i><strong>步骤4</strong>
+                </div>
+            </li>
+            <li class="ds-col">
+                <div class="s-item">
+                    <i class="kuma-icon kuma-icon-number5"></i><strong>步骤5</strong>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div></div><div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-steps"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-steps-bd"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"fn-clear double-s"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"ds-col"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"s-item done"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"kuma-icon kuma-icon-number1"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>步骤1<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"ds-col"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"s-item"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"kuma-icon kuma-icon-number2"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>步骤2<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"ds-col"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"s-item"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"kuma-icon kuma-icon-number3"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>步骤3<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"ds-col"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"s-item"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"kuma-icon kuma-icon-number4"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>步骤4<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"ds-col"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"s-item"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"kuma-icon kuma-icon-number5"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>步骤5<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre></div><div class="nico-insert-code"><div class="kuma-steps">
+    <div class="kuma-steps-bd">
+        <ul class="fn-clear double-s ds-dash">
+            <li class="ds-col">
+                <div class="s-item done">
+                    <i class="kuma-icon kuma-icon-number1"></i><strong>步骤1</strong>
+                </div>
+                <p class="desc">2014-12-11</p>
+            </li>
+            <li class="ds-col">
+                <div class="s-item">
+                    <i class="kuma-icon kuma-icon-number2"></i><strong>步骤2</strong>
+                </div>
+                <p class="desc">2014-12-11</p>
+            </li>
+            <li class="ds-col">
+                <div class="s-item">
+                    <i class="kuma-icon kuma-icon-number3"></i><strong>步骤3</strong>
+                </div>
+                <p class="desc">2014-12-11</p>
+            </li>
+            <li class="ds-col">
+                <div class="s-item">
+                    <i class="kuma-icon kuma-icon-number4"></i><strong>步骤4</strong>
+                </div>
+                <p class="desc">2014-12-11</p>
+            </li>
+            <li class="ds-col">
+                <div class="s-item">
+                    <i class="kuma-icon kuma-icon-number5"></i><strong>步骤5</strong>
+                </div>
+                <p class="desc">2014-12-11</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<br /></div><div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-steps"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-steps-bd"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"fn-clear double-s ds-dash"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"ds-col"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"s-item done"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"kuma-icon kuma-icon-number1"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>步骤1<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"desc"</span>&gt;</span>2014-12-11<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"ds-col"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"s-item"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"kuma-icon kuma-icon-number2"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>步骤2<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"desc"</span>&gt;</span>2014-12-11<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"ds-col"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"s-item"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"kuma-icon kuma-icon-number3"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>步骤3<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"desc"</span>&gt;</span>2014-12-11<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"ds-col"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"s-item"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"kuma-icon kuma-icon-number4"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>步骤4<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"desc"</span>&gt;</span>2014-12-11<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"ds-col"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"s-item"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"kuma-icon kuma-icon-number5"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>步骤5<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"desc"</span>&gt;</span>2014-12-11<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">br</span> /&gt;</span></code></pre></div><h3 id="三状态条">三状态条</h3><blockquote>
+<p>通过添加 <code>.various-s</code> 来变换三中状态(done/current/wait)展现形式。</p>
+</blockquote>
+<div class="nico-insert-code"><div class="kuma-steps">
+    <div class="steps-status">
+        <span class="status-start"></span>
+        <ul class="various-s">
+            <li class="vs-col done">
+                <div class="status-line"><s></s></div>
+                <p class="desc">高朋</p>
+            </li>
+            <li class="vs-col done">
+                <div class="status-line"><s></s></div>
+                <p class="desc">朱丽珍</p>
+            </li>
+            <li class="vs-col cur">
+                <div class="status-line"><s></s></div>
+                <p class="desc">李江华</p>
+            </li>
+            <li class="vs-col wait">
+                <div class="status-line"><s></s></div>
+                <p class="desc">李剑锋(行癫)</p>
+            </li>
+            <li class="vs-col wait last">
+                <div class="status-line"><s></s></div>
+                <p class="desc">姜鹏(三丰)</p>
+            </li>
+        </ul>
+    </div>
+</div></div><div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-steps"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"steps-status"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"status-start"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"various-s"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"vs-col done"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"status-line"</span>&gt;</span><span class="tag">&lt;<span class="title">s</span>&gt;</span><span class="tag">&lt;/<span class="title">s</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"desc"</span>&gt;</span>高朋<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"vs-col done"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"status-line"</span>&gt;</span><span class="tag">&lt;<span class="title">s</span>&gt;</span><span class="tag">&lt;/<span class="title">s</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"desc"</span>&gt;</span>朱丽珍<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"vs-col cur"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"status-line"</span>&gt;</span><span class="tag">&lt;<span class="title">s</span>&gt;</span><span class="tag">&lt;/<span class="title">s</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"desc"</span>&gt;</span>李江华<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"vs-col wait"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"status-line"</span>&gt;</span><span class="tag">&lt;<span class="title">s</span>&gt;</span><span class="tag">&lt;/<span class="title">s</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"desc"</span>&gt;</span>李剑锋(行癫)<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"vs-col wait last"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"status-line"</span>&gt;</span><span class="tag">&lt;<span class="title">s</span>&gt;</span><span class="tag">&lt;/<span class="title">s</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"desc"</span>&gt;</span>姜鹏(三丰)<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre></div><h3 id="竖向动态条-new">竖向动态条 <code>New</code></h3><div class="nico-insert-code"><div class="kuma-steps-vertical">
+    <div class="steps-status">
+        <ul class="various-s">
+            <li class="vs-row done">
+                <div class="vs-row-hd">
+                    <span class="desc">新投递</span>
+                    <div class="circle">·</div>
+                </div>
+                <div class="vs-row-bd"></div>
+            </li>
+            <li class="vs-row done">
+                <div class="vs-row-hd">
+                    <span class="desc">简历评估</span>
+                    <div class="circle">·</div>
+                </div>
+                <div class="vs-row-bd"></div>
+            </li>
+            <li class="vs-row cur">
+                <div class="vs-row-hd">
+                    <span class="desc">简历评估通过</span>
+                    <div class="circle">·</div>
+                </div>
+                <div class="vs-row-bd">
+                    吃饭比欧神快
+                </div>
+            </li>
+            <li class="vs-row wait">
+                <div class="vs-row-hd">
+                    <span class="desc">面试</span>
+                    <div class="circle">·</div>
+                </div>
+                <div class="vs-row-bd"></div>
+            </li>
+            <li class="vs-row wait">
+                <div class="vs-row-hd">
+                    <span class="desc">发Offer</span>
+                    <div class="circle">·</div>
+                </div>
+                <div class="vs-row-bd"></div>
+            </li>
+            <li class="vs-row wait">
+                <div class="vs-row-hd">
+                    <span class="desc">入职</span>
+                    <div class="circle">·</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div></div><div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-steps-vertical"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"steps-status"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"various-s"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"vs-row done"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"vs-row-hd"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"desc"</span>&gt;</span>新投递<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"circle"</span>&gt;</span>·<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"vs-row-bd"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"vs-row done"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"vs-row-hd"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"desc"</span>&gt;</span>简历评估<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"circle"</span>&gt;</span>·<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"vs-row-bd"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"vs-row cur"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"vs-row-hd"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"desc"</span>&gt;</span>简历评估通过<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"circle"</span>&gt;</span>·<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"vs-row-bd"</span>&gt;</span>
+                    吃饭比欧神快
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"vs-row wait"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"vs-row-hd"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"desc"</span>&gt;</span>面试<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"circle"</span>&gt;</span>·<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"vs-row-bd"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"vs-row wait"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"vs-row-hd"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"desc"</span>&gt;</span>发Offer<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"circle"</span>&gt;</span>·<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"vs-row-bd"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"vs-row wait"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"vs-row-hd"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"desc"</span>&gt;</span>入职<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"circle"</span>&gt;</span>·<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre></div></div></article></div></body></html>
