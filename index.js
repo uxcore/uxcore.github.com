@@ -193,8 +193,8 @@ window.UXCORE = {
 	});
 	window.addEventListener('resize', function(){
 		canvas.style.display = 'none';
-		canvas.width = $home.width() - 4;
-		canvas.height = $home.height() - 4;
+		canvas.width = $home.clientWidth - 4;
+		canvas.height = $home.clientHeight - 4;
 		canvas.style.display = 'block';
 	});
 
