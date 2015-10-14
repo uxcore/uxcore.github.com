@@ -27,7 +27,7 @@
 ````jsx
 const {Dropzoom} = require('uxcore-uploader');
 
-React.render((
+ReactDOM.render((
     <Dropzoom autoPending={false} className="mydroparea" multiple={true} queueCapcity={20} name='file' url='http://test.yanbingbing.com/upload.php'>
         <i className="kuma-icon kuma-icon-uploading" />
         <p>点击或将文件拖拽到此区域上传</p>

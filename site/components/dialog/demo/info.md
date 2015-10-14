@@ -41,7 +41,7 @@ class InfoDemo extends React.Component {
 	}
 }
 
-React.render(
+ReactDOM.render(
     <InfoDemo />, document.getElementById('components-dialog-demo-info'));
 
 ````

@@ -54,5 +54,5 @@ var App = React.createClass({
   }
 });
 
-React.render(<App />, document.getElementById('components-select2-demo-coordinate'));
+ReactDOM.render(<App />, document.getElementById('components-select2-demo-coordinate'));
 ````

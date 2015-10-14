@@ -9,7 +9,7 @@
 ````jsx
 const Uploader = require('uxcore-uploader');
 
-React.render((
+ReactDOM.render((
     <Uploader multiple={false} accept="videos" name='file' url='http://test.yanbingbing.com/upload.php' />
 ), document.getElementById('components-uploader-demo-video'));
 ````

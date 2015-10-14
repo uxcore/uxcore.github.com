@@ -9,7 +9,7 @@
 ````jsx
 var Button = require('uxcore-button');
 
-React.render(
+ReactDOM.render(
   <Button>Confirm</Button>
 , document.getElementById('css-button-demo-basic'));
 ````

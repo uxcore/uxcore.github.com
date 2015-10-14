@@ -14,7 +14,7 @@
 
 ```js
 var Calendar = require('uxcore-calendar');
-React.render(
+ReactDOM.render(
   (<Calendar />),
   document.getElementById('target')
 );

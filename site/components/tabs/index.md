@@ -14,7 +14,7 @@ var callback = function(key){
 
 }
 
-React.render(
+ReactDOM.render(
   (
     <Tabs defaultActiveKey="2" onChange={callback}>
       <TabPane tab='tab 1' key="1">first</TabPane>

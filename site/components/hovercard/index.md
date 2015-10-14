@@ -12,7 +12,7 @@ uxcore-hovercard ui component for react
 ```
 let Hovercard = require('uxcore-hover');
 
-React.render(
+ReactDOM.render(
     <Hovercard emplId={72053} token="A8de4ec74-1145-4ae9-af1b-d8ff7adfa228C">
         <button>自动位置弹出</button>
     </Hovercard>, targetNode)

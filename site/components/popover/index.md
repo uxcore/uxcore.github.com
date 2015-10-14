@@ -22,7 +22,7 @@ let overlay = <div>
     </div>
 </div>
 
-React.render(
+ReactDOM.render(
     <Popover title="测试" overlay={overlay} placement="top">
         popover content
     </Popover>, targetNode)

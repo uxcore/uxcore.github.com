@@ -10,7 +10,7 @@ expanded。
 import Tree from 'uxcore-tree';
 let TreeNode = Tree.TreeNode;
 
-React.render(
+ReactDOM.render(
 	<div>
         <Tree defaultExpandAll={false}>
           <TreeNode title="parent 1" key="p1">

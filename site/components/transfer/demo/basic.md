@@ -37,7 +37,7 @@ class TransferDemo extends React.Component {
     }
 }
 
-React.render(
+ReactDOM.render(
 	<TransferDemo />,
   	document.getElementById('components-transfer-demo-basic')
 );

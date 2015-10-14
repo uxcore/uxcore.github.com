@@ -9,7 +9,7 @@
 ````jsx
 var Calendar = require('uxcore-calendar');
 
-React.render(
+ReactDOM.render(
   <Calendar value="2015/01/01" format="yyyy/MM/dd" />
 , document.getElementById('components-calendar-demo-formatter'));
 ````

@@ -9,7 +9,7 @@
 ````jsx
 const {Dropzoom} = require('uxcore-uploader');
 
-React.render((
+ReactDOM.render((
     <Dropzoom autoPending={false} multiple={true} queueCapcity={20} name='file' url='http://test.yanbingbing.com/upload.php' />
 ), document.getElementById('components-uploader-demo-dropzoom'));
 ````

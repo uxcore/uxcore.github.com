@@ -24,49 +24,39 @@ window.UXCORE = {
 /*
  * init code highlighter
  */
- $(function(){
-	 // init code highlight
-	 window.onload = function(){
-		 $('.markdown pre code').each(function(){
-			hljs.highlightBlock(this);
-		});
-		$('.highlight').each(function(){
-			$(this).append('<a href="#" class="code-toggle"></a>');
-		});
-	};
-	// window srcoll
-	var $body = $('body'), contentScrollTop, timer;
-	$('#J-main .site-content').on('scroll', function(e){
-		timer && clearTimeout(timer);
-		timer = setTimeout(function(){
-			contentScrollTop = $(this).scrollTop();
-			if (contentScrollTop > 100) {
-				$body.addClass('head-collapse');
-			} else {
-				$body.removeClass('head-collapse');
-			}
-		}.bind(this), 100);
+(function(d){
+	d.addEventListener('DOMContentLoaded', function() {
+		 // init code highlight
+		 window.onload = function(){
+			[].forEach.call(d.querySelectorAll('.markdown pre code'), function(el){
+				hljs.highlightBlock(el);
+			});
+			[].forEach.call(d.querySelectorAll('.highlight'), function(el){
+				var toggleNode = d.createElement('a');
+				toggleNode.className = 'code-toggle';
+				toggleNode.setAttribute('href', 'javascript:;');
+				el.appendChild(toggleNode);
+				el.addEventListener('click', function(e){
+					e.target.parentElement.classList.toggle('toggle-down');
+				});
+			});
+		};
+		if (d.querySelector('#site-home')) {
+			initHomeLayout();
+		}
 	});
-	$('#J-main').on('click', '.code-toggle', function(e){
-		e.preventDefault();
-		$(this).parent('.highlight').toggleClass('toggle-down');
-	});
-	if ($('#site-home').length > 0) {
-		initHomeLayout();
-	}
- });
+}(document));
 
  function initHomeLayout(){
 	 // Little Canvas things
-	var $home = $('#site-home');
-	var $canvas = $('<canvas />');
-	$home.append($canvas);
-	var canvas = $canvas[0],
-	    ctx = canvas.getContext('2d');
+	var $home = document.querySelector('#site-home');
+	var canvas = document.createElement('canvas');
+	$home.appendChild(canvas);
+	var ctx = canvas.getContext('2d');
 
 	// Set Canvas to be window size
-	canvas.width = $home.width() - 4;
-	canvas.height = $home.height() - 4;
+	canvas.width = $home.clientWidth - 4;
+	canvas.height = $home.clientHeight - 4;
 
 	// Configuration, Play with these
 	var config = {
@@ -195,13 +185,13 @@ window.UXCORE = {
 	};
 
 	// Click listener
-	$home.on('click', function(e){
+	$home.addEventListener('click', function(e){
 		var x = e.clientX,
 	        y = e.clientY;
 	    cleanUpArray();
 	    initParticles(config.particleNumber, x, y);
 	});
-	$(window).on('resize', function(){
+	window.addEventListener('resize', function(){
 		canvas.style.display = 'none';
 		canvas.width = $home.width() - 4;
 		canvas.height = $home.height() - 4;

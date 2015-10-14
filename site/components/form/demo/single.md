@@ -304,5 +304,5 @@ class Demo extends React.Component {
     }
 };
 
-React.render(<Demo />, document.getElementById('components-form-demo-single'))
+ReactDOM.render(<Demo />, document.getElementById('components-form-demo-single'))
 ````

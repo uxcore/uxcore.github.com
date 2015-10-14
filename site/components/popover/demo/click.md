@@ -37,7 +37,7 @@ class ClickDemo extends React.Component {
     }
 };
 
-React.render(
+ReactDOM.render(
 	<ClickDemo />,
   	document.getElementById('components-popover-demo-click')
 );

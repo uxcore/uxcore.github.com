@@ -11,7 +11,7 @@ const Uploader = require('uxcore-uploader');
 const {Button} = require('uxcore-button');
 
 
-React.render((
+ReactDOM.render((
     <Uploader name='file' url='http://test.yanbingbing.com/upload.php'>
         <Button size="large">自定义上传按钮</Button>
     </Uploader>

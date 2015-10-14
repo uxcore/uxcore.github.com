@@ -9,7 +9,7 @@
 ````jsx
 var Calendar = require('uxcore-calendar');
 
-React.render(
+ReactDOM.render(
   <Calendar value="" />
 , document.getElementById('components-calendar-demo-basic'));
 ````

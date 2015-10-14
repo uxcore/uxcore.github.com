@@ -51,7 +51,7 @@ class AsyncCloseDemo extends React.Component {
 	}
 }
 
-React.render(
+ReactDOM.render(
   <AsyncCloseDemo />,
   document.getElementById('components-dialog-demo-asyncclose')
 );

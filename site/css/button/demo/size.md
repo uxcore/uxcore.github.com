@@ -9,7 +9,7 @@
 ````jsx
 var Button = require('uxcore-button');
 
-React.render(
+ReactDOM.render(
   <div>
     <Button size="small">small</Button>
     <Button size="medium">medium</Button>

@@ -37,7 +37,7 @@ class NoTitleDemo extends React.Component {
     }
 };
 
-React.render(
+ReactDOM.render(
 	<NoTitleDemo />,
   	document.getElementById('components-popover-demo-notitle')
 );

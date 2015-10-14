@@ -15,7 +15,7 @@
 ## Usage
 ```js
 var Dialog = require('uxcore-dialog');
-React.render(
+ReactDOM.render(
   (<Dialog title="第一个 Dialog"
       visible={this.state.visible}
       onOk={this.handleOk.bind(this)}

@@ -243,7 +243,7 @@ function personMentionFormatter(data){
     return `@${data.name}(${data.emplId})`;
 }
 
-React.render(
+ReactDOM.render(
     <Mention
         width="400"
         height="200"

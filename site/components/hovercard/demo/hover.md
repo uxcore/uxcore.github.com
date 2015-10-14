@@ -45,7 +45,7 @@ const userInfo = {
     "pinyin": "shaohanchao"
 };
 
-React.render(
+ReactDOM.render(
 	<Hovercard emplId={72053} userInfo={userInfo}>
         <Button>悬浮弹出</Button>
     </Hovercard>,

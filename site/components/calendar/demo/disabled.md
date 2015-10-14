@@ -9,7 +9,7 @@
 ````jsx
 var Calendar = require('uxcore-calendar');
 
-React.render(
+ReactDOM.render(
   <Calendar value="2015-06-06" disabled={true} />
 , document.getElementById('components-calendar-demo-disabled'));
 ````

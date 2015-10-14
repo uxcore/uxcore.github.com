@@ -59,7 +59,7 @@ class CheckedDemo extends React.Component {
   }
 }
 
-React.render(
+ReactDOM.render(
 	<CheckedDemo />,
   	document.getElementById('components-tree-demo-checked')
 );

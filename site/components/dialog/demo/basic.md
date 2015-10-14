@@ -49,7 +49,7 @@ class BasicDemo extends React.Component {
 	}
 }
 
-React.render(
+ReactDOM.render(
     <BasicDemo />, document.getElementById('components-dialog-demo-basic'));
 
 ````

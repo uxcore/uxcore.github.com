@@ -20,7 +20,7 @@ function handleChange(value) {
   console.log('selected ' + value);
 }
 
-React.render(
+ReactDOM.render(
   <Select
    style={{width:400}}
   tags defaultValue={['name2', 'name3']} onChange={handleChange}>

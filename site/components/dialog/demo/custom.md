@@ -29,7 +29,7 @@ class ConfirmDemo extends React.Component {
 	}
 }
 
-React.render(
+ReactDOM.render(
     <ConfirmDemo />, document.getElementById('components-dialog-demo-custom'));
 
 ````

@@ -27,7 +27,7 @@ var menu = <Menu onClick={onClick}>
   </Menu.Item>
 </Menu>;
 
-React.render(
+ReactDOM.render(
     <Dropdown overlay={menu}>
         <button className="kuma-button kuma-button-sblue">触发事件</button>
     </Dropdown>,

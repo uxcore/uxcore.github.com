@@ -49,7 +49,7 @@ class Demo extends React.Component {
     }
 }
 
-React.render(
+ReactDOM.render(
   <Demo />
 , document.getElementById('components-tabs-demo-style'));
 ````

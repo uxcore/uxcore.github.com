@@ -18,7 +18,7 @@ function formatter(data){
 }
 let source = ['aaaaa', 'aabbb', 'aaccc', 'bbbcc', 'dddee', 'fffqq', 'pppaa', 'ppccc'];
 
-React.render(
+ReactDOM.render(
 	<Mention
   	  width="300"
   	  height="150"

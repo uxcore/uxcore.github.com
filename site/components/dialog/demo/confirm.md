@@ -55,6 +55,6 @@ class CustomFooter extends React.Component {
 	}
 }
 
-React.render(
+ReactDOM.render(
     <CustomFooter />, document.getElementById('components-dialog-demo-confirm'));
 ````

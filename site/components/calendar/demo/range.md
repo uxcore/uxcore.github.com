@@ -15,7 +15,7 @@ var disabledDate = function(current, value) {
   return current.getTime() > Date.now();
 };
 
-React.render(
+ReactDOM.render(
   <Calendar disabledDate={disabledDate} />
 , document.getElementById('components-calendar-demo-range'));
 ````

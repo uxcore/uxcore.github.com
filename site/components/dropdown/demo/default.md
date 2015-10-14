@@ -23,7 +23,7 @@ var menu = <Menu>
   </Menu.Item>
 </Menu>;
 
-React.render(
+ReactDOM.render(
     <Dropdown overlay={menu}>
         <button className="kuma-button kuma-button-sblue">hover触发</button>
     </Dropdown>,

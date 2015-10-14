@@ -35,7 +35,7 @@ const Uploader = require('uxcore-uploader');
 
 const tips = <span className="tips">限制0.5M以内<em>（支持格式：.doc; .docx; .xls; .xlsx）</em></span>;
 
-React.render(
+ReactDOM.render(
 	<Uploader tips={tips} name='file' url='http://test.yanbingbing.com/upload.php' />,
   	document.getElementById('components-uploader-demo-tips')
 );

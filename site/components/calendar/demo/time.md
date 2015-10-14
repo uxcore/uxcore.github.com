@@ -9,7 +9,7 @@
 ````jsx
 var Calendar = require('uxcore-calendar');
 
-React.render(
+ReactDOM.render(
   <Calendar showTime={true} format="yyyy-MM-dd HH:mm:ss" />
 , document.getElementById('components-calendar-demo-time'));
 ````

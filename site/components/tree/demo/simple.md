@@ -14,7 +14,7 @@ function handleSelect(e) {
   console.log(e.event, e.node, 'selected:', e.selected);
 }
 
-React.render(
+ReactDOM.render(
     <div>
         <h2>simple</h2>
         <Tree className="myCls" onSelect={handleSelect} defaultSelectedKeys={['0-1', '0-1-1']} multiple={true}

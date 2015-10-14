@@ -15,7 +15,7 @@
 
 ```js
 import Button from 'uxcore-button';
-React.render(<div>
+ReactDOM.render(<div>
     <div>
         <span>{"default:"}</span>
         <Button>Confirm</Button>
