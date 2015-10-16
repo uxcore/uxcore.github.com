@@ -1,0 +1,459 @@
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/uxcore/static/uxcore.css"><link rel="stylesheet" href="/uxcore/static/github-gist.min.css"><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/0.14.0/react-with-addons.min.js,react/0.14.0/react-dom.min.js,rangy/1.3.0/rangy-core.min.js,jquery/1.11/jquery.min.js"></script><script src="/uxcore/static/highlight.min.js"></script><script src="/uxcore/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
+	w.require = function(name){
+		return w.UXCORE[name];
+	}
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/base/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/components/calendar">Calendar</a></li><li><a href="/uxcore/components/dialog">Dialog</a></li><li><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li><a href="/uxcore/components/tooltip">Tooltip</a></li><li><a href="/uxcore/components/tabs">Tabs</a></li><li><a href="/uxcore/components/grid">Grid</a></li><li><a href="/uxcore/components/form">Form</a></li><li><a href="/uxcore/components/dropdown">Dropdown</a></li><li><a href="/uxcore/components/mention">Mention</a></li><li><a href="/uxcore/components/tree">Tree</a></li><li><a href="/uxcore/components/transfer">Transfer</a></li><li><a href="/uxcore/components/popover">Popover</a></li><li><a href="/uxcore/components/hovercard">Hovercard</a></li><li><a href="/uxcore/components/uploader">Uploader</a></li><li><a href="/uxcore/components/collapse">Collapse</a></li><li><a href="/uxcore/components/progress">Progress</a></li><li class="current"><a href="/uxcore/components/steps">Steps</a></li><li><a href="/uxcore/components/menu">Menu</a></li><li><a href="/uxcore/components/button">Button</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Steps</h1><section class="meta"><span class="author"><b>author: </b>vincent.bian</span><span class="github"><b>github: </b><a href="git+https://github.com/uxcore/uxcore-steps.git" target="_blank">Steps</a></span><span class="version"> <b>版本: </b>1.0.0</span><span class="description"><b>描述: </b>uxcore-steps component for uxcore.</span></section></header><div id="J-markdown" class="markdown"><p>引导用户按照流程完成任务的导航条。</p>
+<h2 id="api">API</h2><h2 id="props">Props</h2><h3 id="steps">Steps</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>说明</th>
+<th>类型</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>current</td>
+<td>可选参数，指定当前处理正在执行状态的步骤，从0开始记数。在子Step元素中，可以通过status属性覆盖状态。</td>
+<td>number</td>
+<td>无</td>
+<td>0</td>
+</tr>
+<tr>
+<td>size</td>
+<td>可选参数，指定大小（目前只支持普通和迷你两种大小）。</td>
+<td>string</td>
+<td>small, default</td>
+<td>default</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>可选参数，指定步骤条方向（目前支持水平和竖直两种方向，默认水平方向）。</td>
+<td>string</td>
+<td>vertical</td>
+<td>无</td>
+</tr>
+<tr>
+<td>maxDescriptionWidth</td>
+<td>可选参数，指定步骤的详细描述文字的最大宽度。</td>
+<td>number</td>
+<td>无</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<h3 id="steps-step">Steps.Step</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>说明</th>
+<th>类型</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>可选参数，指定状态。当不配置该属性时，会使用父Steps元素的current来自动指定状态。</td>
+<td>string</td>
+<td>wait, process, finish</td>
+<td>wait</td>
+</tr>
+<tr>
+<td>title</td>
+<td>必要参数，标题。</td>
+<td>string/jsx</td>
+<td>无</td>
+<td>无</td>
+</tr>
+<tr>
+<td>description</td>
+<td>可选参数，步骤的详情描述。</td>
+<td>string/jsx</td>
+<td>无</td>
+<td>空</td>
+</tr>
+<tr>
+<td>icon</td>
+<td>可选参数，步骤的Icon。如果不指定，则使用默认的样式。</td>
+<td>string/jsx</td>
+<td>无</td>
+<td>空</td>
+</tr>
+</tbody>
+</table>
+</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-steps-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>基本用法</em></div></div><div class="code-box-demo"><div id="components-steps-demo-basic"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Steps = require('uxcore-steps');
+var Step = Steps.Step;
+
+var steps = [{
+    title: '已完成',
+    description: '这里是多信息的描述啊'
+}, {
+    title: '进行中',
+    description: '这里是多信息的耶哦耶哦哦耶哦耶'
+}, {
+    title: '又一个待运行',
+    description: '描述啊描述啊'
+}, {
+    title: '待运行',
+    description: '这里是多信息的描述啊'
+}].map(function (s, i) {
+    return React.createElement(Step, { key: i, title: s.title, description: s.description });
+});
+
+ReactDOM.render(React.createElement(
+    Steps,
+    { current: 1 },
+    steps
+), document.getElementById('components-steps-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Steps = require(<span class="string">'uxcore-steps'</span>);
+<span class="keyword">var</span> Step = Steps.Step;
+
+<span class="keyword">var</span> steps = [{
+    title: <span class="string">'已完成'</span>,
+    description: <span class="string">'这里是多信息的描述啊'</span>
+}, {
+    title: <span class="string">'进行中'</span>,
+    description: <span class="string">'这里是多信息的耶哦耶哦哦耶哦耶'</span>
+}, {
+    title: <span class="string">'又一个待运行'</span>,
+    description: <span class="string">'描述啊描述啊'</span>
+}, {
+    title: <span class="string">'待运行'</span>,
+    description: <span class="string">'这里是多信息的描述啊'</span>
+}].map(<span class="function"><span class="keyword">function</span><span class="params">(s, i)</span> {</span>
+    <span class="keyword">return</span> (
+        <span class="xml"><span class="tag">&lt;<span class="title">Step</span> <span class="attribute">key</span>=<span class="value">{i}</span> <span class="attribute">title</span>=<span class="value">{s.title}</span> <span class="attribute">description</span>=<span class="value">{s.description}</span> /&gt;</span>
+    );
+});
+
+ReactDOM.render(
+    <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">current</span>=<span class="value">{1}</span>&gt;</span>{steps}<span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
+, document.getElementById('components-steps-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-mini" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>迷你版</em></div></div><div class="code-box-demo"><div id="components-steps-demo-mini"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Steps = require('uxcore-steps');
+var Step = Steps.Step;
+
+var steps = [{
+    title: '已完成',
+    description: '这里是多信息的描述啊'
+}, {
+    title: '进行中',
+    description: '这里是多信息的耶哦耶哦哦耶哦耶'
+}, {
+    title: '又一个待运行',
+    description: '描述啊描述啊'
+}, {
+    title: '待运行',
+    description: '这里是多信息的描述啊'
+}].map(function (s, i) {
+    return React.createElement(Step, { key: i, title: s.title, description: s.description });
+});
+
+ReactDOM.render(React.createElement(
+    Steps,
+    { size: 'small', current: 1 },
+    steps
+), document.getElementById('components-steps-demo-mini'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Steps = require(<span class="string">'uxcore-steps'</span>);
+<span class="keyword">var</span> Step = Steps.Step;
+
+<span class="keyword">var</span> steps = [{
+    title: <span class="string">'已完成'</span>,
+    description: <span class="string">'这里是多信息的描述啊'</span>
+}, {
+    title: <span class="string">'进行中'</span>,
+    description: <span class="string">'这里是多信息的耶哦耶哦哦耶哦耶'</span>
+}, {
+    title: <span class="string">'又一个待运行'</span>,
+    description: <span class="string">'描述啊描述啊'</span>
+}, {
+    title: <span class="string">'待运行'</span>,
+    description: <span class="string">'这里是多信息的描述啊'</span>
+}].map(<span class="function"><span class="keyword">function</span><span class="params">(s, i)</span> {</span>
+    <span class="keyword">return</span> (
+        <span class="xml"><span class="tag">&lt;<span class="title">Step</span> <span class="attribute">key</span>=<span class="value">{i}</span> <span class="attribute">title</span>=<span class="value">{s.title}</span> <span class="attribute">description</span>=<span class="value">{s.description}</span> /&gt;</span>
+    );
+});
+
+ReactDOM.render(
+    <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">size</span>=<span class="value">"small"</span> <span class="attribute">current</span>=<span class="value">{1}</span>&gt;</span>{steps}<span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
+, document.getElementById('components-steps-demo-mini'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-dynamic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>切换到下一步</em></div></div><div class="code-box-demo"><div id="components-steps-demo-dynamic"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Steps = require('uxcore-steps');
+var Step = Steps.Step;
+
+var array = Array.apply(null, Array(Math.floor(Math.random() * 3) + 3));
+var steps = array.map(function (item, i) {
+    return {
+        title: '步骤' + (i + 1)
+    };
+});
+
+var Demo = (function (_React$Component) {
+    _inherits(Demo, _React$Component);
+
+    function Demo(props) {
+        _classCallCheck(this, Demo);
+
+        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+        this.state = {
+            currentStep: Math.floor(Math.random() * steps.length)
+        };
+    }
+
+    _createClass(Demo, [{
+        key: 'next',
+        value: function next() {
+            var s = this.state.currentStep + 1;
+            if (s === steps.length) {
+                s = 0;
+            }
+            this.setState({
+                currentStep: s
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(
+                    'div',
+                    null,
+                    '当前正在执行第 ',
+                    this.state.currentStep + 1,
+                    ' 步'
+                ),
+                React.createElement(
+                    Steps,
+                    { current: this.state.currentStep },
+                    steps.map(function (s, i) {
+                        return React.createElement(Step, { key: i, title: s.title, description: s.description });
+                    })
+                ),
+                React.createElement(
+                    'div',
+                    null,
+                    React.createElement(
+                        'button',
+                        { className: 'kuma-button kuma-button-sm', onClick: this.next.bind(this) },
+                        '下一步'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Demo;
+})(React.Component);
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-steps-demo-dynamic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Steps = require(<span class="string">'uxcore-steps'</span>);
+<span class="keyword">var</span> Step = Steps.Step;
+
+<span class="keyword">let</span> array = Array.apply(<span class="literal">null</span>, Array(Math.floor(Math.random() * <span class="number">3</span>) + <span class="number">3</span>));
+<span class="keyword">let</span> steps = array.map(<span class="function"><span class="keyword">function</span><span class="params">(item, i)</span> {</span>
+    <span class="keyword">return</span> {
+        title: <span class="string">'步骤'</span> + (i + <span class="number">1</span>)
+    };
+});
+
+class Demo extends React.Component {
+
+    constructor(props){
+        super(props);
+        <span class="keyword">this</span>.state = {
+            currentStep: Math.floor(Math.random() * steps.length)
+        };
+    }
+
+    next() {
+        <span class="keyword">var</span> s = <span class="keyword">this</span>.state.currentStep + <span class="number">1</span>;
+        <span class="keyword">if</span> (s === steps.length) {
+            s = <span class="number">0</span>;
+        }
+        <span class="keyword">this</span>.setState({
+            currentStep: s
+        });
+    }
+
+    render() {
+        <span class="keyword">return</span> (
+            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span>&gt;</span>当前正在执行第 {this.state.currentStep + 1} 步<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">current</span>=<span class="value">{this.state.currentStep}</span>&gt;</span>
+                    {steps.map((s, i) =&gt; <span class="tag">&lt;<span class="title">Step</span> <span class="attribute">key</span>=<span class="value">{i}</span> <span class="attribute">title</span>=<span class="value">{s.title}</span> <span class="attribute">description</span>=<span class="value">{s.description}</span> /&gt;</span>)}
+                <span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">div</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">'kuma-button kuma-button-sm'</span> <span class="attribute">onClick</span>=<span class="value">{this.next.bind(this)}</span>&gt;</span>下一步<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        );
+    }
+}
+
+ReactDOM.render(
+    <span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>
+, document.getElementById('components-steps-demo-dynamic'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-vertical" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>竖直方向的步骤条</em></div></div><div class="code-box-demo"><div id="components-steps-demo-vertical"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Steps = require('uxcore-steps');
+var Step = Steps.Step;
+
+var steps = [{
+    title: '已完成',
+    description: '这里是多信息的描述啊'
+}, {
+    title: '进行中',
+    description: '这里是多信息的耶哦耶哦哦耶哦耶'
+}, {
+    title: '又一个待运行',
+    description: '描述啊描述啊'
+}, {
+    title: '待运行',
+    description: '这里是多信息的描述啊'
+}].map(function (s, i) {
+    return React.createElement(Step, { key: i, title: s.title, description: s.description });
+});
+
+ReactDOM.render(React.createElement(
+    Steps,
+    { direction: 'vertical', current: 1 },
+    steps
+), document.getElementById('components-steps-demo-vertical'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Steps = require(<span class="string">'uxcore-steps'</span>);
+<span class="keyword">var</span> Step = Steps.Step;
+
+<span class="keyword">var</span> steps = [{
+    title: <span class="string">'已完成'</span>,
+    description: <span class="string">'这里是多信息的描述啊'</span>
+}, {
+    title: <span class="string">'进行中'</span>,
+    description: <span class="string">'这里是多信息的耶哦耶哦哦耶哦耶'</span>
+}, {
+    title: <span class="string">'又一个待运行'</span>,
+    description: <span class="string">'描述啊描述啊'</span>
+}, {
+    title: <span class="string">'待运行'</span>,
+    description: <span class="string">'这里是多信息的描述啊'</span>
+}].map(<span class="function"><span class="keyword">function</span><span class="params">(s, i)</span> {</span>
+    <span class="keyword">return</span> (
+        <span class="xml"><span class="tag">&lt;<span class="title">Step</span> <span class="attribute">key</span>=<span class="value">{i}</span> <span class="attribute">title</span>=<span class="value">{s.title}</span> <span class="attribute">description</span>=<span class="value">{s.description}</span> /&gt;</span>
+    );
+});
+
+ReactDOM.render(
+    <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">direction</span>=<span class="value">"vertical"</span> <span class="attribute">current</span>=<span class="value">{1}</span>&gt;</span>{steps}<span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
+, document.getElementById('components-steps-demo-vertical'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-verticalmini" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>竖直方向的小型步骤条</em></div></div><div class="code-box-demo"><div id="components-steps-demo-verticalmini"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Steps = require('uxcore-steps');
+var Step = Steps.Step;
+
+var steps = [{
+    title: '已完成',
+    description: '这里是多信息的描述啊'
+}, {
+    title: '进行中',
+    description: '这里是多信息的耶哦耶哦哦耶哦耶'
+}, {
+    title: '又一个待运行',
+    description: '描述啊描述啊'
+}, {
+    title: '待运行',
+    description: '这里是多信息的描述啊'
+}].map(function (s, i) {
+    return React.createElement(Step, { key: i, title: s.title, description: s.description });
+});
+
+ReactDOM.render(React.createElement(
+    Steps,
+    { direction: 'vertical', size: 'small', current: 1 },
+    steps
+), document.getElementById('components-steps-demo-verticalmini'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Steps = require(<span class="string">'uxcore-steps'</span>);
+<span class="keyword">var</span> Step = Steps.Step;
+
+<span class="keyword">var</span> steps = [{
+    title: <span class="string">'已完成'</span>,
+    description: <span class="string">'这里是多信息的描述啊'</span>
+}, {
+    title: <span class="string">'进行中'</span>,
+    description: <span class="string">'这里是多信息的耶哦耶哦哦耶哦耶'</span>
+}, {
+    title: <span class="string">'又一个待运行'</span>,
+    description: <span class="string">'描述啊描述啊'</span>
+}, {
+    title: <span class="string">'待运行'</span>,
+    description: <span class="string">'这里是多信息的描述啊'</span>
+}].map(<span class="function"><span class="keyword">function</span><span class="params">(s, i)</span> {</span>
+    <span class="keyword">return</span> (
+        <span class="xml"><span class="tag">&lt;<span class="title">Step</span> <span class="attribute">key</span>=<span class="value">{i}</span> <span class="attribute">title</span>=<span class="value">{s.title}</span> <span class="attribute">description</span>=<span class="value">{s.description}</span> /&gt;</span>
+    );
+});
+
+ReactDOM.render(
+    <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">direction</span>=<span class="value">"vertical"</span> <span class="attribute">size</span>=<span class="value">"small"</span> <span class="attribute">current</span>=<span class="value">{1}</span>&gt;</span>{steps}<span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
+, document.getElementById('components-steps-demo-verticalmini'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-custom" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>自定义状态</em></div></div><div class="code-box-demo"><div id="components-steps-demo-custom"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Steps = require('uxcore-steps');
+var Step = Steps.Step;
+
+var steps = [{
+    status: 'finish',
+    title: '已完成',
+    description: '这里是多信息的描述啊'
+}, {
+    status: 'process',
+    title: '进行中',
+    description: '这里是多信息的耶哦耶哦哦耶哦耶'
+}, {
+    status: 'wait',
+    title: '又一个待运行',
+    description: '描述啊描述啊'
+}, {
+    status: 'wait',
+    title: '待运行',
+    description: '这里是多信息的描述啊'
+}].map(function (s, i) {
+    return React.createElement(Step, { key: i, title: s.title, status: s.status, description: s.description });
+});
+ReactDOM.render(React.createElement(
+    Steps,
+    null,
+    steps
+), document.getElementById('components-steps-demo-custom'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Steps = require(<span class="string">'uxcore-steps'</span>);
+<span class="keyword">var</span> Step = Steps.Step;
+
+<span class="keyword">var</span> steps = [{
+    status: <span class="string">'finish'</span>,
+    title: <span class="string">'已完成'</span>,
+    description: <span class="string">'这里是多信息的描述啊'</span>
+}, {
+    status: <span class="string">'process'</span>,
+    title: <span class="string">'进行中'</span>,
+    description: <span class="string">'这里是多信息的耶哦耶哦哦耶哦耶'</span>
+}, {
+    status: <span class="string">'wait'</span>,
+    title: <span class="string">'又一个待运行'</span>,
+    description: <span class="string">'描述啊描述啊'</span>
+}, {
+    status: <span class="string">'wait'</span>,
+    title: <span class="string">'待运行'</span>,
+    description: <span class="string">'这里是多信息的描述啊'</span>
+}].map(<span class="function"><span class="keyword">function</span><span class="params">(s, i)</span> {</span>
+    <span class="keyword">return</span> (
+        <span class="xml"><span class="tag">&lt;<span class="title">Step</span> <span class="attribute">key</span>=<span class="value">{i}</span> <span class="attribute">title</span>=<span class="value">{s.title}</span> <span class="attribute">status</span>=<span class="value">{s.status}</span> <span class="attribute">description</span>=<span class="value">{s.description}</span> /&gt;</span>
+    );
+});
+ReactDOM.render(
+    <span class="tag">&lt;<span class="title">Steps</span>&gt;</span>{steps}<span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
+, document.getElementById('components-steps-demo-custom'));</span></code></pre></div></div></div></article></div></body></html>

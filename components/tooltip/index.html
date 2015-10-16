@@ -1,0 +1,133 @@
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/uxcore/static/uxcore.css"><link rel="stylesheet" href="/uxcore/static/github-gist.min.css"><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/0.14.0/react-with-addons.min.js,react/0.14.0/react-dom.min.js,rangy/1.3.0/rangy-core.min.js,jquery/1.11/jquery.min.js"></script><script src="/uxcore/static/highlight.min.js"></script><script src="/uxcore/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
+	w.require = function(name){
+		return w.UXCORE[name];
+	}
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/base/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/components/calendar">Calendar</a></li><li><a href="/uxcore/components/dialog">Dialog</a></li><li><a href="/uxcore/components/select2">Select2</a></li><li><a href="/uxcore/components/pagination">Pagination</a></li><li class="current"><a href="/uxcore/components/tooltip">Tooltip</a></li><li><a href="/uxcore/components/tabs">Tabs</a></li><li><a href="/uxcore/components/grid">Grid</a></li><li><a href="/uxcore/components/form">Form</a></li><li><a href="/uxcore/components/dropdown">Dropdown</a></li><li><a href="/uxcore/components/mention">Mention</a></li><li><a href="/uxcore/components/tree">Tree</a></li><li><a href="/uxcore/components/transfer">Transfer</a></li><li><a href="/uxcore/components/popover">Popover</a></li><li><a href="/uxcore/components/hovercard">Hovercard</a></li><li><a href="/uxcore/components/uploader">Uploader</a></li><li><a href="/uxcore/components/collapse">Collapse</a></li><li><a href="/uxcore/components/progress">Progress</a></li><li><a href="/uxcore/components/steps">Steps</a></li><li><a href="/uxcore/components/menu">Menu</a></li><li><a href="/uxcore/components/button">Button</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Tooltip</h1><section class="meta"><span class="author"><b>author: </b>vincent.bian</span><span class="github"><b>github: </b><a href="git+ssh://git@github.com/uxcore/uxcore-tooltip.git" target="_blank">Tooltip</a></span><span class="version"> <b>版本: </b>0.1.2</span><span class="description"><b>描述: </b>uxcore-tooltip ui component for react</span></section></header><div id="J-markdown" class="markdown"><p>简单的文字提示气泡框。</p>
+<h2 id="何时使用">何时使用</h2><p>鼠标移入则显示提示，移出消失，气泡浮层不承载复杂文本和操作。</p>
+<p>可用来代替系统默认的 <code>title</code> 提示，提供一个<code>按钮/文字/操作</code>的文案解释。</p>
+<h2 id="api">API</h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>placement</td>
+<td>气泡框位置，可选 <code>top/left/right/bottom</code></td>
+<td>string</td>
+<td>top</td>
+</tr>
+<tr>
+<td>title</td>
+<td>提示文字</td>
+<td>string/jsx</td>
+<td>无</td>
+</tr>
+<tr>
+<td>trigger</td>
+<td>触发方式，可选<code>hover/click</code></td>
+<td>string</td>
+<td>hover</td>
+</tr>
+<tr>
+<td>delay</td>
+<td>延迟</td>
+<td>number</td>
+<td>0.1</td>
+</tr>
+</tbody>
+</table>
+</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-tooltip-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>基本</em></div></div><div class="code-box-demo"><div id="components-tooltip-demo-basic"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+
+var Tooltip = require('uxcore-tooltip');
+
+ReactDOM.render(React.createElement(
+  Tooltip,
+  { title: '提示文字' },
+  React.createElement(
+    'span',
+    null,
+    '鼠标移上来就会出现提示'
+  )
+), document.getElementById('components-tooltip-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Tooltip = require(<span class="string">'uxcore-tooltip'</span>);
+
+ReactDOM.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">Tooltip</span> <span class="attribute">title</span>=<span class="value">"提示文字"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">span</span>&gt;</span>鼠标移上来就会出现提示<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">Tooltip</span>&gt;</span>
+, document.getElementById('components-tooltip-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-tooltip-demo-placement" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>位置</em></div></div><div class="code-box-demo"><div id="components-tooltip-demo-placement"></div></div><div class="code-box-markdown markdown"><script>(function(){"use strict";
+
+var Tooltip = require('uxcore-tooltip');
+var text = React.createElement(
+  "span",
+  null,
+  "提示文字"
+);
+
+ReactDOM.render(React.createElement(
+  "div",
+  null,
+  React.createElement(
+    Tooltip,
+    { placement: "left", title: text },
+    React.createElement(
+      "a",
+      { href: "#" },
+      "左边左边"
+    )
+  ),
+  React.createElement(
+    Tooltip,
+    { placement: "right", title: text },
+    React.createElement(
+      "a",
+      { href: "#" },
+      "右边右边"
+    )
+  ),
+  React.createElement(
+    Tooltip,
+    { placement: "top", title: text },
+    React.createElement(
+      "a",
+      { href: "#" },
+      "上边上边"
+    )
+  ),
+  React.createElement(
+    Tooltip,
+    { placement: "bottom", title: text },
+    React.createElement(
+      "a",
+      { href: "#" },
+      "下边下边"
+    )
+  )
+), document.getElementById('components-tooltip-demo-placement'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Tooltip = require(<span class="string">'uxcore-tooltip'</span>);
+<span class="keyword">var</span> text = <span class="xml"><span class="tag">&lt;<span class="title">span</span>&gt;</span>提示文字<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;</span>
+
+ReactDOM.render(
+  <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Tooltip</span> <span class="attribute">placement</span>=<span class="value">"left"</span> <span class="attribute">title</span>=<span class="value">{text}</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>左边左边<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Tooltip</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Tooltip</span> <span class="attribute">placement</span>=<span class="value">"right"</span> <span class="attribute">title</span>=<span class="value">{text}</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>右边右边<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Tooltip</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Tooltip</span> <span class="attribute">placement</span>=<span class="value">"top"</span> <span class="attribute">title</span>=<span class="value">{text}</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>上边上边<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Tooltip</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Tooltip</span> <span class="attribute">placement</span>=<span class="value">"bottom"</span> <span class="attribute">title</span>=<span class="value">{text}</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>下边下边<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Tooltip</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+, document.getElementById('components-tooltip-demo-placement'));</span></code></pre></div><style>
+#components-tooltip-demo-placement a {
+  margin-right: 1em;
+}
+</style>
+</div></div></article></div></body></html>

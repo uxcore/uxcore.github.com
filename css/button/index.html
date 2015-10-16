@@ -1,0 +1,51 @@
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/uxcore/static/uxcore.css"><link rel="stylesheet" href="/uxcore/static/github-gist.min.css"><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/0.14.0/react-with-addons.min.js,react/0.14.0/react-dom.min.js,rangy/1.3.0/rangy-core.min.js,jquery/1.11/jquery.min.js"></script><script src="/uxcore/static/highlight.min.js"></script><script src="/uxcore/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
+	w.require = function(name){
+		return w.UXCORE[name];
+	}
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/uxcore/">首页</a></li><li><a href="/uxcore/css/base/">css</a></li><li><a href="/uxcore/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/uxcore/css/base">Base</a></li><li><a href="/uxcore/css/layout">Layout</a></li><li class="current"><a href="/uxcore/css/button">Button</a></li><li><a href="/uxcore/css/checkbox">Checkbox Radio</a></li><li><a href="/uxcore/css/table">Table</a></li><li><a href="/uxcore/css/form">Form</a></li><li><a href="/uxcore/css/filter">Filter</a></li><li><a href="/uxcore/css/tip">Tip</a></li><li><a href="/uxcore/css/card">Card</a></li><li><a href="/uxcore/css/steps">Steps</a></li><li><a href="/uxcore/css/iconfont">iconfont</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Button</h1></header><div id="J-markdown" class="markdown"><h2 id="按钮">按钮</h2><h3 id="预定义按钮">预定义按钮</h3><blockquote>
+<p>使用下面列出的类可以快速创建一个带有预定义样式的按钮。</p>
+</blockquote>
+<div class="nico-insert-code"><button type="button" class="kuma-button kuma-button-primary">一级按钮</button>
+<button type="button" class="kuma-button kuma-button-secondary">一级按钮</button>
+<button type="button" class="kuma-button kuma-button-disabled">橙色按钮</button></div><div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">class</span>=<span class="value">"kuma-button kuma-button-primary"</span>&gt;</span>一级按钮<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+<span class="tag">&lt;<span class="title">button</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">class</span>=<span class="value">"kuma-button kuma-button-secondary"</span>&gt;</span>一级按钮<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+<span class="tag">&lt;<span class="title">button</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">class</span>=<span class="value">"kuma-button kuma-button-disabled"</span>&gt;</span>橙色按钮<span class="tag">&lt;/<span class="title">button</span>&gt;</span></code></pre></div><h3 id="按钮尺寸">按钮尺寸</h3><blockquote>
+<p>需要让按钮具有不同尺寸吗？使用 <code>.kuma-button-lg</code>、<code>.kuma-button-sm</code>可以获得大-中-小三种不同尺寸的按钮。</p>
+</blockquote>
+<div class="nico-insert-code"><div class="kuma-button-group">
+    <a href="javascript:;" class="kuma-button kuma-button-primary kuma-button-lg">大按钮</a>
+    <a href="javascript:;" class="kuma-button kuma-button-primary">中按钮</a>
+    <a href="javascript:;" class="kuma-button kuma-button-primary kuma-button-sm">小按钮</a>
+</div></div><div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-button-group"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span> <span class="attribute">class</span>=<span class="value">"kuma-button kuma-button-primary kuma-button-lg"</span>&gt;</span>大按钮<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span> <span class="attribute">class</span>=<span class="value">"kuma-button kuma-button-primary"</span>&gt;</span>中按钮<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span> <span class="attribute">class</span>=<span class="value">"kuma-button kuma-button-primary kuma-button-sm"</span>&gt;</span>小按钮<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre></div><h3 id="segment-button-new">Segment-button <code>New</code></h3><div class="nico-insert-code"><ul class="kuma-segment-button">
+    <li class="first selected"><span>全员</span></li><li class="last"><span>直接下属</span></li>
+</ul>
+<br>
+<ul class="kuma-segment-button">
+    <li class="first"><span>全员</span></li><li class="last selected"><span>直接下属</span></li>
+</ul></div><div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"kuma-segment-button"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"first selected"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>全员<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"last"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>直接下属<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+<span class="tag">&lt;<span class="title">br</span>&gt;</span>
+<span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"kuma-segment-button"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"first"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>全员<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"last selected"</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>直接下属<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span></code></pre></div><h3 id="switch-button-开关按钮-new">Switch-button(开关按钮) <code>New</code></h3><div class="nico-insert-code"><div class="kuma-switch-button close">
+    <span class="kuma-switch-txt">显示</span>
+    <div class="kuma-switch-circle"></div>
+</div>
+<br>
+<div class="kuma-switch-button open">
+    <span class="kuma-switch-txt">隐藏</span>
+    <div class="kuma-switch-circle"></div>
+</div></div><div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-switch-button close"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-switch-txt"</span>&gt;</span>显示<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-switch-circle"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">br</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-switch-button open"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-switch-txt"</span>&gt;</span>隐藏<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-switch-circle"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre></div></div></article></div></body></html>
