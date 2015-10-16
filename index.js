@@ -18,7 +18,10 @@ window.UXCORE = {
 	'uxcore-transfer': require('uxcore-transfer'),
 	'uxcore-popover': require('uxcore-popover'),
 	'uxcore-hovercard': require('uxcore-hovercard'),
-	'uxcore-uploader': require('uxcore-uploader')
+	'uxcore-collapse': require('uxcore-collapse'),
+	'uxcore-progress': require('uxcore-progress'),
+	'uxcore-steps': require('uxcore-steps'),
+	'uxcore-menu': require('uxcore-menu')
 };
 
 /*
