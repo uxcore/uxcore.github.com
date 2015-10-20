@@ -12,16 +12,16 @@ var text = <span>提示文字</span>;
 
 ReactDOM.render(
   <div>
-    <Tooltip placement="left" title={text}>
+    <Tooltip placement="left" overlay={text} trigger={['click']}>
       <a href="#">左边左边</a>
     </Tooltip>
-    <Tooltip placement="right" title={text}>
+    <Tooltip placement="right" overlay={text} trigger={['click']}>
       <a href="#">右边右边</a>
     </Tooltip>
-    <Tooltip placement="top" title={text}>
+    <Tooltip placement="top" overlay={text} trigger={['click']}>
       <a href="#">上边上边</a>
     </Tooltip>
-    <Tooltip placement="bottom" title={text}>
+    <Tooltip placement="bottom" overlay={text} trigger={['click']}>
       <a href="#">下边下边</a>
     </Tooltip>
   </div>
