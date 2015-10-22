@@ -58,6 +58,9 @@ exports.reader = function(post){
             var pkg = readFileFromNodeModules('package.json', moduleName);
             if (pkg) {
                 post.pkg = JSON.parse(pkg);
+                if (post.pkg.repository && post.pkg.repository.url) {
+                    post.pkg.repository.url = post.pkg.repository.url.replace('git+', '');
+                }
                 post.name = post.pkg.name;
                 if (!post.title) {
                     post.title = post.pkg.name;
