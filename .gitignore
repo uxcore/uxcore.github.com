@@ -28,4 +28,3 @@ assets/**/*.css
 build/
 theme/**/*.map
 .publish
-_site/**/*
