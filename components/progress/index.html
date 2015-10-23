@@ -1,0 +1,199 @@
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/uxcore.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/0.14.0/react-with-addons.min.js,react/0.14.0/react-dom.min.js,rangy/1.3.0/rangy-core.min.js,jquery/1.11/jquery.min.js"></script><script src="/static/highlight.min.js"></script><script src="/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
+	w.require = function(name){
+		return w.UXCORE[name];
+	}
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/">首页</a></li><li><a href="/css/base/">css</a></li><li><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li><a href="/components/grid">Grid</a></li><li><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/popover">Popover</a></li><li><a href="/components/uploader">Uploader</a></li><li><a href="/components/collapse">Collapse</a></li><li class="current"><a href="/components/progress">Progress</a></li><li><a href="/components/steps">Steps</a></li><li><a href="/components/menu">Menu</a></li><li><a href="/components/button">Button</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Progress</h1><section class="meta"><span class="author"><b>author: </b>vicent.bian</span><span class="github"><b>github: </b><a href="https://github.com/uxcore/uxcore-progress.git" target="_blank">Progress</a></span><span class="version"> <b>版本: </b>1.0.1</span><span class="description"><b>描述: </b>uxcore-progress component for uxcore.</span></section></header><div id="J-markdown" class="markdown"><p>展示操作的当前进度。</p>
+<h2 id="api">API</h2><h2 id="props">Props</h2><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>percent</td>
+<td>百分比</td>
+<td>number</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>状态，有两个值normal、exception、active三种状态</td>
+<td>string</td>
+<td>normal</td>
+<td></td>
+</tr>
+<tr>
+<td>strokeWidth</td>
+<td>进度条线的宽度，单位是px</td>
+<td>number</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>showInfo</td>
+<td>是否显示进度数值和状态图标</td>
+<td>bool</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-progress-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>进度条</em></div></div><div class="code-box-demo"><div id="components-progress-demo-basic"></div></div><div class="code-box-markdown markdown"><script>(function(){"use strict";
+
+var Progress = require('uxcore-progress');
+
+ReactDOM.render(React.createElement(
+    "div",
+    null,
+    React.createElement(Progress, { percent: 30 }),
+    React.createElement(Progress, { percent: 50, status: "active" }),
+    React.createElement(Progress, { percent: 70, status: "exception" }),
+    React.createElement(Progress, { percent: 100 }),
+    React.createElement(Progress, { percent: 50, showInfo: false })
+), document.getElementById('components-progress-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Progress = require(<span class="string">'uxcore-progress'</span>);
+
+ReactDOM.render(
+    <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Progress</span> <span class="attribute">percent</span>=<span class="value">{30}</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">Progress</span> <span class="attribute">percent</span>=<span class="value">{50}</span> <span class="attribute">status</span>=<span class="value">"active"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">Progress</span> <span class="attribute">percent</span>=<span class="value">{70}</span> <span class="attribute">status</span>=<span class="value">"exception"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">Progress</span> <span class="attribute">percent</span>=<span class="value">{100}</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">Progress</span> <span class="attribute">percent</span>=<span class="value">{50}</span> <span class="attribute">showInfo</span>=<span class="value">{false}</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+, document.getElementById('components-progress-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-progress-demo-mini" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>小型进度条</em></div></div><div class="code-box-demo"><div id="components-progress-demo-mini"></div></div><div class="code-box-markdown markdown"><script>(function(){"use strict";
+
+var Progress = require('uxcore-progress');
+
+ReactDOM.render(React.createElement(
+    "div",
+    { style: { width: 170 } },
+    React.createElement(Progress, { percent: 30, strokeWidth: 5 }),
+    React.createElement(Progress, { percent: 50, strokeWidth: 5, status: "active" }),
+    React.createElement(Progress, { percent: 70, strokeWidth: 5, status: "exception" }),
+    React.createElement(Progress, { percent: 100, strokeWidth: 5 })
+), document.getElementById('components-progress-demo-mini'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Progress = require(<span class="string">'uxcore-progress'</span>);
+
+ReactDOM.render(
+    <span class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">{{</span> <span class="attribute">width:</span> <span class="attribute">170</span> }}&gt;</span>
+        <span class="tag">&lt;<span class="title">Progress</span> <span class="attribute">percent</span>=<span class="value">{30}</span> <span class="attribute">strokeWidth</span>=<span class="value">{5}</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">Progress</span> <span class="attribute">percent</span>=<span class="value">{50}</span> <span class="attribute">strokeWidth</span>=<span class="value">{5}</span> <span class="attribute">status</span>=<span class="value">"active"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">Progress</span> <span class="attribute">percent</span>=<span class="value">{70}</span> <span class="attribute">strokeWidth</span>=<span class="value">{5}</span> <span class="attribute">status</span>=<span class="value">"exception"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">Progress</span> <span class="attribute">percent</span>=<span class="value">{100}</span> <span class="attribute">strokeWidth</span>=<span class="value">{5}</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+, document.getElementById('components-progress-demo-mini'));</span></code></pre></div></div></div><div id="code-box-components-progress-demo-dynamic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>动态展示</em></div></div><div class="code-box-demo"><div id="components-progress-demo-dynamic"></div></div><div class="code-box-markdown markdown"><script>(function(){"use strict";
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Progress = require('uxcore-progress');
+
+var Demo = (function (_React$Component) {
+    _inherits(Demo, _React$Component);
+
+    function Demo(props) {
+        _classCallCheck(this, Demo);
+
+        _get(Object.getPrototypeOf(Demo.prototype), "constructor", this).call(this, props);
+        this.state = {
+            percent: 0
+        };
+    }
+
+    _createClass(Demo, [{
+        key: "increase",
+        value: function increase() {
+            var percent = this.state.percent + 10;
+            if (percent > 100) {
+                percent = 100;
+            }
+            this.setState({ percent: percent });
+        }
+    }, {
+        key: "decline",
+        value: function decline() {
+            var percent = this.state.percent - 10;
+            if (percent < 0) {
+                percent = 0;
+            }
+            this.setState({ percent: percent });
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            return React.createElement(
+                "div",
+                null,
+                React.createElement(Progress, { percent: this.state.percent }),
+                React.createElement(
+                    "button",
+                    { className: "kuma-button kuma-button-secondary kuma-button-sm", onClick: this.decline.bind(this) },
+                    React.createElement("i", { className: "kuma-icon kuma-icon-stop" })
+                ),
+                React.createElement(
+                    "button",
+                    { className: "kuma-button-secondary kuma-button-sm", onClick: this.increase.bind(this) },
+                    React.createElement("i", { className: "kuma-icon kuma-icon-follow" })
+                )
+            );
+        }
+    }]);
+
+    return Demo;
+})(React.Component);
+
+;
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-progress-demo-dynamic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Progress = require(<span class="string">'uxcore-progress'</span>);
+
+class Demo extends React.Component {
+
+    constructor(props){
+        super(props);
+        <span class="keyword">this</span>.state = {
+            percent: <span class="number">0</span>
+        };
+    }
+
+    increase() {
+        <span class="keyword">let</span> percent = <span class="keyword">this</span>.state.percent + <span class="number">10</span>;
+        <span class="keyword">if</span> (percent &gt; <span class="number">100</span>) {
+            percent = <span class="number">100</span>;
+        }
+        <span class="keyword">this</span>.setState({ percent });
+    }
+    decline() {
+        <span class="keyword">let</span> percent = <span class="keyword">this</span>.state.percent - <span class="number">10</span>;
+        <span class="keyword">if</span> (percent &lt; <span class="number">0</span>) {
+            percent = <span class="number">0</span>;
+        }
+        <span class="keyword">this</span>.setState({ percent });
+    }
+
+    render() {
+        <span class="keyword">return</span> (
+            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Progress</span> <span class="attribute">percent</span>=<span class="value">{this.state.percent}</span> /&gt;</span>
+                <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"kuma-button kuma-button-secondary kuma-button-sm"</span> <span class="attribute">onClick</span>=<span class="value">{this.decline.bind(this)}</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"kuma-icon kuma-icon-stop"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"kuma-button-secondary kuma-button-sm"</span> <span class="attribute">onClick</span>=<span class="value">{this.increase.bind(this)}</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"kuma-icon kuma-icon-follow"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        );
+    }
+};
+
+ReactDOM.render(
+    <span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>
+, document.getElementById('components-progress-demo-dynamic'));</span></code></pre></div></div></div></article></div></body></html>
