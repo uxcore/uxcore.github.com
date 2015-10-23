@@ -9,7 +9,7 @@
     "url": "https://github.com/uxcore"
   },
   "bugs": {
-    "url": "http://github.com/uxcore/uxcore/issues"
+    "url": "http://github.com/uxcore/uxcore.github.com/issues"
   },
   "scripts": {
     "start": "nico server --watch",
