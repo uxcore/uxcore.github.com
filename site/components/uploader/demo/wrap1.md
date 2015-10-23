@@ -8,7 +8,7 @@
 
 ````jsx
 const Uploader = require('uxcore-uploader');
-const {Button} = require('uxcore-button');
+const Button = require('uxcore-button');
 
 
 ReactDOM.render((

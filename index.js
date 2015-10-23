@@ -21,6 +21,7 @@ window.UXCORE = {
 	'uxcore-collapse': require('uxcore-collapse'),
 	'uxcore-progress': require('uxcore-progress'),
 	'uxcore-steps': require('uxcore-steps'),
+	'uxcore-uploader': require('uxcore-uploader'),
 	'uxcore-menu': require('uxcore-menu')
 };
 

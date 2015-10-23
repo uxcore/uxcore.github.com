@@ -10,7 +10,7 @@
 const Uploader = require('uxcore-uploader');
 
 ReactDOM.render(
-	<Uploader multiple={false} name='file' url='http://test.yanbingbing.com/upload.php' />,
-  	document.getElementById('components-uploader-demo-basic')
+    <Uploader multiple={false} name='file' url='http://test.yanbingbing.com/upload.php' />,
+    document.getElementById('components-uploader-demo-basic')
 );
 ````
