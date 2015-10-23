@@ -18,7 +18,6 @@ Thumbs.db
 *.pyc
 *.pyo
 .build
-_site/*
 node_modules
 sea-modules
 spm_modules

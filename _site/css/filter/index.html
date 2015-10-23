@@ -1,0 +1,230 @@
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/uxcore.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/0.14.0/react-with-addons.min.js,react/0.14.0/react-dom.min.js,rangy/1.3.0/rangy-core.min.js,jquery/1.11/jquery.min.js"></script><script src="/static/highlight.min.js"></script><script src="/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
+	w.require = function(name){
+		return w.UXCORE[name];
+	}
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/">首页</a></li><li><a href="/css/base/">css</a></li><li><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/css/base">Base</a></li><li><a href="/css/layout">Layout</a></li><li><a href="/css/button">Button</a></li><li><a href="/css/checkbox">Checkbox Radio</a></li><li><a href="/css/table">Table</a></li><li class="current"><a href="/css/filter">Filter</a></li><li><a href="/css/tip">Tip</a></li><li><a href="/css/card">Card</a></li><li><a href="/css/steps">Steps</a></li><li><a href="/css/iconfont">iconfont</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Filter</h1></header><div id="J-markdown" class="markdown"><h2 id="条件">条件</h2><blockquote>
+<p>条件筛选和标签筛选组件</p>
+</blockquote>
+<h3 id="多维度筛选">多维度筛选</h3><div class="nico-insert-code"><style>
+.demo-wrapper {
+    margin: 20px 0;
+}
+</style>
+
+
+<div class="demo-wrapper">
+
+<div class="kuma-filter fn-clear">
+    <div class="kuma-filter-title fn-left">
+        多纬度筛选：
+    </div>
+    <ul class="kuma-filter-condition fn-left">
+        <li>
+            <a href="javascript:void(0)">
+                <span>条件一</span><span class="kuma-icon-triangle-down kuma-icon"></span>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:void(0)">
+                <span>条件二</span><span class="kuma-icon-triangle-down kuma-icon"></span>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:void(0)">
+                <span>条件三</span><span class="kuma-icon-triangle-down kuma-icon"></span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="kuma-filter fn-clear">
+    <ul class="kuma-tag-removeable">
+        <li class="kuma-tag">
+            <span>职务类型：技术类 运营类</span><a href="javascript:void(0)" class="kuma-icon-close kuma-icon"></a>
+        </li>
+        <li class="kuma-tag">
+            <span>层级：P5 P6 P7 M2 M3</span><a href="javascript:void(0)" class="kuma-icon-close kuma-icon"></a>
+        </li>
+        <li class="kuma-tag">
+            <span>阶段：待审批 审批不通过</span><a href="javascript:void(0)" class="kuma-icon-close kuma-icon"></a>
+        </li>
+        <li class="kuma-tag-clear">
+            <a href="javascript:void(0)">清空条件</a>
+        </li>
+    </ul>
+</div>
+
+<div class="kuma-filter">
+    <div class="fn-clear">
+        <div class="kuma-filter-title fn-left">
+            筛选级一：
+        </div>
+        <ul class="kuma-tag-pickable">
+            <li class="kuma-tag">
+                <a href="javascript:void(0)">
+                    <span>条件一</span>
+                    <span class="kuma-checkmarkbg"></span>
+                    <span class="kuma-checkmark kuma-icon-choose kuma-icon"></span>
+                </a>
+            </li>
+            <li class="kuma-tag picked">
+                <a href="javascript:void(0)">
+                    <span>条件二</span>
+                    <span class="kuma-checkmarkbg"></span>
+                    <span class="kuma-checkmark kuma-icon-choose kuma-icon"></span>
+                </a>
+            </li>
+            <li class="kuma-tag">
+                <a href="javascript:void(0)">
+                    <span>条件三</span>
+                    <span class="kuma-checkmarkbg"></span>
+                    <span class="kuma-checkmark kuma-icon-choose kuma-icon"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="fn-clear">
+        <div class="kuma-filter-title fn-left">
+            筛选级二：
+        </div>
+        <ul class="kuma-tag-pickable">
+            <li class="kuma-tag">
+                <a href="javascript:void(0)">
+                    <span>条件一</span>
+                    <span class="kuma-checkmarkbg"></span>
+                    <span class="kuma-checkmark kuma-icon-choose kuma-icon"></span>
+                </a>
+            </li>
+            <li class="kuma-tag picked">
+                <a href="javascript:void(0)">
+                    <span>条件二</span>
+                    <span class="kuma-checkmarkbg"></span>
+                    <span class="kuma-checkmark kuma-icon-choose kuma-icon"></span>
+                </a>
+            </li>
+            <li class="kuma-tag">
+                <a href="javascript:void(0)">
+                    <span>条件三</span>
+                    <span class="kuma-checkmarkbg"></span>
+                    <span class="kuma-checkmark kuma-icon-choose kuma-icon"></span>
+                </a>
+            </li>
+            <li class="kuma-tag-clear">
+                <a href="javascript:void(0)">清空所选</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</div></div><div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+<span class="class">.demo-wrapper</span> <span class="rules">{
+    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">20</span>px <span class="number">0</span></span></span>;
+<span class="rule">}</span></span>
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"demo-wrapper"</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-filter fn-clear"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-filter-title fn-left"</span>&gt;</span>
+        多纬度筛选：
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"kuma-filter-condition fn-left"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:void(0)"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">span</span>&gt;</span>条件一<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-icon-triangle-down kuma-icon"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:void(0)"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">span</span>&gt;</span>条件二<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-icon-triangle-down kuma-icon"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:void(0)"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">span</span>&gt;</span>条件三<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-icon-triangle-down kuma-icon"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-filter fn-clear"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"kuma-tag-removeable"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"kuma-tag"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">span</span>&gt;</span>职务类型：技术类 运营类<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:void(0)"</span> <span class="attribute">class</span>=<span class="value">"kuma-icon-close kuma-icon"</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"kuma-tag"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">span</span>&gt;</span>层级：P5 P6 P7 M2 M3<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:void(0)"</span> <span class="attribute">class</span>=<span class="value">"kuma-icon-close kuma-icon"</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"kuma-tag"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">span</span>&gt;</span>阶段：待审批 审批不通过<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:void(0)"</span> <span class="attribute">class</span>=<span class="value">"kuma-icon-close kuma-icon"</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"kuma-tag-clear"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:void(0)"</span>&gt;</span>清空条件<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-filter"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"fn-clear"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-filter-title fn-left"</span>&gt;</span>
+            筛选级一：
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"kuma-tag-pickable"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"kuma-tag"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:void(0)"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span>&gt;</span>条件一<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-checkmarkbg"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-checkmark kuma-icon-choose kuma-icon"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"kuma-tag picked"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:void(0)"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span>&gt;</span>条件二<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-checkmarkbg"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-checkmark kuma-icon-choose kuma-icon"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"kuma-tag"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:void(0)"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span>&gt;</span>条件三<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-checkmarkbg"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-checkmark kuma-icon-choose kuma-icon"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"fn-clear"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-filter-title fn-left"</span>&gt;</span>
+            筛选级二：
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"kuma-tag-pickable"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"kuma-tag"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:void(0)"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span>&gt;</span>条件一<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-checkmarkbg"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-checkmark kuma-icon-choose kuma-icon"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"kuma-tag picked"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:void(0)"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span>&gt;</span>条件二<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-checkmarkbg"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-checkmark kuma-icon-choose kuma-icon"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"kuma-tag"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:void(0)"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span>&gt;</span>条件三<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-checkmarkbg"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"kuma-checkmark kuma-icon-choose kuma-icon"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">class</span>=<span class="value">"kuma-tag-clear"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:void(0)"</span>&gt;</span>清空所选<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre></div></div></article></div></body></html>
