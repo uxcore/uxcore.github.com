@@ -22,8 +22,15 @@ class Demo extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            currentStep: Math.floor(Math.random() * steps.length)
+            currentStep: Math.floor(Math.random() * steps.length),
+            showIcon: true
         };
+    }
+
+    toggleNumberShow(){
+        this.setState({
+            showIcon: !this.state.showIcon
+        });
     }
 
     next() {
@@ -40,11 +47,12 @@ class Demo extends React.Component {
         return (
             <div>
                 <div>当前正在执行第 {this.state.currentStep + 1} 步</div>
-                <Steps current={this.state.currentStep}>
+                <Steps current={this.state.currentStep} showIcon={this.state.showIcon}>
                     {steps.map((s, i) => <Step key={i} title={s.title} description={s.description} />)}
                 </Steps>
                 <div>
                     <button className='kuma-button kuma-button-sm' onClick={this.next.bind(this)}>下一步</button>
+                    <button className='kuma-button kuma-button-sm' onClick={this.toggleNumberShow.bind(this)}>显示数字</button>
                 </div>
             </div>
         );

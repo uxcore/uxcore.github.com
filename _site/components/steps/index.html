@@ -2,7 +2,7 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/">首页</a></li><li><a href="/css/base/">css</a></li><li><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li><a href="/components/grid">Grid</a></li><li><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/popover">Popover</a></li><li><a href="/components/uploader">Uploader</a></li><li><a href="/components/collapse">Collapse</a></li><li><a href="/components/progress">Progress</a></li><li class="current"><a href="/components/steps">Steps</a></li><li><a href="/components/menu">Menu</a></li><li><a href="/components/button">Button</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Steps</h1><section class="meta"><span class="author"><b>author: </b>vincent.bian</span><span class="github"><b>github: </b><a href="https://github.com/uxcore/uxcore-steps.git" target="_blank">Steps</a></span><span class="version"> <b>版本: </b>1.0.0</span><span class="description"><b>描述: </b>uxcore-steps component for uxcore.</span></section></header><div id="J-markdown" class="markdown"><p>引导用户按照流程完成任务的导航条。</p>
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/">首页</a></li><li><a href="/css/base/">css</a></li><li><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li><a href="/components/grid">Grid</a></li><li><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/popover">Popover</a></li><li><a href="/components/uploader">Uploader</a></li><li><a href="/components/collapse">Collapse</a></li><li><a href="/components/progress">Progress</a></li><li class="current"><a href="/components/steps">Steps</a></li><li><a href="/components/menu">Menu</a></li><li><a href="/components/button">Button</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Steps</h1><section class="meta"><span class="author"><b>author: </b>vincent.bian</span><span class="github"><b>github: </b><a href="https://github.com/uxcore/uxcore-steps.git" target="_blank">Steps</a></span><span class="version"> <b>版本: </b>1.0.1</span><span class="description"><b>描述: </b>uxcore-steps component for uxcore.</span></section></header><div id="J-markdown" class="markdown"><p>引导用户按照流程完成任务的导航条。</p>
 <h2 id="api">API</h2><h2 id="props">Props</h2><h3 id="steps">Steps</h3><table>
 <thead>
 <tr>
@@ -41,6 +41,13 @@
 <td>number</td>
 <td>无</td>
 <td>100</td>
+</tr>
+<tr>
+<td>showIcon</td>
+<td>步骤节点是否显示图标或数字</td>
+<td>bool</td>
+<td><code>true</code> or <code>false</code></td>
+<td>true</td>
 </tr>
 </tbody>
 </table>
@@ -209,11 +216,19 @@ var Demo = (function (_React$Component) {
 
         _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
         this.state = {
-            currentStep: Math.floor(Math.random() * steps.length)
+            currentStep: Math.floor(Math.random() * steps.length),
+            showIcon: true
         };
     }
 
     _createClass(Demo, [{
+        key: 'toggleNumberShow',
+        value: function toggleNumberShow() {
+            this.setState({
+                showIcon: !this.state.showIcon
+            });
+        }
+    }, {
         key: 'next',
         value: function next() {
             var s = this.state.currentStep + 1;
@@ -239,7 +254,7 @@ var Demo = (function (_React$Component) {
                 ),
                 React.createElement(
                     Steps,
-                    { current: this.state.currentStep },
+                    { current: this.state.currentStep, showIcon: this.state.showIcon },
                     steps.map(function (s, i) {
                         return React.createElement(Step, { key: i, title: s.title, description: s.description });
                     })
@@ -251,6 +266,11 @@ var Demo = (function (_React$Component) {
                         'button',
                         { className: 'kuma-button kuma-button-sm', onClick: this.next.bind(this) },
                         '下一步'
+                    ),
+                    React.createElement(
+                        'button',
+                        { className: 'kuma-button kuma-button-sm', onClick: this.toggleNumberShow.bind(this) },
+                        '显示数字'
                     )
                 )
             );
@@ -275,8 +295,15 @@ class Demo extends React.Component {
     constructor(props){
         super(props);
         <span class="keyword">this</span>.state = {
-            currentStep: Math.floor(Math.random() * steps.length)
+            currentStep: Math.floor(Math.random() * steps.length),
+            showIcon: <span class="literal">true</span>
         };
+    }
+
+    toggleNumberShow(){
+        <span class="keyword">this</span>.setState({
+            showIcon: !<span class="keyword">this</span>.state.showIcon
+        });
     }
 
     next() {
@@ -293,11 +320,12 @@ class Demo extends React.Component {
         <span class="keyword">return</span> (
             <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
                 <span class="tag">&lt;<span class="title">div</span>&gt;</span>当前正在执行第 {this.state.currentStep + 1} 步<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">current</span>=<span class="value">{this.state.currentStep}</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">current</span>=<span class="value">{this.state.currentStep}</span> <span class="attribute">showIcon</span>=<span class="value">{this.state.showIcon}</span>&gt;</span>
                     {steps.map((s, i) =&gt; <span class="tag">&lt;<span class="title">Step</span> <span class="attribute">key</span>=<span class="value">{i}</span> <span class="attribute">title</span>=<span class="value">{s.title}</span> <span class="attribute">description</span>=<span class="value">{s.description}</span> /&gt;</span>)}
                 <span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
                 <span class="tag">&lt;<span class="title">div</span>&gt;</span>
                     <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">'kuma-button kuma-button-sm'</span> <span class="attribute">onClick</span>=<span class="value">{this.next.bind(this)}</span>&gt;</span>下一步<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">'kuma-button kuma-button-sm'</span> <span class="attribute">onClick</span>=<span class="value">{this.toggleNumberShow.bind(this)}</span>&gt;</span>显示数字<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
                 <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
             <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
         );
