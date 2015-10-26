@@ -57,13 +57,20 @@ exports.reader = function(post){
             moduleName = moduleName.replace(/[/\\]/g, '');
             var pkg = readFileFromNodeModules('package.json', moduleName);
             if (pkg) {
-                post.pkg = JSON.parse(pkg);
-                if (post.pkg.repository && post.pkg.repository.url) {
-                    post.pkg.repository.url = post.pkg.repository.url.replace('git+', '');
+                pkg = JSON.parse(pkg);
+                if (pkg.repository && pkg.repository.url) {
+                    pkg.repository.url = pkg.repository.url.replace('git+', '');
                 }
-                post.name = post.pkg.name;
+                post.pkg = pkg;
+                post.name = pkg.name;
                 if (!post.title) {
-                    post.title = post.pkg.name;
+                    post.title = pkg.name;
+                }
+                post.tags = {};
+                if (pkg.author) {
+                    post.tags.author = pkg.author;
+                } else if (pkg.maintainers) {
+                    post.tags.author = pkg.maintainers[0];
                 }
             }
             if (!post.html) {

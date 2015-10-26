@@ -2,7 +2,7 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/">首页</a></li><li><a href="/css/base/">css</a></li><li><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li class="current"><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li><a href="/components/grid">Grid</a></li><li><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/popover">Popover</a></li><li><a href="/components/uploader">Uploader</a></li><li><a href="/components/collapse">Collapse</a></li><li><a href="/components/progress">Progress</a></li><li><a href="/components/steps">Steps</a></li><li><a href="/components/menu">Menu</a></li><li><a href="/components/button">Button</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Calendar</h1><section class="meta"><span class="author"><b>author: </b>vincent.bian</span><span class="github"><b>github: </b><a href="https://github.com/uxcore/uxcore-calendar.git" target="_blank">Calendar</a></span><span class="version"> <b>版本: </b>0.1.12</span><span class="description"><b>描述: </b>calendar componment for react</span></section></header><div id="J-markdown" class="markdown"><p>输入或选择日期/时间的控件。</p>
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li data-id="home"><a href="/">首页</a></li><li data-id="css"><a href="/css/base/">css</a></li><li data-id="components"><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li class="current"><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li><a href="/components/grid">Grid</a></li><li><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/popover">Popover</a></li><li><a href="/components/uploader">Uploader</a></li><li><a href="/components/collapse">Collapse</a></li><li><a href="/components/progress">Progress</a></li><li><a href="/components/steps">Steps</a></li><li><a href="/components/menu">Menu</a></li><li><a href="/components/button">Button</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Calendar</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>vincent.bian</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-calendar.git" target="_blank">Calendar</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.1.12</span><span class="description"><i class="fa fa-bookmark"></i>calendar componment for react</span></section></header><div id="J-markdown" class="markdown"><p>输入或选择日期/时间的控件。</p>
 <h2 id="何时使用">何时使用</h2><p>当用户需要输入一个日期/时间，可以点击标准输入框，弹出日期面板进行选择。支持键盘操作。</p>
 <div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Calendar = require(<span class="string">'uxcore-calendar'</span>);
 ReactDOM.render(
@@ -74,7 +74,7 @@ ReactDOM.render(
 </tr>
 </tbody>
 </table>
-</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-calendar-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>基本</em></div></div><div class="code-box-demo"><div id="components-calendar-demo-basic"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-calendar-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-calendar-demo-basic">基本</a></div></div><div class="code-box-demo"><div id="components-calendar-demo-basic"></div></div><div class="code-box-desc"><p>最简单的用法。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Calendar = require('uxcore-calendar');
 
@@ -82,7 +82,7 @@ ReactDOM.render(React.createElement(Calendar, { value: '' }), document.getElemen
 
 ReactDOM.render(
   <span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span>
-, document.getElementById('components-calendar-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-formatter" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>日期格式</em></div></div><div class="code-box-demo"><div id="components-calendar-demo-formatter"></div></div><div class="code-box-markdown markdown"><script>(function(){"use strict";
+, document.getElementById('components-calendar-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-formatter" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-calendar-demo-formatter">日期格式</a></div></div><div class="code-box-demo"><div id="components-calendar-demo-formatter"></div></div><div class="code-box-desc"><p>使用 <code>format</code> 属性，可以自定义你需要的日期显示格式，如 <code>yyyy/MM/dd</code>。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){"use strict";
 
 var Calendar = require('uxcore-calendar');
 
@@ -90,7 +90,7 @@ ReactDOM.render(React.createElement(Calendar, { value: "2015/01/01", format: "yy
 
 ReactDOM.render(
   <span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">value</span>=<span class="value">"2015/01/01"</span> <span class="attribute">format</span>=<span class="value">"yyyy/MM/dd"</span> /&gt;</span>
-, document.getElementById('components-calendar-demo-formatter'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-select" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>选择日期</em></div></div><div class="code-box-demo"><div id="components-calendar-demo-select"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+, document.getElementById('components-calendar-demo-formatter'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-select" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-calendar-demo-select">选择日期</a></div></div><div class="code-box-demo"><div id="components-calendar-demo-select"></div></div><div class="code-box-desc"><p>通过设置选择日期的回调事件 <code>onSelect</code>，完成交互行为。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Calendar = require('uxcore-calendar');
 
@@ -118,7 +118,8 @@ ReactDOM.render(React.createElement(Picker, null), document.getElementById('comp
 
 ReactDOM.render(
   <span class="tag">&lt;<span class="title">Picker</span> /&gt;</span>
-, document.getElementById('components-calendar-demo-select'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-range" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>范围</em></div></div><div class="code-box-demo"><div id="components-calendar-demo-range"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+, document.getElementById('components-calendar-demo-select'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-range" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-calendar-demo-range">范围</a></div></div><div class="code-box-demo"><div id="components-calendar-demo-range"></div></div><div class="code-box-desc"><p>设置 <code>disabledDate</code> 方法，来确定不可选时段。</p>
+<p>如上例：不可选择今天之后的日期。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Calendar = require('uxcore-calendar');
 var disabledDate = function disabledDate(current, value) {
@@ -134,7 +135,7 @@ ReactDOM.render(React.createElement(Calendar, { disabledDate: disabledDate }), d
 
 ReactDOM.render(
   <span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">disabledDate</span>=<span class="value">{disabledDate}</span> /&gt;</span>
-, document.getElementById('components-calendar-demo-range'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-time" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>时间选择</em></div></div><div class="code-box-demo"><div id="components-calendar-demo-time"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+, document.getElementById('components-calendar-demo-range'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-time" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-calendar-demo-time">时间选择</a></div></div><div class="code-box-demo"><div id="components-calendar-demo-time"></div></div><div class="code-box-desc"><p>准确到秒的时间选择面板。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Calendar = require('uxcore-calendar');
 
@@ -142,7 +143,7 @@ ReactDOM.render(React.createElement(Calendar, { showTime: true, format: 'yyyy-MM
 
 ReactDOM.render(
   <span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">showTime</span>=<span class="value">{true}</span> <span class="attribute">format</span>=<span class="value">"yyyy-MM-dd HH:mm:ss"</span> /&gt;</span>
-, document.getElementById('components-calendar-demo-time'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-disabled" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>禁用</em></div></div><div class="code-box-demo"><div id="components-calendar-demo-disabled"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+, document.getElementById('components-calendar-demo-time'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-disabled" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-calendar-demo-disabled">禁用</a></div></div><div class="code-box-demo"><div id="components-calendar-demo-disabled"></div></div><div class="code-box-desc"><p>选择框的不可用状态。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Calendar = require('uxcore-calendar');
 

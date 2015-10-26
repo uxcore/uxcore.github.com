@@ -19,9 +19,12 @@ mixin demos
 		.code-box(id="code-box-#{demo.meta.id}")
 			.code-box-meta
 				.code-box-title
-					i.kuma-icon.kuma-icon-tag
-					em #{demo.title}
-					//- | #{post.meta.description}
+					i.fa.fa-tag
+					a(href="#code-box-#{demo.meta.id}") #{demo.title}
 			.code-box-demo
 				div(id="#{demo.meta.id}")
-			.code-box-markdown.markdown !{demo.meta.html}
+			.code-box-desc
+				!{demo.meta.description}
+				a.code-toggle
+					i.kuma-icon.kuma-icon-chevron-down
+			.code-box-markdown !{demo.meta.html}

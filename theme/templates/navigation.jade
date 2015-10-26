@@ -2,5 +2,5 @@ nav#J-head.site-nav
 	h1.logo UXCORE
 	ul.nav-list
 		each item in config.site.navigation
-			li
+			li(data-id="#{item.id}")
 				a(href="#{config.site.urlPrefix}#{item.link}")= item.text

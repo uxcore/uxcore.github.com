@@ -8,26 +8,29 @@ var handler;
 
 // {{ settings for nico
 exports.site = {
-  name: package.name,
-  description: package.description,
-  repo: package.repository.url,
-  issues: package.bugs.url,
-  homeLink: '/css/base/',
-  navigation: [
-    {
-        text: '首页',
-        link: '/'
-    },
-    {
-        text: 'css',
-        link: '/css/base/'
-    },
-    {
-        text: '组件',
-        link: '/components/calendar/'
-    }
-  ],
-  urlPrefix: ''
+    name: package.name,
+    description: package.description,
+    repo: package.repository.url,
+    issues: package.bugs.url,
+    homeLink: '/css/base/',
+    navigation: [
+        {
+            text: '首页',
+            link: '/',
+            id: 'home'
+        },
+        {
+            text: 'css',
+            link: '/css/base/',
+            id: 'css'
+        },
+        {
+            text: '组件',
+            link: '/components/calendar/',
+            id: 'components'
+        }
+    ],
+    urlPrefix: ''
 };
 exports.engine = 'jade';
 exports.package = package;
@@ -39,31 +42,31 @@ exports.ignorefilter = function(filepath, subdir, filename) {
     return true;
 };
 exports.middlewares = [{
-  name: 'webpackDevMiddleware',
-  filter: /\.(js|css)(\.map)?$/,
-  handle: function(req, res, next) {
-    handler = handler || webpackMiddleware(webpackCompiler, {
-      publicPath: '/static/',
-      lazy: true,
-      stats: {
-        hash: false,
-        cached: false,
-        cachedAssets: false,
-        colors: true
-      }
-    });
-    try {
-      return handler(req, res, next);
-    } catch(e) {}
-  }
+    name: 'webpackDevMiddleware',
+    filter: /\.(js|css)(\.map)?$/,
+    handle: function(req, res, next) {
+        handler = handler || webpackMiddleware(webpackCompiler, {
+            publicPath: '/static/',
+            lazy: true,
+            stats: {
+                hash: false,
+                cached: false,
+                cachedAssets: false,
+                colors: true
+            }
+        });
+        try {
+            return handler(req, res, next);
+        } catch(e) {}
+    }
 }];
 exports.writers = [
-  'nico-jsx.PageWriter',
-  'nico-jsx.StaticWriter',
-  'nico-jsx.FileWriter'
+    'nico-jsx.PageWriter',
+    'nico-jsx.StaticWriter',
+    'nico-jsx.FileWriter'
 ];
 // end settings }}
 
 process.on('uncaughtException', function(err) {
-  console.log(err);
+    console.log(err);
 });

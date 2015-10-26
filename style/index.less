@@ -1,12 +1,14 @@
 @import "./variables.less";
 @import "./font.less";
 @import "./animation.less";
+@import "//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css";
 html, body {
 	height: 100%;
 }
 body {
 	font-family: 'Helvetica Neue', Helvetica, "Hiragino Sans GB", "Microsoft YaHei",
              "WenQuanYi Micro Hei", sans-serif;
+	 background: @white;
 }
 .head-collapse {
 	@collapse-height: @head-height * 2 / 3;
@@ -64,7 +66,7 @@ body {
 		li {
 			padding: 0 20px;
 			transition: background-color ease-in .2s;
-			&:hover {
+			&:hover, &.active {
 				background-color: rgba(255, 255, 255, .1);
 			}
 		}
@@ -110,20 +112,20 @@ body {
 	}
 }
 .site-aside {
-	min-width: 160px;
-	background-color: #f0f0f0;
-	border-right: 1px solid @borderColor;
+	min-width: 180px;
+	background-color: @grey;
 	ul {
 		position: sticky;
 		top: 60px;
 	}
 	li {
-		padding: 0 8px;
-		height: 36px;
+		@item-height: 40px;
+		padding: 0 @g-padding;
+		height: @item-height;
 		font-size: 14px;
-		line-height: 36/14;
+		line-height: @item-height;
 		&.current {
-			background-color: #fff;
+			background-color: @white;
 			border-left: 2px solid @oranage;
 			a {
 				color: @oranage;
@@ -139,26 +141,34 @@ body {
 	}
 }
 .site-content {
-	padding: 16px;
+	padding: @g-padding - 10px @g-padding + 10px;
 	flex-grow: 1;
 	overflow-y: scroll;
 	.post-title {
 		margin-bottom: 8px;
 		padding-bottom: 8px;
-		border-bottom: 1px solid @oranage;
 		h1 {
-			font-size: 18px;
+			margin-bottom: @g-padding;
+			font-size: 24px;
 			line-height: 1.5;
 		}
 		.meta {
-			display: flex;
 			color: #666;
 			span {
-				flex-grow: 1;
+				display: inline-block;
+				margin-right: 4px;
+				margin-bottom: 2px;
+				padding: 0 8px;
+				height: 24px;
+				line-height: 24px;
+				background-color: #f5f5f5;
+				border: 1px solid #e0e0e0;
+				border-radius: 3px;
 			}
-			b {
-				color: #ad8400;
+			i {
+				margin-right: 8px;
 				font-weight: 400;
+				font-size: 14px;
 			}
 		}
 	}
@@ -166,10 +176,10 @@ body {
 .markdown {
 	@baseFontSize: 12px;
 	h1, h2, h3, h4, h5, h6 {
-		margin: 12px 0;
+		margin: @g-padding 0;
 	}
 	p {
-		margin: 10px 0;
+		margin: @g-padding 0;
 	}
 	ul, ol, dl, blockquote, pre, address, fieldset, figure {
 		margin: 1.6rem 0;
@@ -206,7 +216,7 @@ body {
 		width: 100%;
 		border: 1px solid @borderColor;
 		th, td {
-			padding: 4px 6px;
+			padding: 10px 8px;
 			border: 1px solid @borderColor;
 		}
 		th {
@@ -241,73 +251,112 @@ body {
 }
 .code-box {
 	margin-top: 20px;
-	padding: 10px;
-	background-color: #f3f3f3;
+	background-color: @white;
 	border: 1px solid @borderColor;
-	.code-box-meta {
+	&-meta {
 		margin-bottom: 8px;
+		padding: 10px;
+		background-color: #f5f5f5;
 		.code-box-title {
 			font-size: 14px;
-		}
-		em {
-			font-style: normal;
-		}
-		.kuma-icon {
-			color: #888;
+			a {
+				color: @text-color;
+				font-style: normal;
+			}
+			.fa {
+				margin-right: 6px;
+				color: #888;
+			}
 		}
 	}
-	.code-box-demo {
+
+	&-desc {
+		position: relative;
+		z-index: 1;
+		padding: 10px;
+		border-top: 1px solid #f0f0f0;
+		.code-toggle {
+			@toggleSize: 24px;
+			position: absolute;
+			right: 20px;
+			top: -@toggleSize / 2;
+			width: @toggleSize;
+			height: @toggleSize;
+			background-color: @white;
+			border: 1px solid @borderColor;
+			border-radius: 30px / 2;
+			text-align: center;
+			line-height: @toggleSize;
+			cursor: pointer;
+			transition: transform .5s;
+			&:hover {
+				text-decoration: none;
+			}
+			.code-show-demo & {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	&-demo {
 		margin-bottom: 12px;
 		padding: 12px;
     	background-color: #fff;
-    	float:left;
-    	width:100%;
+    	width: 100%;
+	}
+
+	&-markdown {
+		clear:both;
+		overflow: hidden;
+		padding: 0 8px;
+		height: 0;
+		transition: height .5s;
+		.code-show-demo & {
+			display: block;
+			border-top: 1px dashed #f0f0f0;
+		}
 	}
 }
 .highlight {
 	position: relative;
 	pre {
-		max-height: 150px;
 		overflow: hidden;
 	}
-	.code-toggle {
-	    position: absolute;
-	    right: 0;
-	    top: 0;
-	    padding: 0 4px;
-	    border: 1px solid #d0d0d0;
-	    background-color: #dfdfdf;
-	    color: #999;
-		visibility: hidden;
-		&:after {
-			content: '展开';
-		}
-		&:hover {
-			text-decoration: none;
-		}
-	}
-	&.toggle-down {
-		.code-toggle {
-			&:after {
-				content: '收起';
-			}
-		}
-		pre {
-			max-height: initial;
-		}
-	}
-	&:hover {
-		.code-toggle {
-			visibility: visible;
-		}
-	}
+	// .code-toggle {
+	//     position: absolute;
+	//     right: 0;
+	//     top: 0;
+	//     padding: 0 4px;
+	//     border: 1px solid #d0d0d0;
+	//     background-color: #dfdfdf;
+	//     color: #999;
+	// 	visibility: hidden;
+	// 	&:after {
+	// 		content: '展开';
+	// 	}
+	// 	&:hover {
+	// 		text-decoration: none;
+	// 	}
+	// }
+	// &.toggle-down {
+	// 	.code-toggle {
+	// 		&:after {
+	// 			content: '收起';
+	// 		}
+	// 	}
+	// 	pre {
+	// 		max-height: initial;
+	// 	}
+	// }
+	// &:hover {
+	// 	.code-toggle {
+	// 		visibility: visible;
+	// 	}
+	// }
 }
 .site-home {
 	flex-grow: 1;
 	min-height: 100%;
-}
-.code-box-markdown{
-	clear:both;
 }
 
 // tr{

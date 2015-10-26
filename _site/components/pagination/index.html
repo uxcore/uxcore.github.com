@@ -2,7 +2,7 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/">首页</a></li><li><a href="/css/base/">css</a></li><li><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li class="current"><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li><a href="/components/grid">Grid</a></li><li><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/popover">Popover</a></li><li><a href="/components/uploader">Uploader</a></li><li><a href="/components/collapse">Collapse</a></li><li><a href="/components/progress">Progress</a></li><li><a href="/components/steps">Steps</a></li><li><a href="/components/menu">Menu</a></li><li><a href="/components/button">Button</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Pagination</h1><section class="meta"><span class="author"><b>author: </b></span><span class="github"><b>github: </b><a href="ssh://git@github.com/uxcore/uxcore-pagination.git" target="_blank">Pagination</a></span><span class="version"> <b>版本: </b>0.1.6</span><span class="description"><b>描述: </b>pagination ui component for react</span></section></header><div id="J-markdown" class="markdown"><p>采用分页的形式分隔长列表，每次只加载一个页面。</p>
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li data-id="home"><a href="/">首页</a></li><li data-id="css"><a href="/css/base/">css</a></li><li data-id="components"><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li class="current"><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li><a href="/components/grid">Grid</a></li><li><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/popover">Popover</a></li><li><a href="/components/uploader">Uploader</a></li><li><a href="/components/collapse">Collapse</a></li><li><a href="/components/progress">Progress</a></li><li><a href="/components/steps">Steps</a></li><li><a href="/components/menu">Menu</a></li><li><a href="/components/button">Button</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Pagination</h1><section class="meta"><span class="author"><i class="fa fa-user"></i><a href="mailto:wsj7552715@hotmail.com">eternalsky</a></span><span class="github"><i class="fa fa-github"></i><a href="ssh://git@github.com/uxcore/uxcore-pagination.git" target="_blank">Pagination</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.1.6</span><span class="description"><i class="fa fa-bookmark"></i>pagination ui component for react</span></section></header><div id="J-markdown" class="markdown"><p>采用分页的形式分隔长列表，每次只加载一个页面。</p>
 <h2 id="何时使用">何时使用</h2><ul>
 <li>当加载/渲染所有数据将花费很多时间时；</li>
 <li>可切换页码浏览数据。</li>
@@ -73,7 +73,7 @@
 </tr>
 </tbody>
 </table>
-</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-pagination-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>基本</em></div></div><div class="code-box-demo"><div id="components-pagination-demo-basic"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-pagination-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-pagination-demo-basic">基本</a></div></div><div class="code-box-demo"><div id="components-pagination-demo-basic"></div></div><div class="code-box-desc"><p>基础分页。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Pagination = require('uxcore-pagination');
 
@@ -89,7 +89,7 @@ ReactDOM.render(React.createElement(Pagination, { onChange: onChange, total: 50 
 
 ReactDOM.render(
   <span class="xml"><span class="tag">&lt;<span class="title">Pagination</span> <span class="attribute">onChange</span>=<span class="value">{onChange}</span> <span class="attribute">total</span>=<span class="value">{50}</span> /&gt;</span>,
- document.getElementById('components-pagination-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-pagination-demo-more" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>更多</em></div></div><div class="code-box-demo"><div id="components-pagination-demo-more"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+ document.getElementById('components-pagination-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-pagination-demo-more" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-pagination-demo-more">更多</a></div></div><div class="code-box-demo"><div id="components-pagination-demo-more"></div></div><div class="code-box-desc"><p>更多分页。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Pagination = require('uxcore-pagination');
 
@@ -105,7 +105,7 @@ ReactDOM.render(React.createElement(Pagination, { onChange: onChange, total: 500
 
 ReactDOM.render(
   <span class="xml"><span class="tag">&lt;<span class="title">Pagination</span> <span class="attribute">onChange</span>=<span class="value">{onChange}</span> <span class="attribute">total</span>=<span class="value">{500}</span> /&gt;</span>,
- document.getElementById('components-pagination-demo-more'));</span></code></pre></div></div></div><div id="code-box-components-pagination-demo-changer" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>改变</em></div></div><div class="code-box-demo"><div id="components-pagination-demo-changer"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+ document.getElementById('components-pagination-demo-more'));</span></code></pre></div></div></div><div id="code-box-components-pagination-demo-changer" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-pagination-demo-changer">改变</a></div></div><div class="code-box-demo"><div id="components-pagination-demo-changer"></div></div><div class="code-box-desc"><p>改变每页显示条目数。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Pagination = require('uxcore-pagination');
 
@@ -121,7 +121,7 @@ ReactDOM.render(React.createElement(Pagination, { showSizeChanger: true, onChang
 
 ReactDOM.render(
   <span class="xml"><span class="tag">&lt;<span class="title">Pagination</span> <span class="attribute">showSizeChanger</span>=<span class="value">{true}</span> <span class="attribute">onChange</span>=<span class="value">{onChange}</span> <span class="attribute">total</span>=<span class="value">{500}</span> /&gt;</span>,
- document.getElementById('components-pagination-demo-changer'));</span></code></pre></div></div></div><div id="code-box-components-pagination-demo-jump" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>跳转</em></div></div><div class="code-box-demo"><div id="components-pagination-demo-jump"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+ document.getElementById('components-pagination-demo-changer'));</span></code></pre></div></div></div><div id="code-box-components-pagination-demo-jump" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-pagination-demo-jump">跳转</a></div></div><div class="code-box-demo"><div id="components-pagination-demo-jump"></div></div><div class="code-box-desc"><p>快速跳转到某一页。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Pagination = require('uxcore-pagination');
 
@@ -137,7 +137,7 @@ ReactDOM.render(React.createElement(Pagination, { showQuickJumper: true, onChang
 
 ReactDOM.render(
   <span class="xml"><span class="tag">&lt;<span class="title">Pagination</span> <span class="attribute">showQuickJumper</span>=<span class="value">{true}</span> <span class="attribute">onChange</span>=<span class="value">{onChange}</span> <span class="attribute">total</span>=<span class="value">{500}</span> /&gt;</span>,
- document.getElementById('components-pagination-demo-jump'));</span></code></pre></div></div></div><div id="code-box-components-pagination-demo-mini" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>迷你</em></div></div><div class="code-box-demo"><div id="components-pagination-demo-mini"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+ document.getElementById('components-pagination-demo-jump'));</span></code></pre></div></div></div><div id="code-box-components-pagination-demo-mini" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-pagination-demo-mini">迷你</a></div></div><div class="code-box-demo"><div id="components-pagination-demo-mini"></div></div><div class="code-box-desc"><p>迷你版本。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Pagination = require('uxcore-pagination');
 
@@ -153,7 +153,7 @@ ReactDOM.render(React.createElement(Pagination, { className: 'mini', onChange: o
 
 ReactDOM.render(
   <span class="xml"><span class="tag">&lt;<span class="title">Pagination</span> <span class="attribute">className</span>=<span class="value">"mini"</span> <span class="attribute">onChange</span>=<span class="value">{onChange}</span> <span class="attribute">total</span>=<span class="value">{50}</span> /&gt;</span>,
- document.getElementById('components-pagination-demo-mini'));</span></code></pre></div></div></div><div id="code-box-components-pagination-demo-simple" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>简洁</em></div></div><div class="code-box-demo"><div id="components-pagination-demo-simple"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+ document.getElementById('components-pagination-demo-mini'));</span></code></pre></div></div></div><div id="code-box-components-pagination-demo-simple" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-pagination-demo-simple">简洁</a></div></div><div class="code-box-demo"><div id="components-pagination-demo-simple"></div></div><div class="code-box-desc"><p>简单地翻页。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Pagination = require('uxcore-pagination');
 

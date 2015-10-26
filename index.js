@@ -17,7 +17,6 @@ window.UXCORE = {
 	'uxcore-tree': require('uxcore-tree'),
 	'uxcore-transfer': require('uxcore-transfer'),
 	'uxcore-popover': require('uxcore-popover'),
-	// 'uxcore-hovercard': require('uxcore-hovercard'),
 	'uxcore-collapse': require('uxcore-collapse'),
 	'uxcore-progress': require('uxcore-progress'),
 	'uxcore-steps': require('uxcore-steps'),
@@ -30,18 +29,41 @@ window.UXCORE = {
  */
 (function(d){
 	d.addEventListener('DOMContentLoaded', function() {
-		 // init code highlight
-		 window.onload = function(){
+
+		// set current nav item
+		let pathname = location.pathname, id;
+		if (pathname.indexOf('/components/') !== -1) {
+			id = 'components';
+		} else if (pathname.indexOf('/css/') !== -1) {
+			id = 'css';
+		} else {
+			id = 'home';
+		}
+		let navItem = d.querySelectorAll('#J-head .nav-list li[data-id="' + id + '"]');
+		if (navItem.length > 0) {
+			navItem.item(0).classList.add('active');
+		}
+
+		// init code highlight
+		window.onload = function(){
 			[].forEach.call(d.querySelectorAll('.markdown pre code'), function(el){
 				hljs.highlightBlock(el);
 			});
-			[].forEach.call(d.querySelectorAll('.highlight'), function(el){
-				var toggleNode = d.createElement('a');
-				toggleNode.className = 'code-toggle';
-				toggleNode.setAttribute('href', 'javascript:;');
-				el.appendChild(toggleNode);
+			[].forEach.call(d.querySelectorAll('.code-box-markdown pre code'), function(el){
+				hljs.highlightBlock(el);
+			});
+			[].forEach.call(d.querySelectorAll('.code-toggle'), function(el){
+				let codeBox = el.parentElement.nextElementSibling;
+				codeBox.style.height = 'auto';
+				codeBox.dataset.height = codeBox.clientHeight + 'px';
+				codeBox.style.height = '';
 				el.addEventListener('click', function(e){
-					e.target.parentElement.classList.toggle('toggle-down');
+					el.parentElement.parentElement.classList.toggle('code-show-demo');
+					if (codeBox.style.height) {
+						codeBox.style.height = '';
+					} else {
+						codeBox.style.height = codeBox.dataset.height;
+					}
 				});
 			});
 		};
