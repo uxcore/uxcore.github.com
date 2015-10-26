@@ -2,7 +2,7 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li><a href="/">首页</a></li><li><a href="/css/base/">css</a></li><li><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li><a href="/components/grid">Grid</a></li><li><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/popover">Popover</a></li><li><a href="/components/uploader">Uploader</a></li><li><a href="/components/collapse">Collapse</a></li><li><a href="/components/progress">Progress</a></li><li class="current"><a href="/components/steps">Steps</a></li><li><a href="/components/menu">Menu</a></li><li><a href="/components/button">Button</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Steps</h1><section class="meta"><span class="author"><b>author: </b>vincent.bian</span><span class="github"><b>github: </b><a href="https://github.com/uxcore/uxcore-steps.git" target="_blank">Steps</a></span><span class="version"> <b>版本: </b>1.0.1</span><span class="description"><b>描述: </b>uxcore-steps component for uxcore.</span></section></header><div id="J-markdown" class="markdown"><p>引导用户按照流程完成任务的导航条。</p>
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li data-id="home"><a href="/">首页</a></li><li data-id="css"><a href="/css/base/">css</a></li><li data-id="components"><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li><a href="/components/grid">Grid</a></li><li><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/popover">Popover</a></li><li><a href="/components/uploader">Uploader</a></li><li><a href="/components/collapse">Collapse</a></li><li><a href="/components/progress">Progress</a></li><li class="current"><a href="/components/steps">Steps</a></li><li><a href="/components/menu">Menu</a></li><li><a href="/components/button">Button</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Steps</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>vincent.bian</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-steps.git" target="_blank">Steps</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.0.1</span><span class="description"><i class="fa fa-bookmark"></i>uxcore-steps component for uxcore.</span></section></header><div id="J-markdown" class="markdown"><p>引导用户按照流程完成任务的导航条。</p>
 <h2 id="api">API</h2><h2 id="props">Props</h2><h3 id="steps">Steps</h3><table>
 <thead>
 <tr>
@@ -92,7 +92,7 @@
 </tr>
 </tbody>
 </table>
-</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-steps-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>基本用法</em></div></div><div class="code-box-demo"><div id="components-steps-demo-basic"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-steps-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-steps-demo-basic">基本用法</a></div></div><div class="code-box-demo"><div id="components-steps-demo-basic"></div></div><div class="code-box-desc"><p>简单的步骤条。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Steps = require('uxcore-steps');
 var Step = Steps.Step;
@@ -140,7 +140,7 @@ ReactDOM.render(React.createElement(
 
 ReactDOM.render(
     <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">current</span>=<span class="value">{1}</span>&gt;</span>{steps}<span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
-, document.getElementById('components-steps-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-mini" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>迷你版</em></div></div><div class="code-box-demo"><div id="components-steps-demo-mini"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+, document.getElementById('components-steps-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-mini" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-steps-demo-mini">迷你版</a></div></div><div class="code-box-demo"><div id="components-steps-demo-mini"></div></div><div class="code-box-desc"><p>迷你版的步骤条，通过设置 <Steps size="small"> 启用.</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Steps = require('uxcore-steps');
 var Step = Steps.Step;
@@ -188,7 +188,7 @@ ReactDOM.render(React.createElement(
 
 ReactDOM.render(
     <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">size</span>=<span class="value">"small"</span> <span class="attribute">current</span>=<span class="value">{1}</span>&gt;</span>{steps}<span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
-, document.getElementById('components-steps-demo-mini'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-dynamic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>切换到下一步</em></div></div><div class="code-box-demo"><div id="components-steps-demo-dynamic"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+, document.getElementById('components-steps-demo-mini'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-dynamic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-steps-demo-dynamic">切换到下一步</a></div></div><div class="code-box-demo"><div id="components-steps-demo-dynamic"></div></div><div class="code-box-desc"><p>随机生成 3~6 个步骤，初始随机进行到其中一个步骤。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -334,7 +334,7 @@ class Demo extends React.Component {
 
 ReactDOM.render(
     <span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>
-, document.getElementById('components-steps-demo-dynamic'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-vertical" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>竖直方向的步骤条</em></div></div><div class="code-box-demo"><div id="components-steps-demo-vertical"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+, document.getElementById('components-steps-demo-dynamic'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-vertical" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-steps-demo-vertical">竖直方向的步骤条</a></div></div><div class="code-box-demo"><div id="components-steps-demo-vertical"></div></div><div class="code-box-desc"><p>简单的竖直方向的步骤条。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Steps = require('uxcore-steps');
 var Step = Steps.Step;
@@ -382,7 +382,7 @@ ReactDOM.render(React.createElement(
 
 ReactDOM.render(
     <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">direction</span>=<span class="value">"vertical"</span> <span class="attribute">current</span>=<span class="value">{1}</span>&gt;</span>{steps}<span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
-, document.getElementById('components-steps-demo-vertical'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-verticalmini" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>竖直方向的小型步骤条</em></div></div><div class="code-box-demo"><div id="components-steps-demo-verticalmini"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+, document.getElementById('components-steps-demo-vertical'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-verticalmini" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-steps-demo-verticalmini">竖直方向的小型步骤条</a></div></div><div class="code-box-demo"><div id="components-steps-demo-verticalmini"></div></div><div class="code-box-desc"><p>简单的竖直方向的小型步骤条。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Steps = require('uxcore-steps');
 var Step = Steps.Step;
@@ -430,7 +430,7 @@ ReactDOM.render(React.createElement(
 
 ReactDOM.render(
     <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">direction</span>=<span class="value">"vertical"</span> <span class="attribute">size</span>=<span class="value">"small"</span> <span class="attribute">current</span>=<span class="value">{1}</span>&gt;</span>{steps}<span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
-, document.getElementById('components-steps-demo-verticalmini'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-custom" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="kuma-icon kuma-icon-tag"></i><em>自定义状态</em></div></div><div class="code-box-demo"><div id="components-steps-demo-custom"></div></div><div class="code-box-markdown markdown"><script>(function(){'use strict';
+, document.getElementById('components-steps-demo-verticalmini'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-custom" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-steps-demo-custom">自定义状态</a></div></div><div class="code-box-demo"><div id="components-steps-demo-custom"></div></div><div class="code-box-desc"><p>可以使用 status 定义每个步骤的状态。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Steps = require('uxcore-steps');
 var Step = Steps.Step;
