@@ -1,6 +1,6 @@
 # 左列固定 table
 
-- order: 4
+- order: 5
 
 ---
 

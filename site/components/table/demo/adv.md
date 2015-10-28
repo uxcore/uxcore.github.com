@@ -56,19 +56,18 @@ class Demo extends React.Component {
             { dataKey: 'lastName' ,title:"LastName"},
             { dataKey: 'email',title:"Email",width: 200,ordered:true },
             { dataKey: 'action1', title:'操作1', width:100, type:"action",actions:{
-                "编辑": function(rowData, actions) {
-                    console.log(actions.addEmptyRow);
-                    me.refs.grid.toggleSubComp(rowData);
+                "clickme": function(rowData, actions) {
+                    alert('thanks clickme,'+rowData.firstName)
                 },
-                "删除": function(rowData) {
+                "del": function(rowData) {
                     me.refs.grid.delRow(rowData);
                 }
               },
               beforeRender: function(rowData,actionItems) {
                  if(rowData.jsxid%2==0) {
-                    return ['编辑'];
+                    return ['clickme'];
                  }else {
-                    return ['编辑','删除'];
+                    return ['clickme','del'];
                  }
                  
               }
@@ -97,8 +96,9 @@ class Demo extends React.Component {
                'del': function() {}
             },
             actionBar: {
-               '新增': function(type, actions) { console.info(actions); alert(type) },
-               '黄山': function(type) {alert(type)}
+               'action button': function(type, table) { 
+                   alert(type);
+                },
             },
             showSearch:true,
             fetchParams:'',
