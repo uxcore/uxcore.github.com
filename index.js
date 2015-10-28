@@ -12,6 +12,7 @@ window.UXCORE = {
 	'uxcore-tabs': require('uxcore-tabs'),
 	'uxcore-form': require('uxcore-form'),
 	'uxcore-grid': require('uxcore-grid'),
+	'uxcore-table': require('uxcore-table'),
 	'uxcore-dropdown': require('uxcore-dropdown'),
 	'uxcore-mention': require('uxcore-mention'),
 	'uxcore-tree': require('uxcore-tree'),

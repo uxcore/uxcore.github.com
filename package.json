@@ -26,6 +26,7 @@
     "uxcore-dropdown": "^0.1.4",
     "uxcore-form": "~1.1.0",
     "uxcore-grid": "~1.1.1",
+    "uxcore-table": "~1.1.2",
     "uxcore-kuma": "^1.1.0",
     "uxcore-mention": "^0.1.4",
     "uxcore-menu": "^1.0.0",
@@ -61,7 +62,8 @@
     "style-loader": "~0.13.0",
     "url-loader": "~0.5.6",
     "webpack": "~1.12.2",
-    "webpack-dev-middleware": "^1.2.0"
+    "webpack-dev-middleware": "^1.2.0",
+    "deepcopy": "~0.5.0"
   },
   "keywords": [
     "react",
