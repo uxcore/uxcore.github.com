@@ -10,26 +10,42 @@
 
 ---
 
-## uxcore-form [![Dependency Status](http://img.shields.io/david/uxcore/uxcore-form.svg?style=flat-square)](https://david-dm.org/uxcore/uxcore-form) [![devDependency Status](http://img.shields.io/david/dev/uxcore/uxcore-form.svg?style=flat-square)](https://david-dm.org/uxcore/uxcore-form#info=devDependencies)
+---
+
+## uxcore-form [![Dependency Status](http://img.shields.io/david/uxcore/uxcore-form.svg?style=flat-square)](https://david-dm.org/uxcore/uxcore-form) [![devDependency Status](http://img.shields.io/david/dev/uxcore/uxcore-form.svg?style=flat-square)](https://david-dm.org/uxcore/uxcore-form#info=devDependencies) 
+
+## TL;DR
+
+uxcore-form ui component for react
+
+#### setup develop environment
+
+```sh
+$ git clone https://github.com/uxcore/uxcore-form
+$ cd uxcore-form
+$ npm install
+$ gulp server
+```
 
 ## Usage
 
 > see demo/FormDemo.js for details  
 > 每一个 field 需要按照 Form -> FormRow -> FormField 的方式进行嵌套，允许 Form -> FormField 的嵌套，会自动增加 FormRow 这一层，并默认占一整行。
 
-```
-// see demo
-```
 
 ## API
 
 ### Form
 
-* getValues(data) 获取目前的 values 和 pass（是否通过检测）。  
+* getValues(force) 获取目前的 values 和 pass（是否通过检测）。  
 参数：
-    * data `Object`: 数据格式为 {values: {}, pass: false}。
+    * force `Boolean`: 是否做强制校验，在强制校验的情况下将无视所有 instantValidate 配置。
 
 * resetValues() 重置所有的 FormField，如果有默认值则重置为默认值。
+
+* setValues(data) 手动设置各个 FormField 的值，在表单联动时可能会用得到。
+参数：
+    * data `Object`: 和 jsxvalues 的格式相同。
 
 * isDirty() 获取目前的数据是否没有通过检测，返回 true 或 false。
 
@@ -42,8 +58,18 @@
 |className|string|optional|""|加入额外的类名，在使用 kuma 的基础上进行适当的定制时会用得到|
 |jsxprefixCls|string|optional|"kuma-form"|默认类名，用户可以通过修改此项来完成样式的定制|
 |jsxmode|string|optional|"EDIT"|Form 编辑和只读模式，传值方式见 demo|
-|jsxvalues|object|optional|-|传入表单的初始值，格式见 Usage，每一个 key 与 formField 中的 jsxname 相对应|
-|jsxonChange|function|optional|noop|当表单中值有变化时触发，传回 values，格式同 jsxvalues|
+|jsxvalues|object|optional|-|传入表单的初始值，格式见 Usage，每一个 key 与 formField 中的 jsxname 相对应，注意是初始值，不要把 onChange 中的变化同步到这里|
+|jsxonChange|function(values, name, pass)|optional|noop|当表单中值有变化时触发，传回 values，格式同 jsxvalues，同时传回发生变化的表单域的 name，以及该表单域是否通过校验|
+|instantValidate|boolean|optional|true|是否开启即时校验|
+
+### jsxvalues 的格式
+```javascript
+{
+    jsxname1: value1,
+    jsxname2: value2
+}
+
+```
 
 ### FormRow
 
@@ -66,8 +92,9 @@
 |jsxflex|number|optional|1|占 FormRow 宽的比例，类似于 css3 中的 flex-box|
 |jsxtips|string|optional|""|说明文字|
 |jsxrules|object/array|optional|-|validators，具体用法和格式见 Usage，Form 已经提供了一些现成的 validator 供使用。也可以自己编写|
+|instantValidate|boolean|optional|true|是否开启即时校验|
 
-### Validators
+### Validators 
 
 > Form 提供了一些通用的 validator，通过 Form.Validators 来引入。用法还是见 Usage 和 `demo/formDemo.js` 包括：
 > 所有的 validator 返回 true，表示通过。
@@ -95,6 +122,26 @@
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|
 |jsxplaceholder|string|optional|""|占位符|
+|jsxdisabled|boolean|optional|false|disable 状态|
+
+* 插件：
+    * Count，通过 InputFormField.Count 取得，一个内置的计数器，用法如下：
+```javascript
+<InputFormField>
+    <Count total="20">
+</InputFormField>
+```
+    * LeftAddon/RightAddon，通过 InputFormField.LeftAddon/InputFormField.RightAddon 取得，给 input 左侧加入自定义的图标或文字，用法如下：
+```javascript
+<InputFormField>
+    <LeftAddon>
+        <i className="kuma-icon kuma-icon-phone"></i>
+    </LeftAddon>
+    <RightAddon>
+        <span>元</span>
+    </RightAddon>
+</InputFormField>
+```
 
 ### TextAreaFormField
 
@@ -126,25 +173,33 @@
 |jsxstyle|obj|optional|-|与 react 传入 style 的方式相同，修改选择框的样式|
 |beforeFetch|func|optional|-|会传入 {q: value}， value 为搜索框中变化的值，在发出 ajax 请求之前，将数据处理为应该发送的格式，并需返回该数据。|
 |afterFetch|func|optional|-|会传入返回的数据， 将其处理为 jsxdata 的格式并返回|
-|jsxshowSearch|func|optional|true|是否显示搜索栏|
-|jsxtags|bool|optional|false|是否启用 tag 模式|
-|jsxmultiple|bool|optional|false|是否启用 multiple 模式|
-|jsxallowClear|bool|optional|false|是否显示清除按钮|
-|jsxsearchPlaceholder|string|optional|""|搜索框默认文字|
-|jsxcombobox|bool|optional|false|标准搜索模式，在该模式下没有下拉框，通过输入产生提示|
-|jsxplaceholder|string|optional|"请下拉选择"|占位符|
+|showSearch|func|optional|true|是否显示搜索栏|
+|tags|bool|optional|false|是否启用 tag 模式|
+|multiple|bool|optional|false|是否启用 multiple 模式|
+|allowClear|bool|optional|false|是否显示清除按钮|
+|searchPlaceholder|string|optional|""|搜索框默认文字|
+|combobox|bool|optional|false|标准搜索模式，在该模式下没有下拉框，通过输入产生提示|
+|placeholder|string|optional|"请下拉选择"|占位符|
+|disabled|boolean|optional|false|disable 状态|
+|optionLabelProp|string|optional|'children'|选择 Option 的哪个 prop 作为选择框中的显示。|
+|optionFilterProp|string|optional|-|输入项过滤对应的 option 属性|
 
 see datails in [uxcore-select2](https://www.npmjs.com/package/uxcore-select2)
 
 ### CheckboxGroupFormField
 
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|jsxdisabled|boolean|optional|false|disable 状态|
+
 * Item：通过 CheckboxGroupFormField.Item 取的，有两个 props
     * value
     * text：显示的值
+    * disabled：该 Item 的 disable 状态。
 * 使用方式：
 ```
 <CheckboxGroupFormField>
-    <Item value="1" text="a">
+    <Item value="1" text="a" disabled={true}>
     <Item value="2" text="b">
     <Item value="3" text="c">
 </CheckboxGroupFormField>
@@ -190,8 +245,24 @@ see datails in [uxcore-select2](https://www.npmjs.com/package/uxcore-select2)
 ### OtherFormField
 
 > OtherFormField 是一个特殊的 FormField，它用来和其他 FormField 一起完成布局（比如在一行排列等），如果需要一些装饰类的东西，可以以子元素的形式传入到这个 Field 里。
-> 他也可以用于布局中的占位。
+> 他也可以用于布局中的占位。 
 
-### ButtonGroupField
+### ButtonGroupFormField
 
-> ButtonGroupField 是一个特殊的 FormField，它用来生成一些特定的表单按钮，这是为了与 Grid 相结合而准备的。如果需要自定义一些按钮，请使用 OtherFormField 和 uxcore-button 相结合来使用。
+> ButtonGroupFormField 是一个特殊的 FormField，它用来生成一些特定的表单按钮，这是为了与 Grid 相结合而准备的。如果需要自定义一些按钮，请使用 OtherFormField 和 uxcore-button 相结合来使用。  
+你可以像这样使用它：  
+```javascript
+var Button = require('uxcore-button');
+<ButtonGroupFormField>
+    {// handleClick 会被传入一个参数 data，取得的值和 API getValues() 相同}
+    <Button action="submit" onClick={this.handleClick.bind(this)}/>
+    {// 目前只支持 submit 和 reset 两种 action}
+    <Button action="reset"/>
+</ButtonGroupFormField>
+```
+
+
+
+
+
+
