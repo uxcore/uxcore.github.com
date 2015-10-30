@@ -1,8 +1,924 @@
-<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/uxcore.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/0.14.0/react-with-addons.min.js,react/0.14.0/react-dom.min.js,rangy/1.3.0/rangy-core.min.js,jquery/1.11.3/jquery.min.js"></script><script src="/static/highlight.min.js"></script><script src="/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/uxcore.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/0.14.0/react-with-addons.js,react/0.14.0/react-dom.min.js,rangy/1.3.0/rangy-core.min.js,jquery/1.11.3/jquery.min.js"></script><script src="/static/highlight.min.js"></script><script src="/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li data-id="home"><a href="/">首页</a></li><li data-id="css"><a href="/css/base/">css</a></li><li data-id="components"><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li class="current"><a href="/components/table">Table</a></li><li><a href="/components/grid">Grid</a></li><li><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/popover">Popover</a></li><li><a href="/components/uploader">Uploader</a></li><li><a href="/components/collapse">Collapse</a></li><li><a href="/components/progress">Progress</a></li><li><a href="/components/steps">Steps</a></li><li><a href="/components/menu">Menu</a></li><li><a href="/components/button">Button</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Table</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>zhouquan.yezq</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-table.git" target="_blank">Table</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.1.2</span><span class="description"><i class="fa fa-bookmark"></i>table ui component for react</span></section></header><div id="J-markdown" class="markdown"><h2 id="how-to-run">How to run</h2><pre>$ git clone https://github.com/uxcore/uxcore-table
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li data-id="home"><a href="/">首页</a></li><li data-id="css"><a href="/css/base/">css</a></li><li data-id="components"><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">表单及相关</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">导航</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">交互提醒</h3><ul><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">布局</h3><ul><li><a href="/components/grid">Grid<small>表格</small></a></li></ul><h3 class="category-name">其它</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">表格</h3><ul><li class="current"><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Table</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>zhouquan.yezq</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-table.git" target="_blank">Table</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.1.2</span><span class="description"><i class="fa fa-bookmark"></i>table ui component for react</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-table-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-basic">基本表格</a></div></div><div class="code-box-demo"><div id="components-table-demo-basic"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Table = require('uxcore-table');
+
+var Demo = (function (_React$Component) {
+    _inherits(Demo, _React$Component);
+
+    function Demo(props) {
+        _classCallCheck(this, Demo);
+
+        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+        this.state = {
+            data: this.props.data
+        };
+    }
+
+    _createClass(Demo, [{
+        key: 'onModifyRow',
+        value: function onModifyRow(value, dataKey, record) {
+            //doValidate
+            //debugger;
+            //return false;
+            return true;
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            console.log("demo render");
+            var me = this;
+            // 通过 rowSelection 对象表明需要行选择
+            var rowSelection = {
+                onSelect: function onSelect(record, selected, selectedRows) {
+                    console.log(record, selected, selectedRows);
+                },
+                onSelectAll: function onSelectAll(selected, selectedRows) {
+                    console.log(selected, selectedRows);
+                }
+            };
+
+            var doAction = function doAction(rowData, e) {
+                var el = $(e.target);
+                if (el.hasClass('action')) {
+                    if (el.data('type') == 'edit') {
+                        console.info(rowData, el.data('type'));
+                    } else if (el.data('type') == 'del') {
+                        console.info(rowData, el.data('type'));
+                    }
+                }
+            };
+            // title, width, type, hidden,dataKey
+            var columns = [{ dataKey: 'id', title: 'ID', width: 50, hidden: true }, { dataKey: 'country', title: '国家', width: 200, ordered: true }, { dataKey: 'city', title: '城市', width: 150, ordered: true }, { dataKey: 'firstName', title: "FristName" }, { dataKey: 'lastName', title: "LastName" }, { dataKey: 'email', title: "Email", width: 200, ordered: true }, { dataKey: 'action1', title: '操作1', width: 100, type: "action", actions: {
+                    "编辑": function _(rowData, actions) {
+                        console.log(actions.addEmptyRow);
+                        me.refs.grid.toggleSubComp(rowData);
+                    },
+                    "删除": function _(rowData) {
+                        me.refs.grid.delRow(rowData);
+                    }
+                },
+                beforeRender: function beforeRender(rowData, actionItems) {
+                    if (rowData.jsxid % 2 == 0) {
+                        return ['编辑'];
+                    } else {
+                        return ['编辑', '删除'];
+                    }
+                }
+            }, { dataKey: 'action', title: '链接', width: 100, render: function render(rowData) {
+                    return React.createElement(
+                        'div',
+                        null,
+                        React.createElement(
+                            'a',
+                            { href: '#' },
+                            '111'
+                        )
+                    );
+                }
+            }];
+
+            var fetchUrl = './demo/data.json';
+
+            var renderProps = {
+
+                actionColumn: {
+                    'edit': function edit() {},
+                    'del': function del() {}
+                },
+                fetchParams: '',
+                showColumnPicker: false,
+                fetchUrl: fetchUrl,
+                jsxcolumns: columns
+            };
+            return React.createElement(Table, _extends({}, renderProps, { ref: 'grid' }));
+        }
+    }]);
+
+    return Demo;
+})(React.Component);
+
+;
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-table-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript">
+<span class="keyword">let</span> Table = require(<span class="string">'uxcore-table'</span>);
+
+class Demo extends React.Component {
+
+    constructor(props) {
+        super(props);
+        <span class="keyword">this</span>.state = {
+           data:<span class="keyword">this</span>.props.data
+        }
+    }
+
+    onModifyRow(value,dataKey,record) {
+        <span class="comment">//doValidate</span>
+        <span class="comment">//debugger;</span>
+        <span class="comment">//return false;</span>
+        <span class="keyword">return</span> <span class="literal">true</span>;
+    }
+
+      render () {
+        console.log(<span class="string">"demo render"</span>);
+        <span class="keyword">let</span> me=<span class="keyword">this</span>;
+        <span class="comment">// 通过 rowSelection 对象表明需要行选择</span>
+        <span class="keyword">let</span> rowSelection = {
+          onSelect: <span class="function"><span class="keyword">function</span><span class="params">(record, selected, selectedRows)</span> {</span>
+            console.log(record, selected, selectedRows);
+          },
+          onSelectAll: <span class="function"><span class="keyword">function</span><span class="params">(selected, selectedRows)</span> {</span>
+            console.log(selected, selectedRows);
+          }
+        };
+
+        <span class="keyword">let</span> doAction= <span class="function"><span class="keyword">function</span><span class="params">(rowData,e)</span> {</span>
+            <span class="keyword">let</span> el=$(e.target);
+            <span class="keyword">if</span>(el.hasClass(<span class="string">'action'</span>)) {
+               <span class="keyword">if</span>( el.data(<span class="string">'type'</span>) ==<span class="string">'edit'</span>) {
+                  console.info(rowData,el.data(<span class="string">'type'</span>));
+               }<span class="keyword">else</span> <span class="keyword">if</span>(el.data(<span class="string">'type'</span>) ==<span class="string">'del'</span>) {
+                 console.info(rowData,el.data(<span class="string">'type'</span>));
+               }
+            }
+        }
+        <span class="comment">// title, width, type, hidden,dataKey</span>
+        <span class="keyword">let</span> columns = [
+            { dataKey: <span class="string">'id'</span>, title: <span class="string">'ID'</span>, width: <span class="number">50</span>,hidden:<span class="literal">true</span>},
+            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">200</span>,ordered:<span class="literal">true</span>},
+            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>,ordered:<span class="literal">true</span> },
+            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span> },  
+            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
+            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,ordered:<span class="literal">true</span> },
+            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
+                <span class="string">"编辑"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData, actions)</span> {</span>
+                    console.log(actions.addEmptyRow);
+                    me.refs.grid.toggleSubComp(rowData);
+                },
+                <span class="string">"删除"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
+                    me.refs.grid.delRow(rowData);
+                }
+              },
+              beforeRender: <span class="function"><span class="keyword">function</span><span class="params">(rowData,actionItems)</span> {</span>
+                 <span class="keyword">if</span>(rowData.jsxid%<span class="number">2</span>==<span class="number">0</span>) {
+                    <span class="keyword">return</span> [<span class="string">'编辑'</span>];
+                 }<span class="keyword">else</span> {
+                    <span class="keyword">return</span> [<span class="string">'编辑'</span>,<span class="string">'删除'</span>];
+                 }
+
+              }
+            },
+            { dataKey: <span class="string">'action'</span>, title:<span class="string">'链接'</span>, width:<span class="number">100</span>,render: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>
+               <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>111<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+              }
+            }
+        ]
+
+        let fetchUrl = './demo/data.json';
+
+        let renderProps={
+
+            actionColumn: {
+               'edit': function() {},
+               'del': function() {}
+            },
+            fetchParams:'',
+            showColumnPicker:false,
+            fetchUrl: fetchUrl,
+            jsxcolumns:columns,
+        };
+        return (<span class="tag">&lt;<span class="title">Table</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"grid"</span>/&gt;</span>);
+      }
+};
+
+ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-basic'))</span></code></pre></div></div></div><div id="code-box-components-table-demo-adv" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-adv">高级表格  (Actionbar+Column Picker+CheckColumn)</a></div></div><div class="code-box-demo"><div id="components-table-demo-adv"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Table = require('uxcore-table');
+
+var Demo = (function (_React$Component) {
+    _inherits(Demo, _React$Component);
+
+    function Demo(props) {
+        _classCallCheck(this, Demo);
+
+        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+        this.state = {
+            data: this.props.data
+        };
+    }
+
+    _createClass(Demo, [{
+        key: 'onModifyRow',
+        value: function onModifyRow(value, dataKey, record) {
+            //doValidate
+            //debugger;
+            //return false;
+            return true;
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            console.log("demo render");
+            var me = this;
+            // 通过 rowSelection 对象表明需要行选择
+            var rowSelection = {
+                onSelect: function onSelect(record, selected, selectedRows) {
+                    console.log(record, selected, selectedRows);
+                },
+                onSelectAll: function onSelectAll(selected, selectedRows) {
+                    console.log(selected, selectedRows);
+                }
+            };
+
+            var doAction = function doAction(rowData, e) {
+                var el = $(e.target);
+                if (el.hasClass('action')) {
+                    if (el.data('type') == 'edit') {
+                        console.info(rowData, el.data('type'));
+                    } else if (el.data('type') == 'del') {
+                        console.info(rowData, el.data('type'));
+                    }
+                }
+            };
+            // title, width, type, hidden,dataKey
+            var columns = [{ dataKey: 'id', title: 'ID', width: 50, hidden: true }, { dataKey: 'country', title: '国家', width: 200, ordered: true }, { dataKey: 'city', title: '城市', width: 150, ordered: true }, { dataKey: 'firstName', title: "FristName" }, { dataKey: 'lastName', title: "LastName" }, { dataKey: 'email', title: "Email", width: 200, ordered: true }, { dataKey: 'action1', title: '操作1', width: 100, type: "action", actions: {
+                    "clickme": function clickme(rowData, actions) {
+                        alert('thanks clickme,' + rowData.firstName);
+                    },
+                    "del": function del(rowData) {
+                        me.refs.grid.delRow(rowData);
+                    }
+                },
+                beforeRender: function beforeRender(rowData, actionItems) {
+                    if (rowData.jsxid % 2 == 0) {
+                        return ['clickme'];
+                    } else {
+                        return ['clickme', 'del'];
+                    }
+                }
+            }, { dataKey: 'action', title: '链接', width: 100, render: function render(rowData) {
+                    return React.createElement(
+                        'div',
+                        null,
+                        React.createElement(
+                            'a',
+                            { href: '#' },
+                            '111'
+                        )
+                    );
+                }
+            }];
+
+            var fetchUrl = './demo/data.json';
+            var renderSubProps = {
+                showHeader: false,
+                showPager: false,
+                //showMask:false,
+                jsxcolumns: columns,
+                fetchUrl: fetchUrl,
+                queryKeys: ["dataKey", "firstName"],
+                onModifyRow: this.onModifyRow
+            };
+
+            var renderProps = {
+
+                actionColumn: {
+                    'edit': function edit() {},
+                    'del': function del() {}
+                },
+                actionBar: {
+                    'action button': function actionButton(type, table) {
+                        alert(type);
+                    }
+                },
+                showSearch: true,
+                fetchParams: '',
+                fetchUrl: fetchUrl,
+                jsxcolumns: columns,
+                //onModifyRow: this.onModifyRow,
+                rowSelection: rowSelection
+            };
+            return React.createElement(Table, _extends({}, renderProps, { ref: 'grid' }));
+        }
+    }]);
+
+    return Demo;
+})(React.Component);
+
+;
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-table-demo-adv'));})()</script><div class="highlight"><pre><code class="javascript">
+<span class="keyword">let</span> Table = require(<span class="string">'uxcore-table'</span>);
+
+class Demo extends React.Component {
+
+    constructor(props) {
+        super(props);
+        <span class="keyword">this</span>.state = {
+           data:<span class="keyword">this</span>.props.data
+        }
+    }
+
+    onModifyRow(value,dataKey,record) {
+        <span class="comment">//doValidate</span>
+        <span class="comment">//debugger;</span>
+        <span class="comment">//return false;</span>
+        <span class="keyword">return</span> <span class="literal">true</span>;
+    }
+
+      render () {
+        console.log(<span class="string">"demo render"</span>);
+        <span class="keyword">let</span> me=<span class="keyword">this</span>;
+        <span class="comment">// 通过 rowSelection 对象表明需要行选择</span>
+        <span class="keyword">let</span> rowSelection = {
+          onSelect: <span class="function"><span class="keyword">function</span><span class="params">(record, selected, selectedRows)</span> {</span>
+            console.log(record, selected, selectedRows);
+          },
+          onSelectAll: <span class="function"><span class="keyword">function</span><span class="params">(selected, selectedRows)</span> {</span>
+            console.log(selected, selectedRows);
+          }
+        };
+
+        <span class="keyword">let</span> doAction= <span class="function"><span class="keyword">function</span><span class="params">(rowData,e)</span> {</span>
+            <span class="keyword">let</span> el=$(e.target);
+            <span class="keyword">if</span>(el.hasClass(<span class="string">'action'</span>)) {
+               <span class="keyword">if</span>( el.data(<span class="string">'type'</span>) ==<span class="string">'edit'</span>) {
+                  console.info(rowData,el.data(<span class="string">'type'</span>));
+               }<span class="keyword">else</span> <span class="keyword">if</span>(el.data(<span class="string">'type'</span>) ==<span class="string">'del'</span>) {
+                 console.info(rowData,el.data(<span class="string">'type'</span>));
+               }
+            }
+        }
+        <span class="comment">// title, width, type, hidden,dataKey</span>
+        <span class="keyword">let</span> columns = [
+            { dataKey: <span class="string">'id'</span>, title: <span class="string">'ID'</span>, width: <span class="number">50</span>,hidden:<span class="literal">true</span>},
+            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">200</span>,ordered:<span class="literal">true</span>},
+            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>,ordered:<span class="literal">true</span> },
+            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span> },  
+            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
+            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,ordered:<span class="literal">true</span> },
+            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
+                <span class="string">"clickme"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData, actions)</span> {</span>
+                    alert(<span class="string">'thanks clickme,'</span>+rowData.firstName)
+                },
+                <span class="string">"del"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
+                    me.refs.grid.delRow(rowData);
+                }
+              },
+              beforeRender: <span class="function"><span class="keyword">function</span><span class="params">(rowData,actionItems)</span> {</span>
+                 <span class="keyword">if</span>(rowData.jsxid%<span class="number">2</span>==<span class="number">0</span>) {
+                    <span class="keyword">return</span> [<span class="string">'clickme'</span>];
+                 }<span class="keyword">else</span> {
+                    <span class="keyword">return</span> [<span class="string">'clickme'</span>,<span class="string">'del'</span>];
+                 }
+
+              }
+            },
+            { dataKey: <span class="string">'action'</span>, title:<span class="string">'链接'</span>, width:<span class="number">100</span>,render: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>
+               <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>111<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+              }
+            }
+        ]
+
+        let fetchUrl = './demo/data.json';
+        let renderSubProps={
+            showHeader:false,
+            showPager:false,
+            //showMask:false,
+            jsxcolumns:columns,
+            fetchUrl: fetchUrl,
+            queryKeys:["dataKey","firstName"],
+            onModifyRow: this.onModifyRow
+        };
+
+        let renderProps={
+
+            actionColumn: {
+               'edit': function() {},
+               'del': function() {}
+            },
+            actionBar: {
+               'action button': function(type, table) { 
+                   alert(type);
+                },
+            },
+            showSearch:true,
+            fetchParams:'',
+            fetchUrl: fetchUrl,
+            jsxcolumns:columns,
+            //onModifyRow: this.onModifyRow,
+            rowSelection: rowSelection
+        };
+        return (<span class="tag">&lt;<span class="title">Table</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"grid"</span>/&gt;</span>);
+      }
+};
+
+ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-adv'))</span></code></pre></div></div></div><div id="code-box-components-table-demo-tree" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-tree">Tree 表格</a></div></div><div class="code-box-demo"><div id="components-table-demo-tree"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Table = require('uxcore-table');
+
+var Demo = (function (_React$Component) {
+   _inherits(Demo, _React$Component);
+
+   function Demo(props) {
+      _classCallCheck(this, Demo);
+
+      _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+      this.state = {
+         data: this.props.data
+      };
+   }
+
+   _createClass(Demo, [{
+      key: 'onModifyRow',
+      value: function onModifyRow(value, dataKey, record) {
+         //doValidate
+         //debugger;
+         //return false;
+         return true;
+      }
+   }, {
+      key: 'render',
+      value: function render() {
+         console.log("demo render");
+         var me = this;
+         // 通过 rowSelection 对象表明需要行选择
+         var rowSelection = {
+            onSelect: function onSelect(record, selected, selectedRows) {
+               console.log(record, selected, selectedRows);
+            },
+            onSelectAll: function onSelectAll(selected, selectedRows) {
+               console.log(selected, selectedRows);
+            }
+         };
+
+         var doAction = function doAction(rowData, e) {
+            var el = $(e.target);
+            if (el.hasClass('action')) {
+               if (el.data('type') == 'edit') {
+                  console.info(rowData, el.data('type'));
+               } else if (el.data('type') == 'del') {
+                  console.info(rowData, el.data('type'));
+               }
+            }
+         };
+         // title, width, type, hidden,dataKey
+         var columns = [{ dataKey: 'id', title: 'ID', width: 50, hidden: true }, { dataKey: 'country', title: '国家', width: 200, ordered: true }, { dataKey: 'city', title: '城市', width: 150, ordered: true }, { dataKey: 'firstName', title: "FristName" }, { dataKey: 'lastName', title: "LastName" }, { dataKey: 'email', title: "Email", width: 200, ordered: true }, { dataKey: 'action1', title: '操作1', width: 100, type: "action", actions: {
+               "编辑": function _(rowData, actions) {
+                  console.log(actions.addEmptyRow);
+                  me.refs.grid.toggleSubComp(rowData);
+               },
+               "删除": function _(rowData) {
+                  me.refs.grid.delRow(rowData);
+               }
+            },
+            beforeRender: function beforeRender(rowData, actionItems) {
+               if (rowData.jsxid % 2 == 0) {
+                  return ['编辑'];
+               } else {
+                  return ['编辑', '删除'];
+               }
+            }
+         }, { dataKey: 'action', title: '链接', width: 100, render: function render(rowData) {
+               return React.createElement(
+                  'div',
+                  null,
+                  React.createElement(
+                     'a',
+                     { href: '#' },
+                     '111'
+                  )
+               );
+            }
+         }];
+
+         var fetchUrl = './demo/data.json';
+
+         var renderProps = {
+
+            actionColumn: {
+               'edit': function edit() {},
+               'del': function del() {}
+            },
+            actionBar: {
+               '新增': function _(type, actions) {
+                  console.info(actions);alert(type);
+               },
+               '黄山': function _(type) {
+                  alert(type);
+               }
+            },
+            showSearch: true,
+            renderModel: 'tree',
+            fetchParams: '',
+            fetchUrl: fetchUrl,
+            jsxcolumns: columns
+         };
+         return React.createElement(Table, _extends({}, renderProps, { ref: 'grid' }));
+      }
+   }]);
+
+   return Demo;
+})(React.Component);
+
+;
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-table-demo-tree'));})()</script><div class="highlight"><pre><code class="javascript">
+<span class="keyword">let</span> Table = require(<span class="string">'uxcore-table'</span>);
+
+class Demo extends React.Component {
+
+    constructor(props) {
+        super(props);
+        <span class="keyword">this</span>.state = {
+           data:<span class="keyword">this</span>.props.data
+        }
+    }
+
+    onModifyRow(value,dataKey,record) {
+        <span class="comment">//doValidate</span>
+        <span class="comment">//debugger;</span>
+        <span class="comment">//return false;</span>
+        <span class="keyword">return</span> <span class="literal">true</span>;
+    }
+
+      render () {
+        console.log(<span class="string">"demo render"</span>);
+        <span class="keyword">let</span> me=<span class="keyword">this</span>;
+        <span class="comment">// 通过 rowSelection 对象表明需要行选择</span>
+        <span class="keyword">let</span> rowSelection = {
+          onSelect: <span class="function"><span class="keyword">function</span><span class="params">(record, selected, selectedRows)</span> {</span>
+            console.log(record, selected, selectedRows);
+          },
+          onSelectAll: <span class="function"><span class="keyword">function</span><span class="params">(selected, selectedRows)</span> {</span>
+            console.log(selected, selectedRows);
+          }
+        };
+
+        <span class="keyword">let</span> doAction= <span class="function"><span class="keyword">function</span><span class="params">(rowData,e)</span> {</span>
+            <span class="keyword">let</span> el=$(e.target);
+            <span class="keyword">if</span>(el.hasClass(<span class="string">'action'</span>)) {
+               <span class="keyword">if</span>( el.data(<span class="string">'type'</span>) ==<span class="string">'edit'</span>) {
+                  console.info(rowData,el.data(<span class="string">'type'</span>));
+               }<span class="keyword">else</span> <span class="keyword">if</span>(el.data(<span class="string">'type'</span>) ==<span class="string">'del'</span>) {
+                 console.info(rowData,el.data(<span class="string">'type'</span>));
+               }
+            }
+        }
+        <span class="comment">// title, width, type, hidden,dataKey</span>
+        <span class="keyword">let</span> columns = [
+            { dataKey: <span class="string">'id'</span>, title: <span class="string">'ID'</span>, width: <span class="number">50</span>,hidden:<span class="literal">true</span>},
+            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">200</span>,ordered:<span class="literal">true</span>},
+            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>,ordered:<span class="literal">true</span> },
+            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span> },  
+            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
+            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,ordered:<span class="literal">true</span> },
+            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
+                <span class="string">"编辑"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData, actions)</span> {</span>
+                    console.log(actions.addEmptyRow);
+                    me.refs.grid.toggleSubComp(rowData);
+                },
+                <span class="string">"删除"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
+                    me.refs.grid.delRow(rowData);
+                }
+              },
+              beforeRender: <span class="function"><span class="keyword">function</span><span class="params">(rowData,actionItems)</span> {</span>
+                 <span class="keyword">if</span>(rowData.jsxid%<span class="number">2</span>==<span class="number">0</span>) {
+                    <span class="keyword">return</span> [<span class="string">'编辑'</span>];
+                 }<span class="keyword">else</span> {
+                    <span class="keyword">return</span> [<span class="string">'编辑'</span>,<span class="string">'删除'</span>];
+                 }
+
+              }
+            },
+            { dataKey: <span class="string">'action'</span>, title:<span class="string">'链接'</span>, width:<span class="number">100</span>,render: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>
+               <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>111<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+              }
+            }
+        ]
+
+        let fetchUrl = './demo/data.json';
+
+        let renderProps={
+
+            actionColumn: {
+               'edit': function() {},
+               'del': function() {}
+            },
+            actionBar: {
+               '新增': function(type, actions) { console.info(actions); alert(type) },
+               '黄山': function(type) {alert(type)}
+            },
+            showSearch:true,
+            renderModel:'tree',
+            fetchParams:'',
+            fetchUrl: fetchUrl,
+            jsxcolumns:columns
+        };
+        return (<span class="tag">&lt;<span class="title">Table</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"grid"</span>/&gt;</span>);
+      }
+};
+
+ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-tree'))</span></code></pre></div></div></div><div id="code-box-components-table-demo-mode" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-mode">Edit table</a></div></div><div class="code-box-demo"><div id="components-table-demo-mode"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Table = require('uxcore-table');
+
+var Demo = (function (_React$Component) {
+    _inherits(Demo, _React$Component);
+
+    function Demo(props) {
+        _classCallCheck(this, Demo);
+
+        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+    }
+
+    _createClass(Demo, [{
+        key: 'render',
+        value: function render() {
+
+            var me = this;
+
+            var columns = [{ dataKey: 'jsxid', title: "jsxid", width: 40 }, { dataKey: 'city', title: '城市', width: 180, type: 'select', options: {
+                    'hz': '杭州',
+                    'bj': '北京',
+                    'sh': '上海',
+                    'ah': '安徽'
+                } }, { dataKey: 'name', title: "姓名", width: 200, type: "text" }, { dataKey: 'email', title: "Email", width: 200, type: "text" }, { dataKey: 'action1', title: '操作1', width: 100, type: "action", actions: {
+                    "增加": function _(rowData) {
+                        me.refs.mytable.addEmptyRow();
+                    },
+                    "删除": function _(rowData) {
+                        me.refs.mytable.delRow(rowData);
+                    }
+                }
+            }];
+
+            var renderProps = {
+                height: 200,
+                width: 800,
+                showPager: false,
+                fetchParams: {},
+                jsxcolumns: columns,
+                beforeFetch: function beforeFetch(sendData) {
+                    sendData.id = 1;return sendData;
+                },
+                processData: function processData(data) {
+                    return data;
+                }
+            };
+
+            return React.createElement(Table, _extends({}, renderProps, { ref: 'mytable' }));
+        }
+    }]);
+
+    return Demo;
+})(React.Component);
+
+;
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-table-demo-mode'));})()</script><div class="highlight"><pre><code class="javascript">
+<span class="keyword">let</span> Table = require(<span class="string">'uxcore-table'</span>);
+
+class Demo extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+    }
+
+    render () {
+
+        <span class="keyword">let</span> me=<span class="keyword">this</span>;
+
+        <span class="keyword">let</span> columns = [
+            { dataKey: <span class="string">'jsxid'</span>,title:<span class="string">"jsxid"</span>,width: <span class="number">40</span> },  
+            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">180</span>,type:<span class="string">'select'</span> ,options:{
+               <span class="string">'hz'</span>:<span class="string">'杭州'</span>,
+               <span class="string">'bj'</span>:<span class="string">'北京'</span>,
+               <span class="string">'sh'</span>:<span class="string">'上海'</span>,
+               <span class="string">'ah'</span>:<span class="string">'安徽'</span>
+            }},
+            { dataKey: <span class="string">'name'</span>,title:<span class="string">"姓名"</span>,width: <span class="number">200</span>,type:<span class="string">"text"</span>},  
+            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,type:<span class="string">"text"</span>},
+            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
+                <span class="string">"增加"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
+                    me.refs.mytable.addEmptyRow();
+                },
+                <span class="string">"删除"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
+                    me.refs.mytable.delRow(rowData);
+                }
+              }
+            }
+        ];
+
+        <span class="keyword">let</span> renderProps={
+            height: <span class="number">200</span>,
+            width: <span class="number">800</span>,
+            showPager:<span class="literal">false</span>,
+            fetchParams: {},
+            jsxcolumns:columns,
+            beforeFetch: (sendData) =&gt; {sendData.id = <span class="number">1</span>; <span class="keyword">return</span> sendData;},
+            processData: (data) =&gt; {<span class="keyword">return</span> data;}           
+        };
+
+        <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="title">Table</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"mytable"</span>/&gt;</span>);
+      }
+};
+
+ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-mode'))</span></code></pre></div></div></div><div id="code-box-components-table-demo-fixed" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-fixed">左列固定 table</a></div></div><div class="code-box-demo"><div id="components-table-demo-fixed"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Table = require('uxcore-table');
+
+var Demo = (function (_React$Component) {
+    _inherits(Demo, _React$Component);
+
+    function Demo(props) {
+        _classCallCheck(this, Demo);
+
+        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+    }
+
+    _createClass(Demo, [{
+        key: 'render',
+        value: function render() {
+            console.log("demo render");
+
+            var columns = [
+            //{ dataKey: 'check', title: '复选框', type: 'checkbox'},
+            //{ dataKey: 'id', title: 'ID', width: 50,hidden:true,fixed:true},
+            { dataKey: 'country', title: '国家国家国家国家', width: 200, ordered: true, type: "money", delimiter: ',', fixed: true }, { dataKey: 'city', title: '城市', width: 150 }, { dataKey: 'firstName', title: "FristName", fixed: true, beforeRender: function beforeRender(rowData) {
+                    return "abc";
+                } }, { dataKey: 'lastName', title: "LastName" }, { dataKey: 'email', title: "Email", width: 200, ordered: true }, { dataKey: 'action1', title: '操作1', width: 100, type: "action", actions: {
+                    "编辑": function _(rowData, actions) {
+                        console.log(actions.addEmptyRow);
+                        me.refs.grid.toggleSubComp(rowData);
+                    },
+                    "删除": function _(rowData) {
+                        me.refs.grid.delRow(rowData);
+                    }
+                },
+                beforeRender: function beforeRender(rowData, actionItems) {
+                    if (rowData.jsxid % 2 == 0) {
+                        return ['编辑'];
+                    } else {
+                        return ['编辑', '删除'];
+                    }
+                }
+            }, { dataKey: 'action', title: '链接', width: 150, render: function render(cellData, rowData) {
+                    return React.createElement(
+                        'div',
+                        null,
+                        React.createElement(
+                            'a',
+                            { href: '#' },
+                            rowData.email
+                        )
+                    );
+                }, beforeRender: function beforeRender(rowData) {
+                    return rowData.email;
+                }
+            }];
+
+            var renderProps = {
+                width: 800, //在左列固定模式下，width是必须要給的
+                height: 300,
+                showSearch: true,
+                fetchParams: {},
+                fetchUrl: './demo/data.json',
+                jsxcolumns: columns,
+                beforeFetch: function beforeFetch(sendData, from) {
+                    return sendData;
+                },
+                processData: function processData(data) {
+                    return data;
+                }
+            };
+            return React.createElement(Table, _extends({}, renderProps, { ref: 'grid' }));
+        }
+    }]);
+
+    return Demo;
+})(React.Component);
+
+;
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-table-demo-fixed'));})()</script><div class="highlight"><pre><code class="javascript">
+<span class="keyword">let</span> Table = require(<span class="string">'uxcore-table'</span>);
+
+class Demo extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+    }
+
+      render () {
+        console.log(<span class="string">"demo render"</span>);
+
+        <span class="keyword">let</span> columns = [
+            <span class="comment">//{ dataKey: 'check', title: '复选框', type: 'checkbox'},</span>
+            <span class="comment">//{ dataKey: 'id', title: 'ID', width: 50,hidden:true,fixed:true},</span>
+            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家国家国家国家'</span>, width: <span class="number">200</span>,ordered:<span class="literal">true</span>, type: <span class="string">"money"</span>, delimiter: <span class="string">','</span>,fixed:<span class="literal">true</span>},
+            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>},
+            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span>,fixed:<span class="literal">true</span>,beforeRender:<span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
+                <span class="keyword">return</span> <span class="string">"abc"</span>;
+            } },  
+            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
+            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,ordered:<span class="literal">true</span> },
+            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
+                <span class="string">"编辑"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData, actions)</span> {</span>
+                    console.log(actions.addEmptyRow);
+                    me.refs.grid.toggleSubComp(rowData);
+                },
+                <span class="string">"删除"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
+                    me.refs.grid.delRow(rowData);
+                }
+              },
+              beforeRender: <span class="function"><span class="keyword">function</span><span class="params">(rowData,actionItems)</span> {</span>
+                 <span class="keyword">if</span>(rowData.jsxid%<span class="number">2</span>==<span class="number">0</span>) {
+                    <span class="keyword">return</span> [<span class="string">'编辑'</span>];
+                 }<span class="keyword">else</span> {
+                    <span class="keyword">return</span> [<span class="string">'编辑'</span>,<span class="string">'删除'</span>];
+                 }
+
+              }
+            },
+            { dataKey: <span class="string">'action'</span>, title:<span class="string">'链接'</span>, width:<span class="number">150</span>,render: <span class="function"><span class="keyword">function</span><span class="params">(cellData,rowData)</span>{</span>
+               <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>{rowData.email}<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+              },beforeRender(rowData) {
+                return rowData.email;
+              }
+            }
+        ];
+
+        let renderProps={
+            width: 800, //在左列固定模式下，width是必须要給的
+            height:300,
+            showSearch: true,
+            fetchParams: {},
+            fetchUrl: './demo/data.json',
+            jsxcolumns:columns,
+            beforeFetch: (sendData, from) =&gt; { return sendData;},
+            processData: (data) =&gt; {return data;}           
+        };
+        return (<span class="tag">&lt;<span class="title">Table</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"grid"</span>/&gt;</span>);
+      }
+};
+
+ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-fixed'))</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="how-to-run">How to run</h2><pre>$ git clone https://github.com/uxcore/uxcore-table
 $ cd uxcore-table
 $ npm install
 $ gulp server</pre><h2 id="props">Props</h2><table>
@@ -259,7 +1175,7 @@ $ gulp server</pre><h2 id="props">Props</h2><table>
 </tbody>
 </table>
 <h2 id="rules">Rules</h2><blockquote>
-<p>return data format <a href="http://gitlab.alibaba-inc.com/alinw/yosemite/issues/18">here</a> </p>
+<p>return data format <a href="http://gitlab.alibaba-inc.com/alinw/yosemite/issues/18">here</a></p>
 </blockquote>
 <h2 id="api">API</h2><table>
 <thead>
@@ -309,920 +1225,4 @@ $ gulp server</pre><h2 id="props">Props</h2><table>
 </tr>
 </tbody>
 </table>
-</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-table-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-basic">基本表格</a></div></div><div class="code-box-demo"><div id="components-table-demo-basic"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Table = require('uxcore-table');
-
-var Demo = (function (_React$Component) {
-    _inherits(Demo, _React$Component);
-
-    function Demo(props) {
-        _classCallCheck(this, Demo);
-
-        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
-        this.state = {
-            data: this.props.data
-        };
-    }
-
-    _createClass(Demo, [{
-        key: 'onModifyRow',
-        value: function onModifyRow(value, dataKey, record) {
-            //doValidate
-            //debugger;
-            //return false;
-            return true;
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            console.log("demo render");
-            var me = this;
-            // 通过 rowSelection 对象表明需要行选择
-            var rowSelection = {
-                onSelect: function onSelect(record, selected, selectedRows) {
-                    console.log(record, selected, selectedRows);
-                },
-                onSelectAll: function onSelectAll(selected, selectedRows) {
-                    console.log(selected, selectedRows);
-                }
-            };
-
-            var doAction = function doAction(rowData, e) {
-                var el = $(e.target);
-                if (el.hasClass('action')) {
-                    if (el.data('type') == 'edit') {
-                        console.info(rowData, el.data('type'));
-                    } else if (el.data('type') == 'del') {
-                        console.info(rowData, el.data('type'));
-                    }
-                }
-            };
-            // title, width, type, hidden,dataKey
-            var columns = [{ dataKey: 'id', title: 'ID', width: 50, hidden: true }, { dataKey: 'country', title: '国家', width: 200, ordered: true }, { dataKey: 'city', title: '城市', width: 150, ordered: true }, { dataKey: 'firstName', title: "FristName" }, { dataKey: 'lastName', title: "LastName" }, { dataKey: 'email', title: "Email", width: 200, ordered: true }, { dataKey: 'action1', title: '操作1', width: 100, type: "action", actions: {
-                    "编辑": function _(rowData, actions) {
-                        console.log(actions.addEmptyRow);
-                        me.refs.grid.toggleSubComp(rowData);
-                    },
-                    "删除": function _(rowData) {
-                        me.refs.grid.delRow(rowData);
-                    }
-                },
-                beforeRender: function beforeRender(rowData, actionItems) {
-                    if (rowData.jsxid % 2 == 0) {
-                        return ['编辑'];
-                    } else {
-                        return ['编辑', '删除'];
-                    }
-                }
-            }, { dataKey: 'action', title: '链接', width: 100, render: function render(rowData) {
-                    return React.createElement(
-                        'div',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            '111'
-                        )
-                    );
-                }
-            }];
-
-            var fetchUrl = './demo/data.json';
-
-            var renderProps = {
-
-                actionColumn: {
-                    'edit': function edit() {},
-                    'del': function del() {}
-                },
-                fetchParams: '',
-                showColumnPicker: false,
-                fetchUrl: fetchUrl,
-                jsxcolumns: columns
-            };
-            return React.createElement(Table, _extends({}, renderProps, { ref: 'grid' }));
-        }
-    }]);
-
-    return Demo;
-})(React.Component);
-
-;
-
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-table-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="keyword">let</span> Table = require(<span class="string">'uxcore-table'</span>);
-
-class Demo extends React.Component {
-
-    constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
-           data:<span class="keyword">this</span>.props.data
-        }
-    }
-
-    onModifyRow(value,dataKey,record) {
-        <span class="comment">//doValidate</span>
-        <span class="comment">//debugger;</span>
-        <span class="comment">//return false;</span>
-        <span class="keyword">return</span> <span class="literal">true</span>;
-    }
-
-      render () {
-        console.log(<span class="string">"demo render"</span>);
-        <span class="keyword">let</span> me=<span class="keyword">this</span>;
-        <span class="comment">// 通过 rowSelection 对象表明需要行选择</span>
-        <span class="keyword">let</span> rowSelection = {
-          onSelect: <span class="function"><span class="keyword">function</span><span class="params">(record, selected, selectedRows)</span> {</span>
-            console.log(record, selected, selectedRows);
-          },
-          onSelectAll: <span class="function"><span class="keyword">function</span><span class="params">(selected, selectedRows)</span> {</span>
-            console.log(selected, selectedRows);
-          }
-        };
-
-        <span class="keyword">let</span> doAction= <span class="function"><span class="keyword">function</span><span class="params">(rowData,e)</span> {</span>
-            <span class="keyword">let</span> el=$(e.target);
-            <span class="keyword">if</span>(el.hasClass(<span class="string">'action'</span>)) {
-               <span class="keyword">if</span>( el.data(<span class="string">'type'</span>) ==<span class="string">'edit'</span>) {
-                  console.info(rowData,el.data(<span class="string">'type'</span>));
-               }<span class="keyword">else</span> <span class="keyword">if</span>(el.data(<span class="string">'type'</span>) ==<span class="string">'del'</span>) {
-                 console.info(rowData,el.data(<span class="string">'type'</span>));
-               }
-            }
-        }
-        <span class="comment">// title, width, type, hidden,dataKey</span>
-        <span class="keyword">let</span> columns = [
-            { dataKey: <span class="string">'id'</span>, title: <span class="string">'ID'</span>, width: <span class="number">50</span>,hidden:<span class="literal">true</span>},
-            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">200</span>,ordered:<span class="literal">true</span>},
-            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span> },  
-            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
-            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
-                <span class="string">"编辑"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData, actions)</span> {</span>
-                    console.log(actions.addEmptyRow);
-                    me.refs.grid.toggleSubComp(rowData);
-                },
-                <span class="string">"删除"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
-                    me.refs.grid.delRow(rowData);
-                }
-              },
-              beforeRender: <span class="function"><span class="keyword">function</span><span class="params">(rowData,actionItems)</span> {</span>
-                 <span class="keyword">if</span>(rowData.jsxid%<span class="number">2</span>==<span class="number">0</span>) {
-                    <span class="keyword">return</span> [<span class="string">'编辑'</span>];
-                 }<span class="keyword">else</span> {
-                    <span class="keyword">return</span> [<span class="string">'编辑'</span>,<span class="string">'删除'</span>];
-                 }
-
-              }
-            },
-            { dataKey: <span class="string">'action'</span>, title:<span class="string">'链接'</span>, width:<span class="number">100</span>,render: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>
-               <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>111<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-              }
-            }
-        ]
-
-        let fetchUrl = './demo/data.json';
-
-        let renderProps={
-
-            actionColumn: {
-               'edit': function() {},
-               'del': function() {}
-            },
-            fetchParams:'',
-            showColumnPicker:false,
-            fetchUrl: fetchUrl,
-            jsxcolumns:columns,
-        };
-        return (<span class="tag">&lt;<span class="title">Table</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"grid"</span>/&gt;</span>);
-      }
-};
-
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-basic'))</span></code></pre></div></div></div><div id="code-box-components-table-demo-adv" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-adv">高级表格  (Actionbar+Column Picker+CheckColumn)</a></div></div><div class="code-box-demo"><div id="components-table-demo-adv"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Table = require('uxcore-table');
-
-var Demo = (function (_React$Component) {
-    _inherits(Demo, _React$Component);
-
-    function Demo(props) {
-        _classCallCheck(this, Demo);
-
-        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
-        this.state = {
-            data: this.props.data
-        };
-    }
-
-    _createClass(Demo, [{
-        key: 'onModifyRow',
-        value: function onModifyRow(value, dataKey, record) {
-            //doValidate
-            //debugger;
-            //return false;
-            return true;
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            console.log("demo render");
-            var me = this;
-            // 通过 rowSelection 对象表明需要行选择
-            var rowSelection = {
-                onSelect: function onSelect(record, selected, selectedRows) {
-                    console.log(record, selected, selectedRows);
-                },
-                onSelectAll: function onSelectAll(selected, selectedRows) {
-                    console.log(selected, selectedRows);
-                }
-            };
-
-            var doAction = function doAction(rowData, e) {
-                var el = $(e.target);
-                if (el.hasClass('action')) {
-                    if (el.data('type') == 'edit') {
-                        console.info(rowData, el.data('type'));
-                    } else if (el.data('type') == 'del') {
-                        console.info(rowData, el.data('type'));
-                    }
-                }
-            };
-            // title, width, type, hidden,dataKey
-            var columns = [{ dataKey: 'id', title: 'ID', width: 50, hidden: true }, { dataKey: 'country', title: '国家', width: 200, ordered: true }, { dataKey: 'city', title: '城市', width: 150, ordered: true }, { dataKey: 'firstName', title: "FristName" }, { dataKey: 'lastName', title: "LastName" }, { dataKey: 'email', title: "Email", width: 200, ordered: true }, { dataKey: 'action1', title: '操作1', width: 100, type: "action", actions: {
-                    "clickme": function clickme(rowData, actions) {
-                        alert('thanks clickme,' + rowData.firstName);
-                    },
-                    "del": function del(rowData) {
-                        me.refs.grid.delRow(rowData);
-                    }
-                },
-                beforeRender: function beforeRender(rowData, actionItems) {
-                    if (rowData.jsxid % 2 == 0) {
-                        return ['clickme'];
-                    } else {
-                        return ['clickme', 'del'];
-                    }
-                }
-            }, { dataKey: 'action', title: '链接', width: 100, render: function render(rowData) {
-                    return React.createElement(
-                        'div',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            '111'
-                        )
-                    );
-                }
-            }];
-
-            var fetchUrl = './demo/data.json';
-            var renderSubProps = {
-                showHeader: false,
-                showPager: false,
-                //showMask:false,
-                jsxcolumns: columns,
-                fetchUrl: fetchUrl,
-                queryKeys: ["dataKey", "firstName"],
-                onModifyRow: this.onModifyRow
-            };
-
-            var renderProps = {
-
-                actionColumn: {
-                    'edit': function edit() {},
-                    'del': function del() {}
-                },
-                actionBar: {
-                    'action button': function actionButton(type, table) {
-                        alert(type);
-                    }
-                },
-                showSearch: true,
-                fetchParams: '',
-                fetchUrl: fetchUrl,
-                jsxcolumns: columns,
-                //onModifyRow: this.onModifyRow,
-                rowSelection: rowSelection
-            };
-            return React.createElement(Table, _extends({}, renderProps, { ref: 'grid' }));
-        }
-    }]);
-
-    return Demo;
-})(React.Component);
-
-;
-
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-table-demo-adv'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="keyword">let</span> Table = require(<span class="string">'uxcore-table'</span>);
-
-class Demo extends React.Component {
-
-    constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
-           data:<span class="keyword">this</span>.props.data
-        }
-    }
-
-    onModifyRow(value,dataKey,record) {
-        <span class="comment">//doValidate</span>
-        <span class="comment">//debugger;</span>
-        <span class="comment">//return false;</span>
-        <span class="keyword">return</span> <span class="literal">true</span>;
-    }
-
-      render () {
-        console.log(<span class="string">"demo render"</span>);
-        <span class="keyword">let</span> me=<span class="keyword">this</span>;
-        <span class="comment">// 通过 rowSelection 对象表明需要行选择</span>
-        <span class="keyword">let</span> rowSelection = {
-          onSelect: <span class="function"><span class="keyword">function</span><span class="params">(record, selected, selectedRows)</span> {</span>
-            console.log(record, selected, selectedRows);
-          },
-          onSelectAll: <span class="function"><span class="keyword">function</span><span class="params">(selected, selectedRows)</span> {</span>
-            console.log(selected, selectedRows);
-          }
-        };
-
-        <span class="keyword">let</span> doAction= <span class="function"><span class="keyword">function</span><span class="params">(rowData,e)</span> {</span>
-            <span class="keyword">let</span> el=$(e.target);
-            <span class="keyword">if</span>(el.hasClass(<span class="string">'action'</span>)) {
-               <span class="keyword">if</span>( el.data(<span class="string">'type'</span>) ==<span class="string">'edit'</span>) {
-                  console.info(rowData,el.data(<span class="string">'type'</span>));
-               }<span class="keyword">else</span> <span class="keyword">if</span>(el.data(<span class="string">'type'</span>) ==<span class="string">'del'</span>) {
-                 console.info(rowData,el.data(<span class="string">'type'</span>));
-               }
-            }
-        }
-        <span class="comment">// title, width, type, hidden,dataKey</span>
-        <span class="keyword">let</span> columns = [
-            { dataKey: <span class="string">'id'</span>, title: <span class="string">'ID'</span>, width: <span class="number">50</span>,hidden:<span class="literal">true</span>},
-            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">200</span>,ordered:<span class="literal">true</span>},
-            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span> },  
-            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
-            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
-                <span class="string">"clickme"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData, actions)</span> {</span>
-                    alert(<span class="string">'thanks clickme,'</span>+rowData.firstName)
-                },
-                <span class="string">"del"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
-                    me.refs.grid.delRow(rowData);
-                }
-              },
-              beforeRender: <span class="function"><span class="keyword">function</span><span class="params">(rowData,actionItems)</span> {</span>
-                 <span class="keyword">if</span>(rowData.jsxid%<span class="number">2</span>==<span class="number">0</span>) {
-                    <span class="keyword">return</span> [<span class="string">'clickme'</span>];
-                 }<span class="keyword">else</span> {
-                    <span class="keyword">return</span> [<span class="string">'clickme'</span>,<span class="string">'del'</span>];
-                 }
-
-              }
-            },
-            { dataKey: <span class="string">'action'</span>, title:<span class="string">'链接'</span>, width:<span class="number">100</span>,render: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>
-               <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>111<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-              }
-            }
-        ]
-
-        let fetchUrl = './demo/data.json';
-        let renderSubProps={
-            showHeader:false,
-            showPager:false,
-            //showMask:false,
-            jsxcolumns:columns,
-            fetchUrl: fetchUrl,
-            queryKeys:["dataKey","firstName"],
-            onModifyRow: this.onModifyRow
-        };
-
-        let renderProps={
-
-            actionColumn: {
-               'edit': function() {},
-               'del': function() {}
-            },
-            actionBar: {
-               'action button': function(type, table) { 
-                   alert(type);
-                },
-            },
-            showSearch:true,
-            fetchParams:'',
-            fetchUrl: fetchUrl,
-            jsxcolumns:columns,
-            //onModifyRow: this.onModifyRow,
-            rowSelection: rowSelection
-        };
-        return (<span class="tag">&lt;<span class="title">Table</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"grid"</span>/&gt;</span>);
-      }
-};
-
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-adv'))</span></code></pre></div></div></div><div id="code-box-components-table-demo-tree" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-tree">Tree 表格</a></div></div><div class="code-box-demo"><div id="components-table-demo-tree"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Table = require('uxcore-table');
-
-var Demo = (function (_React$Component) {
-   _inherits(Demo, _React$Component);
-
-   function Demo(props) {
-      _classCallCheck(this, Demo);
-
-      _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
-      this.state = {
-         data: this.props.data
-      };
-   }
-
-   _createClass(Demo, [{
-      key: 'onModifyRow',
-      value: function onModifyRow(value, dataKey, record) {
-         //doValidate
-         //debugger;
-         //return false;
-         return true;
-      }
-   }, {
-      key: 'render',
-      value: function render() {
-         console.log("demo render");
-         var me = this;
-         // 通过 rowSelection 对象表明需要行选择
-         var rowSelection = {
-            onSelect: function onSelect(record, selected, selectedRows) {
-               console.log(record, selected, selectedRows);
-            },
-            onSelectAll: function onSelectAll(selected, selectedRows) {
-               console.log(selected, selectedRows);
-            }
-         };
-
-         var doAction = function doAction(rowData, e) {
-            var el = $(e.target);
-            if (el.hasClass('action')) {
-               if (el.data('type') == 'edit') {
-                  console.info(rowData, el.data('type'));
-               } else if (el.data('type') == 'del') {
-                  console.info(rowData, el.data('type'));
-               }
-            }
-         };
-         // title, width, type, hidden,dataKey
-         var columns = [{ dataKey: 'id', title: 'ID', width: 50, hidden: true }, { dataKey: 'country', title: '国家', width: 200, ordered: true }, { dataKey: 'city', title: '城市', width: 150, ordered: true }, { dataKey: 'firstName', title: "FristName" }, { dataKey: 'lastName', title: "LastName" }, { dataKey: 'email', title: "Email", width: 200, ordered: true }, { dataKey: 'action1', title: '操作1', width: 100, type: "action", actions: {
-               "编辑": function _(rowData, actions) {
-                  console.log(actions.addEmptyRow);
-                  me.refs.grid.toggleSubComp(rowData);
-               },
-               "删除": function _(rowData) {
-                  me.refs.grid.delRow(rowData);
-               }
-            },
-            beforeRender: function beforeRender(rowData, actionItems) {
-               if (rowData.jsxid % 2 == 0) {
-                  return ['编辑'];
-               } else {
-                  return ['编辑', '删除'];
-               }
-            }
-         }, { dataKey: 'action', title: '链接', width: 100, render: function render(rowData) {
-               return React.createElement(
-                  'div',
-                  null,
-                  React.createElement(
-                     'a',
-                     { href: '#' },
-                     '111'
-                  )
-               );
-            }
-         }];
-
-         var fetchUrl = './demo/data.json';
-
-         var renderProps = {
-
-            actionColumn: {
-               'edit': function edit() {},
-               'del': function del() {}
-            },
-            actionBar: {
-               '新增': function _(type, actions) {
-                  console.info(actions);alert(type);
-               },
-               '黄山': function _(type) {
-                  alert(type);
-               }
-            },
-            showSearch: true,
-            renderModel: 'tree',
-            fetchParams: '',
-            fetchUrl: fetchUrl,
-            jsxcolumns: columns
-         };
-         return React.createElement(Table, _extends({}, renderProps, { ref: 'grid' }));
-      }
-   }]);
-
-   return Demo;
-})(React.Component);
-
-;
-
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-table-demo-tree'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="keyword">let</span> Table = require(<span class="string">'uxcore-table'</span>);
-
-class Demo extends React.Component {
-
-    constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
-           data:<span class="keyword">this</span>.props.data
-        }
-    }
-
-    onModifyRow(value,dataKey,record) {
-        <span class="comment">//doValidate</span>
-        <span class="comment">//debugger;</span>
-        <span class="comment">//return false;</span>
-        <span class="keyword">return</span> <span class="literal">true</span>;
-    }
-
-      render () {
-        console.log(<span class="string">"demo render"</span>);
-        <span class="keyword">let</span> me=<span class="keyword">this</span>;
-        <span class="comment">// 通过 rowSelection 对象表明需要行选择</span>
-        <span class="keyword">let</span> rowSelection = {
-          onSelect: <span class="function"><span class="keyword">function</span><span class="params">(record, selected, selectedRows)</span> {</span>
-            console.log(record, selected, selectedRows);
-          },
-          onSelectAll: <span class="function"><span class="keyword">function</span><span class="params">(selected, selectedRows)</span> {</span>
-            console.log(selected, selectedRows);
-          }
-        };
-
-        <span class="keyword">let</span> doAction= <span class="function"><span class="keyword">function</span><span class="params">(rowData,e)</span> {</span>
-            <span class="keyword">let</span> el=$(e.target);
-            <span class="keyword">if</span>(el.hasClass(<span class="string">'action'</span>)) {
-               <span class="keyword">if</span>( el.data(<span class="string">'type'</span>) ==<span class="string">'edit'</span>) {
-                  console.info(rowData,el.data(<span class="string">'type'</span>));
-               }<span class="keyword">else</span> <span class="keyword">if</span>(el.data(<span class="string">'type'</span>) ==<span class="string">'del'</span>) {
-                 console.info(rowData,el.data(<span class="string">'type'</span>));
-               }
-            }
-        }
-        <span class="comment">// title, width, type, hidden,dataKey</span>
-        <span class="keyword">let</span> columns = [
-            { dataKey: <span class="string">'id'</span>, title: <span class="string">'ID'</span>, width: <span class="number">50</span>,hidden:<span class="literal">true</span>},
-            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">200</span>,ordered:<span class="literal">true</span>},
-            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span> },  
-            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
-            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
-                <span class="string">"编辑"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData, actions)</span> {</span>
-                    console.log(actions.addEmptyRow);
-                    me.refs.grid.toggleSubComp(rowData);
-                },
-                <span class="string">"删除"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
-                    me.refs.grid.delRow(rowData);
-                }
-              },
-              beforeRender: <span class="function"><span class="keyword">function</span><span class="params">(rowData,actionItems)</span> {</span>
-                 <span class="keyword">if</span>(rowData.jsxid%<span class="number">2</span>==<span class="number">0</span>) {
-                    <span class="keyword">return</span> [<span class="string">'编辑'</span>];
-                 }<span class="keyword">else</span> {
-                    <span class="keyword">return</span> [<span class="string">'编辑'</span>,<span class="string">'删除'</span>];
-                 }
-
-              }
-            },
-            { dataKey: <span class="string">'action'</span>, title:<span class="string">'链接'</span>, width:<span class="number">100</span>,render: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>
-               <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>111<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-              }
-            }
-        ]
-
-        let fetchUrl = './demo/data.json';
-
-        let renderProps={
-
-            actionColumn: {
-               'edit': function() {},
-               'del': function() {}
-            },
-            actionBar: {
-               '新增': function(type, actions) { console.info(actions); alert(type) },
-               '黄山': function(type) {alert(type)}
-            },
-            showSearch:true,
-            renderModel:'tree',
-            fetchParams:'',
-            fetchUrl: fetchUrl,
-            jsxcolumns:columns
-        };
-        return (<span class="tag">&lt;<span class="title">Table</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"grid"</span>/&gt;</span>);
-      }
-};
-
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-tree'))</span></code></pre></div></div></div><div id="code-box-components-table-demo-mode" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-mode">Edit table</a></div></div><div class="code-box-demo"><div id="components-table-demo-mode"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Table = require('uxcore-table');
-
-var Demo = (function (_React$Component) {
-    _inherits(Demo, _React$Component);
-
-    function Demo(props) {
-        _classCallCheck(this, Demo);
-
-        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
-    }
-
-    _createClass(Demo, [{
-        key: 'render',
-        value: function render() {
-
-            var me = this;
-
-            var columns = [{ dataKey: 'jsxid', title: "jsxid", width: 40 }, { dataKey: 'city', title: '城市', width: 180, type: 'select', options: {
-                    'hz': '杭州',
-                    'bj': '北京',
-                    'sh': '上海',
-                    'ah': '安徽'
-                } }, { dataKey: 'name', title: "姓名", width: 200, type: "text" }, { dataKey: 'email', title: "Email", width: 200, type: "text" }, { dataKey: 'action1', title: '操作1', width: 100, type: "action", actions: {
-                    "增加": function _(rowData) {
-                        me.refs.mytable.addEmptyRow();
-                    },
-                    "删除": function _(rowData) {
-                        me.refs.mytable.delRow(rowData);
-                    }
-                }
-            }];
-
-            var renderProps = {
-                height: 200,
-                width: 800,
-                showPager: false,
-                fetchParams: {},
-                jsxcolumns: columns,
-                beforeFetch: function beforeFetch(sendData) {
-                    sendData.id = 1;return sendData;
-                },
-                processData: function processData(data) {
-                    return data;
-                }
-            };
-
-            return React.createElement(Table, _extends({}, renderProps, { ref: 'mytable' }));
-        }
-    }]);
-
-    return Demo;
-})(React.Component);
-
-;
-
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-table-demo-mode'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="keyword">let</span> Table = require(<span class="string">'uxcore-table'</span>);
-
-class Demo extends React.Component {
-
-    constructor(props) {
-        super(props);
-
-    }
-
-    render () {
-
-        <span class="keyword">let</span> me=<span class="keyword">this</span>;
-
-        <span class="keyword">let</span> columns = [
-            { dataKey: <span class="string">'jsxid'</span>,title:<span class="string">"jsxid"</span>,width: <span class="number">40</span> },  
-            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">180</span>,type:<span class="string">'select'</span> ,options:{
-               <span class="string">'hz'</span>:<span class="string">'杭州'</span>,
-               <span class="string">'bj'</span>:<span class="string">'北京'</span>,
-               <span class="string">'sh'</span>:<span class="string">'上海'</span>,
-               <span class="string">'ah'</span>:<span class="string">'安徽'</span>
-            }},
-            { dataKey: <span class="string">'name'</span>,title:<span class="string">"姓名"</span>,width: <span class="number">200</span>,type:<span class="string">"text"</span>},  
-            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,type:<span class="string">"text"</span>},
-            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
-                <span class="string">"增加"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
-                    me.refs.mytable.addEmptyRow();
-                },
-                <span class="string">"删除"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
-                    me.refs.mytable.delRow(rowData);
-                }
-              }
-            }
-        ];
-
-        <span class="keyword">let</span> renderProps={
-            height: <span class="number">200</span>,
-            width: <span class="number">800</span>,
-            showPager:<span class="literal">false</span>,
-            fetchParams: {},
-            jsxcolumns:columns,
-            beforeFetch: (sendData) =&gt; {sendData.id = <span class="number">1</span>; <span class="keyword">return</span> sendData;},
-            processData: (data) =&gt; {<span class="keyword">return</span> data;}           
-        };
-
-        <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="title">Table</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"mytable"</span>/&gt;</span>);
-      }
-};
-
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-mode'))</span></code></pre></div></div></div><div id="code-box-components-table-demo-fixed" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-fixed">左列固定 table</a></div></div><div class="code-box-demo"><div id="components-table-demo-fixed"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Table = require('uxcore-table');
-
-var Demo = (function (_React$Component) {
-    _inherits(Demo, _React$Component);
-
-    function Demo(props) {
-        _classCallCheck(this, Demo);
-
-        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
-    }
-
-    _createClass(Demo, [{
-        key: 'render',
-        value: function render() {
-            console.log("demo render");
-
-            var columns = [
-            //{ dataKey: 'check', title: '复选框', type: 'checkbox'},
-            //{ dataKey: 'id', title: 'ID', width: 50,hidden:true,fixed:true},
-            { dataKey: 'country', title: '国家国家国家国家', width: 200, ordered: true, type: "money", delimiter: ',', fixed: true }, { dataKey: 'city', title: '城市', width: 150 }, { dataKey: 'firstName', title: "FristName", fixed: true, beforeRender: function beforeRender(rowData) {
-                    return "abc";
-                } }, { dataKey: 'lastName', title: "LastName" }, { dataKey: 'email', title: "Email", width: 200, ordered: true }, { dataKey: 'action1', title: '操作1', width: 100, type: "action", actions: {
-                    "编辑": function _(rowData, actions) {
-                        console.log(actions.addEmptyRow);
-                        me.refs.grid.toggleSubComp(rowData);
-                    },
-                    "删除": function _(rowData) {
-                        me.refs.grid.delRow(rowData);
-                    }
-                },
-                beforeRender: function beforeRender(rowData, actionItems) {
-                    if (rowData.jsxid % 2 == 0) {
-                        return ['编辑'];
-                    } else {
-                        return ['编辑', '删除'];
-                    }
-                }
-            }, { dataKey: 'action', title: '链接', width: 150, render: function render(cellData, rowData) {
-                    return React.createElement(
-                        'div',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '#' },
-                            rowData.email
-                        )
-                    );
-                }, beforeRender: function beforeRender(rowData) {
-                    return rowData.email;
-                }
-            }];
-
-            var renderProps = {
-                width: 800, //在左列固定模式下，width是必须要給的
-                height: 300,
-                showSearch: true,
-                fetchParams: {},
-                fetchUrl: './demo/data.json',
-                jsxcolumns: columns,
-                beforeFetch: function beforeFetch(sendData, from) {
-                    return sendData;
-                },
-                processData: function processData(data) {
-                    return data;
-                }
-            };
-            return React.createElement(Table, _extends({}, renderProps, { ref: 'grid' }));
-        }
-    }]);
-
-    return Demo;
-})(React.Component);
-
-;
-
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-table-demo-fixed'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="keyword">let</span> Table = require(<span class="string">'uxcore-table'</span>);
-
-class Demo extends React.Component {
-
-    constructor(props) {
-        super(props);
-
-    }
-
-      render () {
-        console.log(<span class="string">"demo render"</span>);
-
-        <span class="keyword">let</span> columns = [
-            <span class="comment">//{ dataKey: 'check', title: '复选框', type: 'checkbox'},</span>
-            <span class="comment">//{ dataKey: 'id', title: 'ID', width: 50,hidden:true,fixed:true},</span>
-            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家国家国家国家'</span>, width: <span class="number">200</span>,ordered:<span class="literal">true</span>, type: <span class="string">"money"</span>, delimiter: <span class="string">','</span>,fixed:<span class="literal">true</span>},
-            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>},
-            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span>,fixed:<span class="literal">true</span>,beforeRender:<span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
-                <span class="keyword">return</span> <span class="string">"abc"</span>;
-            } },  
-            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
-            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
-                <span class="string">"编辑"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData, actions)</span> {</span>
-                    console.log(actions.addEmptyRow);
-                    me.refs.grid.toggleSubComp(rowData);
-                },
-                <span class="string">"删除"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
-                    me.refs.grid.delRow(rowData);
-                }
-              },
-              beforeRender: <span class="function"><span class="keyword">function</span><span class="params">(rowData,actionItems)</span> {</span>
-                 <span class="keyword">if</span>(rowData.jsxid%<span class="number">2</span>==<span class="number">0</span>) {
-                    <span class="keyword">return</span> [<span class="string">'编辑'</span>];
-                 }<span class="keyword">else</span> {
-                    <span class="keyword">return</span> [<span class="string">'编辑'</span>,<span class="string">'删除'</span>];
-                 }
-
-              }
-            },
-            { dataKey: <span class="string">'action'</span>, title:<span class="string">'链接'</span>, width:<span class="number">150</span>,render: <span class="function"><span class="keyword">function</span><span class="params">(cellData,rowData)</span>{</span>
-               <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>{rowData.email}<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-              },beforeRender(rowData) {
-                return rowData.email;
-              }
-            }
-        ];
-
-        let renderProps={
-            width: 800, //在左列固定模式下，width是必须要給的
-            height:300,
-            showSearch: true,
-            fetchParams: {},
-            fetchUrl: './demo/data.json',
-            jsxcolumns:columns,
-            beforeFetch: (sendData, from) =&gt; { return sendData;},
-            processData: (data) =&gt; {return data;}           
-        };
-        return (<span class="tag">&lt;<span class="title">Table</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"grid"</span>/&gt;</span>);
-      }
-};
-
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-fixed'))</span></code></pre></div></div></div></article></div></body></html>
+</div></article></div></body></html>
