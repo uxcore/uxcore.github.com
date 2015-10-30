@@ -1,8 +1,8 @@
-# 验证
+# 编辑查看模式
 
-- order: 1
+- order: 3
 
-自带验证函数，并且支持自己手写，并分为实时验证与非实时验证。
+Form 支持编辑和查看两种模式，并且支持随时切换，从此两个页面变成一个页面。
 
 ---
 
@@ -29,7 +29,7 @@ class Demo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            mode: true
+            mode: Constants.MODE.EDIT
         };
     }
 
@@ -37,10 +37,9 @@ class Demo extends React.Component {
         console.log(this.refs.form.getValues());
     }
 
-    handleModeChange(values, name) {
-        console.log(values[name]);
+    handleChangeMode() {
         this.setState({
-            mode: values[name] == "true" ? true : false
+            mode: this.state.mode == Constants.MODE.EDIT ? Constants.MODE.VIEW : Constants.MODE.EDIT
         })
     }
 
@@ -52,14 +51,13 @@ class Demo extends React.Component {
                 <style>
                     {".required {font-family:Simsun} .demo-basic-form {width: 550px} .form-select {background: #ccc; border-radius: 5px; padding-top: 15px; width: 550px; margin-bottom: 40px;}"}
                 </style>
-                <Form className="form-select" jsxvalues={{mode: "true"}} jsxonChange={me.handleModeChange.bind(me)}>
-                    <SelectFormField jsxdata={{"true": "实时校验", "false": "非实时校验"}} jsxname="mode" jsxlabel="校验模式" showSearch={false}/>
-                </Form>
-                <Form ref="form" className="demo-basic-form" instantValidate={me.state.mode}>
-                    <Input jsxname="theme" jsxlabel="主题" required={true} jsxplaceholder="请输入主题" jsxrules={[
-                        {validator: Validators.isNotEmpty, errMsg: "不能为空"},
-                        {validator: function(value) {return value.length <= 3}, errMsg: "不能超过3个字"}
-                    ]}/>
+                <Form ref="form" className="demo-basic-form" jsxvalues={{
+                    theme: "Form 展示",
+                    location: "Uxcore 站点",
+                    date: ['2015-10-15', '2015-11-15'],
+                    content: "这是一个 Form 的模式转换页面。"
+                }} jsxmode={me.state.mode}>
+                    <Input jsxname="theme" jsxlabel="主题" required={true} jsxplaceholder="请输入主题"/>
                     <Input jsxname="location" jsxlabel="地点" required={true} jsxplaceholder="请输入地点" jsxrules={[
                         {validator: Validators.isNotEmpty, errMsg: "不能为空"}
                     ]}/>
@@ -68,7 +66,8 @@ class Demo extends React.Component {
                         {validator: Validators.isNotEmpty, errMsg: "不能为空"}
                     ]}/>
                     <ButtonGroupFormField>
-                        <Button size="large" onClick={me.handleSubmit.bind(me)}>确定</Button>
+                        <Button onClick={me.handleSubmit.bind(me)}>确定</Button>
+                        <Button type="secondary" onClick={me.handleChangeMode.bind(me)}>转换模式</Button>
                     </ButtonGroupFormField>
                 </Form>
             </div>
@@ -77,5 +76,5 @@ class Demo extends React.Component {
     }
 };
 
-ReactDOM.render(<Demo />, document.getElementById('components-form-demo-validator'))
+ReactDOM.render(<Demo />, document.getElementById('components-form-demo-mode'))
 ````

@@ -41,10 +41,10 @@ class Demo extends React.Component {
                     {".required {font-family:Simsun} .demo-basic-form {width: 550px}"}
                 </style>
                 <Form ref="form" className="demo-basic-form">
-                    <Input jsxname="theme" jsxlabel="主题" required={true} jsxplaceholder="请输入主题"/>
-                    <Input jsxname="location" jsxlabel="地点" required={true} jsxplaceholder="请输入地点"/>
+                    <Input jsxname="theme" jsxlabel="主题"  jsxplaceholder="请输入主题"/>
+                    <Input jsxname="location" jsxlabel="地点"  jsxplaceholder="请输入地点"/>
                     <Date jsxname="date" jsxlabel="时间" jsxtype="cascade"/>
-                    <TextArea jsxname="content" jsxlabel="内容" required={true}/>
+                    <TextArea jsxname="content" jsxlabel="内容" />
                     <ButtonGroupFormField>
                         <Button size="large" onClick={me.handleSubmit.bind(me)}>确定</Button>
                     </ButtonGroupFormField>

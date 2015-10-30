@@ -12,21 +12,6 @@
 
 ---
 
-## uxcore-form [![Dependency Status](http://img.shields.io/david/uxcore/uxcore-form.svg?style=flat-square)](https://david-dm.org/uxcore/uxcore-form) [![devDependency Status](http://img.shields.io/david/dev/uxcore/uxcore-form.svg?style=flat-square)](https://david-dm.org/uxcore/uxcore-form#info=devDependencies) 
-
-## TL;DR
-
-uxcore-form ui component for react
-
-#### setup develop environment
-
-```sh
-$ git clone https://github.com/uxcore/uxcore-form
-$ cd uxcore-form
-$ npm install
-$ gulp server
-```
-
 ## Usage
 
 > see demo/FormDemo.js for details  
@@ -126,22 +111,24 @@ $ gulp server
 
 * 插件：
     * Count，通过 InputFormField.Count 取得，一个内置的计数器，用法如下：
-```javascript
-<InputFormField>
-    <Count total="20">
-</InputFormField>
-```
+
+    ```javascript
+    <InputFormField>
+        <Count total="20">
+    </InputFormField>
+    ```
     * LeftAddon/RightAddon，通过 InputFormField.LeftAddon/InputFormField.RightAddon 取得，给 input 左侧加入自定义的图标或文字，用法如下：
-```javascript
-<InputFormField>
-    <LeftAddon>
-        <i className="kuma-icon kuma-icon-phone"></i>
-    </LeftAddon>
-    <RightAddon>
-        <span>元</span>
-    </RightAddon>
-</InputFormField>
-```
+
+    ```javascript
+    <InputFormField>
+        <LeftAddon>
+            <i className="kuma-icon kuma-icon-phone"></i>
+        </LeftAddon>
+        <RightAddon>
+            <span>元</span>
+        </RightAddon>
+    </InputFormField>
+    ```
 
 ### TextAreaFormField
 
@@ -156,7 +143,8 @@ $ gulp server
     * value
     * text：显示的值
 * 使用方式：
-```
+
+```javascript
 <RadioGroupFormField>
     <Item value="1" text="a">
     <Item value="2" text="b">
@@ -197,7 +185,8 @@ see datails in [uxcore-select2](https://www.npmjs.com/package/uxcore-select2)
     * text：显示的值
     * disabled：该 Item 的 disable 状态。
 * 使用方式：
-```
+
+```javascript
 <CheckboxGroupFormField>
     <Item value="1" text="a" disabled={true}>
     <Item value="2" text="b">
@@ -207,7 +196,13 @@ see datails in [uxcore-select2](https://www.npmjs.com/package/uxcore-select2)
 
 ### DateFormField
 
-支持出 onSelect 外，[uxcore-calendar](https://www.npmjs.com/package/uxcore-calendar) 的所有 props。
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|jsxtype|string|optional|single|single/cascade 单独、级联|
+|jsxfrom|string|optional|-|开始日期|
+|jsxto|string|optional|-|结束日期|
+
+除此之外，支持除 onSelect，[uxcore-calendar](https://www.npmjs.com/package/uxcore-calendar) 的所有 props。
 
 ### NumberInputFormField
 
@@ -250,7 +245,8 @@ see datails in [uxcore-select2](https://www.npmjs.com/package/uxcore-select2)
 ### ButtonGroupFormField
 
 > ButtonGroupFormField 是一个特殊的 FormField，它用来生成一些特定的表单按钮，这是为了与 Grid 相结合而准备的。如果需要自定义一些按钮，请使用 OtherFormField 和 uxcore-button 相结合来使用。  
-你可以像这样使用它：  
+你可以像这样使用它： 
+
 ```javascript
 var Button = require('uxcore-button');
 <ButtonGroupFormField>
