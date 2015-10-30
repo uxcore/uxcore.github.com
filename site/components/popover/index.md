@@ -3,6 +3,7 @@
 - category: Components
 - chinese: 弹窗
 - order: 12
+- subtype: 交互提醒
 
 ---
 

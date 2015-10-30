@@ -8,7 +8,7 @@ React component of UXCORE
 ```sh
 $ git clone https://github.com/uxcore/uxcore.github.com.git uxcore
 $ cd uxcore
-& npm install -g nico jade
+& npm install -g nico jade nico-jsx
 $ npm install
 $ git submodule init
 $ git submodule update

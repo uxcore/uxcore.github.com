@@ -1,8 +1,9 @@
 # Transfer
 
 - category: Components
-- chinese: Transfer组件
+- chinese: 双栏选择框
 - order: 11
+- subtype: 其它
 
 ---
 

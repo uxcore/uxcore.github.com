@@ -1,8 +1,9 @@
 # Collapse
 
 - category: Components
-- chinese: Collapse 折叠面板
+- chinese: 折叠面板
 - order: 15
+- subtype: 导航
 
 ---
 

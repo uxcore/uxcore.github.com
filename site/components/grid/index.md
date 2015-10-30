@@ -4,6 +4,7 @@
 - chinese: 表格
 - description: uxcore gird, will including checkbox, edit text field, column pick etc
 - order: 6
+- subtype: 布局
 
 ---
 

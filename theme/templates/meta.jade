@@ -1,0 +1,21 @@
+mixin meta
+	header.post-title
+		h1 #{post.title}
+		if post.pkg
+			section.meta
+				span.author
+					i.fa.fa-user
+					if post.tags.author
+						if post.tags.author.email
+							a(href="mailto:#{post.tags.author.email}") #{post.tags.author.name}
+						else
+							|#{post.tags.author.name}
+				span.github
+					i.fa.fa-github
+					a(href="#{post.pkg.repository.url}", target="_blank") #{post.title}
+				span.version 
+					i.fa.fa-code-fork
+					|#{post.pkg.version}
+				span.description
+					i.fa.fa-bookmark
+					|#{post.pkg.description}

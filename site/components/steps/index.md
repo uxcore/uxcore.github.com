@@ -1,8 +1,9 @@
 # Steps
 
 - category: Components
-- chinese: Steps 步骤条
+- chinese: 步骤条
 - order: 17
+- subtype: 交互提醒
 
 ---
 

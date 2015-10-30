@@ -2,7 +2,7 @@
 
 - order: 0
 - category: CSS
-- chinese:　基础样式 & reset
+- chinese:　基础样式
 
 ---
 
