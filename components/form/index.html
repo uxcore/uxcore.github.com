@@ -3,11 +3,7 @@
 		return w.UXCORE[name];
 	}
 })(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li data-id="home"><a href="/">首页</a></li><li data-id="css"><a href="/css/base/">css</a></li><li data-id="components"><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li><a href="/components/table">Table</a></li><li><a href="/components/grid">Grid</a></li><li class="current"><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/popover">Popover</a></li><li><a href="/components/uploader">Uploader</a></li><li><a href="/components/collapse">Collapse</a></li><li><a href="/components/progress">Progress</a></li><li><a href="/components/steps">Steps</a></li><li><a href="/components/menu">Menu</a></li><li><a href="/components/button">Button</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Form</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>eternalsky</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-form.git" target="_blank">Form</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.2.0</span><span class="description"><i class="fa fa-bookmark"></i>form component for uxcore</span></section></header><div id="J-markdown" class="markdown"><hr>
-<h2 id="uxcore-form">uxcore-form <a href="https://david-dm.org/uxcore/uxcore-form"><img src="http://img.shields.io/david/uxcore/uxcore-form.svg?style=flat-square" alt="Dependency Status"></a> <a href="https://david-dm.org/uxcore/uxcore-form#info=devDependencies"><img src="http://img.shields.io/david/dev/uxcore/uxcore-form.svg?style=flat-square" alt="devDependency Status"></a></h2><h2 id="tl-dr">TL;DR</h2><p>uxcore-form ui component for react</p>
-<h4 id="setup-develop-environment">setup develop environment</h4><pre>$ git clone https://github.com/uxcore/uxcore-form
-$ cd uxcore-form
-$ npm install
-$ gulp server</pre><h2 id="usage">Usage</h2><blockquote>
+<h2 id="usage">Usage</h2><blockquote>
 <p>see demo/FormDemo.js for details<br>每一个 field 需要按照 Form -&gt; FormRow -&gt; FormField 的方式进行嵌套，允许 Form -&gt; FormField 的嵌套，会自动增加 FormRow 这一层，并默认占一整行。</p>
 </blockquote>
 <h2 id="api">API</h2><h3 id="form">Form</h3><ul>
@@ -591,15 +587,15 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 他也可以用于布局中的占位。 </p>
 </blockquote>
 <h3 id="buttongroupformfield">ButtonGroupFormField</h3><blockquote>
-<p>ButtonGroupFormField 是一个特殊的 FormField，它用来生成一些特定的表单按钮，这是为了与 Grid 相结合而准备的。如果需要自定义一些按钮，请使用 OtherFormField 和 uxcore-button 相结合来使用。<br>你可以像这样使用它：  </p>
+<p>ButtonGroupFormField 是一个特殊的 FormField，它用来生成一些特定的表单按钮，这是为了与 Grid 相结合而准备的。如果需要自定义一些按钮，请使用 OtherFormField 和 uxcore-button 相结合来使用。<br>你可以像这样使用它： </p>
+</blockquote>
 <div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Button = require(<span class="string">'uxcore-button'</span>);
 <span class="xml"><span class="tag">&lt;<span class="title">ButtonGroupFormField</span>&gt;</span>
     {// handleClick 会被传入一个参数 data，取得的值和 API getValues() 相同}
     <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">action</span>=<span class="value">"submit"</span> <span class="attribute">onClick</span>=<span class="value">{this.handleClick.bind(this)}</span>/&gt;</span>
     {// 目前只支持 submit 和 reset 两种 action}
     <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">action</span>=<span class="value">"reset"</span>/&gt;</span>
-<span class="tag">&lt;/<span class="title">ButtonGroupFormField</span>&gt;</span></span></code></pre></div></blockquote>
-</div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-form-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-basic">基本使用</a></div></div><div class="code-box-demo"><div id="components-form-demo-basic"></div></div><div class="code-box-desc"><p>无需任何绑定，只要插入几个标签，就可以完成一个表格的搭建。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+<span class="tag">&lt;/<span class="title">ButtonGroupFormField</span>&gt;</span></span></code></pre></div></div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-form-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-basic">基本使用</a></div></div><div class="code-box-demo"><div id="components-form-demo-basic"></div></div><div class="code-box-desc"><p>无需任何绑定，只要插入几个标签，就可以完成一个表格的搭建。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -649,10 +645,10 @@ var Demo = (function (_React$Component) {
                 React.createElement(
                     Form,
                     { ref: 'form', className: 'demo-basic-form' },
-                    React.createElement(Input, { jsxname: 'theme', jsxlabel: '主题', required: true, jsxplaceholder: '请输入主题' }),
-                    React.createElement(Input, { jsxname: 'location', jsxlabel: '地点', required: true, jsxplaceholder: '请输入地点' }),
+                    React.createElement(Input, { jsxname: 'theme', jsxlabel: '主题', jsxplaceholder: '请输入主题' }),
+                    React.createElement(Input, { jsxname: 'location', jsxlabel: '地点', jsxplaceholder: '请输入地点' }),
                     React.createElement(Date, { jsxname: 'date', jsxlabel: '时间', jsxtype: 'cascade' }),
-                    React.createElement(TextArea, { jsxname: 'content', jsxlabel: '内容', required: true }),
+                    React.createElement(TextArea, { jsxname: 'content', jsxlabel: '内容' }),
                     React.createElement(
                         ButtonGroupFormField,
                         null,
@@ -704,10 +700,10 @@ class Demo extends React.Component {
                     <span class="rules">{<span class="rule">"<span class="attribute">.required {font-family</span>:<span class="value">Simsun</span></span></span>} <span class="class">.demo-basic-form</span> <span class="rules">{<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">550</span>px</span></span></span>}"}
                 </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
                 <span class="tag">&lt;<span class="title">Form</span> <span class="attribute">ref</span>=<span class="value">"form"</span> <span class="attribute">className</span>=<span class="value">"demo-basic-form"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">Input</span> <span class="attribute">jsxname</span>=<span class="value">"theme"</span> <span class="attribute">jsxlabel</span>=<span class="value">"主题"</span> <span class="attribute">required</span>=<span class="value">{true}</span> <span class="attribute">jsxplaceholder</span>=<span class="value">"请输入主题"</span>/&gt;</span>
-                    <span class="tag">&lt;<span class="title">Input</span> <span class="attribute">jsxname</span>=<span class="value">"location"</span> <span class="attribute">jsxlabel</span>=<span class="value">"地点"</span> <span class="attribute">required</span>=<span class="value">{true}</span> <span class="attribute">jsxplaceholder</span>=<span class="value">"请输入地点"</span>/&gt;</span>
+                    <span class="tag">&lt;<span class="title">Input</span> <span class="attribute">jsxname</span>=<span class="value">"theme"</span> <span class="attribute">jsxlabel</span>=<span class="value">"主题"</span>  <span class="attribute">jsxplaceholder</span>=<span class="value">"请输入主题"</span>/&gt;</span>
+                    <span class="tag">&lt;<span class="title">Input</span> <span class="attribute">jsxname</span>=<span class="value">"location"</span> <span class="attribute">jsxlabel</span>=<span class="value">"地点"</span>  <span class="attribute">jsxplaceholder</span>=<span class="value">"请输入地点"</span>/&gt;</span>
                     <span class="tag">&lt;<span class="title">Date</span> <span class="attribute">jsxname</span>=<span class="value">"date"</span> <span class="attribute">jsxlabel</span>=<span class="value">"时间"</span> <span class="attribute">jsxtype</span>=<span class="value">"cascade"</span>/&gt;</span>
-                    <span class="tag">&lt;<span class="title">TextArea</span> <span class="attribute">jsxname</span>=<span class="value">"content"</span> <span class="attribute">jsxlabel</span>=<span class="value">"内容"</span> <span class="attribute">required</span>=<span class="value">{true}</span>/&gt;</span>
+                    <span class="tag">&lt;<span class="title">TextArea</span> <span class="attribute">jsxname</span>=<span class="value">"content"</span> <span class="attribute">jsxlabel</span>=<span class="value">"内容"</span> /&gt;</span>
                     <span class="tag">&lt;<span class="title">ButtonGroupFormField</span>&gt;</span>
                         <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"large"</span> <span class="attribute">onClick</span>=<span class="value">{me.handleSubmit.bind(me)}</span>&gt;</span>确定<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
                     <span class="tag">&lt;/<span class="title">ButtonGroupFormField</span>&gt;</span>
@@ -787,7 +783,7 @@ var Demo = (function (_React$Component) {
                     Form,
                     { ref: 'form', className: 'demo-basic-form', instantValidate: me.state.mode },
                     React.createElement(Input, { jsxname: 'theme', jsxlabel: '主题', required: true, jsxplaceholder: '请输入主题', jsxrules: [{ validator: Validators.isNotEmpty, errMsg: "不能为空" }, { validator: function validator(value) {
-                                return value.length < 3;
+                                return value.length <= 3;
                             }, errMsg: "不能超过3个字" }] }),
                     React.createElement(Input, { jsxname: 'location', jsxlabel: '地点', required: true, jsxplaceholder: '请输入地点', jsxrules: [{ validator: Validators.isNotEmpty, errMsg: "不能为空" }] }),
                     React.createElement(Date, { jsxname: 'date', jsxlabel: '时间', jsxtype: 'cascade' }),
@@ -860,7 +856,7 @@ class Demo extends React.Component {
                 <span class="tag">&lt;<span class="title">Form</span> <span class="attribute">ref</span>=<span class="value">"form"</span> <span class="attribute">className</span>=<span class="value">"demo-basic-form"</span> <span class="attribute">instantValidate</span>=<span class="value">{me.state.mode}</span>&gt;</span>
                     <span class="tag">&lt;<span class="title">Input</span> <span class="attribute">jsxname</span>=<span class="value">"theme"</span> <span class="attribute">jsxlabel</span>=<span class="value">"主题"</span> <span class="attribute">required</span>=<span class="value">{true}</span> <span class="attribute">jsxplaceholder</span>=<span class="value">"请输入主题"</span> <span class="attribute">jsxrules</span>=<span class="value">{[</span>
                         {<span class="attribute">validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "不能为空"},
-                        {<span class="attribute">validator:</span> <span class="attribute">function</span>(<span class="attribute">value</span>) {<span class="attribute">return</span> <span class="attribute">value.length</span> &lt; <span class="attribute">3</span>}, <span class="attribute">errMsg:</span> "不能超过<span class="attribute">3</span>个字"}
+                        {<span class="attribute">validator:</span> <span class="attribute">function</span>(<span class="attribute">value</span>) {<span class="attribute">return</span> <span class="attribute">value.length</span> &lt;= <span class="attribute">3</span>}, <span class="attribute">errMsg:</span> "不能超过<span class="attribute">3</span>个字"}
                     ]}/&gt;</span>
                     <span class="tag">&lt;<span class="title">Input</span> <span class="attribute">jsxname</span>=<span class="value">"location"</span> <span class="attribute">jsxlabel</span>=<span class="value">"地点"</span> <span class="attribute">required</span>=<span class="value">{true}</span> <span class="attribute">jsxplaceholder</span>=<span class="value">"请输入地点"</span> <span class="attribute">jsxrules</span>=<span class="value">{[</span>
                         {<span class="attribute">validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "不能为空"}
