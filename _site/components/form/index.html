@@ -2,600 +2,7 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li data-id="home"><a href="/">首页</a></li><li data-id="css"><a href="/css/base/">css</a></li><li data-id="components"><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/components/calendar">Calendar</a></li><li><a href="/components/dialog">Dialog</a></li><li><a href="/components/select2">Select2</a></li><li><a href="/components/pagination">Pagination</a></li><li><a href="/components/tooltip">Tooltip</a></li><li><a href="/components/tabs">Tabs</a></li><li><a href="/components/table">Table</a></li><li><a href="/components/grid">Grid</a></li><li class="current"><a href="/components/form">Form</a></li><li><a href="/components/dropdown">Dropdown</a></li><li><a href="/components/mention">Mention</a></li><li><a href="/components/tree">Tree</a></li><li><a href="/components/transfer">Transfer</a></li><li><a href="/components/popover">Popover</a></li><li><a href="/components/uploader">Uploader</a></li><li><a href="/components/collapse">Collapse</a></li><li><a href="/components/progress">Progress</a></li><li><a href="/components/steps">Steps</a></li><li><a href="/components/menu">Menu</a></li><li><a href="/components/button">Button</a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Form</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>eternalsky</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-form.git" target="_blank">Form</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.2.0</span><span class="description"><i class="fa fa-bookmark"></i>form component for uxcore</span></section></header><div id="J-markdown" class="markdown"><hr>
-<h2 id="usage">Usage</h2><blockquote>
-<p>see demo/FormDemo.js for details<br>每一个 field 需要按照 Form -&gt; FormRow -&gt; FormField 的方式进行嵌套，允许 Form -&gt; FormField 的嵌套，会自动增加 FormRow 这一层，并默认占一整行。</p>
-</blockquote>
-<h2 id="api">API</h2><h3 id="form">Form</h3><ul>
-<li><p>getValues(force) 获取目前的 values 和 pass（是否通过检测）。<br>参数：</p>
-<ul>
-<li>force <code>Boolean</code>: 是否做强制校验，在强制校验的情况下将无视所有 instantValidate 配置。</li>
-</ul>
-</li>
-<li><p>resetValues() 重置所有的 FormField，如果有默认值则重置为默认值。</p>
-</li>
-<li><p>setValues(data) 手动设置各个 FormField 的值，在表单联动时可能会用得到。
-参数：</p>
-<ul>
-<li>data <code>Object</code>: 和 jsxvalues 的格式相同。</li>
-</ul>
-</li>
-<li><p>isDirty() 获取目前的数据是否没有通过检测，返回 true 或 false。</p>
-</li>
-</ul>
-<h2 id="props">props</h2><h3 id="form">Form</h3><table>
-<thead>
-<tr>
-<th>配置项</th>
-<th>类型</th>
-<th>必填</th>
-<th>默认值</th>
-<th>功能/备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>className</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;&quot;</td>
-<td>加入额外的类名，在使用 kuma 的基础上进行适当的定制时会用得到</td>
-</tr>
-<tr>
-<td>jsxprefixCls</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;kuma-form&quot;</td>
-<td>默认类名，用户可以通过修改此项来完成样式的定制</td>
-</tr>
-<tr>
-<td>jsxmode</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;EDIT&quot;</td>
-<td>Form 编辑和只读模式，传值方式见 demo</td>
-</tr>
-<tr>
-<td>jsxvalues</td>
-<td>object</td>
-<td>optional</td>
-<td>-</td>
-<td>传入表单的初始值，格式见 Usage，每一个 key 与 formField 中的 jsxname 相对应，注意是初始值，不要把 onChange 中的变化同步到这里</td>
-</tr>
-<tr>
-<td>jsxonChange</td>
-<td>function(values, name, pass)</td>
-<td>optional</td>
-<td>noop</td>
-<td>当表单中值有变化时触发，传回 values，格式同 jsxvalues，同时传回发生变化的表单域的 name，以及该表单域是否通过校验</td>
-</tr>
-<tr>
-<td>instantValidate</td>
-<td>boolean</td>
-<td>optional</td>
-<td>true</td>
-<td>是否开启即时校验</td>
-</tr>
-</tbody>
-</table>
-<h3 id="jsxvalues-的格式">jsxvalues 的格式</h3><div class="highlight"><pre><code class="javascript">{
-    jsxname1: value1,
-    jsxname2: value2
-}</code></pre></div><h3 id="formrow">FormRow</h3><table>
-<thead>
-<tr>
-<th>配置项</th>
-<th>类型</th>
-<th>必填</th>
-<th>默认值</th>
-<th>功能/备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>className</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;&quot;</td>
-<td>加入额外的类名，在使用 kuma 的基础上进行适当的定制时会用得到</td>
-</tr>
-<tr>
-<td>jsxprefixCls</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;kuma-form-row&quot;</td>
-<td>默认类名，用户可以通过修改此项来完成样式的定制</td>
-</tr>
-</tbody>
-</table>
-<h3 id="formfield-通用配置">FormField 通用配置</h3><table>
-<thead>
-<tr>
-<th>配置项</th>
-<th>类型</th>
-<th>必填</th>
-<th>默认值</th>
-<th>功能/备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>className</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;&quot;</td>
-<td>加入额外的类名，在使用 kuma 的基础上进行适当的定制时会用得到</td>
-</tr>
-<tr>
-<td>jsxshow</td>
-<td>bool</td>
-<td>optional</td>
-<td>true</td>
-<td>是否显示该表单域，不显示的表单域将不占宽度</td>
-</tr>
-<tr>
-<td>jsxmode</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;EDIT&quot;</td>
-<td>FormField 的编辑和只读模式，优先级高于 Form，传值方式见 demo</td>
-</tr>
-<tr>
-<td>jsxshowLabel</td>
-<td>bool</td>
-<td>optional</td>
-<td>true</td>
-<td>是否显示 label</td>
-</tr>
-<tr>
-<td>jsxname</td>
-<td>string</td>
-<td>required</td>
-<td>-</td>
-<td>表单字段，返回值时该字段将作为 key</td>
-</tr>
-<tr>
-<td>jsxlabel</td>
-<td>string</td>
-<td>required</td>
-<td>-</td>
-<td>左侧的说明文字，不写即为留白</td>
-</tr>
-<tr>
-<td>jsxprefixCls</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;kuma-form-field&quot;</td>
-<td>默认类名，用户可以通过修改此项来完成样式的定制</td>
-</tr>
-<tr>
-<td>jsxflex</td>
-<td>number</td>
-<td>optional</td>
-<td>1</td>
-<td>占 FormRow 宽的比例，类似于 css3 中的 flex-box</td>
-</tr>
-<tr>
-<td>jsxtips</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;&quot;</td>
-<td>说明文字</td>
-</tr>
-<tr>
-<td>jsxrules</td>
-<td>object/array</td>
-<td>optional</td>
-<td>-</td>
-<td>validators，具体用法和格式见 Usage，Form 已经提供了一些现成的 validator 供使用。也可以自己编写</td>
-</tr>
-<tr>
-<td>instantValidate</td>
-<td>boolean</td>
-<td>optional</td>
-<td>true</td>
-<td>是否开启即时校验</td>
-</tr>
-</tbody>
-</table>
-<h3 id="validators">Validators</h3><blockquote>
-<p>Form 提供了一些通用的 validator，通过 Form.Validators 来引入。用法还是见 Usage 和 <code>demo/formDemo.js</code> 包括：
-所有的 validator 返回 true，表示通过。
-validator 也可以自己定义，会传入相应的表单值，根据判断，返回 true，表示通过。</p>
-</blockquote>
-<ul>
-<li>isNotEmpty</li>
-<li>isNum</li>
-<li>isInt: 是否是整数</li>
-<li>isDecimal: 是否是小数</li>
-<li>isArray</li>
-<li>isRegExp</li>
-<li>isObject</li>
-<li>isFunc</li>
-<li>isEmail</li>
-<li>isUrl</li>
-<li>isHex</li>
-<li>isIdCard: 是否是中国身份证。</li>
-<li>isCNMobile: 是否是中国手机号。</li>
-</ul>
-<h3 id="formfield-专属配置">FormField 专属配置</h3><blockquote>
-<p>所有的 FormField 都共享通用配置，所有的专属配置在 <code>demo/formDemo.js</code>，均有体现。</p>
-</blockquote>
-<h3 id="inputformfield">InputFormField</h3><table>
-<thead>
-<tr>
-<th>配置项</th>
-<th>类型</th>
-<th>必填</th>
-<th>默认值</th>
-<th>功能/备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>jsxplaceholder</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;&quot;</td>
-<td>占位符</td>
-</tr>
-<tr>
-<td>jsxdisabled</td>
-<td>boolean</td>
-<td>optional</td>
-<td>false</td>
-<td>disable 状态</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p>插件：</p>
-<ul>
-<li>Count，通过 InputFormField.Count 取得，一个内置的计数器，用法如下：</li>
-</ul>
-<div class="highlight"><pre><code class="javascript">&lt;InputFormField&gt;
-    <span class="xml"><span class="tag">&lt;<span class="title">Count</span> <span class="attribute">total</span>=<span class="value">"20"</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">InputFormField</span>&gt;</span></span></code></pre></div><ul>
-<li>LeftAddon/RightAddon，通过 InputFormField.LeftAddon/InputFormField.RightAddon 取得，给 input 左侧加入自定义的图标或文字，用法如下：</li>
-</ul>
-<div class="highlight"><pre><code class="javascript">&lt;InputFormField&gt;
-    <span class="xml"><span class="tag">&lt;<span class="title">LeftAddon</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"kuma-icon kuma-icon-phone"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">LeftAddon</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">RightAddon</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">span</span>&gt;</span>元<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">RightAddon</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">InputFormField</span>&gt;</span></span></code></pre></div></li>
-</ul>
-<h3 id="textareaformfield">TextAreaFormField</h3><table>
-<thead>
-<tr>
-<th>配置项</th>
-<th>类型</th>
-<th>必填</th>
-<th>默认值</th>
-<th>功能/备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>jsxplaceholder</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;&quot;</td>
-<td>占位符</td>
-</tr>
-</tbody>
-</table>
-<h3 id="radiogroupformfield">RadioGroupFormField</h3><ul>
-<li>Item：通过 RadioGroupFormField.Item 取得，有两个 props<ul>
-<li>value</li>
-<li>text：显示的值</li>
-</ul>
-</li>
-<li>使用方式：</li>
-</ul>
-<div class="highlight"><pre><code class="javascript">&lt;RadioGroupFormField&gt;
-    <span class="xml"><span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"1"</span> <span class="attribute">text</span>=<span class="value">"a"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"2"</span> <span class="attribute">text</span>=<span class="value">"b"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"3"</span> <span class="attribute">text</span>=<span class="value">"c"</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">RadioGroupFormField</span>&gt;</span></span></code></pre></div><h3 id="selectformfield">SelectFormField</h3><table>
-<thead>
-<tr>
-<th>配置项</th>
-<th>类型</th>
-<th>必填</th>
-<th>默认值</th>
-<th>功能/备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>jsxdata</td>
-<td>object</td>
-<td>optional</td>
-<td>-</td>
-<td>传入用于生成列表的数据，格式为{value: text}</td>
-</tr>
-<tr>
-<td>jsxfetchUrl</td>
-<td>string</td>
-<td>optional</td>
-<td>-</td>
-<td>如果 Select 是通过搜索异步获取选项，则需要填入此项，目前指支持 jsonp。</td>
-</tr>
-<tr>
-<td>jsxstyle</td>
-<td>obj</td>
-<td>optional</td>
-<td>-</td>
-<td>与 react 传入 style 的方式相同，修改选择框的样式</td>
-</tr>
-<tr>
-<td>beforeFetch</td>
-<td>func</td>
-<td>optional</td>
-<td>-</td>
-<td>会传入 {q: value}， value 为搜索框中变化的值，在发出 ajax 请求之前，将数据处理为应该发送的格式，并需返回该数据。</td>
-</tr>
-<tr>
-<td>afterFetch</td>
-<td>func</td>
-<td>optional</td>
-<td>-</td>
-<td>会传入返回的数据， 将其处理为 jsxdata 的格式并返回</td>
-</tr>
-<tr>
-<td>showSearch</td>
-<td>func</td>
-<td>optional</td>
-<td>true</td>
-<td>是否显示搜索栏</td>
-</tr>
-<tr>
-<td>tags</td>
-<td>bool</td>
-<td>optional</td>
-<td>false</td>
-<td>是否启用 tag 模式</td>
-</tr>
-<tr>
-<td>multiple</td>
-<td>bool</td>
-<td>optional</td>
-<td>false</td>
-<td>是否启用 multiple 模式</td>
-</tr>
-<tr>
-<td>allowClear</td>
-<td>bool</td>
-<td>optional</td>
-<td>false</td>
-<td>是否显示清除按钮</td>
-</tr>
-<tr>
-<td>searchPlaceholder</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;&quot;</td>
-<td>搜索框默认文字</td>
-</tr>
-<tr>
-<td>combobox</td>
-<td>bool</td>
-<td>optional</td>
-<td>false</td>
-<td>标准搜索模式，在该模式下没有下拉框，通过输入产生提示</td>
-</tr>
-<tr>
-<td>placeholder</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;请下拉选择&quot;</td>
-<td>占位符</td>
-</tr>
-<tr>
-<td>disabled</td>
-<td>boolean</td>
-<td>optional</td>
-<td>false</td>
-<td>disable 状态</td>
-</tr>
-<tr>
-<td>optionLabelProp</td>
-<td>string</td>
-<td>optional</td>
-<td>&#39;children&#39;</td>
-<td>选择 Option 的哪个 prop 作为选择框中的显示。</td>
-</tr>
-<tr>
-<td>optionFilterProp</td>
-<td>string</td>
-<td>optional</td>
-<td>-</td>
-<td>输入项过滤对应的 option 属性</td>
-</tr>
-</tbody>
-</table>
-<p>see datails in <a href="https://www.npmjs.com/package/uxcore-select2">uxcore-select2</a></p>
-<h3 id="checkboxgroupformfield">CheckboxGroupFormField</h3><table>
-<thead>
-<tr>
-<th>配置项</th>
-<th>类型</th>
-<th>必填</th>
-<th>默认值</th>
-<th>功能/备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>jsxdisabled</td>
-<td>boolean</td>
-<td>optional</td>
-<td>false</td>
-<td>disable 状态</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Item：通过 CheckboxGroupFormField.Item 取的，有两个 props<ul>
-<li>value</li>
-<li>text：显示的值</li>
-<li>disabled：该 Item 的 disable 状态。</li>
-</ul>
-</li>
-<li>使用方式：</li>
-</ul>
-<div class="highlight"><pre><code class="javascript">&lt;CheckboxGroupFormField&gt;
-    <span class="xml"><span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"1"</span> <span class="attribute">text</span>=<span class="value">"a"</span> <span class="attribute">disabled</span>=<span class="value">{true}</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"2"</span> <span class="attribute">text</span>=<span class="value">"b"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"3"</span> <span class="attribute">text</span>=<span class="value">"c"</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">CheckboxGroupFormField</span>&gt;</span></span></code></pre></div><h3 id="dateformfield">DateFormField</h3><table>
-<thead>
-<tr>
-<th>配置项</th>
-<th>类型</th>
-<th>必填</th>
-<th>默认值</th>
-<th>功能/备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>jsxtype</td>
-<td>string</td>
-<td>optional</td>
-<td>single</td>
-<td>single/cascade 单独、级联</td>
-</tr>
-<tr>
-<td>jsxfrom</td>
-<td>string</td>
-<td>optional</td>
-<td>-</td>
-<td>开始日期</td>
-</tr>
-<tr>
-<td>jsxto</td>
-<td>string</td>
-<td>optional</td>
-<td>-</td>
-<td>结束日期</td>
-</tr>
-</tbody>
-</table>
-<p>除此之外，支持除 onSelect，<a href="https://www.npmjs.com/package/uxcore-calendar">uxcore-calendar</a> 的所有 props。</p>
-<h3 id="numberinputformfield">NumberInputFormField</h3><table>
-<thead>
-<tr>
-<th>配置项</th>
-<th>类型</th>
-<th>必填</th>
-<th>默认值</th>
-<th>功能/备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>jsxplaceholder</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;&quot;</td>
-<td>占位符</td>
-</tr>
-<tr>
-<td>jsxtype</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;&quot;</td>
-<td>目前支持 &quot;money&quot;, &quot;cnmobile&quot; 和 &quot;card&quot;, 提供三种格式化显示的方法。&quot;money&quot;的格式为<code>123 121 121.213 121</code>,&quot;cnmobile&quot;的格式为 <code>86 1565 7263 8223</code>, &quot;card&quot; 的格式为 <code>3321 3123 3243 4343</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="uploadformfield">UploadFormField</h3><blockquote>
-<p>支持 uxcore-uploader 的所有配置项。
-具体说明参考：<a href="https://github.com/uxcore/uxcore-uploader">https://github.com/uxcore/uxcore-uploader</a></p>
-</blockquote>
-<h3 id="cascadeselectformfield">CascadeSelectFormField</h3><table>
-<thead>
-<tr>
-<th>配置项</th>
-<th>类型</th>
-<th>必填</th>
-<th>默认值</th>
-<th>功能/备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>jsxdata</td>
-<td>object</td>
-<td>required</td>
-<td>-</td>
-<td>目前级联选择框，只支持直接传入 data 初始化，格式见 Usage 中的 casData，length 为必须传的 key，告诉 field 有几层级联。</td>
-</tr>
-<tr>
-<td>jsxplaceholder</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;请下拉选择&quot;</td>
-<td>占位符</td>
-</tr>
-<tr>
-<td>jsxstyle</td>
-<td>object</td>
-<td>optional</td>
-<td>-</td>
-<td>与 react 传入 style 的方式相同，修改选择框的样式</td>
-</tr>
-</tbody>
-</table>
-<h3 id="editorformfield">EditorFormField</h3><table>
-<thead>
-<tr>
-<th>配置项</th>
-<th>类型</th>
-<th>必填</th>
-<th>默认值</th>
-<th>功能/备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>jsxcontent</td>
-<td>string</td>
-<td>optional</td>
-<td>&quot;&quot;</td>
-<td>由于 tinymce 的默认值传法的特殊性，EditorFormField 的默认值通过此 prop 传入</td>
-</tr>
-<tr>
-<td>jsxconfig</td>
-<td>object</td>
-<td>optional</td>
-<td>{}</td>
-<td>用户自定义的配置项，tinyMCE 的配置项，官方文档中所有 init 部分的配置在这里完成，详细见 <a href="http://www.tinymce.com/wiki.php/Configuration">http://www.tinymce.com/wiki.php/Configuration</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="gridformfield">GridFormField</h3><blockquote>
-<p>支持 uxcore-grid 的全部配置项，在 Form 中通常只需要传入 column 来生成配置项，见 Usage 中的使用。
-具体说明参考：<a href="https://github.com/uxcore/uxcore-grid">https://github.com/uxcore/uxcore-grid</a></p>
-</blockquote>
-<h3 id="otherformfield">OtherFormField</h3><blockquote>
-<p>OtherFormField 是一个特殊的 FormField，它用来和其他 FormField 一起完成布局（比如在一行排列等），如果需要一些装饰类的东西，可以以子元素的形式传入到这个 Field 里。
-他也可以用于布局中的占位。 </p>
-</blockquote>
-<h3 id="buttongroupformfield">ButtonGroupFormField</h3><blockquote>
-<p>ButtonGroupFormField 是一个特殊的 FormField，它用来生成一些特定的表单按钮，这是为了与 Grid 相结合而准备的。如果需要自定义一些按钮，请使用 OtherFormField 和 uxcore-button 相结合来使用。<br>你可以像这样使用它： </p>
-</blockquote>
-<div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Button = require(<span class="string">'uxcore-button'</span>);
-<span class="xml"><span class="tag">&lt;<span class="title">ButtonGroupFormField</span>&gt;</span>
-    {// handleClick 会被传入一个参数 data，取得的值和 API getValues() 相同}
-    <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">action</span>=<span class="value">"submit"</span> <span class="attribute">onClick</span>=<span class="value">{this.handleClick.bind(this)}</span>/&gt;</span>
-    {// 目前只支持 submit 和 reset 两种 action}
-    <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">action</span>=<span class="value">"reset"</span>/&gt;</span>
-<span class="tag">&lt;/<span class="title">ButtonGroupFormField</span>&gt;</span></span></code></pre></div></div><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-form-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-basic">基本使用</a></div></div><div class="code-box-demo"><div id="components-form-demo-basic"></div></div><div class="code-box-desc"><p>无需任何绑定，只要插入几个标签，就可以完成一个表格的搭建。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li data-id="home"><a href="/">首页</a></li><li data-id="css"><a href="/css/base/">css</a></li><li data-id="components"><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">表单及相关</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li class="current"><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">导航</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">交互提醒</h3><ul><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">布局</h3><ul><li><a href="/components/grid">Grid<small>表格</small></a></li></ul><h3 class="category-name">其它</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">表格</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Form</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>eternalsky</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-form.git" target="_blank">Form</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.2.0</span><span class="description"><i class="fa fa-bookmark"></i>form component for uxcore</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-form-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-basic">基本使用</a></div></div><div class="code-box-demo"><div id="components-form-demo-basic"></div></div><div class="code-box-desc"><p>无需任何绑定，只要插入几个标签，就可以完成一个表格的搭建。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -1946,4 +1353,597 @@ class Demo extends React.Component {
     }
 };
 
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-comp'))</span></code></pre></div></div></div></article></div></body></html>
+ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-comp'))</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><hr>
+<h2 id="usage">Usage</h2><blockquote>
+<p>see demo/FormDemo.js for details<br>每一个 field 需要按照 Form -&gt; FormRow -&gt; FormField 的方式进行嵌套，允许 Form -&gt; FormField 的嵌套，会自动增加 FormRow 这一层，并默认占一整行。</p>
+</blockquote>
+<h2 id="api">API</h2><h3 id="form">Form</h3><ul>
+<li><p>getValues(force) 获取目前的 values 和 pass（是否通过检测）。<br>参数：</p>
+<ul>
+<li>force <code>Boolean</code>: 是否做强制校验，在强制校验的情况下将无视所有 instantValidate 配置。</li>
+</ul>
+</li>
+<li><p>resetValues() 重置所有的 FormField，如果有默认值则重置为默认值。</p>
+</li>
+<li><p>setValues(data) 手动设置各个 FormField 的值，在表单联动时可能会用得到。
+参数：</p>
+<ul>
+<li>data <code>Object</code>: 和 jsxvalues 的格式相同。</li>
+</ul>
+</li>
+<li><p>isDirty() 获取目前的数据是否没有通过检测，返回 true 或 false。</p>
+</li>
+</ul>
+<h2 id="props">props</h2><h3 id="form">Form</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>className</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>加入额外的类名，在使用 kuma 的基础上进行适当的定制时会用得到</td>
+</tr>
+<tr>
+<td>jsxprefixCls</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;kuma-form&quot;</td>
+<td>默认类名，用户可以通过修改此项来完成样式的定制</td>
+</tr>
+<tr>
+<td>jsxmode</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;EDIT&quot;</td>
+<td>Form 编辑和只读模式，传值方式见 demo</td>
+</tr>
+<tr>
+<td>jsxvalues</td>
+<td>object</td>
+<td>optional</td>
+<td>-</td>
+<td>传入表单的初始值，格式见 Usage，每一个 key 与 formField 中的 jsxname 相对应，注意是初始值，不要把 onChange 中的变化同步到这里</td>
+</tr>
+<tr>
+<td>jsxonChange</td>
+<td>function(values, name, pass)</td>
+<td>optional</td>
+<td>noop</td>
+<td>当表单中值有变化时触发，传回 values，格式同 jsxvalues，同时传回发生变化的表单域的 name，以及该表单域是否通过校验</td>
+</tr>
+<tr>
+<td>instantValidate</td>
+<td>boolean</td>
+<td>optional</td>
+<td>true</td>
+<td>是否开启即时校验</td>
+</tr>
+</tbody>
+</table>
+<h3 id="jsxvalues-的格式">jsxvalues 的格式</h3><div class="highlight"><pre><code class="javascript">{
+    jsxname1: value1,
+    jsxname2: value2
+}</code></pre></div><h3 id="formrow">FormRow</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>className</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>加入额外的类名，在使用 kuma 的基础上进行适当的定制时会用得到</td>
+</tr>
+<tr>
+<td>jsxprefixCls</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;kuma-form-row&quot;</td>
+<td>默认类名，用户可以通过修改此项来完成样式的定制</td>
+</tr>
+</tbody>
+</table>
+<h3 id="formfield-通用配置">FormField 通用配置</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>className</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>加入额外的类名，在使用 kuma 的基础上进行适当的定制时会用得到</td>
+</tr>
+<tr>
+<td>jsxshow</td>
+<td>bool</td>
+<td>optional</td>
+<td>true</td>
+<td>是否显示该表单域，不显示的表单域将不占宽度</td>
+</tr>
+<tr>
+<td>jsxmode</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;EDIT&quot;</td>
+<td>FormField 的编辑和只读模式，优先级高于 Form，传值方式见 demo</td>
+</tr>
+<tr>
+<td>jsxshowLabel</td>
+<td>bool</td>
+<td>optional</td>
+<td>true</td>
+<td>是否显示 label</td>
+</tr>
+<tr>
+<td>jsxname</td>
+<td>string</td>
+<td>required</td>
+<td>-</td>
+<td>表单字段，返回值时该字段将作为 key</td>
+</tr>
+<tr>
+<td>jsxlabel</td>
+<td>string</td>
+<td>required</td>
+<td>-</td>
+<td>左侧的说明文字，不写即为留白</td>
+</tr>
+<tr>
+<td>jsxprefixCls</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;kuma-form-field&quot;</td>
+<td>默认类名，用户可以通过修改此项来完成样式的定制</td>
+</tr>
+<tr>
+<td>jsxflex</td>
+<td>number</td>
+<td>optional</td>
+<td>1</td>
+<td>占 FormRow 宽的比例，类似于 css3 中的 flex-box</td>
+</tr>
+<tr>
+<td>jsxtips</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>说明文字</td>
+</tr>
+<tr>
+<td>jsxrules</td>
+<td>object/array</td>
+<td>optional</td>
+<td>-</td>
+<td>validators，具体用法和格式见 Usage，Form 已经提供了一些现成的 validator 供使用。也可以自己编写</td>
+</tr>
+<tr>
+<td>instantValidate</td>
+<td>boolean</td>
+<td>optional</td>
+<td>true</td>
+<td>是否开启即时校验</td>
+</tr>
+</tbody>
+</table>
+<h3 id="validators">Validators</h3><blockquote>
+<p>Form 提供了一些通用的 validator，通过 Form.Validators 来引入。用法还是见 Usage 和 <code>demo/formDemo.js</code> 包括：
+所有的 validator 返回 true，表示通过。
+validator 也可以自己定义，会传入相应的表单值，根据判断，返回 true，表示通过。</p>
+</blockquote>
+<ul>
+<li>isNotEmpty</li>
+<li>isNum</li>
+<li>isInt: 是否是整数</li>
+<li>isDecimal: 是否是小数</li>
+<li>isArray</li>
+<li>isRegExp</li>
+<li>isObject</li>
+<li>isFunc</li>
+<li>isEmail</li>
+<li>isUrl</li>
+<li>isHex</li>
+<li>isIdCard: 是否是中国身份证。</li>
+<li>isCNMobile: 是否是中国手机号。</li>
+</ul>
+<h3 id="formfield-专属配置">FormField 专属配置</h3><blockquote>
+<p>所有的 FormField 都共享通用配置，所有的专属配置在 <code>demo/formDemo.js</code>，均有体现。</p>
+</blockquote>
+<h3 id="inputformfield">InputFormField</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jsxplaceholder</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>占位符</td>
+</tr>
+<tr>
+<td>jsxdisabled</td>
+<td>boolean</td>
+<td>optional</td>
+<td>false</td>
+<td>disable 状态</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>插件：</p>
+<ul>
+<li>Count，通过 InputFormField.Count 取得，一个内置的计数器，用法如下：</li>
+</ul>
+<div class="highlight"><pre><code class="javascript">&lt;InputFormField&gt;
+    <span class="xml"><span class="tag">&lt;<span class="title">Count</span> <span class="attribute">total</span>=<span class="value">"20"</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">InputFormField</span>&gt;</span></span></code></pre></div><ul>
+<li>LeftAddon/RightAddon，通过 InputFormField.LeftAddon/InputFormField.RightAddon 取得，给 input 左侧加入自定义的图标或文字，用法如下：</li>
+</ul>
+<div class="highlight"><pre><code class="javascript">&lt;InputFormField&gt;
+    <span class="xml"><span class="tag">&lt;<span class="title">LeftAddon</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"kuma-icon kuma-icon-phone"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">LeftAddon</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">RightAddon</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">span</span>&gt;</span>元<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">RightAddon</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">InputFormField</span>&gt;</span></span></code></pre></div></li>
+</ul>
+<h3 id="textareaformfield">TextAreaFormField</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jsxplaceholder</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>占位符</td>
+</tr>
+</tbody>
+</table>
+<h3 id="radiogroupformfield">RadioGroupFormField</h3><ul>
+<li>Item：通过 RadioGroupFormField.Item 取得，有两个 props<ul>
+<li>value</li>
+<li>text：显示的值</li>
+</ul>
+</li>
+<li>使用方式：</li>
+</ul>
+<div class="highlight"><pre><code class="javascript">&lt;RadioGroupFormField&gt;
+    <span class="xml"><span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"1"</span> <span class="attribute">text</span>=<span class="value">"a"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"2"</span> <span class="attribute">text</span>=<span class="value">"b"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"3"</span> <span class="attribute">text</span>=<span class="value">"c"</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">RadioGroupFormField</span>&gt;</span></span></code></pre></div><h3 id="selectformfield">SelectFormField</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jsxdata</td>
+<td>object</td>
+<td>optional</td>
+<td>-</td>
+<td>传入用于生成列表的数据，格式为{value: text}</td>
+</tr>
+<tr>
+<td>jsxfetchUrl</td>
+<td>string</td>
+<td>optional</td>
+<td>-</td>
+<td>如果 Select 是通过搜索异步获取选项，则需要填入此项，目前指支持 jsonp。</td>
+</tr>
+<tr>
+<td>jsxstyle</td>
+<td>obj</td>
+<td>optional</td>
+<td>-</td>
+<td>与 react 传入 style 的方式相同，修改选择框的样式</td>
+</tr>
+<tr>
+<td>beforeFetch</td>
+<td>func</td>
+<td>optional</td>
+<td>-</td>
+<td>会传入 {q: value}， value 为搜索框中变化的值，在发出 ajax 请求之前，将数据处理为应该发送的格式，并需返回该数据。</td>
+</tr>
+<tr>
+<td>afterFetch</td>
+<td>func</td>
+<td>optional</td>
+<td>-</td>
+<td>会传入返回的数据， 将其处理为 jsxdata 的格式并返回</td>
+</tr>
+<tr>
+<td>showSearch</td>
+<td>func</td>
+<td>optional</td>
+<td>true</td>
+<td>是否显示搜索栏</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>bool</td>
+<td>optional</td>
+<td>false</td>
+<td>是否启用 tag 模式</td>
+</tr>
+<tr>
+<td>multiple</td>
+<td>bool</td>
+<td>optional</td>
+<td>false</td>
+<td>是否启用 multiple 模式</td>
+</tr>
+<tr>
+<td>allowClear</td>
+<td>bool</td>
+<td>optional</td>
+<td>false</td>
+<td>是否显示清除按钮</td>
+</tr>
+<tr>
+<td>searchPlaceholder</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>搜索框默认文字</td>
+</tr>
+<tr>
+<td>combobox</td>
+<td>bool</td>
+<td>optional</td>
+<td>false</td>
+<td>标准搜索模式，在该模式下没有下拉框，通过输入产生提示</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;请下拉选择&quot;</td>
+<td>占位符</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>boolean</td>
+<td>optional</td>
+<td>false</td>
+<td>disable 状态</td>
+</tr>
+<tr>
+<td>optionLabelProp</td>
+<td>string</td>
+<td>optional</td>
+<td>&#39;children&#39;</td>
+<td>选择 Option 的哪个 prop 作为选择框中的显示。</td>
+</tr>
+<tr>
+<td>optionFilterProp</td>
+<td>string</td>
+<td>optional</td>
+<td>-</td>
+<td>输入项过滤对应的 option 属性</td>
+</tr>
+</tbody>
+</table>
+<p>see datails in <a href="https://www.npmjs.com/package/uxcore-select2">uxcore-select2</a></p>
+<h3 id="checkboxgroupformfield">CheckboxGroupFormField</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jsxdisabled</td>
+<td>boolean</td>
+<td>optional</td>
+<td>false</td>
+<td>disable 状态</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Item：通过 CheckboxGroupFormField.Item 取的，有两个 props<ul>
+<li>value</li>
+<li>text：显示的值</li>
+<li>disabled：该 Item 的 disable 状态。</li>
+</ul>
+</li>
+<li>使用方式：</li>
+</ul>
+<div class="highlight"><pre><code class="javascript">&lt;CheckboxGroupFormField&gt;
+    <span class="xml"><span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"1"</span> <span class="attribute">text</span>=<span class="value">"a"</span> <span class="attribute">disabled</span>=<span class="value">{true}</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"2"</span> <span class="attribute">text</span>=<span class="value">"b"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"3"</span> <span class="attribute">text</span>=<span class="value">"c"</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">CheckboxGroupFormField</span>&gt;</span></span></code></pre></div><h3 id="dateformfield">DateFormField</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jsxtype</td>
+<td>string</td>
+<td>optional</td>
+<td>single</td>
+<td>single/cascade 单独、级联</td>
+</tr>
+<tr>
+<td>jsxfrom</td>
+<td>string</td>
+<td>optional</td>
+<td>-</td>
+<td>开始日期</td>
+</tr>
+<tr>
+<td>jsxto</td>
+<td>string</td>
+<td>optional</td>
+<td>-</td>
+<td>结束日期</td>
+</tr>
+</tbody>
+</table>
+<p>除此之外，支持除 onSelect，<a href="https://www.npmjs.com/package/uxcore-calendar">uxcore-calendar</a> 的所有 props。</p>
+<h3 id="numberinputformfield">NumberInputFormField</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jsxplaceholder</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>占位符</td>
+</tr>
+<tr>
+<td>jsxtype</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>目前支持 &quot;money&quot;, &quot;cnmobile&quot; 和 &quot;card&quot;, 提供三种格式化显示的方法。&quot;money&quot;的格式为<code>123 121 121.213 121</code>,&quot;cnmobile&quot;的格式为 <code>86 1565 7263 8223</code>, &quot;card&quot; 的格式为 <code>3321 3123 3243 4343</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="uploadformfield">UploadFormField</h3><blockquote>
+<p>支持 uxcore-uploader 的所有配置项。
+具体说明参考：<a href="https://github.com/uxcore/uxcore-uploader">https://github.com/uxcore/uxcore-uploader</a></p>
+</blockquote>
+<h3 id="cascadeselectformfield">CascadeSelectFormField</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jsxdata</td>
+<td>object</td>
+<td>required</td>
+<td>-</td>
+<td>目前级联选择框，只支持直接传入 data 初始化，格式见 Usage 中的 casData，length 为必须传的 key，告诉 field 有几层级联。</td>
+</tr>
+<tr>
+<td>jsxplaceholder</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;请下拉选择&quot;</td>
+<td>占位符</td>
+</tr>
+<tr>
+<td>jsxstyle</td>
+<td>object</td>
+<td>optional</td>
+<td>-</td>
+<td>与 react 传入 style 的方式相同，修改选择框的样式</td>
+</tr>
+</tbody>
+</table>
+<h3 id="editorformfield">EditorFormField</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>jsxcontent</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>由于 tinymce 的默认值传法的特殊性，EditorFormField 的默认值通过此 prop 传入</td>
+</tr>
+<tr>
+<td>jsxconfig</td>
+<td>object</td>
+<td>optional</td>
+<td>{}</td>
+<td>用户自定义的配置项，tinyMCE 的配置项，官方文档中所有 init 部分的配置在这里完成，详细见 <a href="http://www.tinymce.com/wiki.php/Configuration">http://www.tinymce.com/wiki.php/Configuration</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="gridformfield">GridFormField</h3><blockquote>
+<p>支持 uxcore-grid 的全部配置项，在 Form 中通常只需要传入 column 来生成配置项，见 Usage 中的使用。
+具体说明参考：<a href="https://github.com/uxcore/uxcore-grid">https://github.com/uxcore/uxcore-grid</a></p>
+</blockquote>
+<h3 id="otherformfield">OtherFormField</h3><blockquote>
+<p>OtherFormField 是一个特殊的 FormField，它用来和其他 FormField 一起完成布局（比如在一行排列等），如果需要一些装饰类的东西，可以以子元素的形式传入到这个 Field 里。
+他也可以用于布局中的占位。</p>
+</blockquote>
+<h3 id="buttongroupformfield">ButtonGroupFormField</h3><blockquote>
+<p>ButtonGroupFormField 是一个特殊的 FormField，它用来生成一些特定的表单按钮，这是为了与 Grid 相结合而准备的。如果需要自定义一些按钮，请使用 OtherFormField 和 uxcore-button 相结合来使用。<br>你可以像这样使用它：</p>
+</blockquote>
+<div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Button = require(<span class="string">'uxcore-button'</span>);
+<span class="xml"><span class="tag">&lt;<span class="title">ButtonGroupFormField</span>&gt;</span>
+    {// handleClick 会被传入一个参数 data，取得的值和 API getValues() 相同}
+    <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">action</span>=<span class="value">"submit"</span> <span class="attribute">onClick</span>=<span class="value">{this.handleClick.bind(this)}</span>/&gt;</span>
+    {// 目前只支持 submit 和 reset 两种 action}
+    <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">action</span>=<span class="value">"reset"</span>/&gt;</span>
+<span class="tag">&lt;/<span class="title">ButtonGroupFormField</span>&gt;</span></span></code></pre></div></div></article></div></body></html>

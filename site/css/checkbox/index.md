@@ -1,8 +1,8 @@
-# Checkbox Radio
+# Checkbox
 
 - order: 3
 - category: CSS
-- chinese:　单选框&复选框
+- chinese:　单/复选框
 
 ---
 

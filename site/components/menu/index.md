@@ -1,8 +1,9 @@
 # Menu
 
 - category: Components
-- chinese: Menu 导航菜单
+- chinese: 导航菜单
 - order: 18
+- subtype: 导航
 
 ---
 

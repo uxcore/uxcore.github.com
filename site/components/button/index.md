@@ -1,6 +1,7 @@
 # Button
 
 - category: Components
+- subtype: 表单及相关
 - chinese:　按钮
 
 ---

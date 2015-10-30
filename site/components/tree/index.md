@@ -1,8 +1,9 @@
 # Tree
 
 - category: Components
-- chinese: Tree组件
+- chinese: 树形控件
 - order: 10
+- subtype: 导航
 
 ---
 

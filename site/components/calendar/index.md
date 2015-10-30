@@ -3,6 +3,7 @@
 - category: Components
 - chinese: 日期选择框
 - order: 0
+- subtype: 表单及相关
 
 ---
 

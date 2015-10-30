@@ -9,7 +9,7 @@ body {
 	font-family: 'Helvetica Neue', Helvetica, "Hiragino Sans GB", "Microsoft YaHei",
              "WenQuanYi Micro Hei", sans-serif;
 	 background: @white;
-	 font-size: 14px;
+	 font-size: 13px;
 	 color: #777;
 }
 .head-collapse {
@@ -116,29 +116,50 @@ body {
 .site-aside {
 	min-width: 180px;
 	background-color: @grey;
+	.category-name {
+		margin: 8px 0 0;
+		padding-left: 10px;
+		font-size: 12px;
+		color: #999;
+	}
 	ul {
 		position: sticky;
 		top: 60px;
 	}
 	li {
 		@item-height: 40px;
-		padding: 0 @g-padding;
 		height: @item-height;
 		font-size: 14px;
 		line-height: @item-height;
 		&.current {
 			background-color: @white;
 			border-left: 2px solid @oranage;
-			a {
+			a, small {
 				color: @oranage;
 			}
 		}
-	}
-	a {
-		color: #333;
+		small {
+			padding-left: 10px;
+			font-size: 12px;
+			color: #bbb;
+		}
+		a {
+			display: block;
+			padding: 0 @g-padding;
+			color: #333;
+			transition: transform ease-in .1s;
+			&:hover {
+				text-decoration: none;
+				color: @oranage;
+				small {
+					color: @oranage;
+				}
+			}
+		}
 		&:hover {
-			text-decoration: none;
-			color: @oranage;
+			a {
+				transform: translateX(3px);
+			}
 		}
 	}
 }
@@ -240,6 +261,21 @@ body {
 	}
 	img {
 		max-width: 100%;
+	}
+	> ul {
+		> li {
+			list-style: circle;
+			margin-left: 20px;
+			padding-left: 8px;
+			ul {
+				margin: .5rem 0;
+			}
+			li {
+				margin-left: 20px;
+				padding-left: 8px;
+				list-style: disc;
+			}
+		}
 	}
 }
 .site-demos {

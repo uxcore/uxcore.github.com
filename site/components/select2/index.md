@@ -3,6 +3,7 @@
 - category: Components
 - chinese: 选择器
 - order: 2
+- subtype: 表单及相关
 
 ---
 

@@ -1,8 +1,9 @@
 # Uploader
 
 - category: Components
-- chinese: Uploader组件
+- chinese: 文件上传
 - order: 14
+- subtype: 表单及相关
 
 ---
 

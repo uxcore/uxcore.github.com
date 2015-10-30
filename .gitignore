@@ -28,3 +28,4 @@ build/
 theme/**/*.map
 .publish
 _site/**/*
+*.sublime-*

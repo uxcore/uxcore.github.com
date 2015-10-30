@@ -4,6 +4,7 @@
 - chinese: 表格
 - description: uxcore table, will including checkbox, edit text field, column pick etc
 - order: 6
+- subtype: 表格
 
 ---
 
@@ -29,7 +30,7 @@ $ gulp server
 |showHeader      |boolean             |optional|true   ||
 |headerHeight    |number              |optional|40     ||
 |showMask        |boolean             |optional|true   ||
-|showSearch      |boolean             |optional|false  || 
+|showSearch      |boolean             |optional|false  ||
 |pageSize        |number              |optional|10     ||
 |queryKeys       |array               |optional|[]     |in subComp mode, it tells parent what datas need to pass to child, like a filter, the parent will pass all his data to his child if queryKey is undefined|
 |jsxdata         |object              |optional|-      |table data|
@@ -45,7 +46,7 @@ $ gulp server
 
 ### Props you should not define by yourself
 
-|props name       |  defalut Value  |  Note   | 
+|props name       |  defalut Value  |  Note   |
 |-----------      |  ------         |  -----    |
 |passedData       |  null           |  Data passed from parent|
 
@@ -54,7 +55,7 @@ $ gulp server
 ## Columns
 
 
-|Key Name       |  Require  |  Type       | Note   | 
+|Key Name       |  Require  |  Type       | Note   |
 |-----------    |  ------   |  ---------- | -----  |
 |dataKey        |  required |  string     | use key |
 |title          |  required |  string     | column display name |
@@ -73,7 +74,7 @@ $ gulp server
 
 ## Rules
 
- > return data format [here](http://gitlab.alibaba-inc.com/alinw/yosemite/issues/18) 
+ > return data format [here](http://gitlab.alibaba-inc.com/alinw/yosemite/issues/18)
 
 
 ## API

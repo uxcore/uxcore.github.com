@@ -1,12 +1,10 @@
 # Form
 
 - order: 7
-- tag: uxcore, form
 - description: stupid form
-- maintainers: 骁勇
-- version: 1.0.5
-- lastupdate: 2015/9/10
 - screenshots: example/screenshot.png
+- chinese: 表单
+- subtype: 表单及相关
 
 ---
 
@@ -79,7 +77,7 @@
 |jsxrules|object/array|optional|-|validators，具体用法和格式见 Usage，Form 已经提供了一些现成的 validator 供使用。也可以自己编写|
 |instantValidate|boolean|optional|true|是否开启即时校验|
 
-### Validators 
+### Validators
 
 > Form 提供了一些通用的 validator，通过 Form.Validators 来引入。用法还是见 Usage 和 `demo/formDemo.js` 包括：
 > 所有的 validator 返回 true，表示通过。
@@ -240,12 +238,12 @@ see datails in [uxcore-select2](https://www.npmjs.com/package/uxcore-select2)
 ### OtherFormField
 
 > OtherFormField 是一个特殊的 FormField，它用来和其他 FormField 一起完成布局（比如在一行排列等），如果需要一些装饰类的东西，可以以子元素的形式传入到这个 Field 里。
-> 他也可以用于布局中的占位。 
+> 他也可以用于布局中的占位。
 
 ### ButtonGroupFormField
 
 > ButtonGroupFormField 是一个特殊的 FormField，它用来生成一些特定的表单按钮，这是为了与 Grid 相结合而准备的。如果需要自定义一些按钮，请使用 OtherFormField 和 uxcore-button 相结合来使用。  
-你可以像这样使用它： 
+你可以像这样使用它：
 
 ```javascript
 var Button = require('uxcore-button');
@@ -256,9 +254,3 @@ var Button = require('uxcore-button');
     <Button action="reset"/>
 </ButtonGroupFormField>
 ```
-
-
-
-
-
-

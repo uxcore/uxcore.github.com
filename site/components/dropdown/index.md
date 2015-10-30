@@ -3,6 +3,7 @@
 - order: 8
 - category: Components
 - chinese: 下拉菜单
+- subtype: 导航
 
 ---
 

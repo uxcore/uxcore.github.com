@@ -3,6 +3,7 @@
 - category: Components
 - chinese: 分页
 - order: 3
+- subtype: 导航
 
 ---
 
