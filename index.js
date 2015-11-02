@@ -24,6 +24,11 @@ window.UXCORE = {
 	'uxcore-uploader': require('uxcore-uploader'),
 	'uxcore-menu': require('uxcore-menu'),
 	'uxcore-layout': require('uxcore-layout'),
+	'uxcore-crumb': require('uxcore-crumb'),
+	'uxcore-multi-select': require('uxcore-multi-select'),
+	'uxcore-totop': require('uxcore-totop'),
+	'uxcore-checkbox-group': require('uxcore-checkbox-group'),
+	'uxcore-radiogroup': require('uxcore-radiogroup'),
 	'classnames': require('classnames')
 };
 
