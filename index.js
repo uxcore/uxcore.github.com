@@ -23,7 +23,8 @@ window.UXCORE = {
 	'uxcore-steps': require('uxcore-steps'),
 	'uxcore-uploader': require('uxcore-uploader'),
 	'uxcore-menu': require('uxcore-menu'),
-	'uxcore-layout': require('uxcore-layout')
+	'uxcore-layout': require('uxcore-layout'),
+	'classnames': require('classnames')
 };
 
 /*

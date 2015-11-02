@@ -34,11 +34,13 @@ ReactDOM.render(<Demo />, document.getElementById('components-layout-demo-rightf
   text-align: center;
   line-height: 200px;
   font-size: 32px;
+  background: lightblue;
 }
 .layoutDemo .right {
   text-align: center;
   line-height: 200px;
   font-size: 32px;
+  background: yellowgreen;
 }
 .layoutDemo.fixed {
   min-width: 1000px;
