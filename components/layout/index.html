@@ -1,0 +1,396 @@
+<!DOCTYPE html><html><head><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/uxcore.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/0.14.0/react-with-addons.js,react/0.14.0/react-dom.min.js,rangy/1.3.0/rangy-core.min.js,jquery/1.11.3/jquery.min.js"></script><script src="/static/highlight.min.js"></script><script src="/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
+	w.require = function(name){
+		return w.UXCORE[name];
+	}
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li data-id="home"><a href="/">首页</a></li><li data-id="css"><a href="/css/base/">css</a></li><li data-id="components"><a href="/components/calendar/">组件</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">表单及相关</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">导航</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">交互提醒</h3><ul><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">布局</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li class="current"><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">其它</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">表格</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Layout</h1><section class="meta"><span class="author"><i class="fa fa-user"></i><a href="mailto:wsj7552715@hotmail.com">eternalsky</a></span><span class="github"><i class="fa fa-github"></i><a href="ssh://git@github.com/uxcore/uxcore-layout.git" target="_blank">Layout</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.0.2</span><span class="description"><i class="fa fa-bookmark"></i>uxcore-layout ui component for react</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-layout-demo-leftfixed" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-layout-demo-leftfixed">左侧自适应，右侧固定</a></div></div><div class="code-box-demo"><div id="components-layout-demo-leftfixed"></div></div><div class="code-box-desc"><p>右侧定宽 190 px，左侧自适应</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Layout = require('uxcore-layout');
+var Left = Layout.Left;
+var Right = Layout.Right;
+
+var classnames = require('classnames');
+
+var Demo = (function (_React$Component) {
+    _inherits(Demo, _React$Component);
+
+    function Demo(props) {
+        _classCallCheck(this, Demo);
+
+        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+    }
+
+    _createClass(Demo, [{
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(
+                    Layout,
+                    { className: 'layoutDemo' },
+                    React.createElement(
+                        Left,
+                        { adaptive: true, className: 'left' },
+                        '左'
+                    ),
+                    React.createElement(
+                        Right,
+                        { width: 190, className: 'right' },
+                        '右'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Demo;
+})(React.Component);
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-layout-demo-leftfixed'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Layout = require(<span class="string">'uxcore-layout'</span>);
+<span class="keyword">let</span> {Left, Right} = Layout;
+<span class="keyword">let</span> classnames = require(<span class="string">'classnames'</span>);
+
+class Demo extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Layout</span> <span class="attribute">className</span>=<span class="value">"layoutDemo"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Left</span> <span class="attribute">adaptive</span>=<span class="value">{true}</span> <span class="attribute">className</span>=<span class="value">"left"</span>&gt;</span>左<span class="tag">&lt;/<span class="title">Left</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Right</span> <span class="attribute">width</span>=<span class="value">{190}</span> <span class="attribute">className</span>=<span class="value">"right"</span>&gt;</span>右<span class="tag">&lt;/<span class="title">Right</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">Layout</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+    }
+}
+
+ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-layout-demo-leftfixed'))</span></code></pre></div><style type="text/css">.layoutDemo .left {
+  text-align: center;
+  line-height: 200px;
+  font-size: 32px;
+}
+.layoutDemo .right {
+  text-align: center;
+  line-height: 200px;
+  font-size: 32px;
+}
+.layoutDemo.fixed {
+  min-width: 1000px;
+}
+.layoutDemo p {
+  font-size: 24px;
+}</style><div class="highlight"><pre><code class="css"><span class="class">.layoutDemo</span> <span class="class">.left</span> <span class="rules">{
+  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
+  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">200</span>px</span></span>;
+  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">32</span>px</span></span>;
+<span class="rule">}</span></span>
+<span class="class">.layoutDemo</span> <span class="class">.right</span> <span class="rules">{
+  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
+  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">200</span>px</span></span>;
+  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">32</span>px</span></span>;
+<span class="rule">}</span></span>
+<span class="class">.layoutDemo</span><span class="class">.fixed</span> <span class="rules">{
+  <span class="rule"><span class="attribute">min-width</span>:<span class="value"> <span class="number">1000</span>px</span></span>;
+<span class="rule">}</span></span>
+<span class="class">.layoutDemo</span> <span class="tag">p</span> <span class="rules">{
+  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">24</span>px</span></span>;
+<span class="rule">}</span></span></code></pre></div></div></div><div id="code-box-components-layout-demo-rightfixed" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-layout-demo-rightfixed">右侧自适应，左侧固定</a></div></div><div class="code-box-demo"><div id="components-layout-demo-rightfixed"></div></div><div class="code-box-desc"><p>左侧定宽 190 px，右侧自适应</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Layout = require('uxcore-layout');
+var Left = Layout.Left;
+var Right = Layout.Right;
+
+var classnames = require('classnames');
+
+var Demo = (function (_React$Component) {
+    _inherits(Demo, _React$Component);
+
+    function Demo(props) {
+        _classCallCheck(this, Demo);
+
+        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+    }
+
+    _createClass(Demo, [{
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(
+                    Layout,
+                    { className: 'layoutDemo' },
+                    React.createElement(
+                        Left,
+                        { width: 190, className: 'left' },
+                        '左'
+                    ),
+                    React.createElement(
+                        Right,
+                        { adaptive: true, className: 'right' },
+                        '右'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Demo;
+})(React.Component);
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-layout-demo-rightfixed'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Layout = require(<span class="string">'uxcore-layout'</span>);
+<span class="keyword">let</span> {Left, Right} = Layout;
+<span class="keyword">let</span> classnames = require(<span class="string">'classnames'</span>);
+
+class Demo extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Layout</span> <span class="attribute">className</span>=<span class="value">"layoutDemo"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Left</span> <span class="attribute">width</span>=<span class="value">{190}</span> <span class="attribute">className</span>=<span class="value">"left"</span>&gt;</span>左<span class="tag">&lt;/<span class="title">Left</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Right</span> <span class="attribute">adaptive</span>=<span class="value">{true}</span> <span class="attribute">className</span>=<span class="value">"right"</span>&gt;</span>右<span class="tag">&lt;/<span class="title">Right</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">Layout</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+    }
+}
+
+ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-layout-demo-rightfixed'))</span></code></pre></div><style type="text/css">.layoutDemo .left {
+  text-align: center;
+  line-height: 200px;
+  font-size: 32px;
+}
+.layoutDemo .right {
+  text-align: center;
+  line-height: 200px;
+  font-size: 32px;
+}
+.layoutDemo.fixed {
+  min-width: 1000px;
+}
+.layoutDemo p {
+  font-size: 24px;
+}</style><div class="highlight"><pre><code class="css"><span class="class">.layoutDemo</span> <span class="class">.left</span> <span class="rules">{
+  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
+  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">200</span>px</span></span>;
+  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">32</span>px</span></span>;
+<span class="rule">}</span></span>
+<span class="class">.layoutDemo</span> <span class="class">.right</span> <span class="rules">{
+  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
+  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">200</span>px</span></span>;
+  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">32</span>px</span></span>;
+<span class="rule">}</span></span>
+<span class="class">.layoutDemo</span><span class="class">.fixed</span> <span class="rules">{
+  <span class="rule"><span class="attribute">min-width</span>:<span class="value"> <span class="number">1000</span>px</span></span>;
+<span class="rule">}</span></span>
+<span class="class">.layoutDemo</span> <span class="tag">p</span> <span class="rules">{
+  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">24</span>px</span></span>;
+<span class="rule">}</span></span></code></pre></div></div></div><div id="code-box-components-layout-demo-bothfixed" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-layout-demo-bothfixed">左右都固定</a></div></div><div class="code-box-demo"><div id="components-layout-demo-bothfixed"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Layout = require('uxcore-layout');
+var Left = Layout.Left;
+var Right = Layout.Right;
+
+var classnames = require('classnames');
+
+var Demo = (function (_React$Component) {
+    _inherits(Demo, _React$Component);
+
+    function Demo(props) {
+        _classCallCheck(this, Demo);
+
+        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+    }
+
+    _createClass(Demo, [{
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(
+                    Layout,
+                    { className: 'layoutDemo fixed' },
+                    React.createElement(
+                        Left,
+                        { width: 500, className: 'left' },
+                        '左'
+                    ),
+                    React.createElement(
+                        Right,
+                        { width: 500, className: 'right' },
+                        '右'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Demo;
+})(React.Component);
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-layout-demo-bothfixed'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Layout = require(<span class="string">'uxcore-layout'</span>);
+<span class="keyword">let</span> {Left, Right} = Layout;
+<span class="keyword">let</span> classnames = require(<span class="string">'classnames'</span>);
+
+class Demo extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Layout</span> <span class="attribute">className</span>=<span class="value">"layoutDemo fixed"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Left</span> <span class="attribute">width</span>=<span class="value">{500}</span> <span class="attribute">className</span>=<span class="value">"left"</span>&gt;</span>左<span class="tag">&lt;/<span class="title">Left</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Right</span> <span class="attribute">width</span>=<span class="value">{500}</span> <span class="attribute">className</span>=<span class="value">"right"</span>&gt;</span>右<span class="tag">&lt;/<span class="title">Right</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">Layout</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+    }
+}
+
+ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-layout-demo-bothfixed'))</span></code></pre></div><style type="text/css">.layoutDemo .left {
+  text-align: center;
+  line-height: 200px;
+  font-size: 32px;
+}
+.layoutDemo .right {
+  text-align: center;
+  line-height: 200px;
+  font-size: 32px;
+}
+.layoutDemo.fixed {
+  min-width: 1000px;
+}
+.layoutDemo p {
+  font-size: 24px;
+}</style><div class="highlight"><pre><code class="css"><span class="class">.layoutDemo</span> <span class="class">.left</span> <span class="rules">{
+  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
+  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">200</span>px</span></span>;
+  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">32</span>px</span></span>;
+<span class="rule">}</span></span>
+<span class="class">.layoutDemo</span> <span class="class">.right</span> <span class="rules">{
+  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
+  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">200</span>px</span></span>;
+  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">32</span>px</span></span>;
+<span class="rule">}</span></span>
+<span class="class">.layoutDemo</span><span class="class">.fixed</span> <span class="rules">{
+  <span class="rule"><span class="attribute">min-width</span>:<span class="value"> <span class="number">1000</span>px</span></span>;
+<span class="rule">}</span></span>
+<span class="class">.layoutDemo</span> <span class="tag">p</span> <span class="rules">{
+  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">24</span>px</span></span>;
+<span class="rule">}</span></span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="usage">Usage</h2><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Layout = require(<span class="string">'uxcore-layout'</span>);
+<span class="keyword">let</span> {Left, Right} = Layout;
+<span class="keyword">let</span> classnames = require(<span class="string">'classnames'</span>);
+
+class Demo extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>左侧自适应，右侧固定<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Layout</span> <span class="attribute">className</span>=<span class="value">"layoutDemo"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Left</span> <span class="attribute">adaptive</span>=<span class="value">{true}</span> <span class="attribute">className</span>=<span class="value">"left"</span>&gt;</span>左<span class="tag">&lt;/<span class="title">Left</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Right</span> <span class="attribute">width</span>=<span class="value">{190}</span> <span class="attribute">className</span>=<span class="value">"right"</span>&gt;</span>右<span class="tag">&lt;/<span class="title">Right</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">Layout</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>右侧自适应，左侧固定<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Layout</span> <span class="attribute">className</span>=<span class="value">"layoutDemo"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Left</span> <span class="attribute">width</span>=<span class="value">{190}</span> <span class="attribute">className</span>=<span class="value">"left"</span>&gt;</span>左<span class="tag">&lt;/<span class="title">Left</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Right</span> <span class="attribute">adaptive</span>=<span class="value">{true}</span> <span class="attribute">className</span>=<span class="value">"right"</span>&gt;</span>右<span class="tag">&lt;/<span class="title">Right</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">Layout</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>左右都固定<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Layout</span> <span class="attribute">className</span>=<span class="value">"layoutDemo"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Left</span> <span class="attribute">width</span>=<span class="value">{500}</span> <span class="attribute">className</span>=<span class="value">"left"</span>&gt;</span>左<span class="tag">&lt;/<span class="title">Left</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Right</span> <span class="attribute">width</span>=<span class="value">{500}</span> <span class="attribute">className</span>=<span class="value">"right"</span>&gt;</span>右<span class="tag">&lt;/<span class="title">Right</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">Layout</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+    }
+}
+
+module.exports = Demo;</span></code></pre></div><h2 id="props">Props</h2><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>className</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>加入额外的类名，在使用 kuma 的基础上进行适当的定制时会用得到</td>
+</tr>
+</tbody>
+</table>
+<h2 id="子组件">子组件</h2><h3 id="left-right">Left/Right</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>className</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>加入额外的类名，在使用 kuma 的基础上进行适当的定制时会用得到</td>
+</tr>
+<tr>
+<td>width</td>
+<td>number</td>
+<td>optional</td>
+<td>500</td>
+<td>布局块的宽度，仅在定宽时起作用</td>
+</tr>
+<tr>
+<td>adaptive</td>
+<td>boolean</td>
+<td>optional</td>
+<td>false</td>
+<td>是否为自适应，未设定 adaptive=true 的一侧，则为定宽，不可两者皆为自适应</td>
+</tr>
+</tbody>
+</table>
+</div></article></div></body></html>
