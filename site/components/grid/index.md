@@ -1,180 +1,84 @@
 # Grid
 
 - category: Components
-- chinese: 表格
+- chinese: 栅格
 - description: uxcore gird, will including checkbox, edit text field, column pick etc
-- order: 6
+- order: 1
 - subtype: 布局
 
 ---
 
-![](https://github.com/uxcore/uxcore-grid/raw/master/demo/screenshot.png)
-
-## Best Practice
-
-```javascript
-
-let columns = [
-	{ dataKey: 'id', title: 'ID', width: 50,hidden:true},
-	{ dataKey: 'country', title:'国家', width: 200,ordered:true},
-	{ dataKey: 'city',title:'城市', width: 150,ordered:true },
-	{ dataKey: 'firstName',title:"FristName" },  
-	{ dataKey: 'lastName' ,title:"LastName"},
-	{ dataKey: 'email',title:"Email",width: 200,ordered:true }
-],
 
 
-rowSelection = {
-  onSelect: function(record, selected, selectedRows) {
-	console.log(record, selected, selectedRows);
-  },
-  onSelectAll: function(selected, selectedRows) {
-	console.log(selected, selectedRows);
-  }
-},
 
-renderProps={
-	actionBar: {
-	   'new': function(type){ alert(type); },
-	   'import': function(type){ alert(type); },
-	   'export': function(type){ alert(type); }
-	},
-	fetchUrl:"http://localhost:3000/demo/data.json",
-	jsxcolumns:columns,
-	subComp:(<Grid {...renderSubProps}  ref="subGrid"/>),
-	rowSelection: rowSelection
-},
 
-renderSubProps={
-	jsxcolumns:columns,
-	fetchUrl:"http://localhost:3000/demo/data.json",
-	queryKeys:["dataKey","firstName"],
-	onModifyRow: this.onModifyRow
-};
+## Usage
 
-<Grid {...renderProps} />
+```js
+let Grid = require('uxcore-grid');
+let {Row, Col} = Grid;
+<Grid>
+    <Row className="show-grid">
+        <Col xs={12} md={8}><code>&lt;{'Col xs={12} md={8}'} /&gt;</code></Col>
+        <Col xs={6} md={4}><code>&lt;{'Col xs={6} md={4}'} /&gt;</code></Col>
+    </Row>
 
+    <Row className="show-grid">
+        <Col xs={6} md={4}><code>&lt;{'Col xs={6} md={4}'} /&gt;</code></Col>
+        <Col xs={6} md={4}><code>&lt;{'Col xs={6} md={4}'} /&gt;</code></Col>
+        <Col xs={6} md={4}><code>&lt;{'Col xs={6} md={4}'} /&gt;</code></Col>
+    </Row>
+
+    <Row className="show-grid">
+         <Col xs={6} xsOffset={6}><code>&lt;{'Col xs={6} xsOffset={6}'} /&gt;</code></Col>
+    </Row>
+
+    <Row className="show-grid">
+        <Col md={6} mdPush={6}><code>&lt;{'Col md={6} mdPush={6}'} /&gt;</code></Col>
+        <Col md={6} mdPull={6}><code>&lt;{'Col md={6} mdPull={6}'} /&gt;</code></Col>
+    </Row>
+</Grid>
 ```
-
-## Props
-
-|props name       |  defalut Value  |  Note   |
-|-----------      |  ------         | -----    |
-|width            |  1000           | grid width |
-|height           |  100%           | gird height |
-|showColumnPicker |  true           |   |
-|showPager        |  true           |   |
-|showHeader       |  true           |   |
-|headerHeight     |  40             |   |
-|showMask         |  true           |   |
-|showSearch       |  false          |   |
-|pageSize         |  10             |   |
-|queryKeys        |  []             | in subComp mode, it tells parent what datas need to pass to child, like a filter, the parent will pass all his data to his child if queryKey is undefined|
-|jsxcolumns       |  null           | columns config |
-|jsxdata          |  null           | grid data |
-|fetchUrl         |  ""             | dynamic get data from server |
-|fetchParams      |  {}             | in form-grid mode, form will pass fetch params for grid |
-|actionBar        |  null           | actionBar configuration |
-|beforeFetch      |  noop           | invoked before the grid fetch data, two params `data` and `from`, `data` is the one which will be passed as querys in ajax, `from` means where the fetch is invoked containing 3 preset values `search`,`order` & `pagination`.return the data you really want ajax to send.|
-|processData      |  noop           | sometimes the data fetched via ajax is not the one which you or grid want, you can use this method to change the data and return it to grid. the param is the data which grid is ready to use for rendering|
-
-
-### Props you should not define by yourself
-
-> Parent will pass this props to his child  
-
-|props name       |  defalut Value  |  Note   |
-|-----------      |  ------         |  -----    |
-|passedData       |  null           |  Data passed from parent|
-
-
-
-### Columns
-
-
-|Key Name       |  require  |  value type  | Note   |
-|-----------    |  ------   |   ---------- | -----  |
-|dataKey        |  yes      |  string      | use key |
-|title          |  yes      |  string      | column display name |
-|width          |  yes      |  number      |   |
-|hidden         |  optional |  boolean     |   |
-|order          |  optional |  boolean     | need order feature or not |
-|type           |  optional |  string      | containing 'money', 'card', 'cnmobile' & 'action' |
-|items          |  yes      |  array       | when type =='action', we need this attr |
-|[render](https://github.com/uxcore/uxcore-grid/issues/30)         |  optional |  function    | for custom cell |
-| [beforeRender](https://github.com/uxcore/uxcore-grid/issues/30)  |  optional |  function    | for custom cell data |
-|delimiter      |  optional |  string      | delimiter used in type 'money', 'card', 'cnmobile' formating|
-
-
-```
-
-let columns = [
-            { dataKey: 'id', title: 'ID', width: 50,hidden:true},
-            { dataKey: 'country', title:'国家', width: 200,ordered:true},
-            { dataKey: 'city',title:'城市', width: 150,ordered:true },
-            { dataKey: 'firstName',title:"FristName" },  
-            { dataKey: 'lastName' ,title:"LastName", beforeRender: function(rowData){
-            	//do logic , then return cell data
-            	return 'abc';
-            }},
-            { dataKey: 'email',title:"Email",width: 200,ordered:true },
-            { dataKey: 'action1', title:'操作1', width:100, type:"action",actions:{
-                "编辑": function(rowData) {
-                    me.refs.grid.toggleSubComp(rowData);
-                },
-                "删除": function(rowData) {
-                    me.refs.grid.delRow(rowData);
-                }
-             }},
-            { dataKey: 'action', title:'链接', width:100,render: function(cellData,rowData){
-               return <div><a href="#">{rowData.email}</a></div>
-              }
-            }
-     ]
-
-```
-
-
-
-## Rules
-
- * return data format [here](http://gitlab.alibaba-inc.com/alinw/yosemite/issues/18)
-
- ```
-   {
-	"content":{
-		"datas":[
-			{
-				"id":'1'
-				"grade":"grade1",
-				"email":"email1",
-				"firstName":"firstName1",
-				"lastName":"lastName1",
-				"birthDate":"birthDate1",
-				"country":"country1",
-				"city":"city1"
-			}
-			...
-
-		],
-		"currentPage":1,
-		"totalCount":30
-	},
-	"success":true,
-	"errorCode":"",
-	"errorMsg":""
-	}
-
- ```
 
 ## API
 
-* fetchData(from): call this method when you want the grid to fetch Data via ajax again.
-    * @param from {string} optional: the param will be passed to props.beforeFetch, use it when you want to do something different by judging this param.
-* getData()
-* addEmptyRow()
-* addRow(rowData)
-* updataRow(rowData)
-* delRow(rowData)
-* toggleSubComp(rowData)
-  * show or hide sub comp
+## Props
+
+### Grid
+
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|componentClass|elementType|optional|'div'|You can use a custom element for this component|
+|fluid|boolean|optional|false|Turn any fixed-width grid layout into a full-width layout by this property. Adds `container-fluid` class.|
+
+### Row
+
+> 通过 `Grid.Row` 取得。
+
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|componentClass|elementType|optional|'div'|You can use a custom element for this component|
+
+
+### Col
+
+> 通过 `Grid.Col` 取得。
+
+| 配置项 | 类型 | 功能/备注 |
+|---|---|---|
+|lg|number|The number of columns you wish to span for Large devices Desktops (≥1200px) `class-prefix col-lg-`|
+|lgOffset|number|Move columns to the right for Large devices Desktops `class-prefix col-lg-offset-`|
+|lgPull|number|Change the order of grid columns to the left for Large devices Desktops `class-prefix col-lg-pull-`|
+|lgPush|number|Change the order of grid columns to the right for Large devices Desktops `class-prefix col-lg-push-`|
+|md|number|The number of columns you wish to span for Medium devices Desktops (≥992px) `class-prefix col-md-`|
+|mdOffset|number|Move columns to the right for Medium devices Desktops `class-prefix col-md-offset-`|
+|mdPull|number|Change the order of grid columns to the left for Medium devices Desktops `class-prefix col-md-pull-`|
+|mdPush|number|Change the order of grid columns to the right for Medium devices Desktops `class-prefix col-md-push-`|
+|sm|number|The number of columns you wish to span for Small devices Tablets (≥768px) `class-prefix col-sm-`|
+|smOffset|number|Move columns to the right for Small devices Tablets `class-prefix col-sm-offset-`|
+|smPull|number|Change the order of grid columns to the left for Small devices Tablets `class-prefix col-sm-pull-`|
+|smPush|number|Change the order of grid columns to the right for Small devices Tablets `class-prefix col-sm-push-`|
+|xs|number|The number of columns you wish to span for Extra small devices Phones (<768px) `class-prefix col-xs-`|
+|xsOffset|number|Move columns to the right for Extra small devices Phones `class-prefix col-xs-offset-`|
+|xsPull|number|Change the order of grid columns to the left for Extra small devices Phones `class-prefix col-xs-pull-`|
+|xsPush|number|Change the order of grid columns to the right for Extra small devices Phones `class-prefix col-xs-push-`|

@@ -22,7 +22,8 @@ window.UXCORE = {
 	'uxcore-progress': require('uxcore-progress'),
 	'uxcore-steps': require('uxcore-steps'),
 	'uxcore-uploader': require('uxcore-uploader'),
-	'uxcore-menu': require('uxcore-menu')
+	'uxcore-menu': require('uxcore-menu'),
+	'uxcore-layout': require('uxcore-layout')
 };
 
 /*
