@@ -87,17 +87,16 @@ class TransferDemo extends React.Component {
 ReactDOM.render(
     <span class="tag">&lt;<span class="title">TransferDemo</span> /&gt;</span>,
       document.getElementById('components-transfer-demo-basic')
-);</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><p>Transfer组件</p>
-<h2 id="usage">Usage</h2><pre>let Transfer = require(&#39;../src&#39;);
+);</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="usage">Usage</h2><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Transfer = require(<span class="string">'../src'</span>);
 
-let mockData = [];
-let len = Math.random() * 10 + 10;
-for (let i = 0; i &lt; len; i++) {
+<span class="keyword">let</span> mockData = [];
+<span class="keyword">let</span> len = Math.random() * <span class="number">10</span> + <span class="number">10</span>;
+<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) {
     mockData.push({
-        name: &#39;内容&#39; + (i + 1),
-        value: (i + 1),
-        description: &#39;内容&#39; + (i + 1) + &#39;的描述&#39;,
-        chosen: Math.random() * 2 &gt; 1
+        name: <span class="string">'内容'</span> + (i + <span class="number">1</span>),
+        value: (i + <span class="number">1</span>),
+        description: <span class="string">'内容'</span> + (i + <span class="number">1</span>) + <span class="string">'的描述'</span>,
+        chosen: Math.random() * <span class="number">2</span> &gt; <span class="number">1</span>
     });
 }
 
@@ -111,12 +110,18 @@ class TransferDemo extends React.Component {
     }
 
     render() {
-        var me = this;
-        return (
-            &lt;Transfer data={mockData} onChange={me._handleChange.bind(me)}/&gt;
+        <span class="keyword">var</span> me = <span class="keyword">this</span>;
+        <span class="keyword">return</span> (
+            <span class="xml"><span class="tag">&lt;<span class="title">Transfer</span> <span class="attribute">data</span>=<span class="value">{mockData}</span> <span class="attribute">onChange</span>=<span class="value">{me._handleChange.bind(me)}</span>/&gt;</span>
         );
     }
-}</pre><h2 id="api">API</h2><h3 id="props">props</h3><table>
+}</span></code></pre></div><h2 id="api">API</h2><ul>
+<li>selectItems(arr): 使对应 value 的变成高亮状态 (selected)。<br>参数：  <ul>
+<li>arr <code>Array</code> 一个由 value 组成的数组。</li>
+</ul>
+</li>
+</ul>
+<h2 id="props">Props</h2><table>
 <thead>
 <tr>
 <th>参数</th>
@@ -132,7 +137,28 @@ class TransferDemo extends React.Component {
 <td>array</td>
 <td>required</td>
 <td>-</td>
-<td>用于初始化 transfer 的数据，格式见 Usage，四项可以为空，但不能没有</td>
+<td>用于初始化 transfer 的数据，格式见 Usage，其中 name 和 value 字段必有</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>boolean</td>
+<td>optional</td>
+<td>false</td>
+<td>是否启用 disable 模式</td>
+</tr>
+<tr>
+<td>showSearch</td>
+<td>boolean</td>
+<td>optional</td>
+<td>true</td>
+<td>是否显示搜索条</td>
+</tr>
+<tr>
+<td>searchPlaceholder</td>
+<td>string</td>
+<td>optional</td>
+<td>定位输入内容</td>
+<td></td>
 </tr>
 <tr>
 <td>leftTitle</td>
@@ -142,7 +168,7 @@ class TransferDemo extends React.Component {
 <td>左侧标题</td>
 </tr>
 <tr>
-<td>leftTitle</td>
+<td>rightTitle</td>
 <td>string</td>
 <td>optional</td>
 <td>&#39;已选中的&#39;</td>
@@ -153,7 +179,7 @@ class TransferDemo extends React.Component {
 <td>func</td>
 <td>optional</td>
 <td>noop</td>
-<td>选中情况变化时触发</td>
+<td>选中情况变化时触发，返回选中和未选中的项</td>
 </tr>
 </tbody>
 </table>
