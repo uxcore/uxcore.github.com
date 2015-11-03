@@ -1,8 +1,8 @@
-#  悬浮弹出
+# 内置按钮
 
-- order: 0
+- order: 1
 
-悬浮弹出。
+有时你可能希望气泡内有确定取消的按钮可以关闭气泡，这个例子对应这种场景。
 
 ---
 
@@ -18,7 +18,16 @@ class HoverDemo extends React.Component {
         }
     }
 
+    handleOk() {
+        console.log('ok')
+    }
+
+    handleCancel() {
+        console.log('cancel')
+    }
+
     render() {
+        let me = this;
         let overlay = <div>
             <div className="demoContent">
                 <i className="kuma-icon kuma-icon-information"></i>
@@ -27,17 +36,8 @@ class HoverDemo extends React.Component {
           </div>;
         return (
             <div>
-                <Popover title="这是标题，可以隐藏" overlay={overlay} placement="top">
-                    <Button>从上弹出</Button>
-                </Popover>
-                <Popover title="这是标题，可以隐藏" overlay={overlay} placement="bottom">
-                    <Button>从下弹出</Button>
-                </Popover>
-                <Popover title="这是标题，可以隐藏" overlay={overlay} placement="left">
-                    <Button>从左弹出</Button>
-                </Popover>
-                <Popover overlay={overlay} placement="right">
-                    <Button>从右弹出，没有标题</Button>
+                <Popover title="这是标题，可以隐藏" overlay={overlay} placement="top" trigger="click" showButton={true}>
+                    <Button>点击弹出</Button>
                 </Popover>
             </div>
         );
@@ -46,7 +46,7 @@ class HoverDemo extends React.Component {
 
 ReactDOM.render(
 	<HoverDemo />,
-  	document.getElementById('components-popover-demo-hover')
+  	document.getElementById('components-popover-demo-button')
 );
 ````
 

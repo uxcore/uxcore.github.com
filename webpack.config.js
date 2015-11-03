@@ -20,7 +20,8 @@ module.exports = {
 
     externals: {
         react: 'var React',
-        rangy: 'var rangy'
+        rangy: 'var rangy',
+        'react-dom': 'var ReactDOM'
     },
 
     module: {

@@ -7,31 +7,8 @@
 
 ---
 
-uxcore-popover ui component for react
 
-## Usage
-```
-let Popover = require('uxcore-popover');
-let overlay = <div>
-    <div className="demoContent">
-        <i className="kuma-icon kuma-icon-information"></i>
-        <span>你确认要删除此项数据吗？</span>
-    </div>
-    <div className="demoButton">
-        <Button size="medium">确定</Button>
-        <Button size="medium" color="orange">取消</Button>
-    </div>
-</div>
-
-ReactDOM.render(
-    <Popover title="测试" overlay={overlay} placement="top">
-        popover content
-    </Popover>, targetNode)
-```
-
-## API
-
-### props
+## Props
 
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|
@@ -40,3 +17,8 @@ ReactDOM.render(
 |placement|string|optional|top|弹窗从那个方向弹出|
 |prefixCls|string|optional|kuma-popup|类名前缀，用于定制化|
 |trigger|string|optional|hover|触发弹窗的方式，有 hover 和 click 两种|
+|showButton|boolean|optional|false|是否显示内置按钮|
+|onOk|function|optional|noop|内置的确定按钮的回调|
+|onCancel|function|optional|noop|内置的取消按钮的回调|
+|okText|string|optional|"确定"|内置的确定按钮显示的文案|
+|cancelText|string|optional|"取消"|内置的取消按钮显示的文案|

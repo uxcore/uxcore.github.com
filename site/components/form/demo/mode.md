@@ -49,7 +49,7 @@ class Demo extends React.Component {
         return (
             <div className="demo-basic">
                 <style>
-                    {".required {font-family:Simsun} .demo-basic-form {width: 550px} .form-select {background: #ccc; border-radius: 5px; padding-top: 15px; width: 550px; margin-bottom: 40px;}"}
+                    {".required {font-family:Simsun} .demo-basic-form {width: 530px} .form-select {background: #ccc; border-radius: 5px; padding-top: 15px; width: 530px; margin-bottom: 40px;}"}
                 </style>
                 <Form ref="form" className="demo-basic-form" jsxvalues={{
                     theme: "Form 展示",
