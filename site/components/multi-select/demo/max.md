@@ -1,8 +1,8 @@
-# 基本
+# 最大限制
 
-- order: 0
+- order: 1
 
-基本使用
+最多选择 5 项 
 
 ---
 
@@ -43,22 +43,17 @@ class Demo extends React.Component {
 
         return (
             <div>
-                <MultiSelect
-                    className="test-classname-select"
-                    dropdownClassName="test-classname-dropdown"
-                    value={this.state.value}
-                    disabled={this.state.disabled}
-                    placeholder="默认提示"
-                    titleBreakStr="、"
-                    optionLabelProp="text"
-                    showSelectAll={true}
-                    showClear={true}
-                    onChange={this.handleChange.bind(this)}
-                    onSubmit={this.handleSubmit.bind(this)}>
-                  {text.map(function(item, index) {
-                    return <Item value={'item' + index} text={item} key={index} />
-                  })}
-                </MultiSelect>
+              <MultiSelect
+                value={this.state.value}
+                disabled={this.state.disabled}
+                maxSelect={5}
+                optionLabelProp="text"
+                onChange={this.handleChange.bind(this)}
+                onSubmit={this.handleSubmit.bind(this)}>
+                {text.map(function(item, index) {
+                  return <Item value={'item' + index} text={item} key={index} />
+                })}
+              </MultiSelect>
             </div>
         );
     }
@@ -67,5 +62,5 @@ class Demo extends React.Component {
 
 ReactDOM.render(
   <Demo />,
- document.getElementById('components-multiselect-demo-basic'));
+ document.getElementById('components-multi-select-demo-max'));
 ````

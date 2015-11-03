@@ -1,8 +1,7 @@
-# 最大限制
+# 不可控制模式
 
-- order: 1
+- order: 3
 
-最多选择 5 项 
 
 ---
 
@@ -45,8 +44,8 @@ class Demo extends React.Component {
             <div>
               <MultiSelect
                 value={this.state.value}
-                disabled={this.state.disabled}
-                maxSelect={5}
+                disabled={true}
+                placeholder="默认提示"
                 optionLabelProp="text"
                 onChange={this.handleChange.bind(this)}
                 onSubmit={this.handleSubmit.bind(this)}>
@@ -62,5 +61,5 @@ class Demo extends React.Component {
 
 ReactDOM.render(
   <Demo />,
- document.getElementById('components-multiselect-demo-max'));
+ document.getElementById('components-multi-select-demo-disable'));
 ````

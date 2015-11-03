@@ -1,7 +1,8 @@
-# 不可控制模式
+# 基本
 
-- order: 3
+- order: 0
 
+基本使用
 
 ---
 
@@ -42,17 +43,22 @@ class Demo extends React.Component {
 
         return (
             <div>
-              <MultiSelect
-                value={this.state.value}
-                disabled={true}
-                placeholder="默认提示"
-                optionLabelProp="text"
-                onChange={this.handleChange.bind(this)}
-                onSubmit={this.handleSubmit.bind(this)}>
-                {text.map(function(item, index) {
-                  return <Item value={'item' + index} text={item} key={index} />
-                })}
-              </MultiSelect>
+                <MultiSelect
+                    className="test-classname-select"
+                    dropdownClassName="test-classname-dropdown"
+                    value={this.state.value}
+                    disabled={this.state.disabled}
+                    placeholder="默认提示"
+                    titleBreakStr="、"
+                    optionLabelProp="text"
+                    showSelectAll={true}
+                    showClear={true}
+                    onChange={this.handleChange.bind(this)}
+                    onSubmit={this.handleSubmit.bind(this)}>
+                  {text.map(function(item, index) {
+                    return <Item value={'item' + index} text={item} key={index} />
+                  })}
+                </MultiSelect>
             </div>
         );
     }
@@ -61,5 +67,5 @@ class Demo extends React.Component {
 
 ReactDOM.render(
   <Demo />,
- document.getElementById('components-multiselect-demo-disable'));
+ document.getElementById('components-multi-select-demo-basic'));
 ````

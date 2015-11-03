@@ -63,5 +63,5 @@ class Demo extends React.Component {
 
 ReactDOM.render(
   <Demo />,
- document.getElementById('components-multiselect-demo-hidebutton'));
+ document.getElementById('components-multi-select-demo-hidebutton'));
 ````
