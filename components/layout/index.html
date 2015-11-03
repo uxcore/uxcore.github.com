@@ -955,38 +955,7 @@ ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</spa
 <span class="rule">}</span></span>
 <span class="class">.demo4</span> <span class="class">.input1</span> <span class="class">.kuma-label</span>, <span class="class">.demo4</span> <span class="class">.select2</span> <span class="class">.kuma-label</span> <span class="rules">{
     <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">48</span>px</span></span>;
-<span class="rule">}</span></span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="usage">Usage</h2><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Layout = require(<span class="string">'uxcore-layout'</span>);
-<span class="keyword">let</span> {Left, Right} = Layout;
-<span class="keyword">let</span> classnames = require(<span class="string">'classnames'</span>);
-
-class Demo extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">p</span>&gt;</span>左侧自适应，右侧固定<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">Layout</span> <span class="attribute">className</span>=<span class="value">"layoutDemo"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Left</span> <span class="attribute">adaptive</span>=<span class="value">{true}</span> <span class="attribute">className</span>=<span class="value">"left"</span>&gt;</span>左<span class="tag">&lt;/<span class="title">Left</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Right</span> <span class="attribute">width</span>=<span class="value">{190}</span> <span class="attribute">className</span>=<span class="value">"right"</span>&gt;</span>右<span class="tag">&lt;/<span class="title">Right</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">Layout</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">p</span>&gt;</span>右侧自适应，左侧固定<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">Layout</span> <span class="attribute">className</span>=<span class="value">"layoutDemo"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Left</span> <span class="attribute">width</span>=<span class="value">{190}</span> <span class="attribute">className</span>=<span class="value">"left"</span>&gt;</span>左<span class="tag">&lt;/<span class="title">Left</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Right</span> <span class="attribute">adaptive</span>=<span class="value">{true}</span> <span class="attribute">className</span>=<span class="value">"right"</span>&gt;</span>右<span class="tag">&lt;/<span class="title">Right</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">Layout</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">p</span>&gt;</span>左右都固定<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">Layout</span> <span class="attribute">className</span>=<span class="value">"layoutDemo"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Left</span> <span class="attribute">width</span>=<span class="value">{500}</span> <span class="attribute">className</span>=<span class="value">"left"</span>&gt;</span>左<span class="tag">&lt;/<span class="title">Left</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Right</span> <span class="attribute">width</span>=<span class="value">{500}</span> <span class="attribute">className</span>=<span class="value">"right"</span>&gt;</span>右<span class="tag">&lt;/<span class="title">Right</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">Layout</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-
-    }
-}
-
-module.exports = Demo;</span></code></pre></div><h2 id="props">Props</h2><table>
+<span class="rule">}</span></span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="props">Props</h2><table>
 <thead>
 <tr>
 <th>配置项</th>
