@@ -111,49 +111,49 @@ var HoverDemo = (function (_React$Component) {
 
 ;
 
-ReactDOM.render(React.createElement(HoverDemo, null), document.getElementById('components-popover-demo-hover'));})()</script><div class="highlight"><pre><code class="javascript">import Button from <span class="string">'uxcore-button'</span>;
-import Popover from <span class="string">'uxcore-popover'</span>;
+ReactDOM.render(React.createElement(HoverDemo, null), document.getElementById('components-popover-demo-hover'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Button <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-button'</span>;
+<span class="hljs-keyword">import</span> Popover <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-popover'</span>;
 
-class HoverDemo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HoverDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
         }
     }
 
     render() {
-        <span class="keyword">let</span> overlay = <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demoContent"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"kuma-icon kuma-icon-information"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">span</span>&gt;</span>你确认要删除此项数据吗？<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demoButton"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"medium"</span>&gt;</span>确定<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"medium"</span> <span class="attribute">color</span>=<span class="value">"orange"</span>&gt;</span>取消<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>;</span>
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Popover</span> <span class="attribute">title</span>=<span class="value">"测试"</span> <span class="attribute">overlay</span>=<span class="value">{overlay}</span> <span class="attribute">placement</span>=<span class="value">"top"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">Button</span>&gt;</span>从上弹出<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">Popover</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Popover</span> <span class="attribute">title</span>=<span class="value">"测试"</span> <span class="attribute">overlay</span>=<span class="value">{overlay}</span> <span class="attribute">placement</span>=<span class="value">"bottom"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">Button</span>&gt;</span>从下弹出<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">Popover</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Popover</span> <span class="attribute">title</span>=<span class="value">"测试"</span> <span class="attribute">overlay</span>=<span class="value">{overlay}</span> <span class="attribute">placement</span>=<span class="value">"left"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">Button</span>&gt;</span>从左弹出<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">Popover</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Popover</span> <span class="attribute">title</span>=<span class="value">"测试"</span> <span class="attribute">overlay</span>=<span class="value">{overlay}</span> <span class="attribute">placement</span>=<span class="value">"right"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">Button</span>&gt;</span>从右弹出<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">Popover</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        );
+        <span class="hljs-keyword">let</span> overlay = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demoContent"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-icon kuma-icon-information"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>你确认要删除此项数据吗？<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demoButton"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"medium"</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"medium"</span> <span class="hljs-attribute">color</span>=<span class="hljs-value">"orange"</span>&gt;</span>取消<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>;</span>
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Popover</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"测试"</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{overlay}</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"top"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>从上弹出<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Popover</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Popover</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"测试"</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{overlay}</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"bottom"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>从下弹出<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Popover</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Popover</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"测试"</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{overlay}</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"left"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>从左弹出<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Popover</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Popover</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"测试"</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{overlay}</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"right"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>从右弹出<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Popover</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>;
     }
 };
 
 ReactDOM.render(
-    <span class="tag">&lt;<span class="title">HoverDemo</span> /&gt;</span>,
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">HoverDemo</span> /&gt;</span>,
       document.getElementById('components-popover-demo-hover')
 );</span></code></pre></div></div></div><div id="code-box-components-popover-demo-click" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-popover-demo-click">点击弹出</a></div></div><div class="code-box-demo"><div id="components-popover-demo-click"></div></div><div class="code-box-desc"><p>点击弹出。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){import Button from 'uxcore-button';
 import Popover from 'uxcore-popover';
@@ -188,38 +188,38 @@ class ClickDemo extends React.Component {
 ReactDOM.render(
     <ClickDemo />,
       document.getElementById('components-popover-demo-click')
-);})()</script><div class="highlight"><pre><code class="javascript">import Button from <span class="string">'uxcore-button'</span>;
-import Popover from <span class="string">'uxcore-popover'</span>;
+);})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Button <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-button'</span>;
+<span class="hljs-keyword">import</span> Popover <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-popover'</span>;
 
-class ClickDemo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClickDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
         }
     }
 
     render() {
-        <span class="keyword">let</span> overlay = <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demoContent"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"kuma-icon kuma-icon-information"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">span</span>&gt;</span>你确认要删除此项数据吗？<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demoButton"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"medium"</span>&gt;</span>确定<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"medium"</span> <span class="attribute">color</span>=<span class="value">"orange"</span>&gt;</span>取消<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>;</span>
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">Popover</span> <span class="attribute">title</span>=<span class="value">"测试"</span> <span class="attribute">overlay</span>=<span class="value">{overlay}</span> <span class="attribute">placement</span>=<span class="value">"right"</span> <span class="attribute">trigger</span>=<span class="value">"click"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Button</span>&gt;</span>从右弹出<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">Popover</span>&gt;</span>v&gt;
-        );
+        <span class="hljs-keyword">let</span> overlay = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demoContent"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-icon kuma-icon-information"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>你确认要删除此项数据吗？<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demoButton"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"medium"</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"medium"</span> <span class="hljs-attribute">color</span>=<span class="hljs-value">"orange"</span>&gt;</span>取消<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>;</span>
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Popover</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"测试"</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{overlay}</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"right"</span> <span class="hljs-attribute">trigger</span>=<span class="hljs-value">"click"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>从右弹出<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Popover</span>&gt;</span>v&gt;
+        )</span>;
     }
 };
 
 ReactDOM.render(
-    <span class="tag">&lt;<span class="title">ClickDemo</span> /&gt;</span>,
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">ClickDemo</span> /&gt;</span>,
       document.getElementById('components-popover-demo-click')
 );</span></code></pre></div></div></div><div id="code-box-components-popover-demo-notitle" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-popover-demo-notitle">没有标题</a></div></div><div class="code-box-demo"><div id="components-popover-demo-notitle"></div></div><div class="code-box-desc"><p>没有标题。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
@@ -299,38 +299,38 @@ var NoTitleDemo = (function (_React$Component) {
 
 ;
 
-ReactDOM.render(React.createElement(NoTitleDemo, null), document.getElementById('components-popover-demo-notitle'));})()</script><div class="highlight"><pre><code class="javascript">import Button from <span class="string">'uxcore-button'</span>;
-import Popover from <span class="string">'uxcore-popover'</span>;
+ReactDOM.render(React.createElement(NoTitleDemo, null), document.getElementById('components-popover-demo-notitle'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Button <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-button'</span>;
+<span class="hljs-keyword">import</span> Popover <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-popover'</span>;
 
-class NoTitleDemo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NoTitleDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
         }
     }
 
     render() {
-        <span class="keyword">let</span> overlay = <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demoContent"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"kuma-icon kuma-icon-information"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">span</span>&gt;</span>你确认要删除此项数据吗？<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demoButton"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"medium"</span>&gt;</span>确定<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"medium"</span> <span class="attribute">color</span>=<span class="value">"orange"</span>&gt;</span>取消<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>;</span>
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">Popover</span> <span class="attribute">overlay</span>=<span class="value">{overlay}</span> <span class="attribute">placement</span>=<span class="value">"right"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Button</span>&gt;</span>从右弹出<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">Popover</span>&gt;</span>
-        );
+        <span class="hljs-keyword">let</span> overlay = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demoContent"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-icon kuma-icon-information"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>你确认要删除此项数据吗？<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demoButton"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"medium"</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"medium"</span> <span class="hljs-attribute">color</span>=<span class="hljs-value">"orange"</span>&gt;</span>取消<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>;</span>
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Popover</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{overlay}</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"right"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>从右弹出<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Popover</span>&gt;</span>
+        )</span>;
     }
 };
 
 ReactDOM.render(
-    <span class="tag">&lt;<span class="title">NoTitleDemo</span> /&gt;</span>,
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">NoTitleDemo</span> /&gt;</span>,
       document.getElementById('components-popover-demo-notitle')
 );</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><p>uxcore-popover ui component for react</p>
 <h2 id="usage">Usage</h2><pre>let Popover = require(&#39;uxcore-popover&#39;);

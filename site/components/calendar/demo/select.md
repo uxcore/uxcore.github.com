@@ -10,8 +10,8 @@
 var Calendar = require('uxcore-calendar');
 
 var Picker = React.createClass({
-  handleChange: function(value) {
-    console.log(new Date(value.getTime()));
+  handleChange: function(value, formatDateString) {
+    console.log(value, formatDateString);
   },
   render: function() {
     return <Calendar onSelect={this.handleChange} />
