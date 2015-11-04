@@ -47,7 +47,7 @@
     "uxcore-transfer": "~0.2.0",
     "uxcore-tree": "~0.1.2",
     "uxcore-uploadcore": "~2.0.2",
-    "uxcore-uploader": "~1.1.3"
+    "uxcore-uploader": "~1.1.4"
   },
   "devDependencies": {
     "autoprefixer": "~6.0.3",
