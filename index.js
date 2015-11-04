@@ -1,5 +1,8 @@
-require('./style/kuma/src/kuma.less');
-// require('./style/kuma/src/theme/blue.less');
+if (window.location.search.startsWith('?style=payroll')) {
+	require('./style/kuma/src/theme/payroll.less');
+} else {
+	require('./style/kuma/src/kuma.less');
+}
 require('./style/index.less');
 
 window.UXCORE = {
@@ -22,7 +25,14 @@ window.UXCORE = {
 	'uxcore-progress': require('uxcore-progress'),
 	'uxcore-steps': require('uxcore-steps'),
 	'uxcore-uploader': require('uxcore-uploader'),
-	'uxcore-menu': require('uxcore-menu')
+	'uxcore-menu': require('uxcore-menu'),
+	'uxcore-layout': require('uxcore-layout'),
+	'uxcore-crumb': require('uxcore-crumb'),
+	'uxcore-multi-select': require('uxcore-multi-select'),
+	'uxcore-totop': require('uxcore-totop'),
+	'uxcore-checkbox-group': require('uxcore-checkbox-group'),
+	'uxcore-radiogroup': require('uxcore-radiogroup'),
+	'classnames': require('classnames')
 };
 
 /*

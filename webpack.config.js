@@ -39,14 +39,15 @@ module.exports = {
             loader: 'json-loader'
         }, {
             test: /\.less$/,
-            loader: ExtractTextPlugin.extract(
-                'css?sourceMap&-minimize!autoprefixer-loader!less?sourceMap'
-            )
+            loader: 'css?sourceMap&-minimize!autoprefixer-loader!less?sourceMap'
+            // loader: ExtractTextPlugin.extract(
+            //     'css?sourceMap&-minimize!autoprefixer-loader!less?sourceMap'
+            // )
         }, {
             test: /\.css$/,
-            loader: ExtractTextPlugin.extract(
-                'css'
-            )
+            // loader: ExtractTextPlugin.extract(
+            //     'css'
+            // )
         }, {
             test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
             loader: 'url?limit=10000&minetype=image/svg+xml'
@@ -54,7 +55,7 @@ module.exports = {
     },
 
     plugins: [
-        new ExtractTextPlugin('[name].css')
+        // new ExtractTextPlugin('[name].css')
     ],
 
     devtool: 'eval'

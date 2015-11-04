@@ -327,7 +327,7 @@ class Demo extends React.Component {
                     </FormRow>
                     <FormRow>
                         <SelectFormField
-                         jsxlabel="单选 combo 模式"
+                         jsxlabel="单选combo模式"
                          jsxname="goods"
                          jsxfetchUrl="http://suggest.taobao.com/sug"
                          combobox={true}
