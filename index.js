@@ -28,7 +28,9 @@ window.UXCORE = {
 	'uxcore-totop': require('uxcore-totop'),
 	'uxcore-checkbox-group': require('uxcore-checkbox-group'),
 	'uxcore-radiogroup': require('uxcore-radiogroup'),
-	'classnames': require('classnames')
+	'uxcore-fis-grid': require('@ali/uxcore-fis-grid'),
+	'classnames': require('classnames'),
+	'object-assign': require('object-assign')
 };
 
 /*
@@ -42,6 +44,8 @@ $(function(){
 		id = 'components';
 	} else if (pathname.indexOf('/css/') !== -1) {
 		id = 'css';
+	} else if (pathname.indexOf('/scene/') !== -1) {
+		id = 'scene';
 	} else {
 		id = 'home';
 	}
