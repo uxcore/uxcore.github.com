@@ -43,31 +43,31 @@ ReactDOM.render(React.createElement(
             text
         )
     )
-), document.getElementById('components-collapse-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Collapse = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-collapse'</span>);
-<span class="hljs-keyword">var</span> Panel = Collapse.Panel;
+), document.getElementById('components-collapse-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Collapse = require(<span class="string">'uxcore-collapse'</span>);
+<span class="keyword">var</span> Panel = Collapse.Panel;
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callback</span>(<span class="hljs-params">key</span>)</span>{
-    <span class="hljs-built_in">console</span>.log(key);
+<span class="function"><span class="keyword">function</span> <span class="title">callback</span><span class="params">(key)</span>{</span>
+    console.log(key);
 }
 
-<span class="hljs-keyword">var</span> text = <span class="hljs-string">`
+<span class="keyword">var</span> text = `
   A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`</span>;
+  Known <span class="keyword">for</span> its loyalty and faithfulness,
+  it can be found as a welcome guest <span class="keyword">in</span> many households across the world.
+`;
 
 ReactDOM.render(
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Collapse</span> <span class="hljs-attribute">defaultActiveKey</span>=<span class="hljs-value">{["1"]}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{callback}</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">Panel</span> <span class="hljs-attribute">header</span>=<span class="hljs-value">{`This</span> <span class="hljs-attribute">is</span> <span class="hljs-attribute">panel</span> <span class="hljs-attribute">header</span> <span class="hljs-attribute">1</span>`} <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{text}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">Panel</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">Panel</span> <span class="hljs-attribute">header</span>=<span class="hljs-value">{`This</span> <span class="hljs-attribute">is</span> <span class="hljs-attribute">panel</span> <span class="hljs-attribute">header</span> <span class="hljs-attribute">2</span>`} <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{text}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">Panel</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">Panel</span> <span class="hljs-attribute">header</span>=<span class="hljs-value">{`This</span> <span class="hljs-attribute">is</span> <span class="hljs-attribute">panel</span> <span class="hljs-attribute">header</span> <span class="hljs-attribute">3</span>`} <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{text}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">Panel</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">Collapse</span>&gt;</span>
+    <span class="xml"><span class="tag">&lt;<span class="title">Collapse</span> <span class="attribute">defaultActiveKey</span>=<span class="value">{["1"]}</span> <span class="attribute">onChange</span>=<span class="value">{callback}</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Panel</span> <span class="attribute">header</span>=<span class="value">{`This</span> <span class="attribute">is</span> <span class="attribute">panel</span> <span class="attribute">header</span> <span class="attribute">1</span>`} <span class="attribute">key</span>=<span class="value">"1"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>{text}<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">Panel</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Panel</span> <span class="attribute">header</span>=<span class="value">{`This</span> <span class="attribute">is</span> <span class="attribute">panel</span> <span class="attribute">header</span> <span class="attribute">2</span>`} <span class="attribute">key</span>=<span class="value">"2"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>{text}<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">Panel</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Panel</span> <span class="attribute">header</span>=<span class="value">{`This</span> <span class="attribute">is</span> <span class="attribute">panel</span> <span class="attribute">header</span> <span class="attribute">3</span>`} <span class="attribute">key</span>=<span class="value">"3"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>{text}<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">Panel</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Collapse</span>&gt;</span>
 , document.getElementById('components-collapse-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-collapse-demo-accordion" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-collapse-demo-accordion">折叠面板</a></div></div><div class="code-box-demo"><div id="components-collapse-demo-accordion"></div></div><div class="code-box-desc"><p>手风琴，每次只打开一个tab。默认打开第一个。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){"use strict";
 
 var Collapse = require('uxcore-collapse');
@@ -105,27 +105,27 @@ ReactDOM.render(React.createElement(
             text
         )
     )
-), document.getElementById('components-collapse-demo-accordion'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Collapse = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-collapse'</span>);
-<span class="hljs-keyword">var</span> Panel = Collapse.Panel;
+), document.getElementById('components-collapse-demo-accordion'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Collapse = require(<span class="string">'uxcore-collapse'</span>);
+<span class="keyword">var</span> Panel = Collapse.Panel;
 
-<span class="hljs-keyword">var</span> text = <span class="hljs-string">`
+<span class="keyword">var</span> text = `
   A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`</span>;
+  Known <span class="keyword">for</span> its loyalty and faithfulness,
+  it can be found as a welcome guest <span class="keyword">in</span> many households across the world.
+`;
 
 ReactDOM.render(
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Collapse</span> <span class="hljs-attribute">accordion</span>=<span class="hljs-value">{true}</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">Panel</span> <span class="hljs-attribute">header</span>=<span class="hljs-value">{`This</span> <span class="hljs-attribute">is</span> <span class="hljs-attribute">panel</span> <span class="hljs-attribute">header</span> <span class="hljs-attribute">1</span>`} <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{text}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">Panel</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">Panel</span> <span class="hljs-attribute">header</span>=<span class="hljs-value">{`This</span> <span class="hljs-attribute">is</span> <span class="hljs-attribute">panel</span> <span class="hljs-attribute">header</span> <span class="hljs-attribute">2</span>`} <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{text}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">Panel</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">Panel</span> <span class="hljs-attribute">header</span>=<span class="hljs-value">{`This</span> <span class="hljs-attribute">is</span> <span class="hljs-attribute">panel</span> <span class="hljs-attribute">header</span> <span class="hljs-attribute">3</span>`} <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{text}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">Panel</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">Collapse</span>&gt;</span>
+    <span class="xml"><span class="tag">&lt;<span class="title">Collapse</span> <span class="attribute">accordion</span>=<span class="value">{true}</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Panel</span> <span class="attribute">header</span>=<span class="value">{`This</span> <span class="attribute">is</span> <span class="attribute">panel</span> <span class="attribute">header</span> <span class="attribute">1</span>`} <span class="attribute">key</span>=<span class="value">"1"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>{text}<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">Panel</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Panel</span> <span class="attribute">header</span>=<span class="value">{`This</span> <span class="attribute">is</span> <span class="attribute">panel</span> <span class="attribute">header</span> <span class="attribute">2</span>`} <span class="attribute">key</span>=<span class="value">"2"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>{text}<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">Panel</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Panel</span> <span class="attribute">header</span>=<span class="value">{`This</span> <span class="attribute">is</span> <span class="attribute">panel</span> <span class="attribute">header</span> <span class="attribute">3</span>`} <span class="attribute">key</span>=<span class="value">"3"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>{text}<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">Panel</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Collapse</span>&gt;</span>
 , document.getElementById('components-collapse-demo-accordion'));</span></code></pre></div></div></div><div id="code-box-components-collapse-demo-nesting" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-collapse-demo-nesting">面板嵌套</a></div></div><div class="code-box-demo"><div id="components-collapse-demo-nesting"></div></div><div class="code-box-desc"><p>手风琴嵌套折叠面板。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){"use strict";
 
 var Collapse = require('uxcore-collapse');
@@ -175,35 +175,35 @@ ReactDOM.render(React.createElement(
             text
         )
     )
-), document.getElementById('components-collapse-demo-nesting'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Collapse = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-collapse'</span>);
-<span class="hljs-keyword">var</span> Panel = Collapse.Panel;
+), document.getElementById('components-collapse-demo-nesting'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Collapse = require(<span class="string">'uxcore-collapse'</span>);
+<span class="keyword">var</span> Panel = Collapse.Panel;
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callback</span>(<span class="hljs-params">key</span>)</span>{
-    <span class="hljs-built_in">console</span>.log(key);
+<span class="function"><span class="keyword">function</span> <span class="title">callback</span><span class="params">(key)</span>{</span>
+    console.log(key);
 }
 
-<span class="hljs-keyword">var</span> text = <span class="hljs-string">`
+<span class="keyword">var</span> text = `
   A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`</span>;
+  Known <span class="keyword">for</span> its loyalty and faithfulness,
+  it can be found as a welcome guest <span class="keyword">in</span> many households across the world.
+`;
 
 ReactDOM.render(
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Collapse</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{callback}</span> <span class="hljs-attribute">accordion</span>=<span class="hljs-value">{true}</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">Panel</span> <span class="hljs-attribute">header</span>=<span class="hljs-value">{`This</span> <span class="hljs-attribute">is</span> <span class="hljs-attribute">panel</span> <span class="hljs-attribute">header</span> <span class="hljs-attribute">1</span>`} <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">Collapse</span> <span class="hljs-attribute">defaultActiveKey</span>=<span class="hljs-value">"1"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Panel</span> <span class="hljs-attribute">header</span>=<span class="hljs-value">{`This</span> <span class="hljs-attribute">is</span> <span class="hljs-attribute">panel</span> <span class="hljs-attribute">nest</span> <span class="hljs-attribute">panel</span>`} <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{text}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-title">Panel</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">Collapse</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">Panel</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">Panel</span> <span class="hljs-attribute">header</span>=<span class="hljs-value">{`This</span> <span class="hljs-attribute">is</span> <span class="hljs-attribute">panel</span> <span class="hljs-attribute">header</span> <span class="hljs-attribute">2</span>`} <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{text}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">Panel</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">Panel</span> <span class="hljs-attribute">header</span>=<span class="hljs-value">{`This</span> <span class="hljs-attribute">is</span> <span class="hljs-attribute">panel</span> <span class="hljs-attribute">header</span> <span class="hljs-attribute">3</span>`} <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{text}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">Panel</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">Collapse</span>&gt;</span>
+    <span class="xml"><span class="tag">&lt;<span class="title">Collapse</span> <span class="attribute">onChange</span>=<span class="value">{callback}</span> <span class="attribute">accordion</span>=<span class="value">{true}</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Panel</span> <span class="attribute">header</span>=<span class="value">{`This</span> <span class="attribute">is</span> <span class="attribute">panel</span> <span class="attribute">header</span> <span class="attribute">1</span>`} <span class="attribute">key</span>=<span class="value">"1"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Collapse</span> <span class="attribute">defaultActiveKey</span>=<span class="value">"1"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Panel</span> <span class="attribute">header</span>=<span class="value">{`This</span> <span class="attribute">is</span> <span class="attribute">panel</span> <span class="attribute">nest</span> <span class="attribute">panel</span>`} <span class="attribute">key</span>=<span class="value">"1"</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">p</span>&gt;</span>{text}<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">Panel</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">Collapse</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">Panel</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Panel</span> <span class="attribute">header</span>=<span class="value">{`This</span> <span class="attribute">is</span> <span class="attribute">panel</span> <span class="attribute">header</span> <span class="attribute">2</span>`} <span class="attribute">key</span>=<span class="value">"2"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>{text}<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">Panel</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Panel</span> <span class="attribute">header</span>=<span class="value">{`This</span> <span class="attribute">is</span> <span class="attribute">panel</span> <span class="attribute">header</span> <span class="attribute">3</span>`} <span class="attribute">key</span>=<span class="value">"3"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">p</span>&gt;</span>{text}<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">Panel</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Collapse</span>&gt;</span>
 , document.getElementById('components-collapse-demo-nesting'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><p>可以折叠/展开的内容区域。</p>
 <h2 id="api">API</h2><h2 id="props">Props</h2><h3 id="collapse">Collapse</h3><table>
 <thead>
