@@ -28,6 +28,11 @@ exports.site = {
             text: '组件',
             link: '/components/button/',
             id: 'components'
+        },
+        {
+            text: '场景',
+            link: '/scene/list/',
+            id: 'scene'
         }
     ],
     urlPrefix: ''

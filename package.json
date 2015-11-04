@@ -17,7 +17,9 @@
     "deploy": "npm run clean && webpack --config webpack.config.min.js && nico build -C nico.production.js && gulp"
   },
   "dependencies": {
+    "@ali/uxcore-fis-grid": "~0.1.8",
     "classnames": "~2.2.0",
+    "object-assign": "~4.0.1",
     "react": "~0.14.0",
     "react-dom": "~0.14.0",
     "uxcore-button": "~0.3.1",

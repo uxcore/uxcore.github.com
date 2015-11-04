@@ -1,0 +1,11 @@
+extends layout
+include aside
+include meta
+include markdown
+include demos
+
+block content
+    +aside('scene')
+    article.site-content
+        +demos()
+        +markdown(post)
