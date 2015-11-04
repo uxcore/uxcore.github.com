@@ -34,62 +34,59 @@ window.UXCORE = {
 /*
  * init code highlighter
  */
-(function(d){
-	d.addEventListener('DOMContentLoaded', function() {
+$(function(){
 
-		// set current nav item
-		let pathname = location.pathname, id;
-		if (pathname.indexOf('/components/') !== -1) {
-			id = 'components';
-		} else if (pathname.indexOf('/css/') !== -1) {
-			id = 'css';
+	// set current nav item
+	let pathname = location.pathname, id;
+	if (pathname.indexOf('/components/') !== -1) {
+		id = 'components';
+	} else if (pathname.indexOf('/css/') !== -1) {
+		id = 'css';
+	} else {
+		id = 'home';
+	}
+	let $navItem = $('#J-head .nav-list li[data-id="' + id + '"]');
+	if ($navItem.size() > 0) {
+		$navItem.addClass('active');
+	}
+
+	$('.markdown pre code').each(function(idx, el){
+		hljs.highlightBlock(el);
+	});
+	$('.code-box-markdown pre code').each(function(idx, el){
+		hljs.highlightBlock(el);
+	});
+	$('.code-toggle').each(function(idx, el){
+		let $codeBox = $(el).parent().next(), codeBox = $codeBox[0];
+		codeBox.style.height = 'auto';
+		$codeBox.data('height', codeBox.clientHeight + 'px');
+		codeBox.style.height = '';
+	});
+	$('body').on('click', '.code-toggle', function(e){
+		let $codeBox = $(this).parent().next(), codeBox = $codeBox[0];
+		$(this).parents('.code-box').toggleClass('code-show-demo');
+		if (codeBox.style.height) {
+			codeBox.style.height = '';
 		} else {
-			id = 'home';
-		}
-		let navItem = d.querySelectorAll('#J-head .nav-list li[data-id="' + id + '"]');
-		if (navItem.length > 0) {
-			navItem.item(0).classList.add('active');
-		}
-
-		// init code highlight
-		window.onload = function(){
-			[].forEach.call(d.querySelectorAll('.markdown pre code'), function(el){
-				hljs.highlightBlock(el);
-			});
-			[].forEach.call(d.querySelectorAll('.code-box-markdown pre code'), function(el){
-				hljs.highlightBlock(el);
-			});
-			[].forEach.call(d.querySelectorAll('.code-toggle'), function(el){
-				let codeBox = el.parentElement.nextElementSibling;
-				codeBox.style.height = 'auto';
-				codeBox.dataset.height = codeBox.clientHeight + 'px';
-				codeBox.style.height = '';
-				el.addEventListener('click', function(e){
-					el.parentElement.parentElement.classList.toggle('code-show-demo');
-					if (codeBox.style.height) {
-						codeBox.style.height = '';
-					} else {
-						codeBox.style.height = codeBox.dataset.height;
-					}
-				});
-			});
-		};
-		if (d.querySelector('#site-home')) {
-			initHomeLayout();
+			codeBox.style.height = $codeBox.data('height');
 		}
 	});
-}(document));
+
+	if ($('#site-home').size() > 0) {
+		initHomeLayout();
+	}
+});
 
  function initHomeLayout(){
 	 // Little Canvas things
-	var $home = document.querySelector('#site-home');
+	var $home = $('#site-home');
 	var canvas = document.createElement('canvas');
-	$home.appendChild(canvas);
+	$home.append(canvas);
 	var ctx = canvas.getContext('2d');
 
 	// Set Canvas to be window size
-	canvas.width = $home.clientWidth - 4;
-	canvas.height = $home.clientHeight - 4;
+	canvas.width = $home.width() - 4;
+	canvas.height = $home.height() - 4;
 
 	// Configuration, Play with these
 	var config = {
@@ -218,20 +215,20 @@ window.UXCORE = {
 	};
 
 	// Click listener
-	$home.addEventListener('click', function(e){
+	$home.on('click', function(e){
 		var x = e.clientX,
 	        y = e.clientY;
 	    cleanUpArray();
 	    initParticles(config.particleNumber, x, y);
 	});
-	window.addEventListener('resize', function(){
+	$(window).on('resize', function(){
 		canvas.style.display = 'none';
-		canvas.width = $home.clientWidth - 4;
-		canvas.height = $home.clientHeight - 4;
+		canvas.width = $home.width() - 4;
+		canvas.height = $home.height() - 4;
 		canvas.style.display = 'block';
 	});
 
 	frame();
 
 	initParticles(config.particleNumber);
- }
+}
