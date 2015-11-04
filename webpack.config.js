@@ -20,7 +20,8 @@ module.exports = {
 
     externals: {
         react: 'var React',
-        rangy: 'var rangy'
+        rangy: 'var rangy',
+        'react-dom': 'var ReactDOM'
     },
 
     module: {
@@ -34,20 +35,19 @@ module.exports = {
                 return isNpmModule & !isUxcore;
             },
             loader: 'babel-loader?stage=1'
-            }, {
+        }, {
             test: /\.json$/,
             loader: 'json-loader'
         }, {
             test: /\.less$/,
-            loader: 'css?sourceMap&-minimize!autoprefixer-loader!less?sourceMap'
-            // loader: ExtractTextPlugin.extract(
-            //     'css?sourceMap&-minimize!autoprefixer-loader!less?sourceMap'
-            // )
+            loader: ExtractTextPlugin.extract(
+                'css?sourceMap&-minimize!autoprefixer-loader!less?sourceMap'
+            )
         }, {
             test: /\.css$/,
-            // loader: ExtractTextPlugin.extract(
-            //     'css'
-            // )
+            loader: ExtractTextPlugin.extract(
+                'css'
+            )
         }, {
             test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
             loader: 'url?limit=10000&minetype=image/svg+xml'
@@ -55,7 +55,7 @@ module.exports = {
     },
 
     plugins: [
-        // new ExtractTextPlugin('[name].css')
+        new ExtractTextPlugin('[name].css')
     ],
 
     devtool: 'eval'

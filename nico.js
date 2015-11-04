@@ -26,7 +26,7 @@ exports.site = {
         },
         {
             text: '组件',
-            link: '/components/calendar/',
+            link: '/components/button/',
             id: 'components'
         }
     ],

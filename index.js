@@ -1,8 +1,4 @@
-if (window.location.search.startsWith('?style=payroll')) {
-	require('./style/kuma/src/theme/payroll.less');
-} else {
-	require('./style/kuma/src/kuma.less');
-}
+require('./style/uxcore.less');
 require('./style/index.less');
 
 window.UXCORE = {
