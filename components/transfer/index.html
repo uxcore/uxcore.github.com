@@ -2,7 +2,7 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li data-id="home"><a href="/">首页</a></li><li data-id="css"><a href="/css/base/">css</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">表单及相关</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/multi-select">MultiSelect<small>复选择器</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">导航</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">交互提醒</h3><ul><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">布局</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">其它</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li class="current"><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">表格</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Transfer</h1><section class="meta"><span class="author"><i class="fa fa-user"></i><a href="mailto:wsj7552715@hotmail.com">eternalsky</a></span><span class="github"><i class="fa fa-github"></i><a href="ssh://git@github.com/uxcore/transfer.git" target="_blank">Transfer</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.2.2</span><span class="description"><i class="fa fa-bookmark"></i>transfer ui component for react</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-transfer-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-transfer-demo-basic">基本用法</a></div></div><div class="code-box-demo"><div id="components-transfer-demo-basic"></div></div><div class="code-box-desc"><p>基本用法。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li data-id="home"><a href="/">首页</a></li><li data-id="css"><a href="/css/base/">css</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">表单及相关</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/multi-select">MultiSelect<small>复选择器</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">导航</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">交互提醒</h3><ul><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">布局</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">其它</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li class="current"><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">表格</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Transfer</h1><section class="meta"><span class="author"><i class="fa fa-user"></i></span><span class="github"><i class="fa fa-github"></i><a href="ssh://git@github.com/uxcore/transfer.git" target="_blank">Transfer</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.2.2</span><span class="description"><i class="fa fa-bookmark"></i>transfer ui component for react</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-transfer-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-transfer-demo-basic">基本用法</a></div></div><div class="code-box-demo"><div id="components-transfer-demo-basic"></div></div><div class="code-box-desc"><p>基本用法。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -54,68 +54,68 @@ var TransferDemo = (function (_React$Component) {
     return TransferDemo;
 })(React.Component);
 
-ReactDOM.render(React.createElement(TransferDemo, null), document.getElementById('components-transfer-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript">import Transfer from <span class="string">'uxcore-transfer'</span>;
+ReactDOM.render(React.createElement(TransferDemo, null), document.getElementById('components-transfer-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Transfer <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-transfer'</span>;
 
-<span class="keyword">let</span> mockData = [];
-<span class="keyword">let</span> len = Math.random() * <span class="number">10</span> + <span class="number">10</span>;
-<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) {
+<span class="hljs-keyword">let</span> mockData = [];
+<span class="hljs-keyword">let</span> len = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span> + <span class="hljs-number">10</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) {
     mockData.push({
-        name: <span class="string">'内容'</span> + (i + <span class="number">1</span>),
-        value: (i + <span class="number">1</span>),
-        description: <span class="string">'内容'</span> + (i + <span class="number">1</span>) + <span class="string">'的描述'</span>,
-        chosen: Math.random() * <span class="number">2</span> &gt; <span class="number">1</span>
+        name: <span class="hljs-string">'内容'</span> + (i + <span class="hljs-number">1</span>),
+        value: (i + <span class="hljs-number">1</span>),
+        description: <span class="hljs-string">'内容'</span> + (i + <span class="hljs-number">1</span>) + <span class="hljs-string">'的描述'</span>,
+        chosen: <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span> &gt; <span class="hljs-number">1</span>
     });
 }
 
-class TransferDemo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TransferDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     constructor(props){
-        super(props);
+        <span class="hljs-keyword">super</span>(props);
     }
 
     _handleChange(data) {
-        console.log(data);
+        <span class="hljs-built_in">console</span>.log(data);
     }
 
     render() {
-        <span class="keyword">var</span> me = <span class="keyword">this</span>;
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">Transfer</span> <span class="attribute">data</span>=<span class="value">{mockData}</span> <span class="attribute">onChange</span>=<span class="value">{me._handleChange.bind(me)}</span>/&gt;</span>
-        );
+        <span class="hljs-keyword">var</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Transfer</span> <span class="hljs-attribute">data</span>=<span class="hljs-value">{mockData}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{me._handleChange.bind(me)}</span>/&gt;</span>
+        )</span>;
     }
 }
 
 ReactDOM.render(
-    <span class="tag">&lt;<span class="title">TransferDemo</span> /&gt;</span>,
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">TransferDemo</span> /&gt;</span>,
       document.getElementById('components-transfer-demo-basic')
-);</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="usage">Usage</h2><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Transfer = require(<span class="string">'../src'</span>);
+);</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="usage">Usage</h2><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Transfer = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../src'</span>);
 
-<span class="keyword">let</span> mockData = [];
-<span class="keyword">let</span> len = Math.random() * <span class="number">10</span> + <span class="number">10</span>;
-<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) {
+<span class="hljs-keyword">let</span> mockData = [];
+<span class="hljs-keyword">let</span> len = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span> + <span class="hljs-number">10</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) {
     mockData.push({
-        name: <span class="string">'内容'</span> + (i + <span class="number">1</span>),
-        value: (i + <span class="number">1</span>),
-        description: <span class="string">'内容'</span> + (i + <span class="number">1</span>) + <span class="string">'的描述'</span>,
-        chosen: Math.random() * <span class="number">2</span> &gt; <span class="number">1</span>
+        name: <span class="hljs-string">'内容'</span> + (i + <span class="hljs-number">1</span>),
+        value: (i + <span class="hljs-number">1</span>),
+        description: <span class="hljs-string">'内容'</span> + (i + <span class="hljs-number">1</span>) + <span class="hljs-string">'的描述'</span>,
+        chosen: <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span> &gt; <span class="hljs-number">1</span>
     });
 }
 
-class TransferDemo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TransferDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     constructor(props){
-        super(props);
+        <span class="hljs-keyword">super</span>(props);
     }
 
     _handleChange(data) {
-        console.log(data);
+        <span class="hljs-built_in">console</span>.log(data);
     }
 
     render() {
-        <span class="keyword">var</span> me = <span class="keyword">this</span>;
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">Transfer</span> <span class="attribute">data</span>=<span class="value">{mockData}</span> <span class="attribute">onChange</span>=<span class="value">{me._handleChange.bind(me)}</span>/&gt;</span>
-        );
+        <span class="hljs-keyword">var</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Transfer</span> <span class="hljs-attribute">data</span>=<span class="hljs-value">{mockData}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{me._handleChange.bind(me)}</span>/&gt;</span>
+        )</span>;
     }
-}</span></code></pre></div><h2 id="api">API</h2><ul>
+}</code></pre></div><h2 id="api">API</h2><ul>
 <li>selectItems(arr): 使对应 value 的变成高亮状态 (selected)。<br>参数：  <ul>
 <li>arr <code>Array</code> 一个由 value 组成的数组。</li>
 </ul>

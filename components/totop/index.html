@@ -60,33 +60,33 @@ var Demo = (function (_React$Component) {
 
 ;
 
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-totop-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> classnames = require(<span class="string">'classnames'</span>);
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-totop-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">'classnames'</span>);
 
-<span class="keyword">let</span> Totop = require(<span class="string">'uxcore-totop'</span>);
+<span class="hljs-keyword">let</span> Totop = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-totop'</span>);
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
         }
     }
 
     render() {
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Totop</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"block1"</span>&gt;</span>了解我们<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"block2"</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"kuma-icon kuma-icon-comment"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">Totop</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">h1</span> <span class="attribute">style</span>=<span class="value">{{fontSize:</span> <span class="attribute">22</span>}}&gt;</span>组件在屏幕的右下方<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        );
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Totop</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"block1"</span>&gt;</span>了解我们<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"block2"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-icon kuma-icon-comment"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Totop</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{fontSize:</span> <span class="hljs-attribute">22</span>}}&gt;</span>组件在屏幕的右下方<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>;
     }
 };
 
 ReactDOM.render(
-    <span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>,
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>,
     document.getElementById('components-totop-demo-basic')
 );</span></code></pre></div><style type="text/css">.block1 {
   height: 42px;
@@ -106,25 +106,25 @@ ReactDOM.render(
 }
 .block2 > i {
   font-size: 22px;
-}</style><div class="highlight"><pre><code class="css"><span class="class">.block1</span> <span class="rules">{
-  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">42</span>px</span></span>;
-  <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#ccc</span></span></span>;
-  <span class="rule"><span class="attribute">color</span>:<span class="value"> white</span></span>;
-  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
-  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">5</span>px <span class="number">5</span>px</span></span>;
-  <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> <span class="number">2</span>px</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.block2</span> <span class="rules">{
-  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">42</span>px</span></span>;
-  <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#ccc</span></span></span>;
-  <span class="rule"><span class="attribute">color</span>:<span class="value"> white</span></span>;
-  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
-  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">42</span>px</span></span>;
-  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">18</span>px</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.block2</span> &gt; <span class="tag">i</span> <span class="rules">{
-  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">22</span>px</span></span>;
-<span class="rule">}</span></span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="api">API</h2><h2 id="props">Props</h2><table>
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.block1</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">42px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#ccc</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> white</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">5px</span> <span class="hljs-number">5px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-value"> <span class="hljs-number">2px</span></span></span>;
+}</span>
+<span class="hljs-class">.block2</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">42px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#ccc</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> white</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">42px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">18px</span></span></span>;
+}</span>
+<span class="hljs-class">.block2</span> &gt; <span class="hljs-tag">i</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">22px</span></span></span>;
+}</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="api">API</h2><h2 id="props">Props</h2><table>
 <thead>
 <tr>
 <th>配置项</th>
