@@ -7,7 +7,7 @@
 
 ---
 
-```jsx
+````jsx
 const Dropdown = require('uxcore-dropdown');
 const Menu = require('uxcore-menu');
 
@@ -28,4 +28,4 @@ ReactDOM.render(
     </Dropdown>,
     document.getElementById('components-dropdown-demo-other')
 );
-```
+````
