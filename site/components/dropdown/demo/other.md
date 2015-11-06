@@ -1,15 +1,15 @@
-#  其他元素
+其他元素
+========
 
-- order: 4
+-	order: 4
 
 分割线和不可用菜单项
 
 ---
 
-````jsx
-var UD = require('uxcore-dropdown');
-var Dropdown = UD.Dropdown;
-var Menu = UD.Menu;
+```jsx
+const Dropdown = require('uxcore-dropdown');
+const Menu = require('uxcore-menu');
 
 var menu = <Menu>
   <Menu.Item key="0">
@@ -28,4 +28,4 @@ ReactDOM.render(
     </Dropdown>,
     document.getElementById('components-dropdown-demo-other')
 );
-````
+```

@@ -1,15 +1,15 @@
-#  触发事件
+触发事件
+========
 
-- order: 3
+-	order: 3
 
 触发事件
 
 ---
 
-````jsx
-var UD = require('uxcore-dropdown');
-var Dropdown = UD.Dropdown;
-var Menu = UD.Menu;
+```jsx
+const Dropdown = require('uxcore-dropdown');
+const Menu = require('uxcore-menu');
 
 var onClick = function ({key}){
   alert('选中了菜单' + key);
@@ -33,4 +33,4 @@ ReactDOM.render(
     </Dropdown>,
     document.getElementById('components-dropdown-demo-events')
 );
-````
+```
