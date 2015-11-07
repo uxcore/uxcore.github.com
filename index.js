@@ -54,12 +54,12 @@ $(function(){
 		$navItem.addClass('active');
 	}
 
-	$('.markdown pre code').each(function(idx, el){
-		hljs.highlightBlock(el);
-	});
-	$('.code-box-markdown pre code').each(function(idx, el){
-		hljs.highlightBlock(el);
-	});
+	// $('.markdown pre code').each(function(idx, el){
+	// 	hljs.highlightBlock(el);
+	// });
+	// $('.code-box-markdown pre code').each(function(idx, el){
+	// 	hljs.highlightBlock(el);
+	// });
 	$('.code-toggle').each(function(idx, el){
 		let $codeBox = $(el).parent().next(), codeBox = $codeBox[0];
 		codeBox.style.height = 'auto';
@@ -76,7 +76,7 @@ $(function(){
 		}
 	});
 
-	if ($('#site-home').size() > 0) {
+	if ($('#site-home').size() > 0 && Modernizr.canvas) {
 		initHomeLayout();
 	}
 });
