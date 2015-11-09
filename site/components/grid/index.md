@@ -8,6 +8,10 @@
 
 ---
 
+## Usage
+
+> 有关栅格的基础知识，参考 http://v3.bootcss.com/css/#grid。
+
 
 ## API
 

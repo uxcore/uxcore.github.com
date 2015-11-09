@@ -61,6 +61,10 @@ ReactDOM.render(<Demo />, document.getElementById('components-grid-demo-basic'))
   border: 1px solid #ddd;
   border: 1px solid rgba(86, 61, 124, 0.2);
 }
+.show-grid code {
+  display: inline-block;
+  width: 100%; 
+}
 code {
   color: #c7254e;
   background-color: #f9f2f4;
