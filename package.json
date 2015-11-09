@@ -28,7 +28,7 @@
     "uxcore-collapse": "~1.0.0",
     "uxcore-crumb": "~0.1.0",
     "uxcore-dialog": "~0.2.4",
-    "uxcore-dropdown": "~0.1.4",
+    "uxcore-dropdown": "~0.2.0",
     "uxcore-form": "~1.2.0",
     "uxcore-grid": "~1.2.0",
     "uxcore-kuma": "~1.1.0",
@@ -47,7 +47,7 @@
     "uxcore-tooltip": "~0.2.0",
     "uxcore-totop": "~0.1.0",
     "uxcore-transfer": "~0.2.0",
-    "uxcore-tree": "~0.1.2",
+    "uxcore-tree": "~0.1.7",
     "uxcore-uploadcore": "~2.0.2",
     "uxcore-uploader": "~1.1.3"
   },

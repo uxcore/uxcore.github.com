@@ -1,15 +1,15 @@
-#  点击触发
+点击触发
+========
 
-- order: 2
+-	order: 2
 
 点击触发
 
 ---
 
 ````jsx
-var UD = require('uxcore-dropdown');
-var Dropdown = UD.Dropdown;
-var Menu = UD.Menu;
+const Dropdown = require('uxcore-dropdown');
+const Menu = require('uxcore-menu');
 
 var menu = <Menu>
   <Menu.Item>
@@ -24,7 +24,7 @@ var menu = <Menu>
 </Menu>;
 
 ReactDOM.render(
-    <Dropdown overlay={menu} trigger="click">
+    <Dropdown overlay={menu} trigger={["click"]}>
         <button className="kuma-button kuma-button-sblue">点击触发</button>
     </Dropdown>,
     document.getElementById('components-dropdown-demo-click')

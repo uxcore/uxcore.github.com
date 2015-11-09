@@ -23,9 +23,13 @@
 |defaultExpandAll | expand all treeNodes | bool | false |
 |defaultExpandedKeys | expand specific treeNodes | String[] | false |
 |defaultCheckedKeys | default checked treeNodes | String[] | [] |
+|checkedKeys | Controlled checked treeNodes(After setting, defaultCheckedKeys will not work) | String[] | [] |
 |defaultSelectedKeys | default selected treeNodes | String[] | [] |
+|selectedKeys | Controlled selected treeNodes(After setting, defaultSelectedKeys will not work) | String[] | [] |
 |onCheck | click the treeNode/checkbox to fire | function(e:{checked:bool,node,checkedKeys,event}) | - |
 |onSelect | click the treeNode to fire | function(e:{selected:bool,node,checkedKeys,event}) | - |
+|onDataLoaded | load data asynchronously and the return value should be a promise | function(node) | - |
+|onRightClick | select current treeNode and show customized contextmenu | function({event,node}) | - |
 
 ### TreeNode props
 

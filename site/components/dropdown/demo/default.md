@@ -1,15 +1,15 @@
-#  基本
+基本
+====
 
-- order: 1
+-	order: 1
 
 最简单的用法。
 
 ---
 
 ````jsx
-var UD = require('uxcore-dropdown');
-var Dropdown = UD.Dropdown;
-var Menu = UD.Menu;
+const Dropdown = require('uxcore-dropdown');
+const Menu = require('uxcore-menu');
 
 var menu = <Menu>
   <Menu.Item>
