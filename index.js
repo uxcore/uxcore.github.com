@@ -1,6 +1,3 @@
-require('./style/uxcore.less');
-require('./style/index.less');
-
 window.UXCORE = {
 	'uxcore-calendar': require('uxcore-calendar'),
 	'uxcore-button': require('uxcore-button'),
@@ -79,6 +76,35 @@ $(function(){
 	if ($('#site-home').size() > 0 && Modernizr.canvas) {
 		initHomeLayout();
 	}
+
+	let Select = require('uxcore-select2');
+	let Option = Select.Option;
+	let themeList = ['kuma', 'blue', 'payroll'];
+	let currentTheme = 'kuma';
+	let $themeLink = $('#J_ThemeStyle');
+	if (Modernizr.localstorage) {
+		let t = localStorage.getItem('theme');
+		if (t && t !== currentTheme) {
+			currentTheme = t;
+			setTheme(t);
+		}
+	}
+	function onSelectTheme(value){
+		setTheme(value);
+		if (Modernizr.localstorage) {
+			localStorage.setItem('theme', value);
+		}
+	}
+	function setTheme(theme){
+		$themeLink.attr('href', `/static/style/${theme}.css`);
+	}
+	ReactDOM.render(
+		<Select defaultValue={currentTheme} style={{width: 200}} onSelect={onSelectTheme}>
+			{themeList.map((theme) => {
+				return <Option key={theme} value={theme}>{theme}</Option>
+			})}
+		</Select>,
+	$('#J_ThemeSelector')[0]);
 });
 
  function initHomeLayout(){
@@ -235,4 +261,5 @@ $(function(){
 	frame();
 
 	initParticles(config.particleNumber);
+
 }
