@@ -7,3 +7,5 @@
 
 ---
 
+## 详细使用说明[点此](http://gitlab.alibaba-inc.com/uxcore/uxcore-demo/tree/master)
+
