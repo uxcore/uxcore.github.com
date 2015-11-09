@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/uxcore.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="/static/modernizr.js"></script><!--[if lt IE 9]><script src="/static/respond.min.js"></script><![endif]--><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/latest/react-with-addons.js,react/latest/react-dom.min.js,rangy/1.3.0/rangy-core.min.js,jquery/1.11.3/jquery.min.js?v=0"></script><script src="/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/uxcore.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="/static/modernizr.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/latest/react-with-addons.js,react/latest/react-dom.min.js,rangy/1.3.0/rangy-core.min.js,jquery/1.11.3/jquery.min.js?v=0"></script><script src="/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
@@ -60,42 +60,42 @@ var Demo = (function (_React$Component) {
 
 ;
 
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-crumb-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">'classnames'</span>);
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-crumb-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> classnames = require(<span class="string">'classnames'</span>);
 
-<span class="hljs-keyword">let</span> Crumb = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-crumb'</span>);
+<span class="keyword">let</span> Crumb = require(<span class="string">'uxcore-crumb'</span>);
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+class Demo extends React.Component {
 
     constructor(props) {
-        <span class="hljs-keyword">super</span>(props);
+        super(props);
     }
 
     render() {
-        <span class="hljs-keyword">return</span> (
-          <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Crumb</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"crumb-style crumb-root"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">Crumb.Item</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"crumb-item-style"</span>&gt;</span>首页<span class="hljs-tag">&lt;/<span class="hljs-title">Crumb.Item</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">Crumb.Item</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>管理平台<span class="hljs-tag">&lt;/<span class="hljs-title">Crumb.Item</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">Crumb.Item</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>流程管理<span class="hljs-tag">&lt;/<span class="hljs-title">Crumb.Item</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">Crumb.Item</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"crumb-item-style"</span>&gt;</span>编辑流程信息<span class="hljs-tag">&lt;/<span class="hljs-title">Crumb.Item</span>&gt;</span>
-          <span class="hljs-tag">&lt;/<span class="hljs-title">Crumb</span>&gt;</span>
-        )</span>;
+        <span class="keyword">return</span> (
+          <span class="xml"><span class="tag">&lt;<span class="title">Crumb</span> <span class="attribute">className</span>=<span class="value">"crumb-style crumb-root"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Crumb.Item</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">className</span>=<span class="value">"crumb-item-style"</span>&gt;</span>首页<span class="tag">&lt;/<span class="title">Crumb.Item</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Crumb.Item</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>管理平台<span class="tag">&lt;/<span class="title">Crumb.Item</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Crumb.Item</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>流程管理<span class="tag">&lt;/<span class="title">Crumb.Item</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">Crumb.Item</span> <span class="attribute">className</span>=<span class="value">"crumb-item-style"</span>&gt;</span>编辑流程信息<span class="tag">&lt;/<span class="title">Crumb.Item</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">Crumb</span>&gt;</span>
+        );
     }
 };
 
 ReactDOM.render(
-  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>,
- document.getElementById('components-crumb-demo-basic'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="usage">Usage</h2><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Crumb = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-crumb'</span>);
+  <span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>,
+ document.getElementById('components-crumb-demo-basic'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="usage">Usage</h2><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Crumb = require(<span class="string">'uxcore-crumb'</span>);
 
 React.render(
   (
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Crumb</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"crumb-style crumb-root"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">Crumb.Item</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"crumb-item-style"</span>&gt;</span>首页<span class="hljs-tag">&lt;/<span class="hljs-title">Crumb.Item</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">Crumb.Item</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>管理平台<span class="hljs-tag">&lt;/<span class="hljs-title">Crumb.Item</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">Crumb.Item</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>流程管理<span class="hljs-tag">&lt;/<span class="hljs-title">Crumb.Item</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">Crumb.Item</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"crumb-item-style"</span>&gt;</span>编辑流程信息<span class="hljs-tag">&lt;/<span class="hljs-title">Crumb.Item</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">Crumb</span>&gt;</span>
-  )</span>,
-  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'demo'</span>));</code></pre></div><h2 id="api">API</h2><h2 id="props">Props</h2><h3 id="crumb">Crumb</h3><table>
+    <span class="xml"><span class="tag">&lt;<span class="title">Crumb</span> <span class="attribute">className</span>=<span class="value">"crumb-style crumb-root"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Crumb.Item</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">className</span>=<span class="value">"crumb-item-style"</span>&gt;</span>首页<span class="tag">&lt;/<span class="title">Crumb.Item</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Crumb.Item</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>管理平台<span class="tag">&lt;/<span class="title">Crumb.Item</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Crumb.Item</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>流程管理<span class="tag">&lt;/<span class="title">Crumb.Item</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">Crumb.Item</span> <span class="attribute">className</span>=<span class="value">"crumb-item-style"</span>&gt;</span>编辑流程信息<span class="tag">&lt;/<span class="title">Crumb.Item</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Crumb</span>&gt;</span>
+  ),
+  document.getElementById('demo'));</span></code></pre></div><h2 id="api">API</h2><h2 id="props">Props</h2><h3 id="crumb">Crumb</h3><table>
 <thead>
 <tr>
 <th>配置项</th>
