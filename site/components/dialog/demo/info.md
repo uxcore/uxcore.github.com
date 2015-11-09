@@ -34,8 +34,8 @@ function error() {
 class InfoDemo extends React.Component {
 	render(){
 		return (<div>
-		  <button className="kuma-button kuma-button-swhite" onClick={info}>信息提示</button>
-		  <button className="kuma-button kuma-button-swhite" onClick={success}>成功提示</button>
+		  <button className="kuma-button kuma-button-swhite" onClick={info}>信息提示</button>&nbsp;
+		  <button className="kuma-button kuma-button-swhite" onClick={success}>成功提示</button>&nbsp;
 		  <button className="kuma-button kuma-button-swhite" onClick={error}>失败提示</button>
 		</div>);
 	}

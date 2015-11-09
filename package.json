@@ -40,7 +40,7 @@
     "uxcore-popover": "~0.1.0",
     "uxcore-progress": "~1.0.1",
     "uxcore-radiogroup": "~1.1.1",
-    "uxcore-select2": "~0.1.9",
+    "uxcore-select2": "^0.1.9",
     "uxcore-steps": "~1.0.0",
     "uxcore-table": "~1.1.2",
     "uxcore-tabs": "~0.2.2",
