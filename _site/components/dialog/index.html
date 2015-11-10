@@ -92,50 +92,50 @@ var BasicDemo = (function (_React$Component) {
     return BasicDemo;
 })(React.Component);
 
-ReactDOM.render(React.createElement(BasicDemo, null), document.getElementById('components-dialog-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript">import Dialog from <span class="string">'uxcore-dialog'</span>;
+ReactDOM.render(React.createElement(BasicDemo, null), document.getElementById('components-dialog-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Dialog <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-dialog'</span>;
 
-class BasicDemo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BasicDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     constructor(props){
-        super(props);
-        <span class="keyword">this</span>.state = {
-            visible: <span class="literal">false</span>
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            visible: <span class="hljs-literal">false</span>
         };
     }
     showModal() {
-        <span class="keyword">this</span>.setState({
-          visible: <span class="literal">true</span>
+        <span class="hljs-keyword">this</span>.setState({
+          visible: <span class="hljs-literal">true</span>
         });
     }
     handleOk() {
-        console.log(<span class="string">'点击了确定'</span>);
-        <span class="keyword">this</span>.setState({
-          visible: <span class="literal">false</span>
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'点击了确定'</span>);
+        <span class="hljs-keyword">this</span>.setState({
+          visible: <span class="hljs-literal">false</span>
         });
     }
     handleCancel() {
-        <span class="keyword">this</span>.setState({
-          visible: <span class="literal">false</span>
+        <span class="hljs-keyword">this</span>.setState({
+          visible: <span class="hljs-literal">false</span>
         });
     }
     render(){
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"kuma-button kuma-button-mblue"</span> <span class="attribute">onClick</span>=<span class="value">{this.showModal.bind(this)}</span>&gt;</span>显示对话框<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Dialog</span> <span class="attribute">title</span>=<span class="value">"第一个 Dialog"</span>
-                    <span class="attribute">visible</span>=<span class="value">{this.state.visible}</span>
-                    <span class="attribute">onOk</span>=<span class="value">{this.handleOk.bind(this)}</span>
-                    <span class="attribute">onCancel</span>=<span class="value">{this.handleCancel.bind(this)}</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">p</span>&gt;</span>对话框的内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">p</span>&gt;</span>对话框的内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">p</span>&gt;</span>对话框的内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">Dialog</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        );
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-mblue"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.showModal.bind(this)}</span>&gt;</span>显示对话框<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Dialog</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"第一个 Dialog"</span>
+                    <span class="hljs-attribute">visible</span>=<span class="hljs-value">{this.state.visible}</span>
+                    <span class="hljs-attribute">onOk</span>=<span class="hljs-value">{this.handleOk.bind(this)}</span>
+                    <span class="hljs-attribute">onCancel</span>=<span class="hljs-value">{this.handleCancel.bind(this)}</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>对话框的内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>对话框的内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>对话框的内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Dialog</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>;
     }
 }
 
 ReactDOM.render(
-    <span class="tag">&lt;<span class="title">BasicDemo</span> /&gt;</span>, document.getElementById('components-dialog-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-dialog-demo-asyncclose" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-dialog-demo-asyncclose">点击按钮触发</a></div></div><div class="code-box-demo"><div id="components-dialog-demo-asyncclose"></div></div><div class="code-box-desc"><p>最简单的用法。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">BasicDemo</span> /&gt;</span>, document.getElementById('components-dialog-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-dialog-demo-asyncclose" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-dialog-demo-asyncclose">点击按钮触发</a></div></div><div class="code-box-demo"><div id="components-dialog-demo-asyncclose"></div></div><div class="code-box-desc"><p>最简单的用法。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -224,53 +224,53 @@ var AsyncCloseDemo = (function (_React$Component) {
     return AsyncCloseDemo;
 })(React.Component);
 
-ReactDOM.render(React.createElement(AsyncCloseDemo, null), document.getElementById('components-dialog-demo-asyncclose'));})()</script><div class="highlight"><pre><code class="javascript">import Dialog from <span class="string">'uxcore-dialog'</span>;
+ReactDOM.render(React.createElement(AsyncCloseDemo, null), document.getElementById('components-dialog-demo-asyncclose'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Dialog <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-dialog'</span>;
 
-class AsyncCloseDemo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AsyncCloseDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     constructor(props){
-        super(props);
-        <span class="keyword">this</span>.state = {
-            ModalText: <span class="string">'对话框的内容'</span>,
-            visible: <span class="literal">false</span>
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            ModalText: <span class="hljs-string">'对话框的内容'</span>,
+            visible: <span class="hljs-literal">false</span>
         };
       }
     showModal() {
-        <span class="keyword">this</span>.setState({
-          visible: <span class="literal">true</span>
+        <span class="hljs-keyword">this</span>.setState({
+          visible: <span class="hljs-literal">true</span>
         });
     }
     handleOk() {
-        <span class="keyword">this</span>.setState({
-            ModalText: <span class="string">'对话框将在两秒后关闭'</span>
+        <span class="hljs-keyword">this</span>.setState({
+            ModalText: <span class="hljs-string">'对话框将在两秒后关闭'</span>
         });
         setTimeout(() =&gt; {
-          <span class="keyword">this</span>.setState({
-            visible: <span class="literal">false</span>,
-            ModalText: <span class="string">'对话框的内容'</span>
+          <span class="hljs-keyword">this</span>.setState({
+            visible: <span class="hljs-literal">false</span>,
+            ModalText: <span class="hljs-string">'对话框的内容'</span>
           });
-        }, <span class="number">2000</span>);
+        }, <span class="hljs-number">2000</span>);
     }
     handleCancel() {
-        console.log(<span class="string">'点击了取消'</span>);
-        <span class="keyword">this</span>.setState({
-            visible: <span class="literal">false</span>
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'点击了取消'</span>);
+        <span class="hljs-keyword">this</span>.setState({
+            visible: <span class="hljs-literal">false</span>
         });
     }
     render() {
-        <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"kuma-button kuma-button-mblue"</span> <span class="attribute">onClick</span>=<span class="value">{this.showModal.bind(this)}</span>&gt;</span>显示对话框<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">Dialog</span> <span class="attribute">title</span>=<span class="value">"对话框标题"</span>
-                <span class="attribute">visible</span>=<span class="value">{this.state.visible}</span>
-                <span class="attribute">onOk</span>=<span class="value">{this.handleOk.bind(this)}</span>
-                <span class="attribute">onCancel</span>=<span class="value">{this.handleCancel.bind(this)}</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">p</span>&gt;</span>{this.state.ModalText}<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">Dialog</span>&gt;</span>
-          <span class="tag">&lt;/<span class="title">div</span>&gt;</span>);
+        <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-mblue"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.showModal.bind(this)}</span>&gt;</span>显示对话框<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Dialog</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"对话框标题"</span>
+                <span class="hljs-attribute">visible</span>=<span class="hljs-value">{this.state.visible}</span>
+                <span class="hljs-attribute">onOk</span>=<span class="hljs-value">{this.handleOk.bind(this)}</span>
+                <span class="hljs-attribute">onCancel</span>=<span class="hljs-value">{this.handleCancel.bind(this)}</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>{this.state.ModalText}<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Dialog</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>)</span>;
     }
 }
 
 ReactDOM.render(
-  <span class="tag">&lt;<span class="title">AsyncCloseDemo</span> /&gt;</span>,
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">AsyncCloseDemo</span> /&gt;</span>,
   document.getElementById('components-dialog-demo-asyncclose')
 );</span></code></pre></div></div></div><div id="code-box-components-dialog-demo-confirm" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-dialog-demo-confirm">自定义页脚</a></div></div><div class="code-box-demo"><div id="components-dialog-demo-confirm"></div></div><div class="code-box-desc"><p>自定义页脚。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){"use strict";
 
@@ -381,56 +381,56 @@ var CustomFooter = (function (_React$Component) {
     return CustomFooter;
 })(React.Component);
 
-ReactDOM.render(React.createElement(CustomFooter, null), document.getElementById('components-dialog-demo-confirm'));})()</script><div class="highlight"><pre><code class="javascript">import Dialog from <span class="string">'uxcore-dialog'</span>;
+ReactDOM.render(React.createElement(CustomFooter, null), document.getElementById('components-dialog-demo-confirm'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Dialog <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-dialog'</span>;
 
-class CustomFooter extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CustomFooter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     constructor(props){
-        super(props);
-        <span class="keyword">this</span>.state = {
-            loading: <span class="literal">false</span>,
-              visible: <span class="literal">false</span>
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            loading: <span class="hljs-literal">false</span>,
+              visible: <span class="hljs-literal">false</span>
         };
       }
     showModal() {
-        <span class="keyword">this</span>.setState({
-            visible: <span class="literal">true</span>
+        <span class="hljs-keyword">this</span>.setState({
+            visible: <span class="hljs-literal">true</span>
         });
     }
     handleOk() {
-        <span class="keyword">this</span>.setState({ loading: <span class="literal">true</span> });
+        <span class="hljs-keyword">this</span>.setState({ loading: <span class="hljs-literal">true</span> });
         setTimeout(() =&gt; {
-          <span class="keyword">this</span>.setState({ loading: <span class="literal">false</span>, visible: <span class="literal">false</span> });
-        }, <span class="number">3000</span>);
+          <span class="hljs-keyword">this</span>.setState({ loading: <span class="hljs-literal">false</span>, visible: <span class="hljs-literal">false</span> });
+        }, <span class="hljs-number">3000</span>);
     }
     handleCancel() {
-        <span class="keyword">this</span>.setState({ visible: <span class="literal">false</span> });
+        <span class="hljs-keyword">this</span>.setState({ visible: <span class="hljs-literal">false</span> });
     }
     render() {
-        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"kuma-button kuma-button-mblue"</span> <span class="attribute">onClick</span>=<span class="value">{this.showModal.bind(this)}</span>&gt;</span>
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-mblue"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.showModal.bind(this)}</span>&gt;</span>
             显示对话框
-            <span class="tag">&lt;/<span class="title">button</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">Dialog</span> <span class="attribute">ref</span>=<span class="value">"modal"</span>
-                <span class="attribute">visible</span>=<span class="value">{this.state.visible}</span>
-                <span class="attribute">title</span>=<span class="value">"对话框标题"</span> <span class="attribute">onOk</span>=<span class="value">{this.handleOk}</span> <span class="attribute">onCancel</span>=<span class="value">{this.handleCancel.bind(this)}</span>
-                <span class="attribute">footer</span>=<span class="value">{[</span>
-                    &lt;<span class="attribute">button</span> <span class="attribute">key</span>=<span class="value">"back"</span> <span class="attribute">className</span>=<span class="value">"kuma-button kuma-button-mwhite"</span> <span class="attribute">onClick</span>=<span class="value">{this.handleCancel.bind(this)}</span>&gt;</span>返 回<span class="tag">&lt;/<span class="title">button</span>&gt;</span>,
-                    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">key</span>=<span class="value">"submit"</span> <span class="attribute">className</span>=<span class="value">{'kuma-button</span> <span class="attribute">kuma-button-mblue</span> ' + (<span class="attribute">this.state.loading</span> ? '<span class="attribute">kuma-button-loading</span>'<span class="attribute">:</span> '')} <span class="attribute">onClick</span>=<span class="value">{this.handleOk.bind(this)}</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Dialog</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"modal"</span>
+                <span class="hljs-attribute">visible</span>=<span class="hljs-value">{this.state.visible}</span>
+                <span class="hljs-attribute">title</span>=<span class="hljs-value">"对话框标题"</span> <span class="hljs-attribute">onOk</span>=<span class="hljs-value">{this.handleOk}</span> <span class="hljs-attribute">onCancel</span>=<span class="hljs-value">{this.handleCancel.bind(this)}</span>
+                <span class="hljs-attribute">footer</span>=<span class="hljs-value">{[</span>
+                    &lt;<span class="hljs-attribute">button</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"back"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-mwhite"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleCancel.bind(this)}</span>&gt;</span>返 回<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>,
+                    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">{'kuma-button</span> <span class="hljs-attribute">kuma-button-mblue</span> ' + (<span class="hljs-attribute">this.state.loading</span> ? '<span class="hljs-attribute">kuma-button-loading</span>'<span class="hljs-attribute">:</span> '')} <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleOk.bind(this)}</span>&gt;</span>
                     提 交
-                    <span class="tag">&lt;/<span class="title">button</span>&gt;</span>
-                ]}&gt;
-                <span class="tag">&lt;<span class="title">p</span>&gt;</span>对话框的内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">p</span>&gt;</span>对话框的内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">p</span>&gt;</span>对话框的内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">p</span>&gt;</span>对话框的内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">p</span>&gt;</span>对话框的内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">Dialog</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+                ]</span>}&gt;
+                <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>对话框的内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>对话框的内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>对话框的内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>对话框的内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>对话框的内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Dialog</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>;</span>
     }
 }
 
 ReactDOM.render(
-    <span class="xml"><span class="tag">&lt;<span class="title">CustomFooter</span> /&gt;</span>, document.getElementById('components-dialog-demo-confirm'));</span></code></pre></div></div></div><div id="code-box-components-dialog-demo-custom" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-dialog-demo-custom">确认对话框</a></div></div><div class="code-box-demo"><div id="components-dialog-demo-custom"></div></div><div class="code-box-desc"><p>确认对话框。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">CustomFooter</span> /&gt;</span>, document.getElementById('components-dialog-demo-confirm'));</span></code></pre></div></div></div><div id="code-box-components-dialog-demo-custom" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-dialog-demo-custom">确认对话框</a></div></div><div class="code-box-demo"><div id="components-dialog-demo-custom"></div></div><div class="code-box-desc"><p>确认对话框。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -482,30 +482,30 @@ var ConfirmDemo = (function (_React$Component) {
   return ConfirmDemo;
 })(React.Component);
 
-ReactDOM.render(React.createElement(ConfirmDemo, null), document.getElementById('components-dialog-demo-custom'));})()</script><div class="highlight"><pre><code class="javascript">import Dialog from <span class="string">'uxcore-dialog'</span>;
-<span class="keyword">let</span> confirm = Dialog.confirm;
+ReactDOM.render(React.createElement(ConfirmDemo, null), document.getElementById('components-dialog-demo-custom'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Dialog <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-dialog'</span>;
+<span class="hljs-keyword">let</span> confirm = Dialog.confirm;
 
-<span class="function"><span class="keyword">function</span> <span class="title">showConfirm</span><span class="params">()</span>{</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showConfirm</span>(<span class="hljs-params"></span>)</span>{
   confirm({
-    title: <span class="string">'您是否确认要删除这项内容'</span>,
-    content: <span class="string">'一些解释'</span>,
-    onOk: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
-      alert(<span class="string">'确定'</span>);
+    title: <span class="hljs-string">'您是否确认要删除这项内容'</span>,
+    content: <span class="hljs-string">'一些解释'</span>,
+    onOk: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      alert(<span class="hljs-string">'确定'</span>);
     },
-    onCancel: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>}
+    onCancel: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{}
   });
 }
 
-class ConfirmDemo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConfirmDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     render(){
-        <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"kuma-button kuma-button-mblue"</span> <span class="attribute">onClick</span>=<span class="value">{showConfirm.bind(this)}</span>&gt;</span>
+        <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-mblue"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{showConfirm.bind(this)}</span>&gt;</span>
               确认对话框
-        <span class="tag">&lt;/<span class="title">button</span>&gt;</span>);
+        <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>)</span>;
     }
 }
 
 ReactDOM.render(
-    <span class="tag">&lt;<span class="title">ConfirmDemo</span> /&gt;</span>, document.getElementById('components-dialog-demo-custom'));</span></code></pre></div></div></div><div id="code-box-components-dialog-demo-info" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-dialog-demo-info">信息提示</a></div></div><div class="code-box-demo"><div id="components-dialog-demo-info"></div></div><div class="code-box-desc"><p>信息提示。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">ConfirmDemo</span> /&gt;</span>, document.getElementById('components-dialog-demo-custom'));</span></code></pre></div></div></div><div id="code-box-components-dialog-demo-info" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-dialog-demo-info">信息提示</a></div></div><div class="code-box-demo"><div id="components-dialog-demo-info"></div></div><div class="code-box-desc"><p>信息提示。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -582,53 +582,53 @@ var InfoDemo = (function (_React$Component) {
   return InfoDemo;
 })(React.Component);
 
-ReactDOM.render(React.createElement(InfoDemo, null), document.getElementById('components-dialog-demo-info'));})()</script><div class="highlight"><pre><code class="javascript">import Dialog from <span class="string">'uxcore-dialog'</span>;
+ReactDOM.render(React.createElement(InfoDemo, null), document.getElementById('components-dialog-demo-info'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Dialog <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-dialog'</span>;
 
-<span class="function"><span class="keyword">function</span> <span class="title">info</span><span class="params">()</span> {</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">info</span>(<span class="hljs-params"></span>) </span>{
   Dialog.info({
-    title: <span class="string">'这是一条通知信息'</span>,
-    content: <span class="string">'一些附加信息一些附加信息一些附加信息'</span>,
-    onOk: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>}
+    title: <span class="hljs-string">'这是一条通知信息'</span>,
+    content: <span class="hljs-string">'一些附加信息一些附加信息一些附加信息'</span>,
+    onOk: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{}
   });
 }
 
-<span class="function"><span class="keyword">function</span> <span class="title">success</span><span class="params">()</span> {</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">success</span>(<span class="hljs-params"></span>) </span>{
   Dialog.success({
-    title: <span class="string">'这是一条通知信息'</span>,
-    content: <span class="string">'一些附加信息一些附加信息一些附加信息'</span>
+    title: <span class="hljs-string">'这是一条通知信息'</span>,
+    content: <span class="hljs-string">'一些附加信息一些附加信息一些附加信息'</span>
   });
 }
 
-<span class="function"><span class="keyword">function</span> <span class="title">error</span><span class="params">()</span> {</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">error</span>(<span class="hljs-params"></span>) </span>{
   Dialog.error({
-    title: <span class="string">'这是一条通知信息'</span>,
-    content: <span class="string">'一些附加信息一些附加信息一些附加信息'</span>
+    title: <span class="hljs-string">'这是一条通知信息'</span>,
+    content: <span class="hljs-string">'一些附加信息一些附加信息一些附加信息'</span>
   });
 }
 
-class InfoDemo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InfoDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     render(){
-        <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-          <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"kuma-button kuma-button-swhite"</span> <span class="attribute">onClick</span>=<span class="value">{info}</span>&gt;</span>信息提示<span class="tag">&lt;/<span class="title">button</span>&gt;</span>&amp;nbsp;
-          <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"kuma-button kuma-button-swhite"</span> <span class="attribute">onClick</span>=<span class="value">{success}</span>&gt;</span>成功提示<span class="tag">&lt;/<span class="title">button</span>&gt;</span>&amp;nbsp;
-          <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">"kuma-button kuma-button-swhite"</span> <span class="attribute">onClick</span>=<span class="value">{error}</span>&gt;</span>失败提示<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>);
+        <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-swhite"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{info}</span>&gt;</span>信息提示<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>&amp;nbsp;
+          <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-swhite"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{success}</span>&gt;</span>成功提示<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>&amp;nbsp;
+          <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-swhite"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{error}</span>&gt;</span>失败提示<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>)</span>;
     }
 }
 
 ReactDOM.render(
-    <span class="tag">&lt;<span class="title">InfoDemo</span> /&gt;</span>, document.getElementById('components-dialog-demo-info'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><p>模态对话框。</p>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">InfoDemo</span> /&gt;</span>, document.getElementById('components-dialog-demo-info'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><p>模态对话框。</p>
 <h2 id="何时使用">何时使用</h2><p>需要用户处理事务，又不希望跳转页面以致打断工作流程时，可以使用 <code>Dialog</code> 在当前页面正中打开一个浮层，承载相应的操作。</p>
-<h2 id="usage">Usage</h2><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Dialog = require(<span class="string">'uxcore-dialog'</span>);
+<h2 id="usage">Usage</h2><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Dialog = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-dialog'</span>);
 ReactDOM.render(
-  (<span class="xml"><span class="tag">&lt;<span class="title">Dialog</span> <span class="attribute">title</span>=<span class="value">"第一个 Dialog"</span>
-      <span class="attribute">visible</span>=<span class="value">{this.state.visible}</span>
-      <span class="attribute">onOk</span>=<span class="value">{this.handleOk.bind(this)}</span>
-      <span class="attribute">onCancel</span>=<span class="value">{this.handleCancel.bind(this)}</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">p</span>&gt;</span>对话框的内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">Dialog</span>&gt;</span>),
-  document.getElementById('content')
-);</span></code></pre></div><h2 id="api">API</h2><table>
+  (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Dialog</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"第一个 Dialog"</span>
+      <span class="hljs-attribute">visible</span>=<span class="hljs-value">{this.state.visible}</span>
+      <span class="hljs-attribute">onOk</span>=<span class="hljs-value">{this.handleOk.bind(this)}</span>
+      <span class="hljs-attribute">onCancel</span>=<span class="hljs-value">{this.handleCancel.bind(this)}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>对话框的内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Dialog</span>&gt;</span>)</span>,
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'content'</span>)
+);</code></pre></div><h2 id="api">API</h2><table>
 <thead>
 <tr>
 <th>参数</th>

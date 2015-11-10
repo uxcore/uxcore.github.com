@@ -14,12 +14,12 @@ ReactDOM.render(React.createElement(
     null,
     '鼠标移上来就会出现提示'
   )
-), document.getElementById('components-tooltip-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Tooltip = require(<span class="string">'uxcore-tooltip'</span>);
+), document.getElementById('components-tooltip-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Tooltip = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-tooltip'</span>);
 
 ReactDOM.render(
-  <span class="xml"><span class="tag">&lt;<span class="title">Tooltip</span> <span class="attribute">overlay</span>=<span class="value">"提示文字"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">span</span>&gt;</span>鼠标移上来就会出现提示<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">Tooltip</span>&gt;</span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Tooltip</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">"提示文字"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>鼠标移上来就会出现提示<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Tooltip</span>&gt;</span>
 , document.getElementById('components-tooltip-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-tooltip-demo-placement" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-tooltip-demo-placement">位置</a></div></div><div class="code-box-demo"><div id="components-tooltip-demo-placement"></div></div><div class="code-box-desc"><p>位置有四个方向。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Tooltip = require('uxcore-tooltip');
@@ -68,24 +68,24 @@ ReactDOM.render(React.createElement(
       '下边下边'
     )
   )
-), document.getElementById('components-tooltip-demo-placement'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Tooltip = require(<span class="string">'uxcore-tooltip'</span>);
-<span class="keyword">var</span> text = <span class="xml"><span class="tag">&lt;<span class="title">span</span>&gt;</span>提示文字<span class="tag">&lt;/<span class="title">span</span>&gt;</span>;</span>
+), document.getElementById('components-tooltip-demo-placement'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Tooltip = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-tooltip'</span>);
+<span class="hljs-keyword">var</span> text = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>提示文字<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>;</span>
 
 ReactDOM.render(
-  <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">Tooltip</span> <span class="attribute">placement</span>=<span class="value">"left"</span> <span class="attribute">overlay</span>=<span class="value">{text}</span> <span class="attribute">trigger</span>=<span class="value">{['click']}</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>左边左边<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">Tooltip</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">Tooltip</span> <span class="attribute">placement</span>=<span class="value">"right"</span> <span class="attribute">overlay</span>=<span class="value">{text}</span> <span class="attribute">trigger</span>=<span class="value">{['click']}</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>右边右边<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">Tooltip</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">Tooltip</span> <span class="attribute">placement</span>=<span class="value">"top"</span> <span class="attribute">overlay</span>=<span class="value">{text}</span> <span class="attribute">trigger</span>=<span class="value">{['click']}</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>上边上边<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">Tooltip</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">Tooltip</span> <span class="attribute">placement</span>=<span class="value">"bottom"</span> <span class="attribute">overlay</span>=<span class="value">{text}</span> <span class="attribute">trigger</span>=<span class="value">{['click']}</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>下边下边<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">Tooltip</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Tooltip</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"left"</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{text}</span> <span class="hljs-attribute">trigger</span>=<span class="hljs-value">{['click']}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>左边左边<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Tooltip</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Tooltip</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"right"</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{text}</span> <span class="hljs-attribute">trigger</span>=<span class="hljs-value">{['click']}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>右边右边<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Tooltip</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Tooltip</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"top"</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{text}</span> <span class="hljs-attribute">trigger</span>=<span class="hljs-value">{['click']}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>上边上边<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Tooltip</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Tooltip</span> <span class="hljs-attribute">placement</span>=<span class="hljs-value">"bottom"</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{text}</span> <span class="hljs-attribute">trigger</span>=<span class="hljs-value">{['click']}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>下边下边<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Tooltip</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 , document.getElementById('components-tooltip-demo-placement'));</span></code></pre></div><style>
 #components-tooltip-demo-placement a {
   margin-right: 1em;
