@@ -1,4 +1,13 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link id="J_ThemeStyle" rel="stylesheet" href="/static/style/kuma.css"><link rel="stylesheet" href="/static/style/index.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="/static/modernizr.js"></script><!--[if lt IE 9]><script src="/static/respond.min.js"></script><![endif]--><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/latest/react-with-addons.js,react/latest/react-dom.min.js,rangy/1.3.0/rangy-core.min.js,jquery/1.11.3/jquery.min.js"></script><script src="/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link id="J_ThemeStyle" rel="stylesheet" href="/static/style/blue.css"><link rel="stylesheet" href="/static/style/index.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="/static/modernizr.js"></script><script>(function(W, D, M){
+	if (M.localstorage) {
+		var t = localStorage.getItem('theme');
+		W.theme = 'blue';
+		if (t && t !== W.theme) {
+			W.theme = t;
+			D.getElementById('J_ThemeStyle').setAttribute('href', '/static/style/' + t + '.css');
+		}
+	}	
+}(window, document, Modernizr));</script><!--[if lt IE 9]><script src="/static/respond.min.js"></script><![endif]--><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/latest/react-with-addons.js,react/latest/react-dom.min.js,rangy/1.3.0/rangy-core.min.js,jquery/1.11.3/jquery.min.js"></script><script src="/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
