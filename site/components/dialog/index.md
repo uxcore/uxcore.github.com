@@ -38,6 +38,7 @@ ReactDOM.render(
 | onCancel   | 点击遮罩层或右上角叉或取消按钮的回调  | function  | 无           |
 | width      | 宽度           | String or Number | 520           |
 | footer     | 底部内容       | React.Element    | 确定取消按钮 |
+| closable | 是否显示关闭图标和支持点击mask关闭 | Boolean | true |
 
 ### Dialog.xxx()
 

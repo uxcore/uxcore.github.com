@@ -2,4 +2,22 @@ body {
 	.site-nav {
 		background-color: @brand-primary;
 	}
+	.site-aside {
+		li {
+			&.current {
+				border-left: 2px solid @brand-primary;
+				a, small {
+					color: @brand-primary;
+				}
+			}
+			a {
+				&:hover {
+					color: @brand-primary;
+					small {
+						color: @brand-primary;
+					}
+				}
+			}
+		}
+	}
 }
