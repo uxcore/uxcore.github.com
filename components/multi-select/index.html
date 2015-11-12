@@ -90,65 +90,65 @@ var Demo = (function (_React$Component) {
 ;
 
 ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-multi-select-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="keyword">let</span> classnames = require(<span class="string">'classnames'</span>);
+<span class="hljs-keyword">let</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">'classnames'</span>);
 
-<span class="keyword">let</span> MultiSelect = require(<span class="string">'uxcore-multi-select'</span>);
+<span class="hljs-keyword">let</span> MultiSelect = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-multi-select'</span>);
 
-<span class="keyword">let</span> Item = MultiSelect.Item;
+<span class="hljs-keyword">let</span> Item = MultiSelect.Item;
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
-            value: [<span class="string">"item2"</span>, <span class="string">"item15"</span>],
-            disabled: <span class="literal">false</span>
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            value: [<span class="hljs-string">"item2"</span>, <span class="hljs-string">"item15"</span>],
+            disabled: <span class="hljs-literal">false</span>
         }
     }
 
     handleChange(value){
-        <span class="keyword">this</span>.setState({
+        <span class="hljs-keyword">this</span>.setState({
             value: value,
-            disabled: <span class="literal">false</span>
+            disabled: <span class="hljs-literal">false</span>
         })
-        console.log(<span class="string">'onChange'</span>, arguments)
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'onChange'</span>, <span class="hljs-built_in">arguments</span>)
     }
     handleSubmit(){
-        console.log(<span class="string">'onSubmit'</span>, arguments)
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'onSubmit'</span>, <span class="hljs-built_in">arguments</span>)
     }
 
     render() {
-      <span class="keyword">let</span> text= [<span class="string">'汉皇重色思倾国'</span>,<span class="string">'御宇多年求不得'</span>,<span class="string">'杨家有女初长成'</span>,<span class="string">'养在深闺人未识'</span>,
-        <span class="string">'天生丽质难自弃'</span>,<span class="string">'一朝选在君王侧'</span>,<span class="string">'回眸一笑百媚生'</span>,<span class="string">'六宫粉黛无颜色'</span>,
-        <span class="string">'春寒赐浴华清池'</span>,<span class="string">'温泉水滑洗凝脂'</span>,<span class="string">'侍儿扶起娇无力'</span>,<span class="string">'始是新承恩泽时'</span>,
-        <span class="string">'云鬓花颜金步摇'</span>,<span class="string">'芙蓉帐暖度春宵'</span>,<span class="string">'春宵苦短日高起'</span>,<span class="string">'从此君王不早朝'</span>];
+      <span class="hljs-keyword">let</span> text= [<span class="hljs-string">'汉皇重色思倾国'</span>,<span class="hljs-string">'御宇多年求不得'</span>,<span class="hljs-string">'杨家有女初长成'</span>,<span class="hljs-string">'养在深闺人未识'</span>,
+        <span class="hljs-string">'天生丽质难自弃'</span>,<span class="hljs-string">'一朝选在君王侧'</span>,<span class="hljs-string">'回眸一笑百媚生'</span>,<span class="hljs-string">'六宫粉黛无颜色'</span>,
+        <span class="hljs-string">'春寒赐浴华清池'</span>,<span class="hljs-string">'温泉水滑洗凝脂'</span>,<span class="hljs-string">'侍儿扶起娇无力'</span>,<span class="hljs-string">'始是新承恩泽时'</span>,
+        <span class="hljs-string">'云鬓花颜金步摇'</span>,<span class="hljs-string">'芙蓉帐暖度春宵'</span>,<span class="hljs-string">'春宵苦短日高起'</span>,<span class="hljs-string">'从此君王不早朝'</span>];
 
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">MultiSelect
-</span>                    <span class="attribute">className</span>=<span class="value">"test-classname-select"</span>
-                    <span class="attribute">dropdownClassName</span>=<span class="value">"test-classname-dropdown"</span>
-                    <span class="attribute">value</span>=<span class="value">{this.state.value}</span>
-                    <span class="attribute">disabled</span>=<span class="value">{this.state.disabled}</span>
-                    <span class="attribute">placeholder</span>=<span class="value">"默认提示"</span>
-                    <span class="attribute">titleBreakStr</span>=<span class="value">"、"</span>
-                    <span class="attribute">optionLabelProp</span>=<span class="value">"text"</span>
-                    <span class="attribute">showSelectAll</span>=<span class="value">{true}</span>
-                    <span class="attribute">showClear</span>=<span class="value">{true}</span>
-                    <span class="attribute">onChange</span>=<span class="value">{this.handleChange.bind(this)}</span>
-                    <span class="attribute">onSubmit</span>=<span class="value">{this.handleSubmit.bind(this)}</span>&gt;</span>
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">MultiSelect</span>
+                    <span class="hljs-attribute">className</span>=<span class="hljs-value">"test-classname-select"</span>
+                    <span class="hljs-attribute">dropdownClassName</span>=<span class="hljs-value">"test-classname-dropdown"</span>
+                    <span class="hljs-attribute">value</span>=<span class="hljs-value">{this.state.value}</span>
+                    <span class="hljs-attribute">disabled</span>=<span class="hljs-value">{this.state.disabled}</span>
+                    <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"默认提示"</span>
+                    <span class="hljs-attribute">titleBreakStr</span>=<span class="hljs-value">"、"</span>
+                    <span class="hljs-attribute">optionLabelProp</span>=<span class="hljs-value">"text"</span>
+                    <span class="hljs-attribute">showSelectAll</span>=<span class="hljs-value">{true}</span>
+                    <span class="hljs-attribute">showClear</span>=<span class="hljs-value">{true}</span>
+                    <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.handleChange.bind(this)}</span>
+                    <span class="hljs-attribute">onSubmit</span>=<span class="hljs-value">{this.handleSubmit.bind(this)}</span>&gt;</span>
                   {text.map(function(item, index) {
-                    return <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">{'item'</span> + <span class="attribute">index</span>} <span class="attribute">text</span>=<span class="value">{item}</span> <span class="attribute">key</span>=<span class="value">{index}</span> /&gt;</span>
+                    return <span class="hljs-tag">&lt;<span class="hljs-title">Item</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{'item'</span> + <span class="hljs-attribute">index</span>} <span class="hljs-attribute">text</span>=<span class="hljs-value">{item}</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{index}</span> /&gt;</span>
                   })}
-                <span class="tag">&lt;/<span class="title">MultiSelect</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        );
+                <span class="hljs-tag">&lt;/<span class="hljs-title">MultiSelect</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>;
     }
 };
 
 
 ReactDOM.render(
-  <span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>,
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>,
  document.getElementById('components-multi-select-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-multi-select-demo-max" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-multi-select-demo-max">最大限制</a></div></div><div class="code-box-demo"><div id="components-multi-select-demo-max"></div></div><div class="code-box-desc"><p>最多选择 5 项 </p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -223,60 +223,60 @@ var Demo = (function (_React$Component) {
 ;
 
 ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-multi-select-demo-max'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="keyword">let</span> classnames = require(<span class="string">'classnames'</span>);
+<span class="hljs-keyword">let</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">'classnames'</span>);
 
-<span class="keyword">let</span> MultiSelect = require(<span class="string">'uxcore-multi-select'</span>);
+<span class="hljs-keyword">let</span> MultiSelect = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-multi-select'</span>);
 
-<span class="keyword">let</span> Item = MultiSelect.Item;
+<span class="hljs-keyword">let</span> Item = MultiSelect.Item;
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
-            value: [<span class="string">"item2"</span>, <span class="string">"item15"</span>],
-            disabled: <span class="literal">false</span>
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            value: [<span class="hljs-string">"item2"</span>, <span class="hljs-string">"item15"</span>],
+            disabled: <span class="hljs-literal">false</span>
         }
     }
 
     handleChange(value){
-        <span class="keyword">this</span>.setState({
+        <span class="hljs-keyword">this</span>.setState({
             value: value,
-            disabled: <span class="literal">false</span>
+            disabled: <span class="hljs-literal">false</span>
         })
-        console.log(<span class="string">'onChange'</span>, arguments)
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'onChange'</span>, <span class="hljs-built_in">arguments</span>)
     }
     handleSubmit(){
-        console.log(<span class="string">'onSubmit'</span>, arguments)
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'onSubmit'</span>, <span class="hljs-built_in">arguments</span>)
     }
 
     render() {
-      <span class="keyword">let</span> text= [<span class="string">'汉皇重色思倾国'</span>,<span class="string">'御宇多年求不得'</span>,<span class="string">'杨家有女初长成'</span>,<span class="string">'养在深闺人未识'</span>,
-        <span class="string">'天生丽质难自弃'</span>,<span class="string">'一朝选在君王侧'</span>,<span class="string">'回眸一笑百媚生'</span>,<span class="string">'六宫粉黛无颜色'</span>,
-        <span class="string">'春寒赐浴华清池'</span>,<span class="string">'温泉水滑洗凝脂'</span>,<span class="string">'侍儿扶起娇无力'</span>,<span class="string">'始是新承恩泽时'</span>,
-        <span class="string">'云鬓花颜金步摇'</span>,<span class="string">'芙蓉帐暖度春宵'</span>,<span class="string">'春宵苦短日高起'</span>,<span class="string">'从此君王不早朝'</span>];
+      <span class="hljs-keyword">let</span> text= [<span class="hljs-string">'汉皇重色思倾国'</span>,<span class="hljs-string">'御宇多年求不得'</span>,<span class="hljs-string">'杨家有女初长成'</span>,<span class="hljs-string">'养在深闺人未识'</span>,
+        <span class="hljs-string">'天生丽质难自弃'</span>,<span class="hljs-string">'一朝选在君王侧'</span>,<span class="hljs-string">'回眸一笑百媚生'</span>,<span class="hljs-string">'六宫粉黛无颜色'</span>,
+        <span class="hljs-string">'春寒赐浴华清池'</span>,<span class="hljs-string">'温泉水滑洗凝脂'</span>,<span class="hljs-string">'侍儿扶起娇无力'</span>,<span class="hljs-string">'始是新承恩泽时'</span>,
+        <span class="hljs-string">'云鬓花颜金步摇'</span>,<span class="hljs-string">'芙蓉帐暖度春宵'</span>,<span class="hljs-string">'春宵苦短日高起'</span>,<span class="hljs-string">'从此君王不早朝'</span>];
 
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">MultiSelect
-</span>                <span class="attribute">value</span>=<span class="value">{this.state.value}</span>
-                <span class="attribute">disabled</span>=<span class="value">{this.state.disabled}</span>
-                <span class="attribute">maxSelect</span>=<span class="value">{5}</span>
-                <span class="attribute">optionLabelProp</span>=<span class="value">"text"</span>
-                <span class="attribute">onChange</span>=<span class="value">{this.handleChange.bind(this)}</span>
-                <span class="attribute">onSubmit</span>=<span class="value">{this.handleSubmit.bind(this)}</span>&gt;</span>
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">MultiSelect</span>
+                <span class="hljs-attribute">value</span>=<span class="hljs-value">{this.state.value}</span>
+                <span class="hljs-attribute">disabled</span>=<span class="hljs-value">{this.state.disabled}</span>
+                <span class="hljs-attribute">maxSelect</span>=<span class="hljs-value">{5}</span>
+                <span class="hljs-attribute">optionLabelProp</span>=<span class="hljs-value">"text"</span>
+                <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.handleChange.bind(this)}</span>
+                <span class="hljs-attribute">onSubmit</span>=<span class="hljs-value">{this.handleSubmit.bind(this)}</span>&gt;</span>
                 {text.map(function(item, index) {
-                  return <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">{'item'</span> + <span class="attribute">index</span>} <span class="attribute">text</span>=<span class="value">{item}</span> <span class="attribute">key</span>=<span class="value">{index}</span> /&gt;</span>
+                  return <span class="hljs-tag">&lt;<span class="hljs-title">Item</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{'item'</span> + <span class="hljs-attribute">index</span>} <span class="hljs-attribute">text</span>=<span class="hljs-value">{item}</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{index}</span> /&gt;</span>
                 })}
-              <span class="tag">&lt;/<span class="title">MultiSelect</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        );
+              <span class="hljs-tag">&lt;/<span class="hljs-title">MultiSelect</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>;
     }
 };
 
 
 ReactDOM.render(
-  <span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>,
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>,
  document.getElementById('components-multi-select-demo-max'));</span></code></pre></div></div></div><div id="code-box-components-multi-select-demo-hidebutton" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-multi-select-demo-hidebutton">隐藏控制按钮</a></div></div><div class="code-box-demo"><div id="components-multi-select-demo-hidebutton"></div></div><div class="code-box-desc"><p>隐藏控制按钮</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -352,61 +352,61 @@ var Demo = (function (_React$Component) {
 ;
 
 ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-multi-select-demo-hidebutton'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="keyword">let</span> classnames = require(<span class="string">'classnames'</span>);
+<span class="hljs-keyword">let</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">'classnames'</span>);
 
-<span class="keyword">let</span> MultiSelect = require(<span class="string">'uxcore-multi-select'</span>);
+<span class="hljs-keyword">let</span> MultiSelect = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-multi-select'</span>);
 
-<span class="keyword">let</span> Item = MultiSelect.Item;
+<span class="hljs-keyword">let</span> Item = MultiSelect.Item;
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
-            value: [<span class="string">"item2"</span>, <span class="string">"item15"</span>],
-            disabled: <span class="literal">false</span>
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            value: [<span class="hljs-string">"item2"</span>, <span class="hljs-string">"item15"</span>],
+            disabled: <span class="hljs-literal">false</span>
         }
     }
 
     handleChange(value){
-        <span class="keyword">this</span>.setState({
+        <span class="hljs-keyword">this</span>.setState({
             value: value,
-            disabled: <span class="literal">false</span>
+            disabled: <span class="hljs-literal">false</span>
         })
-        console.log(<span class="string">'onChange'</span>, arguments)
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'onChange'</span>, <span class="hljs-built_in">arguments</span>)
     }
     handleSubmit(){
-        console.log(<span class="string">'onSubmit'</span>, arguments)
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'onSubmit'</span>, <span class="hljs-built_in">arguments</span>)
     }
 
     render() {
-      <span class="keyword">let</span> text= [<span class="string">'汉皇重色思倾国'</span>,<span class="string">'御宇多年求不得'</span>,<span class="string">'杨家有女初长成'</span>,<span class="string">'养在深闺人未识'</span>,
-        <span class="string">'天生丽质难自弃'</span>,<span class="string">'一朝选在君王侧'</span>,<span class="string">'回眸一笑百媚生'</span>,<span class="string">'六宫粉黛无颜色'</span>,
-        <span class="string">'春寒赐浴华清池'</span>,<span class="string">'温泉水滑洗凝脂'</span>,<span class="string">'侍儿扶起娇无力'</span>,<span class="string">'始是新承恩泽时'</span>,
-        <span class="string">'云鬓花颜金步摇'</span>,<span class="string">'芙蓉帐暖度春宵'</span>,<span class="string">'春宵苦短日高起'</span>,<span class="string">'从此君王不早朝'</span>];
+      <span class="hljs-keyword">let</span> text= [<span class="hljs-string">'汉皇重色思倾国'</span>,<span class="hljs-string">'御宇多年求不得'</span>,<span class="hljs-string">'杨家有女初长成'</span>,<span class="hljs-string">'养在深闺人未识'</span>,
+        <span class="hljs-string">'天生丽质难自弃'</span>,<span class="hljs-string">'一朝选在君王侧'</span>,<span class="hljs-string">'回眸一笑百媚生'</span>,<span class="hljs-string">'六宫粉黛无颜色'</span>,
+        <span class="hljs-string">'春寒赐浴华清池'</span>,<span class="hljs-string">'温泉水滑洗凝脂'</span>,<span class="hljs-string">'侍儿扶起娇无力'</span>,<span class="hljs-string">'始是新承恩泽时'</span>,
+        <span class="hljs-string">'云鬓花颜金步摇'</span>,<span class="hljs-string">'芙蓉帐暖度春宵'</span>,<span class="hljs-string">'春宵苦短日高起'</span>,<span class="hljs-string">'从此君王不早朝'</span>];
 
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">MultiSelect
-</span>                <span class="attribute">value</span>=<span class="value">{this.state.value}</span>
-                <span class="attribute">disabled</span>=<span class="value">{this.state.disabled}</span>
-                <span class="attribute">optionLabelProp</span>=<span class="value">"text"</span>
-                <span class="attribute">showSelectAll</span>=<span class="value">{false}</span>
-                <span class="attribute">showClear</span>=<span class="value">{false}</span>
-                <span class="attribute">onChange</span>=<span class="value">{this.handleChange.bind(this)}</span>
-                <span class="attribute">onSubmit</span>=<span class="value">{this.handleSubmit.bind(this)}</span>&gt;</span>
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">MultiSelect</span>
+                <span class="hljs-attribute">value</span>=<span class="hljs-value">{this.state.value}</span>
+                <span class="hljs-attribute">disabled</span>=<span class="hljs-value">{this.state.disabled}</span>
+                <span class="hljs-attribute">optionLabelProp</span>=<span class="hljs-value">"text"</span>
+                <span class="hljs-attribute">showSelectAll</span>=<span class="hljs-value">{false}</span>
+                <span class="hljs-attribute">showClear</span>=<span class="hljs-value">{false}</span>
+                <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.handleChange.bind(this)}</span>
+                <span class="hljs-attribute">onSubmit</span>=<span class="hljs-value">{this.handleSubmit.bind(this)}</span>&gt;</span>
                 {text.map(function(item, index) {
-                  return <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">{'item'</span> + <span class="attribute">index</span>} <span class="attribute">text</span>=<span class="value">{item}</span> <span class="attribute">key</span>=<span class="value">{index}</span> /&gt;</span>
+                  return <span class="hljs-tag">&lt;<span class="hljs-title">Item</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{'item'</span> + <span class="hljs-attribute">index</span>} <span class="hljs-attribute">text</span>=<span class="hljs-value">{item}</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{index}</span> /&gt;</span>
                 })}
-              <span class="tag">&lt;/<span class="title">MultiSelect</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        );
+              <span class="hljs-tag">&lt;/<span class="hljs-title">MultiSelect</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>;
     }
 };
 
 
 ReactDOM.render(
-  <span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>,
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>,
  document.getElementById('components-multi-select-demo-hidebutton'));</span></code></pre></div></div></div><div id="code-box-components-multi-select-demo-disable" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-multi-select-demo-disable">不可控制模式</a></div></div><div class="code-box-demo"><div id="components-multi-select-demo-disable"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -481,60 +481,60 @@ var Demo = (function (_React$Component) {
 ;
 
 ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-multi-select-demo-disable'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="keyword">let</span> classnames = require(<span class="string">'classnames'</span>);
+<span class="hljs-keyword">let</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">'classnames'</span>);
 
-<span class="keyword">let</span> MultiSelect = require(<span class="string">'uxcore-multi-select'</span>);
+<span class="hljs-keyword">let</span> MultiSelect = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-multi-select'</span>);
 
-<span class="keyword">let</span> Item = MultiSelect.Item;
+<span class="hljs-keyword">let</span> Item = MultiSelect.Item;
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
-            value: [<span class="string">"item2"</span>, <span class="string">"item15"</span>],
-            disabled: <span class="literal">false</span>
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            value: [<span class="hljs-string">"item2"</span>, <span class="hljs-string">"item15"</span>],
+            disabled: <span class="hljs-literal">false</span>
         }
     }
 
     handleChange(value){
-        <span class="keyword">this</span>.setState({
+        <span class="hljs-keyword">this</span>.setState({
             value: value,
-            disabled: <span class="literal">false</span>
+            disabled: <span class="hljs-literal">false</span>
         })
-        console.log(<span class="string">'onChange'</span>, arguments)
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'onChange'</span>, <span class="hljs-built_in">arguments</span>)
     }
     handleSubmit(){
-        console.log(<span class="string">'onSubmit'</span>, arguments)
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'onSubmit'</span>, <span class="hljs-built_in">arguments</span>)
     }
 
     render() {
-      <span class="keyword">let</span> text= [<span class="string">'汉皇重色思倾国'</span>,<span class="string">'御宇多年求不得'</span>,<span class="string">'杨家有女初长成'</span>,<span class="string">'养在深闺人未识'</span>,
-        <span class="string">'天生丽质难自弃'</span>,<span class="string">'一朝选在君王侧'</span>,<span class="string">'回眸一笑百媚生'</span>,<span class="string">'六宫粉黛无颜色'</span>,
-        <span class="string">'春寒赐浴华清池'</span>,<span class="string">'温泉水滑洗凝脂'</span>,<span class="string">'侍儿扶起娇无力'</span>,<span class="string">'始是新承恩泽时'</span>,
-        <span class="string">'云鬓花颜金步摇'</span>,<span class="string">'芙蓉帐暖度春宵'</span>,<span class="string">'春宵苦短日高起'</span>,<span class="string">'从此君王不早朝'</span>];
+      <span class="hljs-keyword">let</span> text= [<span class="hljs-string">'汉皇重色思倾国'</span>,<span class="hljs-string">'御宇多年求不得'</span>,<span class="hljs-string">'杨家有女初长成'</span>,<span class="hljs-string">'养在深闺人未识'</span>,
+        <span class="hljs-string">'天生丽质难自弃'</span>,<span class="hljs-string">'一朝选在君王侧'</span>,<span class="hljs-string">'回眸一笑百媚生'</span>,<span class="hljs-string">'六宫粉黛无颜色'</span>,
+        <span class="hljs-string">'春寒赐浴华清池'</span>,<span class="hljs-string">'温泉水滑洗凝脂'</span>,<span class="hljs-string">'侍儿扶起娇无力'</span>,<span class="hljs-string">'始是新承恩泽时'</span>,
+        <span class="hljs-string">'云鬓花颜金步摇'</span>,<span class="hljs-string">'芙蓉帐暖度春宵'</span>,<span class="hljs-string">'春宵苦短日高起'</span>,<span class="hljs-string">'从此君王不早朝'</span>];
 
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-              <span class="tag">&lt;<span class="title">MultiSelect
-</span>                <span class="attribute">value</span>=<span class="value">{this.state.value}</span>
-                <span class="attribute">disabled</span>=<span class="value">{true}</span>
-                <span class="attribute">placeholder</span>=<span class="value">"默认提示"</span>
-                <span class="attribute">optionLabelProp</span>=<span class="value">"text"</span>
-                <span class="attribute">onChange</span>=<span class="value">{this.handleChange.bind(this)}</span>
-                <span class="attribute">onSubmit</span>=<span class="value">{this.handleSubmit.bind(this)}</span>&gt;</span>
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+              <span class="hljs-tag">&lt;<span class="hljs-title">MultiSelect</span>
+                <span class="hljs-attribute">value</span>=<span class="hljs-value">{this.state.value}</span>
+                <span class="hljs-attribute">disabled</span>=<span class="hljs-value">{true}</span>
+                <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"默认提示"</span>
+                <span class="hljs-attribute">optionLabelProp</span>=<span class="hljs-value">"text"</span>
+                <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.handleChange.bind(this)}</span>
+                <span class="hljs-attribute">onSubmit</span>=<span class="hljs-value">{this.handleSubmit.bind(this)}</span>&gt;</span>
                 {text.map(function(item, index) {
-                  return <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">{'item'</span> + <span class="attribute">index</span>} <span class="attribute">text</span>=<span class="value">{item}</span> <span class="attribute">key</span>=<span class="value">{index}</span> /&gt;</span>
+                  return <span class="hljs-tag">&lt;<span class="hljs-title">Item</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{'item'</span> + <span class="hljs-attribute">index</span>} <span class="hljs-attribute">text</span>=<span class="hljs-value">{item}</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{index}</span> /&gt;</span>
                 })}
-              <span class="tag">&lt;/<span class="title">MultiSelect</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        );
+              <span class="hljs-tag">&lt;/<span class="hljs-title">MultiSelect</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>;
     }
 };
 
 
 ReactDOM.render(
-  <span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>,
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>,
  document.getElementById('components-multi-select-demo-disable'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="props">Props</h2><h3 id="mulitselect">MulitSelect</h3><table>
 <thead>
 <tr>

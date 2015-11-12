@@ -63,27 +63,27 @@ var Demo = (function (_React$Component) {
     return Demo;
 })(React.Component);
 
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-layout-demo-leftfixed'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Layout = require(<span class="string">'uxcore-layout'</span>);
-<span class="keyword">let</span> {Left, Right} = Layout;
-<span class="keyword">let</span> classnames = require(<span class="string">'classnames'</span>);
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-layout-demo-leftfixed'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Layout = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-layout'</span>);
+<span class="hljs-keyword">let</span> {Left, Right} = Layout;
+<span class="hljs-keyword">let</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">'classnames'</span>);
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     constructor(props) {
-        super(props);
+        <span class="hljs-keyword">super</span>(props);
     }
 
     render() {
-        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">Layout</span> <span class="attribute">className</span>=<span class="value">"layoutDemo"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Left</span> <span class="attribute">adaptive</span>=<span class="value">{true}</span> <span class="attribute">className</span>=<span class="value">"left"</span>&gt;</span>左<span class="tag">&lt;/<span class="title">Left</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Right</span> <span class="attribute">width</span>=<span class="value">{190}</span> <span class="attribute">className</span>=<span class="value">"right"</span>&gt;</span>右<span class="tag">&lt;/<span class="title">Right</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">Layout</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Layout</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"layoutDemo"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Left</span> <span class="hljs-attribute">adaptive</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"left"</span>&gt;</span>左<span class="hljs-tag">&lt;/<span class="hljs-title">Left</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Right</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">{190}</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"right"</span>&gt;</span>右<span class="hljs-tag">&lt;/<span class="hljs-title">Right</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Layout</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 
     }
 }
 
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-layout-demo-leftfixed'))</span></code></pre></div><style type="text/css">.layoutDemo .left {
+ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-layout-demo-leftfixed'))</span></code></pre></div><style type="text/css">.layoutDemo .left {
   text-align: center;
   line-height: 200px;
   font-size: 32px;
@@ -100,24 +100,24 @@ ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</spa
 }
 .layoutDemo p {
   font-size: 24px;
-}</style><div class="highlight"><pre><code class="css"><span class="class">.layoutDemo</span> <span class="class">.left</span> <span class="rules">{
-  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
-  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">200</span>px</span></span>;
-  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">32</span>px</span></span>;
-  <span class="rule"><span class="attribute">background</span>:<span class="value"> lightblue</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.layoutDemo</span> <span class="class">.right</span> <span class="rules">{
-  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
-  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">200</span>px</span></span>;
-  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">32</span>px</span></span>;
-  <span class="rule"><span class="attribute">background</span>:<span class="value"> yellowgreen</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.layoutDemo</span><span class="class">.fixed</span> <span class="rules">{
-  <span class="rule"><span class="attribute">min-width</span>:<span class="value"> <span class="number">1000</span>px</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.layoutDemo</span> <span class="tag">p</span> <span class="rules">{
-  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">24</span>px</span></span>;
-<span class="rule">}</span></span></code></pre></div></div></div><div id="code-box-components-layout-demo-rightfixed" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-layout-demo-rightfixed">右侧自适应，左侧固定</a></div></div><div class="code-box-demo"><div id="components-layout-demo-rightfixed"></div></div><div class="code-box-desc"><p>左侧定宽 190 px，右侧自适应</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.layoutDemo</span> <span class="hljs-class">.left</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">200px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">32px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> lightblue</span></span>;
+}</span>
+<span class="hljs-class">.layoutDemo</span> <span class="hljs-class">.right</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">200px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">32px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> yellowgreen</span></span>;
+}</span>
+<span class="hljs-class">.layoutDemo</span><span class="hljs-class">.fixed</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">min-width</span>:<span class="hljs-value"> <span class="hljs-number">1000px</span></span></span>;
+}</span>
+<span class="hljs-class">.layoutDemo</span> <span class="hljs-tag">p</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">24px</span></span></span>;
+}</span></code></pre></div></div></div><div id="code-box-components-layout-demo-rightfixed" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-layout-demo-rightfixed">右侧自适应，左侧固定</a></div></div><div class="code-box-demo"><div id="components-layout-demo-rightfixed"></div></div><div class="code-box-desc"><p>左侧定宽 190 px，右侧自适应</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -169,27 +169,27 @@ var Demo = (function (_React$Component) {
     return Demo;
 })(React.Component);
 
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-layout-demo-rightfixed'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Layout = require(<span class="string">'uxcore-layout'</span>);
-<span class="keyword">let</span> {Left, Right} = Layout;
-<span class="keyword">let</span> classnames = require(<span class="string">'classnames'</span>);
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-layout-demo-rightfixed'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Layout = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-layout'</span>);
+<span class="hljs-keyword">let</span> {Left, Right} = Layout;
+<span class="hljs-keyword">let</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">'classnames'</span>);
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     constructor(props) {
-        super(props);
+        <span class="hljs-keyword">super</span>(props);
     }
 
     render() {
-        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">Layout</span> <span class="attribute">className</span>=<span class="value">"layoutDemo"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Left</span> <span class="attribute">width</span>=<span class="value">{190}</span> <span class="attribute">className</span>=<span class="value">"left"</span>&gt;</span>左<span class="tag">&lt;/<span class="title">Left</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Right</span> <span class="attribute">adaptive</span>=<span class="value">{true}</span> <span class="attribute">className</span>=<span class="value">"right"</span>&gt;</span>右<span class="tag">&lt;/<span class="title">Right</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">Layout</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Layout</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"layoutDemo"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Left</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">{190}</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"left"</span>&gt;</span>左<span class="hljs-tag">&lt;/<span class="hljs-title">Left</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Right</span> <span class="hljs-attribute">adaptive</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"right"</span>&gt;</span>右<span class="hljs-tag">&lt;/<span class="hljs-title">Right</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Layout</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 
     }
 }
 
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-layout-demo-rightfixed'))</span></code></pre></div><style type="text/css">.layoutDemo .left {
+ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-layout-demo-rightfixed'))</span></code></pre></div><style type="text/css">.layoutDemo .left {
   text-align: center;
   line-height: 200px;
   font-size: 32px;
@@ -206,24 +206,24 @@ ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</spa
 }
 .layoutDemo p {
   font-size: 24px;
-}</style><div class="highlight"><pre><code class="css"><span class="class">.layoutDemo</span> <span class="class">.left</span> <span class="rules">{
-  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
-  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">200</span>px</span></span>;
-  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">32</span>px</span></span>;
-  <span class="rule"><span class="attribute">background</span>:<span class="value"> lightblue</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.layoutDemo</span> <span class="class">.right</span> <span class="rules">{
-  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
-  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">200</span>px</span></span>;
-  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">32</span>px</span></span>;
-  <span class="rule"><span class="attribute">background</span>:<span class="value"> yellowgreen</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.layoutDemo</span><span class="class">.fixed</span> <span class="rules">{
-  <span class="rule"><span class="attribute">min-width</span>:<span class="value"> <span class="number">1000</span>px</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.layoutDemo</span> <span class="tag">p</span> <span class="rules">{
-  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">24</span>px</span></span>;
-<span class="rule">}</span></span></code></pre></div></div></div><div id="code-box-components-layout-demo-bothfixed" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-layout-demo-bothfixed">左右都固定</a></div></div><div class="code-box-demo"><div id="components-layout-demo-bothfixed"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.layoutDemo</span> <span class="hljs-class">.left</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">200px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">32px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> lightblue</span></span>;
+}</span>
+<span class="hljs-class">.layoutDemo</span> <span class="hljs-class">.right</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">200px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">32px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> yellowgreen</span></span>;
+}</span>
+<span class="hljs-class">.layoutDemo</span><span class="hljs-class">.fixed</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">min-width</span>:<span class="hljs-value"> <span class="hljs-number">1000px</span></span></span>;
+}</span>
+<span class="hljs-class">.layoutDemo</span> <span class="hljs-tag">p</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">24px</span></span></span>;
+}</span></code></pre></div></div></div><div id="code-box-components-layout-demo-bothfixed" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-layout-demo-bothfixed">左右都固定</a></div></div><div class="code-box-demo"><div id="components-layout-demo-bothfixed"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -275,27 +275,27 @@ var Demo = (function (_React$Component) {
     return Demo;
 })(React.Component);
 
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-layout-demo-bothfixed'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Layout = require(<span class="string">'uxcore-layout'</span>);
-<span class="keyword">let</span> {Left, Right} = Layout;
-<span class="keyword">let</span> classnames = require(<span class="string">'classnames'</span>);
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-layout-demo-bothfixed'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Layout = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-layout'</span>);
+<span class="hljs-keyword">let</span> {Left, Right} = Layout;
+<span class="hljs-keyword">let</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">'classnames'</span>);
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     constructor(props) {
-        super(props);
+        <span class="hljs-keyword">super</span>(props);
     }
 
     render() {
-        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">Layout</span> <span class="attribute">className</span>=<span class="value">"layoutDemo fixed"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Left</span> <span class="attribute">width</span>=<span class="value">{500}</span> <span class="attribute">className</span>=<span class="value">"left"</span>&gt;</span>左<span class="tag">&lt;/<span class="title">Left</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Right</span> <span class="attribute">width</span>=<span class="value">{500}</span> <span class="attribute">className</span>=<span class="value">"right"</span>&gt;</span>右<span class="tag">&lt;/<span class="title">Right</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">Layout</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Layout</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"layoutDemo fixed"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Left</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">{500}</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"left"</span>&gt;</span>左<span class="hljs-tag">&lt;/<span class="hljs-title">Left</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Right</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">{500}</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"right"</span>&gt;</span>右<span class="hljs-tag">&lt;/<span class="hljs-title">Right</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Layout</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 
     }
 }
 
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-layout-demo-bothfixed'))</span></code></pre></div><style type="text/css">.layoutDemo .left {
+ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-layout-demo-bothfixed'))</span></code></pre></div><style type="text/css">.layoutDemo .left {
   text-align: center;
   line-height: 200px;
   font-size: 32px;
@@ -312,24 +312,24 @@ ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</spa
 }
 .layoutDemo p {
   font-size: 24px;
-}</style><div class="highlight"><pre><code class="css"><span class="class">.layoutDemo</span> <span class="class">.left</span> <span class="rules">{
-  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
-  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">200</span>px</span></span>;
-  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">32</span>px</span></span>;
-  <span class="rule"><span class="attribute">background</span>:<span class="value"> lightblue</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.layoutDemo</span> <span class="class">.right</span> <span class="rules">{
-  <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span></span>;
-  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">200</span>px</span></span>;
-  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">32</span>px</span></span>;
-  <span class="rule"><span class="attribute">background</span>:<span class="value"> yellowgreen</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.layoutDemo</span><span class="class">.fixed</span> <span class="rules">{
-  <span class="rule"><span class="attribute">min-width</span>:<span class="value"> <span class="number">1000</span>px</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.layoutDemo</span> <span class="tag">p</span> <span class="rules">{
-  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">24</span>px</span></span>;
-<span class="rule">}</span></span></code></pre></div></div></div><div id="code-box-components-layout-demo-real" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-layout-demo-real">常见场景</a></div></div><div class="code-box-demo"><div id="components-layout-demo-real"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.layoutDemo</span> <span class="hljs-class">.left</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">200px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">32px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> lightblue</span></span>;
+}</span>
+<span class="hljs-class">.layoutDemo</span> <span class="hljs-class">.right</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">200px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">32px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> yellowgreen</span></span>;
+}</span>
+<span class="hljs-class">.layoutDemo</span><span class="hljs-class">.fixed</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">min-width</span>:<span class="hljs-value"> <span class="hljs-number">1000px</span></span></span>;
+}</span>
+<span class="hljs-class">.layoutDemo</span> <span class="hljs-tag">p</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">24px</span></span></span>;
+}</span></code></pre></div></div></div><div id="code-box-components-layout-demo-real" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-layout-demo-real">常见场景</a></div></div><div class="code-box-demo"><div id="components-layout-demo-real"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -692,14 +692,14 @@ var Demo = (function (_React$Component) {
     return Demo;
 })(React.Component);
 
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-layout-demo-real'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Layout = require(<span class="string">'uxcore-layout'</span>);
-<span class="keyword">let</span> Menu = require(<span class="string">'uxcore-menu'</span>);
-<span class="keyword">let</span> Form = require(<span class="string">'uxcore-form'</span>);
-<span class="keyword">let</span> Button = require(<span class="string">'uxcore-button'</span>);
-<span class="keyword">let</span> Table = require(<span class="string">'uxcore-table'</span>);
-<span class="keyword">let</span> {Left, Right} = Layout;
-<span class="keyword">let</span> SubMenu = Menu.SubMenu;
-<span class="keyword">let</span> {
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-layout-demo-real'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Layout = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-layout'</span>);
+<span class="hljs-keyword">let</span> Menu = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
+<span class="hljs-keyword">let</span> Form = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-form'</span>);
+<span class="hljs-keyword">let</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
+<span class="hljs-keyword">let</span> Table = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-table'</span>);
+<span class="hljs-keyword">let</span> {Left, Right} = Layout;
+<span class="hljs-keyword">let</span> SubMenu = Menu.SubMenu;
+<span class="hljs-keyword">let</span> {
     InputFormField,
     FormRow,
     OtherFormField,
@@ -708,108 +708,108 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
     SelectFormField,
     CheckboxGroupFormField
 } = Form;
-<span class="keyword">let</span> MenuItem = Menu.Item;
-<span class="keyword">let</span> Item = CheckboxGroupFormField.Item;
-<span class="keyword">let</span> classnames = require(<span class="string">'classnames'</span>);
+<span class="hljs-keyword">let</span> MenuItem = Menu.Item;
+<span class="hljs-keyword">let</span> Item = CheckboxGroupFormField.Item;
+<span class="hljs-keyword">let</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">'classnames'</span>);
 
-<span class="keyword">var</span> casData = {
-    length: <span class="number">2</span>,
+<span class="hljs-keyword">var</span> casData = {
+    length: <span class="hljs-number">2</span>,
     contents: [
         {
-            value: <span class="string">"a"</span>,
-            text: <span class="string">"A"</span>,
+            value: <span class="hljs-string">"a"</span>,
+            text: <span class="hljs-string">"A"</span>,
             contents: [
                 {
-                    value: <span class="string">"ab"</span>,
-                    text: <span class="string">"AB"</span>
+                    value: <span class="hljs-string">"ab"</span>,
+                    text: <span class="hljs-string">"AB"</span>
                 },
                 {
-                    value: <span class="string">"ac"</span>,
-                    text: <span class="string">"AC"</span>
+                    value: <span class="hljs-string">"ac"</span>,
+                    text: <span class="hljs-string">"AC"</span>
                 }
             ]
         },
         {
-            value: <span class="string">"b"</span>,
-            text: <span class="string">"B"</span>,
+            value: <span class="hljs-string">"b"</span>,
+            text: <span class="hljs-string">"B"</span>,
             contents: [
                 {
-                    value: <span class="string">"ba"</span>,
-                    text: <span class="string">"BA"</span>
+                    value: <span class="hljs-string">"ba"</span>,
+                    text: <span class="hljs-string">"BA"</span>
                 },
                 {
-                    value: <span class="string">"bc"</span>,
-                    text: <span class="string">"BC"</span>
+                    value: <span class="hljs-string">"bc"</span>,
+                    text: <span class="hljs-string">"BC"</span>
                 }
             ]
         }
     ]
 };
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
-            current: <span class="string">'1'</span>
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            current: <span class="hljs-string">'1'</span>
         };
     }
 
     componentDidMount() {
-        <span class="keyword">var</span> me = <span class="keyword">this</span>;
-        $(<span class="string">".J_enter"</span>).on(<span class="string">"keydown"</span>, <span class="function"><span class="keyword">function</span><span class="params">(e)</span> {</span>
-            <span class="keyword">if</span> (e.which == <span class="number">13</span>) {
-                console.log(me.refs.form.getValues());
+        <span class="hljs-keyword">var</span> me = <span class="hljs-keyword">this</span>;
+        $(<span class="hljs-string">".J_enter"</span>).on(<span class="hljs-string">"keydown"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-keyword">if</span> (e.which == <span class="hljs-number">13</span>) {
+                <span class="hljs-built_in">console</span>.log(me.refs.form.getValues());
             }
         })
     }
 
     componentWillUnmount() {
-        $(<span class="string">".J_enter"</span>).off(<span class="string">"keydown"</span>);
+        $(<span class="hljs-string">".J_enter"</span>).off(<span class="hljs-string">"keydown"</span>);
     }
 
     handleClick(e) {
-        console.log(<span class="string">'click '</span>, e);
-        <span class="keyword">this</span>.setState({
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'click '</span>, e);
+        <span class="hljs-keyword">this</span>.setState({
             current: e.key
         });
     }
 
     handleSearchClick() {
-        <span class="keyword">var</span> me = <span class="keyword">this</span>;
+        <span class="hljs-keyword">var</span> me = <span class="hljs-keyword">this</span>;
         me.setState({
             showAdSearch: !me.state.showAdSearch
         });
     }
 
     handleSubmitClick() {
-        <span class="keyword">var</span> me = <span class="keyword">this</span>;
-        console.log(me.refs.form.getValues());
+        <span class="hljs-keyword">var</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-built_in">console</span>.log(me.refs.form.getValues());
     }
 
     handleResetClick() {
-        <span class="keyword">var</span> me = <span class="keyword">this</span>;
+        <span class="hljs-keyword">var</span> me = <span class="hljs-keyword">this</span>;
         me.refs.form.resetValues();
     }
 
     render() {
-        <span class="keyword">let</span> me = <span class="keyword">this</span>;
-        <span class="keyword">let</span> columns = [
-            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">200</span>,ordered:<span class="literal">true</span>},
-            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span> },  
-            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
-            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
-                <span class="string">"编辑"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData, actions)</span> {</span>
-                    console.log(actions.addEmptyRow);
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">let</span> columns = [
+            { dataKey: <span class="hljs-string">'country'</span>, title:<span class="hljs-string">'国家'</span>, width: <span class="hljs-number">200</span>,ordered:<span class="hljs-literal">true</span>},
+            { dataKey: <span class="hljs-string">'city'</span>,title:<span class="hljs-string">'城市'</span>, width: <span class="hljs-number">150</span>,ordered:<span class="hljs-literal">true</span> },
+            { dataKey: <span class="hljs-string">'firstName'</span>,title:<span class="hljs-string">"FristName"</span> },  
+            { dataKey: <span class="hljs-string">'lastName'</span> ,title:<span class="hljs-string">"LastName"</span>},
+            { dataKey: <span class="hljs-string">'action1'</span>, title:<span class="hljs-string">'操作'</span>, width:<span class="hljs-number">100</span>, type:<span class="hljs-string">"action"</span>,actions:{
+                <span class="hljs-string">"编辑"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData, actions</span>) </span>{
+                    <span class="hljs-built_in">console</span>.log(actions.addEmptyRow);
                     me.refs.grid.toggleSubComp(rowData);
                 },
-                <span class="string">"删除"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
+                <span class="hljs-string">"删除"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>) </span>{
                     me.refs.grid.delRow(rowData);
                 }
               }
             },
-            { dataKey: <span class="string">'action'</span>, title:<span class="string">'链接'</span>, width:<span class="number">100</span>,render: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>
-               <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>111<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            { dataKey: <span class="hljs-string">'action'</span>, title:<span class="hljs-string">'链接'</span>, width:<span class="hljs-number">100</span>,render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>)</span>{
+               <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>111<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
               }
             }
         ];
@@ -824,67 +824,67 @@ class Demo extends React.Component {
             jsxcolumns:columns,
         };
         return (
-            <span class="tag">&lt;<span class="title">Layout</span> <span class="attribute">className</span>=<span class="value">"demo4"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Left</span> <span class="attribute">width</span>=<span class="value">{190}</span>&gt;</span>
-                     <span class="tag">&lt;<span class="title">Menu</span> <span class="attribute">onClick</span>=<span class="value">{this.handleClick.bind(this)}</span>
-                      <span class="attribute">style</span>=<span class="value">{{width:190}}</span>
-                      <span class="attribute">defaultOpenKeys</span>=<span class="value">{['sub1']}</span>
-                      <span class="attribute">selectedKeys</span>=<span class="value">{[this.state.current]}</span>
-                      <span class="attribute">mode</span>=<span class="value">"inline"</span>&gt;</span>
-                      <span class="tag">&lt;<span class="title">SubMenu</span> <span class="attribute">key</span>=<span class="value">"sub1"</span> <span class="attribute">title</span>=<span class="value">{&lt;span</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"kuma-icon kuma-icon-email"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>导航一<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>}&gt;
-                          <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">"1"</span>&gt;</span>选项1<span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
-                          <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">"2"</span>&gt;</span>选项2<span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
-                          <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">"3"</span>&gt;</span>选项3<span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
-                          <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">"4"</span>&gt;</span>选项4<span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
-                      <span class="tag">&lt;/<span class="title">SubMenu</span>&gt;</span>
-                      <span class="tag">&lt;<span class="title">SubMenu</span> <span class="attribute">key</span>=<span class="value">"sub2"</span> <span class="attribute">title</span>=<span class="value">{&lt;span</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"kuma-icon kuma-icon-wangwang"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>导航二<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>}&gt;
-                          <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">"5"</span>&gt;</span>选项5<span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
-                          <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">"6"</span>&gt;</span>选项6<span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
-                          <span class="tag">&lt;<span class="title">SubMenu</span> <span class="attribute">key</span>=<span class="value">"sub3"</span> <span class="attribute">title</span>=<span class="value">"三级导航"</span>&gt;</span>
-                              <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">"7"</span>&gt;</span>选项7<span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
-                              <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">"8"</span>&gt;</span>选项8<span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
-                          <span class="tag">&lt;/<span class="title">SubMenu</span>&gt;</span>
-                      <span class="tag">&lt;/<span class="title">SubMenu</span>&gt;</span>
-                      <span class="tag">&lt;<span class="title">SubMenu</span> <span class="attribute">key</span>=<span class="value">"sub4"</span> <span class="attribute">title</span>=<span class="value">{&lt;span</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"kuma-icon kuma-icon-boss"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>导航三<span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>}&gt;
-                          <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">"9"</span>&gt;</span>选项9<span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
-                          <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">"10"</span>&gt;</span>选项10<span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
-                          <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">"11"</span>&gt;</span>选项11<span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
-                          <span class="tag">&lt;<span class="title">Menu.Item</span> <span class="attribute">key</span>=<span class="value">"12"</span>&gt;</span>选项12<span class="tag">&lt;/<span class="title">Menu.Item</span>&gt;</span>
-                      <span class="tag">&lt;/<span class="title">SubMenu</span>&gt;</span>
-                  <span class="tag">&lt;/<span class="title">Menu</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">Left</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Right</span> <span class="attribute">adaptive</span>=<span class="value">{true}</span> <span class="attribute">className</span>=<span class="value">"demo4-right"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo4-right"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">Form</span> <span class="attribute">ref</span>=<span class="value">"form"</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">FormRow</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">InputFormField</span> <span class="attribute">className</span>=<span class="value">"J_enter"</span> <span class="attribute">jsxplaceholder</span>=<span class="value">"输入 xxxx 进行查询"</span> <span class="attribute">jsxshowLabel</span>=<span class="value">{false}</span> <span class="attribute">jsxname</span>=<span class="value">"search"</span> /&gt;</span>
-                            <span class="tag">&lt;<span class="title">OtherFormField</span> <span class="attribute">jsxflex</span>=<span class="value">{2}</span>&gt;</span>
-                                <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-updown"</span> <span class="attribute">onClick</span>=<span class="value">{me.handleSearchClick.bind(me)}</span>&gt;</span>
-                                    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span>&gt;</span>高级查询<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">{classnames({</span>
-                                        "<span class="attribute">kuma-icon</span>"<span class="attribute">:</span> <span class="attribute">true</span>,
-                                        "<span class="attribute">kuma-icon-title-up</span>"<span class="attribute">:</span> <span class="attribute">me.state.showAdSearch</span>,
-                                        "<span class="attribute">kuma-icon-title-down</span>"<span class="attribute">:</span> !<span class="attribute">me.state.showAdSearch</span>
-                                    })}&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>
-                                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>                            
-                            <span class="tag">&lt;/<span class="title">OtherFormField</span>&gt;</span>
-                        <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">FormRow</span> <span class="attribute">className</span>=<span class="value">{classnames({</span>
-                            "<span class="attribute">f-dn</span>"<span class="attribute">:</span> !<span class="attribute">me.state.showAdSearch</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Layout</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo4"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Left</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">{190}</span>&gt;</span>
+                     <span class="hljs-tag">&lt;<span class="hljs-title">Menu</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleClick.bind(this)}</span>
+                      <span class="hljs-attribute">style</span>=<span class="hljs-value">{{width:190}}</span>
+                      <span class="hljs-attribute">defaultOpenKeys</span>=<span class="hljs-value">{['sub1']}</span>
+                      <span class="hljs-attribute">selectedKeys</span>=<span class="hljs-value">{[this.state.current]}</span>
+                      <span class="hljs-attribute">mode</span>=<span class="hljs-value">"inline"</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-title">SubMenu</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"sub1"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{&lt;span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-icon kuma-icon-email"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>导航一<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>}&gt;
+                          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>选项1<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+                          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>选项2<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+                          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>选项3<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+                          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"4"</span>&gt;</span>选项4<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+                      <span class="hljs-tag">&lt;/<span class="hljs-title">SubMenu</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-title">SubMenu</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"sub2"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{&lt;span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-icon kuma-icon-wangwang"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>导航二<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>}&gt;
+                          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"5"</span>&gt;</span>选项5<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+                          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"6"</span>&gt;</span>选项6<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+                          <span class="hljs-tag">&lt;<span class="hljs-title">SubMenu</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"sub3"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"三级导航"</span>&gt;</span>
+                              <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"7"</span>&gt;</span>选项7<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+                              <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"8"</span>&gt;</span>选项8<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+                          <span class="hljs-tag">&lt;/<span class="hljs-title">SubMenu</span>&gt;</span>
+                      <span class="hljs-tag">&lt;/<span class="hljs-title">SubMenu</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-title">SubMenu</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"sub4"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{&lt;span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-icon kuma-icon-boss"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>导航三<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>}&gt;
+                          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"9"</span>&gt;</span>选项9<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+                          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"10"</span>&gt;</span>选项10<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+                          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"11"</span>&gt;</span>选项11<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+                          <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"12"</span>&gt;</span>选项12<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
+                      <span class="hljs-tag">&lt;/<span class="hljs-title">SubMenu</span>&gt;</span>
+                  <span class="hljs-tag">&lt;/<span class="hljs-title">Menu</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Left</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Right</span> <span class="hljs-attribute">adaptive</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo4-right"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo4-right"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"form"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">FormRow</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">InputFormField</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"J_enter"</span> <span class="hljs-attribute">jsxplaceholder</span>=<span class="hljs-value">"输入 xxxx 进行查询"</span> <span class="hljs-attribute">jsxshowLabel</span>=<span class="hljs-value">{false}</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"search"</span> /&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">OtherFormField</span> <span class="hljs-attribute">jsxflex</span>=<span class="hljs-value">{2}</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-updown"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleSearchClick.bind(me)}</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"javascript:;"</span>&gt;</span>高级查询<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">{classnames({</span>
+                                        "<span class="hljs-attribute">kuma-icon</span>"<span class="hljs-attribute">:</span> <span class="hljs-attribute">true</span>,
+                                        "<span class="hljs-attribute">kuma-icon-title-up</span>"<span class="hljs-attribute">:</span> <span class="hljs-attribute">me.state.showAdSearch</span>,
+                                        "<span class="hljs-attribute">kuma-icon-title-down</span>"<span class="hljs-attribute">:</span> !<span class="hljs-attribute">me.state.showAdSearch</span>
+                                    })}&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>                            
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">OtherFormField</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">FormRow</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">{classnames({</span>
+                            "<span class="hljs-attribute">f-dn</span>"<span class="hljs-attribute">:</span> !<span class="hljs-attribute">me.state.showAdSearch</span>
                         })}&gt;</span>
-                            <span class="tag">&lt;<span class="title">InputFormField</span> <span class="attribute">jsxlabel</span>=<span class="value">"名称"</span> <span class="attribute">jsxname</span>=<span class="value">"input1"</span> <span class="attribute">className</span>=<span class="value">"input1"</span>/&gt;</span>
-                            <span class="tag">&lt;<span class="title">DateFormField</span> <span class="attribute">jsxlabel</span>=<span class="value">"名称"</span> <span class="attribute">jsxname</span>=<span class="value">"date1"</span> <span class="attribute">jsxtype</span>=<span class="value">"cascade"</span> <span class="attribute">style</span>=<span class="value">{{</span>
-                                <span class="attribute">width:</span> <span class="attribute">100</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">InputFormField</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"名称"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"input1"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"input1"</span>/&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">DateFormField</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"名称"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"date1"</span> <span class="hljs-attribute">jsxtype</span>=<span class="hljs-value">"cascade"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span>
+                                <span class="hljs-attribute">width:</span> <span class="hljs-attribute">100</span>
                             }}/&gt;</span>
-                        <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">FormRow</span> <span class="attribute">className</span>=<span class="value">{classnames({</span>
-                            "<span class="attribute">f-dn</span>"<span class="attribute">:</span> !<span class="attribute">me.state.showAdSearch</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">FormRow</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">{classnames({</span>
+                            "<span class="hljs-attribute">f-dn</span>"<span class="hljs-attribute">:</span> !<span class="hljs-attribute">me.state.showAdSearch</span>
                         })}&gt;</span>
-                            <span class="tag">&lt;<span class="title">SelectFormField</span> <span class="attribute">className</span>=<span class="value">"select2"</span> 
-                                             <span class="attribute">jsxfetchUrl</span>=<span class="value">"http://suggest.taobao.com/sug"</span>
-                                             <span class="attribute">jsxmultiple</span>=<span class="value">{true}</span>
-                                             <span class="attribute">jsxname</span>=<span class="value">"select2"</span>
-                                             <span class="attribute">jsxlabel</span>=<span class="value">"名称"</span>
-                                             <span class="attribute">afterFetch</span>=<span class="value">{(obj)</span> =&gt;</span> {
+                            <span class="hljs-tag">&lt;<span class="hljs-title">SelectFormField</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"select2"</span> 
+                                             <span class="hljs-attribute">jsxfetchUrl</span>=<span class="hljs-value">"http://suggest.taobao.com/sug"</span>
+                                             <span class="hljs-attribute">jsxmultiple</span>=<span class="hljs-value">{true}</span>
+                                             <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"select2"</span>
+                                             <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"名称"</span>
+                                             <span class="hljs-attribute">afterFetch</span>=<span class="hljs-value">{(obj)</span> =&gt;</span> {
                                                 let data = {};
                                                 obj.result.forEach((item, index) =&gt; {
                                                     data[item[1]] = item[0];
@@ -892,31 +892,31 @@ class Demo extends React.Component {
                                                 console.log(data);
                                                 return data;
                                              }}/&gt;
-                            <span class="tag">&lt;<span class="title">CheckboxGroupFormField</span> <span class="attribute">jsxlabel</span>=<span class="value">"名称"</span> <span class="attribute">jsxname</span>=<span class="value">"check1"</span>&gt;</span>
-                                <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"1"</span> <span class="attribute">text</span>=<span class="value">"名称"</span>/&gt;</span>
-                                <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"2"</span> <span class="attribute">text</span>=<span class="value">"名称"</span>/&gt;</span>
-                                <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"3"</span> <span class="attribute">text</span>=<span class="value">"名称"</span>/&gt;</span>
-                            <span class="tag">&lt;/<span class="title">CheckboxGroupFormField</span>&gt;</span>
-                        <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">FormRow</span> <span class="attribute">className</span>=<span class="value">{classnames({</span>
-                            "<span class="attribute">f-dn</span>"<span class="attribute">:</span> !<span class="attribute">me.state.showAdSearch</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">CheckboxGroupFormField</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"名称"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"check1"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">Item</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">text</span>=<span class="hljs-value">"名称"</span>/&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">Item</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"2"</span> <span class="hljs-attribute">text</span>=<span class="hljs-value">"名称"</span>/&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">Item</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"3"</span> <span class="hljs-attribute">text</span>=<span class="hljs-value">"名称"</span>/&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">CheckboxGroupFormField</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">FormRow</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">{classnames({</span>
+                            "<span class="hljs-attribute">f-dn</span>"<span class="hljs-attribute">:</span> !<span class="hljs-attribute">me.state.showAdSearch</span>
                         })}&gt;</span>
-                            <span class="tag">&lt;<span class="title">OtherFormField</span> <span class="attribute">className</span>=<span class="value">"button1"</span>&gt;</span>
-                                <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">type</span>=<span class="value">"primary"</span> <span class="attribute">onClick</span>=<span class="value">{me.handleSubmitClick.bind(me)}</span>&gt;</span>提交<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                                <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">type</span>=<span class="value">"secondary"</span> <span class="attribute">onClick</span>=<span class="value">{me.handleResetClick.bind(me)}</span>&gt;</span>重置<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                            <span class="tag">&lt;/<span class="title">OtherFormField</span>&gt;</span>
-                        <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
-                    <span class="tag">&lt;/<span class="title">Form</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">Table</span> {<span class="attribute">...renderProps</span>} /&gt;</span>
-                    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">Right</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">Layout</span>&gt;</span>
-        )
+                            <span class="hljs-tag">&lt;<span class="hljs-title">OtherFormField</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"button1"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleSubmitClick.bind(me)}</span>&gt;</span>提交<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"secondary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleResetClick.bind(me)}</span>&gt;</span>重置<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">OtherFormField</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Table</span> {<span class="hljs-attribute">...renderProps</span>} /&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Right</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Layout</span>&gt;</span>
+        )</span>
 
     }
 }
 
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-layout-demo-real'))</span></code></pre></div><style type="text/css">.demo4 {
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-layout-demo-real'))</span></code></pre></div><style type="text/css">.demo4 {
   min-height: 600px;
 }
 .demo4 .f-dn {
@@ -940,31 +940,31 @@ ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</spa
 }
 .demo4 .input1 .kuma-label, .demo4 .select2 .kuma-label {
     width: 48px;
-}</style><div class="highlight"><pre><code class="css"><span class="class">.demo4</span> <span class="rules">{
-  <span class="rule"><span class="attribute">min-height</span>:<span class="value"> <span class="number">600</span>px</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.demo4</span> <span class="class">.f-dn</span> <span class="rules">{
-  <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.demo4</span> <span class="class">.demo-updown</span> <span class="rules">{
-  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">36</span>px</span></span>;
-  <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.demo4</span> <span class="class">.kuma-button</span> <span class="rules">{
-  <span class="rule"><span class="attribute">margin-right</span>:<span class="value"> <span class="number">20</span>px</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.demo4</span> <span class="class">.kuma-label</span> <span class="rules">{
-  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">70</span>px</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.demo4</span> <span class="class">.kuma-calendar-picker</span> <span class="rules">{
-    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">150</span>px</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.demo4</span> <span class="class">.demo4-right</span> <span class="rules">{
-    <span class="rule"><span class="attribute">padding-left</span>:<span class="value"> <span class="number">20</span>px</span></span>;
-<span class="rule">}</span></span>
-<span class="class">.demo4</span> <span class="class">.input1</span> <span class="class">.kuma-label</span>, <span class="class">.demo4</span> <span class="class">.select2</span> <span class="class">.kuma-label</span> <span class="rules">{
-    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">48</span>px</span></span>;
-<span class="rule">}</span></span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="props">Props</h2><table>
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.demo4</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">min-height</span>:<span class="hljs-value"> <span class="hljs-number">600px</span></span></span>;
+}</span>
+<span class="hljs-class">.demo4</span> <span class="hljs-class">.f-dn</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> none</span></span>;
+}</span>
+<span class="hljs-class">.demo4</span> <span class="hljs-class">.demo-updown</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">36px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline-block</span></span>;
+}</span>
+<span class="hljs-class">.demo4</span> <span class="hljs-class">.kuma-button</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">20px</span></span></span>;
+}</span>
+<span class="hljs-class">.demo4</span> <span class="hljs-class">.kuma-label</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">70px</span></span></span>;
+}</span>
+<span class="hljs-class">.demo4</span> <span class="hljs-class">.kuma-calendar-picker</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">150px</span></span></span>;
+}</span>
+<span class="hljs-class">.demo4</span> <span class="hljs-class">.demo4-right</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">padding-left</span>:<span class="hljs-value"> <span class="hljs-number">20px</span></span></span>;
+}</span>
+<span class="hljs-class">.demo4</span> <span class="hljs-class">.input1</span> <span class="hljs-class">.kuma-label</span>, <span class="hljs-class">.demo4</span> <span class="hljs-class">.select2</span> <span class="hljs-class">.kuma-label</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">48px</span></span></span>;
+}</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="props">Props</h2><table>
 <thead>
 <tr>
 <th>配置项</th>
