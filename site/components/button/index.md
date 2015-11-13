@@ -46,3 +46,4 @@ ReactDOM.render(<div>
 |size|按钮大小(`large` `medium` `small`)|string|medium|
 |type|类型(`primary` `secondary`)|string|blue|
 |disabled|是否禁用(`disabled` 或 `true` `false`)|string|false|
+|className|增加额外的class|string|''|
