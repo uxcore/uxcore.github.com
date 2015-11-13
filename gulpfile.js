@@ -24,7 +24,7 @@ gulp.task('less_index', function(){
         .pipe(less({
             plugins: [autoprefix, LessPluginInlineUrls]
         }))
-        .pipe(minifyCss())
+        .pipe(minifyCss({compatibility: 'ie8'}))
         .pipe(gulp.dest('./theme/static/style/'));
 });
 

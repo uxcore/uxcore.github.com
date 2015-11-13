@@ -84,53 +84,53 @@ var Demo = (function (_React$Component) {
 
 ;
 
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-form-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Button = require(<span class="string">'uxcore-button'</span>);
-<span class="keyword">let</span> Form = require(<span class="string">'uxcore-form'</span>);
-<span class="keyword">let</span> {
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-form-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
+<span class="hljs-keyword">let</span> Form = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-form'</span>);
+<span class="hljs-keyword">let</span> {
     Constants,
     FormRowTitle,
     FormRow: Row,
     InputFormField: Input,
-    DateFormField: Date,
+    DateFormField: <span class="hljs-built_in">Date</span>,
     TextAreaFormField: TextArea,
     ButtonGroupFormField
 } = Form;
 
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {};
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {};
     }
 
     handleSubmit() {
-        console.log(<span class="keyword">this</span>.refs.form.getValues());
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.refs.form.getValues());
     }
 
     render() {
-        <span class="keyword">let</span> me = <span class="keyword">this</span>;
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-basic"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-                    <span class="rules">{<span class="rule">"<span class="attribute">.required {font-family</span>:<span class="value">Simsun</span></span></span>} <span class="class">.demo-basic-form</span> <span class="rules">{<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">530</span>px</span></span></span>}"}
-                </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Form</span> <span class="attribute">ref</span>=<span class="value">"form"</span> <span class="attribute">className</span>=<span class="value">"demo-basic-form"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">Input</span> <span class="attribute">jsxname</span>=<span class="value">"theme"</span> <span class="attribute">jsxlabel</span>=<span class="value">"主题"</span>  <span class="attribute">jsxplaceholder</span>=<span class="value">"请输入主题"</span>/&gt;</span>
-                    <span class="tag">&lt;<span class="title">Input</span> <span class="attribute">jsxname</span>=<span class="value">"location"</span> <span class="attribute">jsxlabel</span>=<span class="value">"地点"</span>  <span class="attribute">jsxplaceholder</span>=<span class="value">"请输入地点"</span>/&gt;</span>
-                    <span class="tag">&lt;<span class="title">Date</span> <span class="attribute">jsxname</span>=<span class="value">"date"</span> <span class="attribute">jsxlabel</span>=<span class="value">"时间"</span> <span class="attribute">jsxtype</span>=<span class="value">"cascade"</span>/&gt;</span>
-                    <span class="tag">&lt;<span class="title">TextArea</span> <span class="attribute">jsxname</span>=<span class="value">"content"</span> <span class="attribute">jsxlabel</span>=<span class="value">"内容"</span> /&gt;</span>
-                    <span class="tag">&lt;<span class="title">ButtonGroupFormField</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"large"</span> <span class="attribute">onClick</span>=<span class="value">{me.handleSubmit.bind(me)}</span>&gt;</span>确定<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                    <span class="tag">&lt;/<span class="title">ButtonGroupFormField</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">Form</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        )
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-basic"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+                    <span class="hljs-rules">{".required {<span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value">Simsun</span></span></span>} <span class="hljs-class">.demo-basic-form</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">530px</span></span></span></span>}"}
+                </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"form"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-basic-form"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"theme"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"主题"</span>  <span class="hljs-attribute">jsxplaceholder</span>=<span class="hljs-value">"请输入主题"</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"location"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"地点"</span>  <span class="hljs-attribute">jsxplaceholder</span>=<span class="hljs-value">"请输入地点"</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Date</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"date"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"时间"</span> <span class="hljs-attribute">jsxtype</span>=<span class="hljs-value">"cascade"</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">TextArea</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"content"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"内容"</span> /&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">ButtonGroupFormField</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"large"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleSubmit.bind(me)}</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">ButtonGroupFormField</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>
 
     }
 };
 
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-basic'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-validator" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-validator">验证</a></div></div><div class="code-box-demo"><div id="components-form-demo-validator"></div></div><div class="code-box-desc"><p>自带验证函数，并且支持自己手写，并分为实时验证与非实时验证。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-basic'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-validator" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-validator">验证</a></div></div><div class="code-box-demo"><div id="components-form-demo-validator"></div></div><div class="code-box-desc"><p>自带验证函数，并且支持自己手写，并分为实时验证与非实时验证。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -223,14 +223,14 @@ var Demo = (function (_React$Component) {
 
 ;
 
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-form-demo-validator'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Button = require(<span class="string">'uxcore-button'</span>);
-<span class="keyword">let</span> Form = require(<span class="string">'uxcore-form'</span>);
-<span class="keyword">let</span> {
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-form-demo-validator'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
+<span class="hljs-keyword">let</span> Form = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-form'</span>);
+<span class="hljs-keyword">let</span> {
     Constants,
     FormRowTitle,
     FormRow: Row,
     InputFormField: Input,
-    DateFormField: Date,
+    DateFormField: <span class="hljs-built_in">Date</span>,
     TextAreaFormField: TextArea,
     ButtonGroupFormField,
     SelectFormField,
@@ -238,60 +238,60 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
 } = Form;
 
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
-            mode: <span class="literal">true</span>
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            mode: <span class="hljs-literal">true</span>
         };
     }
 
     handleSubmit() {
-        console.log(<span class="keyword">this</span>.refs.form.getValues());
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.refs.form.getValues());
     }
 
     handleModeChange(values, name) {
-        console.log(values[name]);
-        <span class="keyword">this</span>.setState({
-            mode: values[name] == <span class="string">"true"</span> ? <span class="literal">true</span> : <span class="literal">false</span>
+        <span class="hljs-built_in">console</span>.log(values[name]);
+        <span class="hljs-keyword">this</span>.setState({
+            mode: values[name] == <span class="hljs-string">"true"</span> ? <span class="hljs-literal">true</span> : <span class="hljs-literal">false</span>
         })
     }
 
     render() {
-        <span class="keyword">let</span> me = <span class="keyword">this</span>;
-        console.log(me.state.mode);
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-basic"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-                    <span class="rules">{<span class="rule">"<span class="attribute">.required {font-family</span>:<span class="value">Simsun</span></span></span>} <span class="class">.demo-basic-form</span> <span class="rules">{<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">530</span>px</span></span></span>} <span class="class">.form-select</span> <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#ccc</span></span></span>; <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">5</span>px</span></span>; <span class="rule"><span class="attribute">padding-top</span>:<span class="value"> <span class="number">15</span>px</span></span>; <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">530</span>px</span></span>; <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> <span class="number">40</span>px</span></span>;<span class="rule">}</span></span>"}
-                </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Form</span> <span class="attribute">className</span>=<span class="value">"form-select"</span> <span class="attribute">jsxvalues</span>=<span class="value">{{mode:</span> "<span class="attribute">true</span>"}} <span class="attribute">jsxonChange</span>=<span class="value">{me.handleModeChange.bind(me)}</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">SelectFormField</span> <span class="attribute">jsxdata</span>=<span class="value">{{"true":</span> "实时校验", "<span class="attribute">false</span>"<span class="attribute">:</span> "非实时校验"}} <span class="attribute">jsxname</span>=<span class="value">"mode"</span> <span class="attribute">jsxlabel</span>=<span class="value">"校验模式"</span> <span class="attribute">showSearch</span>=<span class="value">{false}</span>/&gt;</span>
-                <span class="tag">&lt;/<span class="title">Form</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Form</span> <span class="attribute">ref</span>=<span class="value">"form"</span> <span class="attribute">className</span>=<span class="value">"demo-basic-form"</span> <span class="attribute">instantValidate</span>=<span class="value">{me.state.mode}</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">Input</span> <span class="attribute">jsxname</span>=<span class="value">"theme"</span> <span class="attribute">jsxlabel</span>=<span class="value">"主题"</span> <span class="attribute">required</span>=<span class="value">{true}</span> <span class="attribute">jsxplaceholder</span>=<span class="value">"请输入主题"</span> <span class="attribute">jsxrules</span>=<span class="value">{[</span>
-                        {<span class="attribute">validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "不能为空"},
-                        {<span class="attribute">validator:</span> <span class="attribute">function</span>(<span class="attribute">value</span>) {<span class="attribute">return</span> <span class="attribute">value.length</span> &lt;= <span class="attribute">3</span>}, <span class="attribute">errMsg:</span> "不能超过<span class="attribute">3</span>个字"}
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-built_in">console</span>.log(me.state.mode);
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-basic"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+                    <span class="hljs-rules">{".required {<span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value">Simsun</span></span></span>} <span class="hljs-class">.demo-basic-form</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">530px</span></span></span></span>} <span class="hljs-class">.form-select</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#ccc</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">5px</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">padding-top</span>:<span class="hljs-value"> <span class="hljs-number">15px</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">530px</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-value"> <span class="hljs-number">40px</span></span></span>;}</span>"}
+                </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"form-select"</span> <span class="hljs-attribute">jsxvalues</span>=<span class="hljs-value">{{mode:</span> "<span class="hljs-attribute">true</span>"}} <span class="hljs-attribute">jsxonChange</span>=<span class="hljs-value">{me.handleModeChange.bind(me)}</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">SelectFormField</span> <span class="hljs-attribute">jsxdata</span>=<span class="hljs-value">{{"true":</span> "实时校验", "<span class="hljs-attribute">false</span>"<span class="hljs-attribute">:</span> "非实时校验"}} <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"mode"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"校验模式"</span> <span class="hljs-attribute">showSearch</span>=<span class="hljs-value">{false}</span>/&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"form"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-basic-form"</span> <span class="hljs-attribute">instantValidate</span>=<span class="hljs-value">{me.state.mode}</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"theme"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"主题"</span> <span class="hljs-attribute">required</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">jsxplaceholder</span>=<span class="hljs-value">"请输入主题"</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{[</span>
+                        {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">Validators.isNotEmpty</span>, <span class="hljs-attribute">errMsg:</span> "不能为空"},
+                        {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">function</span>(<span class="hljs-attribute">value</span>) {<span class="hljs-attribute">return</span> <span class="hljs-attribute">value.length</span> &lt;= <span class="hljs-attribute">3</span>}, <span class="hljs-attribute">errMsg:</span> "不能超过<span class="hljs-attribute">3</span>个字"}
                     ]}/&gt;</span>
-                    <span class="tag">&lt;<span class="title">Input</span> <span class="attribute">jsxname</span>=<span class="value">"location"</span> <span class="attribute">jsxlabel</span>=<span class="value">"地点"</span> <span class="attribute">required</span>=<span class="value">{true}</span> <span class="attribute">jsxplaceholder</span>=<span class="value">"请输入地点"</span> <span class="attribute">jsxrules</span>=<span class="value">{[</span>
-                        {<span class="attribute">validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "不能为空"}
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"location"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"地点"</span> <span class="hljs-attribute">required</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">jsxplaceholder</span>=<span class="hljs-value">"请输入地点"</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{[</span>
+                        {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">Validators.isNotEmpty</span>, <span class="hljs-attribute">errMsg:</span> "不能为空"}
                     ]}/&gt;</span>
-                    <span class="tag">&lt;<span class="title">Date</span> <span class="attribute">jsxname</span>=<span class="value">"date"</span> <span class="attribute">jsxlabel</span>=<span class="value">"时间"</span> <span class="attribute">jsxtype</span>=<span class="value">"cascade"</span>/&gt;</span>
-                    <span class="tag">&lt;<span class="title">TextArea</span> <span class="attribute">jsxname</span>=<span class="value">"content"</span> <span class="attribute">jsxlabel</span>=<span class="value">"内容"</span> <span class="attribute">required</span>=<span class="value">{true}</span> <span class="attribute">jsxrules</span>=<span class="value">{[</span>
-                        {<span class="attribute">validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "不能为空"}
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Date</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"date"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"时间"</span> <span class="hljs-attribute">jsxtype</span>=<span class="hljs-value">"cascade"</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">TextArea</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"content"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"内容"</span> <span class="hljs-attribute">required</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{[</span>
+                        {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">Validators.isNotEmpty</span>, <span class="hljs-attribute">errMsg:</span> "不能为空"}
                     ]}/&gt;</span>
-                    <span class="tag">&lt;<span class="title">ButtonGroupFormField</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"large"</span> <span class="attribute">onClick</span>=<span class="value">{me.handleSubmit.bind(me)}</span>&gt;</span>确定<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                    <span class="tag">&lt;/<span class="title">ButtonGroupFormField</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">Form</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        )
+                    <span class="hljs-tag">&lt;<span class="hljs-title">ButtonGroupFormField</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"large"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleSubmit.bind(me)}</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">ButtonGroupFormField</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>
 
     }
 };
 
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-validator'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-horizon" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-horizon">横向排列</a></div></div><div class="code-box-demo"><div id="components-form-demo-horizon"></div></div><div class="code-box-desc"><p>无需任何设置，自动实现横排，并可以根据系数进行弹性布局。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-validator'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-horizon" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-horizon">横向排列</a></div></div><div class="code-box-demo"><div id="components-form-demo-horizon"></div></div><div class="code-box-desc"><p>无需任何设置，自动实现横排，并可以根据系数进行弹性布局。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -366,61 +366,61 @@ var Demo = (function (_React$Component) {
 
 ;
 
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-form-demo-horizon'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Button = require(<span class="string">'uxcore-button'</span>);
-<span class="keyword">let</span> Form = require(<span class="string">'uxcore-form'</span>);
-<span class="keyword">let</span> {
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-form-demo-horizon'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
+<span class="hljs-keyword">let</span> Form = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-form'</span>);
+<span class="hljs-keyword">let</span> {
     Constants,
     FormRowTitle,
     FormRow: Row,
     InputFormField: Input,
-    DateFormField: Date,
+    DateFormField: <span class="hljs-built_in">Date</span>,
     TextAreaFormField: TextArea,
     ButtonGroupFormField,
     Validators
 } = Form;
 
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {};
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {};
     }
 
     handleSubmit() {
-        console.log(<span class="keyword">this</span>.refs.form.getValues());
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.refs.form.getValues());
     }
 
     render() {
-        <span class="keyword">let</span> me = <span class="keyword">this</span>;
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-horizon"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-                </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Form</span> <span class="attribute">ref</span>=<span class="value">"form"</span> <span class="attribute">className</span>=<span class="value">"demo-horizon-form"</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">Row</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">Input</span> <span class="attribute">jsxname</span>=<span class="value">"theme"</span> <span class="attribute">jsxlabel</span>=<span class="value">"主题"</span> <span class="attribute">required</span>=<span class="value">{true}</span> <span class="attribute">jsxplaceholder</span>=<span class="value">"请输入主题"</span> <span class="attribute">jsxrules</span>=<span class="value">{[</span>
-                            {<span class="attribute">validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "不能为空"},
-                            {<span class="attribute">validator:</span> <span class="attribute">function</span>(<span class="attribute">value</span>) {<span class="attribute">return</span> <span class="attribute">value.length</span> &lt; <span class="attribute">3</span>}, <span class="attribute">errMsg:</span> "不能超过<span class="attribute">3</span>个字"}
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-horizon"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+                </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"form"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-horizon-form"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Row</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"theme"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"主题"</span> <span class="hljs-attribute">required</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">jsxplaceholder</span>=<span class="hljs-value">"请输入主题"</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{[</span>
+                            {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">Validators.isNotEmpty</span>, <span class="hljs-attribute">errMsg:</span> "不能为空"},
+                            {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">function</span>(<span class="hljs-attribute">value</span>) {<span class="hljs-attribute">return</span> <span class="hljs-attribute">value.length</span> &lt; <span class="hljs-attribute">3</span>}, <span class="hljs-attribute">errMsg:</span> "不能超过<span class="hljs-attribute">3</span>个字"}
                         ]}/&gt;</span>
-                        <span class="tag">&lt;<span class="title">Input</span> <span class="attribute">jsxname</span>=<span class="value">"location"</span> <span class="attribute">jsxlabel</span>=<span class="value">"地点"</span> <span class="attribute">required</span>=<span class="value">{true}</span> <span class="attribute">jsxplaceholder</span>=<span class="value">"请输入地点"</span> <span class="attribute">jsxrules</span>=<span class="value">{[</span>
-                            {<span class="attribute">validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "不能为空"}
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"location"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"地点"</span> <span class="hljs-attribute">required</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">jsxplaceholder</span>=<span class="hljs-value">"请输入地点"</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{[</span>
+                            {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">Validators.isNotEmpty</span>, <span class="hljs-attribute">errMsg:</span> "不能为空"}
                         ]}/&gt;</span>
-                    <span class="tag">&lt;/<span class="title">Row</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">TextArea</span> <span class="attribute">jsxname</span>=<span class="value">"content"</span> <span class="attribute">jsxlabel</span>=<span class="value">"内容"</span> <span class="attribute">required</span>=<span class="value">{true}</span> <span class="attribute">jsxrules</span>=<span class="value">{[</span>
-                        {<span class="attribute">validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "不能为空"}
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">TextArea</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"content"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"内容"</span> <span class="hljs-attribute">required</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{[</span>
+                        {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">Validators.isNotEmpty</span>, <span class="hljs-attribute">errMsg:</span> "不能为空"}
                     ]}/&gt;</span>
-                    <span class="tag">&lt;<span class="title">ButtonGroupFormField</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"large"</span> <span class="attribute">onClick</span>=<span class="value">{me.handleSubmit.bind(me)}</span>&gt;</span>确定<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                    <span class="tag">&lt;/<span class="title">ButtonGroupFormField</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">Form</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        )
+                    <span class="hljs-tag">&lt;<span class="hljs-title">ButtonGroupFormField</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"large"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleSubmit.bind(me)}</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">ButtonGroupFormField</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>
 
     }
 };
 
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-horizon'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-mode" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-mode">编辑查看模式</a></div></div><div class="code-box-demo"><div id="components-form-demo-mode"></div></div><div class="code-box-desc"><p>Form 支持编辑和查看两种模式，并且支持随时切换，从此两个页面变成一个页面。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-horizon'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-mode" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-mode">编辑查看模式</a></div></div><div class="code-box-demo"><div id="components-form-demo-mode"></div></div><div class="code-box-desc"><p>Form 支持编辑和查看两种模式，并且支持随时切换，从此两个页面变成一个页面。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -515,14 +515,14 @@ var Demo = (function (_React$Component) {
 
 ;
 
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-form-demo-mode'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Button = require(<span class="string">'uxcore-button'</span>);
-<span class="keyword">let</span> Form = require(<span class="string">'uxcore-form'</span>);
-<span class="keyword">let</span> {
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-form-demo-mode'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
+<span class="hljs-keyword">let</span> Form = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-form'</span>);
+<span class="hljs-keyword">let</span> {
     Constants,
     FormRowTitle,
     FormRow: Row,
     InputFormField: Input,
-    DateFormField: Date,
+    DateFormField: <span class="hljs-built_in">Date</span>,
     TextAreaFormField: TextArea,
     ButtonGroupFormField,
     SelectFormField,
@@ -530,59 +530,59 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
 } = Form;
 
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
             mode: Constants.MODE.EDIT
         };
     }
 
     handleSubmit() {
-        console.log(<span class="keyword">this</span>.refs.form.getValues());
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.refs.form.getValues());
     }
 
     handleChangeMode() {
-        <span class="keyword">this</span>.setState({
-            mode: <span class="keyword">this</span>.state.mode == Constants.MODE.EDIT ? Constants.MODE.VIEW : Constants.MODE.EDIT
+        <span class="hljs-keyword">this</span>.setState({
+            mode: <span class="hljs-keyword">this</span>.state.mode == Constants.MODE.EDIT ? Constants.MODE.VIEW : Constants.MODE.EDIT
         })
     }
 
     render() {
-        <span class="keyword">let</span> me = <span class="keyword">this</span>;
-        console.log(me.state.mode);
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo-basic"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
-                    <span class="rules">{<span class="rule">"<span class="attribute">.required {font-family</span>:<span class="value">Simsun</span></span></span>} <span class="class">.demo-basic-form</span> <span class="rules">{<span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">530</span>px</span></span></span>} <span class="class">.form-select</span> <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#ccc</span></span></span>; <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">5</span>px</span></span>; <span class="rule"><span class="attribute">padding-top</span>:<span class="value"> <span class="number">15</span>px</span></span>; <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">530</span>px</span></span>; <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> <span class="number">40</span>px</span></span>;<span class="rule">}</span></span>"}
-                </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Form</span> <span class="attribute">ref</span>=<span class="value">"form"</span> <span class="attribute">className</span>=<span class="value">"demo-basic-form"</span> <span class="attribute">jsxvalues</span>=<span class="value">{{</span>
-                    <span class="attribute">theme:</span> "<span class="attribute">Form</span> 展示",
-                    <span class="attribute">location:</span> "<span class="attribute">Uxcore</span> 站点",
-                    <span class="attribute">date:</span> ['<span class="attribute">2015-10-15</span>', '<span class="attribute">2015-11-15</span>'],
-                    <span class="attribute">content:</span> "这是一个 <span class="attribute">Form</span> 的模式转换页面。"
-                }} <span class="attribute">jsxmode</span>=<span class="value">{me.state.mode}</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">Input</span> <span class="attribute">jsxname</span>=<span class="value">"theme"</span> <span class="attribute">jsxlabel</span>=<span class="value">"主题"</span> <span class="attribute">required</span>=<span class="value">{true}</span> <span class="attribute">jsxplaceholder</span>=<span class="value">"请输入主题"</span>/&gt;</span>
-                    <span class="tag">&lt;<span class="title">Input</span> <span class="attribute">jsxname</span>=<span class="value">"location"</span> <span class="attribute">jsxlabel</span>=<span class="value">"地点"</span> <span class="attribute">required</span>=<span class="value">{true}</span> <span class="attribute">jsxplaceholder</span>=<span class="value">"请输入地点"</span> <span class="attribute">jsxrules</span>=<span class="value">{[</span>
-                        {<span class="attribute">validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "不能为空"}
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-built_in">console</span>.log(me.state.mode);
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-basic"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+                    <span class="hljs-rules">{".required {<span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value">Simsun</span></span></span>} <span class="hljs-class">.demo-basic-form</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">530px</span></span></span></span>} <span class="hljs-class">.form-select</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#ccc</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">border-radius</span>:<span class="hljs-value"> <span class="hljs-number">5px</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">padding-top</span>:<span class="hljs-value"> <span class="hljs-number">15px</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">530px</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-value"> <span class="hljs-number">40px</span></span></span>;}</span>"}
+                </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"form"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-basic-form"</span> <span class="hljs-attribute">jsxvalues</span>=<span class="hljs-value">{{</span>
+                    <span class="hljs-attribute">theme:</span> "<span class="hljs-attribute">Form</span> 展示",
+                    <span class="hljs-attribute">location:</span> "<span class="hljs-attribute">Uxcore</span> 站点",
+                    <span class="hljs-attribute">date:</span> ['<span class="hljs-attribute">2015-10-15</span>', '<span class="hljs-attribute">2015-11-15</span>'],
+                    <span class="hljs-attribute">content:</span> "这是一个 <span class="hljs-attribute">Form</span> 的模式转换页面。"
+                }} <span class="hljs-attribute">jsxmode</span>=<span class="hljs-value">{me.state.mode}</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"theme"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"主题"</span> <span class="hljs-attribute">required</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">jsxplaceholder</span>=<span class="hljs-value">"请输入主题"</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"location"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"地点"</span> <span class="hljs-attribute">required</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">jsxplaceholder</span>=<span class="hljs-value">"请输入地点"</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{[</span>
+                        {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">Validators.isNotEmpty</span>, <span class="hljs-attribute">errMsg:</span> "不能为空"}
                     ]}/&gt;</span>
-                    <span class="tag">&lt;<span class="title">Date</span> <span class="attribute">jsxname</span>=<span class="value">"date"</span> <span class="attribute">jsxlabel</span>=<span class="value">"时间"</span> <span class="attribute">jsxtype</span>=<span class="value">"cascade"</span>/&gt;</span>
-                    <span class="tag">&lt;<span class="title">TextArea</span> <span class="attribute">jsxname</span>=<span class="value">"content"</span> <span class="attribute">jsxlabel</span>=<span class="value">"内容"</span> <span class="attribute">required</span>=<span class="value">{true}</span> <span class="attribute">jsxrules</span>=<span class="value">{[</span>
-                        {<span class="attribute">validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "不能为空"}
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Date</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"date"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"时间"</span> <span class="hljs-attribute">jsxtype</span>=<span class="hljs-value">"cascade"</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">TextArea</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"content"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"内容"</span> <span class="hljs-attribute">required</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{[</span>
+                        {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">Validators.isNotEmpty</span>, <span class="hljs-attribute">errMsg:</span> "不能为空"}
                     ]}/&gt;</span>
-                    <span class="tag">&lt;<span class="title">ButtonGroupFormField</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">onClick</span>=<span class="value">{me.handleSubmit.bind(me)}</span>&gt;</span>确定<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">type</span>=<span class="value">"secondary"</span> <span class="attribute">onClick</span>=<span class="value">{me.handleChangeMode.bind(me)}</span>&gt;</span>转换模式<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                    <span class="tag">&lt;/<span class="title">ButtonGroupFormField</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">Form</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        )
+                    <span class="hljs-tag">&lt;<span class="hljs-title">ButtonGroupFormField</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleSubmit.bind(me)}</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"secondary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleChangeMode.bind(me)}</span>&gt;</span>转换模式<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">ButtonGroupFormField</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>
 
     }
 };
 
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-mode'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-comp" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-comp">组件通览</a></div></div><div class="code-box-demo"><div id="components-form-demo-comp"></div></div><div class="code-box-desc"><p>目前 Form 已经提供了12种通用表单域，满足各种场景的需求。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-mode'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-comp" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-comp">组件通览</a></div></div><div class="code-box-demo"><div id="components-form-demo-comp"></div></div><div class="code-box-desc"><p>目前 Form 已经提供了12种通用表单域，满足各种场景的需求。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -991,10 +991,10 @@ var Demo = (function (_React$Component) {
 
 ;
 
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-form-demo-comp'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> classnames = require(<span class="string">'classnames'</span>);
-<span class="keyword">let</span> Button = require(<span class="string">'uxcore-button'</span>);
-<span class="keyword">let</span> Form = require(<span class="string">'uxcore-form'</span>);
-<span class="keyword">let</span> {
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-form-demo-comp'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">'classnames'</span>);
+<span class="hljs-keyword">let</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
+<span class="hljs-keyword">let</span> Form = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-form'</span>);
+<span class="hljs-keyword">let</span> {
     Constants,
     FormRowTitle,
     FormRow,
@@ -1016,68 +1016,68 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
     MentionFormField
 } = Form;
 
-<span class="keyword">let</span> CheckboxItem = CheckboxGroupFormField.Item;
-<span class="keyword">let</span> RadioItem = RadioGroupFormField.Item;
-<span class="keyword">let</span> {Count, LeftAddon, RightAddon} = InputFormField;
-<span class="keyword">let</span> Option = SelectFormField.Option;
+<span class="hljs-keyword">let</span> CheckboxItem = CheckboxGroupFormField.Item;
+<span class="hljs-keyword">let</span> RadioItem = RadioGroupFormField.Item;
+<span class="hljs-keyword">let</span> {Count, LeftAddon, RightAddon} = InputFormField;
+<span class="hljs-keyword">let</span> Option = SelectFormField.Option;
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
             jsxvalues: {
-                test1: <span class="string">"我是测试"</span>,
-                fruit: <span class="string">"apple"</span>,
-                city: <span class="string">"nj"</span>,
-                textArea: <span class="string">"我是多行文本"</span>,
-                <span class="comment">// date: "2015-09-01",</span>
-                checkbox: [<span class="string">"sea"</span>],
+                test1: <span class="hljs-string">"我是测试"</span>,
+                fruit: <span class="hljs-string">"apple"</span>,
+                city: <span class="hljs-string">"nj"</span>,
+                textArea: <span class="hljs-string">"我是多行文本"</span>,
+                <span class="hljs-comment">// date: "2015-09-01",</span>
+                checkbox: [<span class="hljs-string">"sea"</span>],
                 dicts:{
                    datas:[
                       {
-                        city: <span class="string">"hz"</span>,
-                        email: <span class="string">"333"</span>,
-                        name: <span class="string">"33"</span>
+                        city: <span class="hljs-string">"hz"</span>,
+                        email: <span class="hljs-string">"333"</span>,
+                        name: <span class="hljs-string">"33"</span>
                       }, {
-                        city: <span class="string">"bj"</span>,
-                        email: <span class="string">"33322"</span>,
-                        name: <span class="string">"3322"</span>
+                        city: <span class="hljs-string">"bj"</span>,
+                        email: <span class="hljs-string">"33322"</span>,
+                        name: <span class="hljs-string">"3322"</span>
                       }
                    ]
                 },
-                cascade: [<span class="string">"a"</span>, <span class="string">"ab"</span>],
-                editor: <span class="string">"a"</span>
+                cascade: [<span class="hljs-string">"a"</span>, <span class="hljs-string">"ab"</span>],
+                editor: <span class="hljs-string">"a"</span>
             },
             jsxdata: {
-                <span class="string">"bj"</span>: <span class="string">"北京"</span>,
-                <span class="string">"nj"</span>: <span class="string">"南京"</span>,
-                <span class="string">"dj"</span>: <span class="string">"东京"</span>,
-                <span class="string">"xj"</span>: <span class="string">"西京"</span>
+                <span class="hljs-string">"bj"</span>: <span class="hljs-string">"北京"</span>,
+                <span class="hljs-string">"nj"</span>: <span class="hljs-string">"南京"</span>,
+                <span class="hljs-string">"dj"</span>: <span class="hljs-string">"东京"</span>,
+                <span class="hljs-string">"xj"</span>: <span class="hljs-string">"西京"</span>
             },
             mode: Constants.MODE.EDIT
         }
     }
 
     handleClick() {
-        <span class="keyword">let</span> me = <span class="keyword">this</span>;
-        console.log(me.refs.form.getValues());
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-built_in">console</span>.log(me.refs.form.getValues());
     }
 
     handleSetValues() {
-        <span class="keyword">let</span> me = <span class="keyword">this</span>;
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
         me.refs.form.setValues({
-            test1: <span class="string">"我不是测试"</span>,
+            test1: <span class="hljs-string">"我不是测试"</span>,
             dicts:{
                    datas:[
                       {
-                        city: <span class="string">"hz"</span>,
-                        email: <span class="string">"手动设置value"</span>,
-                        name: <span class="string">"手动设置33"</span>
+                        city: <span class="hljs-string">"hz"</span>,
+                        email: <span class="hljs-string">"手动设置value"</span>,
+                        name: <span class="hljs-string">"手动设置33"</span>
                       }, {
-                        city: <span class="string">"hz"</span>,
-                        email: <span class="string">"手动设置33322"</span>,
-                        name: <span class="string">"手动设置3322"</span>
+                        city: <span class="hljs-string">"hz"</span>,
+                        email: <span class="hljs-string">"手动设置33322"</span>,
+                        name: <span class="hljs-string">"手动设置3322"</span>
                       }
                    ]
                 }
@@ -1085,135 +1085,135 @@ class Demo extends React.Component {
     }
 
     handleFormClick(data) {
-        <span class="keyword">this</span>.refs.form.setState({
+        <span class="hljs-keyword">this</span>.refs.form.setState({
            mode: Constants.MODE.VIEW
         })
     }
 
     update() {
-        console.log(<span class="string">'work'</span>)
-        <span class="keyword">this</span>.forceUpdate();
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'work'</span>)
+        <span class="hljs-keyword">this</span>.forceUpdate();
     }
 
     handleChange(value, name, pass) {
-        <span class="comment">// console.log(value, name, pass);</span>
-        <span class="keyword">if</span> (name == <span class="string">'a'</span>) {
-            <span class="keyword">this</span>.setState({
+        <span class="hljs-comment">// console.log(value, name, pass);</span>
+        <span class="hljs-keyword">if</span> (name == <span class="hljs-string">'a'</span>) {
+            <span class="hljs-keyword">this</span>.setState({
                 a: value[name]
             })
         }
-        <span class="keyword">else</span> <span class="keyword">if</span> (name == <span class="string">"b"</span>) {
-            <span class="keyword">this</span>.setState({
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (name == <span class="hljs-string">"b"</span>) {
+            <span class="hljs-keyword">this</span>.setState({
                 b: value[name]
             })
         }
     }
 
     changeMode() {
-        <span class="keyword">this</span>.setState({
-            mode: <span class="keyword">this</span>.state.mode == Constants.MODE.EDIT ? Constants.MODE.VIEW : Constants.MODE.EDIT
+        <span class="hljs-keyword">this</span>.setState({
+            mode: <span class="hljs-keyword">this</span>.state.mode == Constants.MODE.EDIT ? Constants.MODE.VIEW : Constants.MODE.EDIT
         })
     }
 
     handleValueChange() {
-        <span class="keyword">let</span> me = <span class="keyword">this</span>;
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
         me.setState({
             jsxvalues: {
-                test1: <span class="string">"我是测试22"</span>,
-                fruit: <span class="string">"apple"</span>,
-                city: <span class="string">"nj"</span>,
-                textArea: <span class="string">"我是多行文本"</span>,
-                date: <span class="string">"2015-09-01"</span>,
-                checkbox: [<span class="string">"sea"</span>],
-                <span class="comment">// cascade: ["a", "ab"]</span>
+                test1: <span class="hljs-string">"我是测试22"</span>,
+                fruit: <span class="hljs-string">"apple"</span>,
+                city: <span class="hljs-string">"nj"</span>,
+                textArea: <span class="hljs-string">"我是多行文本"</span>,
+                date: <span class="hljs-string">"2015-09-01"</span>,
+                checkbox: [<span class="hljs-string">"sea"</span>],
+                <span class="hljs-comment">// cascade: ["a", "ab"]</span>
             },
             jsxdata: {
-                <span class="string">"bj"</span>: <span class="string">"北"</span>,
-                <span class="string">"nj"</span>: <span class="string">"南"</span>,
-                <span class="string">"dj"</span>: <span class="string">"东"</span>,
-                <span class="string">"xj"</span>: <span class="string">"西"</span>
+                <span class="hljs-string">"bj"</span>: <span class="hljs-string">"北"</span>,
+                <span class="hljs-string">"nj"</span>: <span class="hljs-string">"南"</span>,
+                <span class="hljs-string">"dj"</span>: <span class="hljs-string">"东"</span>,
+                <span class="hljs-string">"xj"</span>: <span class="hljs-string">"西"</span>
             }
         })
     }
 
     render() {
-        <span class="keyword">let</span> me = <span class="keyword">this</span>;
-        <span class="keyword">let</span> data = {
-            test1: <span class="string">"我是测试"</span>,
-            fruit: <span class="string">"apple"</span>,
-            city: <span class="string">"nj"</span>,
-            textArea: <span class="string">"我是多行文本"</span>,
-            date: <span class="string">"2015-09-01"</span>,
-            checkbox: [<span class="string">"sea"</span>],
-            <span class="comment">// cascade: ["a", "ab"]</span>
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">let</span> data = {
+            test1: <span class="hljs-string">"我是测试"</span>,
+            fruit: <span class="hljs-string">"apple"</span>,
+            city: <span class="hljs-string">"nj"</span>,
+            textArea: <span class="hljs-string">"我是多行文本"</span>,
+            date: <span class="hljs-string">"2015-09-01"</span>,
+            checkbox: [<span class="hljs-string">"sea"</span>],
+            <span class="hljs-comment">// cascade: ["a", "ab"]</span>
         }
 
-        <span class="keyword">let</span> casData = {
-            length: <span class="number">3</span>,
+        <span class="hljs-keyword">let</span> casData = {
+            length: <span class="hljs-number">3</span>,
             contents: [
                 {
-                    value: <span class="string">"a"</span>,
-                    text: <span class="string">"A"</span>,
+                    value: <span class="hljs-string">"a"</span>,
+                    text: <span class="hljs-string">"A"</span>,
                     contents: [
                         {
-                            value: <span class="string">"ab"</span>,
-                            text: <span class="string">"AB"</span>,
+                            value: <span class="hljs-string">"ab"</span>,
+                            text: <span class="hljs-string">"AB"</span>,
                             contents: [
                                 {
-                                    value: <span class="string">"abc"</span>,
-                                    text: <span class="string">"ABC"</span>
+                                    value: <span class="hljs-string">"abc"</span>,
+                                    text: <span class="hljs-string">"ABC"</span>
                                 },
                                 {
-                                    value: <span class="string">"abd"</span>,
-                                    text: <span class="string">"ABD"</span>
+                                    value: <span class="hljs-string">"abd"</span>,
+                                    text: <span class="hljs-string">"ABD"</span>
                                 }
                             ]
                         },
                         {
-                            value: <span class="string">"ac"</span>,
-                            text: <span class="string">"AC"</span>,
+                            value: <span class="hljs-string">"ac"</span>,
+                            text: <span class="hljs-string">"AC"</span>,
                             contents: [
                                 {
-                                    value: <span class="string">"acb"</span>,
-                                    text: <span class="string">"ACB"</span>
+                                    value: <span class="hljs-string">"acb"</span>,
+                                    text: <span class="hljs-string">"ACB"</span>
                                 },
                                 {
-                                    value: <span class="string">"acd"</span>,
-                                    text: <span class="string">"ACD"</span>
+                                    value: <span class="hljs-string">"acd"</span>,
+                                    text: <span class="hljs-string">"ACD"</span>
                                 }
                             ]
                         }
                     ]
                 },
                 {
-                    value: <span class="string">"b"</span>,
-                    text: <span class="string">"B"</span>,
+                    value: <span class="hljs-string">"b"</span>,
+                    text: <span class="hljs-string">"B"</span>,
                     contents: [
                         {
-                            value: <span class="string">"ba"</span>,
-                            text: <span class="string">"BA"</span>,
+                            value: <span class="hljs-string">"ba"</span>,
+                            text: <span class="hljs-string">"BA"</span>,
                             contents: [
                                 {
-                                    value: <span class="string">"bab"</span>,
-                                    text: <span class="string">"BAB"</span>
+                                    value: <span class="hljs-string">"bab"</span>,
+                                    text: <span class="hljs-string">"BAB"</span>
                                 },
                                 {
-                                    value: <span class="string">"bad"</span>,
-                                    text: <span class="string">"BAD"</span>
+                                    value: <span class="hljs-string">"bad"</span>,
+                                    text: <span class="hljs-string">"BAD"</span>
                                 }
                             ]
                         },
                         {
-                            value: <span class="string">"bc"</span>,
-                            text: <span class="string">"BC"</span>,
+                            value: <span class="hljs-string">"bc"</span>,
+                            text: <span class="hljs-string">"BC"</span>,
                             contents: [
                                 {
-                                    value: <span class="string">"bca"</span>,
-                                    text: <span class="string">"BCA"</span>
+                                    value: <span class="hljs-string">"bca"</span>,
+                                    text: <span class="hljs-string">"BCA"</span>
                                 },
                                 {
-                                    value: <span class="string">"bcd"</span>,
-                                    text: <span class="string">"BCD"</span>
+                                    value: <span class="hljs-string">"bcd"</span>,
+                                    text: <span class="hljs-string">"BCD"</span>
                                 }
                             ]
                         }
@@ -1223,81 +1223,81 @@ class Demo extends React.Component {
         }
 
 
-        <span class="keyword">let</span> columns = [
-            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">180</span>,type:<span class="string">'select'</span> ,options:{
-               <span class="string">'hz'</span>:<span class="string">'杭州'</span>,
-               <span class="string">'bj'</span>:<span class="string">'北京'</span>,
-               <span class="string">'sh'</span>:<span class="string">'上海'</span>,
-               <span class="string">'ah'</span>:<span class="string">'安徽'</span>
+        <span class="hljs-keyword">let</span> columns = [
+            { dataKey: <span class="hljs-string">'city'</span>,title:<span class="hljs-string">'城市'</span>, width: <span class="hljs-number">180</span>,type:<span class="hljs-string">'select'</span> ,options:{
+               <span class="hljs-string">'hz'</span>:<span class="hljs-string">'杭州'</span>,
+               <span class="hljs-string">'bj'</span>:<span class="hljs-string">'北京'</span>,
+               <span class="hljs-string">'sh'</span>:<span class="hljs-string">'上海'</span>,
+               <span class="hljs-string">'ah'</span>:<span class="hljs-string">'安徽'</span>
             }},
-            { dataKey: <span class="string">'name'</span>,title:<span class="string">"姓名"</span>,width: <span class="number">200</span>,type:<span class="string">"text"</span>},
-            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,type:<span class="string">"text"</span>},
-            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,items:[
-              {title:<span class="string">'增加'</span>, type:<span class="string">"addRow"</span>, cb: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>console.info(rowData)}},
-              {title:<span class="string">'删除'</span>, type:<span class="string">"delRow"</span>, cb: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>console.info(rowData)}}
+            { dataKey: <span class="hljs-string">'name'</span>,title:<span class="hljs-string">"姓名"</span>,width: <span class="hljs-number">200</span>,type:<span class="hljs-string">"text"</span>},
+            { dataKey: <span class="hljs-string">'email'</span>,title:<span class="hljs-string">"Email"</span>,width: <span class="hljs-number">200</span>,type:<span class="hljs-string">"text"</span>},
+            { dataKey: <span class="hljs-string">'action1'</span>, title:<span class="hljs-string">'操作1'</span>, width:<span class="hljs-number">100</span>, type:<span class="hljs-string">"action"</span>,items:[
+              {title:<span class="hljs-string">'增加'</span>, type:<span class="hljs-string">"addRow"</span>, cb: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>)</span>{<span class="hljs-built_in">console</span>.info(rowData)}},
+              {title:<span class="hljs-string">'删除'</span>, type:<span class="hljs-string">"delRow"</span>, cb: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>)</span>{<span class="hljs-built_in">console</span>.info(rowData)}}
             ]}
         ];
 
 
-        <span class="keyword">let</span> renderProps={
+        <span class="hljs-keyword">let</span> renderProps={
             jsxcolumns:columns
         };
 
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"demo"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Form</span> <span class="attribute">ref</span>=<span class="value">"form"</span> <span class="attribute">instantValidate</span>=<span class="value">{true}</span> <span class="attribute">jsxmode</span>=<span class="value">{me.state.mode}</span> <span class="attribute">jsxvalues</span>=<span class="value">{me.state.jsxvalues}</span> <span class="attribute">jsxonChange</span>=<span class="value">{me.handleChange.bind(me)}</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">FormRowTitle</span> <span class="attribute">jsxtitle</span>=<span class="value">"我是行标题"</span>/&gt;</span>
-                    <span class="tag">&lt;<span class="title">FormRow</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">InputFormField
-</span>                         <span class="attribute">required</span>=<span class="value">{true}</span>
-                         <span class="attribute">jsxname</span>=<span class="value">"test1"</span>
-                         <span class="attribute">jsxlabel</span>=<span class="value">"普通输入框"</span>
-                         <span class="attribute">jsxtips</span>=<span class="value">"请输入数字"</span>
-                         <span class="attribute">jsxrules</span>=<span class="value">{{validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "不能为空"}}&gt;</span>
-                            <span class="tag">&lt;<span class="title">LeftAddon</span>&gt;</span>
-                                <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"kuma-icon kuma-icon-phone"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>
-                            <span class="tag">&lt;/<span class="title">LeftAddon</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">RightAddon</span>&gt;</span>
-                                <span class="tag">&lt;<span class="title">span</span>&gt;</span>元<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
-                            <span class="tag">&lt;/<span class="title">RightAddon</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">Count</span> <span class="attribute">total</span>=<span class="value">{20}</span>/&gt;</span>
-                        <span class="tag">&lt;/<span class="title">InputFormField</span>&gt;</span>
-                         <span class="tag">&lt;<span class="title">NumberInputFormField
-</span>                          <span class="attribute">jsxname</span>=<span class="value">"number"</span>
-                          <span class="attribute">jsxlabel</span>=<span class="value">"数字输入框"</span>
-                          <span class="attribute">jsxtype</span>=<span class="value">"money"</span>
-                          <span class="attribute">jsxplaceholder</span>=<span class="value">"输入数字"</span>
-                          <span class="attribute">jsxtips</span>=<span class="value">"数字和一般的输入框不同"</span>
-                          <span class="attribute">jsxrules</span>=<span class="value">{[</span>
-                            {<span class="attribute">validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "不能为空"},
-                            {<span class="attribute">validator:</span> <span class="attribute">Validators.isNum</span>, <span class="attribute">errMsg:</span> "请输入数字"}
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"form"</span> <span class="hljs-attribute">instantValidate</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">jsxmode</span>=<span class="hljs-value">{me.state.mode}</span> <span class="hljs-attribute">jsxvalues</span>=<span class="hljs-value">{me.state.jsxvalues}</span> <span class="hljs-attribute">jsxonChange</span>=<span class="hljs-value">{me.handleChange.bind(me)}</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">FormRowTitle</span> <span class="hljs-attribute">jsxtitle</span>=<span class="hljs-value">"我是行标题"</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">FormRow</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">InputFormField</span>
+                         <span class="hljs-attribute">required</span>=<span class="hljs-value">{true}</span>
+                         <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"test1"</span>
+                         <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"普通输入框"</span>
+                         <span class="hljs-attribute">jsxtips</span>=<span class="hljs-value">"请输入数字"</span>
+                         <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{{validator:</span> <span class="hljs-attribute">Validators.isNotEmpty</span>, <span class="hljs-attribute">errMsg:</span> "不能为空"}}&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">LeftAddon</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-icon kuma-icon-phone"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">LeftAddon</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">RightAddon</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>元<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">RightAddon</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">Count</span> <span class="hljs-attribute">total</span>=<span class="hljs-value">{20}</span>/&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">InputFormField</span>&gt;</span>
+                         <span class="hljs-tag">&lt;<span class="hljs-title">NumberInputFormField</span>
+                          <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"number"</span>
+                          <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"数字输入框"</span>
+                          <span class="hljs-attribute">jsxtype</span>=<span class="hljs-value">"money"</span>
+                          <span class="hljs-attribute">jsxplaceholder</span>=<span class="hljs-value">"输入数字"</span>
+                          <span class="hljs-attribute">jsxtips</span>=<span class="hljs-value">"数字和一般的输入框不同"</span>
+                          <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{[</span>
+                            {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">Validators.isNotEmpty</span>, <span class="hljs-attribute">errMsg:</span> "不能为空"},
+                            {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">Validators.isNum</span>, <span class="hljs-attribute">errMsg:</span> "请输入数字"}
                          ]}/&gt;</span>
 
-                        <span class="tag">&lt;<span class="title">ButtonGroupFormField</span> <span class="attribute">jsxshow</span>=<span class="value">{false}</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"medium"</span> <span class="attribute">type</span>=<span class="value">"primary"</span> <span class="attribute">action</span>=<span class="value">"submit"</span> <span class="attribute">onClick</span>=<span class="value">{me.handleFormClick.bind(me)}</span>&gt;</span>提交<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"medium"</span> <span class="attribute">type</span>=<span class="value">"secondary"</span> <span class="attribute">action</span>=<span class="value">"reset"</span>&gt;</span>取消<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                        <span class="tag">&lt;/<span class="title">ButtonGroupFormField</span>&gt;</span>
-                    <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">FormRow</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">RadioGroupFormField</span> <span class="attribute">jsxname</span>=<span class="value">"fruit"</span> <span class="attribute">jsxlabel</span>=<span class="value">"Radio"</span> <span class="attribute">jsxflex</span>=<span class="value">{1}</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">RadioItem</span> <span class="attribute">value</span>=<span class="value">"apple"</span> <span class="attribute">text</span>=<span class="value">"Apple"</span>/&gt;</span>
-                            <span class="tag">&lt;<span class="title">RadioItem</span> <span class="attribute">value</span>=<span class="value">"orange"</span> <span class="attribute">text</span>=<span class="value">"Orange"</span>/&gt;</span>
-                            <span class="tag">&lt;<span class="title">RadioItem</span> <span class="attribute">value</span>=<span class="value">"watermelon"</span> <span class="attribute">text</span>=<span class="value">"Watermelon"</span>/&gt;</span>
-                        <span class="tag">&lt;/<span class="title">RadioGroupFormField</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">CheckboxGroupFormField</span> <span class="attribute">jsxname</span>=<span class="value">"checkbox"</span> <span class="attribute">jsxlabel</span>=<span class="value">"复选框"</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">CheckboxItem</span> <span class="attribute">value</span>=<span class="value">"air"</span> <span class="attribute">text</span>=<span class="value">"天空"</span>/&gt;</span>
-                            <span class="tag">&lt;<span class="title">CheckboxItem</span> <span class="attribute">value</span>=<span class="value">"sea"</span> <span class="attribute">text</span>=<span class="value">"大海"</span>/&gt;</span>
-                        <span class="tag">&lt;/<span class="title">CheckboxGroupFormField</span>&gt;</span>
-                    <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">TextAreaFormField</span> <span class="attribute">jsxname</span>=<span class="value">"textArea"</span> <span class="attribute">jsxlabel</span>=<span class="value">"多行文本框"</span>/&gt;</span>
-                    <span class="tag">&lt;<span class="title">FormRowTitle</span> <span class="attribute">jsxtitle</span>=<span class="value">"我是行标题2"</span>/&gt;</span>
-                    <span class="tag">&lt;<span class="title">FormRow</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">SelectFormField
-</span>                         <span class="attribute">jsxlabel</span>=<span class="value">"单选"</span>
-                         <span class="attribute">jsxname</span>=<span class="value">"city"</span>
-                         <span class="attribute">disabled</span>=<span class="value">{true}</span>
-                         <span class="attribute">jsxfetchUrl</span>=<span class="value">"http://suggest.taobao.com/sug"</span>
-                         <span class="attribute">afterFetch</span>=<span class="value">{(obj)</span> =&gt;</span> {
+                        <span class="hljs-tag">&lt;<span class="hljs-title">ButtonGroupFormField</span> <span class="hljs-attribute">jsxshow</span>=<span class="hljs-value">{false}</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"medium"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleFormClick.bind(me)}</span>&gt;</span>提交<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"medium"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"secondary"</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"reset"</span>&gt;</span>取消<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">ButtonGroupFormField</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">FormRow</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">RadioGroupFormField</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"fruit"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"Radio"</span> <span class="hljs-attribute">jsxflex</span>=<span class="hljs-value">{1}</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">RadioItem</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"apple"</span> <span class="hljs-attribute">text</span>=<span class="hljs-value">"Apple"</span>/&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">RadioItem</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"orange"</span> <span class="hljs-attribute">text</span>=<span class="hljs-value">"Orange"</span>/&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">RadioItem</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"watermelon"</span> <span class="hljs-attribute">text</span>=<span class="hljs-value">"Watermelon"</span>/&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">RadioGroupFormField</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">CheckboxGroupFormField</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"checkbox"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"复选框"</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">CheckboxItem</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"air"</span> <span class="hljs-attribute">text</span>=<span class="hljs-value">"天空"</span>/&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">CheckboxItem</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"sea"</span> <span class="hljs-attribute">text</span>=<span class="hljs-value">"大海"</span>/&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">CheckboxGroupFormField</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">TextAreaFormField</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"textArea"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"多行文本框"</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">FormRowTitle</span> <span class="hljs-attribute">jsxtitle</span>=<span class="hljs-value">"我是行标题2"</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">FormRow</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">SelectFormField</span>
+                         <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"单选"</span>
+                         <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"city"</span>
+                         <span class="hljs-attribute">disabled</span>=<span class="hljs-value">{true}</span>
+                         <span class="hljs-attribute">jsxfetchUrl</span>=<span class="hljs-value">"http://suggest.taobao.com/sug"</span>
+                         <span class="hljs-attribute">afterFetch</span>=<span class="hljs-value">{(obj)</span> =&gt;</span> {
                             let data = {};
                             obj.result.forEach((item, index) =&gt; {
                                 data[item[1]] = item[0];
@@ -1305,64 +1305,64 @@ class Demo extends React.Component {
                             return data;
                          }}
                          jsxdata={me.state.jsxdata}/&gt;
-                        <span class="tag">&lt;<span class="title">DateFormField</span> <span class="attribute">format</span>=<span class="value">"yyyy-MM-dd HH:mm:ss"</span> <span class="attribute">jsxname</span>=<span class="value">"date"</span> <span class="attribute">jsxlabel</span>=<span class="value">"日期"</span>/&gt;</span>
-                    <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">FormRow</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">SelectFormField
-</span>                         <span class="attribute">jsxlabel</span>=<span class="value">"单选combo模式"</span>
-                         <span class="attribute">jsxname</span>=<span class="value">"goods"</span>
-                         <span class="attribute">jsxfetchUrl</span>=<span class="value">"http://suggest.taobao.com/sug"</span>
-                         <span class="attribute">combobox</span>=<span class="value">{true}</span>
-                         <span class="attribute">afterFetch</span>=<span class="value">{(obj)</span> =&gt;</span> {
+                        <span class="hljs-tag">&lt;<span class="hljs-title">DateFormField</span> <span class="hljs-attribute">format</span>=<span class="hljs-value">"yyyy-MM-dd HH:mm:ss"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"date"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"日期"</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">FormRow</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">SelectFormField</span>
+                         <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"单选combo模式"</span>
+                         <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"goods"</span>
+                         <span class="hljs-attribute">jsxfetchUrl</span>=<span class="hljs-value">"http://suggest.taobao.com/sug"</span>
+                         <span class="hljs-attribute">combobox</span>=<span class="hljs-value">{true}</span>
+                         <span class="hljs-attribute">afterFetch</span>=<span class="hljs-value">{(obj)</span> =&gt;</span> {
                             let data = {};
                             obj.result.forEach((item, index) =&gt; {
                                 data[item[1]] = item[0];
                             });
                             return data;
                          }}/&gt;
-                         <span class="tag">&lt;<span class="title">SelectFormField
-</span>                         <span class="attribute">jsxlabel</span>=<span class="value">"多选模式"</span>
-                         <span class="attribute">jsxname</span>=<span class="value">"goods2"</span>
-                         <span class="attribute">multiple</span>=<span class="value">{true}</span>
-                         <span class="attribute">jsxfetchUrl</span>=<span class="value">"http://suggest.taobao.com/sug"</span>
-                         <span class="attribute">afterFetch</span>=<span class="value">{(obj)</span> =&gt;</span> {
+                         <span class="hljs-tag">&lt;<span class="hljs-title">SelectFormField</span>
+                         <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"多选模式"</span>
+                         <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"goods2"</span>
+                         <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{true}</span>
+                         <span class="hljs-attribute">jsxfetchUrl</span>=<span class="hljs-value">"http://suggest.taobao.com/sug"</span>
+                         <span class="hljs-attribute">afterFetch</span>=<span class="hljs-value">{(obj)</span> =&gt;</span> {
                             let data = {};
                             obj.result.forEach((item, index) =&gt; {
                                 data[item[1]] = item[0];
                             });
                             return data;
                          }}/&gt;
-                    <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">FormRow</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">UploadFormField
-</span>                          <span class="attribute">jsxname</span>=<span class="value">"upload"</span>
-                          <span class="attribute">jsxlabel</span>=<span class="value">"上传"</span>
-                          <span class="attribute">name</span>=<span class="value">"file"</span>
-                          <span class="attribute">url</span>=<span class="value">"http://test.yanbingbing.com/upload.php"</span>/&gt;</span>
-                    <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">FormRowTitle</span> <span class="attribute">jsxtitle</span>=<span class="value">"级联类"</span>/&gt;</span>
-                    <span class="tag">&lt;<span class="title">DateFormField</span> <span class="attribute">jsxtype</span>=<span class="value">"cascade"</span> <span class="attribute">jsxname</span>=<span class="value">"casDate"</span> <span class="attribute">jsxlabel</span>=<span class="value">"级联日期"</span> <span class="attribute">jsxfrom</span>=<span class="value">"2015-10-2"</span> <span class="attribute">jsxto</span>=<span class="value">"2015-10-10"</span>/&gt;</span>
-                    <span class="tag">&lt;<span class="title">CascadeSelectFormField
-</span>                     <span class="attribute">jsxdata</span>=<span class="value">{casData}</span>
-                     <span class="attribute">jsxname</span>=<span class="value">"cascade"</span>
-                     <span class="attribute">jsxlabel</span>=<span class="value">"级联选择"</span>/&gt;</span>
-                    <span class="tag">&lt;<span class="title">EditorFormField</span> <span class="attribute">jsxname</span>=<span class="value">"editor"</span>
-                                     <span class="attribute">jsxlabel</span>=<span class="value">"富文本编辑器"</span>
-                                     <span class="attribute">jsxcontent</span>=<span class="value">"1"</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">FormRow</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">UploadFormField</span>
+                          <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"upload"</span>
+                          <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"上传"</span>
+                          <span class="hljs-attribute">name</span>=<span class="hljs-value">"file"</span>
+                          <span class="hljs-attribute">url</span>=<span class="hljs-value">"http://test.yanbingbing.com/upload.php"</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">FormRowTitle</span> <span class="hljs-attribute">jsxtitle</span>=<span class="hljs-value">"级联类"</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">DateFormField</span> <span class="hljs-attribute">jsxtype</span>=<span class="hljs-value">"cascade"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"casDate"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"级联日期"</span> <span class="hljs-attribute">jsxfrom</span>=<span class="hljs-value">"2015-10-2"</span> <span class="hljs-attribute">jsxto</span>=<span class="hljs-value">"2015-10-10"</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">CascadeSelectFormField</span>
+                     <span class="hljs-attribute">jsxdata</span>=<span class="hljs-value">{casData}</span>
+                     <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"cascade"</span>
+                     <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"级联选择"</span>/&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">EditorFormField</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"editor"</span>
+                                     <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"富文本编辑器"</span>
+                                     <span class="hljs-attribute">jsxcontent</span>=<span class="hljs-value">"1"</span>/&gt;</span>
 
-                    <span class="tag">&lt;<span class="title">TableFormField</span> <span class="attribute">jsxname</span>=<span class="value">"dicts"</span> <span class="attribute">jsxlabel</span>=<span class="value">"薪酬字典"</span> {<span class="attribute">...renderProps</span>}&gt;</span>
-                    <span class="tag">&lt;/<span class="title">TableFormField</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">ButtonGroupFormField</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"medium"</span> <span class="attribute">action</span>=<span class="value">"submit"</span> <span class="attribute">onClick</span>=<span class="value">{me.handleClick.bind(me)}</span>&gt;</span>提交<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"medium"</span> <span class="attribute">type</span>=<span class="value">"secondary"</span> <span class="attribute">action</span>=<span class="value">"reset"</span>&gt;</span>重置<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                    <span class="tag">&lt;/<span class="title">ButtonGroupFormField</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">Form</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        );
+                    <span class="hljs-tag">&lt;<span class="hljs-title">TableFormField</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"dicts"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"薪酬字典"</span> {<span class="hljs-attribute">...renderProps</span>}&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">TableFormField</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">ButtonGroupFormField</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"medium"</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleClick.bind(me)}</span>&gt;</span>提交<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"medium"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"secondary"</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"reset"</span>&gt;</span>重置<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">ButtonGroupFormField</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>;
     }
 };
 
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-comp'))</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><hr>
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-comp'))</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><hr>
 <h2 id="usage">Usage</h2><blockquote>
 <p>see demo/FormDemo.js for details<br>每一个 field 需要按照 Form -&gt; FormRow -&gt; FormField 的方式进行嵌套，允许 Form -&gt; FormField 的嵌套，会自动增加 FormRow 这一层，并默认占一整行。</p>
 </blockquote>
@@ -1614,18 +1614,18 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 <li>Count，通过 InputFormField.Count 取得，一个内置的计数器，用法如下：</li>
 </ul>
 <div class="highlight"><pre><code class="javascript">&lt;InputFormField&gt;
-    <span class="xml"><span class="tag">&lt;<span class="title">Count</span> <span class="attribute">total</span>=<span class="value">"20"</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">InputFormField</span>&gt;</span></span></code></pre></div><ul>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Count</span> <span class="hljs-attribute">total</span>=<span class="hljs-value">"20"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">InputFormField</span>&gt;</span></span></code></pre></div><ul>
 <li>LeftAddon/RightAddon，通过 InputFormField.LeftAddon/InputFormField.RightAddon 取得，给 input 左侧加入自定义的图标或文字，用法如下：</li>
 </ul>
 <div class="highlight"><pre><code class="javascript">&lt;InputFormField&gt;
-    <span class="xml"><span class="tag">&lt;<span class="title">LeftAddon</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"kuma-icon kuma-icon-phone"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">LeftAddon</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">RightAddon</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">span</span>&gt;</span>元<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">RightAddon</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">InputFormField</span>&gt;</span></span></code></pre></div></li>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">LeftAddon</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-icon kuma-icon-phone"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">LeftAddon</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">RightAddon</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>元<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">RightAddon</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">InputFormField</span>&gt;</span></span></code></pre></div></li>
 </ul>
 <h3 id="textareaformfield">TextAreaFormField</h3><table>
 <thead>
@@ -1656,10 +1656,10 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 <li>使用方式：</li>
 </ul>
 <div class="highlight"><pre><code class="javascript">&lt;RadioGroupFormField&gt;
-    <span class="xml"><span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"1"</span> <span class="attribute">text</span>=<span class="value">"a"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"2"</span> <span class="attribute">text</span>=<span class="value">"b"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"3"</span> <span class="attribute">text</span>=<span class="value">"c"</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">RadioGroupFormField</span>&gt;</span></span></code></pre></div><h3 id="selectformfield">SelectFormField</h3><table>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Item</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">text</span>=<span class="hljs-value">"a"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Item</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"2"</span> <span class="hljs-attribute">text</span>=<span class="hljs-value">"b"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Item</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"3"</span> <span class="hljs-attribute">text</span>=<span class="hljs-value">"c"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">RadioGroupFormField</span>&gt;</span></span></code></pre></div><h3 id="selectformfield">SelectFormField</h3><table>
 <thead>
 <tr>
 <th>配置项</th>
@@ -1808,10 +1808,10 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 <li>使用方式：</li>
 </ul>
 <div class="highlight"><pre><code class="javascript">&lt;CheckboxGroupFormField&gt;
-    <span class="xml"><span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"1"</span> <span class="attribute">text</span>=<span class="value">"a"</span> <span class="attribute">disabled</span>=<span class="value">{true}</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"2"</span> <span class="attribute">text</span>=<span class="value">"b"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">Item</span> <span class="attribute">value</span>=<span class="value">"3"</span> <span class="attribute">text</span>=<span class="value">"c"</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">CheckboxGroupFormField</span>&gt;</span></span></code></pre></div><h3 id="dateformfield">DateFormField</h3><table>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Item</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">text</span>=<span class="hljs-value">"a"</span> <span class="hljs-attribute">disabled</span>=<span class="hljs-value">{true}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Item</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"2"</span> <span class="hljs-attribute">text</span>=<span class="hljs-value">"b"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Item</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"3"</span> <span class="hljs-attribute">text</span>=<span class="hljs-value">"c"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">CheckboxGroupFormField</span>&gt;</span></span></code></pre></div><h3 id="dateformfield">DateFormField</h3><table>
 <thead>
 <tr>
 <th>配置项</th>
@@ -1949,10 +1949,10 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 <h3 id="buttongroupformfield">ButtonGroupFormField</h3><blockquote>
 <p>ButtonGroupFormField 是一个特殊的 FormField，它用来生成一些特定的表单按钮，这是为了与 Grid 相结合而准备的。如果需要自定义一些按钮，请使用 OtherFormField 和 uxcore-button 相结合来使用。<br>你可以像这样使用它：</p>
 </blockquote>
-<div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Button = require(<span class="string">'uxcore-button'</span>);
-<span class="xml"><span class="tag">&lt;<span class="title">ButtonGroupFormField</span>&gt;</span>
+<div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">ButtonGroupFormField</span>&gt;</span>
     {// handleClick 会被传入一个参数 data，取得的值和 API getValues() 相同}
-    <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">action</span>=<span class="value">"submit"</span> <span class="attribute">onClick</span>=<span class="value">{this.handleClick.bind(this)}</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleClick.bind(this)}</span>/&gt;</span>
     {// 目前只支持 submit 和 reset 两种 action}
-    <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">action</span>=<span class="value">"reset"</span>/&gt;</span>
-<span class="tag">&lt;/<span class="title">ButtonGroupFormField</span>&gt;</span></span></code></pre></div></div></article></div></body></html>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"reset"</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ButtonGroupFormField</span>&gt;</span></span></code></pre></div></div></article></div></body></html>
