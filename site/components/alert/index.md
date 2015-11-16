@@ -16,6 +16,7 @@
 |---|---|---|---|---|
 |prefixCls|string|optional|'kuma-alert'|类名前缀，不想使用 kuma 主题时使用|
 |iconPrefixCls|string|optional|'kuma-icon'|图标类名前缀，不想使用 kuma 主题时使用|
+|className|string|optional|-|额外的类名|
 |type|string|optional|'message'| 警告类型，包括 message', 'error', 'warning', 'success', 'question', 'stop', 'wait'|
 |hasContainer|bool|optional|false|是否包含外层容器|
 |closable|bool|optional|false|是否能够关闭,此项为 true 时,将自动包含外层容器|
