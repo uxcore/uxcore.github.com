@@ -22,6 +22,7 @@
     "object-assign": "~4.0.1",
     "react": "~0.14.0",
     "react-dom": "~0.14.0",
+    "uxcore-alert": "~0.1.0",
     "uxcore-button": "~0.3.1",
     "uxcore-calendar": "~0.1.12",
     "uxcore-checkbox-group": "~1.0.6",

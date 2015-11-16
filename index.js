@@ -25,6 +25,7 @@ window.UXCORE = {
 	'uxcore-totop': require('uxcore-totop'),
 	'uxcore-checkbox-group': require('uxcore-checkbox-group'),
 	'uxcore-radiogroup': require('uxcore-radiogroup'),
+	'uxcore-alert': require('uxcore-alert'),
 	'uxcore-fis-grid': require('@ali/uxcore-fis-grid'),
 	'classnames': require('classnames'),
 	'object-assign': require('object-assign')
