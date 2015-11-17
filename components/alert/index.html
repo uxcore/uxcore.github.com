@@ -57,34 +57,34 @@ var Demo = (function (_React$Component) {
 ;
 
 ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-alert-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="hljs-keyword">let</span> Alert = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-alert'</span>);
-<span class="hljs-keyword">let</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
+<span class="keyword">let</span> Alert = require(<span class="string">'uxcore-alert'</span>);
+<span class="keyword">let</span> Button = require(<span class="string">'uxcore-button'</span>);
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+class Demo extends React.Component {
 
     constructor(props) {
-        <span class="hljs-keyword">super</span>(props);
-        <span class="hljs-keyword">this</span>.state = {
+        super(props);
+        <span class="keyword">this</span>.state = {
         }
     }
 
     render() {
-        <span class="hljs-keyword">return</span> (
-            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"alert1"</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">message</span>'} <span class="hljs-attribute">type</span>=<span class="hljs-value">"message"</span> /&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">error</span>'} <span class="hljs-attribute">type</span>=<span class="hljs-value">"error"</span> /&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">warning</span>'} <span class="hljs-attribute">type</span>=<span class="hljs-value">"warning"</span> /&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">success</span>'} <span class="hljs-attribute">type</span>=<span class="hljs-value">"success"</span> /&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">question</span>'} <span class="hljs-attribute">type</span>=<span class="hljs-value">"question"</span> /&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">stop</span>'} <span class="hljs-attribute">type</span>=<span class="hljs-value">"stop"</span> /&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">wait</span>'} <span class="hljs-attribute">type</span>=<span class="hljs-value">"wait"</span> /&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        )</span>;
+        <span class="keyword">return</span> (
+            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">className</span>=<span class="value">"alert1"</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">message</span>'} <span class="attribute">type</span>=<span class="value">"message"</span> /&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">error</span>'} <span class="attribute">type</span>=<span class="value">"error"</span> /&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">warning</span>'} <span class="attribute">type</span>=<span class="value">"warning"</span> /&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">success</span>'} <span class="attribute">type</span>=<span class="value">"success"</span> /&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">question</span>'} <span class="attribute">type</span>=<span class="value">"question"</span> /&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">stop</span>'} <span class="attribute">type</span>=<span class="value">"stop"</span> /&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">wait</span>'} <span class="attribute">type</span>=<span class="value">"wait"</span> /&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        );
     }
 };
 
 ReactDOM.render(
-  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
+  <span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>
 , document.getElementById('components-alert-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-alert-demo-container" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-alert-demo-container">带有外部容器</a></div></div><div class="code-box-demo"><div id="components-alert-demo-container"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -133,42 +133,42 @@ var Demo = (function (_React$Component) {
 ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-alert-demo-container'));
 
 /* JS END CSS START*/})()</script><div class="highlight"><pre><code class="javascript">
-<span class="hljs-keyword">let</span> Alert = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-alert'</span>);
-<span class="hljs-keyword">let</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
+<span class="keyword">let</span> Alert = require(<span class="string">'uxcore-alert'</span>);
+<span class="keyword">let</span> Button = require(<span class="string">'uxcore-button'</span>);
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+class Demo extends React.Component {
 
     constructor(props) {
-        <span class="hljs-keyword">super</span>(props);
-        <span class="hljs-keyword">this</span>.state = {
+        super(props);
+        <span class="keyword">this</span>.state = {
         }
     }
     render() {
-        <span class="hljs-keyword">return</span> (
-            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"alert1"</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">message</span>'} <span class="hljs-attribute">type</span>=<span class="hljs-value">"message"</span> <span class="hljs-attribute">hasContainer</span>=<span class="hljs-value">{true}</span>/&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">error</span>'} <span class="hljs-attribute">type</span>=<span class="hljs-value">"error"</span> <span class="hljs-attribute">hasContainer</span>=<span class="hljs-value">{true}</span>/&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">warning</span>'} <span class="hljs-attribute">type</span>=<span class="hljs-value">"warning"</span> <span class="hljs-attribute">hasContainer</span>=<span class="hljs-value">{true}</span>/&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">success</span>'} <span class="hljs-attribute">type</span>=<span class="hljs-value">"success"</span> <span class="hljs-attribute">hasContainer</span>=<span class="hljs-value">{true}</span>/&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">question</span>'} <span class="hljs-attribute">type</span>=<span class="hljs-value">"question"</span> <span class="hljs-attribute">hasContainer</span>=<span class="hljs-value">{true}</span>/&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">stop</span>'} <span class="hljs-attribute">type</span>=<span class="hljs-value">"stop"</span> <span class="hljs-attribute">hasContainer</span>=<span class="hljs-value">{true}</span>/&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">wait</span>'} <span class="hljs-attribute">type</span>=<span class="hljs-value">"wait"</span> <span class="hljs-attribute">hasContainer</span>=<span class="hljs-value">{true}</span>/&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        )</span>;
+        <span class="keyword">return</span> (
+            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">className</span>=<span class="value">"alert1"</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">message</span>'} <span class="attribute">type</span>=<span class="value">"message"</span> <span class="attribute">hasContainer</span>=<span class="value">{true}</span>/&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">error</span>'} <span class="attribute">type</span>=<span class="value">"error"</span> <span class="attribute">hasContainer</span>=<span class="value">{true}</span>/&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">warning</span>'} <span class="attribute">type</span>=<span class="value">"warning"</span> <span class="attribute">hasContainer</span>=<span class="value">{true}</span>/&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">success</span>'} <span class="attribute">type</span>=<span class="value">"success"</span> <span class="attribute">hasContainer</span>=<span class="value">{true}</span>/&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">question</span>'} <span class="attribute">type</span>=<span class="value">"question"</span> <span class="attribute">hasContainer</span>=<span class="value">{true}</span>/&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">stop</span>'} <span class="attribute">type</span>=<span class="value">"stop"</span> <span class="attribute">hasContainer</span>=<span class="value">{true}</span>/&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">wait</span>'} <span class="attribute">type</span>=<span class="value">"wait"</span> <span class="attribute">hasContainer</span>=<span class="value">{true}</span>/&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        );
     }
 };
 
 ReactDOM.render(
-  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
+  <span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>
 , document.getElementById('components-alert-demo-container'));
 
 /* JS END CSS START*/</span></code></pre></div><style type="text/css">
 .kuma-alert-container {
     margin-bottom: 10px;
 }</style><div class="highlight"><pre><code class="css">
-<span class="hljs-class">.kuma-alert-container</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
-}</span></code></pre></div></div></div><div id="code-box-components-alert-demo-closable" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-alert-demo-closable">关闭图标</a></div></div><div class="code-box-demo"><div id="components-alert-demo-closable"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+<span class="class">.kuma-alert-container</span> <span class="rules">{
+    <span class="rule"><span class="attribute">margin-bottom</span>:<span class="value"> <span class="number">10</span>px</span></span>;
+<span class="rule">}</span></span></code></pre></div></div></div><div id="code-box-components-alert-demo-closable" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-alert-demo-closable">关闭图标</a></div></div><div class="code-box-demo"><div id="components-alert-demo-closable"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -218,33 +218,33 @@ var Demo = (function (_React$Component) {
 ;
 
 ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-alert-demo-closable'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="hljs-keyword">let</span> Alert = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-alert'</span>);
-<span class="hljs-keyword">let</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
+<span class="keyword">let</span> Alert = require(<span class="string">'uxcore-alert'</span>);
+<span class="keyword">let</span> Button = require(<span class="string">'uxcore-button'</span>);
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+class Demo extends React.Component {
 
     constructor(props) {
-        <span class="hljs-keyword">super</span>(props);
-        <span class="hljs-keyword">this</span>.state = {
+        super(props);
+        <span class="keyword">this</span>.state = {
         }
     }
 
     handleShow() {
-        <span class="hljs-keyword">this</span>.refs.alert.toggleShow();
+        <span class="keyword">this</span>.refs.alert.toggleShow();
     }
 
     render() {
-        <span class="hljs-keyword">return</span> (
-            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"alert"</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">message</span>'} <span class="hljs-attribute">type</span>=<span class="hljs-value">"message"</span> <span class="hljs-attribute">closable</span>=<span class="hljs-value">{true}</span> /&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleShow.bind(this)}</span>&gt;</span>手动切换是否显示<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        )</span>;
+        <span class="keyword">return</span> (
+            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">ref</span>=<span class="value">"alert"</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">message</span>'} <span class="attribute">type</span>=<span class="value">"message"</span> <span class="attribute">closable</span>=<span class="value">{true}</span> /&gt;</span>
+                <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">onClick</span>=<span class="value">{this.handleShow.bind(this)}</span>&gt;</span>手动切换是否显示<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        );
     }
 };
 
 ReactDOM.render(
-  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
+  <span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>
 , document.getElementById('components-alert-demo-closable'));</span></code></pre></div></div></div><div id="code-box-components-alert-demo-closetext" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-alert-demo-closetext">关闭文字替换图标</a></div></div><div class="code-box-demo"><div id="components-alert-demo-closetext"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -285,28 +285,28 @@ var Demo = (function (_React$Component) {
 ;
 
 ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-alert-demo-closetext'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="hljs-keyword">let</span> Alert = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-alert'</span>);
-<span class="hljs-keyword">let</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
+<span class="keyword">let</span> Alert = require(<span class="string">'uxcore-alert'</span>);
+<span class="keyword">let</span> Button = require(<span class="string">'uxcore-button'</span>);
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+class Demo extends React.Component {
 
     constructor(props) {
-        <span class="hljs-keyword">super</span>(props);
-        <span class="hljs-keyword">this</span>.state = {
+        super(props);
+        <span class="keyword">this</span>.state = {
         }
     }
 
     render() {
-        <span class="hljs-keyword">return</span> (
-            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">message</span>'} <span class="hljs-attribute">type</span>=<span class="hljs-value">"message"</span> <span class="hljs-attribute">closable</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">closeText</span>=<span class="hljs-value">"不再显示"</span> /&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        )</span>;
+        <span class="keyword">return</span> (
+            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">message</span>'} <span class="attribute">type</span>=<span class="value">"message"</span> <span class="attribute">closable</span>=<span class="value">{true}</span> <span class="attribute">closeText</span>=<span class="value">"不再显示"</span> /&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        );
     }
 };
 
 ReactDOM.render(
-  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
+  <span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>
 , document.getElementById('components-alert-demo-closetext'));</span></code></pre></div></div></div><div id="code-box-components-alert-demo-message" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-alert-demo-message">带有描述性文字</a></div></div><div class="code-box-demo"><div id="components-alert-demo-message"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -347,27 +347,27 @@ var Demo = (function (_React$Component) {
 ;
 
 ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-alert-demo-message'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="hljs-keyword">let</span> Alert = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-alert'</span>);
-<span class="hljs-keyword">let</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
+<span class="keyword">let</span> Alert = require(<span class="string">'uxcore-alert'</span>);
+<span class="keyword">let</span> Button = require(<span class="string">'uxcore-button'</span>);
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+class Demo extends React.Component {
 
     constructor(props) {
-        <span class="hljs-keyword">super</span>(props);
-        <span class="hljs-keyword">this</span>.state = {
+        super(props);
+        <span class="keyword">this</span>.state = {
         }
     }
     render() {
-        <span class="hljs-keyword">return</span> (
-            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Alert</span> <span class="hljs-attribute">message</span>=<span class="hljs-value">{'</span> 这是一个 <span class="hljs-attribute">message</span>'} <span class="hljs-attribute">description</span>=<span class="hljs-value">"这里是描述"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"message"</span>/&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        )</span>;
+        <span class="keyword">return</span> (
+            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">Alert</span> <span class="attribute">message</span>=<span class="value">{'</span> 这是一个 <span class="attribute">message</span>'} <span class="attribute">description</span>=<span class="value">"这里是描述"</span> <span class="attribute">type</span>=<span class="value">"message"</span>/&gt;</span>
+            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        );
     }
 };
 
 ReactDOM.render(
-  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
+  <span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>
 , document.getElementById('components-alert-demo-message'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="api">API</h2><ul>
 <li>toggleShow: 切换 Alert 的显示状态。</li>
 </ul>
