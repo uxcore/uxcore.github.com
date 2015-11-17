@@ -37,26 +37,26 @@ ReactDOM.render(React.createElement(
         source: source,
         formatter: formatter },
     'default content'
-), document.getElementById('components-mention-demo-simple'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Mention <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-mention'</span>;
+), document.getElementById('components-mention-demo-simple'));})()</script><div class="highlight"><pre><code class="javascript">import Mention from <span class="string">'uxcore-mention'</span>;
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatter</span>(<span class="hljs-params">data</span>)</span>{
-    <span class="hljs-keyword">return</span> data.map((item) =&gt; {
-        <span class="hljs-keyword">return</span> {
+<span class="function"><span class="keyword">function</span> <span class="title">formatter</span><span class="params">(data)</span>{</span>
+    <span class="keyword">return</span> data.map((item) =&gt; {
+        <span class="keyword">return</span> {
             text: item
         };
     });
 }
-<span class="hljs-keyword">let</span> source = [<span class="hljs-string">'aaaaa'</span>, <span class="hljs-string">'aabbb'</span>, <span class="hljs-string">'aaccc'</span>, <span class="hljs-string">'bbbcc'</span>, <span class="hljs-string">'dddee'</span>, <span class="hljs-string">'fffqq'</span>, <span class="hljs-string">'pppaa'</span>, <span class="hljs-string">'ppccc'</span>];
+<span class="keyword">let</span> source = [<span class="string">'aaaaa'</span>, <span class="string">'aabbb'</span>, <span class="string">'aaccc'</span>, <span class="string">'bbbcc'</span>, <span class="string">'dddee'</span>, <span class="string">'fffqq'</span>, <span class="string">'pppaa'</span>, <span class="string">'ppccc'</span>];
 
 ReactDOM.render(
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Mention</span>
-        <span class="hljs-attribute">width</span>=<span class="hljs-value">"300"</span>
-        <span class="hljs-attribute">height</span>=<span class="hljs-value">"150"</span>
-        <span class="hljs-attribute">matchRange</span>=<span class="hljs-value">{[1,</span> <span class="hljs-attribute">6</span>]}
-        <span class="hljs-attribute">source</span>=<span class="hljs-value">{source}</span>
-        <span class="hljs-attribute">formatter</span>=<span class="hljs-value">{formatter}</span>&gt;</span>
+    <span class="xml"><span class="tag">&lt;<span class="title">Mention
+</span>        <span class="attribute">width</span>=<span class="value">"300"</span>
+        <span class="attribute">height</span>=<span class="value">"150"</span>
+        <span class="attribute">matchRange</span>=<span class="value">{[1,</span> <span class="attribute">6</span>]}
+        <span class="attribute">source</span>=<span class="value">{source}</span>
+        <span class="attribute">formatter</span>=<span class="value">{formatter}</span>&gt;</span>
         default content
-    <span class="hljs-tag">&lt;/<span class="hljs-title">Mention</span>&gt;</span>,
+    <span class="tag">&lt;/<span class="title">Mention</span>&gt;</span>,
       document.getElementById('components-mention-demo-simple')
 );</span></code></pre></div></div></div><div id="code-box-components-mention-demo-person" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-mention-demo-person">at人</a></div></div><div class="code-box-demo"><div id="components-mention-demo-person"></div></div><div class="code-box-desc"><p>at人的用法。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){"use strict";
 
@@ -146,102 +146,102 @@ ReactDOM.render(React.createElement(_uxcoreMention2["default"], {
     source: getPersonData,
     formatter: personDataFormatter,
     panelFormatter: personPanelFormatter,
-    mentionFormatter: personMentionFormatter }), document.getElementById('components-mention-demo-person'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Mention <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-mention'</span>;
+    mentionFormatter: personMentionFormatter }), document.getElementById('components-mention-demo-person'));})()</script><div class="highlight"><pre><code class="javascript">import Mention from <span class="string">'uxcore-mention'</span>;
 
-<span class="hljs-keyword">let</span> mockData = [
+<span class="keyword">let</span> mockData = [
     {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"38900"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">"沧竹"</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"WANG XIONG"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//work.alibaba-inc.com/photo/38900.jpg"</span>
+        <span class="string">"emplId"</span>: <span class="string">"38900"</span>,
+        <span class="string">"nickNameCn"</span>: <span class="string">"沧竹"</span>,
+        <span class="string">"name"</span>: <span class="string">"WANG XIONG"</span>,
+        <span class="string">"avatar"</span>: <span class="string">"//work.alibaba-inc.com/photo/38900.jpg"</span>
     },
     {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"45358"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">"秦予"</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"WANG QINYU"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//work.alibaba-inc.com/photo/45358.jpg?1361881993"</span>
+        <span class="string">"emplId"</span>: <span class="string">"45358"</span>,
+        <span class="string">"nickNameCn"</span>: <span class="string">"秦予"</span>,
+        <span class="string">"name"</span>: <span class="string">"WANG QINYU"</span>,
+        <span class="string">"avatar"</span>: <span class="string">"//work.alibaba-inc.com/photo/45358.jpg?1361881993"</span>
     },
     {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"45924"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"WANG LEI"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//work.alibaba-inc.com/photo/45924.jpg?1363620243"</span>
+        <span class="string">"emplId"</span>: <span class="string">"45924"</span>,
+        <span class="string">"nickNameCn"</span>: <span class="string">""</span>,
+        <span class="string">"name"</span>: <span class="string">"WANG LEI"</span>,
+        <span class="string">"avatar"</span>: <span class="string">"//work.alibaba-inc.com/photo/45924.jpg?1363620243"</span>
     },
     {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"67471"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"WANG, Haiyang"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//work.alibaba-inc.com/photo/67471.jpg"</span>
+        <span class="string">"emplId"</span>: <span class="string">"67471"</span>,
+        <span class="string">"nickNameCn"</span>: <span class="string">""</span>,
+        <span class="string">"name"</span>: <span class="string">"WANG, Haiyang"</span>,
+        <span class="string">"avatar"</span>: <span class="string">"//work.alibaba-inc.com/photo/67471.jpg"</span>
     },
     {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"68699"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"WANG, Yan"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//work.alibaba-inc.com/photo/68699.jpg"</span>
+        <span class="string">"emplId"</span>: <span class="string">"68699"</span>,
+        <span class="string">"nickNameCn"</span>: <span class="string">""</span>,
+        <span class="string">"name"</span>: <span class="string">"WANG, Yan"</span>,
+        <span class="string">"avatar"</span>: <span class="string">"//work.alibaba-inc.com/photo/68699.jpg"</span>
     },
     {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"71821"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"WANG, Yinghua"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//work.alibaba-inc.com/photo/71821.jpg?1404355781"</span>
+        <span class="string">"emplId"</span>: <span class="string">"71821"</span>,
+        <span class="string">"nickNameCn"</span>: <span class="string">""</span>,
+        <span class="string">"name"</span>: <span class="string">"WANG, Yinghua"</span>,
+        <span class="string">"avatar"</span>: <span class="string">"//work.alibaba-inc.com/photo/71821.jpg?1404355781"</span>
     },
     {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"58"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"王志雷"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//work.alibaba-inc.com/photo/58.jpg?1378781324"</span>
+        <span class="string">"emplId"</span>: <span class="string">"58"</span>,
+        <span class="string">"nickNameCn"</span>: <span class="string">""</span>,
+        <span class="string">"name"</span>: <span class="string">"王志雷"</span>,
+        <span class="string">"avatar"</span>: <span class="string">"//work.alibaba-inc.com/photo/58.jpg?1378781324"</span>
     },
     {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"83"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">"纯臻"</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"王颖"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//work.alibaba-inc.com/photo/83.jpg"</span>
+        <span class="string">"emplId"</span>: <span class="string">"83"</span>,
+        <span class="string">"nickNameCn"</span>: <span class="string">"纯臻"</span>,
+        <span class="string">"name"</span>: <span class="string">"王颖"</span>,
+        <span class="string">"avatar"</span>: <span class="string">"//work.alibaba-inc.com/photo/83.jpg"</span>
     },
     {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"144"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">"王建勋"</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"王建勋"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//work.alibaba-inc.com/photo/144.jpg"</span>
+        <span class="string">"emplId"</span>: <span class="string">"144"</span>,
+        <span class="string">"nickNameCn"</span>: <span class="string">"王建勋"</span>,
+        <span class="string">"name"</span>: <span class="string">"王建勋"</span>,
+        <span class="string">"avatar"</span>: <span class="string">"//work.alibaba-inc.com/photo/144.jpg"</span>
     },
     {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"158"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">"悦航"</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"王珏"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//work.alibaba-inc.com/photo/158.jpg"</span>
+        <span class="string">"emplId"</span>: <span class="string">"158"</span>,
+        <span class="string">"nickNameCn"</span>: <span class="string">"悦航"</span>,
+        <span class="string">"name"</span>: <span class="string">"王珏"</span>,
+        <span class="string">"avatar"</span>: <span class="string">"//work.alibaba-inc.com/photo/158.jpg"</span>
     }
 ];
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getPersonData</span>(<span class="hljs-params">keyword, next</span>)</span>{
-    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+<span class="function"><span class="keyword">function</span> <span class="title">getPersonData</span><span class="params">(keyword, next)</span>{</span>
+    setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
         next(mockData);
-    }, <span class="hljs-number">100</span>);
+    }, <span class="number">100</span>);
 }
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">personDataFormatter</span>(<span class="hljs-params">data</span>)</span>{
-    data.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item</span>)</span>{
-        item.displayName = item.name + (item.nickNameCn ? <span class="hljs-string">`(<span class="hljs-subst">${item.nickNameCn}</span>)`</span>: <span class="hljs-string">''</span>);
+<span class="function"><span class="keyword">function</span> <span class="title">personDataFormatter</span><span class="params">(data)</span>{</span>
+    data.forEach(<span class="function"><span class="keyword">function</span><span class="params">(item)</span>{</span>
+        item.displayName = item.name + (item.nickNameCn ? `(${item.nickNameCn})`: <span class="string">''</span>);
     });
-    <span class="hljs-keyword">return</span> data;
+    <span class="keyword">return</span> data;
 }
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">personPanelFormatter</span>(<span class="hljs-params">data</span>)</span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;img src="<span class="hljs-subst">${data.avatar}</span>" width="25" height="25" title="<span class="hljs-subst">${data.name}</span>"&gt;<span class="hljs-subst">${data.displayName}</span> - <span class="hljs-subst">${data.emplId}</span>`</span>;
+<span class="function"><span class="keyword">function</span> <span class="title">personPanelFormatter</span><span class="params">(data)</span>{</span>
+    <span class="keyword">return</span> `&lt;img src=<span class="string">"${data.avatar}"</span> width=<span class="string">"25"</span> height=<span class="string">"25"</span> title=<span class="string">"${data.name}"</span>&gt;${data.displayName} - ${data.emplId}`;
 }
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">personMentionFormatter</span>(<span class="hljs-params">data</span>)</span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-string">`@<span class="hljs-subst">${data.name}</span>(<span class="hljs-subst">${data.emplId}</span>)`</span>;
+<span class="function"><span class="keyword">function</span> <span class="title">personMentionFormatter</span><span class="params">(data)</span>{</span>
+    <span class="keyword">return</span> `@${data.name}(${data.emplId})`;
 }
 
 ReactDOM.render(
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Mention</span>
-        <span class="hljs-attribute">width</span>=<span class="hljs-value">"400"</span>
-        <span class="hljs-attribute">height</span>=<span class="hljs-value">"200"</span>
-        <span class="hljs-attribute">matchRange</span>=<span class="hljs-value">{[2,</span> <span class="hljs-attribute">6</span>]}
-        <span class="hljs-attribute">source</span>=<span class="hljs-value">{getPersonData}</span>
-        <span class="hljs-attribute">formatter</span>=<span class="hljs-value">{personDataFormatter}</span>
-        <span class="hljs-attribute">panelFormatter</span>=<span class="hljs-value">{personPanelFormatter}</span>
-        <span class="hljs-attribute">mentionFormatter</span>=<span class="hljs-value">{personMentionFormatter}</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">Mention</span>&gt;</span>,
+    <span class="xml"><span class="tag">&lt;<span class="title">Mention
+</span>        <span class="attribute">width</span>=<span class="value">"400"</span>
+        <span class="attribute">height</span>=<span class="value">"200"</span>
+        <span class="attribute">matchRange</span>=<span class="value">{[2,</span> <span class="attribute">6</span>]}
+        <span class="attribute">source</span>=<span class="value">{getPersonData}</span>
+        <span class="attribute">formatter</span>=<span class="value">{personDataFormatter}</span>
+        <span class="attribute">panelFormatter</span>=<span class="value">{personPanelFormatter}</span>
+        <span class="attribute">mentionFormatter</span>=<span class="value">{personMentionFormatter}</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Mention</span>&gt;</span>,
       document.getElementById('components-mention-demo-person')
 );</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><p>编辑框内at任何对象</p>
 <h2 id="api">API</h2><ul>

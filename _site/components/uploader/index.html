@@ -15,10 +15,10 @@
 
 var Uploader = require('uxcore-uploader');
 
-ReactDOM.render(React.createElement(Uploader, { multiple: false, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Uploader = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
+ReactDOM.render(React.createElement(Uploader, { multiple: false, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
 
 ReactDOM.render(
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Uploader</span> <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{false}</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>,
+    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">multiple</span>=<span class="value">{false}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>,
     document.getElementById('components-uploader-demo-basic')
 );</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-tips" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-tips">附带提示文字</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-tips"></div></div><div class="code-box-desc"><p>附带提示文字。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><style>
 .tips {
@@ -32,15 +32,15 @@ ReactDOM.render(
 }
 </style>
 
-<div class="highlight"><pre><code class="css"><span class="hljs-class">.tips</span> <span class="hljs-rules">{
-   <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#666</span></span></span>;
-   <span class="hljs-rule"><span class="hljs-attribute">margin-left</span>:<span class="hljs-value"><span class="hljs-number">20px</span></span></span>;
-}</span>
-<span class="hljs-class">.tips</span> <span class="hljs-tag">em</span> <span class="hljs-rules">{
-   <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#999</span></span></span>;
-   <span class="hljs-rule"><span class="hljs-attribute">font-style</span>:<span class="hljs-value">normal</span></span>;
-   <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value">normal</span></span>;
-}</span></code></pre></div><script>(function(){'use strict';
+<div class="highlight"><pre><code class="css"><span class="class">.tips</span> <span class="rules">{
+   <span class="rule"><span class="attribute">color</span>:<span class="value"><span class="hexcolor">#666</span></span></span>;
+   <span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">20</span>px</span></span>;
+<span class="rule">}</span></span>
+<span class="class">.tips</span> <span class="tag">em</span> <span class="rules">{
+   <span class="rule"><span class="attribute">color</span>:<span class="value"><span class="hexcolor">#999</span></span></span>;
+   <span class="rule"><span class="attribute">font-style</span>:<span class="value">normal</span></span>;
+   <span class="rule"><span class="attribute">font-weight</span>:<span class="value">normal</span></span>;
+<span class="rule">}</span></span></code></pre></div><script>(function(){'use strict';
 
 var Uploader = require('uxcore-uploader');
 
@@ -55,48 +55,48 @@ var tips = React.createElement(
   )
 );
 
-ReactDOM.render(React.createElement(Uploader, { tips: tips, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-tips'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Uploader = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
+ReactDOM.render(React.createElement(Uploader, { tips: tips, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-tips'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
 
-<span class="hljs-keyword">const</span> tips = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"tips"</span>&gt;</span>限制0.5M以内<span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>（支持格式：.doc; .docx; .xls; .xlsx）<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>;</span>
+<span class="keyword">const</span> tips = <span class="xml"><span class="tag">&lt;<span class="title">span</span> <span class="attribute">className</span>=<span class="value">"tips"</span>&gt;</span>限制0.5M以内<span class="tag">&lt;<span class="title">em</span>&gt;</span>（支持格式：.doc; .docx; .xls; .xlsx）<span class="tag">&lt;/<span class="title">em</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>;</span>
 
 ReactDOM.render(
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Uploader</span> <span class="hljs-attribute">tips</span>=<span class="hljs-value">{tips}</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>,
+    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">tips</span>=<span class="value">{tips}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>,
       document.getElementById('components-uploader-demo-tips')
 );</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-image" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-image">图片上传</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-image"></div></div><div class="code-box-desc"><p>图片上传。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Uploader = require('uxcore-uploader');
 
-ReactDOM.render(React.createElement(Uploader, { multiple: false, accept: 'images', name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-image'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Uploader = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
+ReactDOM.render(React.createElement(Uploader, { multiple: false, accept: 'images', name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-image'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
 
 ReactDOM.render((
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Uploader</span> <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{false}</span> <span class="hljs-attribute">accept</span>=<span class="hljs-value">"images"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
-)</span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'components-uploader-demo-image'</span>));</code></pre></div></div></div><div id="code-box-components-uploader-demo-video" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-video">视频上传</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-video"></div></div><div class="code-box-desc"><p>视频上传。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">multiple</span>=<span class="value">{false}</span> <span class="attribute">accept</span>=<span class="value">"images"</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
+), document.getElementById('components-uploader-demo-image'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-video" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-video">视频上传</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-video"></div></div><div class="code-box-desc"><p>视频上传。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Uploader = require('uxcore-uploader');
 
-ReactDOM.render(React.createElement(Uploader, { multiple: false, accept: 'videos', name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-video'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Uploader = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
+ReactDOM.render(React.createElement(Uploader, { multiple: false, accept: 'videos', name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-video'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
 
 ReactDOM.render((
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Uploader</span> <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{false}</span> <span class="hljs-attribute">accept</span>=<span class="hljs-value">"videos"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
-)</span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'components-uploader-demo-video'</span>));</code></pre></div></div></div><div id="code-box-components-uploader-demo-multi" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-multi">多文件</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-multi"></div></div><div class="code-box-desc"><p>多文件。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">multiple</span>=<span class="value">{false}</span> <span class="attribute">accept</span>=<span class="value">"videos"</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
+), document.getElementById('components-uploader-demo-video'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-multi" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-multi">多文件</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-multi"></div></div><div class="code-box-desc"><p>多文件。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Uploader = require('uxcore-uploader');
 
-ReactDOM.render(React.createElement(Uploader, { multiple: true, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-multi'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Uploader = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
+ReactDOM.render(React.createElement(Uploader, { multiple: true, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-multi'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
 
 ReactDOM.render((
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Uploader</span> <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
-)</span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'components-uploader-demo-multi'</span>));</code></pre></div></div></div><div id="code-box-components-uploader-demo-dropzoom" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-dropzoom">拖拽上传</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-dropzoom"></div></div><div class="code-box-desc"><p>拖拽上传。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">multiple</span>=<span class="value">{true}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
+), document.getElementById('components-uploader-demo-multi'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-dropzoom" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-dropzoom">拖拽上传</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-dropzoom"></div></div><div class="code-box-desc"><p>拖拽上传。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _require = require('uxcore-uploader');
 
 var Dropzoom = _require.Dropzoom;
 
-ReactDOM.render(React.createElement(Dropzoom, { autoPending: false, multiple: true, queueCapcity: 20, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-dropzoom'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> {Dropzoom} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
+ReactDOM.render(React.createElement(Dropzoom, { autoPending: false, multiple: true, queueCapcity: 20, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-dropzoom'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> {Dropzoom} = require(<span class="string">'uxcore-uploader'</span>);
 
 ReactDOM.render((
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Dropzoom</span> <span class="hljs-attribute">autoPending</span>=<span class="hljs-value">{false}</span> <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">queueCapcity</span>=<span class="hljs-value">{20}</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
-)</span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'components-uploader-demo-dropzoom'</span>));</code></pre></div></div></div><div id="code-box-components-uploader-demo-wrap1" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-wrap1">包裹按钮</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-wrap1"></div></div><div class="code-box-desc"><p>包裹按钮。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+    <span class="xml"><span class="tag">&lt;<span class="title">Dropzoom</span> <span class="attribute">autoPending</span>=<span class="value">{false}</span> <span class="attribute">multiple</span>=<span class="value">{true}</span> <span class="attribute">queueCapcity</span>=<span class="value">{20}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
+), document.getElementById('components-uploader-demo-dropzoom'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-wrap1" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-wrap1">包裹按钮</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-wrap1"></div></div><div class="code-box-desc"><p>包裹按钮。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Uploader = require('uxcore-uploader');
 var Button = require('uxcore-button');
@@ -109,15 +109,15 @@ ReactDOM.render(React.createElement(
         { size: 'large' },
         '自定义上传按钮'
     )
-), document.getElementById('components-uploader-demo-wrap1'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Uploader = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
-<span class="hljs-keyword">const</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
+), document.getElementById('components-uploader-demo-wrap1'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Uploader = require(<span class="string">'uxcore-uploader'</span>);
+<span class="keyword">const</span> Button = require(<span class="string">'uxcore-button'</span>);
 
 
 ReactDOM.render((
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Uploader</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://test.yanbingbing.com/upload.php'</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"large"</span>&gt;</span>自定义上传按钮<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">Uploader</span>&gt;</span>
-)</span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'components-uploader-demo-wrap1'</span>));</code></pre></div></div></div><div id="code-box-components-uploader-demo-wrap2" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-wrap2">包裹区域</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-wrap2"></div></div><div class="code-box-desc"><p>包裹区域。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><style>
+    <span class="xml"><span class="tag">&lt;<span class="title">Uploader</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"large"</span>&gt;</span>自定义上传按钮<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Uploader</span>&gt;</span>
+), document.getElementById('components-uploader-demo-wrap1'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-wrap2" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-wrap2">包裹区域</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-wrap2"></div></div><div class="code-box-desc"><p>包裹区域。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><style>
 .mydroparea .kuma-icon-uploading {
    font-size: 60px;
    color:#57c5f7;
@@ -126,12 +126,12 @@ ReactDOM.render((
 }
 </style>
 
-<div class="highlight"><pre><code class="css"><span class="hljs-class">.mydroparea</span> <span class="hljs-class">.kuma-icon-uploading</span> <span class="hljs-rules">{
-   <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">60px</span></span></span>;
-   <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"><span class="hljs-hexcolor">#57c5f7</span></span></span>;
-   <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
-   <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">35px</span></span></span>;
-}</span></code></pre></div><script>(function(){'use strict';
+<div class="highlight"><pre><code class="css"><span class="class">.mydroparea</span> <span class="class">.kuma-icon-uploading</span> <span class="rules">{
+   <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">60</span>px</span></span>;
+   <span class="rule"><span class="attribute">color</span>:<span class="value"><span class="hexcolor">#57c5f7</span></span></span>;
+   <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;
+   <span class="rule"><span class="attribute">margin-top</span>:<span class="value"> <span class="number">35</span>px</span></span>;
+<span class="rule">}</span></span></code></pre></div><script>(function(){'use strict';
 
 var _require = require('uxcore-uploader');
 
@@ -146,14 +146,14 @@ ReactDOM.render(React.createElement(
         null,
         '点击或将文件拖拽到此区域上传'
     )
-), document.getElementById('components-uploader-demo-wrap2'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> {Dropzoom} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
+), document.getElementById('components-uploader-demo-wrap2'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> {Dropzoom} = require(<span class="string">'uxcore-uploader'</span>);
 
 ReactDOM.render((
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Dropzoom</span> <span class="hljs-attribute">autoPending</span>=<span class="hljs-value">{false}</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"mydroparea"</span> <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">queueCapcity</span>=<span class="hljs-value">{20}</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://test.yanbingbing.com/upload.php'</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-icon kuma-icon-uploading"</span> /&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>点击或将文件拖拽到此区域上传<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">Dropzoom</span>&gt;</span>
-)</span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'components-uploader-demo-wrap2'</span>));</code></pre></div></div></div><div id="J-markdown" class="markdown"><p>上传组件, 封装<a href="https://github.com/uxcore/uxcore-uploadcore/">UploadCore</a>核心组件, 作为UI层.</p>
+    <span class="xml"><span class="tag">&lt;<span class="title">Dropzoom</span> <span class="attribute">autoPending</span>=<span class="value">{false}</span> <span class="attribute">className</span>=<span class="value">"mydroparea"</span> <span class="attribute">multiple</span>=<span class="value">{true}</span> <span class="attribute">queueCapcity</span>=<span class="value">{20}</span> <span class="attribute">name</span>=<span class="value">'file'</span> <span class="attribute">url</span>=<span class="value">'http://test.yanbingbing.com/upload.php'</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">i</span> <span class="attribute">className</span>=<span class="value">"kuma-icon kuma-icon-uploading"</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span>&gt;</span>点击或将文件拖拽到此区域上传<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">Dropzoom</span>&gt;</span>
+), document.getElementById('components-uploader-demo-wrap2'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><p>上传组件, 封装<a href="https://github.com/uxcore/uxcore-uploadcore/">UploadCore</a>核心组件, 作为UI层.</p>
 <h2 id="props">Props</h2><table>
 <thead>
 <tr>
