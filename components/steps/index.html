@@ -119,6 +119,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 
 var Steps = require('uxcore-steps');
 var Step = Steps.Step;
+var Button = require('uxcore-button');
 
 var array = Array.apply(null, Array(Math.floor(Math.random() * 3) + 3));
 var steps = array.map(function (item, i) {
@@ -182,13 +183,14 @@ var Demo = (function (_React$Component) {
                     'div',
                     null,
                     React.createElement(
-                        'button',
-                        { className: 'kuma-button kuma-button-sm', onClick: this.next.bind(this) },
+                        Button,
+                        { size: 'small', type: 'secondary', onClick: this.next.bind(this) },
                         '下一步'
                     ),
+                    '  ',
                     React.createElement(
-                        'button',
-                        { className: 'kuma-button kuma-button-sm', onClick: this.toggleNumberShow.bind(this) },
+                        Button,
+                        { size: 'small', type: 'secondary', onClick: this.toggleNumberShow.bind(this) },
                         '显示数字'
                     )
                 )
@@ -199,8 +201,9 @@ var Demo = (function (_React$Component) {
     return Demo;
 })(React.Component);
 
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-steps-demo-dynamic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Steps = require(<span class="string">'uxcore-steps'</span>);
-<span class="keyword">var</span> Step = Steps.Step;
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-steps-demo-dynamic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Steps = require(<span class="string">'uxcore-steps'</span>);
+<span class="keyword">const</span> Step = Steps.Step;
+<span class="keyword">const</span> Button = require(<span class="string">'uxcore-button'</span>);
 
 <span class="keyword">let</span> array = Array.apply(<span class="literal">null</span>, Array(Math.floor(Math.random() * <span class="number">3</span>) + <span class="number">3</span>));
 <span class="keyword">let</span> steps = array.map(<span class="function"><span class="keyword">function</span><span class="params">(item, i)</span> {</span>
@@ -243,8 +246,8 @@ class Demo extends React.Component {
                     {steps.map((s, i) =&gt; <span class="tag">&lt;<span class="title">Step</span> <span class="attribute">key</span>=<span class="value">{i}</span> <span class="attribute">title</span>=<span class="value">{s.title}</span> <span class="attribute">description</span>=<span class="value">{s.description}</span> /&gt;</span>)}
                 <span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
                 <span class="tag">&lt;<span class="title">div</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">'kuma-button kuma-button-sm'</span> <span class="attribute">onClick</span>=<span class="value">{this.next.bind(this)}</span>&gt;</span>下一步<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">className</span>=<span class="value">'kuma-button kuma-button-sm'</span> <span class="attribute">onClick</span>=<span class="value">{this.toggleNumberShow.bind(this)}</span>&gt;</span>显示数字<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"small"</span> <span class="attribute">type</span>=<span class="value">"secondary"</span> <span class="attribute">onClick</span>=<span class="value">{this.next.bind(this)}</span>&gt;</span>下一步<span class="tag">&lt;/<span class="title">Button</span>&gt;</span> &amp;nbsp;
+                    <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"small"</span> <span class="attribute">type</span>=<span class="value">"secondary"</span> <span class="attribute">onClick</span>=<span class="value">{this.toggleNumberShow.bind(this)}</span>&gt;</span>显示数字<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
                 <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
             <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
         );
