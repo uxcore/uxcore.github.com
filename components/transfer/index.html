@@ -63,68 +63,68 @@ var TransferDemo = (function (_React$Component) {
     return TransferDemo;
 })(React.Component);
 
-ReactDOM.render(React.createElement(TransferDemo, null), document.getElementById('components-transfer-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript">import Transfer from <span class="string">'uxcore-transfer'</span>;
+ReactDOM.render(React.createElement(TransferDemo, null), document.getElementById('components-transfer-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Transfer <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-transfer'</span>;
 
-<span class="keyword">let</span> mockData = [];
-<span class="keyword">let</span> len = Math.random() * <span class="number">10</span> + <span class="number">10</span>;
-<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) {
+<span class="hljs-keyword">let</span> mockData = [];
+<span class="hljs-keyword">let</span> len = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span> + <span class="hljs-number">10</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) {
     mockData.push({
-        name: <span class="string">'内容'</span> + (i + <span class="number">1</span>),
-        value: (i + <span class="number">1</span>),
-        description: <span class="string">'内容'</span> + (i + <span class="number">1</span>) + <span class="string">'的描述'</span>,
-        chosen: Math.random() * <span class="number">2</span> &gt; <span class="number">1</span>
+        name: <span class="hljs-string">'内容'</span> + (i + <span class="hljs-number">1</span>),
+        value: (i + <span class="hljs-number">1</span>),
+        description: <span class="hljs-string">'内容'</span> + (i + <span class="hljs-number">1</span>) + <span class="hljs-string">'的描述'</span>,
+        chosen: <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span> &gt; <span class="hljs-number">1</span>
     });
 }
 
-class TransferDemo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TransferDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     constructor(props){
-        super(props);
+        <span class="hljs-keyword">super</span>(props);
     }
 
     _handleChange(data) {
-        console.log(data);
+        <span class="hljs-built_in">console</span>.log(data);
     }
 
     render() {
-        <span class="keyword">var</span> me = <span class="keyword">this</span>;
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">Transfer</span> <span class="attribute">data</span>=<span class="value">{mockData}</span> <span class="attribute">onChange</span>=<span class="value">{me._handleChange.bind(me)}</span>/&gt;</span>
-        );
+        <span class="hljs-keyword">var</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Transfer</span> <span class="hljs-attribute">data</span>=<span class="hljs-value">{mockData}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{me._handleChange.bind(me)}</span>/&gt;</span>
+        )</span>;
     }
 }
 
 ReactDOM.render(
-    <span class="tag">&lt;<span class="title">TransferDemo</span> /&gt;</span>,
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">TransferDemo</span> /&gt;</span>,
       document.getElementById('components-transfer-demo-basic')
-);</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="usage">Usage</h2><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> Transfer = require(<span class="string">'../src'</span>);
+);</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="usage">Usage</h2><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Transfer = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../src'</span>);
 
-<span class="keyword">let</span> mockData = [];
-<span class="keyword">let</span> len = Math.random() * <span class="number">10</span> + <span class="number">10</span>;
-<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) {
+<span class="hljs-keyword">let</span> mockData = [];
+<span class="hljs-keyword">let</span> len = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span> + <span class="hljs-number">10</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) {
     mockData.push({
-        name: <span class="string">'内容'</span> + (i + <span class="number">1</span>),
-        value: (i + <span class="number">1</span>),
-        description: <span class="string">'内容'</span> + (i + <span class="number">1</span>) + <span class="string">'的描述'</span>,
-        chosen: Math.random() * <span class="number">2</span> &gt; <span class="number">1</span>
+        name: <span class="hljs-string">'内容'</span> + (i + <span class="hljs-number">1</span>),
+        value: (i + <span class="hljs-number">1</span>),
+        description: <span class="hljs-string">'内容'</span> + (i + <span class="hljs-number">1</span>) + <span class="hljs-string">'的描述'</span>,
+        chosen: <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">2</span> &gt; <span class="hljs-number">1</span>
     });
 }
 
-class TransferDemo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TransferDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     constructor(props){
-        super(props);
+        <span class="hljs-keyword">super</span>(props);
     }
 
     _handleChange(data) {
-        console.log(data);
+        <span class="hljs-built_in">console</span>.log(data);
     }
 
     render() {
-        <span class="keyword">var</span> me = <span class="keyword">this</span>;
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">Transfer</span> <span class="attribute">data</span>=<span class="value">{mockData}</span> <span class="attribute">onChange</span>=<span class="value">{me._handleChange.bind(me)}</span>/&gt;</span>
-        );
+        <span class="hljs-keyword">var</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Transfer</span> <span class="hljs-attribute">data</span>=<span class="hljs-value">{mockData}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{me._handleChange.bind(me)}</span>/&gt;</span>
+        )</span>;
     }
-}</span></code></pre></div><h2 id="api">API</h2><ul>
+}</code></pre></div><h2 id="api">API</h2><ul>
 <li>selectItems(arr): 使对应 value 的变成高亮状态 (selected)。<br>参数：  <ul>
 <li>arr <code>Array</code> 一个由 value 组成的数组。</li>
 </ul>

@@ -165,146 +165,146 @@ var Page = (function (_React$Component) {
 
 ReactDOM.render(React.createElement(Page, null), document.getElementById('scene-fisgrid-demo-basic'));
 
-/* JS END CSS START*/})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> FisGrid = require(<span class="string">'uxcore-fis-grid'</span>);
-<span class="keyword">let</span> Button = require(<span class="string">'uxcore-button'</span>);
-<span class="keyword">let</span> Form = require(<span class="string">'uxcore-form'</span>);
-<span class="comment">/*
+/* JS END CSS START*/})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> FisGrid = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-fis-grid'</span>);
+<span class="hljs-keyword">let</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
+<span class="hljs-keyword">let</span> Form = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-form'</span>);
+<span class="hljs-comment">/*
  * 讲解：从 Form 中取出 Form 的零件用以配置生成一个完整的 Form。
  * Form 的使用文档见：https://github.com/uxcore/uxcore-form
  */</span>
-<span class="keyword">let</span> {FormRow, InputFormField, OtherFormField, Validators, ButtonGroupFormField, TableFormField} = Form;
+<span class="hljs-keyword">let</span> {FormRow, InputFormField, OtherFormField, Validators, ButtonGroupFormField, TableFormField} = Form;
 
-<span class="comment">/*
+<span class="hljs-comment">/*
  * 讲解：object-assign 是一个非常实用的用于对象深拷贝和扩展的函数
  * 详细说明见 https://www.npmjs.com/package/object-assign
  */</span>
-<span class="keyword">let</span> assign = require(<span class="string">'object-assign'</span>);
+<span class="hljs-keyword">let</span> assign = <span class="hljs-built_in">require</span>(<span class="hljs-string">'object-assign'</span>);
 
 
-<span class="comment">/*
+<span class="hljs-comment">/*
  * 讲解：下面是 react 的生成一个类的方式，同样是使用了 ES6 语法
  * 他改变了原有的 JS 蹩脚的声明和继承类的方法，提供一种更加面向对象的声明方式
  * 详细说明见：http://es6.ruanyifeng.com/#docs/class
  */</span>
-class Page extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Page</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
-            searchTxt: <span class="string">''</span>
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            searchTxt: <span class="hljs-string">''</span>
         }
     }
 
     render() {
-        <span class="keyword">let</span> me = <span class="keyword">this</span>;
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
 
-        <span class="keyword">let</span> formComp = <span class="xml"><span class="tag">&lt;<span class="title">Form</span> <span class="attribute">className</span>=<span class="value">"demoForm"</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">FormRow</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">InputFormField</span> <span class="attribute">jsxlabel</span>=<span class="value">"国家"</span> <span class="attribute">jsxname</span>=<span class="value">"country"</span> <span class="attribute">jsxrules</span>=<span class="value">{{validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "非空"}}/&gt;</span>
-                            <span class="tag">&lt;<span class="title">InputFormField</span> <span class="attribute">jsxname</span>=<span class="value">"id"</span> <span class="attribute">jsxshow</span>=<span class="value">{false}</span>/&gt;</span>
-                        <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">FormRow</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">InputFormField</span> <span class="attribute">jsxlabel</span>=<span class="value">"城市"</span> <span class="attribute">jsxname</span>=<span class="value">"city"</span> <span class="attribute">jsxrules</span>=<span class="value">{{validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "非空"}}/&gt;</span> 
-                            <span class="tag">&lt;<span class="title">InputFormField</span> <span class="attribute">jsxlabel</span>=<span class="value">"email"</span> <span class="attribute">jsxname</span>=<span class="value">"email"</span> <span class="attribute">jsxrules</span>=<span class="value">{</span>
+        <span class="hljs-keyword">let</span> formComp = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demoForm"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">FormRow</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">InputFormField</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"国家"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"country"</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{{validator:</span> <span class="hljs-attribute">Validators.isNotEmpty</span>, <span class="hljs-attribute">errMsg:</span> "非空"}}/&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">InputFormField</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"id"</span> <span class="hljs-attribute">jsxshow</span>=<span class="hljs-value">{false}</span>/&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">FormRow</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">InputFormField</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"城市"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"city"</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{{validator:</span> <span class="hljs-attribute">Validators.isNotEmpty</span>, <span class="hljs-attribute">errMsg:</span> "非空"}}/&gt;</span> 
+                            <span class="hljs-tag">&lt;<span class="hljs-title">InputFormField</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{</span>
                                 [   
-                                    {<span class="attribute">validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "非空"},
-                                    {<span class="attribute">validator:</span> <span class="attribute">Validators.isEmail</span>, <span class="attribute">errMsg:</span> "请输入正确的 <span class="attribute">email</span> 地址"}
+                                    {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">Validators.isNotEmpty</span>, <span class="hljs-attribute">errMsg:</span> "非空"},
+                                    {<span class="hljs-attribute">validator:</span> <span class="hljs-attribute">Validators.isEmail</span>, <span class="hljs-attribute">errMsg:</span> "请输入正确的 <span class="hljs-attribute">email</span> 地址"}
                                 ]
                             }/&gt;</span> 
-                        <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">FormRow</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">InputFormField</span> <span class="attribute">jsxlabel</span>=<span class="value">"FirstName"</span> <span class="attribute">jsxname</span>=<span class="value">"firstName"</span> <span class="attribute">jsxrules</span>=<span class="value">{{validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "非空"}}/&gt;</span> 
-                            <span class="tag">&lt;<span class="title">InputFormField</span> <span class="attribute">jsxlabel</span>=<span class="value">"LastName"</span> <span class="attribute">jsxname</span>=<span class="value">"lastName"</span> <span class="attribute">jsxrules</span>=<span class="value">{{validator:</span> <span class="attribute">Validators.isNotEmpty</span>, <span class="attribute">errMsg:</span> "非空"}}/&gt;</span> 
-                        <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
-                       <span class="tag">&lt;/<span class="title">Form</span>&gt;</span>;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">FormRow</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">InputFormField</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"FirstName"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"firstName"</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{{validator:</span> <span class="hljs-attribute">Validators.isNotEmpty</span>, <span class="hljs-attribute">errMsg:</span> "非空"}}/&gt;</span> 
+                            <span class="hljs-tag">&lt;<span class="hljs-title">InputFormField</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"LastName"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"lastName"</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{{validator:</span> <span class="hljs-attribute">Validators.isNotEmpty</span>, <span class="hljs-attribute">errMsg:</span> "非空"}}/&gt;</span> 
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
+                       <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>;</span>
 
-        <span class="keyword">let</span> newColumns = [
-            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">200</span>, type: <span class="string">"text"</span>},
-            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>, type: <span class="string">"text"</span>},
-            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span>, type: <span class="string">"text"</span> },  
-            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>, type: <span class="string">"text"</span>},
-            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>, width: <span class="number">200</span>, type: <span class="string">"text"</span>},
-            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
-                <span class="string">'增加'</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData, actions)</span> {</span>
+        <span class="hljs-keyword">let</span> newColumns = [
+            { dataKey: <span class="hljs-string">'country'</span>, title:<span class="hljs-string">'国家'</span>, width: <span class="hljs-number">200</span>, type: <span class="hljs-string">"text"</span>},
+            { dataKey: <span class="hljs-string">'city'</span>,title:<span class="hljs-string">'城市'</span>, width: <span class="hljs-number">150</span>, type: <span class="hljs-string">"text"</span>},
+            { dataKey: <span class="hljs-string">'firstName'</span>,title:<span class="hljs-string">"FristName"</span>, type: <span class="hljs-string">"text"</span> },  
+            { dataKey: <span class="hljs-string">'lastName'</span> ,title:<span class="hljs-string">"LastName"</span>, type: <span class="hljs-string">"text"</span>},
+            { dataKey: <span class="hljs-string">'email'</span>,title:<span class="hljs-string">"Email"</span>, width: <span class="hljs-number">200</span>, type: <span class="hljs-string">"text"</span>},
+            { dataKey: <span class="hljs-string">'action1'</span>, title:<span class="hljs-string">'操作1'</span>, width:<span class="hljs-number">100</span>, type:<span class="hljs-string">"action"</span>,actions:{
+                <span class="hljs-string">'增加'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData, actions</span>) </span>{
                     actions.addEmptyRow();
                 },
-                <span class="string">'删除'</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData, actions)</span> {</span>
+                <span class="hljs-string">'删除'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData, actions</span>) </span>{
                     actions.delRow(rowData);
                 }
             }}
         ];
 
 
-        <span class="keyword">let</span> newProps={
-            width: <span class="number">900</span>,
-            height: <span class="number">400</span>,
+        <span class="hljs-keyword">let</span> newProps={
+            width: <span class="hljs-number">900</span>,
+            height: <span class="hljs-number">400</span>,
             jsxcolumns:newColumns
         };
 
-        <span class="keyword">let</span> formComp2 = <span class="xml"><span class="tag">&lt;<span class="title">Form</span> <span class="attribute">className</span>=<span class="value">"demoForm2"</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">TableFormField</span> <span class="attribute">jsxname</span>=<span class="value">"dicts"</span> <span class="attribute">jsxshowLabel</span>=<span class="value">{false}</span> {<span class="attribute">...newProps</span>}/&gt;</span>
-                        <span class="tag">&lt;/<span class="title">Form</span>&gt;</span>;</span>
+        <span class="hljs-keyword">let</span> formComp2 = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demoForm2"</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">TableFormField</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"dicts"</span> <span class="hljs-attribute">jsxshowLabel</span>=<span class="hljs-value">{false}</span> {<span class="hljs-attribute">...newProps</span>}/&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>;</span>
 
-        <span class="keyword">let</span> columns = [
-            { dataKey: <span class="string">'id'</span>, title: <span class="string">'ID'</span>, width: <span class="number">50</span>,hidden:<span class="literal">true</span>},
-            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">100</span>, type: <span class="string">"money"</span>, delimiter: <span class="string">','</span>},
-            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span> },  
-            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
-            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>},
+        <span class="hljs-keyword">let</span> columns = [
+            { dataKey: <span class="hljs-string">'id'</span>, title: <span class="hljs-string">'ID'</span>, width: <span class="hljs-number">50</span>,hidden:<span class="hljs-literal">true</span>},
+            { dataKey: <span class="hljs-string">'country'</span>, title:<span class="hljs-string">'国家'</span>, width: <span class="hljs-number">100</span>, type: <span class="hljs-string">"money"</span>, delimiter: <span class="hljs-string">','</span>},
+            { dataKey: <span class="hljs-string">'city'</span>,title:<span class="hljs-string">'城市'</span>, width: <span class="hljs-number">150</span>,ordered:<span class="hljs-literal">true</span> },
+            { dataKey: <span class="hljs-string">'firstName'</span>,title:<span class="hljs-string">"FristName"</span> },  
+            { dataKey: <span class="hljs-string">'lastName'</span> ,title:<span class="hljs-string">"LastName"</span>},
+            { dataKey: <span class="hljs-string">'email'</span>,title:<span class="hljs-string">"Email"</span>,width: <span class="hljs-number">200</span>},
         ];
 
-        <span class="keyword">let</span> subCols = [
-          {dataKey: <span class="string">'firstName'</span>, title: <span class="string">'firstName'</span>, width: <span class="number">200</span>},
-          {dataKey: <span class="string">'city'</span>, title: <span class="string">'城市'</span>, width: <span class="number">200</span>}
+        <span class="hljs-keyword">let</span> subCols = [
+          {dataKey: <span class="hljs-string">'firstName'</span>, title: <span class="hljs-string">'firstName'</span>, width: <span class="hljs-number">200</span>},
+          {dataKey: <span class="hljs-string">'city'</span>, title: <span class="hljs-string">'城市'</span>, width: <span class="hljs-number">200</span>}
         ]
 
-        <span class="keyword">let</span> renderSubProps={
-            showHeader:<span class="literal">true</span>,
-            showPager:<span class="literal">false</span>,
+        <span class="hljs-keyword">let</span> renderSubProps={
+            showHeader:<span class="hljs-literal">true</span>,
+            showPager:<span class="hljs-literal">false</span>,
             jsxcolumns:subCols,
-            fetchUrl:<span class="string">"http://demo.nwux.taobao.net/file/getGridJson.jsonp"</span>,
-            queryKeys:[<span class="string">"firstName"</span>, <span class="string">"city"</span>],
-            processData: (data) =&gt; {<span class="keyword">return</span> data;}
+            fetchUrl:<span class="hljs-string">"http://demo.nwux.taobao.net/file/getGridJson.jsonp"</span>,
+            queryKeys:[<span class="hljs-string">"firstName"</span>, <span class="hljs-string">"city"</span>],
+            processData: (data) =&gt; {<span class="hljs-keyword">return</span> data;}
         };
 
-        <span class="keyword">let</span> renderProps={
-            height: <span class="number">400</span>,
-            width: <span class="number">900</span>,
-            fetchUrl: <span class="string">"http://demo.nwux.taobao.net/file/getGridJson.jsonp"</span>,
-            <span class="comment">// fetchUrl: "http://10.1.159.52:3002/demo/data.json",</span>
+        <span class="hljs-keyword">let</span> renderProps={
+            height: <span class="hljs-number">400</span>,
+            width: <span class="hljs-number">900</span>,
+            fetchUrl: <span class="hljs-string">"http://demo.nwux.taobao.net/file/getGridJson.jsonp"</span>,
+            <span class="hljs-comment">// fetchUrl: "http://10.1.159.52:3002/demo/data.json",</span>
             jsxcolumns: columns,
-            subComp: (<span class="xml"><span class="tag">&lt;<span class="title">FisGrid</span> <span class="attribute">options</span>=<span class="value">{renderSubProps}</span>/&gt;</span>),
+            subComp: (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">FisGrid</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{renderSubProps}</span>/&gt;</span>)</span>,
         };
 
-        let props1 = assign({}, renderProps, {
+        <span class="hljs-keyword">let</span> props1 = assign({}, renderProps, {
             editData: {
                 comp: formComp,
-                url: 'http://demo.nwux.taobao.net/file/writeGrid.jsonp'
+                url: <span class="hljs-string">'http://demo.nwux.taobao.net/file/writeGrid.jsonp'</span>
             },
             addNewData: {
                 comp: formComp2,
-                url: 'http://demo.nwux.taobao.net/file/addNewData.jsonp',
-                // url: 'http://localhost:8122/file/addNewData.jsonp'
+                url: <span class="hljs-string">'http://demo.nwux.taobao.net/file/addNewData.jsonp'</span>,
+                <span class="hljs-comment">// url: 'http://localhost:8122/file/addNewData.jsonp'</span>
             },
             deleteData: {
-                url: 'http://demo.nwux.taobao.net/file/deleteData.jsonp',
-                // url: 'http://localhost:8122/file/deleteData',
-                // type: 'POST'
+                url: <span class="hljs-string">'http://demo.nwux.taobao.net/file/deleteData.jsonp'</span>,
+                <span class="hljs-comment">// url: 'http://localhost:8122/file/deleteData',</span>
+                <span class="hljs-comment">// type: 'POST'</span>
             },
-            showSearch: true
+            showSearch: <span class="hljs-literal">true</span>
         })
 
-        return (
-            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"pageHome"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">FisGrid</span> <span class="attribute">ref</span>=<span class="value">"grid1"</span> <span class="attribute">options</span>=<span class="value">{props1}</span> /&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        );
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"pageHome"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">FisGrid</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"grid1"</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{props1}</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>;
     }
 }
 
 ReactDOM.render(
-  <span class="tag">&lt;<span class="title">Page</span> /&gt;</span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Page</span> /&gt;</span>
 , document.getElementById('scene-fisgrid-demo-basic'));
 
 /* JS END CSS START*/</span></code></pre></div></div></div><div id="code-box-scene-fisgrid-demo-form" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-scene-fisgrid-demo-form">表单查询，表格展示</a></div></div><div class="code-box-demo"><div id="scene-fisgrid-demo-form"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
@@ -432,42 +432,42 @@ var Page = (function (_React$Component) {
 
 ReactDOM.render(React.createElement(Page, null), document.getElementById('scene-fisgrid-demo-form'));
 
-/* JS END CSS START*/})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">let</span> FisGrid = require(<span class="string">'uxcore-fis-grid'</span>);
-<span class="keyword">let</span> Button = require(<span class="string">'uxcore-button'</span>);
-<span class="keyword">let</span> Form = require(<span class="string">'uxcore-form'</span>);
-<span class="comment">/*
+/* JS END CSS START*/})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> FisGrid = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-fis-grid'</span>);
+<span class="hljs-keyword">let</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
+<span class="hljs-keyword">let</span> Form = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-form'</span>);
+<span class="hljs-comment">/*
  * 讲解：从 Form 中取出 Form 的零件用以配置生成一个完整的 Form。
  * Form 的使用文档见：https://github.com/uxcore/uxcore-form
  */</span>
-<span class="keyword">let</span> {FormRow, InputFormField, OtherFormField, Validators, ButtonGroupFormField, TableFormField} = Form;
+<span class="hljs-keyword">let</span> {FormRow, InputFormField, OtherFormField, Validators, ButtonGroupFormField, TableFormField} = Form;
 
-<span class="comment">/*
+<span class="hljs-comment">/*
  * 讲解：object-assign 是一个非常实用的用于对象扩展的函数
  * 详细说明见 https://www.npmjs.com/package/object-assign
  */</span>
-<span class="keyword">let</span> assign = require(<span class="string">'object-assign'</span>);
+<span class="hljs-keyword">let</span> assign = <span class="hljs-built_in">require</span>(<span class="hljs-string">'object-assign'</span>);
 
 
-<span class="comment">/*
+<span class="hljs-comment">/*
  * 讲解：下面是 react 的生成一个类的方式，同样是使用了 ES6 语法
  * 他改变了原有的 JS 蹩脚的声明和继承类的方法，提供一种更加面向对象的声明方式
  * 详细说明见：http://es6.ruanyifeng.com/#docs/class
  */</span>
-class Page extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Page</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
-            searchTxt: <span class="string">''</span>
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            searchTxt: <span class="hljs-string">''</span>
         }
     }
 
     handleFormClick(data) {
-        <span class="keyword">let</span> me = <span class="keyword">this</span>;
-        <span class="keyword">if</span> (data.pass) {
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">if</span> (data.pass) {
             me.setState({
                 searchTxt: data.values.search
-            }, <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
+            }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
                 me.refs.grid2.fetchData();
             })
         }
@@ -475,65 +475,65 @@ class Page extends React.Component {
 
 
     render() {
-        <span class="keyword">let</span> me = <span class="keyword">this</span>;
-        <span class="keyword">let</span> columns = [
-            { dataKey: <span class="string">'id'</span>, title: <span class="string">'ID'</span>, width: <span class="number">50</span>,hidden:<span class="literal">true</span>},
-            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">100</span>, type: <span class="string">"money"</span>, delimiter: <span class="string">','</span>},
-            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span> },  
-            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
-            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>},
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">let</span> columns = [
+            { dataKey: <span class="hljs-string">'id'</span>, title: <span class="hljs-string">'ID'</span>, width: <span class="hljs-number">50</span>,hidden:<span class="hljs-literal">true</span>},
+            { dataKey: <span class="hljs-string">'country'</span>, title:<span class="hljs-string">'国家'</span>, width: <span class="hljs-number">100</span>, type: <span class="hljs-string">"money"</span>, delimiter: <span class="hljs-string">','</span>},
+            { dataKey: <span class="hljs-string">'city'</span>,title:<span class="hljs-string">'城市'</span>, width: <span class="hljs-number">150</span>,ordered:<span class="hljs-literal">true</span> },
+            { dataKey: <span class="hljs-string">'firstName'</span>,title:<span class="hljs-string">"FristName"</span> },  
+            { dataKey: <span class="hljs-string">'lastName'</span> ,title:<span class="hljs-string">"LastName"</span>},
+            { dataKey: <span class="hljs-string">'email'</span>,title:<span class="hljs-string">"Email"</span>,width: <span class="hljs-number">200</span>},
         ];
 
-        <span class="keyword">let</span> subCols = [
-          {dataKey: <span class="string">'firstName'</span>, title: <span class="string">'firstName'</span>, width: <span class="number">200</span>},
-          {dataKey: <span class="string">'city'</span>, title: <span class="string">'城市'</span>, width: <span class="number">200</span>}
+        <span class="hljs-keyword">let</span> subCols = [
+          {dataKey: <span class="hljs-string">'firstName'</span>, title: <span class="hljs-string">'firstName'</span>, width: <span class="hljs-number">200</span>},
+          {dataKey: <span class="hljs-string">'city'</span>, title: <span class="hljs-string">'城市'</span>, width: <span class="hljs-number">200</span>}
         ]
 
-        <span class="keyword">let</span> renderSubProps={
-            showHeader:<span class="literal">true</span>,
-            showPager:<span class="literal">false</span>,
+        <span class="hljs-keyword">let</span> renderSubProps={
+            showHeader:<span class="hljs-literal">true</span>,
+            showPager:<span class="hljs-literal">false</span>,
             jsxcolumns:subCols,
-            fetchUrl:<span class="string">"http://demo.nwux.taobao.net/file/getGridJson.jsonp"</span>,
-            queryKeys:[<span class="string">"firstName"</span>, <span class="string">"city"</span>],
-            processData: (data) =&gt; {<span class="keyword">return</span> data;}
+            fetchUrl:<span class="hljs-string">"http://demo.nwux.taobao.net/file/getGridJson.jsonp"</span>,
+            queryKeys:[<span class="hljs-string">"firstName"</span>, <span class="hljs-string">"city"</span>],
+            processData: (data) =&gt; {<span class="hljs-keyword">return</span> data;}
         };
 
-        <span class="keyword">let</span> renderProps={
-            height: <span class="number">400</span>,
-            width: <span class="number">900</span>,
-            fetchUrl: <span class="string">"http://demo.nwux.taobao.net/file/getGridJson.jsonp"</span>,
-            <span class="comment">// fetchUrl: "http://10.1.159.52:3002/demo/data.json",</span>
+        <span class="hljs-keyword">let</span> renderProps={
+            height: <span class="hljs-number">400</span>,
+            width: <span class="hljs-number">900</span>,
+            fetchUrl: <span class="hljs-string">"http://demo.nwux.taobao.net/file/getGridJson.jsonp"</span>,
+            <span class="hljs-comment">// fetchUrl: "http://10.1.159.52:3002/demo/data.json",</span>
             jsxcolumns: columns,
-            subComp: (<span class="xml"><span class="tag">&lt;<span class="title">FisGrid</span> <span class="attribute">options</span>=<span class="value">{renderSubProps}</span>/&gt;</span>),
+            subComp: (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">FisGrid</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{renderSubProps}</span>/&gt;</span>)</span>,
         };
 
 
-        let props2 = assign({}, renderProps, {
+        <span class="hljs-keyword">let</span> props2 = assign({}, renderProps, {
             fetchParams: {
                 searchTxt: me.state.searchTxt
             }
         });
 
 
-        return (
-            <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"pageHome"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Form</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">FormRow</span>&gt;</span>
-                        <span class="tag">&lt;<span class="title">InputFormField</span> <span class="attribute">jsxlabel</span>=<span class="value">"查询"</span> <span class="attribute">jsxname</span>=<span class="value">"search"</span> /&gt;</span>
-                        <span class="tag">&lt;<span class="title">ButtonGroupFormField</span>&gt;</span>
-                            <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">action</span>=<span class="value">"submit"</span> <span class="attribute">size</span>=<span class="value">"medium"</span> <span class="attribute">onClick</span>=<span class="value">{me.handleFormClick.bind(me)}</span>&gt;</span>查询<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                        <span class="tag">&lt;/<span class="title">ButtonGroupFormField</span>&gt;</span> 
-                    <span class="tag">&lt;/<span class="title">FormRow</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">Form</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">FisGrid</span> <span class="attribute">ref</span>=<span class="value">"grid2"</span> <span class="attribute">options</span>=<span class="value">{props2}</span>/&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-        );
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"pageHome"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Form</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">FormRow</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">InputFormField</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"查询"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"search"</span> /&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">ButtonGroupFormField</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"medium"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleFormClick.bind(me)}</span>&gt;</span>查询<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">ButtonGroupFormField</span>&gt;</span> 
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">FisGrid</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"grid2"</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{props2}</span>/&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>;
     }
 }
 
 ReactDOM.render(
-  <span class="tag">&lt;<span class="title">Page</span> /&gt;</span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Page</span> /&gt;</span>
 , document.getElementById('scene-fisgrid-demo-form'));
 
 /* JS END CSS START*/</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="详细使用说明点此">详细使用说明<a href="http://gitlab.alibaba-inc.com/uxcore/uxcore-demo/tree/master">点此</a></h2></div></article></div></body></html>

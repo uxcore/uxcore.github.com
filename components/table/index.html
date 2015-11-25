@@ -123,75 +123,75 @@ var Demo = (function (_React$Component) {
 ;
 
 ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-table-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="keyword">let</span> Table = require(<span class="string">'uxcore-table'</span>);
+<span class="hljs-keyword">let</span> Table = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-table'</span>);
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
-           data:<span class="keyword">this</span>.props.data
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+           data:<span class="hljs-keyword">this</span>.props.data
         }
     }
 
     onModifyRow(value,dataKey,record) {
-        <span class="comment">//doValidate</span>
-        <span class="comment">//debugger;</span>
-        <span class="comment">//return false;</span>
-        <span class="keyword">return</span> <span class="literal">true</span>;
+        <span class="hljs-comment">//doValidate</span>
+        <span class="hljs-comment">//debugger;</span>
+        <span class="hljs-comment">//return false;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
     }
 
       render () {
-        console.log(<span class="string">"demo render"</span>);
-        <span class="keyword">let</span> me=<span class="keyword">this</span>;
-        <span class="comment">// 通过 rowSelection 对象表明需要行选择</span>
-        <span class="keyword">let</span> rowSelection = {
-          onSelect: <span class="function"><span class="keyword">function</span><span class="params">(record, selected, selectedRows)</span> {</span>
-            console.log(record, selected, selectedRows);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"demo render"</span>);
+        <span class="hljs-keyword">let</span> me=<span class="hljs-keyword">this</span>;
+        <span class="hljs-comment">// 通过 rowSelection 对象表明需要行选择</span>
+        <span class="hljs-keyword">let</span> rowSelection = {
+          onSelect: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">record, selected, selectedRows</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(record, selected, selectedRows);
           },
-          onSelectAll: <span class="function"><span class="keyword">function</span><span class="params">(selected, selectedRows)</span> {</span>
-            console.log(selected, selectedRows);
+          onSelectAll: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">selected, selectedRows</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(selected, selectedRows);
           }
         };
 
-        <span class="keyword">let</span> doAction= <span class="function"><span class="keyword">function</span><span class="params">(rowData,e)</span> {</span>
-            <span class="keyword">let</span> el=$(e.target);
-            <span class="keyword">if</span>(el.hasClass(<span class="string">'action'</span>)) {
-               <span class="keyword">if</span>( el.data(<span class="string">'type'</span>) ==<span class="string">'edit'</span>) {
-                  console.info(rowData,el.data(<span class="string">'type'</span>));
-               }<span class="keyword">else</span> <span class="keyword">if</span>(el.data(<span class="string">'type'</span>) ==<span class="string">'del'</span>) {
-                 console.info(rowData,el.data(<span class="string">'type'</span>));
+        <span class="hljs-keyword">let</span> doAction= <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData,e</span>) </span>{
+            <span class="hljs-keyword">let</span> el=$(e.target);
+            <span class="hljs-keyword">if</span>(el.hasClass(<span class="hljs-string">'action'</span>)) {
+               <span class="hljs-keyword">if</span>( el.data(<span class="hljs-string">'type'</span>) ==<span class="hljs-string">'edit'</span>) {
+                  <span class="hljs-built_in">console</span>.info(rowData,el.data(<span class="hljs-string">'type'</span>));
+               }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(el.data(<span class="hljs-string">'type'</span>) ==<span class="hljs-string">'del'</span>) {
+                 <span class="hljs-built_in">console</span>.info(rowData,el.data(<span class="hljs-string">'type'</span>));
                }
             }
         }
-        <span class="comment">// title, width, type, hidden,dataKey</span>
-        <span class="keyword">let</span> columns = [
-            { dataKey: <span class="string">'id'</span>, title: <span class="string">'ID'</span>, width: <span class="number">50</span>,hidden:<span class="literal">true</span>},
-            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">200</span>,ordered:<span class="literal">true</span>},
-            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span> },  
-            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
-            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
-                <span class="string">"编辑"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData, actions)</span> {</span>
-                    console.log(actions.addEmptyRow);
+        <span class="hljs-comment">// title, width, type, hidden,dataKey</span>
+        <span class="hljs-keyword">let</span> columns = [
+            { dataKey: <span class="hljs-string">'id'</span>, title: <span class="hljs-string">'ID'</span>, width: <span class="hljs-number">50</span>,hidden:<span class="hljs-literal">true</span>},
+            { dataKey: <span class="hljs-string">'country'</span>, title:<span class="hljs-string">'国家'</span>, width: <span class="hljs-number">200</span>,ordered:<span class="hljs-literal">true</span>},
+            { dataKey: <span class="hljs-string">'city'</span>,title:<span class="hljs-string">'城市'</span>, width: <span class="hljs-number">150</span>,ordered:<span class="hljs-literal">true</span> },
+            { dataKey: <span class="hljs-string">'firstName'</span>,title:<span class="hljs-string">"FristName"</span> },  
+            { dataKey: <span class="hljs-string">'lastName'</span> ,title:<span class="hljs-string">"LastName"</span>},
+            { dataKey: <span class="hljs-string">'email'</span>,title:<span class="hljs-string">"Email"</span>,width: <span class="hljs-number">200</span>,ordered:<span class="hljs-literal">true</span> },
+            { dataKey: <span class="hljs-string">'action1'</span>, title:<span class="hljs-string">'操作1'</span>, width:<span class="hljs-number">100</span>, type:<span class="hljs-string">"action"</span>,actions:{
+                <span class="hljs-string">"编辑"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData, actions</span>) </span>{
+                    <span class="hljs-built_in">console</span>.log(actions.addEmptyRow);
                     me.refs.grid.toggleSubComp(rowData);
                 },
-                <span class="string">"删除"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
+                <span class="hljs-string">"删除"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>) </span>{
                     me.refs.grid.delRow(rowData);
                 }
               },
-              beforeRender: <span class="function"><span class="keyword">function</span><span class="params">(rowData,actionItems)</span> {</span>
-                 <span class="keyword">if</span>(rowData.jsxid%<span class="number">2</span>==<span class="number">0</span>) {
-                    <span class="keyword">return</span> [<span class="string">'编辑'</span>];
-                 }<span class="keyword">else</span> {
-                    <span class="keyword">return</span> [<span class="string">'编辑'</span>,<span class="string">'删除'</span>];
+              beforeRender: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData,actionItems</span>) </span>{
+                 <span class="hljs-keyword">if</span>(rowData.jsxid%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>) {
+                    <span class="hljs-keyword">return</span> [<span class="hljs-string">'编辑'</span>];
+                 }<span class="hljs-keyword">else</span> {
+                    <span class="hljs-keyword">return</span> [<span class="hljs-string">'编辑'</span>,<span class="hljs-string">'删除'</span>];
                  }
 
               }
             },
-            { dataKey: <span class="string">'action'</span>, title:<span class="string">'链接'</span>, width:<span class="number">100</span>,render: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>
-               <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>111<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            { dataKey: <span class="hljs-string">'action'</span>, title:<span class="hljs-string">'链接'</span>, width:<span class="hljs-number">100</span>,render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>)</span>{
+               <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>111<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
               }
             }
         ]
@@ -209,11 +209,11 @@ class Demo extends React.Component {
             fetchUrl: fetchUrl,
             jsxcolumns:columns,
         };
-        return (<span class="tag">&lt;<span class="title">Table</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"grid"</span>/&gt;</span>);
+        return (<span class="hljs-tag">&lt;<span class="hljs-title">Table</span> {<span class="hljs-attribute">...renderProps</span>}  <span class="hljs-attribute">ref</span>=<span class="hljs-value">"grid"</span>/&gt;</span>)</span>;
       }
 };
 
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-basic'))</span></code></pre></div></div></div><div id="code-box-components-table-demo-adv" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-adv">高级表格  (Actionbar+Column Picker+CheckColumn)</a></div></div><div class="code-box-demo"><div id="components-table-demo-adv"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-basic'))</span></code></pre></div></div></div><div id="code-box-components-table-demo-adv" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-adv">高级表格  (Actionbar+Column Picker+CheckColumn)</a></div></div><div class="code-box-demo"><div id="components-table-demo-adv"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -340,74 +340,74 @@ var Demo = (function (_React$Component) {
 ;
 
 ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-table-demo-adv'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="keyword">let</span> Table = require(<span class="string">'uxcore-table'</span>);
+<span class="hljs-keyword">let</span> Table = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-table'</span>);
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
-           data:<span class="keyword">this</span>.props.data
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+           data:<span class="hljs-keyword">this</span>.props.data
         }
     }
 
     onModifyRow(value,dataKey,record) {
-        <span class="comment">//doValidate</span>
-        <span class="comment">//debugger;</span>
-        <span class="comment">//return false;</span>
-        <span class="keyword">return</span> <span class="literal">true</span>;
+        <span class="hljs-comment">//doValidate</span>
+        <span class="hljs-comment">//debugger;</span>
+        <span class="hljs-comment">//return false;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
     }
 
       render () {
-        console.log(<span class="string">"demo render"</span>);
-        <span class="keyword">let</span> me=<span class="keyword">this</span>;
-        <span class="comment">// 通过 rowSelection 对象表明需要行选择</span>
-        <span class="keyword">let</span> rowSelection = {
-          onSelect: <span class="function"><span class="keyword">function</span><span class="params">(record, selected, selectedRows)</span> {</span>
-            console.log(record, selected, selectedRows);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"demo render"</span>);
+        <span class="hljs-keyword">let</span> me=<span class="hljs-keyword">this</span>;
+        <span class="hljs-comment">// 通过 rowSelection 对象表明需要行选择</span>
+        <span class="hljs-keyword">let</span> rowSelection = {
+          onSelect: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">record, selected, selectedRows</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(record, selected, selectedRows);
           },
-          onSelectAll: <span class="function"><span class="keyword">function</span><span class="params">(selected, selectedRows)</span> {</span>
-            console.log(selected, selectedRows);
+          onSelectAll: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">selected, selectedRows</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(selected, selectedRows);
           }
         };
 
-        <span class="keyword">let</span> doAction= <span class="function"><span class="keyword">function</span><span class="params">(rowData,e)</span> {</span>
-            <span class="keyword">let</span> el=$(e.target);
-            <span class="keyword">if</span>(el.hasClass(<span class="string">'action'</span>)) {
-               <span class="keyword">if</span>( el.data(<span class="string">'type'</span>) ==<span class="string">'edit'</span>) {
-                  console.info(rowData,el.data(<span class="string">'type'</span>));
-               }<span class="keyword">else</span> <span class="keyword">if</span>(el.data(<span class="string">'type'</span>) ==<span class="string">'del'</span>) {
-                 console.info(rowData,el.data(<span class="string">'type'</span>));
+        <span class="hljs-keyword">let</span> doAction= <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData,e</span>) </span>{
+            <span class="hljs-keyword">let</span> el=$(e.target);
+            <span class="hljs-keyword">if</span>(el.hasClass(<span class="hljs-string">'action'</span>)) {
+               <span class="hljs-keyword">if</span>( el.data(<span class="hljs-string">'type'</span>) ==<span class="hljs-string">'edit'</span>) {
+                  <span class="hljs-built_in">console</span>.info(rowData,el.data(<span class="hljs-string">'type'</span>));
+               }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(el.data(<span class="hljs-string">'type'</span>) ==<span class="hljs-string">'del'</span>) {
+                 <span class="hljs-built_in">console</span>.info(rowData,el.data(<span class="hljs-string">'type'</span>));
                }
             }
         }
-        <span class="comment">// title, width, type, hidden,dataKey</span>
-        <span class="keyword">let</span> columns = [
-            { dataKey: <span class="string">'id'</span>, title: <span class="string">'ID'</span>, width: <span class="number">50</span>,hidden:<span class="literal">true</span>},
-            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">200</span>,ordered:<span class="literal">true</span>},
-            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span> },  
-            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
-            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
-                <span class="string">"clickme"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData, actions)</span> {</span>
-                    alert(<span class="string">'thanks clickme,'</span>+rowData.firstName)
+        <span class="hljs-comment">// title, width, type, hidden,dataKey</span>
+        <span class="hljs-keyword">let</span> columns = [
+            { dataKey: <span class="hljs-string">'id'</span>, title: <span class="hljs-string">'ID'</span>, width: <span class="hljs-number">50</span>,hidden:<span class="hljs-literal">true</span>},
+            { dataKey: <span class="hljs-string">'country'</span>, title:<span class="hljs-string">'国家'</span>, width: <span class="hljs-number">200</span>,ordered:<span class="hljs-literal">true</span>},
+            { dataKey: <span class="hljs-string">'city'</span>,title:<span class="hljs-string">'城市'</span>, width: <span class="hljs-number">150</span>,ordered:<span class="hljs-literal">true</span> },
+            { dataKey: <span class="hljs-string">'firstName'</span>,title:<span class="hljs-string">"FristName"</span> },  
+            { dataKey: <span class="hljs-string">'lastName'</span> ,title:<span class="hljs-string">"LastName"</span>},
+            { dataKey: <span class="hljs-string">'email'</span>,title:<span class="hljs-string">"Email"</span>,width: <span class="hljs-number">200</span>,ordered:<span class="hljs-literal">true</span> },
+            { dataKey: <span class="hljs-string">'action1'</span>, title:<span class="hljs-string">'操作1'</span>, width:<span class="hljs-number">100</span>, type:<span class="hljs-string">"action"</span>,actions:{
+                <span class="hljs-string">"clickme"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData, actions</span>) </span>{
+                    alert(<span class="hljs-string">'thanks clickme,'</span>+rowData.firstName)
                 },
-                <span class="string">"del"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
+                <span class="hljs-string">"del"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>) </span>{
                     me.refs.grid.delRow(rowData);
                 }
               },
-              beforeRender: <span class="function"><span class="keyword">function</span><span class="params">(rowData,actionItems)</span> {</span>
-                 <span class="keyword">if</span>(rowData.jsxid%<span class="number">2</span>==<span class="number">0</span>) {
-                    <span class="keyword">return</span> [<span class="string">'clickme'</span>];
-                 }<span class="keyword">else</span> {
-                    <span class="keyword">return</span> [<span class="string">'clickme'</span>,<span class="string">'del'</span>];
+              beforeRender: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData,actionItems</span>) </span>{
+                 <span class="hljs-keyword">if</span>(rowData.jsxid%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>) {
+                    <span class="hljs-keyword">return</span> [<span class="hljs-string">'clickme'</span>];
+                 }<span class="hljs-keyword">else</span> {
+                    <span class="hljs-keyword">return</span> [<span class="hljs-string">'clickme'</span>,<span class="hljs-string">'del'</span>];
                  }
 
               }
             },
-            { dataKey: <span class="string">'action'</span>, title:<span class="string">'链接'</span>, width:<span class="number">100</span>,render: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>
-               <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>111<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            { dataKey: <span class="hljs-string">'action'</span>, title:<span class="hljs-string">'链接'</span>, width:<span class="hljs-number">100</span>,render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>)</span>{
+               <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>111<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
               }
             }
         ]
@@ -441,11 +441,11 @@ class Demo extends React.Component {
             //onModifyRow: this.onModifyRow,
             rowSelection: rowSelection
         };
-        return (<span class="tag">&lt;<span class="title">Table</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"grid"</span>/&gt;</span>);
+        return (<span class="hljs-tag">&lt;<span class="hljs-title">Table</span> {<span class="hljs-attribute">...renderProps</span>}  <span class="hljs-attribute">ref</span>=<span class="hljs-value">"grid"</span>/&gt;</span>)</span>;
       }
 };
 
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-adv'))</span></code></pre></div></div></div><div id="code-box-components-table-demo-tree" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-tree">Tree 表格</a></div></div><div class="code-box-demo"><div id="components-table-demo-tree"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-adv'))</span></code></pre></div></div></div><div id="code-box-components-table-demo-tree" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-tree">Tree 表格</a></div></div><div class="code-box-demo"><div id="components-table-demo-tree"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -566,75 +566,75 @@ var Demo = (function (_React$Component) {
 ;
 
 ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-table-demo-tree'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="keyword">let</span> Table = require(<span class="string">'uxcore-table'</span>);
+<span class="hljs-keyword">let</span> Table = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-table'</span>);
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
-        <span class="keyword">this</span>.state = {
-           data:<span class="keyword">this</span>.props.data
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+           data:<span class="hljs-keyword">this</span>.props.data
         }
     }
 
     onModifyRow(value,dataKey,record) {
-        <span class="comment">//doValidate</span>
-        <span class="comment">//debugger;</span>
-        <span class="comment">//return false;</span>
-        <span class="keyword">return</span> <span class="literal">true</span>;
+        <span class="hljs-comment">//doValidate</span>
+        <span class="hljs-comment">//debugger;</span>
+        <span class="hljs-comment">//return false;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
     }
 
       render () {
-        console.log(<span class="string">"demo render"</span>);
-        <span class="keyword">let</span> me=<span class="keyword">this</span>;
-        <span class="comment">// 通过 rowSelection 对象表明需要行选择</span>
-        <span class="keyword">let</span> rowSelection = {
-          onSelect: <span class="function"><span class="keyword">function</span><span class="params">(record, selected, selectedRows)</span> {</span>
-            console.log(record, selected, selectedRows);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"demo render"</span>);
+        <span class="hljs-keyword">let</span> me=<span class="hljs-keyword">this</span>;
+        <span class="hljs-comment">// 通过 rowSelection 对象表明需要行选择</span>
+        <span class="hljs-keyword">let</span> rowSelection = {
+          onSelect: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">record, selected, selectedRows</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(record, selected, selectedRows);
           },
-          onSelectAll: <span class="function"><span class="keyword">function</span><span class="params">(selected, selectedRows)</span> {</span>
-            console.log(selected, selectedRows);
+          onSelectAll: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">selected, selectedRows</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(selected, selectedRows);
           }
         };
 
-        <span class="keyword">let</span> doAction= <span class="function"><span class="keyword">function</span><span class="params">(rowData,e)</span> {</span>
-            <span class="keyword">let</span> el=$(e.target);
-            <span class="keyword">if</span>(el.hasClass(<span class="string">'action'</span>)) {
-               <span class="keyword">if</span>( el.data(<span class="string">'type'</span>) ==<span class="string">'edit'</span>) {
-                  console.info(rowData,el.data(<span class="string">'type'</span>));
-               }<span class="keyword">else</span> <span class="keyword">if</span>(el.data(<span class="string">'type'</span>) ==<span class="string">'del'</span>) {
-                 console.info(rowData,el.data(<span class="string">'type'</span>));
+        <span class="hljs-keyword">let</span> doAction= <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData,e</span>) </span>{
+            <span class="hljs-keyword">let</span> el=$(e.target);
+            <span class="hljs-keyword">if</span>(el.hasClass(<span class="hljs-string">'action'</span>)) {
+               <span class="hljs-keyword">if</span>( el.data(<span class="hljs-string">'type'</span>) ==<span class="hljs-string">'edit'</span>) {
+                  <span class="hljs-built_in">console</span>.info(rowData,el.data(<span class="hljs-string">'type'</span>));
+               }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(el.data(<span class="hljs-string">'type'</span>) ==<span class="hljs-string">'del'</span>) {
+                 <span class="hljs-built_in">console</span>.info(rowData,el.data(<span class="hljs-string">'type'</span>));
                }
             }
         }
-        <span class="comment">// title, width, type, hidden,dataKey</span>
-        <span class="keyword">let</span> columns = [
-            { dataKey: <span class="string">'id'</span>, title: <span class="string">'ID'</span>, width: <span class="number">50</span>,hidden:<span class="literal">true</span>},
-            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家'</span>, width: <span class="number">200</span>,ordered:<span class="literal">true</span>},
-            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span> },  
-            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
-            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
-                <span class="string">"编辑"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData, actions)</span> {</span>
-                    console.log(actions.addEmptyRow);
+        <span class="hljs-comment">// title, width, type, hidden,dataKey</span>
+        <span class="hljs-keyword">let</span> columns = [
+            { dataKey: <span class="hljs-string">'id'</span>, title: <span class="hljs-string">'ID'</span>, width: <span class="hljs-number">50</span>,hidden:<span class="hljs-literal">true</span>},
+            { dataKey: <span class="hljs-string">'country'</span>, title:<span class="hljs-string">'国家'</span>, width: <span class="hljs-number">200</span>,ordered:<span class="hljs-literal">true</span>},
+            { dataKey: <span class="hljs-string">'city'</span>,title:<span class="hljs-string">'城市'</span>, width: <span class="hljs-number">150</span>,ordered:<span class="hljs-literal">true</span> },
+            { dataKey: <span class="hljs-string">'firstName'</span>,title:<span class="hljs-string">"FristName"</span> },  
+            { dataKey: <span class="hljs-string">'lastName'</span> ,title:<span class="hljs-string">"LastName"</span>},
+            { dataKey: <span class="hljs-string">'email'</span>,title:<span class="hljs-string">"Email"</span>,width: <span class="hljs-number">200</span>,ordered:<span class="hljs-literal">true</span> },
+            { dataKey: <span class="hljs-string">'action1'</span>, title:<span class="hljs-string">'操作1'</span>, width:<span class="hljs-number">100</span>, type:<span class="hljs-string">"action"</span>,actions:{
+                <span class="hljs-string">"编辑"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData, actions</span>) </span>{
+                    <span class="hljs-built_in">console</span>.log(actions.addEmptyRow);
                     me.refs.grid.toggleSubComp(rowData);
                 },
-                <span class="string">"删除"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
+                <span class="hljs-string">"删除"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>) </span>{
                     me.refs.grid.delRow(rowData);
                 }
               },
-              beforeRender: <span class="function"><span class="keyword">function</span><span class="params">(rowData,actionItems)</span> {</span>
-                 <span class="keyword">if</span>(rowData.jsxid%<span class="number">2</span>==<span class="number">0</span>) {
-                    <span class="keyword">return</span> [<span class="string">'编辑'</span>];
-                 }<span class="keyword">else</span> {
-                    <span class="keyword">return</span> [<span class="string">'编辑'</span>,<span class="string">'删除'</span>];
+              beforeRender: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData,actionItems</span>) </span>{
+                 <span class="hljs-keyword">if</span>(rowData.jsxid%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>) {
+                    <span class="hljs-keyword">return</span> [<span class="hljs-string">'编辑'</span>];
+                 }<span class="hljs-keyword">else</span> {
+                    <span class="hljs-keyword">return</span> [<span class="hljs-string">'编辑'</span>,<span class="hljs-string">'删除'</span>];
                  }
 
               }
             },
-            { dataKey: <span class="string">'action'</span>, title:<span class="string">'链接'</span>, width:<span class="number">100</span>,render: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span>{</span>
-               <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>111<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            { dataKey: <span class="hljs-string">'action'</span>, title:<span class="hljs-string">'链接'</span>, width:<span class="hljs-number">100</span>,render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>)</span>{
+               <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>111<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
               }
             }
         ]
@@ -657,11 +657,11 @@ class Demo extends React.Component {
             fetchUrl: fetchUrl,
             jsxcolumns:columns
         };
-        return (<span class="tag">&lt;<span class="title">Table</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"grid"</span>/&gt;</span>);
+        return (<span class="hljs-tag">&lt;<span class="hljs-title">Table</span> {<span class="hljs-attribute">...renderProps</span>}  <span class="hljs-attribute">ref</span>=<span class="hljs-value">"grid"</span>/&gt;</span>)</span>;
       }
 };
 
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-tree'))</span></code></pre></div></div></div><div id="code-box-components-table-demo-mode" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-mode">Edit table</a></div></div><div class="code-box-demo"><div id="components-table-demo-mode"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-tree'))</span></code></pre></div></div></div><div id="code-box-components-table-demo-mode" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-mode">Edit table</a></div></div><div class="code-box-demo"><div id="components-table-demo-mode"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -729,55 +729,55 @@ var Demo = (function (_React$Component) {
 ;
 
 ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-table-demo-mode'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="keyword">let</span> Table = require(<span class="string">'uxcore-table'</span>);
+<span class="hljs-keyword">let</span> Table = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-table'</span>);
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
+        <span class="hljs-keyword">super</span>(props);
 
     }
 
     render () {
 
-        <span class="keyword">let</span> me=<span class="keyword">this</span>;
+        <span class="hljs-keyword">let</span> me=<span class="hljs-keyword">this</span>;
 
-        <span class="keyword">let</span> columns = [
-            { dataKey: <span class="string">'jsxid'</span>,title:<span class="string">"jsxid"</span>,width: <span class="number">40</span> },  
-            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">180</span>,type:<span class="string">'select'</span> ,options:{
-               <span class="string">'hz'</span>:<span class="string">'杭州'</span>,
-               <span class="string">'bj'</span>:<span class="string">'北京'</span>,
-               <span class="string">'sh'</span>:<span class="string">'上海'</span>,
-               <span class="string">'ah'</span>:<span class="string">'安徽'</span>
+        <span class="hljs-keyword">let</span> columns = [
+            { dataKey: <span class="hljs-string">'jsxid'</span>,title:<span class="hljs-string">"jsxid"</span>,width: <span class="hljs-number">40</span> },  
+            { dataKey: <span class="hljs-string">'city'</span>,title:<span class="hljs-string">'城市'</span>, width: <span class="hljs-number">180</span>,type:<span class="hljs-string">'select'</span> ,options:{
+               <span class="hljs-string">'hz'</span>:<span class="hljs-string">'杭州'</span>,
+               <span class="hljs-string">'bj'</span>:<span class="hljs-string">'北京'</span>,
+               <span class="hljs-string">'sh'</span>:<span class="hljs-string">'上海'</span>,
+               <span class="hljs-string">'ah'</span>:<span class="hljs-string">'安徽'</span>
             }},
-            { dataKey: <span class="string">'name'</span>,title:<span class="string">"姓名"</span>,width: <span class="number">200</span>,type:<span class="string">"text"</span>},  
-            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,type:<span class="string">"text"</span>},
-            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
-                <span class="string">"增加"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
+            { dataKey: <span class="hljs-string">'name'</span>,title:<span class="hljs-string">"姓名"</span>,width: <span class="hljs-number">200</span>,type:<span class="hljs-string">"text"</span>},  
+            { dataKey: <span class="hljs-string">'email'</span>,title:<span class="hljs-string">"Email"</span>,width: <span class="hljs-number">200</span>,type:<span class="hljs-string">"text"</span>},
+            { dataKey: <span class="hljs-string">'action1'</span>, title:<span class="hljs-string">'操作1'</span>, width:<span class="hljs-number">100</span>, type:<span class="hljs-string">"action"</span>,actions:{
+                <span class="hljs-string">"增加"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>) </span>{
                     me.refs.mytable.addEmptyRow();
                 },
-                <span class="string">"删除"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
+                <span class="hljs-string">"删除"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>) </span>{
                     me.refs.mytable.delRow(rowData);
                 }
               }
             }
         ];
 
-        <span class="keyword">let</span> renderProps={
-            height: <span class="number">200</span>,
-            width: <span class="number">800</span>,
-            showPager:<span class="literal">false</span>,
+        <span class="hljs-keyword">let</span> renderProps={
+            height: <span class="hljs-number">200</span>,
+            width: <span class="hljs-number">800</span>,
+            showPager:<span class="hljs-literal">false</span>,
             fetchParams: {},
             jsxcolumns:columns,
-            beforeFetch: (sendData) =&gt; {sendData.id = <span class="number">1</span>; <span class="keyword">return</span> sendData;},
-            processData: (data) =&gt; {<span class="keyword">return</span> data;}           
+            beforeFetch: (sendData) =&gt; {sendData.id = <span class="hljs-number">1</span>; <span class="hljs-keyword">return</span> sendData;},
+            processData: (data) =&gt; {<span class="hljs-keyword">return</span> data;}           
         };
 
-        <span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="title">Table</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"mytable"</span>/&gt;</span>);
+        <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Table</span> {<span class="hljs-attribute">...renderProps</span>}  <span class="hljs-attribute">ref</span>=<span class="hljs-value">"mytable"</span>/&gt;</span>)</span>;
       }
 };
 
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-mode'))</span></code></pre></div></div></div><div id="code-box-components-table-demo-fixed" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-fixed">左列固定 table</a></div></div><div class="code-box-demo"><div id="components-table-demo-fixed"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-mode'))</span></code></pre></div></div></div><div id="code-box-components-table-demo-fixed" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-table-demo-fixed">左列固定 table</a></div></div><div class="code-box-demo"><div id="components-table-demo-fixed"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -865,48 +865,48 @@ var Demo = (function (_React$Component) {
 ;
 
 ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-table-demo-fixed'));})()</script><div class="highlight"><pre><code class="javascript">
-<span class="keyword">let</span> Table = require(<span class="string">'uxcore-table'</span>);
+<span class="hljs-keyword">let</span> Table = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-table'</span>);
 
-class Demo extends React.Component {
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
 
     constructor(props) {
-        super(props);
+        <span class="hljs-keyword">super</span>(props);
 
     }
 
       render () {
-        console.log(<span class="string">"demo render"</span>);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"demo render"</span>);
 
-        <span class="keyword">let</span> columns = [
-            <span class="comment">//{ dataKey: 'check', title: '复选框', type: 'checkbox'},</span>
-            <span class="comment">//{ dataKey: 'id', title: 'ID', width: 50,hidden:true,fixed:true},</span>
-            { dataKey: <span class="string">'country'</span>, title:<span class="string">'国家国家国家国家'</span>, width: <span class="number">200</span>,ordered:<span class="literal">true</span>, type: <span class="string">"money"</span>, delimiter: <span class="string">','</span>,fixed:<span class="literal">true</span>},
-            { dataKey: <span class="string">'city'</span>,title:<span class="string">'城市'</span>, width: <span class="number">150</span>},
-            { dataKey: <span class="string">'firstName'</span>,title:<span class="string">"FristName"</span>,fixed:<span class="literal">true</span>,beforeRender:<span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
-                <span class="keyword">return</span> <span class="string">"abc"</span>;
+        <span class="hljs-keyword">let</span> columns = [
+            <span class="hljs-comment">//{ dataKey: 'check', title: '复选框', type: 'checkbox'},</span>
+            <span class="hljs-comment">//{ dataKey: 'id', title: 'ID', width: 50,hidden:true,fixed:true},</span>
+            { dataKey: <span class="hljs-string">'country'</span>, title:<span class="hljs-string">'国家国家国家国家'</span>, width: <span class="hljs-number">200</span>,ordered:<span class="hljs-literal">true</span>, type: <span class="hljs-string">"money"</span>, delimiter: <span class="hljs-string">','</span>,fixed:<span class="hljs-literal">true</span>},
+            { dataKey: <span class="hljs-string">'city'</span>,title:<span class="hljs-string">'城市'</span>, width: <span class="hljs-number">150</span>},
+            { dataKey: <span class="hljs-string">'firstName'</span>,title:<span class="hljs-string">"FristName"</span>,fixed:<span class="hljs-literal">true</span>,beforeRender:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>) </span>{
+                <span class="hljs-keyword">return</span> <span class="hljs-string">"abc"</span>;
             } },  
-            { dataKey: <span class="string">'lastName'</span> ,title:<span class="string">"LastName"</span>},
-            { dataKey: <span class="string">'email'</span>,title:<span class="string">"Email"</span>,width: <span class="number">200</span>,ordered:<span class="literal">true</span> },
-            { dataKey: <span class="string">'action1'</span>, title:<span class="string">'操作1'</span>, width:<span class="number">100</span>, type:<span class="string">"action"</span>,actions:{
-                <span class="string">"编辑"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData, actions)</span> {</span>
-                    console.log(actions.addEmptyRow);
+            { dataKey: <span class="hljs-string">'lastName'</span> ,title:<span class="hljs-string">"LastName"</span>},
+            { dataKey: <span class="hljs-string">'email'</span>,title:<span class="hljs-string">"Email"</span>,width: <span class="hljs-number">200</span>,ordered:<span class="hljs-literal">true</span> },
+            { dataKey: <span class="hljs-string">'action1'</span>, title:<span class="hljs-string">'操作1'</span>, width:<span class="hljs-number">100</span>, type:<span class="hljs-string">"action"</span>,actions:{
+                <span class="hljs-string">"编辑"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData, actions</span>) </span>{
+                    <span class="hljs-built_in">console</span>.log(actions.addEmptyRow);
                     me.refs.grid.toggleSubComp(rowData);
                 },
-                <span class="string">"删除"</span>: <span class="function"><span class="keyword">function</span><span class="params">(rowData)</span> {</span>
+                <span class="hljs-string">"删除"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>) </span>{
                     me.refs.grid.delRow(rowData);
                 }
               },
-              beforeRender: <span class="function"><span class="keyword">function</span><span class="params">(rowData,actionItems)</span> {</span>
-                 <span class="keyword">if</span>(rowData.jsxid%<span class="number">2</span>==<span class="number">0</span>) {
-                    <span class="keyword">return</span> [<span class="string">'编辑'</span>];
-                 }<span class="keyword">else</span> {
-                    <span class="keyword">return</span> [<span class="string">'编辑'</span>,<span class="string">'删除'</span>];
+              beforeRender: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData,actionItems</span>) </span>{
+                 <span class="hljs-keyword">if</span>(rowData.jsxid%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>) {
+                    <span class="hljs-keyword">return</span> [<span class="hljs-string">'编辑'</span>];
+                 }<span class="hljs-keyword">else</span> {
+                    <span class="hljs-keyword">return</span> [<span class="hljs-string">'编辑'</span>,<span class="hljs-string">'删除'</span>];
                  }
 
               }
             },
-            { dataKey: <span class="string">'action'</span>, title:<span class="string">'链接'</span>, width:<span class="number">150</span>,render: <span class="function"><span class="keyword">function</span><span class="params">(cellData,rowData)</span>{</span>
-               <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>&gt;</span>{rowData.email}<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            { dataKey: <span class="hljs-string">'action'</span>, title:<span class="hljs-string">'链接'</span>, width:<span class="hljs-number">150</span>,render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cellData,rowData</span>)</span>{
+               <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>{rowData.email}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
               },beforeRender(rowData) {
                 return rowData.email;
               }
@@ -923,11 +923,11 @@ class Demo extends React.Component {
             beforeFetch: (sendData, from) =&gt; { return sendData;},
             processData: (data) =&gt; {return data;}           
         };
-        return (<span class="tag">&lt;<span class="title">Table</span> {<span class="attribute">...renderProps</span>}  <span class="attribute">ref</span>=<span class="value">"grid"</span>/&gt;</span>);
+        return (<span class="hljs-tag">&lt;<span class="hljs-title">Table</span> {<span class="hljs-attribute">...renderProps</span>}  <span class="hljs-attribute">ref</span>=<span class="hljs-value">"grid"</span>/&gt;</span>)</span>;
       }
 };
 
-ReactDOM.render(<span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-fixed'))</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="how-to-run">How to run</h2><pre>$ git clone https://github.com/uxcore/uxcore-table
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-fixed'))</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="how-to-run">How to run</h2><pre>$ git clone https://github.com/uxcore/uxcore-table
 $ cd uxcore-table
 $ npm install
 $ gulp server</pre><h2 id="props">Props</h2><table>

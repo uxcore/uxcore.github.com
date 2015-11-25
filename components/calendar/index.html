@@ -15,18 +15,18 @@
 
 var Calendar = require('uxcore-calendar');
 
-ReactDOM.render(React.createElement(Calendar, { value: '' }), document.getElementById('components-calendar-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Calendar = require(<span class="string">'uxcore-calendar'</span>);
+ReactDOM.render(React.createElement(Calendar, { value: '' }), document.getElementById('components-calendar-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Calendar = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-calendar'</span>);
 
 ReactDOM.render(
-  <span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Calendar</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span> /&gt;</span>
 , document.getElementById('components-calendar-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-formatter" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-calendar-demo-formatter">日期格式</a></div></div><div class="code-box-demo"><div id="components-calendar-demo-formatter"></div></div><div class="code-box-desc"><p>使用 <code>format</code> 属性，可以自定义你需要的日期显示格式，如 <code>yyyy/MM/dd</code>。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){"use strict";
 
 var Calendar = require('uxcore-calendar');
 
-ReactDOM.render(React.createElement(Calendar, { value: "2015/01/01", format: "yyyy/MM/dd" }), document.getElementById('components-calendar-demo-formatter'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Calendar = require(<span class="string">'uxcore-calendar'</span>);
+ReactDOM.render(React.createElement(Calendar, { value: "2015/01/01", format: "yyyy/MM/dd" }), document.getElementById('components-calendar-demo-formatter'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Calendar = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-calendar'</span>);
 
 ReactDOM.render(
-  <span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">value</span>=<span class="value">"2015/01/01"</span> <span class="attribute">format</span>=<span class="value">"yyyy/MM/dd"</span> /&gt;</span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Calendar</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"2015/01/01"</span> <span class="hljs-attribute">format</span>=<span class="hljs-value">"yyyy/MM/dd"</span> /&gt;</span>
 , document.getElementById('components-calendar-demo-formatter'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-select" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-calendar-demo-select">选择日期</a></div></div><div class="code-box-demo"><div id="components-calendar-demo-select"></div></div><div class="code-box-desc"><p>通过设置选择日期的回调事件 <code>onSelect</code>，完成交互行为。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Calendar = require('uxcore-calendar');
@@ -42,19 +42,19 @@ var Picker = React.createClass({
   }
 });
 
-ReactDOM.render(React.createElement(Picker, null), document.getElementById('components-calendar-demo-select'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Calendar = require(<span class="string">'uxcore-calendar'</span>);
+ReactDOM.render(React.createElement(Picker, null), document.getElementById('components-calendar-demo-select'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Calendar = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-calendar'</span>);
 
-<span class="keyword">var</span> Picker = React.createClass({
-  handleChange: <span class="function"><span class="keyword">function</span><span class="params">(value, formatDateString)</span> {</span>
-    console.log(value, formatDateString);
+<span class="hljs-keyword">var</span> Picker = React.createClass({
+  handleChange: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value, formatDateString</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(value, formatDateString);
   },
-  render: <span class="function"><span class="keyword">function</span><span class="params">()</span> {</span>
-    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">onSelect</span>=<span class="value">{this.handleChange}</span> /&gt;</span>
+  render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Calendar</span> <span class="hljs-attribute">onSelect</span>=<span class="hljs-value">{this.handleChange}</span> /&gt;</span>
   }
 });
 
 ReactDOM.render(
-  <span class="tag">&lt;<span class="title">Picker</span> /&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">Picker</span> /&gt;</span>
 , document.getElementById('components-calendar-demo-select'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-range" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-calendar-demo-range">范围</a></div></div><div class="code-box-demo"><div id="components-calendar-demo-range"></div></div><div class="code-box-desc"><p>设置 <code>disabledDate</code> 方法，来确定不可选时段。</p>
 <p>如上例：不可选择今天之后的日期。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
@@ -64,37 +64,37 @@ var disabledDate = function disabledDate(current, value) {
   return current.getTime() > Date.now();
 };
 
-ReactDOM.render(React.createElement(Calendar, { disabledDate: disabledDate }), document.getElementById('components-calendar-demo-range'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Calendar = require(<span class="string">'uxcore-calendar'</span>);
-<span class="keyword">var</span> disabledDate = <span class="function"><span class="keyword">function</span><span class="params">(current, value)</span> {</span>
-  <span class="comment">// can not select days after today</span>
-  <span class="keyword">return</span> current.getTime() &gt; Date.now();
+ReactDOM.render(React.createElement(Calendar, { disabledDate: disabledDate }), document.getElementById('components-calendar-demo-range'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Calendar = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-calendar'</span>);
+<span class="hljs-keyword">var</span> disabledDate = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">current, value</span>) </span>{
+  <span class="hljs-comment">// can not select days after today</span>
+  <span class="hljs-keyword">return</span> current.getTime() &gt; <span class="hljs-built_in">Date</span>.now();
 };
 
 ReactDOM.render(
-  <span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">disabledDate</span>=<span class="value">{disabledDate}</span> /&gt;</span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Calendar</span> <span class="hljs-attribute">disabledDate</span>=<span class="hljs-value">{disabledDate}</span> /&gt;</span>
 , document.getElementById('components-calendar-demo-range'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-time" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-calendar-demo-time">时间选择</a></div></div><div class="code-box-demo"><div id="components-calendar-demo-time"></div></div><div class="code-box-desc"><p>准确到秒的时间选择面板。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Calendar = require('uxcore-calendar');
 
-ReactDOM.render(React.createElement(Calendar, { showTime: true, format: 'yyyy-MM-dd HH:mm:ss' }), document.getElementById('components-calendar-demo-time'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Calendar = require(<span class="string">'uxcore-calendar'</span>);
+ReactDOM.render(React.createElement(Calendar, { showTime: true, format: 'yyyy-MM-dd HH:mm:ss' }), document.getElementById('components-calendar-demo-time'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Calendar = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-calendar'</span>);
 
 ReactDOM.render(
-  <span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">showTime</span>=<span class="value">{true}</span> <span class="attribute">format</span>=<span class="value">"yyyy-MM-dd HH:mm:ss"</span> /&gt;</span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Calendar</span> <span class="hljs-attribute">showTime</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">format</span>=<span class="hljs-value">"yyyy-MM-dd HH:mm:ss"</span> /&gt;</span>
 , document.getElementById('components-calendar-demo-time'));</span></code></pre></div></div></div><div id="code-box-components-calendar-demo-disabled" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-calendar-demo-disabled">禁用</a></div></div><div class="code-box-demo"><div id="components-calendar-demo-disabled"></div></div><div class="code-box-desc"><p>选择框的不可用状态。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Calendar = require('uxcore-calendar');
 
-ReactDOM.render(React.createElement(Calendar, { value: '2015-06-06', disabled: true }), document.getElementById('components-calendar-demo-disabled'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Calendar = require(<span class="string">'uxcore-calendar'</span>);
+ReactDOM.render(React.createElement(Calendar, { value: '2015-06-06', disabled: true }), document.getElementById('components-calendar-demo-disabled'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Calendar = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-calendar'</span>);
 
 ReactDOM.render(
-  <span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> <span class="attribute">value</span>=<span class="value">"2015-06-06"</span> <span class="attribute">disabled</span>=<span class="value">{true}</span> /&gt;</span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Calendar</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"2015-06-06"</span> <span class="hljs-attribute">disabled</span>=<span class="hljs-value">{true}</span> /&gt;</span>
 , document.getElementById('components-calendar-demo-disabled'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><p>输入或选择日期/时间的控件。</p>
 <h2 id="何时使用">何时使用</h2><p>当用户需要输入一个日期/时间，可以点击标准输入框，弹出日期面板进行选择。支持键盘操作。</p>
-<div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Calendar = require(<span class="string">'uxcore-calendar'</span>);
+<div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Calendar = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-calendar'</span>);
 ReactDOM.render(
-  (<span class="xml"><span class="tag">&lt;<span class="title">Calendar</span> /&gt;</span>),
-  document.getElementById('target')
-);</span></code></pre></div><h3 id="api">API</h3><ul>
+  (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Calendar</span> /&gt;</span>)</span>,
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'target'</span>)
+);</code></pre></div><h3 id="api">API</h3><ul>
 <li>onSelect(date, formatDateString)<ul>
 <li>date <code>date</code></li>
 <li>formatDateString <code>string</code></li>

@@ -38,19 +38,19 @@ ReactDOM.render(React.createElement(
     { tab: "tab 3", key: "3" },
     "选项卡三"
   )
-), document.getElementById('components-tabs-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Tabs = require(<span class="string">'uxcore-tabs'</span>);
-<span class="keyword">var</span> TabPane = Tabs.TabPane;
+), document.getElementById('components-tabs-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Tabs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-tabs'</span>);
+<span class="hljs-keyword">var</span> TabPane = Tabs.TabPane;
 
-<span class="function"><span class="keyword">function</span> <span class="title">callback</span><span class="params">(key)</span> {</span>
-  console.log(key);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callback</span>(<span class="hljs-params">key</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(key);
 }
 
 ReactDOM.render(
-  <span class="xml"><span class="tag">&lt;<span class="title">Tabs</span> <span class="attribute">defaultActiveKey</span>=<span class="value">"2"</span> <span class="attribute">onChange</span>=<span class="value">{callback}</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">TabPane</span> <span class="attribute">tab</span>=<span class="value">"tab 1"</span> <span class="attribute">key</span>=<span class="value">"1"</span>&gt;</span>选项卡一<span class="tag">&lt;/<span class="title">TabPane</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">TabPane</span> <span class="attribute">tab</span>=<span class="value">"tab 2"</span> <span class="attribute">key</span>=<span class="value">"2"</span>&gt;</span>选项卡二<span class="tag">&lt;/<span class="title">TabPane</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">TabPane</span> <span class="attribute">tab</span>=<span class="value">"tab 3"</span> <span class="attribute">key</span>=<span class="value">"3"</span>&gt;</span>选项卡三<span class="tag">&lt;/<span class="title">TabPane</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">Tabs</span>&gt;</span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Tabs</span> <span class="hljs-attribute">defaultActiveKey</span>=<span class="hljs-value">"2"</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{callback}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"tab 1"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>选项卡一<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"tab 2"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>选项卡二<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"tab 3"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>选项卡三<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Tabs</span>&gt;</span>
 , document.getElementById('components-tabs-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-tabs-demo-disabled" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-tabs-demo-disabled">禁用</a></div></div><div class="code-box-demo"><div id="components-tabs-demo-disabled"></div></div><div class="code-box-desc"><p>禁用某一项。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){"use strict";
 
 var Tabs = require('uxcore-tabs');
@@ -76,17 +76,17 @@ ReactDOM.render(React.createElement(
     { tab: "tab 3", key: "3" },
     "选项卡三"
   )
-), document.getElementById('components-tabs-demo-disabled'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Tabs = require(<span class="string">'uxcore-tabs'</span>);
-<span class="keyword">var</span> TabPane = Tabs.TabPane;
+), document.getElementById('components-tabs-demo-disabled'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Tabs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-tabs'</span>);
+<span class="hljs-keyword">var</span> TabPane = Tabs.TabPane;
 
-<span class="function"><span class="keyword">function</span> <span class="title">callback</span><span class="params">(key)</span> {</span>}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callback</span>(<span class="hljs-params">key</span>) </span>{}
 
 ReactDOM.render(
-  <span class="xml"><span class="tag">&lt;<span class="title">Tabs</span> <span class="attribute">defaultActiveKey</span>=<span class="value">"1"</span> <span class="attribute">onChange</span>=<span class="value">{callback}</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">TabPane</span> <span class="attribute">tab</span>=<span class="value">"tab 1"</span> <span class="attribute">key</span>=<span class="value">"1"</span>&gt;</span>选项卡一<span class="tag">&lt;/<span class="title">TabPane</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">TabPane</span> <span class="attribute">tab</span>=<span class="value">"tab 2"</span> <span class="attribute">disabled</span>=<span class="value">{true}</span> <span class="attribute">key</span>=<span class="value">"2"</span>&gt;</span>选项卡二<span class="tag">&lt;/<span class="title">TabPane</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">TabPane</span> <span class="attribute">tab</span>=<span class="value">"tab 3"</span> <span class="attribute">key</span>=<span class="value">"3"</span>&gt;</span>选项卡三<span class="tag">&lt;/<span class="title">TabPane</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">Tabs</span>&gt;</span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Tabs</span> <span class="hljs-attribute">defaultActiveKey</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{callback}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"tab 1"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>选项卡一<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"tab 2"</span> <span class="hljs-attribute">disabled</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>选项卡二<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">"tab 3"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>选项卡三<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">Tabs</span>&gt;</span>
 , document.getElementById('components-tabs-demo-disabled'));</span></code></pre></div></div></div><div id="code-box-components-tabs-demo-style" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-tabs-demo-style">尺寸和样式</a></div></div><div class="code-box-demo"><div id="components-tabs-demo-style"></div></div><div class="code-box-desc"><p>配置尺寸和样式</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -239,22 +239,22 @@ class Demo extends React.Component {
 
 ReactDOM.render(
   &lt;Demo /&gt;
-, document.getElementById('components-tabs-demo-style'));</code></pre></div></div></div><div id="J-markdown" class="markdown"><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Tabs = require(<span class="string">'uxcore-tabs'</span>);
-<span class="keyword">var</span> TabPane = Tabs.TabPane;
+, document.getElementById('components-tabs-demo-style'));</code></pre></div></div></div><div id="J-markdown" class="markdown"><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Tabs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-tabs'</span>);
+<span class="hljs-keyword">var</span> TabPane = Tabs.TabPane;
 
-<span class="keyword">var</span> callback = <span class="function"><span class="keyword">function</span><span class="params">(key)</span>{</span>
+<span class="hljs-keyword">var</span> callback = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">key</span>)</span>{
 
 }
 
 ReactDOM.render(
   (
-    <span class="xml"><span class="tag">&lt;<span class="title">Tabs</span> <span class="attribute">defaultActiveKey</span>=<span class="value">"2"</span> <span class="attribute">onChange</span>=<span class="value">{callback}</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">TabPane</span> <span class="attribute">tab</span>=<span class="value">'tab 1'</span> <span class="attribute">key</span>=<span class="value">"1"</span>&gt;</span>first<span class="tag">&lt;/<span class="title">TabPane</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">TabPane</span> <span class="attribute">tab</span>=<span class="value">'tab 2'</span> <span class="attribute">key</span>=<span class="value">"2"</span>&gt;</span>second<span class="tag">&lt;/<span class="title">TabPane</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">TabPane</span> <span class="attribute">tab</span>=<span class="value">'tab 3'</span> <span class="attribute">key</span>=<span class="value">"3"</span>&gt;</span>third<span class="tag">&lt;/<span class="title">TabPane</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">Tabs</span>&gt;</span>
-  ),
-  document.getElementById('t2'));</span></code></pre></div><h2 id="api">API</h2><h3 id="tabs">Tabs</h3><table>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Tabs</span> <span class="hljs-attribute">defaultActiveKey</span>=<span class="hljs-value">"2"</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{callback}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">'tab 1'</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>first<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">'tab 2'</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"2"</span>&gt;</span>second<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-title">TabPane</span> <span class="hljs-attribute">tab</span>=<span class="hljs-value">'tab 3'</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span>&gt;</span>third<span class="hljs-tag">&lt;/<span class="hljs-title">TabPane</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Tabs</span>&gt;</span>
+  )</span>,
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'t2'</span>));</code></pre></div><h2 id="api">API</h2><h3 id="tabs">Tabs</h3><table>
 <thead>
 <tr>
 <th>name</th>
