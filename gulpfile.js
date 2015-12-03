@@ -29,9 +29,10 @@ gulp.task('less_index', function(){
 });
 
 var fs = require('fs');
-var themeLessFileContent = fs.readFileSync('./style/theme.less', 'utf-8');
+
 
 gulp.task('less', ['less_index'], function(){
+    var themeLessFileContent = fs.readFileSync('./style/theme.less', 'utf-8');
     return gulp.src(['./style/kuma/src/kuma.less', './style/kuma/src/theme/*.less'])
 		.pipe(inject.append('\n' + themeLessFileContent))
         .pipe(less({
@@ -42,7 +43,8 @@ gulp.task('less', ['less_index'], function(){
 });
 
 gulp.task('watch', ['less'], function(){
-    watch('./style/index.less', batch(function(e, done){
+    watch('./style/*.less', batch(function(e, done){
         gulp.start('less', done);
     }));
 });
+

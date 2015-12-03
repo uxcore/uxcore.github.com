@@ -11,7 +11,7 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li data-id="home"><a href="/">首页</a></li><li data-id="css"><a href="/css/base/">css</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><div id="J_ThemeSelector" class="theme-selector"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/css/base">Base<small>基础样式</small></a></li><li><a href="/css/button">Button<small>按钮</small></a></li><li class="current"><a href="/css/card">Card<small>卡片面板</small></a></li><li><a href="/css/checkbox">Checkbox<small>单/复选框</small></a></li><li><a href="/css/filter">Filter<small>条件</small></a></li><li><a href="/css/iconfont">iconfont<small>KUMA字体</small></a></li><li><a href="/css/layout">Layout<small>布局</small></a></li><li><a href="/css/steps">Steps<small>进度条</small></a></li><li><a href="/css/table">Table<small>表格</small></a></li><li><a href="/css/tip">Tip<small>带图标提示文案</small></a></li></ul></aside><article class="site-content"><div id="J-markdown" class="markdown"><h2 id="卡片面板">卡片面板</h2><blockquote>
+})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><i class="logo"></i></a><ul class="nav-list"><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><div id="J_ThemeSelector" class="theme-selector"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li><a href="/css/base">Base<small>基础样式</small></a></li><li><a href="/css/button">Button<small>按钮</small></a></li><li class="current"><a href="/css/card">Card<small>卡片面板</small></a></li><li><a href="/css/checkbox">Checkbox<small>单/复选框</small></a></li><li><a href="/css/filter">Filter<small>条件</small></a></li><li><a href="/css/iconfont">iconfont<small>KUMA字体</small></a></li><li><a href="/css/layout">Layout<small>布局</small></a></li><li><a href="/css/steps">Steps<small>进度条</small></a></li><li><a href="/css/table">Table<small>表格</small></a></li><li><a href="/css/tip">Tip<small>带图标提示文案</small></a></li></ul></aside><article class="site-content"><div id="J-markdown" class="markdown"><h2 id="卡片面板">卡片面板</h2><blockquote>
 <p>默认卡片面板展示</p>
 </blockquote>
 <div class="nico-insert-code"><div class="kuma-card">
@@ -19,12 +19,12 @@
         <span class="title">默认布局</span>
     </div>
     <div class="card-content">内容区</div>
-</div></div><div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-card"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"card-titlebar fn-clear"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"title"</span>&gt;</span>默认布局<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"card-content"</span>&gt;</span>内容区<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre></div><blockquote>
+</div></div><div class="highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"kuma-card"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card-titlebar fn-clear"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"title"</span>&gt;</span>默认布局<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card-content"</span>&gt;</span>内容区<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><blockquote>
 <p>右侧带有操作的面板</p>
 </blockquote>
 <div class="nico-insert-code"><div class="kuma-card">
@@ -36,13 +36,13 @@
         </span>
     </div>
     <div class="card-content">内容区</div>
-</div></div><div class="highlight"><pre><code class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"kuma-card"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"card-titlebar fn-clear"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"title"</span>&gt;</span>右侧操作条<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"actions"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"kuma-icon kuma-icon-chevron-left prev disabled"</span> <span class="attribute">data-role</span>=<span class="value">"prev"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"kuma-icon kuma-icon-chevron-right next"</span> <span class="attribute">data-role</span>=<span class="value">"next"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">span</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"card-content"</span>&gt;</span>内容区<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></pre></div></div></article></div></body></html>
+</div></div><div class="highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"kuma-card"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card-titlebar fn-clear"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"title"</span>&gt;</span>右侧操作条<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"actions"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"kuma-icon kuma-icon-chevron-left prev disabled"</span> <span class="hljs-attribute">data-role</span>=<span class="hljs-value">"prev"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"kuma-icon kuma-icon-chevron-right next"</span> <span class="hljs-attribute">data-role</span>=<span class="hljs-value">"next"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card-content"</span>&gt;</span>内容区<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></div></article></div></body></html>

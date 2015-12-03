@@ -1,13 +1,13 @@
 extends layout
 
 block content
-	#site-home.site-home
-		h1.site-text
-			span.u U
-			span.x X
-			span.c C
-			span.o O
-			span.r R
-			span.e E
-			a(href="#{config.site.urlPrefix}#{config.site.homeLink}") 开始使用
+	#site-banner.site-banner
+		canvas#canvas.canvas
+		script(src="/static/fabric.min.js")
+		img.banner-title(src="//gtms02.alicdn.com/tps/i2/TB1IeBdKVXXXXXZXFXXMDVcGpXX-1026-137.png")
+		img.banner-des(src="//gtms02.alicdn.com/tps/i2/TB1FoxgKVXXXXXBXFXXvmCsWVXX-1280-150.png")
+		div.button-group
+			button.get-start.kuma-button.kuma-button-lg(type="button") 开始使用
+			button.contribute.kuma-button.kuma-button-lg.kuma-button-secondary(type="button") 贡献代码	
+				
 	

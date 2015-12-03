@@ -307,14 +307,14 @@ class Demo extends React.Component {
                             <CheckboxItem value="sea" text="大海"/>
                         </CheckboxGroupFormField>
                     </FormRow>
-                    <TextAreaFormField jsxname="textArea" jsxlabel="多行文本框"/>
+                    <TextAreaFormField jsxname="textArea" jsxlabel="多行文本框" jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}/>
                     <FormRowTitle jsxtitle="我是行标题2"/>
                     <FormRow>
                         <SelectFormField
                          jsxlabel="单选"
                          jsxname="city"
-                         disabled={true}
-                         jsxfetchUrl="http://suggest.taobao.com/sug"
+                         jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}
+                         disabled={false}
                          afterFetch={(obj) => {
                             let data = {};
                             obj.result.forEach((item, index) => {
@@ -327,9 +327,10 @@ class Demo extends React.Component {
                     </FormRow>
                     <FormRow>
                         <SelectFormField
-                         jsxlabel="单选combo模式"
+                         jsxlabel="单选 combo 模式"
                          jsxname="goods"
                          jsxfetchUrl="http://suggest.taobao.com/sug"
+                         dataType="jsonp"
                          combobox={true}
                          afterFetch={(obj) => {
                             let data = {};
@@ -343,6 +344,15 @@ class Demo extends React.Component {
                          jsxname="goods2"
                          multiple={true}
                          jsxfetchUrl="http://suggest.taobao.com/sug"
+                         dataType="jsonp"
+                         beforeFetch={function(data) {
+                            console.log(data);
+                            if (data.q == undefined) {
+                                data.q = "a"
+                            }
+                            return data;
+                         }}
+                         dataType="jsonp"
                          afterFetch={(obj) => {
                             let data = {};
                             obj.result.forEach((item, index) => {
@@ -351,6 +361,13 @@ class Demo extends React.Component {
                             return data;
                          }}/>
                     </FormRow>
+                    <SelectFormField
+                        jsxname="option"
+                        jsxlabel="传 option">
+                        <Option value="1">1</Option>
+                        <Option value="2">2</Option>
+                        <Option value="3">3</Option>
+                    </SelectFormField>
                     <FormRow>
                         <UploadFormField
                           jsxname="upload"
@@ -359,7 +376,7 @@ class Demo extends React.Component {
                           url="http://test.yanbingbing.com/upload.php"/>
                     </FormRow>
                     <FormRowTitle jsxtitle="级联类"/>
-                    <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" jsxfrom="2015-10-2" jsxto="2015-10-10"/>
+                    <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" format="yyyy/MM/dd"/>
                     <CascadeSelectFormField
                      jsxdata={casData}
                      jsxname="cascade"
@@ -368,7 +385,7 @@ class Demo extends React.Component {
                                      jsxlabel="富文本编辑器"
                                      jsxcontent="1"/>
 
-                    <TableFormField jsxname="dicts" jsxlabel="薪酬字典" {...renderProps}>
+                    <TableFormField jsxname="dicts" jsxlabel="薪酬字典" {...renderProps} >
                     </TableFormField>
                     <ButtonGroupFormField>
                         <Button size="medium" action="submit" onClick={me.handleClick.bind(me)}>提交</Button>

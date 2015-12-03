@@ -15,12 +15,7 @@ exports.site = {
     homeLink: '/css/base/',
     navigation: [
         {
-            text: '首页',
-            link: '/',
-            id: 'home'
-        },
-        {
-            text: 'css',
+            text: '样式',
             link: '/css/base/',
             id: 'css'
         },
