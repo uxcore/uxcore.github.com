@@ -11,7 +11,7 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li data-id="home"><a href="/">首页</a></li><li data-id="css"><a href="/css/base/">css</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><div id="J_ThemeSelector" class="theme-selector"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">交互提醒</h3><ul><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li class="current"><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">表单及相关</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/multi-select">MultiSelect<small>复选择器</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">导航</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">布局</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">其它</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">表格</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Steps</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>vincent.bian</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-steps.git" target="_blank">Steps</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.0.3</span><span class="description"><i class="fa fa-bookmark"></i>uxcore-steps component for uxcore.</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-steps-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-steps-demo-basic">基本用法</a></div></div><div class="code-box-demo"><div id="components-steps-demo-basic"></div></div><div class="code-box-desc"><p>简单的步骤条。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+})(window)</script></head><body><nav id="J-head" class="site-nav"><h1 class="logo">UXCORE</h1><ul class="nav-list"><li data-id="home"><a href="/">首页</a></li><li data-id="css"><a href="/css/base/">css</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><div id="J_ThemeSelector" class="theme-selector"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">交互提醒</h3><ul><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li class="current"><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">表单及相关</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/multi-select">MultiSelect<small>复选择器</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">导航</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">布局</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">其它</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">表格</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Steps</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>vincent.bian</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-steps.git" target="_blank">Steps</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.0.5</span><span class="description"><i class="fa fa-bookmark"></i>uxcore-steps component for uxcore.</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-steps-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-steps-demo-basic">基本用法</a></div></div><div class="code-box-demo"><div id="components-steps-demo-basic"></div></div><div class="code-box-desc"><p>简单的步骤条。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Steps = require('uxcore-steps');
 var Step = Steps.Step;
@@ -36,29 +36,29 @@ ReactDOM.render(React.createElement(
     Steps,
     { current: 1 },
     steps
-), document.getElementById('components-steps-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Steps = require(<span class="string">'uxcore-steps'</span>);
-<span class="keyword">var</span> Step = Steps.Step;
+), document.getElementById('components-steps-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Steps = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-steps'</span>);
+<span class="hljs-keyword">var</span> Step = Steps.Step;
 
-<span class="keyword">var</span> steps = [{
-    title: <span class="string">'已完成'</span>,
-    description: <span class="string">'这里是多信息的描述啊'</span>
+<span class="hljs-keyword">var</span> steps = [{
+    title: <span class="hljs-string">'已完成'</span>,
+    description: <span class="hljs-string">'这里是多信息的描述啊'</span>
 }, {
-    title: <span class="string">'进行中'</span>,
-    description: <span class="string">'这里是多信息的耶哦耶哦哦耶哦耶'</span>
+    title: <span class="hljs-string">'进行中'</span>,
+    description: <span class="hljs-string">'这里是多信息的耶哦耶哦哦耶哦耶'</span>
 }, {
-    title: <span class="string">'又一个待运行'</span>,
-    description: <span class="string">'描述啊描述啊'</span>
+    title: <span class="hljs-string">'又一个待运行'</span>,
+    description: <span class="hljs-string">'描述啊描述啊'</span>
 }, {
-    title: <span class="string">'待运行'</span>,
-    description: <span class="string">'这里是多信息的描述啊'</span>
-}].map(<span class="function"><span class="keyword">function</span><span class="params">(s, i)</span> {</span>
-    <span class="keyword">return</span> (
-        <span class="xml"><span class="tag">&lt;<span class="title">Step</span> <span class="attribute">key</span>=<span class="value">{i}</span> <span class="attribute">title</span>=<span class="value">{s.title}</span> <span class="attribute">description</span>=<span class="value">{s.description}</span> /&gt;</span>
-    );
+    title: <span class="hljs-string">'待运行'</span>,
+    description: <span class="hljs-string">'这里是多信息的描述啊'</span>
+}].map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s, i</span>) </span>{
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Step</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{i}</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{s.title}</span> <span class="hljs-attribute">description</span>=<span class="hljs-value">{s.description}</span> /&gt;</span>
+    )</span>;
 });
 
 ReactDOM.render(
-    <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">current</span>=<span class="value">{1}</span>&gt;</span>{steps}<span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Steps</span> <span class="hljs-attribute">current</span>=<span class="hljs-value">{1}</span>&gt;</span>{steps}<span class="hljs-tag">&lt;/<span class="hljs-title">Steps</span>&gt;</span>
 , document.getElementById('components-steps-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-mini" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-steps-demo-mini">迷你版</a></div></div><div class="code-box-demo"><div id="components-steps-demo-mini"></div></div><div class="code-box-desc"><p>迷你版的步骤条，通过设置 <Steps size="small"> 启用.</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Steps = require('uxcore-steps');
@@ -84,29 +84,29 @@ ReactDOM.render(React.createElement(
     Steps,
     { size: 'small', current: 1 },
     steps
-), document.getElementById('components-steps-demo-mini'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Steps = require(<span class="string">'uxcore-steps'</span>);
-<span class="keyword">var</span> Step = Steps.Step;
+), document.getElementById('components-steps-demo-mini'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Steps = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-steps'</span>);
+<span class="hljs-keyword">var</span> Step = Steps.Step;
 
-<span class="keyword">var</span> steps = [{
-    title: <span class="string">'已完成'</span>,
-    description: <span class="string">'这里是多信息的描述啊'</span>
+<span class="hljs-keyword">var</span> steps = [{
+    title: <span class="hljs-string">'已完成'</span>,
+    description: <span class="hljs-string">'这里是多信息的描述啊'</span>
 }, {
-    title: <span class="string">'进行中'</span>,
-    description: <span class="string">'这里是多信息的耶哦耶哦哦耶哦耶'</span>
+    title: <span class="hljs-string">'进行中'</span>,
+    description: <span class="hljs-string">'这里是多信息的耶哦耶哦哦耶哦耶'</span>
 }, {
-    title: <span class="string">'又一个待运行'</span>,
-    description: <span class="string">'描述啊描述啊'</span>
+    title: <span class="hljs-string">'又一个待运行'</span>,
+    description: <span class="hljs-string">'描述啊描述啊'</span>
 }, {
-    title: <span class="string">'待运行'</span>,
-    description: <span class="string">'这里是多信息的描述啊'</span>
-}].map(<span class="function"><span class="keyword">function</span><span class="params">(s, i)</span> {</span>
-    <span class="keyword">return</span> (
-        <span class="xml"><span class="tag">&lt;<span class="title">Step</span> <span class="attribute">key</span>=<span class="value">{i}</span> <span class="attribute">title</span>=<span class="value">{s.title}</span> <span class="attribute">description</span>=<span class="value">{s.description}</span> /&gt;</span>
-    );
+    title: <span class="hljs-string">'待运行'</span>,
+    description: <span class="hljs-string">'这里是多信息的描述啊'</span>
+}].map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s, i</span>) </span>{
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Step</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{i}</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{s.title}</span> <span class="hljs-attribute">description</span>=<span class="hljs-value">{s.description}</span> /&gt;</span>
+    )</span>;
 });
 
 ReactDOM.render(
-    <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">size</span>=<span class="value">"small"</span> <span class="attribute">current</span>=<span class="value">{1}</span>&gt;</span>{steps}<span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Steps</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"small"</span> <span class="hljs-attribute">current</span>=<span class="hljs-value">{1}</span>&gt;</span>{steps}<span class="hljs-tag">&lt;/<span class="hljs-title">Steps</span>&gt;</span>
 , document.getElementById('components-steps-demo-mini'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-dynamic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-steps-demo-dynamic">切换到下一步</a></div></div><div class="code-box-demo"><div id="components-steps-demo-dynamic"></div></div><div class="code-box-desc"><p>随机生成 3~6 个步骤，初始随机进行到其中一个步骤。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -201,14 +201,14 @@ var Demo = (function (_React$Component) {
     return Demo;
 })(React.Component);
 
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-steps-demo-dynamic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">const</span> Steps = require(<span class="string">'uxcore-steps'</span>);
-<span class="keyword">const</span> Step = Steps.Step;
-<span class="keyword">const</span> Button = require(<span class="string">'uxcore-button'</span>);
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-steps-demo-dynamic'));})()</script><div class="highlight"><pre><code class="javascript">const Steps = require('uxcore-steps');
+const Step = Steps.Step;
+const Button = require('uxcore-button');
 
-<span class="keyword">let</span> array = Array.apply(<span class="literal">null</span>, Array(Math.floor(Math.random() * <span class="number">3</span>) + <span class="number">3</span>));
-<span class="keyword">let</span> steps = array.map(<span class="function"><span class="keyword">function</span><span class="params">(item, i)</span> {</span>
-    <span class="keyword">return</span> {
-        title: <span class="string">'步骤'</span> + (i + <span class="number">1</span>)
+let array = Array.apply(null, Array(Math.floor(Math.random() * 3) + 3));
+let steps = array.map(function(item, i) {
+    return {
+        title: '步骤' + (i + 1)
     };
 });
 
@@ -216,47 +216,47 @@ class Demo extends React.Component {
 
     constructor(props){
         super(props);
-        <span class="keyword">this</span>.state = {
+        this.state = {
             currentStep: Math.floor(Math.random() * steps.length),
-            showIcon: <span class="literal">true</span>
+            showIcon: true
         };
     }
 
     toggleNumberShow(){
-        <span class="keyword">this</span>.setState({
-            showIcon: !<span class="keyword">this</span>.state.showIcon
+        this.setState({
+            showIcon: !this.state.showIcon
         });
     }
 
     next() {
-        <span class="keyword">var</span> s = <span class="keyword">this</span>.state.currentStep + <span class="number">1</span>;
-        <span class="keyword">if</span> (s === steps.length) {
-            s = <span class="number">0</span>;
+        var s = this.state.currentStep + 1;
+        if (s === steps.length) {
+            s = 0;
         }
-        <span class="keyword">this</span>.setState({
+        this.setState({
             currentStep: s
         });
     }
 
     render() {
-        <span class="keyword">return</span> (
-            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">div</span>&gt;</span>当前正在执行第 {this.state.currentStep + 1} 步<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">current</span>=<span class="value">{this.state.currentStep}</span> <span class="attribute">showIcon</span>=<span class="value">{this.state.showIcon}</span>&gt;</span>
-                    {steps.map((s, i) =&gt; <span class="tag">&lt;<span class="title">Step</span> <span class="attribute">key</span>=<span class="value">{i}</span> <span class="attribute">title</span>=<span class="value">{s.title}</span> <span class="attribute">description</span>=<span class="value">{s.description}</span> /&gt;</span>)}
-                <span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">div</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"small"</span> <span class="attribute">type</span>=<span class="value">"secondary"</span> <span class="attribute">onClick</span>=<span class="value">{this.next.bind(this)}</span>&gt;</span>下一步<span class="tag">&lt;/<span class="title">Button</span>&gt;</span> &amp;nbsp;
-                    <span class="tag">&lt;<span class="title">Button</span> <span class="attribute">size</span>=<span class="value">"small"</span> <span class="attribute">type</span>=<span class="value">"secondary"</span> <span class="attribute">onClick</span>=<span class="value">{this.toggleNumberShow.bind(this)}</span>&gt;</span>显示数字<span class="tag">&lt;/<span class="title">Button</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        return (
+            &lt;div&gt;
+                &lt;div&gt;当前正在执行第 {this.state.currentStep + 1} 步&lt;/div&gt;
+                &lt;Steps current={this.state.currentStep} showIcon={this.state.showIcon}&gt;
+                    {steps.map((s, i) =&gt; &lt;Step key={i} title={s.title} description={s.description} /&gt;)}
+                &lt;/Steps&gt;
+                &lt;div&gt;
+                    &lt;Button size="small" type="secondary" onClick={this.next.bind(this)}&gt;下一步&lt;/Button&gt; &amp;nbsp;
+                    &lt;Button size="small" type="secondary" onClick={this.toggleNumberShow.bind(this)}&gt;显示数字&lt;/Button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
         );
     }
 }
 
 ReactDOM.render(
-    <span class="tag">&lt;<span class="title">Demo</span> /&gt;</span>
-, document.getElementById('components-steps-demo-dynamic'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-vertical" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-steps-demo-vertical">竖直方向的步骤条</a></div></div><div class="code-box-demo"><div id="components-steps-demo-vertical"></div></div><div class="code-box-desc"><p>简单的竖直方向的步骤条。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+    &lt;Demo /&gt;
+, document.getElementById('components-steps-demo-dynamic'));</code></pre></div></div></div><div id="code-box-components-steps-demo-vertical" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-steps-demo-vertical">竖直方向的步骤条</a></div></div><div class="code-box-demo"><div id="components-steps-demo-vertical"></div></div><div class="code-box-desc"><p>简单的竖直方向的步骤条。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Steps = require('uxcore-steps');
 var Step = Steps.Step;
@@ -281,29 +281,29 @@ ReactDOM.render(React.createElement(
     Steps,
     { direction: 'vertical', current: 1 },
     steps
-), document.getElementById('components-steps-demo-vertical'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Steps = require(<span class="string">'uxcore-steps'</span>);
-<span class="keyword">var</span> Step = Steps.Step;
+), document.getElementById('components-steps-demo-vertical'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Steps = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-steps'</span>);
+<span class="hljs-keyword">var</span> Step = Steps.Step;
 
-<span class="keyword">var</span> steps = [{
-    title: <span class="string">'已完成'</span>,
-    description: <span class="string">'这里是多信息的描述啊'</span>
+<span class="hljs-keyword">var</span> steps = [{
+    title: <span class="hljs-string">'已完成'</span>,
+    description: <span class="hljs-string">'这里是多信息的描述啊'</span>
 }, {
-    title: <span class="string">'进行中'</span>,
-    description: <span class="string">'这里是多信息的耶哦耶哦哦耶哦耶'</span>
+    title: <span class="hljs-string">'进行中'</span>,
+    description: <span class="hljs-string">'这里是多信息的耶哦耶哦哦耶哦耶'</span>
 }, {
-    title: <span class="string">'又一个待运行'</span>,
-    description: <span class="string">'描述啊描述啊'</span>
+    title: <span class="hljs-string">'又一个待运行'</span>,
+    description: <span class="hljs-string">'描述啊描述啊'</span>
 }, {
-    title: <span class="string">'待运行'</span>,
-    description: <span class="string">'这里是多信息的描述啊'</span>
-}].map(<span class="function"><span class="keyword">function</span><span class="params">(s, i)</span> {</span>
-    <span class="keyword">return</span> (
-        <span class="xml"><span class="tag">&lt;<span class="title">Step</span> <span class="attribute">key</span>=<span class="value">{i}</span> <span class="attribute">title</span>=<span class="value">{s.title}</span> <span class="attribute">description</span>=<span class="value">{s.description}</span> /&gt;</span>
-    );
+    title: <span class="hljs-string">'待运行'</span>,
+    description: <span class="hljs-string">'这里是多信息的描述啊'</span>
+}].map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s, i</span>) </span>{
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Step</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{i}</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{s.title}</span> <span class="hljs-attribute">description</span>=<span class="hljs-value">{s.description}</span> /&gt;</span>
+    )</span>;
 });
 
 ReactDOM.render(
-    <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">direction</span>=<span class="value">"vertical"</span> <span class="attribute">current</span>=<span class="value">{1}</span>&gt;</span>{steps}<span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Steps</span> <span class="hljs-attribute">direction</span>=<span class="hljs-value">"vertical"</span> <span class="hljs-attribute">current</span>=<span class="hljs-value">{1}</span>&gt;</span>{steps}<span class="hljs-tag">&lt;/<span class="hljs-title">Steps</span>&gt;</span>
 , document.getElementById('components-steps-demo-vertical'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-verticalmini" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-steps-demo-verticalmini">竖直方向的小型步骤条</a></div></div><div class="code-box-demo"><div id="components-steps-demo-verticalmini"></div></div><div class="code-box-desc"><p>简单的竖直方向的小型步骤条。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Steps = require('uxcore-steps');
@@ -329,29 +329,29 @@ ReactDOM.render(React.createElement(
     Steps,
     { direction: 'vertical', size: 'small', current: 1 },
     steps
-), document.getElementById('components-steps-demo-verticalmini'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Steps = require(<span class="string">'uxcore-steps'</span>);
-<span class="keyword">var</span> Step = Steps.Step;
+), document.getElementById('components-steps-demo-verticalmini'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Steps = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-steps'</span>);
+<span class="hljs-keyword">var</span> Step = Steps.Step;
 
-<span class="keyword">var</span> steps = [{
-    title: <span class="string">'已完成'</span>,
-    description: <span class="string">'这里是多信息的描述啊'</span>
+<span class="hljs-keyword">var</span> steps = [{
+    title: <span class="hljs-string">'已完成'</span>,
+    description: <span class="hljs-string">'这里是多信息的描述啊'</span>
 }, {
-    title: <span class="string">'进行中'</span>,
-    description: <span class="string">'这里是多信息的耶哦耶哦哦耶哦耶'</span>
+    title: <span class="hljs-string">'进行中'</span>,
+    description: <span class="hljs-string">'这里是多信息的耶哦耶哦哦耶哦耶'</span>
 }, {
-    title: <span class="string">'又一个待运行'</span>,
-    description: <span class="string">'描述啊描述啊'</span>
+    title: <span class="hljs-string">'又一个待运行'</span>,
+    description: <span class="hljs-string">'描述啊描述啊'</span>
 }, {
-    title: <span class="string">'待运行'</span>,
-    description: <span class="string">'这里是多信息的描述啊'</span>
-}].map(<span class="function"><span class="keyword">function</span><span class="params">(s, i)</span> {</span>
-    <span class="keyword">return</span> (
-        <span class="xml"><span class="tag">&lt;<span class="title">Step</span> <span class="attribute">key</span>=<span class="value">{i}</span> <span class="attribute">title</span>=<span class="value">{s.title}</span> <span class="attribute">description</span>=<span class="value">{s.description}</span> /&gt;</span>
-    );
+    title: <span class="hljs-string">'待运行'</span>,
+    description: <span class="hljs-string">'这里是多信息的描述啊'</span>
+}].map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s, i</span>) </span>{
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Step</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{i}</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{s.title}</span> <span class="hljs-attribute">description</span>=<span class="hljs-value">{s.description}</span> /&gt;</span>
+    )</span>;
 });
 
 ReactDOM.render(
-    <span class="tag">&lt;<span class="title">Steps</span> <span class="attribute">direction</span>=<span class="value">"vertical"</span> <span class="attribute">size</span>=<span class="value">"small"</span> <span class="attribute">current</span>=<span class="value">{1}</span>&gt;</span>{steps}<span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Steps</span> <span class="hljs-attribute">direction</span>=<span class="hljs-value">"vertical"</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"small"</span> <span class="hljs-attribute">current</span>=<span class="hljs-value">{1}</span>&gt;</span>{steps}<span class="hljs-tag">&lt;/<span class="hljs-title">Steps</span>&gt;</span>
 , document.getElementById('components-steps-demo-verticalmini'));</span></code></pre></div></div></div><div id="code-box-components-steps-demo-custom" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-steps-demo-custom">自定义状态</a></div></div><div class="code-box-demo"><div id="components-steps-demo-custom"></div></div><div class="code-box-desc"><p>可以使用 status 定义每个步骤的状态。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Steps = require('uxcore-steps');
@@ -380,32 +380,32 @@ ReactDOM.render(React.createElement(
     Steps,
     null,
     steps
-), document.getElementById('components-steps-demo-custom'));})()</script><div class="highlight"><pre><code class="javascript"><span class="keyword">var</span> Steps = require(<span class="string">'uxcore-steps'</span>);
-<span class="keyword">var</span> Step = Steps.Step;
+), document.getElementById('components-steps-demo-custom'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Steps = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-steps'</span>);
+<span class="hljs-keyword">var</span> Step = Steps.Step;
 
-<span class="keyword">var</span> steps = [{
-    status: <span class="string">'finish'</span>,
-    title: <span class="string">'已完成'</span>,
-    description: <span class="string">'这里是多信息的描述啊'</span>
+<span class="hljs-keyword">var</span> steps = [{
+    status: <span class="hljs-string">'finish'</span>,
+    title: <span class="hljs-string">'已完成'</span>,
+    description: <span class="hljs-string">'这里是多信息的描述啊'</span>
 }, {
-    status: <span class="string">'process'</span>,
-    title: <span class="string">'进行中'</span>,
-    description: <span class="string">'这里是多信息的耶哦耶哦哦耶哦耶'</span>
+    status: <span class="hljs-string">'process'</span>,
+    title: <span class="hljs-string">'进行中'</span>,
+    description: <span class="hljs-string">'这里是多信息的耶哦耶哦哦耶哦耶'</span>
 }, {
-    status: <span class="string">'wait'</span>,
-    title: <span class="string">'又一个待运行'</span>,
-    description: <span class="string">'描述啊描述啊'</span>
+    status: <span class="hljs-string">'wait'</span>,
+    title: <span class="hljs-string">'又一个待运行'</span>,
+    description: <span class="hljs-string">'描述啊描述啊'</span>
 }, {
-    status: <span class="string">'wait'</span>,
-    title: <span class="string">'待运行'</span>,
-    description: <span class="string">'这里是多信息的描述啊'</span>
-}].map(<span class="function"><span class="keyword">function</span><span class="params">(s, i)</span> {</span>
-    <span class="keyword">return</span> (
-        <span class="xml"><span class="tag">&lt;<span class="title">Step</span> <span class="attribute">key</span>=<span class="value">{i}</span> <span class="attribute">title</span>=<span class="value">{s.title}</span> <span class="attribute">status</span>=<span class="value">{s.status}</span> <span class="attribute">description</span>=<span class="value">{s.description}</span> /&gt;</span>
-    );
+    status: <span class="hljs-string">'wait'</span>,
+    title: <span class="hljs-string">'待运行'</span>,
+    description: <span class="hljs-string">'这里是多信息的描述啊'</span>
+}].map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s, i</span>) </span>{
+    <span class="hljs-keyword">return</span> (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Step</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{i}</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">{s.title}</span> <span class="hljs-attribute">status</span>=<span class="hljs-value">{s.status}</span> <span class="hljs-attribute">description</span>=<span class="hljs-value">{s.description}</span> /&gt;</span>
+    )</span>;
 });
 ReactDOM.render(
-    <span class="tag">&lt;<span class="title">Steps</span>&gt;</span>{steps}<span class="tag">&lt;/<span class="title">Steps</span>&gt;</span>
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Steps</span>&gt;</span>{steps}<span class="hljs-tag">&lt;/<span class="hljs-title">Steps</span>&gt;</span>
 , document.getElementById('components-steps-demo-custom'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><p>引导用户按照流程完成任务的导航条。</p>
 <h2 id="api">API</h2><h2 id="props">Props</h2><h3 id="steps">Steps</h3><table>
 <thead>

@@ -2,7 +2,7 @@
 
 - order: 2
 
-checked
+受控组件，外部传入参数，控制树对象节点
 
 ---
 
@@ -52,7 +52,7 @@ class CheckedDemo extends React.Component {
               <TreeNode key="p10" title="leaf"/>
               <TreeNode title="parent 1-1" key="p11">
                 <TreeNode title="parent 2-1" key="p21">
-                  <TreeNode>test</TreeNode>
+                  <TreeNode title="test" />
                   <TreeNode title={<span>sss</span>}/>
                 </TreeNode>
                 <TreeNode key="p22" title="leaf"/>
