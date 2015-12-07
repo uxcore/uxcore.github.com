@@ -1,8 +1,35 @@
 /* latin */
-@font-face {
-  font-family: 'Sigmar One';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Sigmar One'), local('SigmarOne'), url(http://fonts.gstatic.com/s/sigmarone/v6/aRAZJs6CY7SV6eSg6Wx4jwzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+// @font-face {
+//   font-family: 'Sigmar One';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local('Sigmar One'), local('SigmarOne'), url(http://fonts.gstatic.com/s/sigmarone/v6/aRAZJs6CY7SV6eSg6Wx4jwzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+//   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+// }
+
+
+@font-face {font-family: "alifont";
+  src: url('../font/iconfont.eot'); /* IE9*/
+  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('../font/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
 }
+
+.alifont {
+  font-family:"alifont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zhexiantu:before { content: "\e67b"; }
+.icon-maintain:before { content: "\e68f"; }
+.icon-xitongdingzhi:before { content: "\e60f"; }
+.icon-shejiguifan2:before { content: "\e6b7"; }
+.icon-zuocechilun:before { content: "\e635"; }
+.icon-pxreact2:before { content: "\e600"; }
+
+

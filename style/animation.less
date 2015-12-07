@@ -15,3 +15,72 @@
     transform: scale(0.9);
   }
 }
+
+
+@keyframes zoomInRight {
+  from {
+    opacity: 0;
+    transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0
+  }
+  1%, 50%, to {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+@keyframes translate {
+  0% {
+    margin-left: -100px;
+  }
+  100% {
+    margin-left: -500px;
+  }
+}
+
+.flash {
+  animation-name: flash;
+}
+
+.zoomInRight {
+  animation-name: zoomInRight;
+}
+
+.translate {
+  animation-name: translate;
+}
+
+.animated {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  animation-duration: 2s;
+}
+
+.animated.flipOutX,
+.animated.flipOutY,
+.animated.bounceIn,
+.animated.bounceOut{
+  animation-duration: .75s;
+}

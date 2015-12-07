@@ -4,7 +4,7 @@ html
 		meta(charset="utf-8")
 		title #{config.site.name} - #{config.site.description}
 		link(rel="stylesheet", href="//g.alicdn.com/platform/common/s/1.1/global/global.css")
-		link#J_ThemeStyle(rel="stylesheet", href="#{config.site.urlPrefix}/static/style/blue.css")
+		link#J_ThemeStyle(rel="stylesheet", href="#{config.site.urlPrefix}/static/style/payroll.css")
 		link(rel="stylesheet", href="#{config.site.urlPrefix}/static/style/index.css")
 		link(rel="stylesheet", href="#{config.site.urlPrefix}/static/github-gist.min.css")
 		script(src="#{config.site.urlPrefix}/static/modernizr.js")
@@ -35,3 +35,4 @@ html
 		include navigation
 		#J-main.kuma-layout-full.site-main
 			block content
+		include footer

@@ -42,7 +42,7 @@ gulp.task('less', ['less_index'], function(){
         .pipe(gulp.dest('./theme/static/style/'));
 });
 
-gulp.task('watch', ['less'], function(){
+gulp.task('watch', [], function(){
     watch('./style/*.less', batch(function(e, done){
         gulp.start('less', done);
     }));

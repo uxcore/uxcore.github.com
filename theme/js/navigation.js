@@ -6,6 +6,8 @@ if (pathname.indexOf('/components/') !== -1) {
 	id = 'css';
 } else if (pathname.indexOf('/scene/') !== -1) {
 	id = 'scene';
+} else if (pathname.indexOf('/start') !== -1) {
+	id = 'start'
 } else {
 	id = 'home';
 }

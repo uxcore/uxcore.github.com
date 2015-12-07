@@ -54,7 +54,9 @@ exports.reader = function(post){
     } 
     if (filepath.indexOf('site/scene') === 0) {
         post.template = post.meta.template = 'scene';
-    }else {
+    } if (filepath.indexOf('site/start') === 0) {
+        post.template = post.meta.template = 'start';
+    } else {
         if (post.template === 'components') {
             var moduleName = 'uxcore-' + post.directory.replace(post.template, '');
             moduleName = moduleName.replace(/[/\\]/g, '');
