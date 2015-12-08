@@ -176,19 +176,6 @@ samp {
 </div>
 ````
 
-### 面包屑
-
-> 面包屑样式
-
-````html
-<div class="kuma-crumbs">
-    <a href="#">首页</a>
-    <a href="#">管理平台 </a>
-    <a href="#">流程管理</a>
-    <span>编辑流程信息</span>
-</div>
-````
-
 ### 加载指示器
 
 ````html

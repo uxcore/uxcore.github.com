@@ -16,7 +16,6 @@ function handleSelect(e) {
 
 ReactDOM.render(
     <div>
-        <h2>simple</h2>
         <Tree className="myCls" onSelect={handleSelect} defaultSelectedKeys={['0-1', '0-1-1']} multiple={true}
           defaultExpandAll={true} showLine={true}>
           <TreeNode title="parent 1" key="0-1">
@@ -30,6 +29,6 @@ ReactDOM.render(
           </TreeNode>
         </Tree>
     </div>,
-  	document.getElementById('components-tree-demo-simple')
+  	document.getElementById('components-tree-demo-basic')
 );
 ````
