@@ -27,6 +27,7 @@ window.UXCORE = {
 	'uxcore-radiogroup': require('uxcore-radiogroup'),
 	'uxcore-alert': require('uxcore-alert'),
 	'uxcore-fis-grid': require('@ali/uxcore-fis-grid'),
+	'uxcore-message': require('uxcore-message'),
 	'classnames': require('classnames'),
 	'object-assign': require('object-assign')
 };
