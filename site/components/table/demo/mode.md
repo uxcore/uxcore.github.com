@@ -20,7 +20,7 @@ class Demo extends React.Component {
         let me=this;
 
         let columns = [
-            { dataKey: 'jsxid',title:"jsxid",width: 40 },  
+            { dataKey: 'jsxid',title:"jsxid",width: 60 },  
             { dataKey: 'city',title:'城市', width: 180,type:'select' ,options:{
                'hz':'杭州',
                'bj':'北京',

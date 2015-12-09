@@ -38,7 +38,7 @@ class Demo extends React.Component {
         return (
             <div className="demo-basic">
                 <style>
-                    {".required {font-family:Simsun} .demo-basic-form {width: 530px}"}
+                    {".required {font-family:Simsun} .demo-basic-form {width: 532px}"}
                 </style>
                 <Form ref="form" className="demo-basic-form">
                     <Input jsxname="theme" jsxlabel="主题"  jsxplaceholder="请输入主题"/>
