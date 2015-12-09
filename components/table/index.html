@@ -927,10 +927,7 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
       }
 };
 
-ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-fixed'))</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="how-to-run">How to run</h2><pre>$ git clone https://github.com/uxcore/uxcore-table
-$ cd uxcore-table
-$ npm install
-$ gulp server</pre><h2 id="props">Props</h2><table>
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-table-demo-fixed'))</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="props">Props</h2><table>
 <thead>
 <tr>
 <th>Name</th>
@@ -1016,14 +1013,14 @@ $ gulp server</pre><h2 id="props">Props</h2><table>
 <td>array</td>
 <td>optional</td>
 <td>[]</td>
-<td>in subComp mode, it tells parent what datas need to pass to child, like a filter, the parent will pass all his data to his child if queryKey is undefined</td>
+<td>in subComp mode, it filters the data which will be passed to the sub component.</td>
 </tr>
 <tr>
 <td>jsxdata</td>
 <td>object</td>
 <td>optional</td>
 <td>-</td>
-<td>table data</td>
+<td>used as the default data when ajax has not been done</td>
 </tr>
 <tr>
 <td>fetchUrl</td>
@@ -1083,7 +1080,10 @@ $ gulp server</pre><h2 id="props">Props</h2><table>
 </tr>
 </tbody>
 </table>
-<h3 id="props-you-should-not-define-by-yourself">Props you should not define by yourself</h3><table>
+<h3 id="props-you-should-not-define-by-yourself">Props you should not define by yourself</h3><blockquote>
+<p>Parent will pass this props to his child  </p>
+</blockquote>
+<table>
 <thead>
 <tr>
 <th>props name</th>
@@ -1099,7 +1099,7 @@ $ gulp server</pre><h2 id="props">Props</h2><table>
 </tr>
 </tbody>
 </table>
-<h2 id="columns">Columns</h2><table>
+<h3 id="columns-config">Columns Config</h3><table>
 <thead>
 <tr>
 <th>Key Name</th>
@@ -1113,13 +1113,19 @@ $ gulp server</pre><h2 id="props">Props</h2><table>
 <td>dataKey</td>
 <td>required</td>
 <td>string</td>
-<td>use key</td>
+<td>which key in data will be shown in view mode</td>
+</tr>
+<tr>
+<td>editKey</td>
+<td>optional</td>
+<td>string</td>
+<td>which key in data will be used in edit mode, equal to dataKey if not specified</td>
 </tr>
 <tr>
 <td>title</td>
 <td>required</td>
 <td>string</td>
-<td>column display name</td>
+<td>table head name</td>
 </tr>
 <tr>
 <td>width</td>
@@ -1137,37 +1143,31 @@ $ gulp server</pre><h2 id="props">Props</h2><table>
 <td>order</td>
 <td>optional</td>
 <td>boolean</td>
-<td>need order feature or not</td>
+<td>show the built-in sorter</td>
 </tr>
 <tr>
 <td>type</td>
 <td>optional</td>
 <td>string</td>
-<td>containing &#39;money&#39;, &#39;card&#39;, &#39;cnmobile&#39;, &#39;checkbox&#39; &amp; &#39;action&#39;</td>
-</tr>
-<tr>
-<td>disable</td>
-<td>optional</td>
-<td>boolean</td>
-<td>disable a column, now only support type &#39;checkbox&#39;</td>
+<td>containing &#39;money&#39;, &#39;card&#39;, &#39;cnmobile&#39;, &#39;checkbox&#39;, &#39;action&#39;, &#39;radio&#39;, &#39;text&#39;, &#39;select&#39; &amp; &#39;custom&#39;</td>
 </tr>
 <tr>
 <td>actions</td>
-<td>required</td>
+<td>optional</td>
 <td>array</td>
 <td>when type ==&#39;action&#39;, we need this attr</td>
 </tr>
 <tr>
-<td><a href="https://github.com/uxcore/uxcore-table/issues/30">render</a></td>
+<td>customField</td>
 <td>optional</td>
-<td>function</td>
-<td>for custom cell</td>
+<td>React Component</td>
+<td>when type is &#39;custom&#39;, pass your custom Field extended from CellField to Table</td>
 </tr>
 <tr>
-<td><a href="https://github.com/uxcore/uxcore-table/issues/30">beforeRender</a></td>
+<td>render</td>
 <td>optional</td>
 <td>function</td>
-<td>for custom cell data</td>
+<td>render the cell as you want, return a react element</td>
 </tr>
 <tr>
 <td>fixed</td>
@@ -1189,55 +1189,95 @@ $ gulp server</pre><h2 id="props">Props</h2><table>
 </tr>
 </tbody>
 </table>
-<h2 id="rules">Rules</h2><blockquote>
-<p>return data format <a href="http://gitlab.alibaba-inc.com/alinw/yosemite/issues/18">here</a></p>
+<div class="highlight"><pre><code class="javascript">
+<span class="hljs-keyword">let</span> columns = [
+        { dataKey: <span class="hljs-string">'check'</span>, type: <span class="hljs-string">'checkbox'</span>, disable: <span class="hljs-literal">false</span>}, <span class="hljs-comment">// custom checkbox column, dataKey can be anyone, true means checked.</span>
+        { dataKey: <span class="hljs-string">'country'</span>, title:<span class="hljs-string">'国家'</span>, width: <span class="hljs-number">200</span>,ordered:<span class="hljs-literal">true</span>},
+        { dataKey: <span class="hljs-string">'city'</span>,title:<span class="hljs-string">'城市'</span>, width: <span class="hljs-number">150</span>,ordered:<span class="hljs-literal">true</span> },
+        { dataKey: <span class="hljs-string">'firstName'</span>,title:<span class="hljs-string">"FristName"</span> },  
+        { dataKey: <span class="hljs-string">'lastName'</span> ,title:<span class="hljs-string">"LastName"</span>},
+        { dataKey: <span class="hljs-string">'email'</span>,title:<span class="hljs-string">"Email"</span>,width: <span class="hljs-number">200</span>, ordered:<span class="hljs-literal">true</span> },
+        { dataKey: <span class="hljs-string">'action1'</span>, title:<span class="hljs-string">'操作1'</span>, width:<span class="hljs-number">100</span>, type:<span class="hljs-string">"action"</span>,actions: [
+            {
+                title: <span class="hljs-string">'编辑'</span>,
+                callback: (rowData) =&gt; {
+                    me.refs.grid.editRow(rowData);
+                },
+                mode: Constants.MODE.VIEW
+            },
+            {
+                title: <span class="hljs-string">'保存'</span>,
+                callback: (rowData) =&gt; {
+                    me.refs.grid.saveRow(rowData);
+                },
+                mode: Constants.MODE.EDIT
+            }
+        ]},
+        { dataKey: <span class="hljs-string">'action'</span>, title:<span class="hljs-string">'链接'</span>, width:<span class="hljs-number">100</span>, render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cellData,rowData</span>) </span>{
+            <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>{rowData.email}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        }}
+ ]</span></code></pre></div><h2 id="rules">Rules</h2><ul>
+<li>return data format <a href="http://gitlab.alibaba-inc.com/alinw/yosemite/issues/18">here</a> </li>
+</ul>
+<div class="highlight"><pre><code class="javascript">   {
+    <span class="hljs-string">"content"</span>:{
+        <span class="hljs-string">"data"</span>:[
+            {    
+                <span class="hljs-string">"id"</span>:<span class="hljs-string">'1'</span>
+                <span class="hljs-string">"grade"</span>:<span class="hljs-string">"grade1"</span>,
+                <span class="hljs-string">"email"</span>:<span class="hljs-string">"email1"</span>,
+                <span class="hljs-string">"firstName"</span>:<span class="hljs-string">"firstName1"</span>,
+                <span class="hljs-string">"lastName"</span>:<span class="hljs-string">"lastName1"</span>,
+                <span class="hljs-string">"birthDate"</span>:<span class="hljs-string">"birthDate1"</span>,
+                <span class="hljs-string">"country"</span>:<span class="hljs-string">"country1"</span>,
+                <span class="hljs-string">"city"</span>:<span class="hljs-string">"city1"</span>
+            }
+            ...
+
+        ],
+        <span class="hljs-string">"currentPage"</span>:<span class="hljs-number">1</span>,
+        <span class="hljs-string">"totalCount"</span>:<span class="hljs-number">30</span>
+    },
+    <span class="hljs-string">"success"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"errorCode"</span>: <span class="hljs-string">""</span>,
+    <span class="hljs-string">"errorMsg"</span>: <span class="hljs-string">""</span>
+    }</code></pre></div><blockquote>
+<p>the data format above is what server should send. If you pass data via jsxdata, you just need passed the <code>content</code>, like below</p>
 </blockquote>
-<h2 id="api">API</h2><table>
-<thead>
-<tr>
-<th>name</th>
-<th>parameter type</th>
-<th>default</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>fetchData</td>
-<td>string</td>
-<td></td>
-<td>fetch url string</td>
-</tr>
-<tr>
-<td>getData</td>
-<td></td>
-<td></td>
-<td>get table data</td>
-</tr>
-<tr>
-<td>addEmptyRow</td>
-<td></td>
-<td></td>
-<td>add empty row for table</td>
-</tr>
-<tr>
-<td>addRow(rowData)</td>
-<td>JSON</td>
-<td></td>
-<td>add row for grid</td>
-</tr>
-<tr>
-<td>delRow(rowData)</td>
-<td>JSON</td>
-<td></td>
-<td>del row for table</td>
-</tr>
-<tr>
-<td>toggleSubComp(rowData)</td>
-<td>JSON</td>
-<td></td>
-<td>show/hide sub component</td>
-</tr>
-</tbody>
-</table>
+<div class="highlight"><pre><code class="javascript">{
+    <span class="hljs-string">"data"</span>:[
+        {   
+            <span class="hljs-string">"id"</span>:<span class="hljs-string">'1'</span>
+            <span class="hljs-string">"grade"</span>:<span class="hljs-string">"grade1"</span>,
+            <span class="hljs-string">"email"</span>:<span class="hljs-string">"email1"</span>,
+            <span class="hljs-string">"firstName"</span>:<span class="hljs-string">"firstName1"</span>,
+            <span class="hljs-string">"lastName"</span>:<span class="hljs-string">"lastName1"</span>,
+            <span class="hljs-string">"birthDate"</span>:<span class="hljs-string">"birthDate1"</span>,
+            <span class="hljs-string">"country"</span>:<span class="hljs-string">"country1"</span>,
+            <span class="hljs-string">"city"</span>:<span class="hljs-string">"city1"</span>
+        }
+        ...
+
+    ],
+    <span class="hljs-string">"currentPage"</span>:<span class="hljs-number">1</span>,
+    <span class="hljs-string">"totalCount"</span>:<span class="hljs-number">30</span>
+}</code></pre></div><h2 id="api">API</h2><h3 id="row-editing">Row Editing</h3><ul>
+<li>getData(): return cellData &amp; do Validation</li>
+<li>addEmptyRow(): add an empty Row in &#39;edit&#39; mode</li>
+<li>addRow(rowData): add an row with specified data in &#39;edit&#39; mode.</li>
+<li>delRow(rowData): delete specified row by jsxid</li>
+<li>editRow(rowData): make the specified row in &#39;edit&#39; mode.</li>
+<li>viewRow(rowData): make the specified row in &#39;view&#39; mode.</li>
+<li>saveRow(rowData): save the row change.</li>
+<li>resetRow(rowData): cancel the row change before saveRow() is called.</li>
+</ul>
+<h3 id="data-fetching">Data Fetching</h3><ul>
+<li>fetchData(from): call this method when you want the table to fetch Data via ajax again. <ul>
+<li>@param from {string} {optional}: this param will be passed to props.beforeFetch.</li>
+</ul>
+</li>
+</ul>
+<h3 id="other">Other</h3><ul>
+<li>toggleSubComp(rowData): show or hide sub comp</li>
+</ul>
 </div></article></div><div id="site-footer" class="site-footer"><div class="footer-right">© 2015 Alibaba, Inc. Licensed under MIT license.</div><div class="footer-power"><span>DESIGNED BY</span><img src="/static/iux.png"><span>阿里巴巴信息平台 UED 团队</span></div></div></body></html>
