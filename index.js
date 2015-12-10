@@ -28,6 +28,7 @@ window.UXCORE = {
 	'uxcore-alert': require('uxcore-alert'),
 	'uxcore-fis-grid': require('@ali/uxcore-fis-grid'),
 	'uxcore-message': require('uxcore-message'),
+	'uxcore-validator': require('uxcore-validator'),
 	'classnames': require('classnames'),
 	'object-assign': require('object-assign')
 };
