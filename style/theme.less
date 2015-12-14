@@ -1,0 +1,36 @@
+body {
+	.site-nav {
+		background-color: @btn-primary-hover;
+	}
+	.site-banner {
+		background-color: lighten(@btn-primary-hover, 20%);
+	}
+	.site-feature {
+		// background-image: linear-gradient(lighten(@btn-primary-hover, 20%), white 10%);
+		background: #eee;
+		color: @btn-primary-hover;
+	}
+	.site-aside {
+		li {
+			&.current {
+				border-left: 2px solid @brand-primary;
+				a, small {
+					color: @brand-primary;
+				}
+			}
+			a {
+				&:hover {
+					color: @brand-primary;
+					small {
+						color: @brand-primary;
+					}
+				}
+			}
+		}
+	}
+}
+.canvas {
+	.site-banner {
+		background-image: linear-gradient(@btn-primary-hover, lighten(@btn-primary-hover, 20%));
+	}
+}

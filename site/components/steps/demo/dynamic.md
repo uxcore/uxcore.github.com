@@ -7,8 +7,9 @@
 ---
 
 ````jsx
-var Steps = require('uxcore-steps');
-var Step = Steps.Step;
+const Steps = require('uxcore-steps');
+const Step = Steps.Step;
+const Button = require('uxcore-button');
 
 let array = Array.apply(null, Array(Math.floor(Math.random() * 3) + 3));
 let steps = array.map(function(item, i) {
@@ -51,8 +52,8 @@ class Demo extends React.Component {
                     {steps.map((s, i) => <Step key={i} title={s.title} description={s.description} />)}
                 </Steps>
                 <div>
-                    <button className='kuma-button kuma-button-sm' onClick={this.next.bind(this)}>下一步</button>
-                    <button className='kuma-button kuma-button-sm' onClick={this.toggleNumberShow.bind(this)}>显示数字</button>
+                    <Button size="small" type="secondary" onClick={this.next.bind(this)}>下一步</Button> &nbsp;
+                    <Button size="small" type="secondary" onClick={this.toggleNumberShow.bind(this)}>显示数字</Button>
                 </div>
             </div>
         );

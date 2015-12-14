@@ -35,28 +35,28 @@ module.exports = {
                 return isNpmModule & !isUxcore;
             },
             loader: 'babel-loader?stage=1'
-            }, {
+        }, {
             test: /\.json$/,
             loader: 'json-loader'
-        }, {
-            test: /\.less$/,
-            loader: ExtractTextPlugin.extract(
-                'css?sourceMap&-minimize!autoprefixer-loader!less?sourceMap'
-            )
-        }, {
-            test: /\.css$/,
-            loader: ExtractTextPlugin.extract(
-                'css'
-            )
+        // }, {
+        //     test: /\.less$/,
+        //     loader: ExtractTextPlugin.extract(
+        //         'css?sourceMap&-minimize!autoprefixer-loader!less?sourceMap'
+        //     )
+        // }, {
+        //     test: /\.css$/,
+        //     loader: ExtractTextPlugin.extract(
+        //         'css'
+        //     )
         }, {
             test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
             loader: 'url?limit=10000&minetype=image/svg+xml'
         }]
     },
 
-    plugins: [
-        new ExtractTextPlugin('[name].css')
-    ],
+    // plugins: [
+    //     new ExtractTextPlugin('[name].css')
+    // ],
 
     devtool: 'eval'
 };

@@ -50,7 +50,7 @@ class Demo extends React.Component {
         return (
             <div className="demo-basic">
                 <style>
-                    {".required {font-family:Simsun} .demo-basic-form {width: 530px} .form-select {background: #ccc; border-radius: 5px; padding-top: 15px; width: 530px; margin-bottom: 40px;}"}
+                    {".required {font-family:Simsun} .demo-basic-form {width: 532px} .form-select {background: #ccc; border-radius: 5px; padding-top: 15px; width: 530px; margin-bottom: 40px;}"}
                 </style>
                 <Form className="form-select" jsxvalues={{mode: "true"}} jsxonChange={me.handleModeChange.bind(me)}>
                     <SelectFormField jsxdata={{"true": "实时校验", "false": "非实时校验"}} jsxname="mode" jsxlabel="校验模式" showSearch={false}/>

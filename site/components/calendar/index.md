@@ -21,8 +21,13 @@ ReactDOM.render(
 );
 ```
 
-## API
+### API
 
+- onSelect(date, formatDateString)
+    - date `date`
+    - formatDateString `string`
+
+### props
 |参数|类型|默认值|说明|
 |---|----|---|------|
 |value|日期|string|无|

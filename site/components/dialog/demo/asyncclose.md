@@ -28,7 +28,8 @@ class AsyncCloseDemo extends React.Component {
 		});
 		setTimeout(() => {
 		  this.setState({
-		    visible: false
+		    visible: false,
+			ModalText: '对话框的内容'
 		  });
 		}, 2000);
 	}
