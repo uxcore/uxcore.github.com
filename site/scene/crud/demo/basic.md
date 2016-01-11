@@ -1,249 +1,201 @@
-# 填写页
+# 增删改查
 
 - order: 0
 
 ---
 
 ````jsx
-/*
- * 讲解：
- * 
- */
-require('./pageHome.less');
-/*
- * 讲解：
- * Uxcore 的文档站点为：http://uxco.re/
- * 这里包括了所有通用组件的使用说明。
- */
-let Table = require("uxcore-table");
-let Button = require('uxcore-button');
-let Form = require('uxcore-form');
-let Dialog = require('uxcore-dialog');
-/*
- * 讲解：从 Form 中取出 Form 的零件用以配置生成一个完整的 Form。
- * Form 的使用文档见：http://uxco.re/components/form/
- */
-let {FormRow, InputFormField, OtherFormField, Validators, ButtonGroupFormField, TableFormField} = Form;
+var classnames = require("classnames");
+var Form = require('uxcore-form');
+var Button = require('uxcore-button');
+var FisGrid = require('uxcore-fis-grid');
+var Tabs = require('uxcore-tabs');
+var Crumb = require('uxcore-crumb');
 
-/*
- * 讲解：object-assign 是一个非常实用的用于对象拷贝和扩展的函数
- * 详细说明见 https://www.npmjs.com/package/object-assign
- */
-let assign = require('object-assign');
+var {
+    FormRow,
+    FormRowTitle,
+    InputFormField,
+    DateFormField,
+    OtherFormField,
+    NumberInputFormField,
+    SelectFormField,
+    EditorFormField,
+    TextAreaFormField,
+    RadioGroupFormField,
+    Constants,
+    Validators,
+    UploadFormField
+} = Form;
+var TabPane = Tabs.TabPane;
+var RadioItem = RadioGroupFormField.Item;
 
+var defaultValues = {
+    input1: "内容内容"
+}
 
-/*
- * 讲解：下面是 react 的生成一个类的方式，同样是使用了 ES6 语法
- * 他改变了原有的 JS 蹩脚的声明和继承类的方法，提供一种更加面向对象的声明方式
- * 详细说明见：http://es6.ruanyifeng.com/#docs/class
- */
+var columns = [
+    { dataKey: 'title', title: '标题', width: 200},
+    { dataKey: 'money', title: '金额', width: 200, type: 'money', delimiter: ","},
+    { dataKey: 'agent', title: "金融机构", width: 200, render: function(cellData,rowData) {
+        return <div><a href="javascript:;">{rowData.agent}</a></div>
+    }},  
+    { dataKey: 'person', title: "申请人", width: 200},
+    { dataKey: 'date',title: "日期", width: 200}
+];
+var renderProps = {
+    height:300,
+    width: 920,
+    pageSize: 5,
+    fetchUrl:"http://demo.nwux.taobao.net/file/getDemo.jsonp",
+    jsxcolumns: columns,
+};
 
 class Demo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            fetchParams: {},
-            editShow: false,
-            newShow: false,
-            editValues: null
         }
     }
 
-    handleSearch() {
+    handleClick() {
         var me = this;
-        var data = me.refs.searchForm.getValues();
-        me.setState({
-            fetchParams: data.values
-        }, function() {
-            me.refs.table.fetchData();
-        })
-    }
-
-    toggleShow(key) {
-        var me = this;
-        var obj = {};
-        obj[key] = !me.state[key];
-        me.setState(obj);
-    }
-
-    handleEditOk() {
-        var me = this;
-        var data = me.refs.editForm.getValues();
-        if (data.pass) {
-            $.ajax({
-                url: 'http://demo.nwux.taobao.net/file/writeGrid.jsonp',
-                dataType: 'jsonp',
-                data: {
-                    data: data.values
-                },
-                success: function(result) {
-                    if (result.success) {
-                        me.toggleShow('editShow');
-                        me.refs.table.fetchData();
-                    }
-                }
-            })
-        }
-    }
-
-    handleEditCancel() {
-        var me = this;
-        me.refs.editForm.resetValues();
-        me.toggleShow('editShow');
-    }
-
-    handleNewOk() {
-        var me = this;
-        var data = me.refs.editForm.getValues();
-        if (data.pass) {
-            $.ajax({
-                url: 'http://demo.nwux.taobao.net/file/addNewData.jsonp',
-                dataType: 'jsonp',
-                data: {
-                    data: {
-                        dicts: {
-                            datas: [data.values]
-                        }
-                    }
-                },
-                success: function(result) {
-                    if (result.success) {
-                        me.toggleShow('newShow');
-                        me.refs.table.fetchData();
-                        me.refs.editForm.resetValues();
-                    }
-                }
-            })
-        }
-    }
-
-    handleNewCancel() {
-        var me = this;
-        me.toggleShow('newShow');
-        me.refs.editForm.resetValues();
-
-    }
-
-    showEditDialog(rowData) {
-        this.setState({
-            editShow: true,
-            editValues: rowData
-        });
-    }
-
-    showNewDialog() {
-        this.setState({
-            newShow: true,
-            editValues: {}
-        });
+        console.log(me.refs.form.getValues());
     }
 
     render() {
         var me = this;
-
-        var columns = [
-            { dataKey: 'id', title: 'ID', width: 50,hidden:true},
-            { dataKey: 'country', title:'国家', width: 200, type: "money", delimiter: ','},
-            { dataKey: 'city',title:'城市', width: 150,ordered:true },
-            { dataKey: 'firstName',title:"FristName" },  
-            { dataKey: 'lastName' ,title:"LastName"},
-            { dataKey: 'email',title:"Email",width: 200},
-            { dataKey: 'action1', title: '操作', width: 100, type: 'action', actions: {
-                '编辑': function(rowData, actions) {
-                    me.showEditDialog(rowData);
-                }
-            }}
-        ];
-
-        var tableProps = {
-            width: 1000,
-            fetchUrl: "http://demo.nwux.taobao.net/file/getGridJson.jsonp",
-            jsxcolumns: columns,
-            fetchParams: me.state.fetchParams,
-            actionBar: {
-                '新增': function() {
-                    me.showNewDialog();
-                },
-                '删除': function() {
-                    console.log(me.selected);
-                }
-            },
-            rowSelection: {
-                onSelect: function(record, selected, selectedRows) {
-                    me.selected = selectedRows;
-                },
-                onSelectAll: function(selected, selectedRows) {
-                    me.selected = selectedRows;
-                }
-            }
-        };
-
-        var form = <Form className="demoForm" jsxvalues={me.state.editValues} ref="editForm">
-                <FormRow>
-                    <InputFormField jsxlabel="国家" jsxname="country" jsxrules={{validator: Validators.isNotEmpty, errMsg: "非空"}}/>
-                    <InputFormField jsxname="id" jsxshow={false}/>
-                </FormRow>
-                <FormRow>
-                    <InputFormField jsxlabel="城市" jsxname="city" jsxrules={{validator: Validators.isNotEmpty, errMsg: "非空"}}/> 
-                    <InputFormField jsxlabel="email" jsxname="email" jsxrules={
-                        [   
-                            {validator: Validators.isNotEmpty, errMsg: "非空"},
-                            {validator: Validators.isEmail, errMsg: "请输入正确的 email 地址"}
-                        ]
-                    }/> 
-                </FormRow>
-                <FormRow>
-                    <InputFormField jsxlabel="FirstName" jsxname="firstName" jsxrules={{validator: Validators.isNotEmpty, errMsg: "非空"}}/> 
-                    <InputFormField jsxlabel="LastName" jsxname="lastName" jsxrules={{validator: Validators.isNotEmpty, errMsg: "非空"}}/> 
-                </FormRow>
-               </Form>;
-
+        var tips = <span className="tips">
+                        <em>下载报价清单模版，填写完成后上传 下载模版</em></span>;
         return (
-            <div className="page-demo3">
-                <h2>增删改查</h2>
-                <Form ref="searchForm" className="searchForm">
-                    <FormRow>
-                        <InputFormField jsxname="searchTxt" jsxshowLabel={false} jsxplaceholder="输入关键字进行查询" />
-                        <OtherFormField className="searchButton">
-                            <Button onClick={me.handleSearch.bind(me)}>查询</Button>
-                        </OtherFormField>
-                    </FormRow>
-                </Form>
-                <Table {...tableProps} ref="table"/>
-                <Dialog ref="editDialog" width={800} visible={me.state.editShow} title="数据编辑" onOk={me.handleEditOk.bind(me)} onCancel={me.handleEditCancel.bind(me)}>
-                    {form}
-                </Dialog>
-                <Dialog ref="newDialog" width={1000} visible={me.state.newShow} title="数据编辑" onOk={me.handleNewOk.bind(me)} onCancel={me.handleNewCancel.bind(me)}>
-                    {form}
-                </Dialog>
+            <div className="page-demo2">
+                <Crumb className="crumb">
+                  <Crumb.Item href="#" className="crumb-item-style">面包屑</Crumb.Item>
+                  <Crumb.Item>面包屑</Crumb.Item>
+                </Crumb>
+                <div className="content">
+                    <Tabs size="large" className="tab1">
+                        <TabPane tab="标题标题" key="1">
+                            <div className="tab-content-1">
+                                <Form ref="form" jsxvalues={defaultValues}>
+                                    <FormRowTitle>大标题</FormRowTitle>
+                                    <InputFormField jsxlabel="文本" jsxname="input1" jsxmode={Constants.MODE.VIEW} required={true}/>
+                                    <InputFormField jsxlabel="文本2" jsxname="input2" jsxplaceholder="请输入" jsxrules={{
+                                        validator: Validators.isNotEmpty,
+                                        errMsg: "错误或警告类反馈"
+                                    }}/>
+                                    <DateFormField jsxlabel="日期" jsxname="date1"/>
+                                    <DateFormField jsxlabel="日期区间" jsxname="date2" jsxtype="cascade"/>
+                                    <FormRow>
+                                        <NumberInputFormField jsxlabel="数字" jsxname="number1"/>
+                                        <OtherFormField className="other1">CNY</OtherFormField>
+                                    </FormRow>
+                                    <InputFormField jsxlabel="email" jsxname="input3" jsxrules={{
+                                        validator: Validators.isEmail,
+                                        errMsg: "请输入正确的 Email 地址"
+                                    }}/>
+                                    <NumberInputFormField jsxlabel="电话" jsxname="number2" jsxtype="cnmobile" jsxrules={{
+                                        validator: Validators.isCNMobile,
+                                        errMsg: "请输入正确的手机号码"
+                                    }}/>
+                                    <NumberInputFormField jsxlabel="银行卡号" jsxname="number3" jsxtype="card"/>
+                                    <NumberInputFormField jsxlabel="身份证号" jsxname="number4"/>
+                                    <SelectFormField className="select1"
+                                             jsxshowSearch={false}
+                                             jsxdata={{
+                                                "tm": "天猫",
+                                                "tb": "淘宝",
+                                                "xx": "信息平台"
+                                             }}
+                                             jsxlabel="OU"
+                                             jsxname="select1"/>
+                                    <EditorFormField jsxlabel="股东信息" jsxname="editor1"/>
+                                    <TextAreaFormField jsxlabel="备注" jsxname="text1" jsxplaceholder="提示文字"/>
+                                    <RadioGroupFormField jsxlabel="选择" jsxname="radio1">
+                                        <RadioItem value="a" text="是"/>
+                                        <RadioItem value="b" text="否"/>
+                                    </RadioGroupFormField>
+                                    <SelectFormField className="select2"
+                                                     jsxshowSearch={false}
+                                                     jsxdata={{
+                                                        "tm": "天猫",
+                                                        "tb": "淘宝",
+                                                        "xx": "信息平台"
+                                                     }}
+                                                     jsxlabel="选择"
+                                                     jsxname="select2"/>
+                                    <SelectFormField className="select2" 
+                                                     jsxfetchUrl="http://suggest.taobao.com/sug"
+                                                     jsxmultiple={true}
+                                                     jsxname="select3"
+                                                     jsxlabel="行业"
+                                                     afterFetch={(obj) => {
+                                                        let data = {};
+                                                        obj.result.forEach((item, index) => {
+                                                            data[item[1]] = item[0];
+                                                        });
+                                                        console.log(data);
+                                                        return data;
+                                                     }}/>
+                                    <UploadFormField jsxname="upload1" jsxlabel="附件" tips={tips}/>
+                                    <FormRowTitle>大标题</FormRowTitle>
+                                    <OtherFormField className="other2">
+                                        <FisGrid options={renderProps}/>
+                                    </OtherFormField>
+                                    <OtherFormField className="button1">
+                                        <Button type="primary" onClick={me.handleClick.bind(me)}>提交</Button>
+                                        <Button type="secondary">取消</Button>
+                                    </OtherFormField>
+                                </Form>
+                            </div>
+                        </TabPane>
+                        <TabPane tab="标题" key="2"></TabPane>
+                    </Tabs>
+                </div>
             </div>
         )
     }
 
 }
 
-
 ReactDOM.render(
   <Demo />
-, document.getElementById('scene-crud-demo-basic'));
+, document.getElementById('scene-fillin-demo-basic'));
 
 /* JS END CSS START*/
 ````
 ````css
-.page-demo3 {
-    margin-top: 20px;
-    margin-left: 20px;
-}
 
-.searchForm {
-    width: 1000px;
+.page-demo2 {
+    background: #f5f5f5;
+    padding: 0 20px;
 }
-
-.searchButton {
-    padding: 2px 0 0 10px;
+.page-demo2 .crumb {
+    padding: 20px 0;
 }
-
-h2 {
-    font-size: 24px;
+.page-demo2 .content {
+    background: white;
+}
+.page-demo2 .tab-content-1 * {
+  box-sizing: border-box;
+}
+.page-demo2 .other1 {
+  margin-top: 13px;
+}
+.page-demo2 .other2 {
+  padding-left: 35px;
+  overflow: hidden;
+}
+.page-demo2 .kuma-select {
+  width: 100%;
+}
+.page-demo2 .kuma-label {
+  width: 80px;
+}
+.page-demo2 .button1 {
+  padding-left: 90px;
+}
+.page-demo2 .button1 .kuma-button {
+  margin-right: 10px;
 }
 ````
