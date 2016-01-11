@@ -1,8 +1,8 @@
 # List
 
 - order: 0
-- category: finance
-- subtype: 核心业务场景
+- category: tableform
+- subtype: 表格表单
 - chinese: 列表页
 
 ---
