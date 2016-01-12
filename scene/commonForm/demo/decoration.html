@@ -23,10 +23,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var Form = require("uxcore-form");
 var Button = require("uxcore-button");
+var Table = require("uxcore-table");
 
 var Input = Form.InputFormField;
-var Select = Form.SelectFormField;
-var Check = Form.CheckboxGroupFormField;
+var FormRow = Form.FormRow;
 var Validators = Form.Validators;
 var Other = Form.OtherFormField;
 
@@ -43,19 +43,6 @@ var Demo = (function (_React$Component) {
     }
 
     _createClass(Demo, [{
-        key: "handleFieldChange",
-        value: function handleFieldChange(value, name, pass) {
-            var names = ['a', 'b'];
-            if (pass && names.indexOf(name) !== -1) {
-                var me = this;
-                var data = me.refs.form.getValues();
-                var values = data.values;
-                me.refs.form.setValues({
-                    total: parseFloat(values.a || 0) + parseFloat(values.b || 0)
-                });
-            }
-        }
-    }, {
         key: "handleClick",
         value: function handleClick() {
             var me = this;
@@ -65,22 +52,46 @@ var Demo = (function (_React$Component) {
         key: "render",
         value: function render() {
             var me = this;
-
+            var tableProps = {
+                width: 700,
+                jsxdata: {
+                    data: [{
+                        "name": '小王',
+                        "pinyin": 'xiaowang'
+                    }, {
+                        "name": '小李',
+                        "pinyin": 'xiaoli'
+                    }]
+                },
+                jsxcolumns: [{ dataKey: 'name', title: '姓名', width: 300 }, { dataKey: 'pinyin', title: '拼音', width: 300 }]
+            };
             return React.createElement(
                 "div",
-                { className: "page-demo1" },
+                { className: "page-demo3" },
                 React.createElement(
                     Form,
-                    { jsxonChange: me.handleFieldChange.bind(me), jsxvalues: me.state.values, ref: "form", instantValidate: false },
-                    React.createElement(Input, { jsxlabel: "A", jsxname: "a", jsxrules: { validator: Validators.isNum, errMsg: "必须为数字" } }),
-                    React.createElement(Input, { jsxlabel: "B", jsxname: "b", jsxrules: { validator: Validators.isNum, errMsg: "必须为数字" } }),
-                    React.createElement(Input, { jsxlabel: "A+B", jsxname: "total" }),
+                    { jsxvalues: me.state.values, ref: "form" },
+                    React.createElement(
+                        FormRow,
+                        null,
+                        React.createElement(Input, { jsxlabel: "A", jsxname: "a", jsxrules: { validator: Validators.isNum, errMsg: "必须为数字" } }),
+                        React.createElement(
+                            Other,
+                            null,
+                            React.createElement(
+                                "span",
+                                { className: "yuan" },
+                                "元"
+                            )
+                        )
+                    ),
                     React.createElement(
                         Other,
                         { className: "other" },
+                        React.createElement(Table, tableProps),
                         React.createElement(
                             Button,
-                            { onClick: me.handleClick.bind(me) },
+                            { onClick: me.handleClick.bind(me), className: "confirmButton" },
                             "确定"
                         )
                     )
@@ -92,16 +103,16 @@ var Demo = (function (_React$Component) {
     return Demo;
 })(React.Component);
 
-ReactDOM.render(React.createElement(Demo, null), document.getElementById('scene-commonform-demo-basic'));
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('scene-commonform-demo-decoration'));
 
 /* JS END CSS START*/})()</script><div class="highlight"><pre><code class="javascript">
 <span class="hljs-keyword">let</span> Form = <span class="hljs-built_in">require</span>(<span class="hljs-string">"uxcore-form"</span>);
 <span class="hljs-keyword">let</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">"uxcore-button"</span>);
+<span class="hljs-keyword">let</span> Table = <span class="hljs-built_in">require</span>(<span class="hljs-string">"uxcore-table"</span>);
 
 <span class="hljs-keyword">let</span> {
     InputFormField: Input, 
-    SelectFormField: Select, 
-    CheckboxGroupFormField: Check, 
+    FormRow,
     Validators, 
     OtherFormField: Other
 } = Form;
@@ -114,18 +125,6 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('scene-
         }
     }
 
-    handleFieldChange(value, name, pass) {
-        <span class="hljs-keyword">let</span> names = [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>];
-        <span class="hljs-keyword">if</span> (pass &amp;&amp; names.indexOf(name) !== -<span class="hljs-number">1</span>) {
-            <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
-            <span class="hljs-keyword">let</span> data = me.refs.form.getValues();
-            <span class="hljs-keyword">let</span> values = data.values;
-            me.refs.form.setValues({
-                total: <span class="hljs-built_in">parseFloat</span>(values.a || <span class="hljs-number">0</span>) + <span class="hljs-built_in">parseFloat</span>(values.b || <span class="hljs-number">0</span>)
-            })
-        }
-    }
-
     handleClick() {
         <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
         alert(<span class="hljs-built_in">JSON</span>.stringify(me.refs.form.getValues(<span class="hljs-literal">true</span>)));
@@ -133,15 +132,38 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('scene-
 
     render() {
         <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">let</span> tableProps = {
+            width: <span class="hljs-number">700</span>,
+            jsxdata: {
+                data: [
+                    {
+                        <span class="hljs-string">"name"</span>: <span class="hljs-string">'小王'</span>,
+                        <span class="hljs-string">"pinyin"</span>: <span class="hljs-string">'xiaowang'</span>
+                    },
+                    {
+                        <span class="hljs-string">"name"</span>: <span class="hljs-string">'小李'</span>,
+                        <span class="hljs-string">"pinyin"</span>: <span class="hljs-string">'xiaoli'</span>
+                    }
 
+                ]
+            },
+            jsxcolumns: [
+                {dataKey: <span class="hljs-string">'name'</span>, title: <span class="hljs-string">'姓名'</span>, width: <span class="hljs-number">300</span>},
+                {dataKey: <span class="hljs-string">'pinyin'</span>, title: <span class="hljs-string">'拼音'</span>, width: <span class="hljs-number">300</span>}
+            ]
+        };
         <span class="hljs-keyword">return</span> (
-            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"page-demo1"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">jsxonChange</span>=<span class="hljs-value">{me.handleFieldChange.bind(me)}</span> <span class="hljs-attribute">jsxvalues</span>=<span class="hljs-value">{me.state.values}</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"form"</span> <span class="hljs-attribute">instantValidate</span>=<span class="hljs-value">{false}</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"A"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"a"</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{{validator:</span> <span class="hljs-attribute">Validators.isNum</span>, <span class="hljs-attribute">errMsg:</span> "必须为数字"}}/&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"B"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"b"</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{{validator:</span> <span class="hljs-attribute">Validators.isNum</span>, <span class="hljs-attribute">errMsg:</span> "必须为数字"}}/&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"A+B"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"total"</span> /&gt;</span>
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"page-demo3"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">jsxvalues</span>=<span class="hljs-value">{me.state.values}</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"form"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">FormRow</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"A"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"a"</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{{validator:</span> <span class="hljs-attribute">Validators.isNum</span>, <span class="hljs-attribute">errMsg:</span> "必须为数字"}}/&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Other</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"yuan"</span>&gt;</span>元<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">Other</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
                     <span class="hljs-tag">&lt;<span class="hljs-title">Other</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"other"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleClick.bind(me)}</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Table</span> {<span class="hljs-attribute">...tableProps</span>}/&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleClick.bind(me)}</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"confirmButton"</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
                     <span class="hljs-tag">&lt;/<span class="hljs-title">Other</span>&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
@@ -152,10 +174,26 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('scene-
 
 ReactDOM.render(
   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
-, document.getElementById('scene-commonform-demo-basic'));
+, document.getElementById('scene-commonform-demo-decoration'));
 
-/* JS END CSS START*/</span></code></pre></div><style type="text/css">.other {
+/* JS END CSS START*/</span></code></pre></div><style type="text/css">.page-demo3 .other {
     padding-left: 100px
-}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.other</span> <span class="hljs-rules">{
+}
+
+.page-demo3 .confirmButton {
+    margin-top: 10px;
+}
+
+.page-demo3 .yuan {
+    line-height: 34px;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.page-demo3</span> <span class="hljs-class">.other</span> <span class="hljs-rules">{
     <span class="hljs-rule"><span class="hljs-attribute">padding-left</span>:<span class="hljs-value"> <span class="hljs-number">100px</span>
-</span></span></span>}</code></pre></div></div></article></div><div id="site-footer" class="site-footer"><div class="footer-right">© 2015 Alibaba, Inc. Licensed under MIT license.</div><div class="footer-power"><span>DESIGNED BY</span><img src="/static/iux.png"><span>阿里巴巴信息平台 UED 团队</span></div></div></body></html>
+</span></span></span>}
+
+<span class="hljs-class">.page-demo3</span> <span class="hljs-class">.confirmButton</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
+}</span>
+
+<span class="hljs-class">.page-demo3</span> <span class="hljs-class">.yuan</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">34px</span></span></span>;
+}</span></code></pre></div></div></article></div><div id="site-footer" class="site-footer"><div class="footer-right">© 2015 Alibaba, Inc. Licensed under MIT license.</div><div class="footer-power"><span>DESIGNED BY</span><img src="/static/iux.png"><span>阿里巴巴信息平台 UED 团队</span></div></div></body></html>

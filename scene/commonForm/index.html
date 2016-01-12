@@ -77,11 +77,11 @@ var Demo = (function (_React$Component) {
                     React.createElement(Input, { jsxlabel: "A+B", jsxname: "total" }),
                     React.createElement(
                         Other,
-                        null,
+                        { className: "other" },
                         React.createElement(
                             Button,
                             { onClick: me.handleClick.bind(me) },
-                            "获取值"
+                            "确定"
                         )
                     )
                 )
@@ -140,8 +140,8 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('scene-
                     <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"A"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"a"</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{{validator:</span> <span class="hljs-attribute">Validators.isNum</span>, <span class="hljs-attribute">errMsg:</span> "必须为数字"}}/&gt;</span>
                     <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"B"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"b"</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{{validator:</span> <span class="hljs-attribute">Validators.isNum</span>, <span class="hljs-attribute">errMsg:</span> "必须为数字"}}/&gt;</span>
                     <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"A+B"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"total"</span> /&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-title">Other</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleClick.bind(me)}</span>&gt;</span>获取值<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Other</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"other"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleClick.bind(me)}</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
                     <span class="hljs-tag">&lt;/<span class="hljs-title">Other</span>&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
@@ -154,6 +154,450 @@ ReactDOM.render(
   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
 , document.getElementById('scene-commonform-demo-basic'));
 
-/* JS END CSS START*/</span></code></pre></div><style type="text/css">
-</style><div class="highlight"><pre><code class="css">
-</code></pre></div></div></div><div id="J-markdown" class="markdown"></div></article></div><div id="site-footer" class="site-footer"><div class="footer-right">© 2015 Alibaba, Inc. Licensed under MIT license.</div><div class="footer-power"><span>DESIGNED BY</span><img src="/static/iux.png"><span>阿里巴巴信息平台 UED 团队</span></div></div></body></html>
+/* JS END CSS START*/</span></code></pre></div><style type="text/css">.other {
+    padding-left: 100px
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.other</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">padding-left</span>:<span class="hljs-value"> <span class="hljs-number">100px</span>
+</span></span></span>}</code></pre></div></div></div><div id="code-box-scene-commonform-demo-decoration" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-scene-commonform-demo-decoration">表单的扩展2 -- 一些表单装饰物的使用</a></div></div><div class="code-box-demo"><div id="scene-commonform-demo-decoration"></div></div><div class="code-box-desc"><p>在表单中，一些不需要表单交互的模块，我们称之为装饰物，例如按钮、观看用的表格等等，<br>这个场景演示了如何在 Form 中自定义地定义装饰物的。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){"use strict";
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Form = require("uxcore-form");
+var Button = require("uxcore-button");
+var Table = require("uxcore-table");
+
+var Input = Form.InputFormField;
+var FormRow = Form.FormRow;
+var Validators = Form.Validators;
+var Other = Form.OtherFormField;
+
+var Demo = (function (_React$Component) {
+    _inherits(Demo, _React$Component);
+
+    function Demo(props) {
+        _classCallCheck(this, Demo);
+
+        _get(Object.getPrototypeOf(Demo.prototype), "constructor", this).call(this, props);
+        this.state = {
+            values: {}
+        };
+    }
+
+    _createClass(Demo, [{
+        key: "handleClick",
+        value: function handleClick() {
+            var me = this;
+            alert(JSON.stringify(me.refs.form.getValues(true)));
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            var me = this;
+            var tableProps = {
+                width: 700,
+                jsxdata: {
+                    data: [{
+                        "name": '小王',
+                        "pinyin": 'xiaowang'
+                    }, {
+                        "name": '小李',
+                        "pinyin": 'xiaoli'
+                    }]
+                },
+                jsxcolumns: [{ dataKey: 'name', title: '姓名', width: 300 }, { dataKey: 'pinyin', title: '拼音', width: 300 }]
+            };
+            return React.createElement(
+                "div",
+                { className: "page-demo3" },
+                React.createElement(
+                    Form,
+                    { jsxvalues: me.state.values, ref: "form" },
+                    React.createElement(
+                        FormRow,
+                        null,
+                        React.createElement(Input, { jsxlabel: "A", jsxname: "a", jsxrules: { validator: Validators.isNum, errMsg: "必须为数字" } }),
+                        React.createElement(
+                            Other,
+                            null,
+                            React.createElement(
+                                "span",
+                                { className: "yuan" },
+                                "元"
+                            )
+                        )
+                    ),
+                    React.createElement(
+                        Other,
+                        { className: "other" },
+                        React.createElement(Table, tableProps),
+                        React.createElement(
+                            Button,
+                            { onClick: me.handleClick.bind(me), className: "confirmButton" },
+                            "确定"
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Demo;
+})(React.Component);
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('scene-commonform-demo-decoration'));
+
+/* JS END CSS START*/})()</script><div class="highlight"><pre><code class="javascript">
+<span class="hljs-keyword">let</span> Form = <span class="hljs-built_in">require</span>(<span class="hljs-string">"uxcore-form"</span>);
+<span class="hljs-keyword">let</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">"uxcore-button"</span>);
+<span class="hljs-keyword">let</span> Table = <span class="hljs-built_in">require</span>(<span class="hljs-string">"uxcore-table"</span>);
+
+<span class="hljs-keyword">let</span> {
+    InputFormField: Input, 
+    FormRow,
+    Validators, 
+    OtherFormField: Other
+} = Form;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    constructor(props) {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            values: {}
+        }
+    }
+
+    handleClick() {
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        alert(<span class="hljs-built_in">JSON</span>.stringify(me.refs.form.getValues(<span class="hljs-literal">true</span>)));
+    }
+
+    render() {
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">let</span> tableProps = {
+            width: <span class="hljs-number">700</span>,
+            jsxdata: {
+                data: [
+                    {
+                        <span class="hljs-string">"name"</span>: <span class="hljs-string">'小王'</span>,
+                        <span class="hljs-string">"pinyin"</span>: <span class="hljs-string">'xiaowang'</span>
+                    },
+                    {
+                        <span class="hljs-string">"name"</span>: <span class="hljs-string">'小李'</span>,
+                        <span class="hljs-string">"pinyin"</span>: <span class="hljs-string">'xiaoli'</span>
+                    }
+
+                ]
+            },
+            jsxcolumns: [
+                {dataKey: <span class="hljs-string">'name'</span>, title: <span class="hljs-string">'姓名'</span>, width: <span class="hljs-number">300</span>},
+                {dataKey: <span class="hljs-string">'pinyin'</span>, title: <span class="hljs-string">'拼音'</span>, width: <span class="hljs-number">300</span>}
+            ]
+        };
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"page-demo3"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">jsxvalues</span>=<span class="hljs-value">{me.state.values}</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"form"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">FormRow</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Input</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"A"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"a"</span> <span class="hljs-attribute">jsxrules</span>=<span class="hljs-value">{{validator:</span> <span class="hljs-attribute">Validators.isNum</span>, <span class="hljs-attribute">errMsg:</span> "必须为数字"}}/&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Other</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"yuan"</span>&gt;</span>元<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">Other</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Other</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"other"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Table</span> {<span class="hljs-attribute">...tableProps</span>}/&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleClick.bind(me)}</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"confirmButton"</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">Other</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>
+    }
+
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
+, document.getElementById('scene-commonform-demo-decoration'));
+
+/* JS END CSS START*/</span></code></pre></div><style type="text/css">.page-demo3 .other {
+    padding-left: 100px
+}
+
+.page-demo3 .confirmButton {
+    margin-top: 10px;
+}
+
+.page-demo3 .yuan {
+    line-height: 34px;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.page-demo3</span> <span class="hljs-class">.other</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">padding-left</span>:<span class="hljs-value"> <span class="hljs-number">100px</span>
+</span></span></span>}
+
+<span class="hljs-class">.page-demo3</span> <span class="hljs-class">.confirmButton</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
+}</span>
+
+<span class="hljs-class">.page-demo3</span> <span class="hljs-class">.yuan</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">34px</span></span></span>;
+}</span></code></pre></div></div></div><div id="code-box-scene-commonform-demo-definefield" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-scene-commonform-demo-definefield">表单的扩展1 -- 自定义一个 FormField</a></div></div><div class="code-box-demo"><div id="scene-commonform-demo-definefield"></div></div><div class="code-box-desc"><p>通过继承 Form.FormField，用户可以自己定义特制的 FormField，以满足各种业务上的需求。<br> 定制的 FormField 同样可以使用 Form 带来通用配置，如布局、样式、校验、值的管理等等。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){"use strict";
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Form = require("uxcore-form");
+var Button = require("uxcore-button");
+var deepcopy = require('deepcopy');
+
+var Field = Form.Field;
+var Other = Form.OtherFormField;
+
+var DoubleInputFormField = (function (_Form$FormField) {
+    _inherits(DoubleInputFormField, _Form$FormField);
+
+    function DoubleInputFormField(props) {
+        _classCallCheck(this, DoubleInputFormField);
+
+        _get(Object.getPrototypeOf(DoubleInputFormField.prototype), "constructor", this).call(this, props);
+    }
+
+    // 改写 addSpecificClass，增加该 FormField 专属的 class
+
+    _createClass(DoubleInputFormField, [{
+        key: "addSpecificClass",
+        value: function addSpecificClass() {
+            var me = this;
+            if (me.props.jsxprefixCls == "kuma-uxform-field") {
+                return me.props.jsxprefixCls + " kuma-doubleinput-uxform-field";
+            } else {
+                return me.props.jsxprefixCls;
+            }
+        }
+
+        // 在合适的时机调用 me.handleDataChange，将变动通知给 Form
+
+    }, {
+        key: "handleChange",
+        value: function handleChange(index, e) {
+            var me = this;
+            var value = e.currentTarget.value;
+            var stateValue = me.state.value || [];
+            stateValue[index] = value;
+            me.handleDataChange(stateValue);
+        }
+
+        // 改写 renderField，决定渲染方式
+
+    }, {
+        key: "renderField",
+        value: function renderField() {
+            var me = this;
+            var arr = [];
+            var values = me.state.value || [];
+            arr.push(React.createElement("input", { className: "kuma-input", value: values[0], onChange: me.handleChange.bind(me, 0), key: "input1" }));
+            arr.push(React.createElement(
+                "span",
+                { className: "split", key: "split" },
+                "-"
+            ));
+            arr.push(React.createElement("input", { className: "kuma-input", value: values[1], onChange: me.handleChange.bind(me, 1), key: "input2" }));
+            return arr;
+        }
+    }]);
+
+    return DoubleInputFormField;
+})(Form.FormField);
+
+DoubleInputFormField.displayName = "DoubleInputFormField"; // 重要，必须 displayName 中带有 FormField 才可以被识别为 FormField。
+
+var Demo = (function (_React$Component) {
+    _inherits(Demo, _React$Component);
+
+    function Demo(props) {
+        _classCallCheck(this, Demo);
+
+        _get(Object.getPrototypeOf(Demo.prototype), "constructor", this).call(this, props);
+        this.state = {
+            values: {}
+        };
+    }
+
+    _createClass(Demo, [{
+        key: "handleClick",
+        value: function handleClick() {
+            var me = this;
+            alert(JSON.stringify(me.refs.form.getValues()));
+        }
+    }, {
+        key: "handleReset",
+        value: function handleReset() {
+            var me = this;
+            me.refs.form.resetValues();
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            var me = this;
+
+            // FormField 通用的 props 都可以使用。
+            return React.createElement(
+                "div",
+                { className: "page-demo2" },
+                React.createElement(
+                    Form,
+                    { ref: "form", jsxvalues: {
+                            double: [2, 4]
+                        } },
+                    React.createElement(DoubleInputFormField, { jsxlabel: "双输入框", jsxname: "double" }),
+                    React.createElement(
+                        Other,
+                        { className: "other" },
+                        React.createElement(
+                            Button,
+                            { onClick: me.handleClick.bind(this) },
+                            "确定"
+                        ),
+                        React.createElement(
+                            Button,
+                            { onClick: me.handleReset.bind(me), type: "secondary" },
+                            "重置"
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Demo;
+})(React.Component);
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('scene-commonform-demo-definefield'));
+
+/* JS END CSS START*/})()</script><div class="highlight"><pre><code class="javascript">
+<span class="hljs-keyword">let</span> Form = <span class="hljs-built_in">require</span>(<span class="hljs-string">"uxcore-form"</span>);
+<span class="hljs-keyword">let</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">"uxcore-button"</span>);
+<span class="hljs-keyword">let</span> deepcopy = <span class="hljs-built_in">require</span>(<span class="hljs-string">'deepcopy'</span>);
+
+<span class="hljs-keyword">let</span> {
+    Field,
+    OtherFormField: Other
+} = Form;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DoubleInputFormField</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Form</span>.<span class="hljs-title">FormField</span> </span>{
+    constructor(props) {
+        <span class="hljs-keyword">super</span>(props);
+    }
+
+    <span class="hljs-comment">// 改写 addSpecificClass，增加该 FormField 专属的 class</span>
+
+    addSpecificClass() {
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">if</span> (me.props.jsxprefixCls == <span class="hljs-string">"kuma-uxform-field"</span>) {
+            <span class="hljs-keyword">return</span> me.props.jsxprefixCls + <span class="hljs-string">" kuma-doubleinput-uxform-field"</span> ;
+        }
+        <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> me.props.jsxprefixCls
+        }
+    }
+
+
+    <span class="hljs-comment">// 在合适的时机调用 me.handleDataChange，将变动通知给 Form</span>
+
+    handleChange(index, e) {
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">let</span> value = e.currentTarget.value;
+        <span class="hljs-keyword">let</span> stateValue = me.state.value || [];
+        stateValue[index] = value;
+        me.handleDataChange(stateValue);
+    }
+
+    <span class="hljs-comment">// 改写 renderField，决定渲染方式</span>
+
+    renderField() {
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">let</span> arr = [];
+        <span class="hljs-keyword">let</span> values = me.state.value || [];
+        arr.push(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-input"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{values[0]}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{me.handleChange.bind(me,</span> <span class="hljs-attribute">0</span>)} <span class="hljs-attribute">key</span>=<span class="hljs-value">"input1"</span>/&gt;</span>)</span>;
+        arr.push(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"split"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"split"</span>&gt;</span>-<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>)</span>;
+        arr.push(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-input"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{values[1]}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{me.handleChange.bind(me,</span> <span class="hljs-attribute">1</span>)} <span class="hljs-attribute">key</span>=<span class="hljs-value">"input2"</span>/&gt;</span>)</span>;
+        <span class="hljs-keyword">return</span> arr;
+    }
+
+}
+
+DoubleInputFormField.displayName = <span class="hljs-string">"DoubleInputFormField"</span> <span class="hljs-comment">// 重要，必须 displayName 中带有 FormField 才可以被识别为 FormField。</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    constructor(props) {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            values: {}
+        }
+    }
+
+    handleClick() {
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        alert(<span class="hljs-built_in">JSON</span>.stringify(me.refs.form.getValues()));
+    }
+
+    handleReset() {
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        me.refs.form.resetValues();
+    }
+
+    render() {
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+
+        <span class="hljs-comment">// FormField 通用的 props 都可以使用。</span>
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"page-demo2"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"form"</span> <span class="hljs-attribute">jsxvalues</span>=<span class="hljs-value">{{</span>
+                    <span class="hljs-attribute">double:</span> [<span class="hljs-attribute">2</span>, <span class="hljs-attribute">4</span>]
+                }}&gt;</span> 
+                    <span class="hljs-tag">&lt;<span class="hljs-title">DoubleInputFormField</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"双输入框"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"double"</span> /&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Other</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"other"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleClick.bind(this)}</span>&gt;</span>确定<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleReset.bind(me)}</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"secondary"</span>&gt;</span>重置<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">Other</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>
+    }
+
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
+, document.getElementById('scene-commonform-demo-definefield'));
+
+/* JS END CSS START*/</span></code></pre></div><style type="text/css">.page-demo2 .other {
+    padding-left: 100px
+}
+.page-demo2 .kuma-doubleinput-uxform-field .kuma-input {
+    width: 200px
+}
+.page-demo2 .kuma-doubleinput-uxform-field .split {
+    margin: 0 5px;
+}
+.page-demo2 .kuma-button {
+    margin-right: 10px;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.page-demo2</span> <span class="hljs-class">.other</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">padding-left</span>:<span class="hljs-value"> <span class="hljs-number">100px</span>
+</span></span></span>}
+<span class="hljs-class">.page-demo2</span> <span class="hljs-class">.kuma-doubleinput-uxform-field</span> <span class="hljs-class">.kuma-input</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">200px</span>
+</span></span></span>}
+<span class="hljs-class">.page-demo2</span> <span class="hljs-class">.kuma-doubleinput-uxform-field</span> <span class="hljs-class">.split</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">5px</span></span></span>;
+}</span>
+<span class="hljs-class">.page-demo2</span> <span class="hljs-class">.kuma-button</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
+}</span></code></pre></div></div></div><div id="J-markdown" class="markdown"></div></article></div><div id="site-footer" class="site-footer"><div class="footer-right">© 2015 Alibaba, Inc. Licensed under MIT license.</div><div class="footer-power"><span>DESIGNED BY</span><img src="/static/iux.png"><span>阿里巴巴信息平台 UED 团队</span></div></div></body></html>
