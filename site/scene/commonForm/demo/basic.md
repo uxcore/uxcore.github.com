@@ -52,8 +52,8 @@ class Demo extends React.Component {
                     <Input jsxlabel="A" jsxname="a" jsxrules={{validator: Validators.isNum, errMsg: "必须为数字"}}/>
                     <Input jsxlabel="B" jsxname="b" jsxrules={{validator: Validators.isNum, errMsg: "必须为数字"}}/>
                     <Input jsxlabel="A+B" jsxname="total" />
-                    <Other>
-                        <Button onClick={me.handleClick.bind(me)}>获取值</Button>
+                    <Other className="other">
+                        <Button onClick={me.handleClick.bind(me)}>确定</Button>
                     </Other>
                 </Form>
             </div>
@@ -69,5 +69,7 @@ ReactDOM.render(
 /* JS END CSS START*/
 ````
 ````css
-
+.other {
+    padding-left: 100px
+}
 ````
