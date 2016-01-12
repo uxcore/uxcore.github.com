@@ -2,7 +2,7 @@
 
 - order: 0
 
-通过判断 rowData，可以给指定的列加上独特的 className
+通过判断 rowData，可以给指定的行加上独特的 className
 
 ---
 
