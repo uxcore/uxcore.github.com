@@ -8,7 +8,7 @@
 var classnames = require("classnames");
 var Form = require('uxcore-form');
 var Button = require('uxcore-button');
-var FisGrid = require('uxcore-fis-grid');
+var Table = require('uxcore-table');
 var {
     InputFormField,
     FormRow,
@@ -110,7 +110,7 @@ class Demo extends React.Component {
         var renderProps = {
             height:300,
             pageSize: 5,
-            fetchUrl:"http://demo.nwux.taobao.net/file/getDemo.jsonp",
+            fetchUrl:"http://eternalsky.me:8122/file/getDemo.jsonp",
             jsxcolumns: columns,
         };
         return (
@@ -142,6 +142,7 @@ class Demo extends React.Component {
                     })}>
                         <SelectFormField className="select2" 
                                          jsxfetchUrl="http://suggest.taobao.com/sug"
+                                         dataType="jsonp"
                                          jsxmultiple={true}
                                          jsxname="select2"
                                          jsxlabel="名称"
@@ -177,7 +178,7 @@ class Demo extends React.Component {
                         </OtherFormField>
                     </FormRow>
                 </Form>
-                <FisGrid options={renderProps}/>
+                <Table {...renderProps}/>
             </div>
         )
     }
@@ -213,7 +214,7 @@ ReactDOM.render(
   margin-right: 10px;
 }
 .pageDemo .kuma-uxform-row .kuma-uxform-field.kuma-cascade-date-uxform-field .kuma-calendar-picker {
-  width: 121px;
+  width: 120px;
 }
 
 .pageDemo .kuma-label {

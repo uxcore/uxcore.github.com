@@ -8,7 +8,7 @@
 var classnames = require("classnames");
 var Form = require('uxcore-form');
 var Button = require('uxcore-button');
-var FisGrid = require('uxcore-fis-grid');
+var Table = require('uxcore-table');
 var Tabs = require('uxcore-tabs');
 var Crumb = require('uxcore-crumb');
 
@@ -47,7 +47,7 @@ var renderProps = {
     height:300,
     width: 920,
     pageSize: 5,
-    fetchUrl:"http://demo.nwux.taobao.net/file/getDemo.jsonp",
+    fetchUrl:"http://eternalsky.me:8122/file/getDemo.jsonp",
     jsxcolumns: columns,
 };
 
@@ -140,7 +140,7 @@ class Demo extends React.Component {
                                     <UploadFormField jsxname="upload1" jsxlabel="附件" tips={tips}/>
                                     <FormRowTitle>大标题</FormRowTitle>
                                     <OtherFormField className="other2">
-                                        <FisGrid options={renderProps}/>
+                                        <Table {...renderProps}/>
                                     </OtherFormField>
                                     <OtherFormField className="button1">
                                         <Button type="primary" onClick={me.handleClick.bind(me)}>提交</Button>

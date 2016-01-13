@@ -71,7 +71,7 @@ class Demo extends React.Component {
         var data = me.refs.editForm.getValues();
         if (data.pass) {
             $.ajax({
-                url: 'http://demo.nwux.taobao.net/file/writeGrid.jsonp',
+                url: 'http://eternalsky.me:8122/file/writeGrid.jsonp',
                 dataType: 'jsonp',
                 data: {
                     data: data.values
@@ -97,7 +97,7 @@ class Demo extends React.Component {
         var data = me.refs.editForm.getValues();
         if (data.pass) {
             $.ajax({
-                url: 'http://demo.nwux.taobao.net/file/addNewData.jsonp',
+                url: 'http://eternalsky.me:8122/file/addNewData.jsonp',
                 dataType: 'jsonp',
                 data: {
                     data: {
@@ -157,7 +157,7 @@ class Demo extends React.Component {
 
         var tableProps = {
             width: 1000,
-            fetchUrl: "http://demo.nwux.taobao.net/file/getGridJson.jsonp",
+            fetchUrl: "http://eternalsky.me:8122/file/getGridJson.jsonp",
             jsxcolumns: columns,
             fetchParams: me.state.fetchParams,
             actionBar: {
