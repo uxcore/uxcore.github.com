@@ -24,7 +24,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 var classnames = require("classnames");
 var Form = require('uxcore-form');
 var Button = require('uxcore-button');
-var FisGrid = require('uxcore-fis-grid');
+var Table = require('uxcore-table');
 var Tabs = require('uxcore-tabs');
 var Crumb = require('uxcore-crumb');
 
@@ -64,7 +64,7 @@ var renderProps = {
     height: 300,
     width: 920,
     pageSize: 5,
-    fetchUrl: "http://demo.nwux.taobao.net/file/getDemo.jsonp",
+    fetchUrl: "http://eternalsky.me:8122/file/getDemo.jsonp",
     jsxcolumns: columns
 };
 
@@ -209,7 +209,7 @@ var Demo = (function (_React$Component) {
                                     React.createElement(
                                         OtherFormField,
                                         { className: 'other2' },
-                                        React.createElement(FisGrid, { options: renderProps })
+                                        React.createElement(Table, renderProps)
                                     ),
                                     React.createElement(
                                         OtherFormField,
@@ -243,7 +243,7 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('scene-
 /* JS END CSS START*/})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">"classnames"</span>);
 <span class="hljs-keyword">var</span> Form = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-form'</span>);
 <span class="hljs-keyword">var</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
-<span class="hljs-keyword">var</span> FisGrid = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-fis-grid'</span>);
+<span class="hljs-keyword">var</span> Table = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-table'</span>);
 <span class="hljs-keyword">var</span> Tabs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-tabs'</span>);
 <span class="hljs-keyword">var</span> Crumb = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-crumb'</span>);
 
@@ -282,7 +282,7 @@ var renderProps = {
     height:300,
     width: 920,
     pageSize: 5,
-    fetchUrl:"http://demo.nwux.taobao.net/file/getDemo.jsonp",
+    fetchUrl:"http://eternalsky.me:8122/file/getDemo.jsonp",
     jsxcolumns: columns,
 };
 
@@ -375,7 +375,7 @@ class Demo extends React.Component {
                                     <span class="hljs-tag">&lt;<span class="hljs-title">UploadFormField</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"upload1"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"附件"</span> <span class="hljs-attribute">tips</span>=<span class="hljs-value">{tips}</span>/&gt;</span>
                                     <span class="hljs-tag">&lt;<span class="hljs-title">FormRowTitle</span>&gt;</span>大标题<span class="hljs-tag">&lt;/<span class="hljs-title">FormRowTitle</span>&gt;</span>
                                     <span class="hljs-tag">&lt;<span class="hljs-title">OtherFormField</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"other2"</span>&gt;</span>
-                                        <span class="hljs-tag">&lt;<span class="hljs-title">FisGrid</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{renderProps}</span>/&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-title">Table</span> {<span class="hljs-attribute">...renderProps</span>}/&gt;</span>
                                     <span class="hljs-tag">&lt;/<span class="hljs-title">OtherFormField</span>&gt;</span>
                                     <span class="hljs-tag">&lt;<span class="hljs-title">OtherFormField</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"button1"</span>&gt;</span>
                                         <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"primary"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleClick.bind(me)}</span>&gt;</span>提交<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>

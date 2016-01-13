@@ -24,7 +24,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 var classnames = require("classnames");
 var Form = require('uxcore-form');
 var Button = require('uxcore-button');
-var FisGrid = require('uxcore-fis-grid');
+var Table = require('uxcore-table');
 var InputFormField = Form.InputFormField;
 var FormRow = Form.FormRow;
 var OtherFormField = Form.OtherFormField;
@@ -125,7 +125,7 @@ var Demo = (function (_React$Component) {
             var renderProps = {
                 height: 300,
                 pageSize: 5,
-                fetchUrl: "http://demo.nwux.taobao.net/file/getDemo.jsonp",
+                fetchUrl: "http://eternalsky.me:8122/file/getDemo.jsonp",
                 jsxcolumns: columns
             };
             return React.createElement(
@@ -175,6 +175,7 @@ var Demo = (function (_React$Component) {
                             }) },
                         React.createElement(SelectFormField, { className: 'select2',
                             jsxfetchUrl: 'http://suggest.taobao.com/sug',
+                            dataType: 'jsonp',
                             jsxmultiple: true,
                             jsxname: 'select2',
                             jsxlabel: '名称',
@@ -224,7 +225,7 @@ var Demo = (function (_React$Component) {
                         )
                     )
                 ),
-                React.createElement(FisGrid, { options: renderProps })
+                React.createElement(Table, renderProps)
             );
         }
     }]);
@@ -237,7 +238,7 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('scene-
 /* JS END CSS START*/})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">"classnames"</span>);
 <span class="hljs-keyword">var</span> Form = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-form'</span>);
 <span class="hljs-keyword">var</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
-<span class="hljs-keyword">var</span> FisGrid = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-fis-grid'</span>);
+<span class="hljs-keyword">var</span> Table = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-table'</span>);
 <span class="hljs-keyword">var</span> {
     InputFormField,
     FormRow,
@@ -339,7 +340,7 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('scene-
         var renderProps = {
             height:300,
             pageSize: 5,
-            fetchUrl:"http://demo.nwux.taobao.net/file/getDemo.jsonp",
+            fetchUrl:"http://eternalsky.me:8122/file/getDemo.jsonp",
             jsxcolumns: columns,
         };
         return (
@@ -371,6 +372,7 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('scene-
                     })}&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-title">SelectFormField</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"select2"</span> 
                                          <span class="hljs-attribute">jsxfetchUrl</span>=<span class="hljs-value">"http://suggest.taobao.com/sug"</span>
+                                         <span class="hljs-attribute">dataType</span>=<span class="hljs-value">"jsonp"</span>
                                          <span class="hljs-attribute">jsxmultiple</span>=<span class="hljs-value">{true}</span>
                                          <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"select2"</span>
                                          <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"名称"</span>
@@ -406,7 +408,7 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('scene-
                         <span class="hljs-tag">&lt;/<span class="hljs-title">OtherFormField</span>&gt;</span>
                     <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">FisGrid</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">{renderProps}</span>/&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Table</span> {<span class="hljs-attribute">...renderProps</span>}/&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
         )</span>
     }
@@ -438,7 +440,7 @@ ReactDOM.render(
   margin-right: 10px;
 }
 .pageDemo .kuma-uxform-row .kuma-uxform-field.kuma-cascade-date-uxform-field .kuma-calendar-picker {
-  width: 121px;
+  width: 120px;
 }
 
 .pageDemo .kuma-label {
@@ -470,7 +472,7 @@ ReactDOM.render(
   <span class="hljs-rule"><span class="hljs-attribute">margin-right</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
 }</span>
 <span class="hljs-class">.pageDemo</span> <span class="hljs-class">.kuma-uxform-row</span> <span class="hljs-class">.kuma-uxform-field</span><span class="hljs-class">.kuma-cascade-date-uxform-field</span> <span class="hljs-class">.kuma-calendar-picker</span> <span class="hljs-rules">{
-  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">121px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">120px</span></span></span>;
 }</span>
 
 <span class="hljs-class">.pageDemo</span> <span class="hljs-class">.kuma-label</span> <span class="hljs-rules">{

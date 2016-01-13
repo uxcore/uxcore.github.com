@@ -101,7 +101,7 @@ var Demo = (function (_React$Component) {
             var data = me.refs.editForm.getValues();
             if (data.pass) {
                 $.ajax({
-                    url: 'http://demo.nwux.taobao.net/file/writeGrid.jsonp',
+                    url: 'http://eternalsky.me:8122/file/writeGrid.jsonp',
                     dataType: 'jsonp',
                     data: {
                         data: data.values
@@ -129,7 +129,7 @@ var Demo = (function (_React$Component) {
             var data = me.refs.editForm.getValues();
             if (data.pass) {
                 $.ajax({
-                    url: 'http://demo.nwux.taobao.net/file/addNewData.jsonp',
+                    url: 'http://eternalsky.me:8122/file/addNewData.jsonp',
                     dataType: 'jsonp',
                     data: {
                         data: {
@@ -184,7 +184,7 @@ var Demo = (function (_React$Component) {
 
             var tableProps = {
                 width: 1000,
-                fetchUrl: "http://demo.nwux.taobao.net/file/getGridJson.jsonp",
+                fetchUrl: "http://eternalsky.me:8122/file/getGridJson.jsonp",
                 jsxcolumns: columns,
                 fetchParams: me.state.fetchParams,
                 actionBar: {
@@ -340,7 +340,7 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('scene-
         <span class="hljs-keyword">var</span> data = me.refs.editForm.getValues();
         <span class="hljs-keyword">if</span> (data.pass) {
             $.ajax({
-                url: <span class="hljs-string">'http://demo.nwux.taobao.net/file/writeGrid.jsonp'</span>,
+                url: <span class="hljs-string">'http://eternalsky.me:8122/file/writeGrid.jsonp'</span>,
                 dataType: <span class="hljs-string">'jsonp'</span>,
                 data: {
                     data: data.values
@@ -366,7 +366,7 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('scene-
         <span class="hljs-keyword">var</span> data = me.refs.editForm.getValues();
         <span class="hljs-keyword">if</span> (data.pass) {
             $.ajax({
-                url: <span class="hljs-string">'http://demo.nwux.taobao.net/file/addNewData.jsonp'</span>,
+                url: <span class="hljs-string">'http://eternalsky.me:8122/file/addNewData.jsonp'</span>,
                 dataType: <span class="hljs-string">'jsonp'</span>,
                 data: {
                     data: {
@@ -426,7 +426,7 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('scene-
 
         <span class="hljs-keyword">var</span> tableProps = {
             width: <span class="hljs-number">1000</span>,
-            fetchUrl: <span class="hljs-string">"http://demo.nwux.taobao.net/file/getGridJson.jsonp"</span>,
+            fetchUrl: <span class="hljs-string">"http://eternalsky.me:8122/file/getGridJson.jsonp"</span>,
             jsxcolumns: columns,
             fetchParams: me.state.fetchParams,
             actionBar: {
