@@ -1,4 +1,4 @@
-# CustomTable
+# Table
 
 - order: 0
 - category: tableform
