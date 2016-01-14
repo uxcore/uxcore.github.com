@@ -91,7 +91,6 @@ class Demo extends React.Component {
                     <DoubleInputFormField jsxlabel="双输入框" jsxname="double" />
                     <Other className="other">
                         <Button onClick={me.handleClick.bind(this)}>确定</Button>
-                        <Button onClick={me.handleReset.bind(me)} type="secondary">重置</Button>
                     </Other>
                 </Form>
             </div>
