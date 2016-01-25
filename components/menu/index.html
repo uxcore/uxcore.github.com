@@ -24,6 +24,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 var Menu = require('uxcore-menu');
 var SubMenu = Menu.SubMenu;
 var MenuItem = Menu.Item;
+window.Menu = Menu;
 
 function handleClick(e) {
     console.log('click', e);
@@ -115,6 +116,7 @@ var Demo = (function (_React$Component) {
 ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-menu-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Menu = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
 <span class="hljs-keyword">var</span> SubMenu = Menu.SubMenu;
 <span class="hljs-keyword">var</span> MenuItem = Menu.Item;
+<span class="hljs-built_in">window</span>.Menu = Menu;
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleClick</span>(<span class="hljs-params">e</span>) </span>{
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'click'</span>, e);
