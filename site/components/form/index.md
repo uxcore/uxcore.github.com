@@ -77,7 +77,7 @@
 |jsxrules|object/array|optional|-|validators，具体用法和格式见 Usage，Form 已经提供了一些现成的 validator 供使用。也可以自己编写|
 |instantValidate|boolean|optional|true|是否开启即时校验|
 
-### Validators
+### Validators 
 
 > Form 提供了一些通用的 validator，通过 Form.Validators 来引入。用法还是见 Usage 和 `demo/formDemo.js` 包括：
 > 所有的 validator 返回 true，表示通过。
@@ -102,10 +102,13 @@
 
 ### InputFormField
 
-| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
-|---|---|---|---|---|
-|jsxplaceholder|string|optional|""|占位符|
-|jsxdisabled|boolean|optional|false|disable 状态|
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 | 版本 |
+|---|---|---|---|---|---|
+|jsxplaceholder|string|optional|""|占位符|-|
+|jsxdisabled|boolean|optional|false|disable 状态|-|
+|validateOnBlur|boolean|optional|false|验证是否是在 blur 的时候出发，默认情况是在 change 时触发，此项为 true 后，onChange 的 pass 永远为 true，相对应的 onBlur 的 pass 会随之变化|1.2.10|
+|onBlur|function(e, pass)|optional|noop|输入框 blur 时触发，第二个参数为验证是否通过，若 validateOnBlur 为 false，则 pass 永远为 true|1.2.10|
+|onFocus|function(e)|optional|noop|输入框获取焦点时触发|1.2.10|
 
 * 插件：
     * Count，通过 InputFormField.Count 取得，一个内置的计数器，用法如下：
@@ -155,22 +158,13 @@
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|
 |jsxdata|object|optional|-|传入用于生成列表的数据，格式为{value: text}|
-|jsxfetchUrl|string|optional|-|如果 Select 是通过搜索异步获取选项，则需要填入此项，目前指支持 jsonp。|
+|jsxfetchUrl|string|optional|-|如果 Select 是通过搜索异步获取选项，则需要填入此项|
 |jsxstyle|obj|optional|-|与 react 传入 style 的方式相同，修改选择框的样式|
 |beforeFetch|func|optional|-|会传入 {q: value}， value 为搜索框中变化的值，在发出 ajax 请求之前，将数据处理为应该发送的格式，并需返回该数据。|
 |afterFetch|func|optional|-|会传入返回的数据， 将其处理为 jsxdata 的格式并返回|
-|showSearch|func|optional|true|是否显示搜索栏|
-|tags|bool|optional|false|是否启用 tag 模式|
-|multiple|bool|optional|false|是否启用 multiple 模式|
-|allowClear|bool|optional|false|是否显示清除按钮|
-|searchPlaceholder|string|optional|""|搜索框默认文字|
-|combobox|bool|optional|false|标准搜索模式，在该模式下没有下拉框，通过输入产生提示|
-|placeholder|string|optional|"请下拉选择"|占位符|
-|disabled|boolean|optional|false|disable 状态|
-|optionLabelProp|string|optional|'children'|选择 Option 的哪个 prop 作为选择框中的显示。|
-|optionFilterProp|string|optional|-|输入项过滤对应的 option 属性|
+|dataType|string|optional|'json'|发送 ajax 请求的类型|
 
-see datails in [uxcore-select2](https://www.npmjs.com/package/uxcore-select2)
+此外，SelectFormField 还支持 [uxcore-select2](https://www.npmjs.com/package/uxcore-select2) 除 onSelect/onDeselect 外的全部属性。
 
 ### CheckboxGroupFormField
 
@@ -238,13 +232,12 @@ see datails in [uxcore-select2](https://www.npmjs.com/package/uxcore-select2)
 ### OtherFormField
 
 > OtherFormField 是一个特殊的 FormField，它用来和其他 FormField 一起完成布局（比如在一行排列等），如果需要一些装饰类的东西，可以以子元素的形式传入到这个 Field 里。
-> 他也可以用于布局中的占位。
+> 他也可以用于布局中的占位。 
 
 ### ButtonGroupFormField
 
 > ButtonGroupFormField 是一个特殊的 FormField，它用来生成一些特定的表单按钮，这是为了与 Grid 相结合而准备的。如果需要自定义一些按钮，请使用 OtherFormField 和 uxcore-button 相结合来使用。  
-你可以像这样使用它：
-
+你可以像这样使用它：  
 ```javascript
 var Button = require('uxcore-button');
 <ButtonGroupFormField>

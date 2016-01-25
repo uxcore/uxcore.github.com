@@ -19,7 +19,7 @@
 </Select>
 ```
 
-## API
+## Props
 
 ### Select props
 
@@ -39,6 +39,7 @@
 |optionFilterProp | 输入项过滤对应的 option 属性 | string | value |
 |combobox | 输入框自动提示模式 |  | false |
 |size | 选择框大小 | String | 无 |
+|optionLabelProp| 选择 Option 的哪个 prop 作为选择框中的显示。| string | 'children' |
 
 ### Option props
 |参数|说明|类型|默认值|
@@ -52,3 +53,4 @@
 |---|----|---|------|
 |label | 组名 | String/React.Element | 无 |
 |key |  | String | - |
+
