@@ -435,7 +435,7 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <h2 id="何时使用">何时使用</h2><p>弹出一个下拉菜单给用户选择操作，用于代替原生的选择器，或者需要一个更优雅的多选器时。</p>
 <div class="highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Select</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"lucy"</span>&gt;</span>lucy<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">Select</span>&gt;</span></code></pre></div><h2 id="api">API</h2><h3 id="select-props">Select props</h3><table>
+<span class="hljs-tag">&lt;/<span class="hljs-title">Select</span>&gt;</span></code></pre></div><h2 id="props">Props</h2><h3 id="select-props">Select props</h3><table>
 <thead>
 <tr>
 <th>参数</th>
@@ -528,6 +528,12 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <td>选择框大小</td>
 <td>String</td>
 <td>无</td>
+</tr>
+<tr>
+<td>optionLabelProp</td>
+<td>选择 Option 的哪个 prop 作为选择框中的显示。</td>
+<td>string</td>
+<td>&#39;children&#39;</td>
 </tr>
 </tbody>
 </table>
