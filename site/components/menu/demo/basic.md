@@ -10,6 +10,7 @@
 var Menu = require('uxcore-menu');
 var SubMenu = Menu.SubMenu;
 var MenuItem = Menu.Item;
+window.Menu = Menu;
 
 function handleClick(e) {
     console.log('click', e);
