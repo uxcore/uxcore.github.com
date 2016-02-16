@@ -8,6 +8,7 @@
 
 ````jsx
 import Dialog from 'uxcore-dialog';
+import Button from 'uxcore-button';
 let confirm = Dialog.confirm;
 
 function showConfirm(){
@@ -23,9 +24,9 @@ function showConfirm(){
 
 class ConfirmDemo extends React.Component {
 	render(){
-		return (<button className="kuma-button kuma-button-mblue" onClick={showConfirm.bind(this)}>
+		return (<Button onClick={showConfirm.bind(this)}>
 			  确认对话框
-		</button>);
+		</Button>);
 	}
 }
 
