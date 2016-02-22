@@ -53,7 +53,6 @@ module.exports = {
             loader: 'url?limit=10000&minetype=image/svg+xml'
         }]
     },
-
     // plugins: [
     //     new ExtractTextPlugin('[name].css')
     // ],
