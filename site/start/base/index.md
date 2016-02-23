@@ -22,17 +22,17 @@ npm install uxcore-kuma
 
 ```
 // 以下三个分别对应阿里橙、晴空蓝和夜空靛三种主题，引一者即可。
-http://g.alicdn.com/uxcore/uxcore-kuma/1.1.3/kuma.css
-http://g.alicdn.com/uxcore/uxcore-kuma/1.1.3/blue.css
-http://g.alicdn.com/uxcore/uxcore-kuma/1.1.3/payroll.css
+http://g.alicdn.com/uxcore/uxcore-kuma/1.1.5/kuma.css
+http://g.alicdn.com/uxcore/uxcore-kuma/1.1.5/blue.css
+http://g.alicdn.com/uxcore/uxcore-kuma/1.1.5/payroll.css
 
 // Iconfont：引入 uxcore-kuma 所需的 iconfont。
 http://alinw.alicdn.com/??platform/common/s/1.1/global/global.css
 
 // For Production
-http://g.alicdn.com/uxcore/uxcore-kuma/1.1.3/kuma.min.css
-http://g.alicdn.com/uxcore/uxcore-kuma/1.1.3/blue.min.css
-http://g.alicdn.com/uxcore/uxcore-kuma/1.1.3/payroll.min.css
+http://g.alicdn.com/uxcore/uxcore-kuma/1.1.5/kuma.min.css
+http://g.alicdn.com/uxcore/uxcore-kuma/1.1.5/blue.min.css
+http://g.alicdn.com/uxcore/uxcore-kuma/1.1.5/payroll.min.css
 
 
 ```
@@ -42,8 +42,8 @@ http://g.alicdn.com/uxcore/uxcore-kuma/1.1.3/payroll.min.css
 ### 2.1 CDN
 
 ```
-http://g.alicdn.com/uxcore/uxcore/0.1.1/uxcore.js
-http://g.alicdn.com/uxcore/uxcore/0.1.1/uxcore.min.js
+http://g.alicdn.com/uxcore/uxcore/0.1.2/uxcore.js
+http://g.alicdn.com/uxcore/uxcore/0.1.2/uxcore.min.js
 ```
 
 > CDN 版本的 UXCore，会在全局生成 Uxcore 变量挂载所有组件，如使用 Uxcore.Table 来获取 Table 组件。
@@ -77,21 +77,21 @@ UXCore React 组件编写采用了 ES2015 + JSX 的语法，强烈推荐使用 [
 <title>uxcore-demo</title>
 <meta charset="utf-8">
 <meta name="description" content="uxcore-demo">
-<link rel="stylesheet" href="http://g.alicdn.com/uxcore/uxcore-kuma/1.1.3/kuma.css">
-<link rel="stylesheet" type="text/css" href="//alinw.alicdn.com/??platform/common/s/1.1/global/global.css" charset="utf-8">
+<link rel="stylesheet" href="http://g.alicdn.com/uxcore/uxcore-kuma/1.1.5/kuma.css">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/??platform/common/s/1.1/global/global.css" charset="utf-8">
 </head>
 <body>
 <div id="App"></div>
 <!-- 外部脚本资源加载 -->
 <!--[if lte IE 9]>
-<script src="//alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,console-polyfill/0.2.1/index.js,respond.js/1.4.2/respond.min.js"></script>
+<script src="//g.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,console-polyfill/0.2.1/index.js,respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-<script src="//alinw.alicdn.com/uxcore/uxcore-lib/??react/0.14.0/react-with-addons.min.js,react/0.14.0/react-dom.min.js,reflux/0.3.0/dist/reflux.min.js,lodash/3.10.1/lodash.min.js,jquery/1.11.3/jquery.min.js"></script>
+<script src="//g.alicdn.com/uxcore/uxcore-lib/??react/0.14.2/react-with-addons.min.js,react/0.14.2/react-dom.min.js,reflux/0.3.0/dist/reflux.min.js,lodash/3.10.1/lodash.min.js,jquery/1.11.3/jquery.min.js"></script>
 <!-- 使用 Uxcore.Mention 时，需要引入 rangy -->
-<!-- <script src="//alinw.alicdn.com/uxcore/uxcore-lib/rangy/1.3.0/rangy-core.min.js"></script> -->
+<!-- <script src="//g.alicdn.com/uxcore/uxcore-lib/rangy/1.3.0/rangy-core.min.js"></script> -->
 <!-- 使用 Uxcore.Tinymce 或 Uxcore.Form.EditorFormField 时，需要引入 tinymce -->
-<!-- <script src="//alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-basic.min.js"></script> -->
-<script src="http://g.alicdn.com/uxcore/uxcore/0.1.1/uxcore.js"></script>
+<!-- <script src="//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-basic.min.js"></script> -->
+<script src="http://g.alicdn.com/uxcore/uxcore/0.1.2/uxcore.js"></script>
 
 </body>
 </html>
