@@ -234,7 +234,7 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
 ReactDOM.render(
     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
 , document.getElementById('components-progress-demo-dynamic'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><p>展示操作的当前进度。</p>
-<h2 id="api">API</h2><h2 id="props">Props</h2><table>
+<h2 id="api">API</h2><h3 id="line">Line</h3><table>
 <thead>
 <tr>
 <th>配置项</th>
@@ -271,6 +271,53 @@ ReactDOM.render(
 <td>是否显示进度数值和状态图标</td>
 <td>bool</td>
 <td>true</td>
+</tr>
+</tbody>
+</table>
+<h3 id="circle">Circle</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>percent</td>
+<td>百分比</td>
+<td>number</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>状态，有两个值normal、exception、active三种状态</td>
+<td>string</td>
+<td>normal</td>
+<td></td>
+</tr>
+<tr>
+<td>strokeWidth</td>
+<td>进度条线的宽度，单位是px</td>
+<td>number</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>showInfo</td>
+<td>是否显示进度数值和状态图标</td>
+<td>bool</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>size</td>
+<td>尺寸，相当于直径</td>
+<td>number</td>
+<td>156</td>
 </tr>
 </tbody>
 </table>

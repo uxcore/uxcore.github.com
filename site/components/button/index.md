@@ -10,7 +10,7 @@
 
 ```js
 import Button from 'uxcore-button';
-ReactDOM.render(<div>
+React.render(<div>
     <div>
         <span>{"default:"}</span>
         <Button>Confirm</Button>
@@ -34,6 +34,14 @@ ReactDOM.render(<div>
         <span>{"add event:"}</span>
         <Button onClick={function(){alert('click me')}}>click me</Button>
     </div>
+    <div>
+        <h2>button group:</h2>
+        <ButtonGroup>
+            <Button>Left</Button>
+            <Button>Middle</Button>
+            <Button>Right</Button>
+        </ButtonGroup>
+    </div>
 </div>, document.getElementById('target'));
 ```
 
@@ -44,6 +52,6 @@ ReactDOM.render(<div>
 |参数|说明|类型|默认值|
 |---|----|---|------|
 |size|按钮大小(`large` `medium` `small`)|string|medium|
-|type|类型(`primary` `secondary`)|string|blue|
+|type|类型(`primary` `secondary` `outline`)|string|blue|
 |disabled|是否禁用(`disabled` 或 `true` `false`)|string|false|
 |className|增加额外的class|string|''|

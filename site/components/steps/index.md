@@ -17,10 +17,10 @@
 | 配置项 | 说明 | 类型 | 可选值 | 默认值 |
 |---|---|---|---|---|
 |current | 可选参数，指定当前处理正在执行状态的步骤，从0开始记数。在子Step元素中，可以通过status属性覆盖状态。 | number | 无 | 0|
-|size | 可选参数，指定大小（目前只支持普通和迷你两种大小）。 | string | small, default | default |
 |direction | 可选参数，指定步骤条方向（目前支持水平和竖直两种方向，默认水平方向）。 | string | vertical | 无 |
 |maxDescriptionWidth | 可选参数，指定步骤的详细描述文字的最大宽度。 | number | 无 | 100 |
 |showIcon | 步骤节点是否显示图标或数字 | bool | `true` or `false` | true |
+|type | 步骤条类型 | string | `default` `title-on-top` or `long-desc` | `default` |
 
 ### Steps.Step
 | 配置项 | 说明 | 类型 | 可选值 | 默认值 |

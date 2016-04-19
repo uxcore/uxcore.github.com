@@ -10,6 +10,7 @@
 ````jsx
 const Dropdown = require('uxcore-dropdown');
 const Menu = require('uxcore-menu');
+const Button = require('uxcore-menu');
 
 var menu = <Menu>
   <Menu.Item key="0">
@@ -24,7 +25,7 @@ var menu = <Menu>
 
 ReactDOM.render(
     <Dropdown overlay={menu}>
-        <button className="kuma-button kuma-button-sblue">分割线和不可用菜单项</button>
+        <Button>分割线和不可用菜单项</Button>
     </Dropdown>,
     document.getElementById('components-dropdown-demo-other')
 );

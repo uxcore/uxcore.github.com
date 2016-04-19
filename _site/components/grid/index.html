@@ -53,6 +53,32 @@ var Demo = (function (_React$Component) {
                         { className: 'show-grid' },
                         React.createElement(
                             Col,
+                            { xs: 24, md: 16 },
+                            React.createElement(
+                                'code',
+                                null,
+                                '<',
+                                'Col xs={24} md={16}',
+                                ' />'
+                            )
+                        ),
+                        React.createElement(
+                            Col,
+                            { xs: 12, md: 8 },
+                            React.createElement(
+                                'code',
+                                null,
+                                '<',
+                                'Col xs={12} md={8}',
+                                ' />'
+                            )
+                        )
+                    ),
+                    React.createElement(
+                        Row,
+                        { className: 'show-grid' },
+                        React.createElement(
+                            Col,
                             { xs: 12, md: 8 },
                             React.createElement(
                                 'code',
@@ -64,12 +90,23 @@ var Demo = (function (_React$Component) {
                         ),
                         React.createElement(
                             Col,
-                            { xs: 6, md: 4 },
+                            { xs: 12, md: 8 },
                             React.createElement(
                                 'code',
                                 null,
                                 '<',
-                                'Col xs={6} md={4}',
+                                'Col xs={12} md={8}',
+                                ' />'
+                            )
+                        ),
+                        React.createElement(
+                            Col,
+                            { xs: 12, md: 8 },
+                            React.createElement(
+                                'code',
+                                null,
+                                '<',
+                                'Col xs={12} md={8}',
                                 ' />'
                             )
                         )
@@ -79,34 +116,12 @@ var Demo = (function (_React$Component) {
                         { className: 'show-grid' },
                         React.createElement(
                             Col,
-                            { xs: 6, md: 4 },
+                            { xs: 12, xsOffset: 12 },
                             React.createElement(
                                 'code',
                                 null,
                                 '<',
-                                'Col xs={6} md={4}',
-                                ' />'
-                            )
-                        ),
-                        React.createElement(
-                            Col,
-                            { xs: 6, md: 4 },
-                            React.createElement(
-                                'code',
-                                null,
-                                '<',
-                                'Col xs={6} md={4}',
-                                ' />'
-                            )
-                        ),
-                        React.createElement(
-                            Col,
-                            { xs: 6, md: 4 },
-                            React.createElement(
-                                'code',
-                                null,
-                                '<',
-                                'Col xs={6} md={4}',
+                                'Col xs={12} xsOffset={12}',
                                 ' />'
                             )
                         )
@@ -116,38 +131,23 @@ var Demo = (function (_React$Component) {
                         { className: 'show-grid' },
                         React.createElement(
                             Col,
-                            { xs: 6, xsOffset: 6 },
+                            { md: 12, mdPush: 12 },
                             React.createElement(
                                 'code',
                                 null,
                                 '<',
-                                'Col xs={6} xsOffset={6}',
-                                ' />'
-                            )
-                        )
-                    ),
-                    React.createElement(
-                        Row,
-                        { className: 'show-grid' },
-                        React.createElement(
-                            Col,
-                            { md: 6, mdPush: 6 },
-                            React.createElement(
-                                'code',
-                                null,
-                                '<',
-                                'Col md={6} mdPush={6}',
+                                'Col md={12} mdPush={12}',
                                 ' />'
                             )
                         ),
                         React.createElement(
                             Col,
-                            { md: 6, mdPull: 6 },
+                            { md: 12, mdPull: 12 },
                             React.createElement(
                                 'code',
                                 null,
                                 '<',
-                                'Col md={6} mdPull={6}',
+                                'Col md={12} mdPull={12}',
                                 ' />'
                             )
                         )
@@ -179,23 +179,23 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
             <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
               <span class="hljs-tag">&lt;<span class="hljs-title">Grid</span> <span class="hljs-attribute">fluid</span>=<span class="hljs-value">{true}</span>&gt;</span>
                   <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"show-grid"</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">xs</span>=<span class="hljs-value">{24}</span> <span class="hljs-attribute">md</span>=<span class="hljs-value">{16}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>&amp;lt;{'Col xs={24} md={16}'} /&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
                       <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">xs</span>=<span class="hljs-value">{12}</span> <span class="hljs-attribute">md</span>=<span class="hljs-value">{8}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>&amp;lt;{'Col xs={12} md={8}'} /&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
-                      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">xs</span>=<span class="hljs-value">{6}</span> <span class="hljs-attribute">md</span>=<span class="hljs-value">{4}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>&amp;lt;{'Col xs={6} md={4}'} /&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
                   <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
 
                   <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"show-grid"</span>&gt;</span>
-                      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">xs</span>=<span class="hljs-value">{6}</span> <span class="hljs-attribute">md</span>=<span class="hljs-value">{4}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>&amp;lt;{'Col xs={6} md={4}'} /&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
-                      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">xs</span>=<span class="hljs-value">{6}</span> <span class="hljs-attribute">md</span>=<span class="hljs-value">{4}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>&amp;lt;{'Col xs={6} md={4}'} /&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
-                      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">xs</span>=<span class="hljs-value">{6}</span> <span class="hljs-attribute">md</span>=<span class="hljs-value">{4}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>&amp;lt;{'Col xs={6} md={4}'} /&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">xs</span>=<span class="hljs-value">{12}</span> <span class="hljs-attribute">md</span>=<span class="hljs-value">{8}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>&amp;lt;{'Col xs={12} md={8}'} /&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">xs</span>=<span class="hljs-value">{12}</span> <span class="hljs-attribute">md</span>=<span class="hljs-value">{8}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>&amp;lt;{'Col xs={12} md={8}'} /&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">xs</span>=<span class="hljs-value">{12}</span> <span class="hljs-attribute">md</span>=<span class="hljs-value">{8}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>&amp;lt;{'Col xs={12} md={8}'} /&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
                   <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
 
                   <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"show-grid"</span>&gt;</span>
-                       <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">xs</span>=<span class="hljs-value">{6}</span> <span class="hljs-attribute">xsOffset</span>=<span class="hljs-value">{6}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>&amp;lt;{'Col xs={6} xsOffset={6}'} /&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+                       <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">xs</span>=<span class="hljs-value">{12}</span> <span class="hljs-attribute">xsOffset</span>=<span class="hljs-value">{12}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>&amp;lt;{'Col xs={12} xsOffset={12}'} /&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
                   <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
 
                   <span class="hljs-tag">&lt;<span class="hljs-title">Row</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"show-grid"</span>&gt;</span>
-                      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">md</span>=<span class="hljs-value">{6}</span> <span class="hljs-attribute">mdPush</span>=<span class="hljs-value">{6}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>&amp;lt;{'Col md={6} mdPush={6}'} /&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
-                      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">md</span>=<span class="hljs-value">{6}</span> <span class="hljs-attribute">mdPull</span>=<span class="hljs-value">{6}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>&amp;lt;{'Col md={6} mdPull={6}'} /&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">md</span>=<span class="hljs-value">{12}</span> <span class="hljs-attribute">mdPush</span>=<span class="hljs-value">{12}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>&amp;lt;{'Col md={12} mdPush={12}'} /&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-title">Col</span> <span class="hljs-attribute">md</span>=<span class="hljs-value">{12}</span> <span class="hljs-attribute">mdPull</span>=<span class="hljs-value">{12}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>&amp;lt;{'Col md={12} mdPull={12}'} /&amp;gt;<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Col</span>&gt;</span>
                   <span class="hljs-tag">&lt;/<span class="hljs-title">Row</span>&gt;</span>
               <span class="hljs-tag">&lt;/<span class="hljs-title">Grid</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>

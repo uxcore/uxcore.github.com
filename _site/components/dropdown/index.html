@@ -18,6 +18,7 @@
 
 var Dropdown = require('uxcore-dropdown');
 var Menu = require('uxcore-menu');
+var Button = require('uxcore-menu');
 
 var menu = React.createElement(
   Menu,
@@ -55,12 +56,13 @@ ReactDOM.render(React.createElement(
   Dropdown,
   { overlay: menu },
   React.createElement(
-    'button',
-    { className: 'kuma-button kuma-button-sblue' },
+    Button,
+    null,
     'hover触发'
   )
 ), document.getElementById('components-dropdown-demo-default'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Dropdown = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-dropdown'</span>);
 <span class="hljs-keyword">const</span> Menu = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
+<span class="hljs-keyword">const</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
 
 <span class="hljs-keyword">var</span> menu = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Menu</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span>&gt;</span>
@@ -76,13 +78,14 @@ ReactDOM.render(React.createElement(
 
 ReactDOM.render(
     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Dropdown</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{menu}</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-sblue"</span>&gt;</span>hover触发<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>hover触发<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">Dropdown</span>&gt;</span>,
     document.getElementById('components-dropdown-demo-default')
 );</span></code></pre></div></div></div><div id="code-box-components-dropdown-demo-click" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-dropdown-demo-click">点击触发</a></div></div><div class="code-box-demo"><div id="components-dropdown-demo-click"></div></div><div class="code-box-desc"><p>点击触发</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Dropdown = require('uxcore-dropdown');
 var Menu = require('uxcore-menu');
+var Button = require('uxcore-menu');
 
 var menu = React.createElement(
   Menu,
@@ -120,12 +123,13 @@ ReactDOM.render(React.createElement(
   Dropdown,
   { overlay: menu, trigger: ["click"] },
   React.createElement(
-    'button',
-    { className: 'kuma-button kuma-button-sblue' },
+    Button,
+    null,
     '点击触发'
   )
 ), document.getElementById('components-dropdown-demo-click'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Dropdown = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-dropdown'</span>);
 <span class="hljs-keyword">const</span> Menu = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
+<span class="hljs-keyword">const</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
 
 <span class="hljs-keyword">var</span> menu = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Menu</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span>&gt;</span>
@@ -141,13 +145,14 @@ ReactDOM.render(React.createElement(
 
 ReactDOM.render(
     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Dropdown</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{menu}</span> <span class="hljs-attribute">trigger</span>=<span class="hljs-value">{["click"]}</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-sblue"</span>&gt;</span>点击触发<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>点击触发<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">Dropdown</span>&gt;</span>,
     document.getElementById('components-dropdown-demo-click')
 );</span></code></pre></div></div></div><div id="code-box-components-dropdown-demo-events" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-dropdown-demo-events">触发事件</a></div></div><div class="code-box-demo"><div id="components-dropdown-demo-events"></div></div><div class="code-box-desc"><p>触发事件</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Dropdown = require('uxcore-dropdown');
 var Menu = require('uxcore-menu');
+var Button = require('uxcore-menu');
 
 var onClick = function onClick(_ref) {
   var key = _ref.key;
@@ -191,12 +196,13 @@ ReactDOM.render(React.createElement(
   Dropdown,
   { overlay: menu },
   React.createElement(
-    'button',
-    { className: 'kuma-button kuma-button-sblue' },
+    Button,
+    null,
     '触发事件'
   )
 ), document.getElementById('components-dropdown-demo-events'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Dropdown = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-dropdown'</span>);
 <span class="hljs-keyword">const</span> Menu = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
+<span class="hljs-keyword">const</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
 
 <span class="hljs-keyword">var</span> onClick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">{key}</span>)</span>{
   alert(<span class="hljs-string">'选中了菜单'</span> + key);
@@ -216,13 +222,14 @@ ReactDOM.render(React.createElement(
 
 ReactDOM.render(
     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Dropdown</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{menu}</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-sblue"</span>&gt;</span>触发事件<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>触发事件<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">Dropdown</span>&gt;</span>,
     document.getElementById('components-dropdown-demo-events')
 );</span></code></pre></div></div></div><div id="code-box-components-dropdown-demo-other" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-dropdown-demo-other">其他元素</a></div></div><div class="code-box-demo"><div id="components-dropdown-demo-other"></div></div><div class="code-box-desc"><p>分割线和不可用菜单项</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Dropdown = require('uxcore-dropdown');
 var Menu = require('uxcore-menu');
+var Button = require('uxcore-menu');
 
 var menu = React.createElement(
   Menu,
@@ -257,12 +264,13 @@ ReactDOM.render(React.createElement(
   Dropdown,
   { overlay: menu },
   React.createElement(
-    'button',
-    { className: 'kuma-button kuma-button-sblue' },
+    Button,
+    null,
     '分割线和不可用菜单项'
   )
 ), document.getElementById('components-dropdown-demo-other'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Dropdown = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-dropdown'</span>);
 <span class="hljs-keyword">const</span> Menu = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
+<span class="hljs-keyword">const</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
 
 <span class="hljs-keyword">var</span> menu = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Menu</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"0"</span>&gt;</span>
@@ -277,7 +285,7 @@ ReactDOM.render(React.createElement(
 
 ReactDOM.render(
     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Dropdown</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{menu}</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-sblue"</span>&gt;</span>分割线和不可用菜单项<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>分割线和不可用菜单项<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">Dropdown</span>&gt;</span>,
     document.getElementById('components-dropdown-demo-other')
 );</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><p>向下弹出的列表。</p>
