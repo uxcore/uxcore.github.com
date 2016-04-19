@@ -1,18 +1,28 @@
 let Select = require('uxcore-select2');
 let Option = Select.Option;
-let themeList = ['kuma', 'blue', 'payroll'];
+let themeList = ['orange', 'blue'];
 let $themePicker = $("#J_ThemePickerBox");
 let $themeSelector = $("#J_ThemeSelector");
 let $themeLink = $("#J_ThemeStyle");
+let $themeSiteLink = $("#J_ThemeSiteStyle");
 
-var onSelectTheme = function(value){
-	setTheme(value);
+const themeMap = {
+    'orange': ['阿里橙', '#ff8800'],
+    'blue': ['晴空蓝', '#289af0']
+};
+
+let onSelectTheme = function(value){
+    if (!value in themeMap) {
+    	value = 'orange';
+    }
+    setTheme(value);
 	if (Modernizr.localstorage) {
 		localStorage.setItem('theme', value);
 	}
 }
-var setTheme = function(theme){
-	$themeLink.attr('href', `/static/style/${theme}.css`);
+let setTheme = function(theme){
+	$themeLink.attr('href', `//g-assets.daily.taobao.net/uxcore/uxcore-kuma/2.0.5/${theme}.min.css`);
+    $themeSiteLink.attr('href', `/static/style/${theme}.css`);
 }
 
 // Lighten
@@ -21,7 +31,7 @@ var setTheme = function(theme){
 // Darken
 // var NewColor = LightenDarkenColor("#F06D06", -20);
 
-var LightenDarkenColor = function(col, amt) {
+let LightenDarkenColor = function(col, amt) {
   
     var usePound = false;
   
@@ -50,11 +60,7 @@ var LightenDarkenColor = function(col, amt) {
     return (usePound?"#":"") + (g | (b << 8) | (r << 16)).toString(16);
   
 }
-let themeMap = {
-	'kuma': ['阿里橙', '#ff8800'],
-	'blue': ['晴空蓝', '#289af0'],
-	'payroll': ['星空靛', '#2a3f59']
-};
+
 
 
 ReactDOM.render(

@@ -26,7 +26,6 @@ window.UXCORE = {
 	'uxcore-checkbox-group': require('uxcore-checkbox-group'),
 	'uxcore-radiogroup': require('uxcore-radiogroup'),
 	'uxcore-alert': require('uxcore-alert'),
-	'uxcore-fis-grid': require('@ali/uxcore-fis-grid'),
 	'uxcore-message': require('uxcore-message'),
 	'uxcore-validator': require('uxcore-validator'),
 	'uxcore-pickable': require('uxcore-pickable'),

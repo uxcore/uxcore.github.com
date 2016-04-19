@@ -11,64 +11,64 @@ import Mention from 'uxcore-mention';
 
 let mockData = [
     {
-        "emplId": "38900",
-        "nickNameCn": "沧竹",
-        "name": "WANG XIONG",
-        "avatar": "//work.alibaba-inc.com/photo/38900.jpg"
+        "emplId": "11111",
+        "nickNameCn": "小红",
+        "name": "小红",
+        "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
     },
     {
-        "emplId": "45358",
-        "nickNameCn": "秦予",
-        "name": "WANG QINYU",
-        "avatar": "//work.alibaba-inc.com/photo/45358.jpg?1361881993"
+        "emplId": "22222",
+        "nickNameCn": "小黄",
+        "name": "小黄",
+        "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
     },
     {
-        "emplId": "45924",
+        "emplId": "33333",
+        "nickNameCn": "小白",
+        "name": "小白",
+        "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
+    },
+    {
+        "emplId": "44444",
+        "nickNameCn": "小黑",
+        "name": "小黑",
+        "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
+    },
+    {
+        "emplId": "55555",
+        "nickNameCn": "小李",
+        "name": "小李",
+        "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
+    },
+    {
+        "emplId": "66666",
         "nickNameCn": "",
-        "name": "WANG LEI",
-        "avatar": "//work.alibaba-inc.com/photo/45924.jpg?1363620243"
+        "name": "小明",
+        "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
     },
     {
-        "emplId": "67471",
+        "emplId": "77777",
         "nickNameCn": "",
-        "name": "WANG, Haiyang",
-        "avatar": "//work.alibaba-inc.com/photo/67471.jpg"
+        "name": "小雷",
+        "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
     },
     {
-        "emplId": "68699",
-        "nickNameCn": "",
-        "name": "WANG, Yan",
-        "avatar": "//work.alibaba-inc.com/photo/68699.jpg"
+        "emplId": "88888",
+        "nickNameCn": "小樱",
+        "name": "小樱",
+        "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
     },
     {
-        "emplId": "71821",
-        "nickNameCn": "",
-        "name": "WANG, Yinghua",
-        "avatar": "//work.alibaba-inc.com/photo/71821.jpg?1404355781"
+        "emplId": "99999",
+        "nickNameCn": "小健",
+        "name": "小健",
+        "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
     },
     {
-        "emplId": "58",
-        "nickNameCn": "",
-        "name": "王志雷",
-        "avatar": "//work.alibaba-inc.com/photo/58.jpg?1378781324"
-    },
-    {
-        "emplId": "83",
-        "nickNameCn": "纯臻",
-        "name": "王颖",
-        "avatar": "//work.alibaba-inc.com/photo/83.jpg"
-    },
-    {
-        "emplId": "144",
-        "nickNameCn": "王建勋",
-        "name": "王建勋",
-        "avatar": "//work.alibaba-inc.com/photo/144.jpg"
-    },
-    {
-        "emplId": "158",
-        "nickNameCn": "悦航",
-        "name": "王珏",
-        "avatar": "//work.alibaba-inc.com/photo/158.jpg"
+        "emplId": "20030",
+        "nickNameCn": "小航",
+        "name": "小航",
+        "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
     }
 ];
 

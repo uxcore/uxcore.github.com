@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var ghPages = require('gulp-gh-pages');
 var less = require('gulp-less');
 var minifyCss = require('gulp-minify-css');
+var rename = require('gulp-rename');
 var watch = require('gulp-watch');
 var batch = require('gulp-batch');
 
@@ -30,16 +31,27 @@ gulp.task('less_index', function(){
 
 var fs = require('fs');
 
-
-gulp.task('less', ['less_index'], function(){
+gulp.task('less_theme', function() {
     var themeLessFileContent = fs.readFileSync('./style/theme.less', 'utf-8');
-    return gulp.src(['./style/kuma/src/kuma.less', './style/kuma/src/theme/*.less'])
-		.pipe(inject.append('\n' + themeLessFileContent))
-        .pipe(less({
-            plugins: [autoprefix, LessPluginInlineUrls]
-        }))
-        .pipe(minifyCss())
-        .pipe(gulp.dest('./theme/static/style/'));
+    return  gulp.src(['./style/kuma-base/theme/**.less'])
+                .pipe(inject.append('\n' + themeLessFileContent))
+                .pipe(less({
+                    plugins: [autoprefix, LessPluginInlineUrls]
+                }))
+                .pipe(minifyCss())
+                .pipe(gulp.dest('./theme/static/style/'));
+})
+
+
+gulp.task('less', ['less_index', 'less_theme'], function(){
+  //   var themeLessFileContent = fs.readFileSync('./style/theme.less', 'utf-8');
+  //   return gulp.src(['./style/kuma/src/kuma.less', './style/kuma/src/theme/*.less'])
+		// .pipe(inject.append('\n' + themeLessFileContent))
+  //       .pipe(less({
+  //           plugins: [autoprefix, LessPluginInlineUrls]
+  //       }))
+  //       .pipe(minifyCss())
+  //       .pipe(gulp.dest('./theme/static/style/'));
 });
 
 gulp.task('watch', [], function(){

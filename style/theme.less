@@ -1,14 +1,15 @@
+
 body {
 	.site-nav {
-		background-color: @btn-primary-hover;
+		background-color: @brand-primary;
 	}
 	.site-banner {
-		background-color: lighten(@btn-primary-hover, 20%);
+		background-color: lighten(@brand-primary, 20%);
 	}
 	.site-feature {
-		// background-image: linear-gradient(lighten(@btn-primary-hover, 20%), white 10%);
+		// background-image: linear-gradient(lighten(@brand-primary, 20%), white 10%);
 		background: #eee;
-		color: @btn-primary-hover;
+		color: darken(@brand-primary, 20%);
 	}
 	.site-aside {
 		li {
@@ -31,6 +32,6 @@ body {
 }
 .canvas {
 	.site-banner {
-		background-image: linear-gradient(@btn-primary-hover, lighten(@btn-primary-hover, 20%));
+		background-image: linear-gradient(@brand-primary, lighten(@brand-primary, 20%));
 	}
 }

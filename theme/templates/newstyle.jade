@@ -1,0 +1,16 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title 新视觉 新体验
+        link(rel="stylesheet", href="//g.alicdn.com/platform/common/s/1.1/global/global.css")
+        <!--[if lt IE 9]>
+        script(src="#{config.site.urlPrefix}/static/respond.min.js")
+        <![endif]-->
+        script(src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/latest/react-with-addons.js,react/latest/react-dom.min.js,rangy/1.3.0/rangy-core.min.js,jquery/1.11.3/jquery.min.js")
+        script(src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js")
+    body
+        include navigation
+        #J-main.kuma-layout-full.site-main
+            block content
+        include footer
