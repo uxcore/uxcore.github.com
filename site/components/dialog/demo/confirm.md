@@ -8,6 +8,7 @@
 
 ````jsx
 import Dialog from 'uxcore-dialog';
+import Button from 'uxcore-button';
 
 class CustomFooter extends React.Component {
 	constructor(props){
@@ -33,17 +34,15 @@ class CustomFooter extends React.Component {
 	}
 	render() {
 		return <div>
-			<button className="kuma-button kuma-button-mblue" onClick={this.showModal.bind(this)}>
+			<Button onClick={this.showModal.bind(this)}>
 			显示对话框
-			</button>
+			</Button>
 			<Dialog ref="modal"
 				visible={this.state.visible}
 				title="对话框标题" onOk={this.handleOk} onCancel={this.handleCancel.bind(this)}
 				footer={[
-					<button key="back" className="kuma-button kuma-button-mwhite" onClick={this.handleCancel.bind(this)}>返 回</button>,
-					<button key="submit" className={'kuma-button kuma-button-mblue ' + (this.state.loading ? 'kuma-button-loading': '')} onClick={this.handleOk.bind(this)}>
-					提 交
-					</button>
+					<Button key="back" onClick={this.handleCancel.bind(this)}>返 回</Button>,
+					<Button key="submit" onClick={this.handleOk.bind(this)}>提 交</Button>
 				]}>
 				<p>对话框的内容</p>
 				<p>对话框的内容</p>

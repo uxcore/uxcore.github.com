@@ -14,8 +14,9 @@
 
 ````html
 <button type="button" class="kuma-button kuma-button-primary">一级按钮</button>
-<button type="button" class="kuma-button kuma-button-secondary">一级按钮</button>
-<button type="button" class="kuma-button kuma-button-disabled">橙色按钮</button>
+<button type="button" class="kuma-button kuma-button-outline">二级按钮</button>
+<button type="button" class="kuma-button kuma-button-secondary">次要按钮</button>
+<button type="button" class="kuma-button kuma-button-disabled">禁用按钮</button>
 ````
 
 
@@ -24,35 +25,18 @@
 > 需要让按钮具有不同尺寸吗？使用 `.kuma-button-lg`、`.kuma-button-sm `可以获得大-中-小三种不同尺寸的按钮。
 
 ````html
+<a href="javascript:;" class="kuma-button kuma-button-primary kuma-button-lg">大按钮</a>
+<a href="javascript:;" class="kuma-button kuma-button-primary">中按钮</a>
+<a href="javascript:;" class="kuma-button kuma-button-primary kuma-button-sm">小按钮</a>
+````
+
+### 按钮组
+
+````html
 <div class="kuma-button-group">
-    <a href="javascript:;" class="kuma-button kuma-button-primary kuma-button-lg">大按钮</a>
-    <a href="javascript:;" class="kuma-button kuma-button-primary">中按钮</a>
-    <a href="javascript:;" class="kuma-button kuma-button-primary kuma-button-sm">小按钮</a>
-</div>
-````
-
-### Segment-button `New`
-
-````html
-<ul class="kuma-segment-button">
-	<li class="first selected"><span>全员</span></li><li class="last"><span>直接下属</span></li>
-</ul>
-<br>
-<ul class="kuma-segment-button">
-	<li class="first"><span>全员</span></li><li class="last selected"><span>直接下属</span></li>
-</ul>
-````
-
-### Switch-button(开关按钮) `New`
-
-````html
-<div class="kuma-switch-button close">
-	<span class="kuma-switch-txt">显示</span>
-	<div class="kuma-switch-circle"></div>
-</div>
-<br>
-<div class="kuma-switch-button open">
-	<span class="kuma-switch-txt">隐藏</span>
-	<div class="kuma-switch-circle"></div>
+	 <button class="kuma-button kuma-button-primary">Left</button>
+     <button class="kuma-button kuma-button-primary">Middle1</button>
+     <button class="kuma-button kuma-button-primary">Middle2</button>
+     <button class="kuma-button kuma-button-primary">Right</button>
 </div>
 ````

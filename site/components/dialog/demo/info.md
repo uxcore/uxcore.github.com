@@ -8,6 +8,7 @@
 
 ````jsx
 import Dialog from 'uxcore-dialog';
+import Button from 'uxcore-button';
 
 function info() {
   Dialog.info({
@@ -34,9 +35,9 @@ function error() {
 class InfoDemo extends React.Component {
 	render(){
 		return (<div>
-		  <button className="kuma-button kuma-button-swhite" onClick={info}>信息提示</button>&nbsp;
-		  <button className="kuma-button kuma-button-swhite" onClick={success}>成功提示</button>&nbsp;
-		  <button className="kuma-button kuma-button-swhite" onClick={error}>失败提示</button>
+		  <Button onClick={info}>信息提示</Button>&nbsp;
+		  <Button onClick={success}>成功提示</Button>&nbsp;
+		  <Button onClick={error}>失败提示</Button>
 		</div>);
 	}
 }

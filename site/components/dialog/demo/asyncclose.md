@@ -8,6 +8,7 @@
 
 ````jsx
 import Dialog from 'uxcore-dialog';
+import Button from 'uxcore-button';
 
 class AsyncCloseDemo extends React.Component {
 	constructor(props){
@@ -41,7 +42,7 @@ class AsyncCloseDemo extends React.Component {
 	}
 	render() {
 		return (<div>
-			<button className="kuma-button kuma-button-mblue" onClick={this.showModal.bind(this)}>显示对话框</button>
+			<Button onClick={this.showModal.bind(this)}>显示对话框</Button>
 			<Dialog title="对话框标题"
 				visible={this.state.visible}
 				onOk={this.handleOk.bind(this)}

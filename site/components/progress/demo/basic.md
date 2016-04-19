@@ -7,15 +7,15 @@
 ---
 
 ````jsx
-var Progress = require('uxcore-progress');
+var {Line} = require('uxcore-progress');
 
 ReactDOM.render(
     <div>
-		<Progress percent={30} />
-		<Progress percent={50} status="active" />
-		<Progress percent={70} status="exception" />
-		<Progress percent={100} />
-		<Progress percent={50} showInfo={false} />
+		<Line percent={30} />
+		<Line percent={50} status="active" />
+		<Line percent={70} status="exception" />
+		<Line percent={100} />
+		<Line percent={50} showInfo={false} />
     </div>
 , document.getElementById('components-progress-demo-basic'));
 ````

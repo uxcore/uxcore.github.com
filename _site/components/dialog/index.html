@@ -30,6 +30,10 @@ var _uxcoreDialog = require('uxcore-dialog');
 
 var _uxcoreDialog2 = _interopRequireDefault(_uxcoreDialog);
 
+var _uxcoreButton = require('uxcore-button');
+
+var _uxcoreButton2 = _interopRequireDefault(_uxcoreButton);
+
 var BasicDemo = (function (_React$Component) {
     _inherits(BasicDemo, _React$Component);
 
@@ -71,8 +75,8 @@ var BasicDemo = (function (_React$Component) {
                 'div',
                 null,
                 React.createElement(
-                    'button',
-                    { className: 'kuma-button kuma-button-mblue', onClick: this.showModal.bind(this) },
+                    _uxcoreButton2['default'],
+                    { onClick: this.showModal.bind(this) },
                     '显示对话框'
                 ),
                 React.createElement(
@@ -105,6 +109,7 @@ var BasicDemo = (function (_React$Component) {
 })(React.Component);
 
 ReactDOM.render(React.createElement(BasicDemo, null), document.getElementById('components-dialog-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Dialog <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-dialog'</span>;
+<span class="hljs-keyword">import</span> Button <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-button'</span>;
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BasicDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     constructor(props){
@@ -132,7 +137,7 @@ ReactDOM.render(React.createElement(BasicDemo, null), document.getElementById('c
     render(){
         <span class="hljs-keyword">return</span> (
             <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-mblue"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.showModal.bind(this)}</span>&gt;</span>显示对话框<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.showModal.bind(this)}</span>&gt;</span>显示对话框<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-title">Dialog</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"第一个 Dialog"</span>
                     <span class="hljs-attribute">visible</span>=<span class="hljs-value">{this.state.visible}</span>
                     <span class="hljs-attribute">onOk</span>=<span class="hljs-value">{this.handleOk.bind(this)}</span>
@@ -162,6 +167,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 var _uxcoreDialog = require('uxcore-dialog');
 
 var _uxcoreDialog2 = _interopRequireDefault(_uxcoreDialog);
+
+var _uxcoreButton = require('uxcore-button');
+
+var _uxcoreButton2 = _interopRequireDefault(_uxcoreButton);
 
 var AsyncCloseDemo = (function (_React$Component) {
     _inherits(AsyncCloseDemo, _React$Component);
@@ -213,8 +222,8 @@ var AsyncCloseDemo = (function (_React$Component) {
                 'div',
                 null,
                 React.createElement(
-                    'button',
-                    { className: 'kuma-button kuma-button-mblue', onClick: this.showModal.bind(this) },
+                    _uxcoreButton2['default'],
+                    { onClick: this.showModal.bind(this) },
                     '显示对话框'
                 ),
                 React.createElement(
@@ -237,6 +246,7 @@ var AsyncCloseDemo = (function (_React$Component) {
 })(React.Component);
 
 ReactDOM.render(React.createElement(AsyncCloseDemo, null), document.getElementById('components-dialog-demo-asyncclose'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Dialog <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-dialog'</span>;
+<span class="hljs-keyword">import</span> Button <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-button'</span>;
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AsyncCloseDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     constructor(props){
@@ -270,7 +280,7 @@ ReactDOM.render(React.createElement(AsyncCloseDemo, null), document.getElementBy
     }
     render() {
         <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-mblue"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.showModal.bind(this)}</span>&gt;</span>显示对话框<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.showModal.bind(this)}</span>&gt;</span>显示对话框<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">Dialog</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"对话框标题"</span>
                 <span class="hljs-attribute">visible</span>=<span class="hljs-value">{this.state.visible}</span>
                 <span class="hljs-attribute">onOk</span>=<span class="hljs-value">{this.handleOk.bind(this)}</span>
@@ -284,21 +294,25 @@ ReactDOM.render(React.createElement(AsyncCloseDemo, null), document.getElementBy
 ReactDOM.render(
   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">AsyncCloseDemo</span> /&gt;</span>,
   document.getElementById('components-dialog-demo-asyncclose')
-);</span></code></pre></div></div></div><div id="code-box-components-dialog-demo-confirm" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-dialog-demo-confirm">自定义页脚</a></div></div><div class="code-box-demo"><div id="components-dialog-demo-confirm"></div></div><div class="code-box-desc"><p>自定义页脚。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){"use strict";
+);</span></code></pre></div></div></div><div id="code-box-components-dialog-demo-confirm" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-dialog-demo-confirm">自定义页脚</a></div></div><div class="code-box-demo"><div id="components-dialog-demo-confirm"></div></div><div class="code-box-desc"><p>自定义页脚。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _uxcoreDialog = require('uxcore-dialog');
 
 var _uxcoreDialog2 = _interopRequireDefault(_uxcoreDialog);
+
+var _uxcoreButton = require('uxcore-button');
+
+var _uxcoreButton2 = _interopRequireDefault(_uxcoreButton);
 
 var CustomFooter = (function (_React$Component) {
     _inherits(CustomFooter, _React$Component);
@@ -306,7 +320,7 @@ var CustomFooter = (function (_React$Component) {
     function CustomFooter(props) {
         _classCallCheck(this, CustomFooter);
 
-        _get(Object.getPrototypeOf(CustomFooter.prototype), "constructor", this).call(this, props);
+        _get(Object.getPrototypeOf(CustomFooter.prototype), 'constructor', this).call(this, props);
         this.state = {
             loading: false,
             visible: false
@@ -314,14 +328,14 @@ var CustomFooter = (function (_React$Component) {
     }
 
     _createClass(CustomFooter, [{
-        key: "showModal",
+        key: 'showModal',
         value: function showModal() {
             this.setState({
                 visible: true
             });
         }
     }, {
-        key: "handleOk",
+        key: 'handleOk',
         value: function handleOk() {
             var _this = this;
 
@@ -331,59 +345,59 @@ var CustomFooter = (function (_React$Component) {
             }, 3000);
         }
     }, {
-        key: "handleCancel",
+        key: 'handleCancel',
         value: function handleCancel() {
             this.setState({ visible: false });
         }
     }, {
-        key: "render",
+        key: 'render',
         value: function render() {
             return React.createElement(
-                "div",
+                'div',
                 null,
                 React.createElement(
-                    "button",
-                    { className: "kuma-button kuma-button-mblue", onClick: this.showModal.bind(this) },
-                    "显示对话框"
+                    _uxcoreButton2['default'],
+                    { onClick: this.showModal.bind(this) },
+                    '显示对话框'
                 ),
                 React.createElement(
-                    _uxcoreDialog2["default"],
-                    { ref: "modal",
+                    _uxcoreDialog2['default'],
+                    { ref: 'modal',
                         visible: this.state.visible,
-                        title: "对话框标题", onOk: this.handleOk, onCancel: this.handleCancel.bind(this),
+                        title: '对话框标题', onOk: this.handleOk, onCancel: this.handleCancel.bind(this),
                         footer: [React.createElement(
-                            "button",
-                            { key: "back", className: "kuma-button kuma-button-mwhite", onClick: this.handleCancel.bind(this) },
-                            "返 回"
+                            _uxcoreButton2['default'],
+                            { key: 'back', onClick: this.handleCancel.bind(this) },
+                            '返 回'
                         ), React.createElement(
-                            "button",
-                            { key: "submit", className: 'kuma-button kuma-button-mblue ' + (this.state.loading ? 'kuma-button-loading' : ''), onClick: this.handleOk.bind(this) },
-                            "提 交"
+                            _uxcoreButton2['default'],
+                            { key: 'submit', onClick: this.handleOk.bind(this) },
+                            '提 交'
                         )] },
                     React.createElement(
-                        "p",
+                        'p',
                         null,
-                        "对话框的内容"
+                        '对话框的内容'
                     ),
                     React.createElement(
-                        "p",
+                        'p',
                         null,
-                        "对话框的内容"
+                        '对话框的内容'
                     ),
                     React.createElement(
-                        "p",
+                        'p',
                         null,
-                        "对话框的内容"
+                        '对话框的内容'
                     ),
                     React.createElement(
-                        "p",
+                        'p',
                         null,
-                        "对话框的内容"
+                        '对话框的内容'
                     ),
                     React.createElement(
-                        "p",
+                        'p',
                         null,
-                        "对话框的内容"
+                        '对话框的内容'
                     )
                 )
             );
@@ -394,6 +408,7 @@ var CustomFooter = (function (_React$Component) {
 })(React.Component);
 
 ReactDOM.render(React.createElement(CustomFooter, null), document.getElementById('components-dialog-demo-confirm'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Dialog <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-dialog'</span>;
+<span class="hljs-keyword">import</span> Button <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-button'</span>;
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CustomFooter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     constructor(props){
@@ -419,17 +434,15 @@ ReactDOM.render(React.createElement(CustomFooter, null), document.getElementById
     }
     render() {
         <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-mblue"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.showModal.bind(this)}</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.showModal.bind(this)}</span>&gt;</span>
             显示对话框
-            <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">Dialog</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"modal"</span>
                 <span class="hljs-attribute">visible</span>=<span class="hljs-value">{this.state.visible}</span>
                 <span class="hljs-attribute">title</span>=<span class="hljs-value">"对话框标题"</span> <span class="hljs-attribute">onOk</span>=<span class="hljs-value">{this.handleOk}</span> <span class="hljs-attribute">onCancel</span>=<span class="hljs-value">{this.handleCancel.bind(this)}</span>
                 <span class="hljs-attribute">footer</span>=<span class="hljs-value">{[</span>
-                    &lt;<span class="hljs-attribute">button</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"back"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-mwhite"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleCancel.bind(this)}</span>&gt;</span>返 回<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>,
-                    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">{'kuma-button</span> <span class="hljs-attribute">kuma-button-mblue</span> ' + (<span class="hljs-attribute">this.state.loading</span> ? '<span class="hljs-attribute">kuma-button-loading</span>'<span class="hljs-attribute">:</span> '')} <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleOk.bind(this)}</span>&gt;</span>
-                    提 交
-                    <span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+                    &lt;<span class="hljs-attribute">Button</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"back"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleCancel.bind(this)}</span>&gt;</span>返 回<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>,
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleOk.bind(this)}</span>&gt;</span>提 交<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
                 ]</span>}&gt;
                 <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>对话框的内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>对话框的内容<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
@@ -457,6 +470,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 var _uxcoreDialog = require('uxcore-dialog');
 
 var _uxcoreDialog2 = _interopRequireDefault(_uxcoreDialog);
+
+var _uxcoreButton = require('uxcore-button');
+
+var _uxcoreButton2 = _interopRequireDefault(_uxcoreButton);
 
 function info() {
   _uxcoreDialog2['default'].info({
@@ -496,20 +513,20 @@ var InfoDemo = (function (_React$Component) {
         'div',
         null,
         React.createElement(
-          'button',
-          { className: 'kuma-button kuma-button-swhite', onClick: info },
+          _uxcoreButton2['default'],
+          { onClick: info },
           '信息提示'
         ),
         ' ',
         React.createElement(
-          'button',
-          { className: 'kuma-button kuma-button-swhite', onClick: success },
+          _uxcoreButton2['default'],
+          { onClick: success },
           '成功提示'
         ),
         ' ',
         React.createElement(
-          'button',
-          { className: 'kuma-button kuma-button-swhite', onClick: error },
+          _uxcoreButton2['default'],
+          { onClick: error },
           '失败提示'
         )
       );
@@ -520,6 +537,7 @@ var InfoDemo = (function (_React$Component) {
 })(React.Component);
 
 ReactDOM.render(React.createElement(InfoDemo, null), document.getElementById('components-dialog-demo-info'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Dialog <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-dialog'</span>;
+<span class="hljs-keyword">import</span> Button <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-button'</span>;
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">info</span>(<span class="hljs-params"></span>) </span>{
   Dialog.info({
@@ -546,9 +564,9 @@ ReactDOM.render(React.createElement(InfoDemo, null), document.getElementById('co
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InfoDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     render(){
         <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-swhite"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{info}</span>&gt;</span>信息提示<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>&amp;nbsp;
-          <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-swhite"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{success}</span>&gt;</span>成功提示<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>&amp;nbsp;
-          <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-swhite"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{error}</span>&gt;</span>失败提示<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{info}</span>&gt;</span>信息提示<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>&amp;nbsp;
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{success}</span>&gt;</span>成功提示<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>&amp;nbsp;
+          <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{error}</span>&gt;</span>失败提示<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>)</span>;
     }
 }
@@ -654,6 +672,10 @@ var _uxcoreSelect2 = require('uxcore-select2');
 
 var _uxcoreSelect22 = _interopRequireDefault(_uxcoreSelect2);
 
+var _uxcoreButton = require('uxcore-button');
+
+var _uxcoreButton2 = _interopRequireDefault(_uxcoreButton);
+
 var BasicDemo = (function (_React$Component) {
     _inherits(BasicDemo, _React$Component);
 
@@ -719,8 +741,8 @@ var BasicDemo = (function (_React$Component) {
                     )
                 ),
                 React.createElement(
-                    'button',
-                    { className: 'kuma-button kuma-button-mblue', onClick: this.showModal.bind(this) },
+                    _uxcoreButton2['default'],
+                    { onClick: this.showModal.bind(this) },
                     '显示对话框'
                 ),
                 React.createElement(
@@ -756,6 +778,7 @@ var BasicDemo = (function (_React$Component) {
 ReactDOM.render(React.createElement(BasicDemo, null), document.getElementById('components-dialog-demo-animate'));
 /* JS END CSS START*/})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Dialog <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-dialog'</span>;
 <span class="hljs-keyword">import</span> Select <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-select2'</span>;
+<span class="hljs-keyword">import</span> Button <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-button'</span>;
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BasicDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     constructor(props){
@@ -797,7 +820,7 @@ ReactDOM.render(React.createElement(BasicDemo, null), document.getElementById('c
                         })}
                     <span class="hljs-tag">&lt;/<span class="hljs-title">Select</span>&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-mblue"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.showModal.bind(this)}</span>&gt;</span>显示对话框<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.showModal.bind(this)}</span>&gt;</span>显示对话框<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-title">Dialog</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"第一个 Dialog"</span>
                     <span class="hljs-attribute">visible</span>=<span class="hljs-value">{this.state.visible}</span>
                     <span class="hljs-attribute">onOk</span>=<span class="hljs-value">{this.handleOk.bind(this)}</span>

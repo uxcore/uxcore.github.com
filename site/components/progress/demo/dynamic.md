@@ -1,13 +1,14 @@
 # 动态展示
 
-- order: 2
+- order: 3
 
 会动的进度条才是好进度条。
 
 ---
 
 ````jsx
-var Progress = require('uxcore-progress');
+var {Line, Circle} = require('uxcore-progress');
+var Button = require('uxcore-button');
 
 class Demo extends React.Component {
 
@@ -36,13 +37,20 @@ class Demo extends React.Component {
     render() {
         return (
             <div>
-                <Progress percent={this.state.percent} />
-                <button className="kuma-button kuma-button-secondary kuma-button-sm" onClick={this.decline.bind(this)}>
-                    <i className="kuma-icon kuma-icon-stop"></i>
-                </button>
-                <button className="kuma-button-secondary kuma-button-sm" onClick={this.increase.bind(this)}>
-                    <i className="kuma-icon kuma-icon-follow"></i>
-                </button>
+                <div>
+                    <Line percent={this.state.percent} />
+                </div>
+                <div style={{display: 'inline-block'}}>
+                    <Circle percent={this.state.percent} />
+                </div>
+                <div>
+                    <Button onClick={this.decline.bind(this)} type="secondary" size="small">
+                        <i className="kuma-icon kuma-icon-stop"></i>
+                    </Button>
+                    <Button onClick={this.increase.bind(this)} type="secondary" size="small">
+                        <i className="kuma-icon kuma-icon-follow"></i>
+                    </Button>
+                </div>
             </div>
         );
     }
