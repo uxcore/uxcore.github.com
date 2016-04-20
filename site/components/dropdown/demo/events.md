@@ -10,7 +10,7 @@
 ````jsx
 const Dropdown = require('uxcore-dropdown');
 const Menu = require('uxcore-menu');
-const Button = require('uxcore-menu');
+const Button = require('uxcore-button');
 
 var onClick = function ({key}){
   alert('选中了菜单' + key);

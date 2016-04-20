@@ -10,7 +10,7 @@
 ````jsx
 const Dropdown = require('uxcore-dropdown');
 const Menu = require('uxcore-menu');
-const Button = require('uxcore-menu');
+const Button = require('uxcore-button');
 
 var menu = <Menu>
   <Menu.Item>

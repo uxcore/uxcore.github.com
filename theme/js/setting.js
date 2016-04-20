@@ -21,7 +21,7 @@ let onSelectTheme = function(value){
 	}
 }
 let setTheme = function(theme){
-	$themeLink.attr('href', `//g-assets.daily.taobao.net/uxcore/uxcore-kuma/2.0.5/${theme}.min.css`);
+	$themeLink.attr('href', `//g.alicdn.com/uxcore/uxcore-kuma/2.0.5/${theme}.min.css`);
     $themeSiteLink.attr('href', `/static/style/${theme}.css`);
 }
 
