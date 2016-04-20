@@ -35,7 +35,7 @@
     "uxcore-layout": "~1.0.1",
     "uxcore-mention": "~0.1.4",
     "uxcore-menu": "~1.0.0",
-    "uxcore-message": "~0.1.0",
+    "uxcore-message": "~0.2.0",
     "uxcore-multi-select": "~0.1.1",
     "uxcore-pagination": "~0.2.1",
     "uxcore-pickable": "^1.0.0",
