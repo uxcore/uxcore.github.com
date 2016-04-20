@@ -19,7 +19,7 @@
 
 var Dropdown = require('uxcore-dropdown');
 var Menu = require('uxcore-menu');
-var Button = require('uxcore-menu');
+var Button = require('uxcore-button');
 
 var menu = React.createElement(
   Menu,
@@ -63,7 +63,7 @@ ReactDOM.render(React.createElement(
   )
 ), document.getElementById('components-dropdown-demo-default'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Dropdown = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-dropdown'</span>);
 <span class="hljs-keyword">const</span> Menu = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
-<span class="hljs-keyword">const</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
+<span class="hljs-keyword">const</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
 
 <span class="hljs-keyword">var</span> menu = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Menu</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span>&gt;</span>
@@ -86,7 +86,7 @@ ReactDOM.render(
 
 var Dropdown = require('uxcore-dropdown');
 var Menu = require('uxcore-menu');
-var Button = require('uxcore-menu');
+var Button = require('uxcore-button');
 
 var menu = React.createElement(
   Menu,
@@ -130,7 +130,7 @@ ReactDOM.render(React.createElement(
   )
 ), document.getElementById('components-dropdown-demo-click'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Dropdown = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-dropdown'</span>);
 <span class="hljs-keyword">const</span> Menu = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
-<span class="hljs-keyword">const</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
+<span class="hljs-keyword">const</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
 
 <span class="hljs-keyword">var</span> menu = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Menu</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span>&gt;</span>
@@ -153,7 +153,7 @@ ReactDOM.render(
 
 var Dropdown = require('uxcore-dropdown');
 var Menu = require('uxcore-menu');
-var Button = require('uxcore-menu');
+var Button = require('uxcore-button');
 
 var onClick = function onClick(_ref) {
   var key = _ref.key;
@@ -203,7 +203,7 @@ ReactDOM.render(React.createElement(
   )
 ), document.getElementById('components-dropdown-demo-events'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Dropdown = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-dropdown'</span>);
 <span class="hljs-keyword">const</span> Menu = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
-<span class="hljs-keyword">const</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
+<span class="hljs-keyword">const</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
 
 <span class="hljs-keyword">var</span> onClick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">{key}</span>)</span>{
   alert(<span class="hljs-string">'选中了菜单'</span> + key);
@@ -230,7 +230,7 @@ ReactDOM.render(
 
 var Dropdown = require('uxcore-dropdown');
 var Menu = require('uxcore-menu');
-var Button = require('uxcore-menu');
+var Button = require('uxcore-button');
 
 var menu = React.createElement(
   Menu,
@@ -253,7 +253,6 @@ var menu = React.createElement(
       '第二个菜单项'
     )
   ),
-  React.createElement(Menu.Divider, null),
   React.createElement(
     Menu.Item,
     { key: '3', disabled: true },
@@ -267,11 +266,11 @@ ReactDOM.render(React.createElement(
   React.createElement(
     Button,
     null,
-    '分割线和不可用菜单项'
+    '不可用菜单项'
   )
 ), document.getElementById('components-dropdown-demo-other'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Dropdown = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-dropdown'</span>);
 <span class="hljs-keyword">const</span> Menu = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
-<span class="hljs-keyword">const</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-menu'</span>);
+<span class="hljs-keyword">const</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
 
 <span class="hljs-keyword">var</span> menu = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Menu</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"0"</span>&gt;</span>
@@ -280,13 +279,12 @@ ReactDOM.render(React.createElement(
   <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"1"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_blank"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://www.taobao.com/"</span>&gt;</span>第二个菜单项<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Divider</span>/&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">Menu.Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"3"</span> <span class="hljs-attribute">disabled</span>&gt;</span>第三个菜单项（不可用）<span class="hljs-tag">&lt;/<span class="hljs-title">Menu.Item</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">Menu</span>&gt;</span>;</span>
 
 ReactDOM.render(
     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Dropdown</span> <span class="hljs-attribute">overlay</span>=<span class="hljs-value">{menu}</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>分割线和不可用菜单项<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>不可用菜单项<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">Dropdown</span>&gt;</span>,
     document.getElementById('components-dropdown-demo-other')
 );</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><p>向下弹出的列表。</p>
