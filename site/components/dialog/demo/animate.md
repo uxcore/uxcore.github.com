@@ -9,6 +9,7 @@ CSS3 动画
 ````jsx
 import Dialog from 'uxcore-dialog';
 import Select from 'uxcore-select2';
+import Button from 'uxcore-button';
 
 class BasicDemo extends React.Component {
 	constructor(props){
@@ -50,7 +51,7 @@ class BasicDemo extends React.Component {
                         })}
                     </Select>
                 </div>
-				<button className="kuma-button kuma-button-mblue" onClick={this.showModal.bind(this)}>显示对话框</button>
+				<Button onClick={this.showModal.bind(this)}>显示对话框</Button>
 				<Dialog title="第一个 Dialog"
 					visible={this.state.visible}
 					onOk={this.handleOk.bind(this)}

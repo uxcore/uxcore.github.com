@@ -19,7 +19,8 @@ html
 					}
 					if (t && t !== W.theme) {
 						W.theme = t;
-						D.getElementById('J_ThemeStyle').setAttribute('href', '//g-assets.daily.taobao.net/uxcore/uxcore-kuma/2.0.4/' + t + '.min.css');
+						D.getElementById('J_ThemeStyle').setAttribute('href', '//g-assets.daily.taobao.net/uxcore/uxcore-kuma/2.0.5/' + t + '.min.css');
+						D.getElementById('J_ThemeSiteStyle').setAttribute('href', '#{config.site.urlPrefix}/static/style/' + t + '.css');
 					}
 				}	
 			}(window, document, Modernizr));

@@ -31,14 +31,14 @@ ReactDOM.render(
 |name|type|default|description|
 |----|----|-------|-----------|
 |activeKey |String| |current active tabPanel's key|
-|defaultActiveKey|	String|	first active tabPanel's key|	initial active tabPanel's key if activeKey is absent|
+|defaultActiveKey|	String|	first active tabPanel's key| initial active tabPanel's key if activeKey is absent|
 |onChange|	Function|(key)		|called when tabPanel is changed|
 |onTabClick|	Function|(key)		|called when tab is clicked|
-|size|string|normal|set tab size: `mini`, `normal`, `large`|
-|tabStyle|string|underline|set tab style: `underline`, `line`, `topline`, `brick`|
+|destroyInactiveTabPane| Boolean | false | whether destroy inactive tabpane when change tab|
+|type|string|large|`large` `small` `filter` `brick`|
 
 ### TabPane
 |name|type|default|description|
-|----|------|-|---------------|
-|key|	Object|	|corresponding to activeKey|
-|tab|	String|	|current tab's title corresponding to current tabPane|
+|----|----|-------|-----------|
+|key| Object | |corresponding to activeKey|
+|tab| String | |current tab's title corresponding to current tabPane|

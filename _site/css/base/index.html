@@ -7,88 +7,31 @@
 		}
 		if (t && t !== W.theme) {
 			W.theme = t;
-			D.getElementById('J_ThemeStyle').setAttribute('href', '//g-assets.daily.taobao.net/uxcore/uxcore-kuma/2.0.4/' + t + '.min.css');
+			D.getElementById('J_ThemeStyle').setAttribute('href', '//g-assets.daily.taobao.net/uxcore/uxcore-kuma/2.0.5/' + t + '.min.css');
+			D.getElementById('J_ThemeSiteStyle').setAttribute('href', '/static/style/' + t + '.css');
 		}
 	}	
 }(window, document, Modernizr));</script><!--[if lt IE 9]><script src="/static/respond.min.js"></script><![endif]--><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/latest/react-with-addons.js,react/latest/react-dom.min.js,rangy/1.3.0/rangy-core.min.js,jquery/1.11.3/jquery.min.js"></script><script src="/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li class="current"><a href="/css/base">Base<small>基础样式</small></a></li><li><a href="/css/button">Button<small>按钮</small></a></li><li><a href="/css/card">Card<small>卡片面板</small></a></li><li><a href="/css/checkbox">Checkbox<small>单/复选框</small></a></li><li><a href="/css/filter">Filter<small>条件</small></a></li><li><a href="/css/iconfont">iconfont<small>KUMA字体</small></a></li><li><a href="/css/layout">Layout<small>布局</small></a></li><li><a href="/css/steps">Steps<small>进度条</small></a></li><li><a href="/css/table">Table<small>表格</small></a></li><li><a href="/css/tip">Tip<small>带图标提示文案</small></a></li></ul></aside><article class="site-content"><div id="J-markdown" class="markdown"><h2 id="基础样式-amp-reset">基础样式 &amp; reset</h2><blockquote>
-<p>默认基础样式，包括统一浏览器样式margin和padding等位置问题，清除浮动，设置默认排版样式等等。</p>
-</blockquote>
-<ul>
-<li>内外边距通常让各个浏览器样式的表现位置不同，所以我们会重新Reset部分元素的边距样式。</li>
-</ul>
-<div class="highlight"><pre><code class="css"><span class="hljs-tag">body</span>, <span class="hljs-tag">div</span>, <span class="hljs-tag">dl</span>, <span class="hljs-tag">dt</span>, <span class="hljs-tag">dd</span>, <span class="hljs-tag">ul</span>, <span class="hljs-tag">ol</span>, <span class="hljs-tag">li</span>, <span class="hljs-tag">h1</span>, <span class="hljs-tag">h2</span>, <span class="hljs-tag">h3</span>, <span class="hljs-tag">h4</span>, <span class="hljs-tag">h5</span>, <span class="hljs-tag">h6</span>, <span class="hljs-tag">pre</span>, <span class="hljs-tag">code</span>, <span class="hljs-tag">form</span>, <span class="hljs-tag">fieldset</span>, <span class="hljs-tag">legend</span>, <span class="hljs-tag">input</span>, <span class="hljs-tag">textarea</span>, <span class="hljs-tag">p</span>, <span class="hljs-tag">blockquote</span>, <span class="hljs-tag">th</span>, <span class="hljs-tag">td</span>, <span class="hljs-tag">hr</span>, <span class="hljs-tag">button</span>, <span class="hljs-tag">article</span>, <span class="hljs-tag">aside</span>, <span class="hljs-tag">details</span>, <span class="hljs-tag">figcaption</span>, <span class="hljs-tag">figure</span>, <span class="hljs-tag">footer</span>, <span class="hljs-tag">header</span>, <span class="hljs-tag">hgroup</span>, <span class="hljs-tag">menu</span>, <span class="hljs-tag">nav</span>, <span class="hljs-tag">section</span> <span class="hljs-rules">{
-  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
-}</span></code></pre></div><ul>
-<li>标题排版自定义默认样式</li>
-</ul>
-<div class="highlight"><pre><code class="css"><span class="hljs-tag">h1</span>, <span class="hljs-tag">h2</span>, <span class="hljs-tag">h3</span>, <span class="hljs-tag">h4</span>, <span class="hljs-tag">h5</span>, <span class="hljs-tag">h6</span> <span class="hljs-rules">{
-  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> <span class="hljs-number">500</span></span></span>;
-}</span></code></pre></div><ul>
-<li>重设 HTML5 标签</li>
-</ul>
-<div class="highlight"><pre><code class="css"><span class="hljs-tag">article</span>, <span class="hljs-tag">aside</span>, <span class="hljs-tag">details</span>, <span class="hljs-tag">figcaption</span>, <span class="hljs-tag">figure</span>, <span class="hljs-tag">footer</span>, <span class="hljs-tag">header</span>, <span class="hljs-tag">hgroup</span>, <span class="hljs-tag">menu</span>, <span class="hljs-tag">nav</span>, <span class="hljs-tag">section</span> <span class="hljs-rules">{
-  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
-}</span></code></pre></div><ul>
-<li>去掉各Table cell的边距并让其边重合(塌陷),表格线条细条化</li>
-</ul>
-<div class="highlight"><pre><code class="css"><span class="hljs-tag">table</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">border-collapse</span>:<span class="hljs-value"> collapse</span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">border-spacing</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
-}</span></code></pre></div><ul>
-<li>解决ie下<code>th</code>不继承<code>text-align</code></li>
-</ul>
-<div class="highlight"><pre><code class="css"><span class="hljs-tag">th</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> inherit</span></span>;
-}</span></code></pre></div><ul>
-<li>去除图片、表单元素等的默认边框</li>
-</ul>
-<div class="highlight"><pre><code class="css"><span class="hljs-tag">fieldset</span>,<span class="hljs-tag">img</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
-}</span></code></pre></div><ul>
-<li>去掉列表前的默认标识符号, li会继承</li>
-</ul>
-<div class="highlight"><pre><code class="css"><span class="hljs-tag">ol</span>,<span class="hljs-tag">ul</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">list-style</span>:<span class="hljs-value">none</span></span>;
-}</span></code></pre></div><ul>
-<li>常用统一上标和下标元素时默认样式</li>
-</ul>
-<div class="highlight"><pre><code class="css"><span class="hljs-tag">sub</span>, <span class="hljs-tag">sup</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">75%</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>; <span class="hljs-rule"><span class="hljs-attribute">vertical-align</span>:<span class="hljs-value"> baseline</span></span>;
-}</span>
-<span class="hljs-tag">sup</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> -<span class="hljs-number">0.5em</span></span></span>; }</span>
-<span class="hljs-tag">sub</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">bottom</span>:<span class="hljs-value"> -<span class="hljs-number">0.25em</span></span></span>; }</span></code></pre></div><ul>
-<li>默认a标签链接的:link和:hover状态默认样式</li>
-</ul>
-<div class="highlight"><pre><code class="css"><span class="hljs-tag">a</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#288df0</span></span></span>;
-}</span>
-
-<span class="hljs-tag">a</span><span class="hljs-pseudo">:hover</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value"> underline</span></span>;
-}</span></code></pre></div><ul>
-<li>默认不显示下划线</li>
-</ul>
-<div class="highlight"><pre><code class="css"><span class="hljs-tag">ins</span>,<span class="hljs-tag">a</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value">none</span></span>;
-}</span></code></pre></div><ul>
-<li>部分tag的字体设置</li>
-</ul>
-<div class="highlight"><pre><code class="css"><span class="hljs-tag">code</span>,
-<span class="hljs-tag">kbd</span>,
-<span class="hljs-tag">pre</span>,
-<span class="hljs-tag">samp</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> monospace, serif</span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">1em</span></span></span>;
-}</span></code></pre></div><ul>
-<li>常用的全局属性列表</li>
-</ul>
-<div class="highlight"><pre><code class="css"><span class="hljs-comment">/*配合JS交互的隐藏*/</span>
+})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li class="current"><a href="/css/base">Base<small>基础样式</small></a></li><li><a href="/css/button">Button<small>按钮</small></a></li><li><a href="/css/checkbox">Checkbox<small>单/复选框</small></a></li><li><a href="/css/filter">Filter<small>筛选</small></a></li><li><a href="/css/iconfont">iconfont<small>KUMA字体</small></a></li><li><a href="/css/layout">Layout<small>布局</small></a></li><li><a href="/css/steps">Steps<small>进度条</small></a></li><li><a href="/css/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><div id="J-markdown" class="markdown"><h2 id="字体">字体</h2><div class="nico-insert-code"><div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum culpa iste, sequi praesentium, officia dolorem quas incidunt? Sunt reprehenderit quidem fugit quis officiis ad. Tempora possimus necessitatibus quas facere maiores.</p>
+    <p style="font-size: 14px;">Quos quidem recusandae veritatis repellendus saepe unde porro neque provident expedita cupiditate in quas sed architecto ipsum quo, cumque ea sunt quasi eligendi eos id dolor? Officia ex, aperiam sequi.</p>
+    <p style="font-size: 16px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum culpa amet, quis dignissimos voluptatibus iste ratione repellendus inventore similique rem labore nihil perspiciatis, sapiente quam expedita, beatae, officiis. Quae, molestiae!</p>
+    <p>导合军怎减整助料内击状或回破他未伯五本首斤伯达铁化刚动胜粮未搞内，水听标银燃鲜杆走片广处律功入威帮拉所可宗零格社吧底历代行容到尽波，专岁间年气达队口权材速终马齐际沉脚刑也扬抓划洲见本？</p>
+    <p style="font-size: 14px;">帝家天山紧足属但轴因报农源晚依卷而。绝谈计视体沿清掌力批传处旧误众专身力创握给学裂龙伯早胶约党。</p>
+    <p style="font-size: 16px;">草公该虽稳怕现称上级江，率村破爱球乱条江剧除法大粒联歌管饭公代种广热况电谈孩研含时变及日及，板牛井急苏触培脚武位再节国火座备？</p>
+</div></div><div class="highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum culpa iste, sequi praesentium, officia dolorem quas incidunt? Sunt reprehenderit quidem fugit quis officiis ad. Tempora possimus necessitatibus quas facere maiores.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"font-size: 14px;"</span>&gt;</span>Quos quidem recusandae veritatis repellendus saepe unde porro neque provident expedita cupiditate in quas sed architecto ipsum quo, cumque ea sunt quasi eligendi eos id dolor? Officia ex, aperiam sequi.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"font-size: 16px;"</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum culpa amet, quis dignissimos voluptatibus iste ratione repellendus inventore similique rem labore nihil perspiciatis, sapiente quam expedita, beatae, officiis. Quae, molestiae!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>导合军怎减整助料内击状或回破他未伯五本首斤伯达铁化刚动胜粮未搞内，水听标银燃鲜杆走片广处律功入威帮拉所可宗零格社吧底历代行容到尽波，专岁间年气达队口权材速终马齐际沉脚刑也扬抓划洲见本？<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"font-size: 14px;"</span>&gt;</span>帝家天山紧足属但轴因报农源晚依卷而。绝谈计视体沿清掌力批传处旧误众专身力创握给学裂龙伯早胶约党。<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"font-size: 16px;"</span>&gt;</span>草公该虽稳怕现称上级江，率村破爱球乱条江剧除法大粒联歌管饭公代种广热况电谈孩研含时变及日及，板牛井急苏触培脚武位再节国火座备？<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h2 id="链接">链接</h2><div class="nico-insert-code"><a href="http://ux.alibaba.net/" class="link-demo">This is a link</a><br/>
+<a href="http://ux.alibaba.net/" class="link-demo">这是一个链接</a></div><div class="highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://ux.alibaba.net/"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-demo"</span>&gt;</span>This is a link<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://ux.alibaba.net/"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link-demo"</span>&gt;</span>这是一个链接<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></code></pre></div><h2 id="常用的全局属性列表">常用的全局属性列表</h2><div class="highlight"><pre><code class="css"><span class="hljs-comment">/*配合JS交互的隐藏*/</span>
 <span class="hljs-class">.fn-hide</span> <span class="hljs-rules">{
     <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">none</span></span>;
 }</span>
@@ -121,10 +64,7 @@
 <span class="hljs-comment">/*chrome下字体过小的问题*/</span>
 <span class="hljs-class">.fn-webkit-adjust</span> <span class="hljs-rules">{
     <span class="hljs-rule"><span class="hljs-attribute">-webkit-text-size-adjust</span>:<span class="hljs-value"> none</span></span>;
-}</span></code></pre></div><ul>
-<li>清除浮动类</li>
-</ul>
-<blockquote>
+}</span></code></pre></div><h2 id="清除浮动类">清除浮动类</h2><blockquote>
 <p>当使用float属性来改变样式时，经常会出现兼容性问题；所以根据经验当操作float属性时要学会适当使用<code>fn-clear</code>样式。</p>
 </blockquote>
 <div class="highlight"><pre><code class="css"><span class="hljs-class">.fn-clear</span><span class="hljs-pseudo">:after</span> <span class="hljs-rules">{
@@ -144,7 +84,7 @@
 </div></div><div class="highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"parent fn-clear"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fn-left"</span>&gt;</span>child-1<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"fn-right"</span>&gt;</span>child-2<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h3 id="加载指示器">加载指示器</h3><div class="nico-insert-code"><div class="kuma-loading-s"></div>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div><h2 id="加载指示器">加载指示器</h2><div class="nico-insert-code"><div class="kuma-loading-s"></div>
 <br>
 <div class="kuma-loading"></div>
 <br>

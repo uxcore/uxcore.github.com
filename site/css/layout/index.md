@@ -54,12 +54,29 @@
   <div class="col-md-1">.col-md-1</div>
   <div class="col-md-1">.col-md-1</div>
   <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
 </div>
 <div class="kuma-row">
   <div class="col-md-8">.col-md-8</div>
+  <div class="col-md-8">.col-md-8</div>
+  <div class="col-md-4">.col-md-4</div>
   <div class="col-md-4">.col-md-4</div>
 </div>
 <div class="kuma-row">
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
   <div class="col-md-4">.col-md-4</div>
   <div class="col-md-4">.col-md-4</div>
   <div class="col-md-4">.col-md-4</div>
@@ -67,27 +84,7 @@
 <div class="kuma-row">
   <div class="col-md-6">.col-md-6</div>
   <div class="col-md-6">.col-md-6</div>
-</div>
-````
-
-### example: Mobile and desktop
-````html
-<!-- Stack the columns on mobile by making one full-width and the other half-width -->
-<div class="kuma-row">
-  <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
-  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-</div>
-
-<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-<div class="kuma-row">
-  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-</div>
-
-<!-- Columns are always 50% wide, on mobile and desktop -->
-<div class="kuma-row">
-  <div class="col-xs-6">.col-xs-6</div>
-  <div class="col-xs-6">.col-xs-6</div>
+  <div class="col-md-6">.col-md-6</div>
+  <div class="col-md-6">.col-md-6</div>
 </div>
 ````

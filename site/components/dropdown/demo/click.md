@@ -10,6 +10,7 @@
 ````jsx
 const Dropdown = require('uxcore-dropdown');
 const Menu = require('uxcore-menu');
+const Button = require('uxcore-menu');
 
 var menu = <Menu>
   <Menu.Item>
@@ -25,7 +26,7 @@ var menu = <Menu>
 
 ReactDOM.render(
     <Dropdown overlay={menu} trigger={["click"]}>
-        <button className="kuma-button kuma-button-sblue">点击触发</button>
+        <Button>点击触发</Button>
     </Dropdown>,
     document.getElementById('components-dropdown-demo-click')
 );
