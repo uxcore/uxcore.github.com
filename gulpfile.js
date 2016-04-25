@@ -32,27 +32,16 @@ gulp.task('less_index', function(){
 var fs = require('fs');
 
 gulp.task('less_theme', function() {
-    var themeLessFileContent = fs.readFileSync('./style/theme.less', 'utf-8');
-    return  gulp.src(['./style/kuma-base/theme/**.less'])
-                .pipe(inject.append('\n' + themeLessFileContent))
+    return  gulp.src(['./style/theme/**.less'])
                 .pipe(less({
                     plugins: [autoprefix, LessPluginInlineUrls]
                 }))
-                .pipe(minifyCss())
+                .pipe(minifyCss({compatibility: 'ie8'}))
                 .pipe(gulp.dest('./theme/static/style/'));
 })
 
 
-gulp.task('less', ['less_index', 'less_theme'], function(){
-  //   var themeLessFileContent = fs.readFileSync('./style/theme.less', 'utf-8');
-  //   return gulp.src(['./style/kuma/src/kuma.less', './style/kuma/src/theme/*.less'])
-		// .pipe(inject.append('\n' + themeLessFileContent))
-  //       .pipe(less({
-  //           plugins: [autoprefix, LessPluginInlineUrls]
-  //       }))
-  //       .pipe(minifyCss())
-  //       .pipe(gulp.dest('./theme/static/style/'));
-});
+gulp.task('less', ['less_index', 'less_theme'], function(){});
 
 gulp.task('watch', [], function(){
     watch('./style/*.less', batch(function(e, done){

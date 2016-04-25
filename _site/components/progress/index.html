@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/style/index.css"><link id="J_ThemeSiteStyle" rel="stylesheet" href="/static/style/orange.css"><link id="J_ThemeStyle" rel="stylesheet" href="//g.alicdn.com/uxcore/uxcore-kuma/2.0.5/orange.min.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="/static/modernizr.js"></script><script>(function(W, D, M){
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/style/index.css"><link id="J_ThemeSiteStyle" rel="stylesheet" href="/static/style/orange.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="/static/modernizr.js"></script><script>(function(W, D, M){
 	if (M.localstorage) {
 		var t = localStorage.getItem('theme');
 		W.theme = 'orange';
@@ -7,7 +7,6 @@
 		}
 		if (t && t !== W.theme) {
 			W.theme = t;
-			D.getElementById('J_ThemeStyle').setAttribute('href', '//g.alicdn.com/uxcore/uxcore-kuma/2.0.5/' + t + '.min.css');
 			D.getElementById('J_ThemeSiteStyle').setAttribute('href', '/static/style/' + t + '.css');
 		}
 	}	
