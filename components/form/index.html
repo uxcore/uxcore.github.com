@@ -473,7 +473,6 @@ var Demo = (function (_React$Component) {
         key: 'render',
         value: function render() {
             var me = this;
-            console.log(me.state.mode);
             return React.createElement(
                 'div',
                 { className: 'demo-basic' },
@@ -554,7 +553,6 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
 
     render() {
         <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
-        <span class="hljs-built_in">console</span>.log(me.state.mode);
         <span class="hljs-keyword">return</span> (
             <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-basic"</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
@@ -587,8 +585,6 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
 
 ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-mode'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-comp" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-comp">组件通览 (默认值传递)</a></div></div><div class="code-box-demo"><div id="components-form-demo-comp"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
@@ -613,12 +609,9 @@ var NumberInputFormField = Form.NumberInputFormField;
 var DateFormField = Form.DateFormField;
 var CheckboxGroupFormField = Form.CheckboxGroupFormField;
 var CascadeSelectFormField = Form.CascadeSelectFormField;
-var UploadFormField = Form.UploadFormField;
 var OtherFormField = Form.OtherFormField;
 var ButtonGroupFormField = Form.ButtonGroupFormField;
 var EditorFormField = Form.EditorFormField;
-var TableFormField = Form.TableFormField;
-var MentionFormField = Form.MentionFormField;
 
 var CheckboxItem = CheckboxGroupFormField.Item;
 var RadioItem = RadioGroupFormField.Item;
@@ -700,15 +693,8 @@ var Demo = (function (_React$Component) {
             });
         }
     }, {
-        key: 'update',
-        value: function update() {
-            console.log('work');
-            this.forceUpdate();
-        }
-    }, {
         key: 'handleChange',
         value: function handleChange(value, name, pass) {
-            // console.log(value, name, pass);
             if (name == 'a') {
                 this.setState({
                     a: value[name]
@@ -946,7 +932,6 @@ var Demo = (function (_React$Component) {
                             jsxfetchUrl: 'http://suggest.taobao.com/sug',
                             dataType: 'jsonp',
                             beforeFetch: function (data) {
-                                console.log(data);
                                 if (data.q == undefined) {
                                     data.q = "a";
                                 }
@@ -982,15 +967,6 @@ var Demo = (function (_React$Component) {
                             '3'
                         )
                     ),
-                    React.createElement(
-                        FormRow,
-                        null,
-                        React.createElement(UploadFormField, {
-                            jsxname: 'upload',
-                            jsxlabel: '上传',
-                            name: 'file',
-                            url: 'http://test.yanbingbing.com/upload.php' })
-                    ),
                     React.createElement(FormRowTitle, { jsxtitle: '级联类' }),
                     React.createElement(DateFormField, { jsxtype: 'cascade', jsxname: 'casDate', jsxlabel: '级联日期', format: 'yyyy/MM/dd' }),
                     React.createElement(CascadeSelectFormField, {
@@ -1000,7 +976,6 @@ var Demo = (function (_React$Component) {
                     React.createElement(EditorFormField, { jsxname: 'editor',
                         jsxlabel: '富文本编辑器',
                         jsxcontent: '1' }),
-                    React.createElement(TableFormField, _extends({ jsxname: 'dicts', jsxlabel: '薪酬字典' }, renderProps)),
                     React.createElement(
                         ButtonGroupFormField,
                         null,
@@ -1042,12 +1017,9 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
     DateFormField,
     CheckboxGroupFormField,
     CascadeSelectFormField,
-    UploadFormField,
     OtherFormField,
     ButtonGroupFormField,
-    EditorFormField,
-    TableFormField,
-    MentionFormField
+    EditorFormField
 } = Form;
 
 <span class="hljs-keyword">let</span> CheckboxItem = CheckboxGroupFormField.Item;
@@ -1124,13 +1096,7 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
         })
     }
 
-    update() {
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'work'</span>)
-        <span class="hljs-keyword">this</span>.forceUpdate();
-    }
-
     handleChange(value, name, pass) {
-        <span class="hljs-comment">// console.log(value, name, pass);</span>
         <span class="hljs-keyword">if</span> (name == <span class="hljs-string">'a'</span>) {
             <span class="hljs-keyword">this</span>.setState({
                 a: value[name]
@@ -1362,7 +1328,6 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
                          <span class="hljs-attribute">jsxfetchUrl</span>=<span class="hljs-value">"http://suggest.taobao.com/sug"</span>
                          <span class="hljs-attribute">dataType</span>=<span class="hljs-value">"jsonp"</span>
                          <span class="hljs-attribute">beforeFetch</span>=<span class="hljs-value">{function(data)</span> {
-                            <span class="hljs-attribute">console.log</span>(<span class="hljs-attribute">data</span>);
                             <span class="hljs-attribute">if</span> (<span class="hljs-attribute">data.q</span> =<span class="hljs-value">=</span> <span class="hljs-attribute">undefined</span>) {
                                 <span class="hljs-attribute">data.q</span> = "<span class="hljs-attribute">a</span>"
                             }
@@ -1384,13 +1349,6 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
                         <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"3"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
                     <span class="hljs-tag">&lt;/<span class="hljs-title">SelectFormField</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-title">FormRow</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-title">UploadFormField</span>
-                          <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"upload"</span>
-                          <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"上传"</span>
-                          <span class="hljs-attribute">name</span>=<span class="hljs-value">"file"</span>
-                          <span class="hljs-attribute">url</span>=<span class="hljs-value">"http://test.yanbingbing.com/upload.php"</span>/&gt;</span>
-                    <span class="hljs-tag">&lt;/<span class="hljs-title">FormRow</span>&gt;</span>
                     <span class="hljs-tag">&lt;<span class="hljs-title">FormRowTitle</span> <span class="hljs-attribute">jsxtitle</span>=<span class="hljs-value">"级联类"</span>/&gt;</span>
                     <span class="hljs-tag">&lt;<span class="hljs-title">DateFormField</span> <span class="hljs-attribute">jsxtype</span>=<span class="hljs-value">"cascade"</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"casDate"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"级联日期"</span> <span class="hljs-attribute">format</span>=<span class="hljs-value">"yyyy/MM/dd"</span>/&gt;</span>
                     <span class="hljs-tag">&lt;<span class="hljs-title">CascadeSelectFormField</span>
@@ -1401,8 +1359,6 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
                                      <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"富文本编辑器"</span>
                                      <span class="hljs-attribute">jsxcontent</span>=<span class="hljs-value">"1"</span>/&gt;</span>
 
-                    <span class="hljs-tag">&lt;<span class="hljs-title">TableFormField</span> <span class="hljs-attribute">jsxname</span>=<span class="hljs-value">"dicts"</span> <span class="hljs-attribute">jsxlabel</span>=<span class="hljs-value">"薪酬字典"</span> {<span class="hljs-attribute">...renderProps</span>} &gt;</span>
-                    <span class="hljs-tag">&lt;/<span class="hljs-title">TableFormField</span>&gt;</span>
                     <span class="hljs-tag">&lt;<span class="hljs-title">ButtonGroupFormField</span>&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"medium"</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{me.handleClick.bind(me)}</span>&gt;</span>提交<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"medium"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"secondary"</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">"reset"</span>&gt;</span>重置<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
