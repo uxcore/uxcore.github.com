@@ -27,12 +27,9 @@ let {
     DateFormField,
     CheckboxGroupFormField,
     CascadeSelectFormField,
-    UploadFormField,
     OtherFormField,
     ButtonGroupFormField,
-    EditorFormField,
-    TableFormField,
-    MentionFormField
+    EditorFormField
 } = Form;
 
 let CheckboxItem = CheckboxGroupFormField.Item;
@@ -109,13 +106,7 @@ class Demo extends React.Component {
         })
     }
 
-    update() {
-        console.log('work')
-        this.forceUpdate();
-    }
-
     handleChange(value, name, pass) {
-        // console.log(value, name, pass);
         if (name == 'a') {
             this.setState({
                 a: value[name]
@@ -347,7 +338,6 @@ class Demo extends React.Component {
                          jsxfetchUrl="http://suggest.taobao.com/sug"
                          dataType="jsonp"
                          beforeFetch={function(data) {
-                            console.log(data);
                             if (data.q == undefined) {
                                 data.q = "a"
                             }
@@ -369,13 +359,6 @@ class Demo extends React.Component {
                         <Option value="2">2</Option>
                         <Option value="3">3</Option>
                     </SelectFormField>
-                    <FormRow>
-                        <UploadFormField
-                          jsxname="upload"
-                          jsxlabel="上传"
-                          name="file"
-                          url="http://test.yanbingbing.com/upload.php"/>
-                    </FormRow>
                     <FormRowTitle jsxtitle="级联类"/>
                     <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" format="yyyy/MM/dd"/>
                     <CascadeSelectFormField
@@ -386,8 +369,6 @@ class Demo extends React.Component {
                                      jsxlabel="富文本编辑器"
                                      jsxcontent="1"/>
 
-                    <TableFormField jsxname="dicts" jsxlabel="薪酬字典" {...renderProps} >
-                    </TableFormField>
                     <ButtonGroupFormField>
                         <Button size="medium" action="submit" onClick={me.handleClick.bind(me)}>提交</Button>
                         <Button size="medium" type="secondary" action="reset">重置</Button>

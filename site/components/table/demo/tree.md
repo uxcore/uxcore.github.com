@@ -25,7 +25,7 @@ class Demo extends React.Component {
     }
 
       render () {
-        console.log("demo render");
+        
         let me=this;
         // 通过 rowSelection 对象表明需要行选择
         let rowSelection = {
@@ -93,7 +93,7 @@ class Demo extends React.Component {
             },
             showSearch:true,
             renderModel:'tree',
-            fetchParams:'',
+            fetchParams: {},
             fetchUrl: fetchUrl,
             jsxcolumns:columns
         };

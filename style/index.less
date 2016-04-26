@@ -9,12 +9,6 @@ html, body {
 	height: 100%;
 	min-width: 1000px;
 }
-body {
-	font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;
-	 background: @white;
-	 font-size: 13px;
-	 color: #777;
-}
 .head-collapse {
 	@collapse-height: @head-height * 2 / 3;
 	.site-nav {
@@ -329,25 +323,35 @@ body {
 	}
 }
 .markdown {
-	@baseFontSize: 12px;
+	@baseFontSize: 14px;
 	h1, h2, h3, h4, h5, h6 {
-		margin: @g-padding 0;
-		color: #000;
+		margin-top: 1em;
+	    margin-bottom: 16px;
+	    font-weight: bold;
+	    line-height: 1.4
 	}
 	p {
 		margin: @g-padding 0;
+		font-size: 14px;
 	}
 	ul, ol, dl, blockquote, pre, address, fieldset, figure {
-		margin: 1.6em 0;
+		margin: 1em 0;
 	}
 	h1 {
 		font-size: @baseFontSize * 1.5;
+		padding-bottom: 0.3em;
+	    line-height: 1.2;
+	    border-bottom: 1px solid #eee;
 	}
 	h2 {
 		font-size: @baseFontSize * 1.4;
+		padding-bottom: 0.3em;
+	    line-height: 1.225;
+	    border-bottom: 1px solid #eee;
 	}
 	h3 {
 		font-size: @baseFontSize * 1.3;
+		line-height: 1.43
 	}
 	h4 {
 		font-size: @baseFontSize * 1.2;
@@ -366,7 +370,7 @@ body {
 	}
 	blockquote {
 		padding: 5px 0 5px 15px;
-		border-left: 2px solid #ddd;
+		border-left: 5px solid #ddd;
 	}
 	table {
 		width: 100%;

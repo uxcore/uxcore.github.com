@@ -45,7 +45,6 @@ class Demo extends React.Component {
 
     render() {
         let me = this;
-        console.log(me.state.mode);
         return (
             <div className="demo-basic">
                 <style>

@@ -4,57 +4,55 @@
 
 ---
 
-## 0. 学习 React
+## 学习 React
 
 UXCore UI 基于 React.js 开发，如果你没有使用过 React，请先移步 [React 官网](https://facebook.github.io/react/docs/getting-started.html) 学习。
 
-## 1. 获取 UXCore 样式
+
+
+## 获取 UXCore 样式
 
 UXCore 通过 [uxcore-kuma](https://github.com/uxcore/kuma) 项目来统一管理组件的样式
 
-### 1.1 NPM
+### 通过 NPM
 
-```
+```bash
 npm install uxcore-kuma
 ```
 
-### 1.2 CDN
-
-```
-// 以下三个分别对应阿里橙、晴空蓝和夜空靛三种主题，引一者即可。
-http://g.alicdn.com/uxcore/uxcore-kuma/1.1.5/kuma.css
-http://g.alicdn.com/uxcore/uxcore-kuma/1.1.5/blue.css
-http://g.alicdn.com/uxcore/uxcore-kuma/1.1.5/payroll.css
-
-// Iconfont：引入 uxcore-kuma 所需的 iconfont。
-http://alinw.alicdn.com/??platform/common/s/1.1/global/global.css
-
-// For Production
-http://g.alicdn.com/uxcore/uxcore-kuma/1.1.5/kuma.min.css
-http://g.alicdn.com/uxcore/uxcore-kuma/1.1.5/blue.min.css
-http://g.alicdn.com/uxcore/uxcore-kuma/1.1.5/payroll.min.css
+### 通过 CDN
 
 
-```
+>   以下两个分别对应阿里橙、晴空蓝两种主题，引一者即可。  
+>   http://g.alicdn.com/uxcore/uxcore-kuma/2.0.5/orange.css  
+>   http://g.alicdn.com/uxcore/uxcore-kuma/2.0.5/blue.css  
+>     
+>   Iconfont：引入 uxcore-kuma 所需的 iconfont。  
+>   http://alinw.alicdn.com/??platform/common/s/1.1/global/global.css  
+>     
+>   For Production  
+>   http://g.alicdn.com/uxcore/uxcore-kuma/2.0.5/orange.min.css  
+>   http://g.alicdn.com/uxcore/uxcore-kuma/2.0.5/blue.min.css  
 
-## 2. 获取 UXCore React
 
-### 2.1 CDN
+## 获取 UXCore React
 
-```
-http://g.alicdn.com/uxcore/uxcore/0.1.2/uxcore.js
-http://g.alicdn.com/uxcore/uxcore/0.1.2/uxcore.min.js
-```
+### 通过 CDN
+
+
+> http://g.alicdn.com/uxcore/uxcore/0.1.4/uxcore.js
+> http://g.alicdn.com/uxcore/uxcore/0.1.4/uxcore.min.js
+
 
 > CDN 版本的 UXCore，会在全局生成 Uxcore 变量挂载所有组件，如使用 Uxcore.Table 来获取 Table 组件。
 
 > 注意：uxcore.js 并不包括 react.js，在引入 uxcore.js 前，需先在页面引入 react.js 及 react-dom.js。
 
-### 2.2 获取源代码
+### 获取源代码
 
 UXCore 源代码托管在 [Github Uxcore](https://github.com/uxcore) 群组下。为了更好的发展，请不吝送出您的 STAR。
 
-### 2.3 NPM
+### 通过 NPM
 
 UXCore 的每个组件都单独托管在 npm 上，您可以单独安装使用，如：希望引入表格(table) 组件，可以  
 
@@ -67,17 +65,18 @@ UXCore React 组件编写采用了 ES2015 + JSX 的语法，强烈推荐使用 [
 
 ## 3. 组件调用
 
-### 3.1 CDN 引用的方式
+### CDN 引用的方式
+
+#### HTML 代码
 
 ```html  
-
 <!DOCTYPE html>
 <html>
 <head>
 <title>uxcore-demo</title>
 <meta charset="utf-8">
 <meta name="description" content="uxcore-demo">
-<link rel="stylesheet" href="http://g.alicdn.com/uxcore/uxcore-kuma/1.1.5/kuma.css">
+<link rel="stylesheet" href="http://g.alicdn.com/uxcore/uxcore-kuma/2.0.5/orange.css">
 <link rel="stylesheet" type="text/css" href="//g.alicdn.com/??platform/common/s/1.1/global/global.css" charset="utf-8">
 </head>
 <body>
@@ -91,15 +90,16 @@ UXCore React 组件编写采用了 ES2015 + JSX 的语法，强烈推荐使用 [
 <!-- <script src="//g.alicdn.com/uxcore/uxcore-lib/rangy/1.3.0/rangy-core.min.js"></script> -->
 <!-- 使用 Uxcore.Tinymce 或 Uxcore.Form.EditorFormField 时，需要引入 tinymce -->
 <!-- <script src="//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-basic.min.js"></script> -->
-<script src="http://g.alicdn.com/uxcore/uxcore/0.1.2/uxcore.js"></script>
+<script src="http://g.alicdn.com/uxcore/uxcore/0.1.4/uxcore.js"></script>
 
 </body>
 </html>
 
 ```
 
-```js  
+#### JS 代码
 
+```js  
 var Button = Uxcore.Button;
 
 React.render(<Button>Button</Button>, document.getElementById("App"));
