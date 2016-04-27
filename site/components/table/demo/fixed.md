@@ -16,7 +16,7 @@ class Demo extends React.Component {
     }
 
       render () {
-        console.log("demo render");
+        
 
         let columns = [
             //{ dataKey: 'check', title: '复选框', type: 'checkbox'},
