@@ -22,7 +22,7 @@
 
 * getValues(force) 获取目前的 values 和 pass（是否通过检测）。  
 参数：
-    * force `Boolean`: 是否做强制校验，在强制校验的情况下将无视所有 instantValidate 配置。
+    * force `Boolean`: 强制校验或不校验，undefined 时则忽略此配置。
 
 * resetValues() 重置所有的 FormField，如果有默认值则重置为默认值。
 
@@ -109,6 +109,8 @@
 |validateOnBlur|boolean|optional|false|验证是否是在 blur 的时候出发，默认情况是在 change 时触发，此项为 true 后，onChange 的 pass 永远为 true，相对应的 onBlur 的 pass 会随之变化|1.2.10|
 |onBlur|function(e, pass)|optional|noop|输入框 blur 时触发，第二个参数为验证是否通过，若 validateOnBlur 为 false，则 pass 永远为 true|1.2.10|
 |onFocus|function(e)|optional|noop|输入框获取焦点时触发|1.2.10|
+|autoTrim|boolean|optional|-|自动去除值两端的空格|1.2.12|
+|inputType|string|optional|'text'|input 的 type，目前支持 "text" 和 "password"|1.2.23|
 
 * 插件：
     * Count，通过 InputFormField.Count 取得，一个内置的计数器，用法如下：
@@ -118,6 +120,7 @@
         <Count total="20">
     </InputFormField>
     ```
+
     * LeftAddon/RightAddon，通过 InputFormField.LeftAddon/InputFormField.RightAddon 取得，给 input 左侧加入自定义的图标或文字，用法如下：
 
     ```javascript
@@ -136,6 +139,13 @@
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|
 |jsxplaceholder|string|optional|""|占位符|
+|validateOnBlur|boolean|optional|false|验证是否是在 blur 的时候出发，默认情况是在 change 时触发，此项为 true 后，onChange 的 pass 永远为 true，相对应的 onBlur 的 pass 会随之变化|1.2.11|
+|onBlur|function(e, pass)|optional|noop|输入框 blur 时触发，第二个参数为验证是否通过，若 validateOnBlur 为 false，则 pass 永远为 true|1.2.11|
+|onFocus|function(e)|optional|noop|输入框获取焦点时触发|1.2.11|
+|autoTrim|boolean|optional|-|自动去除值两端的空格|1.2.12|
+|autosize|boolean|optional|true|根据内容自动撑开(IE8 下无效)|1.3.10|
+
+> 配置 autosize 的同时，还可以通过样式指定 min-height 和 max-height
 
 
 ### RadioGroupFormField
@@ -164,7 +174,20 @@
 |afterFetch|func|optional|-|会传入返回的数据， 将其处理为 jsxdata 的格式并返回|
 |dataType|string|optional|'json'|发送 ajax 请求的类型|
 
-此外，SelectFormField 还支持 [uxcore-select2](https://www.npmjs.com/package/uxcore-select2) 除 onSelect/onDeselect 外的全部属性。
+> 此外，SelectFormField 还支持 [uxcore-select2](https://www.npmjs.com/package/uxcore-select2) 除 onSelect/onDeselect 外的全部属性。
+
+### SearchFormField
+
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|advancedOptions|array|optional|-|右侧高级选项的选择项：格式为`[{value: xxx, text: xxx}]`|
+|advancedConfig|object|optional|-|右侧高级选项的配置，同 `uxcore-select2`|
+|classOptions|array|optional|-|左侧类别选项的选择项：格式为`[{value: xxx, text: xxx}]`|
+|classConfig|object|optional|-|左侧类别选项的配置，同 `uxcore-select2`|
+|tidy|bool|optional|-|精简模式|
+|onIconClick|function(e)|optional|-|点击搜索图标触发回调|
+
+> 该组件继承自 SelectFormField，支持 SelectFormField 的全部 props。
 
 ### CheckboxGroupFormField
 
@@ -203,10 +226,7 @@
 |jsxplaceholder|string|optional|""|占位符|
 |jsxtype|string|optional|""|目前支持 "money", "cnmobile" 和 "card", 提供三种格式化显示的方法。"money"的格式为`123 121 121.213 121`,"cnmobile"的格式为 `86 1565 7263 8223`, "card" 的格式为 `3321 3123 3243 4343`|
 
-### UploadFormField
 
-> 支持 uxcore-uploader 的所有配置项。
-> 具体说明参考：https://github.com/uxcore/uxcore-uploader
 
 ### CascadeSelectFormField
 
@@ -220,14 +240,10 @@
 
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|
+|placeholder|string|optional|""|占位符|
 |jsxcontent|string|optional|""|由于 tinymce 的默认值传法的特殊性，EditorFormField 的默认值通过此 prop 传入|
 |jsxconfig|object|optional|{}|用户自定义的配置项，tinyMCE 的配置项，官方文档中所有 init 部分的配置在这里完成，详细见 http://www.tinymce.com/wiki.php/Configuration|
 
-
-### GridFormField
-
-> 支持 uxcore-grid 的全部配置项，在 Form 中通常只需要传入 column 来生成配置项，见 Usage 中的使用。
-> 具体说明参考：https://github.com/uxcore/uxcore-grid
 
 ### OtherFormField
 
