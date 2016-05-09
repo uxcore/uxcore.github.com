@@ -14,7 +14,7 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">交互提醒</h3><ul><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">表单及相关</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li class="current"><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">导航</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">布局</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">其它</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">表格</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Form</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>eternalsky</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-form.git" target="_blank">Form</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.3.3</span><span class="description"><i class="fa fa-bookmark"></i>form component for uxcore</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-form-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-basic">基本使用</a></div></div><div class="code-box-demo"><div id="components-form-demo-basic"></div></div><div class="code-box-desc"><p>无需任何绑定，只要插入几个标签，就可以完成一个表格的搭建。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">交互提醒</h3><ul><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">表单及相关</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li class="current"><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">导航</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">布局</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">其它</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">表格</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Form</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>eternalsky</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-form.git" target="_blank">Form</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.3.11</span><span class="description"><i class="fa fa-bookmark"></i>form component for uxcore</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-form-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-basic">基本使用</a></div></div><div class="code-box-demo"><div id="components-form-demo-basic"></div></div><div class="code-box-desc"><p>无需任何绑定，只要插入几个标签，就可以完成一个表格的搭建。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -1376,7 +1376,7 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <h2 id="api">API</h2><h3 id="form">Form</h3><ul>
 <li><p>getValues(force) 获取目前的 values 和 pass（是否通过检测）。<br>参数：</p>
 <ul>
-<li>force <code>Boolean</code>: 是否做强制校验，在强制校验的情况下将无视所有 instantValidate 配置。</li>
+<li>force <code>Boolean</code>: 强制校验或不校验，undefined 时则忽略此配置。</li>
 </ul>
 </li>
 <li><p>resetValues() 重置所有的 FormField，如果有默认值则重置为默认值。</p>
@@ -1640,6 +1640,22 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 <td>输入框获取焦点时触发</td>
 <td>1.2.10</td>
 </tr>
+<tr>
+<td>autoTrim</td>
+<td>boolean</td>
+<td>optional</td>
+<td>-</td>
+<td>自动去除值两端的空格</td>
+<td>1.2.12</td>
+</tr>
+<tr>
+<td>inputType</td>
+<td>string</td>
+<td>optional</td>
+<td>&#39;text&#39;</td>
+<td>input 的 type，目前支持 &quot;text&quot; 和 &quot;password&quot;</td>
+<td>1.2.23</td>
+</tr>
 </tbody>
 </table>
 <ul>
@@ -1679,8 +1695,51 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 <td>&quot;&quot;</td>
 <td>占位符</td>
 </tr>
+<tr>
+<td>validateOnBlur</td>
+<td>boolean</td>
+<td>optional</td>
+<td>false</td>
+<td>验证是否是在 blur 的时候出发，默认情况是在 change 时触发，此项为 true 后，onChange 的 pass 永远为 true，相对应的 onBlur 的 pass 会随之变化</td>
+<td>1.2.11</td>
+</tr>
+<tr>
+<td>onBlur</td>
+<td>function(e, pass)</td>
+<td>optional</td>
+<td>noop</td>
+<td>输入框 blur 时触发，第二个参数为验证是否通过，若 validateOnBlur 为 false，则 pass 永远为 true</td>
+<td>1.2.11</td>
+</tr>
+<tr>
+<td>onFocus</td>
+<td>function(e)</td>
+<td>optional</td>
+<td>noop</td>
+<td>输入框获取焦点时触发</td>
+<td>1.2.11</td>
+</tr>
+<tr>
+<td>autoTrim</td>
+<td>boolean</td>
+<td>optional</td>
+<td>-</td>
+<td>自动去除值两端的空格</td>
+<td>1.2.12</td>
+</tr>
+<tr>
+<td>autosize</td>
+<td>boolean</td>
+<td>optional</td>
+<td>true</td>
+<td>根据内容自动撑开(IE8 下无效)</td>
+<td>1.3.10</td>
+</tr>
 </tbody>
 </table>
+<blockquote>
+<p>配置 autosize 的同时，还可以通过样式指定 min-height 和 max-height</p>
+</blockquote>
 <h3 id="radiogroupformfield">RadioGroupFormField</h3><ul>
 <li>Item：通过 RadioGroupFormField.Item 取得，有两个 props<ul>
 <li>value</li>
@@ -1748,7 +1807,67 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 </tr>
 </tbody>
 </table>
+<blockquote>
 <p>此外，SelectFormField 还支持 <a href="https://www.npmjs.com/package/uxcore-select2">uxcore-select2</a> 除 onSelect/onDeselect 外的全部属性。</p>
+</blockquote>
+<h3 id="searchformfield">SearchFormField</h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>advancedOptions</td>
+<td>array</td>
+<td>optional</td>
+<td>-</td>
+<td>右侧高级选项的选择项：格式为<code>[{value: xxx, text: xxx}]</code></td>
+</tr>
+<tr>
+<td>advancedConfig</td>
+<td>object</td>
+<td>optional</td>
+<td>-</td>
+<td>右侧高级选项的配置，同 <code>uxcore-select2</code></td>
+</tr>
+<tr>
+<td>classOptions</td>
+<td>array</td>
+<td>optional</td>
+<td>-</td>
+<td>左侧类别选项的选择项：格式为<code>[{value: xxx, text: xxx}]</code></td>
+</tr>
+<tr>
+<td>classConfig</td>
+<td>object</td>
+<td>optional</td>
+<td>-</td>
+<td>左侧类别选项的配置，同 <code>uxcore-select2</code></td>
+</tr>
+<tr>
+<td>tidy</td>
+<td>bool</td>
+<td>optional</td>
+<td>-</td>
+<td>精简模式</td>
+</tr>
+<tr>
+<td>onIconClick</td>
+<td>function(e)</td>
+<td>optional</td>
+<td>-</td>
+<td>点击搜索图标触发回调</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>该组件继承自 SelectFormField，支持 SelectFormField 的全部 props。</p>
+</blockquote>
 <h3 id="checkboxgroupformfield">CheckboxGroupFormField</h3><table>
 <thead>
 <tr>
@@ -1844,10 +1963,6 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 </tr>
 </tbody>
 </table>
-<h3 id="uploadformfield">UploadFormField</h3><blockquote>
-<p>支持 uxcore-uploader 的所有配置项。
-具体说明参考：<a href="https://github.com/uxcore/uxcore-uploader">https://github.com/uxcore/uxcore-uploader</a></p>
-</blockquote>
 <h3 id="cascadeselectformfield">CascadeSelectFormField</h3><table>
 <thead>
 <tr>
@@ -1894,6 +2009,13 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 </thead>
 <tbody>
 <tr>
+<td>placeholder</td>
+<td>string</td>
+<td>optional</td>
+<td>&quot;&quot;</td>
+<td>占位符</td>
+</tr>
+<tr>
 <td>jsxcontent</td>
 <td>string</td>
 <td>optional</td>
@@ -1909,10 +2031,6 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 </tr>
 </tbody>
 </table>
-<h3 id="gridformfield">GridFormField</h3><blockquote>
-<p>支持 uxcore-grid 的全部配置项，在 Form 中通常只需要传入 column 来生成配置项，见 Usage 中的使用。
-具体说明参考：<a href="https://github.com/uxcore/uxcore-grid">https://github.com/uxcore/uxcore-grid</a></p>
-</blockquote>
 <h3 id="otherformfield">OtherFormField</h3><blockquote>
 <p>OtherFormField 是一个特殊的 FormField，它用来和其他 FormField 一起完成布局（比如在一行排列等），如果需要一些装饰类的东西，可以以子元素的形式传入到这个 Field 里。
 他也可以用于布局中的占位。 </p>
