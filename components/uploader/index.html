@@ -14,14 +14,83 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">交互提醒</h3><ul><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">表单及相关</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li class="current"><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">导航</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">工具</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">布局</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">其它</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">表格</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Uploader</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>onbing</span><span class="github"><i class="fa fa-github"></i><a href="ssh://git@github.com/uxcore/uxcore-uploader.git" target="_blank">Uploader</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.3.5</span><span class="description"><i class="fa fa-bookmark"></i>uxcore-uploader component for react</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-uploader-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-basic">基本用法</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-basic"></div></div><div class="code-box-desc"><p>基本用法。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">交互提醒</h3><ul><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">表单及相关</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li class="current"><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">导航</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">工具</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">布局</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">其它</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">表格</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Uploader</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>onbing</span><span class="github"><i class="fa fa-github"></i><a href="ssh://git@github.com/uxcore/uxcore-uploader.git" target="_blank">Uploader</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.4.1</span><span class="description"><i class="fa fa-bookmark"></i>uxcore-uploader component for react</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-uploader-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-basic">基本用法</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-basic"></div></div><div class="code-box-desc"><p>基本用法。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Uploader = require('uxcore-uploader');
 
-ReactDOM.render(React.createElement(Uploader, { multiple: false, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Uploader = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
+var Demo1 = (function (_React$Component) {
+    _inherits(Demo1, _React$Component);
+
+    function Demo1(props) {
+        _classCallCheck(this, Demo1);
+
+        _get(Object.getPrototypeOf(Demo1.prototype), 'constructor', this).call(this, props);
+        this.state = {
+            fileList: []
+        };
+    }
+
+    _createClass(Demo1, [{
+        key: 'handleChange',
+        value: function handleChange(fileList) {
+            this.setState({
+                fileList: fileList
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return React.createElement(Uploader, { autoPending: false,
+                multiple: false,
+                isOnlyImg: false,
+                fileList: this.state.fileList,
+                onChange: this.handleChange.bind(this),
+                name: 'file',
+                url: 'http://eternalsky.me:8122/file/upload',
+                locale: 'en' });
+        }
+    }]);
+
+    return Demo1;
+})(React.Component);
+
+ReactDOM.render(React.createElement(Demo1, null), document.getElementById('components-uploader-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Uploader = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo1</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    constructor(props) {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            fileList: []
+        }
+    }
+
+    handleChange(fileList) {
+        <span class="hljs-keyword">this</span>.setState({
+            fileList: fileList
+        })
+    }
+    render() {
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Uploader</span> <span class="hljs-attribute">autoPending</span>=<span class="hljs-value">{false}</span> 
+                    <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{false}</span> 
+                    <span class="hljs-attribute">isOnlyImg</span>=<span class="hljs-value">{false}</span>
+                    <span class="hljs-attribute">fileList</span>=<span class="hljs-value">{this.state.fileList}</span>
+                    <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.handleChange.bind(this)}</span> 
+                    <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> 
+                    <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://eternalsky.me:8122/file/upload'</span> 
+                    <span class="hljs-attribute">locale</span>=<span class="hljs-value">"en"</span> /&gt;</span>
+    }
+}
 
 ReactDOM.render(
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Uploader</span> <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{false}</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>,
+    <span class="hljs-tag">&lt;<span class="hljs-title">Demo1</span> /&gt;</span>,
     document.getElementById('components-uploader-demo-basic')
 );</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-tips" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-tips">附带提示文字</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-tips"></div></div><div class="code-box-desc"><p>附带提示文字。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><style>
 .tips {
@@ -45,43 +114,315 @@ ReactDOM.render(
    <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value">normal</span></span>;
 }</span></code></pre></div><script>(function(){'use strict';
 
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var Uploader = require('uxcore-uploader');
 
-var tips = React.createElement(
-  'span',
-  { className: 'tips' },
-  '限制0.5M以内',
-  React.createElement(
-    'em',
-    null,
-    '（支持格式：.doc; .docx; .xls; .xlsx）'
-  )
-);
+var Demo1 = (function (_React$Component) {
+    _inherits(Demo1, _React$Component);
 
-ReactDOM.render(React.createElement(Uploader, { tips: tips, name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-tips'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Uploader = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
+    function Demo1(props) {
+        _classCallCheck(this, Demo1);
 
-<span class="hljs-keyword">const</span> tips = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"tips"</span>&gt;</span>限制0.5M以内<span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>（支持格式：.doc; .docx; .xls; .xlsx）<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>;</span>
+        _get(Object.getPrototypeOf(Demo1.prototype), 'constructor', this).call(this, props);
+        this.state = {
+            fileList: []
+        };
+    }
+
+    _createClass(Demo1, [{
+        key: 'handleChange',
+        value: function handleChange(fileList) {
+            this.setState({
+                fileList: fileList
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var tips = React.createElement(
+                'span',
+                { className: 'tips' },
+                '限制0.5M以内',
+                React.createElement(
+                    'em',
+                    null,
+                    '（支持格式：.doc; .docx; .xls; .xlsx）'
+                )
+            );
+            return React.createElement(Uploader, { autoPending: false,
+                multiple: false,
+                isOnlyImg: false,
+                tips: tips,
+                fileList: this.state.fileList,
+                onChange: this.handleChange.bind(this),
+                name: 'file',
+                url: 'http://eternalsky.me:8122/file/upload',
+                locale: 'en' });
+        }
+    }]);
+
+    return Demo1;
+})(React.Component);
+
+ReactDOM.render(React.createElement(Demo1, null), document.getElementById('components-uploader-demo-tips'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Uploader = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo1</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    constructor(props) {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            fileList: []
+        }
+    }
+
+    handleChange(fileList) {
+        <span class="hljs-keyword">this</span>.setState({
+            fileList: fileList
+        })
+    }
+    render() {
+         <span class="hljs-keyword">const</span> tips = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"tips"</span>&gt;</span>限制0.5M以内<span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>（支持格式：.doc; .docx; .xls; .xlsx）<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>;</span>
+         <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Uploader</span> <span class="hljs-attribute">autoPending</span>=<span class="hljs-value">{false}</span> 
+                    <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{false}</span> 
+                    <span class="hljs-attribute">isOnlyImg</span>=<span class="hljs-value">{false}</span>
+                    <span class="hljs-attribute">tips</span>=<span class="hljs-value">{tips}</span>
+                    <span class="hljs-attribute">fileList</span>=<span class="hljs-value">{this.state.fileList}</span>
+                    <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.handleChange.bind(this)}</span> 
+                    <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> 
+                    <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://eternalsky.me:8122/file/upload'</span> 
+                    <span class="hljs-attribute">locale</span>=<span class="hljs-value">"en"</span> /&gt;</span>
+    }
+}
 
 ReactDOM.render(
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Uploader</span> <span class="hljs-attribute">tips</span>=<span class="hljs-value">{tips}</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>,
+    <span class="hljs-tag">&lt;<span class="hljs-title">Demo1</span> /&gt;</span>,
       document.getElementById('components-uploader-demo-tips')
 );</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-image" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-image">图片上传</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-image"></div></div><div class="code-box-desc"><p>图片上传。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
-var Uploader = require('uxcore-uploader');
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-ReactDOM.render(React.createElement(Uploader, { multiple: false, accept: 'images', name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-image'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Uploader = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Uploader = require('uxcore-uploader');
+var Button = require('uxcore-button');
+
+var Demo3 = (function (_React$Component) {
+    _inherits(Demo3, _React$Component);
+
+    function Demo3(props) {
+        _classCallCheck(this, Demo3);
+
+        _get(Object.getPrototypeOf(Demo3.prototype), 'constructor', this).call(this, props);
+        this.fileList = [{
+            response: {
+                url: 'http://gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg',
+                name: '测试用',
+                canRemove: false
+            }
+        }, {
+            response: {
+                url: 'http://gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg',
+                name: '测试用'
+            }
+        }];
+        this.state = {
+            fileList: this.fileList
+        };
+    }
+
+    _createClass(Demo3, [{
+        key: 'handleChange',
+        value: function handleChange(fileList) {
+            var me = this;
+            console.log(fileList);
+            me.setState({
+                fileList: fileList
+            });
+        }
+    }, {
+        key: 'reset',
+        value: function reset() {
+            var me = this;
+            me.setState({
+                fileList: me.fileList
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(Uploader, { fileList: this.state.fileList,
+                    autoPending: false,
+                    multiple: true,
+                    isOnlyImg: true,
+                    accept: 'images',
+                    name: 'file',
+                    url: 'http://eternalsky.me:8122/file/upload',
+                    onCancel: function (file) {
+                        console.log(file);
+                    },
+                    onChange: this.handleChange.bind(this) }),
+                React.createElement(
+                    Button,
+                    { type: 'outline', onClick: this.reset.bind(this) },
+                    '重置fileList'
+                )
+            );
+        }
+    }]);
+
+    return Demo3;
+})(React.Component);
+
+ReactDOM.render(React.createElement(Demo3, null), document.getElementById('components-uploader-demo-image'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Uploader = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
+<span class="hljs-keyword">const</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo3</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    constructor(props) {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.fileList = [
+            {
+                response: {
+                    url: <span class="hljs-string">'http://gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg'</span>, 
+                    name: <span class="hljs-string">'测试用'</span>,
+                    canRemove: <span class="hljs-literal">false</span>
+                }
+            },
+            {
+                response: {
+                    url: <span class="hljs-string">'http://gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg'</span>, 
+                    name: <span class="hljs-string">'测试用'</span>
+                }
+            }
+        ]
+        <span class="hljs-keyword">this</span>.state = {
+            fileList: <span class="hljs-keyword">this</span>.fileList
+        }
+    }
+    handleChange(fileList) {
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        <span class="hljs-built_in">console</span>.log(fileList);
+        me.setState({
+            fileList: fileList
+        });
+    }
+
+    reset() {
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+        me.setState({
+            fileList: me.fileList
+        })
+    }
+
+    render() {
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Uploader</span> <span class="hljs-attribute">fileList</span>=<span class="hljs-value">{this.state.fileList}</span> 
+                    <span class="hljs-attribute">autoPending</span>=<span class="hljs-value">{false}</span> 
+                    <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{true}</span> 
+                    <span class="hljs-attribute">isOnlyImg</span>=<span class="hljs-value">{true}</span> 
+                    <span class="hljs-attribute">accept</span>=<span class="hljs-value">"images"</span> 
+                    <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> 
+                    <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://eternalsky.me:8122/file/upload'</span>
+                    <span class="hljs-attribute">onCancel</span>=<span class="hljs-value">{</span> <span class="hljs-attribute">function</span>(<span class="hljs-attribute">file</span>) { <span class="hljs-attribute">console.log</span>(<span class="hljs-attribute">file</span>) }} 
+                    <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.handleChange.bind(this)}</span> /&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"outline"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.reset.bind(this)}</span>&gt;</span>重置fileList<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    }
+}
+
 
 ReactDOM.render((
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Uploader</span> <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{false}</span> <span class="hljs-attribute">accept</span>=<span class="hljs-value">"images"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Demo3</span> /&gt;</span>
 )</span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'components-uploader-demo-image'</span>));</code></pre></div></div></div><div id="code-box-components-uploader-demo-video" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-video">视频上传</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-video"></div></div><div class="code-box-desc"><p>视频上传。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var Uploader = require('uxcore-uploader');
 
-ReactDOM.render(React.createElement(Uploader, { multiple: false, accept: 'videos', name: 'file', url: 'http://test.yanbingbing.com/upload.php' }), document.getElementById('components-uploader-demo-video'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Uploader = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
+var Demo1 = (function (_React$Component) {
+    _inherits(Demo1, _React$Component);
 
-ReactDOM.render((
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Uploader</span> <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{false}</span> <span class="hljs-attribute">accept</span>=<span class="hljs-value">"videos"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
-)</span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'components-uploader-demo-video'</span>));</code></pre></div></div></div><div id="code-box-components-uploader-demo-multi" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-multi">多文件</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-multi"></div></div><div class="code-box-desc"><p>多文件。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+    function Demo1(props) {
+        _classCallCheck(this, Demo1);
+
+        _get(Object.getPrototypeOf(Demo1.prototype), 'constructor', this).call(this, props);
+        this.state = {
+            fileList: []
+        };
+    }
+
+    _createClass(Demo1, [{
+        key: 'handleChange',
+        value: function handleChange(fileList) {
+            this.setState({
+                fileList: fileList
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return React.createElement(Uploader, { autoPending: false,
+                accept: 'videos',
+                multiple: false,
+                isOnlyImg: false,
+                fileList: this.state.fileList,
+                onChange: this.handleChange.bind(this),
+                name: 'file',
+                url: 'http://eternalsky.me:8122/file/upload',
+                locale: 'en' });
+        }
+    }]);
+
+    return Demo1;
+})(React.Component);
+
+ReactDOM.render(React.createElement(Demo1, null), document.getElementById('components-uploader-demo-video'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Uploader = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo1</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    constructor(props) {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            fileList: []
+        }
+    }
+
+    handleChange(fileList) {
+        <span class="hljs-keyword">this</span>.setState({
+            fileList: fileList
+        })
+    }
+    render() {
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Uploader</span> <span class="hljs-attribute">autoPending</span>=<span class="hljs-value">{false}</span>
+                    <span class="hljs-attribute">accept</span>=<span class="hljs-value">"videos"</span>
+                    <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{false}</span> 
+                    <span class="hljs-attribute">isOnlyImg</span>=<span class="hljs-value">{false}</span>
+                    <span class="hljs-attribute">fileList</span>=<span class="hljs-value">{this.state.fileList}</span>
+                    <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.handleChange.bind(this)}</span> 
+                    <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> 
+                    <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://eternalsky.me:8122/file/upload'</span> 
+                    <span class="hljs-attribute">locale</span>=<span class="hljs-value">"en"</span> /&gt;</span>
+    }
+}
+
+ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-title">Demo1</span> /&gt;</span>, document.getElementById('components-uploader-demo-video'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-multi" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-multi">多文件</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-multi"></div></div><div class="code-box-desc"><p>多文件。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Uploader = require('uxcore-uploader');
 
@@ -101,26 +442,93 @@ ReactDOM.render((
     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Dropzoom</span> <span class="hljs-attribute">autoPending</span>=<span class="hljs-value">{false}</span> <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">queueCapcity</span>=<span class="hljs-value">{20}</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://test.yanbingbing.com/upload.php'</span> /&gt;</span>
 )</span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'components-uploader-demo-dropzoom'</span>));</code></pre></div></div></div><div id="code-box-components-uploader-demo-wrap1" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-wrap1">包裹按钮</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-wrap1"></div></div><div class="code-box-desc"><p>包裹按钮。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var Uploader = require('uxcore-uploader');
 var Button = require('uxcore-button');
 
-ReactDOM.render(React.createElement(
-    Uploader,
-    { name: 'file', url: 'http://test.yanbingbing.com/upload.php' },
-    React.createElement(
-        Button,
-        { size: 'large' },
-        '自定义上传按钮'
-    )
-), document.getElementById('components-uploader-demo-wrap1'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Uploader = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
+var Demo1 = (function (_React$Component) {
+    _inherits(Demo1, _React$Component);
+
+    function Demo1(props) {
+        _classCallCheck(this, Demo1);
+
+        _get(Object.getPrototypeOf(Demo1.prototype), 'constructor', this).call(this, props);
+        this.state = {
+            fileList: []
+        };
+    }
+
+    _createClass(Demo1, [{
+        key: 'handleChange',
+        value: function handleChange(fileList) {
+            this.setState({
+                fileList: fileList
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                Uploader,
+                { autoPending: false,
+                    multiple: false,
+                    isOnlyImg: false,
+                    fileList: this.state.fileList,
+                    onChange: this.handleChange.bind(this),
+                    name: 'file',
+                    url: 'http://eternalsky.me:8122/file/upload',
+                    locale: 'en' },
+                React.createElement(
+                    Button,
+                    { size: 'large' },
+                    '自定义上传按钮'
+                )
+            );
+        }
+    }]);
+
+    return Demo1;
+})(React.Component);
+
+ReactDOM.render(React.createElement(Demo1, null), document.getElementById('components-uploader-demo-wrap1'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> Uploader = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-uploader'</span>);
 <span class="hljs-keyword">const</span> Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-button'</span>);
 
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo1</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    constructor(props) {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            fileList: []
+        }
+    }
 
-ReactDOM.render((
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Uploader</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://test.yanbingbing.com/upload.php'</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"large"</span>&gt;</span>自定义上传按钮<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">Uploader</span>&gt;</span>
-)</span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'components-uploader-demo-wrap1'</span>));</code></pre></div></div></div><div id="code-box-components-uploader-demo-wrap2" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-wrap2">包裹区域</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-wrap2"></div></div><div class="code-box-desc"><p>包裹区域。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><style>
+    handleChange(fileList) {
+        <span class="hljs-keyword">this</span>.setState({
+            fileList: fileList
+        })
+    }
+    render() {
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Uploader</span> <span class="hljs-attribute">autoPending</span>=<span class="hljs-value">{false}</span> 
+                    <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{false}</span> 
+                    <span class="hljs-attribute">isOnlyImg</span>=<span class="hljs-value">{false}</span>
+                    <span class="hljs-attribute">fileList</span>=<span class="hljs-value">{this.state.fileList}</span>
+                    <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.handleChange.bind(this)}</span> 
+                    <span class="hljs-attribute">name</span>=<span class="hljs-value">'file'</span> 
+                    <span class="hljs-attribute">url</span>=<span class="hljs-value">'http://eternalsky.me:8122/file/upload'</span> 
+                    <span class="hljs-attribute">locale</span>=<span class="hljs-value">"en"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"large"</span>&gt;</span>自定义上传按钮<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Uploader</span>&gt;</span>
+    }
+}
+
+
+ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-title">Demo1</span> /&gt;</span>, document.getElementById('components-uploader-demo-wrap1'));</span></code></pre></div></div></div><div id="code-box-components-uploader-demo-wrap2" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-uploader-demo-wrap2">包裹区域</a></div></div><div class="code-box-demo"><div id="components-uploader-demo-wrap2"></div></div><div class="code-box-desc"><p>包裹区域。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><style>
 .mydroparea .kuma-icon-uploading {
    font-size: 60px;
    color:#57c5f7;
@@ -157,7 +565,8 @@ ReactDOM.render((
         <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>点击或将文件拖拽到此区域上传<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">Dropzoom</span>&gt;</span>
 )</span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'components-uploader-demo-wrap2'</span>));</code></pre></div></div></div><div id="J-markdown" class="markdown"><p>上传组件, 封装<a href="https://github.com/uxcore/uxcore-uploadcore/">UploadCore</a>核心组件, 作为UI层.</p>
-<h2 id="api">API</h2><h3 id="reset-重置文件队列">reset() 重置文件队列</h3><h2 id="props">Props</h2><table>
+<h2 id="api">API</h2><h3 id="reset">reset()</h3><p>重置文件队列</p>
+<h2 id="props">Props</h2><table>
 <thead>
 <tr>
 <th>name</th>
@@ -317,12 +726,14 @@ ReactDOM.render((
 </tr>
 </tbody>
 </table>
-<h3 id="filelist-的最小格式">fileList 的最小格式</h3><div class="highlight"><pre><code class="javascript">[
+<h3 id="filelist-的最小格式-格式稍显麻烦，是为了-onchange-的返回值可以传回给-filelist">fileList 的最小格式 (格式稍显麻烦，是为了 onChange 的返回值可以传回给 fileList)</h3><div class="highlight"><pre><code class="javascript">[
     {
-        url: xxx,  <span class="hljs-comment">// 文件链接，必填</span>
-        name: xxx, <span class="hljs-comment">// filename，必填 </span>
-        canRemove: <span class="hljs-literal">true</span>, <span class="hljs-comment">// 是否可以删除，可选</span>
-        downloadUrl: <span class="hljs-string">'xxxx'</span>, <span class="hljs-comment">// 下载 URL，可选</span>
+        response: {
+            url: xxx,  <span class="hljs-comment">// 文件链接，必填</span>
+            name: xxx, <span class="hljs-comment">// filename，必填 </span>
+            canRemove: <span class="hljs-literal">true</span>, <span class="hljs-comment">// 是否可以删除，可选</span>
+            downloadUrl: <span class="hljs-string">'xxxx'</span>, <span class="hljs-comment">// 下载 URL，可选</span>
+        }
     }
 ]</code></pre></div><h3 id="events">Events</h3><table>
 <thead>
@@ -362,6 +773,12 @@ ReactDOM.render((
     {
         type: <span class="hljs-string">'list'</span>,
         response: file
+    },
+    <span class="hljs-comment">// 被删除的文件的格式</span>
+    {
+        type: <span class="hljs-string">'delete'</span>,
+        subType: <span class="hljs-string">'list/upload'</span>, <span class="hljs-comment">// 与上面两种类型对应，用于解析 response</span>
+        response: file <span class="hljs-comment">// 与上面的 subType 相对应</span>
     }
 ]</code></pre></div><h3 id="other-events">Other Events</h3><table>
 <thead>
