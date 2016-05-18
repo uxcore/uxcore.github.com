@@ -9,7 +9,26 @@
 ````jsx
 var Calendar = require('uxcore-calendar');
 
+class Demo extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: '2016-01-02'
+        }
+    }
+    onSelect(value) {
+        console.log(value);
+        this.setState({
+            value: value
+        });
+    }
+    render() {
+        return <Calendar value={this.state.value} format="yyyy/MM/dd" onSelect={this.onSelect.bind(this)} />
+    }
+
+}
+
 ReactDOM.render(
-  <Calendar value="2015/01/01" format="yyyy/MM/dd" />
+  <Demo />
 , document.getElementById('components-calendar-demo-formatter'));
 ````

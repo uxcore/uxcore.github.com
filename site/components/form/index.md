@@ -157,9 +157,9 @@
 
 ```javascript
 <RadioGroupFormField>
-    <Item value="1" text="a">
-    <Item value="2" text="b">
-    <Item value="3" text="c">
+    <Item value="1" text="a" />
+    <Item value="2" text="b" />
+    <Item value="3" text="c" />
 </RadioGroupFormField>
 ```
 
@@ -203,9 +203,9 @@
 
 ```javascript
 <CheckboxGroupFormField>
-    <Item value="1" text="a" disabled={true}>
-    <Item value="2" text="b">
-    <Item value="3" text="c">
+    <Item value="1" text="a" disabled={true} />
+    <Item value="2" text="b" />
+    <Item value="3" text="c" />
 </CheckboxGroupFormField>
 ```
 

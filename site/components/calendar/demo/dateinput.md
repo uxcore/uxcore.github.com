@@ -1,13 +1,14 @@
-# 时间选择
+# 显示输入
 
-- order: 4
+- order: 9
 
-准确到秒的时间选择面板。
+可以在输入框中直接修改时间。
 
 ---
 
 ````jsx
 var Calendar = require('uxcore-calendar');
+
 
 class Demo extends React.Component {
     constructor(props) {
@@ -23,13 +24,12 @@ class Demo extends React.Component {
         });
     }
     render() {
-        return <Calendar hasTrigger={true} showTime={true} format="yyyy-MM-dd HH:mm:ss" value={this.state.value} onSelect={this.onSelect.bind(this)} />
+        return <Calendar locale="en-us" value={this.state.value} onSelect={this.onSelect.bind(this)} showDateInput={true}/>
     }
 
 }
 
-
 ReactDOM.render(
   <Demo />
-, document.getElementById('components-calendar-demo-time'));
+, document.getElementById('components-calendar-demo-dateinput'));
 ````

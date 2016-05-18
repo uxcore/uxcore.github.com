@@ -1,13 +1,15 @@
-# 时间选择
+# 月份面板
 
-- order: 4
+- order: 6
 
-准确到秒的时间选择面板。
+直接显示月份面板。
 
 ---
 
 ````jsx
-var Calendar = require('uxcore-calendar');
+let Calendar = require('uxcore-calendar');
+let MonthCalendar = Calendar.MonthCalendar;
+
 
 class Demo extends React.Component {
     constructor(props) {
@@ -23,13 +25,12 @@ class Demo extends React.Component {
         });
     }
     render() {
-        return <Calendar hasTrigger={true} showTime={true} format="yyyy-MM-dd HH:mm:ss" value={this.state.value} onSelect={this.onSelect.bind(this)} />
+        return <MonthCalendar value={this.state.value} onSelect={this.onSelect.bind(this)} />
     }
 
 }
 
-
 ReactDOM.render(
   <Demo />
-, document.getElementById('components-calendar-demo-time'));
+, document.getElementById('components-calendar-demo-month'));
 ````
