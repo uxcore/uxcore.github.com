@@ -5,7 +5,8 @@ var pkg = require('./package');
 
 module.exports = {
     entry: {
-        uxcore: './index.js'
+        uxcore: './index.js',
+        builder: './theme/builder/index.js'
     },
 
     resolve: {
@@ -23,35 +24,30 @@ module.exports = {
         rangy: 'var rangy',
         'react-dom': 'var ReactDOM'
     },
+    
+    resolveLoader: {
+        root: path.join(__dirname, 'node_modules')
+    },
 
     module: {
-        loaders: [{
-
-            test: /\.js(x)*$/,
-            // uxcore以外的modules都不需要经过babel解析
-            exclude: function (path) {
-                var isNpmModule = !!path.match(/node_modules/);
-                var isUxcore = !!path.match(/node_modules\/uxcore/) || !!path.match(/node_modules\/@ali\/uxcore/);
-                return isNpmModule & !isUxcore;
-            },
-            loader: 'babel-loader?stage=1'
-        }, {
-            test: /\.json$/,
-            loader: 'json-loader'
-        // }, {
-        //     test: /\.less$/,
-        //     loader: ExtractTextPlugin.extract(
-        //         'css?sourceMap&-minimize!autoprefixer-loader!less?sourceMap'
-        //     )
-        // }, {
-        //     test: /\.css$/,
-        //     loader: ExtractTextPlugin.extract(
-        //         'css'
-        //     )
-        }, {
-            test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-            loader: 'url?limit=10000&minetype=image/svg+xml'
-        }]
+        loaders: [
+            {
+                test: /\.js(x)*$/,
+                // node_modules目录下都不需要过babel了
+                exclude: function (path) {
+                    var isNpmModule = !!path.match(/node_modules/);
+                    // var isUxcore = !!path.match(/node_modules\/uxcore/) || !!path.match(/node_modules\/@ali\/uxcore/);
+                    return isNpmModule;
+                },
+                loader: 'babel-loader?stage=1'
+            }, {
+                test: /\.json$/,
+                loader: 'json'
+            }, {
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url?limit=10000&minetype=image/svg+xml'
+            }
+        ]
     },
     // plugins: [
     //     new ExtractTextPlugin('[name].css')

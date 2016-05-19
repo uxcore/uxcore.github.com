@@ -33,6 +33,11 @@ exports.site = {
             text: '场景',
             link: '/scene/list/',
             id: 'scene'
+        },
+        {
+            text: 'theme builder',
+            link: '/theme/builder',
+            id: 'scene'
         }
     ],
     features: [
@@ -62,10 +67,12 @@ exports.middlewares = [{
             publicPath: '/static/',
             lazy: true,
             stats: {
+                version: true,
                 hash: false,
                 cached: false,
                 cachedAssets: false,
-                colors: true
+                colors: true,
+                timings: true
             }
         });
         try {
