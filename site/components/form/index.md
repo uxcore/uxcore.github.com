@@ -4,7 +4,7 @@
 - description: stupid form
 - screenshots: example/screenshot.png
 - chinese: 表单
-- subtype: 表单及相关
+- subtype: Form Control
 
 ---
 

@@ -3,7 +3,7 @@
 - category: Components
 - chinese: 文件上传
 - order: 14
-- subtype: 表单及相关
+- subtype: Form Control
 
 ---
 

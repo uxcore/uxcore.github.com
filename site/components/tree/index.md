@@ -3,7 +3,7 @@
 - category: Components
 - chinese: 树形控件
 - order: 10
-- subtype: 导航
+- subtype: Navigation
 
 ---
 

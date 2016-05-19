@@ -1,7 +1,7 @@
 # Validator
 
 - category: Components
-- subtype: 工具
+- subtype: Tool
 - chinese:　基础校验
 
 ---

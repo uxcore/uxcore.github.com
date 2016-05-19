@@ -3,7 +3,7 @@
 - category: Components
 - chinese: 导航菜单
 - order: 18
-- subtype: 导航
+- subtype: Navigation
 
 ---
 

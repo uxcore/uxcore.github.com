@@ -28,6 +28,9 @@ window.UXCORE = {
 	'uxcore-message': require('uxcore-message'),
 	'uxcore-validator': require('uxcore-validator'),
 	'uxcore-pickable': require('uxcore-pickable'),
+	'uxcore-rate': require('uxcore-rate'),
+	'uxcore-switch': require('uxcore-switch'),
+	'uxcore-badge': require('uxcore-badge'),
 	'classnames': require('classnames'),
 	'object-assign': require('object-assign')
 };

@@ -1,7 +1,7 @@
 # Formatter
 
 - category: Components
-- subtype: 工具
+- subtype: Tool
 - chinese:　格式化
 
 ---

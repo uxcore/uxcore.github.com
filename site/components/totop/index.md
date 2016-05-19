@@ -2,7 +2,7 @@
 
 - category: Components
 - chinese: 返回顶部
-- subtype: 导航
+- subtype: Navigation
 
 ---
 

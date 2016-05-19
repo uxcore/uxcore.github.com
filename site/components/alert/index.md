@@ -1,7 +1,7 @@
 # Alert
 
 - category: Components
-- subtype: 交互提醒
+- subtype: Presentation
 - chinese:　警告提示
 
 ---

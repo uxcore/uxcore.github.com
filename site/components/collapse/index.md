@@ -3,7 +3,7 @@
 - category: Components
 - chinese: 折叠面板
 - order: 15
-- subtype: 导航
+- subtype: Navigation
 
 ---
 

@@ -2,9 +2,8 @@
 
 - category: Components
 - chinese: 表格
-- description: uxcore table, will including checkbox, edit text field, column pick etc
 - order: 6
-- subtype: 表格
+- subtype: Matrix
 
 ---
 

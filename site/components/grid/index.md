@@ -4,7 +4,7 @@
 - chinese: 栅格
 - description: uxcore gird, will including checkbox, edit text field, column pick etc
 - order: 1
-- subtype: 布局
+- subtype: Layout
 
 ---
 

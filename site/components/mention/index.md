@@ -3,7 +3,7 @@
 - category: Components
 - chinese: At组件
 - order: 9
-- subtype: 其它
+- subtype: Other
 
 ---
 

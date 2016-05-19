@@ -3,7 +3,7 @@
 - category: Components
 - chinese: 选项卡
 - order: 5
-- subtype: 导航
+- subtype: Navigation
 
 ---
 

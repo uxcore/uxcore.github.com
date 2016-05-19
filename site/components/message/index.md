@@ -1,7 +1,7 @@
 # Message
 
 - category: Components
-- subtype: 交互提醒
+- subtype: Presentation
 - chinese: 全局提醒
 
 ---

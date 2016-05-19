@@ -2,7 +2,7 @@
 
 - category: Components
 - chinese: 面包屑
-- subtype: 导航
+- subtype: Navigation
 
 ---
 
