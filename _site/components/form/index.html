@@ -14,7 +14,7 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">交互提醒</h3><ul><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">表单及相关</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li class="current"><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">导航</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">工具</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">布局</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">其它</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">表格</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Form</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>eternalsky</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-form.git" target="_blank">Form</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.3.11</span><span class="description"><i class="fa fa-bookmark"></i>form component for uxcore</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-form-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-basic">基本使用</a></div></div><div class="code-box-demo"><div id="components-form-demo-basic"></div></div><div class="code-box-desc"><p>无需任何绑定，只要插入几个标签，就可以完成一个表格的搭建。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">交互提醒</h3><ul><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">表单及相关</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li class="current"><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">导航</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">工具</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">布局</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">其它</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">表格</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Form</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>eternalsky</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-form.git" target="_blank">Form</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.4.3</span><span class="description"><i class="fa fa-bookmark"></i>form component for uxcore</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-form-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-basic">基本使用</a></div></div><div class="code-box-demo"><div id="components-form-demo-basic"></div></div><div class="code-box-desc"><p>无需任何绑定，只要插入几个标签，就可以完成一个表格的搭建。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -583,7 +583,195 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
     }
 };
 
-ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-mode'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-comp" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-comp">组件通览 (默认值传递)</a></div></div><div class="code-box-demo"><div id="components-form-demo-comp"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-mode'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-search" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-search">搜索框</a></div></div><div class="code-box-demo"><div id="components-form-demo-search"></div></div><div class="code-box-desc"><p>提供复杂和精简的两种搜索模式。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var classnames = require('classnames');
+var assign = require('object-assign');
+
+var Form = require('uxcore-form');
+
+var Constants = Form.Constants;
+var FormRowTitle = Form.FormRowTitle;
+var FormRow = Form.FormRow;
+var SearchFormField = Form.SearchFormField;
+
+var Demo = (function (_React$Component) {
+    _inherits(Demo, _React$Component);
+
+    function Demo(props) {
+        _classCallCheck(this, Demo);
+
+        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+        this.state = {};
+    }
+
+    _createClass(Demo, [{
+        key: 'render',
+        value: function render() {
+            var me = this;
+
+            var searchOptions = {
+                jsxname: "search",
+                dataType: "jsonp",
+                placeholder: "搜索商品",
+                jsxfetchUrl: "http://suggest.taobao.com/sug",
+                advancedOptions: [{
+                    value: '1',
+                    text: '选项一'
+                }, {
+                    value: '2',
+                    text: '选项二'
+                }],
+                advancedConfig: {
+                    placeholder: '高级选项'
+                },
+                classOptions: [{
+                    value: '1',
+                    text: '类别一'
+                }, {
+                    value: '2',
+                    text: '类别二'
+                }],
+                classConfig: {
+                    placeholder: '类别'
+                },
+                afterFetch: function afterFetch(obj) {
+                    var data = {};
+                    obj.result.forEach(function (item, index) {
+                        data[item[1]] = item[0];
+                    });
+                    return data;
+                },
+                onIconClick: function onIconClick(e) {
+                    console.log(me.refs.form.getValues());
+                }
+            };
+
+            var tidyVer = assign({}, searchOptions, {
+                jsxname: 'tidy',
+                tidy: true,
+                advancedOptions: [],
+                classOptions: []
+            });
+
+            return React.createElement(
+                'div',
+                { className: 'demo' },
+                React.createElement(
+                    Form,
+                    { ref: 'form' },
+                    React.createElement(FormRowTitle, { jsxtitle: '标准搜索' }),
+                    React.createElement(SearchFormField, searchOptions),
+                    React.createElement(FormRowTitle, { jsxtitle: '精简搜索' }),
+                    React.createElement(SearchFormField, tidyVer)
+                )
+            );
+        }
+    }]);
+
+    return Demo;
+})(React.Component);
+
+;
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-form-demo-search'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">'classnames'</span>);
+<span class="hljs-keyword">let</span> assign = <span class="hljs-built_in">require</span>(<span class="hljs-string">'object-assign'</span>);
+
+<span class="hljs-keyword">let</span> Form = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-form'</span>);
+
+<span class="hljs-keyword">let</span> {
+    Constants,
+    FormRowTitle,
+    FormRow,
+    SearchFormField   
+} = Form;
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+
+    constructor(props) {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+        }
+    }
+
+
+    render() {
+        <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+
+        <span class="hljs-keyword">let</span> searchOptions = {
+            jsxname: <span class="hljs-string">"search"</span>, 
+            dataType: <span class="hljs-string">"jsonp"</span>,
+            placeholder: <span class="hljs-string">"搜索商品"</span>, 
+            jsxfetchUrl: <span class="hljs-string">"http://suggest.taobao.com/sug"</span>,
+            advancedOptions: [
+               {
+                   value: <span class="hljs-string">'1'</span>,
+                   text: <span class="hljs-string">'选项一'</span>
+               },
+               {
+                   value: <span class="hljs-string">'2'</span>,
+                   text: <span class="hljs-string">'选项二'</span>
+               }
+            ], 
+            advancedConfig: {
+               placeholder: <span class="hljs-string">'高级选项'</span>
+            },
+            classOptions: [
+               {
+                   value: <span class="hljs-string">'1'</span>,
+                   text: <span class="hljs-string">'类别一'</span>
+               },
+               {
+                   value: <span class="hljs-string">'2'</span>,
+                   text: <span class="hljs-string">'类别二'</span>
+               }
+            ],
+            classConfig: {
+               placeholder: <span class="hljs-string">'类别'</span>
+            },
+            afterFetch: (obj) =&gt; {
+               <span class="hljs-keyword">let</span> data = {};
+               obj.result.forEach((item, index) =&gt; {
+                   data[item[<span class="hljs-number">1</span>]] = item[<span class="hljs-number">0</span>];
+               });
+               <span class="hljs-keyword">return</span> data;
+            },
+            onIconClick: (e) =&gt; {
+              <span class="hljs-built_in">console</span>.log(me.refs.form.getValues());
+            }
+        };
+
+        <span class="hljs-keyword">let</span> tidyVer = assign({}, searchOptions, {
+          jsxname: <span class="hljs-string">'tidy'</span>,
+          tidy: <span class="hljs-literal">true</span>,
+          advancedOptions: [],
+          classOptions: []
+        });
+
+
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Form</span> <span class="hljs-attribute">ref</span>=<span class="hljs-value">"form"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">FormRowTitle</span> <span class="hljs-attribute">jsxtitle</span>=<span class="hljs-value">"标准搜索"</span> /&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">SearchFormField</span> {<span class="hljs-attribute">...searchOptions</span>} /&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">FormRowTitle</span> <span class="hljs-attribute">jsxtitle</span>=<span class="hljs-value">"精简搜索"</span> /&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">SearchFormField</span> {<span class="hljs-attribute">...tidyVer</span>} /&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Form</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>;
+    }
+};
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-search'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-comp" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-comp">组件通览 (默认值传递)</a></div></div><div class="code-box-demo"><div id="components-form-demo-comp"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
