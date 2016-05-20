@@ -33,7 +33,6 @@
 * toggleSubComp(rowData): 使指定的行显示或隐藏二级组件(subComp)。
 
 
-
 ## Props
 
 |Name                |Type                |Require   |Default     |Since Ver. |Note | 
@@ -57,6 +56,7 @@
 |loadingText         |string              |optional  |"loading"   | 1.4.4     |加载数据时的文案|
 |headerHeight        |number              |optional  |40          | -         |表格头部的高度|
 |pageSize            |number              |optional  |10          | -         |每页显示多少条数据|
+|pagerSizeOptions    |array               |optional  |[10,20,30,40] | -       |显示的可选 pageSize|
 |queryKeys           |array               |optional  |[]          | -         |有哪些数据会传递给 subComp|
 |jsxdata             |object              |optional  |-           | -         |在远端数据还没有返回时用作默认数据|
 |fetchUrl            |string              |optional  |""          | -         |表格的数据源|
@@ -110,7 +110,8 @@
 |align           |string            |-         |optional |文字居中方式，默认 'left'|
 |disable         |boolean           |-         |optional |在 type 为 checkbox 时使用，是否禁用 checkbox，优先级高于 isDisable|
 |isDisable       |function(rowData) |1.3.1     |optional |在 tpye 为 checkbox 时使用，为一个回调函数，用于根据 rowData 去判断是否禁用该行的 checkbox|
-|canEdit         |function(rowData) |1.3.3     |optional |在 type 为可编辑表格的类别时使用，为一个回调函数，用于根据 rowData 去判断该行该列是否可以编辑|         
+|canEdit         |function(rowData) |1.3.3     |optional |在 type 为可编辑表格的类别时使用，为一个回调函数，用于根据 rowData 去判断该行该列是否可以编辑|
+|renderChildren  |function          |1.5.0     | -       |在 type 为 select 或 radio 时使用，通过返回 jsx 传入选项。|         
  
 
 

@@ -59,12 +59,16 @@ class Demo extends React.Component {
         let me = this;
         let columns = [
             { dataKey: 'jsxid', title: 'jsxid', width: 80},
-            { dataKey: 'city', editKey: 'cityId',title:'城市', width: 200, type:'select', children: [{id: 'bj', name: '北京'},{id: 'hz', name: '杭州'}].map((item) => {
-                return <Option key={item.id}>{item.name}</Option>
-            }), config: {filterOption: false}},
-            { dataKey: 'name', editKey: 'nameId', title:"姓名", width: 200, type:"radio", children: [{id: 'xiaoli', name: '小李'}, {id: 'xiaowang', name: '小王'}].map((item) => {
-                return <RadioItem key={item.id} text={item.name} value={item.id} />
-            })},  
+            { dataKey: 'city', editKey: 'cityId',title:'城市', width: 200, type:'select', renderChildren: () => {
+                return [{id: 'bj', name: '北京'},{id: 'hz', name: '杭州'}].map((item) => {
+                    return <Option key={item.id}>{item.name}</Option>
+                });
+            }, config: {filterOption: false}},
+            { dataKey: 'name', editKey: 'nameId', title:"姓名", width: 200, type:"radio", renderChildren: () => {
+                return [{id: 'xiaoli', name: '小李'}, {id: 'xiaowang', name: '小王'}].map((item) => {
+                    return <RadioItem key={item.id} text={item.name} value={item.id} />
+                });
+            }},  
             { dataKey: 'email', title: "Email", width: 200,type:"text", rules: {validator: Validator.isEmail, errMsg: ""}},
             { dataKey: 'action1', title: '操作1', width:100, type:"action", actions: [
                     {
@@ -101,7 +105,6 @@ class Demo extends React.Component {
 
 
         let renderProps={
-            // height: 200,
             width: 1000,
             showPager:false,
             fetchParams: {},
@@ -111,8 +114,6 @@ class Demo extends React.Component {
                     me.refs.grid.addEmptyRow();
                 }
             },
-            // fetchUrl:"http://demo.nwux.taobao.net/file/getGridJson.jsonp",
-            // fetchUrl: "http://10.1.159.52:3002/demo/data.json",
             jsxcolumns:columns,
             beforeFetch: (sendData) => {sendData.id = 1; return sendData;},
             processData: (data) => {return data;},
