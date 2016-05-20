@@ -1189,6 +1189,14 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <td>每页显示多少条数据</td>
 </tr>
 <tr>
+<td>pagerSizeOptions</td>
+<td>array</td>
+<td>optional</td>
+<td>[10,20,30,40]</td>
+<td>-</td>
+<td>显示的可选 pageSize</td>
+</tr>
+<tr>
 <td>queryKeys</td>
 <td>array</td>
 <td>optional</td>
@@ -1482,6 +1490,13 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <td>1.3.3</td>
 <td>optional</td>
 <td>在 type 为可编辑表格的类别时使用，为一个回调函数，用于根据 rowData 去判断该行该列是否可以编辑</td>
+</tr>
+<tr>
+<td>renderChildren</td>
+<td>function</td>
+<td>1.5.0</td>
+<td>-</td>
+<td>在 type 为 select 或 radio 时使用，通过返回 jsx 传入选项。</td>
 </tr>
 </tbody>
 </table>
