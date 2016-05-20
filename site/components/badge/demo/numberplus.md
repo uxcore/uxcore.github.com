@@ -6,23 +6,26 @@
 
 ````jsx
 let Badge = require('uxcore-badge');
+let Button = require('uxcore-button');
 
 class Demo extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            show: true,
-            count: 5,
+            count2: 1,
         }
     }
 
-    handleShow() {
+    handlePlus() {
         this.setState({
-            show: !this.state.show
+            count2: this.state.count2 + 1
         });
+    }
+
+    handleMinus() {
         this.setState({
-            count: this.state.count == 5 ? 0 : 5
+            count2: this.state.count2 - 1
         });
     }
 
@@ -32,12 +35,11 @@ class Demo extends React.Component {
                 <Badge count={this.state.count2}>
                     <a href="#" className="head-example"></a>
                 </Badge>
-                <div>
-                    <Button size="small" type="outline" onClick={this.handlePlus.bind(this)} style={{
-                        marginRight: 10
-                    }}>+</Button>
-                    <Button size="small" type="outline" onClick={this.handleMinus.bind(this)}>-</Button>
-                </div>
+                <Button size="small" type="outline" onClick={this.handlePlus.bind(this)} style={{
+                    marginRight: 10,
+                    marginLeft: 20
+                }}>+</Button>
+                <Button size="small" type="outline" onClick={this.handleMinus.bind(this)}>-</Button>
             </div>
         );
     }
@@ -45,5 +47,16 @@ class Demo extends React.Component {
 
 ReactDOM.render(
     <Demo />
-, document.getElementById('components-badge-demo-basic'));
+, document.getElementById('components-badge-demo-numberplus'));
+/* JS END CSS START*/
+````
+
+````css
+.head-example {
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+    display: inline-block;
+    background: #e8e8e8;
+}
 ````

@@ -6,25 +6,24 @@
 
 ````jsx
 let Badge = require('uxcore-badge');
+let Button = require('uxcore-button');
 
 class Demo extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            count2: 1
+            show: true,
+            count: 5,
         }
     }
 
-    handlePlus() {
+    handleShow() {
         this.setState({
-            count2: this.state.count2 + 1
+            show: !this.state.show
         });
-    }
-
-    handleMinus() {
         this.setState({
-            count2: this.state.count2 - 1
+            count: this.state.count == 5 ? 0 : 5
         });
     }
 
@@ -42,9 +41,7 @@ class Demo extends React.Component {
                 <Badge dot={this.state.show}>
                     <a href="#" className="head-example"></a>
                 </Badge>
-                <div>
-                    <Button type="outline" onClick={this.handleShow.bind(this)}>显示/隐藏</Button>
-                </div>
+                <Button style={{marginLeft: 20}} type="outline" onClick={this.handleShow.bind(this)}>显示/隐藏</Button>
             </div>
         );
     }
@@ -52,5 +49,16 @@ class Demo extends React.Component {
 
 ReactDOM.render(
     <Demo />
-, document.getElementById('components-badge-demo-basic'));
+, document.getElementById('components-badge-demo-show'));
+/* JS END CSS START*/
+````
+
+````css
+.head-example {
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+    display: inline-block;
+    background: #e8e8e8;
+}
 ````
