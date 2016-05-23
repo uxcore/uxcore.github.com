@@ -31,6 +31,7 @@ window.UXCORE = {
 	'uxcore-rate': require('uxcore-rate'),
 	'uxcore-switch': require('uxcore-switch'),
 	'uxcore-badge': require('uxcore-badge'),
+	'uxcore-carousel': require('uxcore-carousel'),
 	'classnames': require('classnames'),
 	'object-assign': require('object-assign')
 };

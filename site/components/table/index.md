@@ -144,22 +144,6 @@ let columns = [
 
 ```
 
-## 列配置项的例子2（带列群组, since ver. 1.3.0）
-```javascript
-
-let columns = [
-        { dataKey: 'check', type: 'checkbox', disable: false}, // custom checkbox column, dataKey can be anyone, true means checked.
-        {
-            group: "国家",
-            columns: [
-                { dataKey: 'country', title:'国家', width: 200,ordered:true},
-                { dataKey: 'country2', title:'国家2', width: 200,ordered:true},
-            ]
-        }
- ]
-
-```
-
 ## rowSelection 的例子
 
 ```javascript

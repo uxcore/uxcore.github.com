@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var ghPages = require('gulp-gh-pages');
 var less = require('gulp-less');
-var minifyCss = require('gulp-minify-css');
+var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var watch = require('gulp-watch');
 var batch = require('gulp-batch');
@@ -25,7 +25,7 @@ gulp.task('less_index', function(){
         .pipe(less({
             plugins: [autoprefix, LessPluginInlineUrls]
         }))
-        .pipe(minifyCss({compatibility: 'ie8'}))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('./theme/static/style/'));
 });
 
@@ -36,7 +36,9 @@ gulp.task('less_theme', function() {
                 .pipe(less({
                     plugins: [autoprefix, LessPluginInlineUrls]
                 }))
-                .pipe(minifyCss({compatibility: 'ie8'}))
+                .pipe(cleanCSS({
+                    compatibility: 'ie8'
+                }))
                 .pipe(gulp.dest('./theme/static/style/'));
 })
 
