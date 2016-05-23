@@ -1,0 +1,390 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/style/index.css"><link id="J_ThemeSiteStyle" rel="stylesheet" href="/static/style/orange.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="/static/modernizr.js"></script><script>(function(W, D, M){
+	if (M.localstorage) {
+		var t = localStorage.getItem('theme');
+		W.theme = 'orange';
+		if (t !== 'blue' && t !== 'orange') {
+			t = 'orange';
+		}
+		if (t && t !== W.theme) {
+			W.theme = t;
+			D.getElementById('J_ThemeSiteStyle').setAttribute('href', '/static/style/' + t + '.css');
+		}
+	}	
+}(window, document, Modernizr));</script><!--[if lt IE 9]><script src="/static/respond.min.js"></script><![endif]--><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/latest/react-with-addons.js,react/latest/react-dom.min.js,rangy/1.3.0/rangy-core.min.js,jquery/1.11.3/jquery.min.js"></script><script src="/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
+	w.require = function(name){
+		return w.UXCORE[name];
+	}
+})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">Presentation</h3><ul><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/badge">Badge<small>徽标</small></a></li><li class="current"><a href="/components/carousel">Carousel<small>轮播</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">Form Control</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/rate">Rate<small>评分</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/switch">Switch<small>开关</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">Navigation</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">Tool</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">Layout</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">Other</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">Matrix</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Carousel</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>eternaslky</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-carousel.git" target="_blank">Carousel</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.2.1</span><span class="description"><i class="fa fa-bookmark"></i>uxcore-carousel component for uxcore.</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-carousel-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-carousel-demo-basic">基本使用</a></div></div><div class="code-box-demo"><div id="components-carousel-demo-basic"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><style type="text/css">.demo h3 {
+  background: blue;
+  color: #fff;
+  height:200px;
+  font-size: 36px;
+  line-height: 200px;
+  position: relative;
+  text-align: center;
+}
+
+.demo {
+    width: 1000px;
+    height:200px;
+    margin:20px auto 0;
+}
+
+.kuma-carousel .slick-next:before {
+    // font-family: kuma;
+    // font-size: 16px;
+    // color: black;
+    // content: '\e643';
+}
+
+/* CSS END JS START*/</style><div class="highlight"><pre><code class="css">.demo h3 {
+  background: blue;
+  color: #fff;
+  height:200px;
+  font-size: 36px;
+  line-height: 200px;
+  position: relative;
+  text-align: center;
+}
+
+.demo {
+    width: 1000px;
+    height:200px;
+    margin:20px auto 0;
+}
+
+.kuma-carousel .slick-next:before {
+    // font-family: kuma;
+    // font-size: 16px;
+    // color: black;
+    // content: '\e643';
+}
+
+/* CSS END JS START*/</code></pre></div><script>(function(){'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var classnames = require('classnames');
+
+var Carousel = require('uxcore-carousel');
+
+var Demo = (function (_React$Component) {
+    _inherits(Demo, _React$Component);
+
+    function Demo(props) {
+        _classCallCheck(this, Demo);
+
+        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+        this.state = {};
+    }
+
+    _createClass(Demo, [{
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(
+                    'div',
+                    { className: 'kuma-carousel' },
+                    React.createElement(
+                        'button',
+                        { type: 'button', 'data-role': 'none', className: 'slick-next', style: {
+                                display: 'block'
+                            } },
+                        ' Next'
+                    )
+                ),
+                React.createElement(
+                    Carousel,
+                    { className: 'demo', autoplay: true, pauseOnHover: true },
+                    React.createElement(
+                        'h3',
+                        null,
+                        '1'
+                    ),
+                    React.createElement(
+                        'h3',
+                        null,
+                        '2'
+                    ),
+                    React.createElement(
+                        'h3',
+                        null,
+                        '3'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Demo;
+})(React.Component);
+
+;
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-carousel-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">'classnames'</span>);
+
+<span class="hljs-keyword">let</span> Carousel = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-carousel'</span>);
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+
+    constructor(props) {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+        }
+    }
+
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-carousel"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">data-role</span>=<span class="hljs-value">"none"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"slick-next"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span>
+                        <span class="hljs-attribute">display:</span> '<span class="hljs-attribute">block</span>'
+                    }}&gt;</span> Next<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">Carousel</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo"</span> <span class="hljs-attribute">autoplay</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">pauseOnHover</span>=<span class="hljs-value">{true}</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Carousel</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        )</span>;
+    }
+};
+
+ReactDOM.render(
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
+, document.getElementById('components-carousel-demo-basic'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="props">Props</h2><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+<th>Working</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>className</td>
+<td>String</td>
+<td>Additional class name for the inner slider div</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>adaptiveHeight</td>
+<td>bool</td>
+<td>Adjust the slide&#39;s height automatically</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>arrows</td>
+<td>bool</td>
+<td>Should we show Left and right nav arrows</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>nextArrow</td>
+<td>React Component</td>
+<td>Use this component for the next arrow button</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>prevArrow</td>
+<td>React Component</td>
+<td>Use this component for the prev arrow button</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>bool</td>
+<td>Should the scroller auto scroll?</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>pauseOnHover</td>
+<td>bool</td>
+<td>Should pause autoplay when an item is hoverd</td>
+<td>No</td>
+</tr>
+<tr>
+<td>autoplaySpeed</td>
+<td>int</td>
+<td>delay between each auto scoll. in ms</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>centerMode</td>
+<td>bool</td>
+<td>Should we centre to a single item?</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>centerPadding</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>cssEase</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dots</td>
+<td>bool</td>
+<td>Should we show the dots at the bottom of the gallery</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>dotsClass</td>
+<td>string</td>
+<td>Class applied to the dots if they are enabled</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>draggable</td>
+<td>bool</td>
+<td>Is the gallery scrollable via dragging on desktop?</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>easing</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>fade</td>
+<td>bool</td>
+<td>Slides use fade for transition</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>focusOnSelect</td>
+<td>bool</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>infinite</td>
+<td>bool</td>
+<td>should the gallery wrap around it&#39;s contents</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>initialSlide</td>
+<td>int</td>
+<td>which item should be the first to be displayed</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>lazyLoad</td>
+<td>bool</td>
+<td>Loads images or renders components on demands</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>responsive</td>
+<td>array</td>
+<td>Array of objects in the form of <code>{ breakpoint: int, settings: { ... } }</code> The breakpoint <em>int</em> is the <code>maxWidth</code> so the settings will be applied when resolution is below this value. Breakpoints in the array should be ordered from smalles to greatest. Use &#39;unslick&#39; in place of the settings object to disable rendering the carousel at that breakpoint. Example: <code>[ { breakpoint: 768, settings: { slidesToShow: 3 } }, { breakpoint: 1024, settings: { slidesToShow: 5 } }, { breakpoint: 100000, settings: &#39;unslick&#39; } ]</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>rtl</td>
+<td>bool</td>
+<td>Reverses the slide order</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>slide</td>
+<td>string</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>slidesToShow</td>
+<td>int</td>
+<td>Number of slides to be visible at a time</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>slidesToScroll</td>
+<td>int</td>
+<td>Number of slides to scroll for each navigation item</td>
+</tr>
+<tr>
+<td>speed</td>
+<td>int</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>swipe</td>
+<td>bool</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>swipeToSlide</td>
+<td>bool</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>touchMove</td>
+<td>bool</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>touchThreshold</td>
+<td>int</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>variableWidth</td>
+<td>bool</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>useCSS</td>
+<td>bool</td>
+<td>Enable/Disable CSS Transitions</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>vertical</td>
+<td>bool</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>afterChange</td>
+<td>function</td>
+<td>callback function called after the current index changes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>beforeChange</td>
+<td>function</td>
+<td>callback function called before the current index changes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>slickGoTo</td>
+<td>int</td>
+<td>go to the specified slide number</td>
+</tr>
+</tbody>
+</table>
+</div></article></div><div id="site-footer" class="site-footer"><div class="footer-right">© 2015 Alibaba, Inc. Licensed under MIT license.</div><div class="footer-power"><span>DESIGNED BY</span><img src="/static/iux.png"><span>阿里巴巴信息平台 UED 团队</span></div></div></body></html>
