@@ -20,14 +20,21 @@ class ColorPicker extends React.Component {
         });
     }
     
+    hidePicker() {
+        this.setState({
+            displayColorPicker: false
+        });
+    }
+    
     colorPicked(color) {
         this.setState({
             displayColorPicker: false,
             color: color.hex
         });
-        let colorObj = {};
-        colorObj[this.props.name] = color.hex;
-        this.props.onChange(colorObj);
+        this.props.onChange({
+            key: this.props.name,
+            value: color.hex
+        });
     }
     
     render() {
@@ -37,6 +44,7 @@ class ColorPicker extends React.Component {
             <div className="component-color-picker">
                 {displayColorPicker ?
                 <div className="picker">
+                    <div className="pickerCover" onClick={this.hidePicker.bind(this)}></div>
                     <SketchPicker
                         color={color}
                         onChangeComplete={this.colorPicked.bind(this)}

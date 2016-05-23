@@ -1,13 +1,15 @@
 import React from 'react';
 import ColorPicker from '../colorPicker/index';
 import assign from 'object-assign';
+import classNames from 'classnames';
 
 export default class Editor extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             mode: 'pattern',
-            curTheme: []
+            curTheme: [],
+            editorFoldedStatus: {}
         };
     }
     
@@ -16,10 +18,26 @@ export default class Editor extends React.Component {
     }
     
     componentWillMount() {
-        let {themes} = this.props;
-        this.setState({
-            curTheme: themes[Object.keys(themes)[0]].data
+        let { themes } = this.props;
+        let theme = themes[Object.keys(themes)[0]].data
+        let editorFoldedStatus = {};
+        theme.forEach((d) => {
+            editorFoldedStatus[d.category] = true;
         });
+        this.setState({
+            curTheme: theme,
+            editorFoldedStatus: editorFoldedStatus
+        });
+    }
+    
+    getVars() {
+        let flatVars = {};
+        this.state.curTheme.forEach((d) => {
+            d.vars.forEach((v) => {
+                flatVars[v.key] = v.value;
+            });
+        });
+        return flatVars;
     }
     
     toggleEditMode(e) {
@@ -28,43 +46,55 @@ export default class Editor extends React.Component {
             mode: this.state.mode === 'pattern' ? 'customize': 'pattern'
         });
     }
-    toggleBlock(e) {
-        
+    toggleBlock(category,  e) {
+        let editorFoldedStatus = this.state.editorFoldedStatus;
+        editorFoldedStatus[category] = !editorFoldedStatus[category]; 
+        this.setState({
+            editorFoldedStatus: editorFoldedStatus
+        });
     }
     
     setTheme(theme, e) {
+        let editorFoldedStatus = {};
+        theme.forEach((d) => {
+            editorFoldedStatus[d.category] = true;
+        });
         this.setState({
             mode: 'customize',
-            curTheme: theme
+            curTheme: theme,
+            editorFoldedStatus: editorFoldedStatus 
         });
     }
     
-    onChangeVariable(colorObj) {
+    onChangeVariable(category, colorObj) {
         let flatVars = {};
         this.state.curTheme.forEach((d) => {
-            var o = {};
             d.vars.forEach((v) => {
-                o[v.key] = v.value;
+                if (v.key === colorObj.key) {
+                    assign(v, colorObj);
+                }
+                flatVars[v.key] = v.value;
             });
-            flatVars = assign(flatVars, o);
         });
-        assign(flatVars, colorObj);
-        console.log('onChangeVariable', flatVars, colorObj);
         this.props.onChangeVars(flatVars);
     }
     
     getEditorContent() {
         return this.state.curTheme.map((d, i) => {
+            let editorClass = classNames({
+                block: true,
+                editorFolded: this.state.editorFoldedStatus[d.category] 
+            });
             return (
-                <dl className="block" key={i}>
-                    <dt onClick={this.toggleBlock.bind(this)}>{d.category}</dt>
+                <dl className={editorClass} key={i}>
+                    <dt onClick={this.toggleBlock.bind(this, d.category)}>{d.category}</dt>
                     <dd>
                         <ul className="editor-grid">
                             {d.vars.map((v, j) => {
                                 return (
                                     <li key={`var-${i}-${j}`}>
                                         <span className="variable-title">{v.title}</span>
-                                        <ColorPicker color={v.value} name={v.key} onChange={this.onChangeVariable.bind(this)} />
+                                        <ColorPicker color={v.value} name={v.key} onChange={this.onChangeVariable.bind(this, d.category)} />
                                     </li>
                                 )
                             })}

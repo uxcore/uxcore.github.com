@@ -13,12 +13,24 @@ console.log(THEMES);
 class Builder extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            css: ''
+        };
     }
     
     static defaultProps = {
     }
     
     componentDidMount() {
+        document.getElementById('J_DownloadCss').onclick = function(){
+            let vars = this.refs.editor.getVars(); 
+            Actions.download('cssfile', vars);
+            
+        }.bind(this);
+        document.getElementById('J_DownloadVariable').onclick = function(){
+            let vars = this.refs.editor.getVars();
+            Actions.download('variables', vars);
+        }.bind(this);
     }
     
     onChangeVars(vars) {
@@ -30,9 +42,9 @@ class Builder extends React.Component {
         console.log('render index:', this.state)
         return (
             <div className="builder-container">
-                <link rel="stylesheet" href={this.state.cssurl} />
+                <style>{this.state.css}</style>
                 <Dashboard />
-                <Editor themes={THEMES} onChangeVars={this.onChangeVars.bind(this)} />
+                <Editor ref="editor" themes={THEMES} onChangeVars={this.onChangeVars.bind(this)} />
             </div>
         );
     }
