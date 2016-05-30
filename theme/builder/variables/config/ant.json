@@ -2,6 +2,17 @@
     "name": "蚂蚁蓝",
     "data": [
         {
+            "category": "字体",
+            "vars": [
+                {
+                    "title": "字体",
+                    "key": "base-font",
+                    "value": "tahoma, arial, 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Microsoft YaHei', 'SimSun', sans-serif",
+                    "type": "font-family"
+                }
+            ]
+        },
+        {
             "category": "基础色",
             "vars": [
                 {
@@ -67,6 +78,70 @@
                     "title": "QUERY",
                     "key": "brand-query",
                     "value": "#24bee8",
+                    "type": "color"
+                }
+            ]
+        },
+        {
+            "category": "灰色",
+            "vars": [
+                {
+                    "title": "灰色1",
+                    "key": "gray-dark",
+                    "value": "#333",
+                    "type": "color"
+                },
+                {
+                    "title": "灰色2",
+                    "key": "gray",
+                    "value": "#666",
+                    "type": "color"
+                },
+                {
+                    "title": "灰色3",
+                    "key": "gray-light",
+                    "value": "#999",
+                    "type": "color"
+                },
+                {
+                    "title": "灰色4",
+                    "key": "gray-lighter",
+                    "value": "#ccc",
+                    "type": "color"
+                }
+            ]
+        },
+        {
+            "category": "链接色",
+            "vars": [
+                {
+                    "title": "NORMAL",
+                    "key": "link-color",
+                    "value": "#3B8FD9",
+                    "type": "color"
+                },
+                {
+                    "title": "HOVER",
+                    "key": "link-hover-color",
+                    "value": "#1A78B8",
+                    "type": "color"
+                },
+                {
+                    "title": "ACTIVE",
+                    "key": "link-active-color",
+                    "value": "#1A78B8",
+                    "type": "color"
+                },
+                {
+                    "title": "VISITED",
+                    "key": "link-visited-color",
+                    "value": "#73461d",
+                    "type": "color"
+                },
+                {
+                    "title": "DISABLED",
+                    "key": "link-disabled-color",
+                    "value": "#ccc",
                     "type": "color"
                 }
             ]

@@ -41,7 +41,7 @@ class ColorPicker extends React.Component {
         let { color, displayColorPicker } = this.state;
         let { name } = this.props;
         return (
-            <div className="component-color-picker">
+            <div className="component-picker component-color-picker">
                 {displayColorPicker ?
                 <div className="picker">
                     <div className="pickerCover" onClick={this.hidePicker.bind(this)}></div>

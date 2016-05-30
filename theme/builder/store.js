@@ -19,7 +19,7 @@ let Store = Reflux.createStore({
         let submitData = _varsAdapter(data);
         $.ajax({
             type: 'post',
-            url: 'http://localhost:8082/api/css/compile',
+            url: 'http://eternalsky.me:8082/api/css/compile',
             data: {
                 name: 'uxcore-kuma',
                 variables: submitData
@@ -50,11 +50,11 @@ let Store = Reflux.createStore({
         let downloadUrl, filename;
         switch(type) {
             case 'cssfile':
-                downloadUrl = 'http://localhost:8082/api/css/download'
+                downloadUrl = 'http://eternalsky.me:8082/api/css/download'
                 filename = 'uxcore-kuma.css';
                 break;
             case 'variables':
-                downloadUrl = 'http://localhost:8082/api/css/getVars';
+                downloadUrl = 'http://eternalsky.me:8082/api/css/getVars';
                 filename = 'theme.less';
             default:
                 break;

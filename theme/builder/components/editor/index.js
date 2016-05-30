@@ -1,5 +1,5 @@
 import React from 'react';
-import ColorPicker from '../colorPicker/index';
+import { ColorPicker, FontPicker } from '../picker/index';
 import assign from 'object-assign';
 import classNames from 'classnames';
 
@@ -91,10 +91,21 @@ export default class Editor extends React.Component {
                     <dd>
                         <ul className="editor-grid">
                             {d.vars.map((v, j) => {
+                                let Picker;
+                                switch (v.type) {
+                                    case 'color':
+                                        Picker = <ColorPicker color={v.value} name={v.key} onChange={this.onChangeVariable.bind(this, d.category)} />;
+                                        break;
+                                    case 'font-family':
+                                        Picker = <FontPicker font={v.value} name={v.key} onChange={this.onChangeVariable.bind(this, d.category)} />;
+                                        break;
+                                    default:
+                                        break;
+                                }
                                 return (
                                     <li key={`var-${i}-${j}`}>
                                         <span className="variable-title">{v.title}</span>
-                                        <ColorPicker color={v.value} name={v.key} onChange={this.onChangeVariable.bind(this, d.category)} />
+                                        {Picker}
                                     </li>
                                 )
                             })}
