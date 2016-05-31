@@ -1,6 +1,9 @@
 import Actions from './actions';
 import { saveAs, saveTextAs } from '../js/fileSaver';
 
+let SERVER = 'http://eternalsky.me:8082';
+// let SERVER = 'http://localhost:8082';
+
 function _varsAdapter(vars){
     let submitData = {};
     Object.keys(vars).forEach((key) => {
@@ -19,7 +22,7 @@ let Store = Reflux.createStore({
         let submitData = _varsAdapter(data);
         $.ajax({
             type: 'post',
-            url: 'http://eternalsky.me:8082/api/css/compile',
+            url: SERVER + '/api/css/compile',
             data: {
                 name: 'uxcore-kuma',
                 variables: submitData
@@ -50,11 +53,11 @@ let Store = Reflux.createStore({
         let downloadUrl, filename;
         switch(type) {
             case 'cssfile':
-                downloadUrl = 'http://eternalsky.me:8082/api/css/download'
+                downloadUrl = SERVER + '/api/css/download'
                 filename = 'uxcore-kuma.css';
                 break;
             case 'variables':
-                downloadUrl = 'http://eternalsky.me:8082/api/css/getVars';
+                downloadUrl = SERVER + '/api/css/getVars';
                 filename = 'theme.less';
             default:
                 break;
