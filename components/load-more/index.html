@@ -1,0 +1,281 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/style/index.css"><link id="J_ThemeSiteStyle" rel="stylesheet" href="/static/style/orange.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="/static/modernizr.js"></script><script>(function(W, D, M){
+	if (M.localstorage) {
+		var t = localStorage.getItem('theme');
+		W.theme = 'orange';
+		if (t !== 'blue' && t !== 'orange') {
+			t = 'orange';
+		}
+		if (t && t !== W.theme) {
+			W.theme = t;
+			D.getElementById('J_ThemeSiteStyle').setAttribute('href', '/static/style/' + t + '.css');
+		}
+	}	
+}(window, document, Modernizr));</script><!--[if lt IE 9]><script src="/static/respond.min.js"></script><![endif]--><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,react/latest/react-with-addons.js,react/latest/react-dom.min.js,rangy/1.3.0/rangy-core.min.js,jquery/1.11.3/jquery.min.js"></script><script src="/static/uxcore.js"></script><script src="https://alinw.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-full.min.js"></script><script>(function(w){
+	w.require = function(name){
+		return w.UXCORE[name];
+	}
+})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">Presentation</h3><ul><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/badge">Badge<small>徽标</small></a></li><li><a href="/components/carousel">Carousel<small>轮播</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li class="current"><a href="/components/load-more">LoadMore<small>加载更多</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">Form Control</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/rate">Rate<small>评分</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/switch">Switch<small>开关</small></a></li><li><a href="/components/tree-select">TreeSelect<small>树选择</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">Navigation</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">Tool</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">Layout</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">Other</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">Matrix</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>LoadMore</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>peijie.dpj</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-load-more.git" target="_blank">LoadMore</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.1.2</span><span class="description"><i class="fa fa-bookmark"></i>uxcore-load-more component for uxcore.</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-load-more-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-load-more-demo-basic">基本</a></div></div><div class="code-box-demo"><div id="components-load-more-demo-basic"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var classnames = require('classnames');
+
+var LoadMore = require('uxcore-load-more');
+
+var loadTimes = 0;
+
+var Demo = (function (_React$Component) {
+  _inherits(Demo, _React$Component);
+
+  function Demo(props) {
+    _classCallCheck(this, Demo);
+
+    _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+    this.state = {
+      loadState: 'loaded', // loading noMore
+      lines: []
+    };
+  }
+
+  _createClass(Demo, [{
+    key: 'onLoadMore',
+    value: function onLoadMore() {
+      var me = this;
+
+      me.setState({
+        loadState: 'loading'
+      });
+
+      setTimeout(function () {
+        var lines = me.state.lines;
+
+        if (++loadTimes < 5) {
+          for (var i = 0; i < 50; i++) {
+            lines.push(React.createElement(
+              'p',
+              { key: loadTimes + '-' + i },
+              '第',
+              loadTimes,
+              '次加载，当前是第',
+              i + 1,
+              '条数据'
+            ));
+          }
+
+          me.setState({
+            lines: lines,
+            loadState: 'loaded'
+          });
+        } else {
+          me.setState({
+            loadState: 'noMore'
+          });
+        }
+      }, 1000);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var me = this;
+
+      var props = {
+        status: me.state.loadState,
+        className: 'demo-class-name',
+        trigger: ['view', 'click'],
+        onLoadMore: me.onLoadMore.bind(me),
+        locale: 'zh-cn',
+        viewLoadDelay: 150,
+
+        loadText: '查看更多',
+        loadingText: '加载中',
+        noMoreText: '没有更多'
+      };
+
+      return React.createElement(
+        'div',
+        { className: 'demo-content' },
+        me.state.lines,
+        React.createElement(LoadMore, props)
+      );
+    }
+  }]);
+
+  return Demo;
+})(React.Component);
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-load-more-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">'classnames'</span>);
+
+<span class="hljs-keyword">let</span> LoadMore = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-load-more'</span>);
+
+<span class="hljs-keyword">let</span> loadTimes = <span class="hljs-number">0</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+
+  constructor(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      loadState: <span class="hljs-string">'loaded'</span>, <span class="hljs-comment">// loading noMore</span>
+      lines: []
+    }
+  }
+
+  onLoadMore() {
+    <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+
+    me.setState({
+      loadState: <span class="hljs-string">'loading'</span>
+    })
+
+    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">let</span> lines = me.state.lines;
+
+      <span class="hljs-keyword">if</span> (++loadTimes &lt; <span class="hljs-number">5</span>) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">50</span>; i++) {
+          lines.push(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{loadTimes</span> + '<span class="hljs-attribute">-</span>' + <span class="hljs-attribute">i</span>}&gt;</span>第{loadTimes}次加载，当前是第{i + 1}条数据<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>)</span>
+        }
+
+        me.setState({
+          lines: lines,
+          loadState: <span class="hljs-string">'loaded'</span>
+        })
+      } <span class="hljs-keyword">else</span> {
+        me.setState({
+          loadState: <span class="hljs-string">'noMore'</span>
+        })
+      }
+    }, <span class="hljs-number">1000</span>)
+
+  }
+
+  render() {
+    <span class="hljs-keyword">let</span> me = <span class="hljs-keyword">this</span>;
+
+    <span class="hljs-keyword">let</span> props = {
+      status: me.state.loadState,
+      className: <span class="hljs-string">'demo-class-name'</span>,
+      trigger: [<span class="hljs-string">'view'</span>, <span class="hljs-string">'click'</span>],
+      onLoadMore: me.onLoadMore.bind(me),
+      locale: <span class="hljs-string">'zh-cn'</span>,
+      viewLoadDelay: <span class="hljs-number">150</span>,
+
+      loadText: <span class="hljs-string">'查看更多'</span>,
+      loadingText: <span class="hljs-string">'加载中'</span>,
+      noMoreText: <span class="hljs-string">'没有更多'</span>
+    }
+
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-content"</span>&gt;</span>
+        {me.state.lines}
+        <span class="hljs-tag">&lt;<span class="hljs-title">LoadMore</span> {<span class="hljs-attribute">...props</span>}/&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+}
+
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-load-more-demo-basic'))</span></code></pre></div><style type="text/css">.demo-content {
+  margin: 10px auto;
+  max-height: 300px;
+  overflow: auto;
+}
+
+.demo-content p {
+  text-align: center;
+  font-size: 14px;
+  background: #fafafa;
+  height: 30px;
+  line-height: 30px;
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.demo-content</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">10px</span> auto</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">max-height</span>:<span class="hljs-value"> <span class="hljs-number">300px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value"> auto</span></span>;
+}</span>
+
+<span class="hljs-class">.demo-content</span> <span class="hljs-tag">p</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">text-align</span>:<span class="hljs-value"> center</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">14px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#fafafa</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">30px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">30px</span></span></span>;
+}</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="props">Props</h2><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>功能/备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>optional</td>
+<td>&#39;loaded&#39;</td>
+<td>表示加载状态。&#39;loaded&#39;表示加载完成，待下次加载；&#39;loading&#39;表示加载中；&#39;noMore&#39;表示没有更多</td>
+</tr>
+<tr>
+<td>className</td>
+<td>string</td>
+<td>optional</td>
+<td>&#39;&#39;</td>
+<td>额外的className</td>
+</tr>
+<tr>
+<td>trigger</td>
+<td>array</td>
+<td>optional</td>
+<td>[&#39;view&#39;, &#39;click&#39;]</td>
+<td>触发加载回调的途径。view表示看到即触发；click表示点击触发</td>
+</tr>
+<tr>
+<td>onLoadMore</td>
+<td>function</td>
+<td>required</td>
+<td>-</td>
+<td>加载回调, 需要在该方法中手动控制status改变</td>
+</tr>
+<tr>
+<td>viewLoadDelay</td>
+<td>number</td>
+<td>optional</td>
+<td>150</td>
+<td>如果trigger包含&#39;view&#39;，那么滚动停止后触发onLoadMore的延迟，单位毫秒</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>string</td>
+<td>optional</td>
+<td>&#39;zh-cn&#39;</td>
+<td>语言，另可选&#39;en-us&#39;</td>
+</tr>
+<tr>
+<td>loadText</td>
+<td>string</td>
+<td>optional</td>
+<td>-</td>
+<td>加载更多文案，可手动设置覆盖默认文案</td>
+</tr>
+<tr>
+<td>loadingText</td>
+<td>string</td>
+<td>optional</td>
+<td>-</td>
+<td>加载中文案，可手动设置覆盖默认文案</td>
+</tr>
+<tr>
+<td>noMoreText</td>
+<td>string</td>
+<td>optional</td>
+<td>-</td>
+<td>没有数据文案，可手动设置覆盖默认文案</td>
+</tr>
+</tbody>
+</table>
+</div></article></div><div id="site-footer" class="site-footer"><div class="footer-right">© 2015 Alibaba, Inc. Licensed under MIT license.</div><div class="footer-power"><span>DESIGNED BY</span><img src="/static/iux.png"><span>阿里巴巴信息平台 UED 团队</span></div></div></body></html>
