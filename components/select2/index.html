@@ -14,53 +14,45 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">Presentation</h3><ul><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/badge">Badge<small>徽标</small></a></li><li><a href="/components/carousel">Carousel<small>轮播</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">Form Control</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/rate">Rate<small>评分</small></a></li><li class="current"><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/switch">Switch<small>开关</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">Navigation</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">Tool</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">Layout</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">Other</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">Matrix</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Select2</h1><section class="meta"><span class="author"><i class="fa fa-user"></i><a href="mailto:wsj7552715@hotmail.com">eternalsky</a></span><span class="github"><i class="fa fa-github"></i><a href="ssh://git@github.com/uxcore/select.git" target="_blank">Select2</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.2.6</span><span class="description"><i class="fa fa-bookmark"></i>select ui component for react</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-select2-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-select2-demo-basic">基本使用</a></div></div><div class="code-box-demo"><div id="components-select2-demo-basic"></div></div><div class="code-box-desc"><p>基本使用。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">Presentation</h3><ul><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/badge">Badge<small>徽标</small></a></li><li><a href="/components/carousel">Carousel<small>轮播</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">Form Control</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/rate">Rate<small>评分</small></a></li><li class="current"><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/switch">Switch<small>开关</small></a></li><li><a href="/components/treeSelect">TreeSelect<small>树选择</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">Navigation</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">Tool</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">Layout</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">Other</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">Matrix</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Select2</h1><section class="meta"><span class="author"><i class="fa fa-user"></i><a href="mailto:wsj7552715@hotmail.com">eternalsky</a></span><span class="github"><i class="fa fa-github"></i><a href="ssh://git@github.com/uxcore/select.git" target="_blank">Select2</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.2.7</span><span class="description"><i class="fa fa-bookmark"></i>select ui component for react</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-select2-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-select2-demo-basic">基本使用</a></div></div><div class="code-box-demo"><div id="components-select2-demo-basic"></div></div><div class="code-box-desc"><p>基本使用。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){"use strict";
 
 var Select = require('uxcore-select2');
 var Option = Select.Option;
 
-function handleChange(value) {
-  console.log('selected ' + value);
-}
-
 ReactDOM.render(React.createElement(
   Select,
-  { defaultValue: 'lucy', style: { width: 200 }, onChange: handleChange },
+  { defaultValue: "lucy", style: { width: 200 } },
   React.createElement(
     Option,
-    { value: 'jack' },
-    'Jack'
+    { value: "jack" },
+    "Jack"
   ),
   React.createElement(
     Option,
-    { value: 'lucy' },
-    'Lucy'
+    { value: "lucy" },
+    "Lucy"
   ),
   React.createElement(
     Option,
-    { value: 'disabled', disabled: true },
-    'Disabled'
+    { value: "disabled", disabled: true },
+    "Disabled"
   ),
   React.createElement(
     Option,
-    { value: 'yiminghe' },
-    'yiminghe'
+    { value: "yiminghe" },
+    "yiminghe"
   )
-), document.getElementById('components-select2-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Select = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-select2'</span>);
-<span class="hljs-keyword">var</span> Option = Select.Option;
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleChange</span>(<span class="hljs-params">value</span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'selected '</span> + value);
-}
+), document.getElementById('components-select2-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Select = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-select2'</span>);
+<span class="hljs-keyword">let</span> Option = Select.Option;
 
 ReactDOM.render(
-  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Select</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"lucy"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{width:200}}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{handleChange}</span>&gt;</span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Select</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"lucy"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{width:200}}</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"jack"</span>&gt;</span>Jack<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"lucy"</span>&gt;</span>Lucy<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"disabled"</span> <span class="hljs-attribute">disabled</span>&gt;</span>Disabled<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"yiminghe"</span>&gt;</span>yiminghe<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">Select</span>&gt;</span>
-, document.getElementById('components-select2-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-select2-demo-search" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-select2-demo-search">带搜索框</a></div></div><div class="code-box-demo"><div id="components-select2-demo-search"></div></div><div class="code-box-desc"><p>在浮层内顶部有搜索框的单项选择器。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+, document.getElementById('components-select2-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-select2-demo-search" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-select2-demo-search">不带搜索框</a></div></div><div class="code-box-demo"><div id="components-select2-demo-search"></div></div><div class="code-box-desc"><p>在浮层内顶部有搜索框的单项选择器。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Select = require('uxcore-select2');
 var Option = Select.Option;
@@ -71,7 +63,7 @@ function handleChange(value) {
 
 ReactDOM.render(React.createElement(
   Select,
-  { defaultValue: 'lucy', showSearch: true, style: { width: 200 }, onChange: handleChange },
+  { defaultValue: 'lucy', showSearch: false, style: { width: 200 }, onChange: handleChange },
   React.createElement(
     Option,
     { value: 'jack' },
@@ -92,15 +84,15 @@ ReactDOM.render(React.createElement(
     { value: 'yiminghe' },
     'yiminghe'
   )
-), document.getElementById('components-select2-demo-search'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Select = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-select2'</span>);
-<span class="hljs-keyword">var</span> Option = Select.Option;
+), document.getElementById('components-select2-demo-search'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Select = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-select2'</span>);
+<span class="hljs-keyword">let</span> Option = Select.Option;
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleChange</span>(<span class="hljs-params">value</span>) </span>{
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'selected '</span> + value);
 }
 
 ReactDOM.render(
-  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Select</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"lucy"</span> <span class="hljs-attribute">showSearch</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{width:200}}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{handleChange}</span>&gt;</span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Select</span> <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">"lucy"</span> <span class="hljs-attribute">showSearch</span>=<span class="hljs-value">{false}</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{width:200}}</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{handleChange}</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"jack"</span>&gt;</span>jack<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"lucy"</span>&gt;</span>lucy<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"disabled"</span> <span class="hljs-attribute">disabled</span>&gt;</span>disabled<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
@@ -130,11 +122,11 @@ ReactDOM.render(React.createElement(
     style: { width: 400 },
     defaultValue: ['a10', 'c12'], onChange: handleChange },
   children
-), document.getElementById('components-select2-demo-multiple'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Select = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-select2'</span>);
-<span class="hljs-keyword">var</span> Option = Select.Option;
+), document.getElementById('components-select2-demo-multiple'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Select = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-select2'</span>);
+<span class="hljs-keyword">let</span> Option = Select.Option;
 
-<span class="hljs-keyword">var</span> children = [];
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">10</span>; i &lt; <span class="hljs-number">36</span>; i++) {
+<span class="hljs-keyword">let</span> children = [];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">10</span>; i &lt; <span class="hljs-number">36</span>; i++) {
   children.push(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{i.toString(36)</span> + <span class="hljs-attribute">i</span>}&gt;</span>{i.toString(36) + i}<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>)</span>;
 }
 
@@ -172,10 +164,10 @@ ReactDOM.render(React.createElement(
     style: { width: 400 },
     tags: true, defaultValue: ['name2', 'name3'], onChange: handleChange },
   children
-), document.getElementById('components-select2-demo-tags'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Select = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-select2'</span>);
-<span class="hljs-keyword">var</span> Option = Select.Option;
+), document.getElementById('components-select2-demo-tags'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Select = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-select2'</span>);
+<span class="hljs-keyword">let</span> Option = Select.Option;
 
-<span class="hljs-keyword">var</span> children = [];
+<span class="hljs-keyword">let</span> children = [];
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">10</span>; i &lt; <span class="hljs-number">36</span>; i++) {
   children.push(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{i.toString(36)</span> + <span class="hljs-attribute">i</span>}&gt;</span>{i.toString(36) + i}<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>)</span>;
 }
@@ -233,10 +225,10 @@ var Test = React.createClass({
   }
 });
 
-ReactDOM.render(React.createElement(Test, null), document.getElementById('components-select2-demo-combobox'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Select = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-select2'</span>);
-<span class="hljs-keyword">var</span> Option = Select.Option;
+ReactDOM.render(React.createElement(Test, null), document.getElementById('components-select2-demo-combobox'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Select = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-select2'</span>);
+<span class="hljs-keyword">let</span> Option = Select.Option;
 
-<span class="hljs-keyword">var</span> Test = React.createClass({
+<span class="hljs-keyword">let</span> Test = React.createClass({
   getInitialState() {
     <span class="hljs-keyword">return</span> {
       options: []
@@ -391,13 +383,13 @@ var App = React.createClass({
 ReactDOM.render(React.createElement(App, null), document.getElementById('components-select2-demo-coordinate'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Select = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-select2'</span>);
 <span class="hljs-keyword">let</span> {Option} = Select;
 
-<span class="hljs-keyword">var</span> provinceData = [<span class="hljs-string">'浙江'</span>, <span class="hljs-string">'江苏'</span>];
-<span class="hljs-keyword">var</span> cityData = {
+<span class="hljs-keyword">let</span> provinceData = [<span class="hljs-string">'浙江'</span>, <span class="hljs-string">'江苏'</span>];
+<span class="hljs-keyword">let</span> cityData = {
   <span class="hljs-string">'浙江'</span>: [<span class="hljs-string">'杭州'</span>, <span class="hljs-string">'宁波'</span>, <span class="hljs-string">'温州'</span>],
   <span class="hljs-string">'江苏'</span>: [<span class="hljs-string">'南京'</span>, <span class="hljs-string">'苏州'</span>, <span class="hljs-string">'镇江'</span>]
 };
 
-<span class="hljs-keyword">var</span> App = React.createClass({
+<span class="hljs-keyword">let</span> App = React.createClass({
   getInitialState() {
     <span class="hljs-keyword">return</span> {
       cities: cityData[provinceData[<span class="hljs-number">0</span>]],
@@ -416,10 +408,10 @@ ReactDOM.render(React.createElement(App, null), document.getElementById('compone
     });
   },
   render() {
-    <span class="hljs-keyword">var</span> provinceOptions = provinceData.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">province</span>) </span>{
+    <span class="hljs-keyword">let</span> provinceOptions = provinceData.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">province</span>) </span>{
       <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{province}</span>&gt;</span>{province}<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>;</span>
     });
-    <span class="hljs-keyword">var</span> cityOptions = <span class="hljs-keyword">this</span>.state.cities.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">city</span>) </span>{
+    <span class="hljs-keyword">let</span> cityOptions = <span class="hljs-keyword">this</span>.state.cities.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">city</span>) </span>{
       <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{city}</span>&gt;</span>{city}<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>;</span>
     });
     <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
@@ -434,7 +426,59 @@ ReactDOM.render(React.createElement(App, null), document.getElementById('compone
   }
 });
 
-ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">App</span> /&gt;</span>, document.getElementById('components-select2-demo-coordinate'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><p>类似 Select2 的选择器。</p>
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">App</span> /&gt;</span>, document.getElementById('components-select2-demo-coordinate'));</span></code></pre></div></div></div><div id="code-box-components-select2-demo-inline" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-select2-demo-inline">不带边框选择</a></div></div><div class="code-box-demo"><div id="components-select2-demo-inline"></div></div><div class="code-box-desc"><p>不带边框选择。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){"use strict";
+
+var Select = require('uxcore-select2');
+var Option = Select.Option;
+
+ReactDOM.render(React.createElement(
+    Select,
+    {
+        className: "kuma-select2-inline",
+        placeholder: "请选择",
+        showSearch: false,
+        dropdownMatchSelectWidth: false,
+        dropdownClassName: "kuma-select2-inline-dropdown",
+        dropdownAlign: { 'offset': [0, -1] },
+        dropdownStyle: { width: 200 } },
+    React.createElement(
+        Option,
+        { value: "jack" },
+        "Jack"
+    ),
+    React.createElement(
+        Option,
+        { value: "lucy" },
+        "LucyLucyLucyLucyLucyLucyLucyLucy"
+    ),
+    React.createElement(
+        Option,
+        { value: "disabled", disabled: true },
+        "Disabled"
+    ),
+    React.createElement(
+        Option,
+        { value: "yiminghe" },
+        "yiminghe"
+    )
+), document.getElementById('components-select2-demo-inline'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Select = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-select2'</span>);
+<span class="hljs-keyword">let</span> Option = Select.Option;
+
+ReactDOM.render(
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Select</span>
+        <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-select2-inline"</span>
+        <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"请选择"</span>
+        <span class="hljs-attribute">showSearch</span>=<span class="hljs-value">{false}</span>
+        <span class="hljs-attribute">dropdownMatchSelectWidth</span>=<span class="hljs-value">{false}</span>
+        <span class="hljs-attribute">dropdownClassName</span>=<span class="hljs-value">"kuma-select2-inline-dropdown"</span>
+        <span class="hljs-attribute">dropdownAlign</span>=<span class="hljs-value">{{'offset':</span> [<span class="hljs-attribute">0</span>, <span class="hljs-attribute">-1</span>]}}
+        <span class="hljs-attribute">dropdownStyle</span>=<span class="hljs-value">{{width:</span> <span class="hljs-attribute">200</span>}}&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"jack"</span>&gt;</span>Jack<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"lucy"</span>&gt;</span>LucyLucyLucyLucyLucyLucyLucyLucy<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"disabled"</span> <span class="hljs-attribute">disabled</span>&gt;</span>Disabled<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"yiminghe"</span>&gt;</span>yiminghe<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Select</span>&gt;</span>
+, document.getElementById('components-select2-demo-inline'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><p>类似 Select2 的选择器。</p>
 <h2 id="何时使用">何时使用</h2><p>弹出一个下拉菜单给用户选择操作，用于代替原生的选择器，或者需要一个更优雅的多选器时。</p>
 <div class="highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Select</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"lucy"</span>&gt;</span>lucy<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>
@@ -561,6 +605,12 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <td>未找到选项时的提示文案</td>
 <td>string</td>
 <td>not found</td>
+</tr>
+<tr>
+<td>showSearch</td>
+<td>显示搜索框</td>
+<td>bool</td>
+<td>true</td>
 </tr>
 </tbody>
 </table>

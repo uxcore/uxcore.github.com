@@ -14,7 +14,7 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">Presentation</h3><ul><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/badge">Badge<small>徽标</small></a></li><li><a href="/components/carousel">Carousel<small>轮播</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">Form Control</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/rate">Rate<small>评分</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/switch">Switch<small>开关</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">Navigation</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li class="current"><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">Tool</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">Layout</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">Other</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">Matrix</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Tree</h1><section class="meta"><span class="author"><i class="fa fa-user"></i><a href="mailto:wsj7552715@hotmail.com">eternalsky</a></span><span class="github"><i class="fa fa-github"></i><a href="ssh://git@github.com/uxcore/uxcore-tree.git" target="_blank">Tree</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.1.11</span><span class="description"><i class="fa fa-bookmark"></i>uxcore-tree ui component for react</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-tree-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-tree-demo-basic">基本用法</a></div></div><div class="code-box-demo"><div id="components-tree-demo-basic"></div></div><div class="code-box-desc"><p>基本用法。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">Presentation</h3><ul><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/badge">Badge<small>徽标</small></a></li><li><a href="/components/carousel">Carousel<small>轮播</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">Form Control</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/rate">Rate<small>评分</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/switch">Switch<small>开关</small></a></li><li><a href="/components/treeSelect">TreeSelect<small>树选择</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">Navigation</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li class="current"><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">Tool</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">Layout</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">Other</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">Matrix</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Tree</h1><section class="meta"><span class="author"><i class="fa fa-user"></i><a href="mailto:wsj7552715@hotmail.com">eternalsky</a></span><span class="github"><i class="fa fa-github"></i><a href="ssh://git@github.com/uxcore/uxcore-tree.git" target="_blank">Tree</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.2.1</span><span class="description"><i class="fa fa-bookmark"></i>uxcore-tree ui component for react</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-graph"></i>组件演示</h2><div id="code-box-components-tree-demo-basic" class="code-box"><div class="code-box-meta"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-tree-demo-basic">基本用法</a></div></div><div class="code-box-demo"><div id="components-tree-demo-basic"></div></div><div class="code-box-desc"><p>基本用法。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -333,13 +333,25 @@ ReactDOM.render(
 <td>prefixCls</td>
 <td>prefix class</td>
 <td>String</td>
-<td>&#39;kuma-tree&#39;</td>
+<td>&#39;&#39;</td>
 </tr>
 <tr>
 <td>showLine</td>
 <td>whether show line</td>
 <td>bool</td>
-<td>false</td>
+<td>true</td>
+</tr>
+<tr>
+<td>showIcon</td>
+<td>whether show icon</td>
+<td>bool</td>
+<td>true</td>
+</tr>
+<tr>
+<td>selectable</td>
+<td>whether can be selected</td>
+<td>bool</td>
+<td>true</td>
 </tr>
 <tr>
 <td>multiple</td>
@@ -363,13 +375,19 @@ ReactDOM.render(
 <td>defaultExpandedKeys</td>
 <td>expand specific treeNodes</td>
 <td>String[]</td>
-<td>false</td>
+<td>-</td>
 </tr>
 <tr>
-<td>defaultCheckedKeys</td>
-<td>default checked treeNodes</td>
+<td>expandedKeys</td>
+<td>Controlled expand specific treeNodes</td>
 <td>String[]</td>
-<td>[]</td>
+<td>-</td>
+</tr>
+<tr>
+<td>autoExpandParent</td>
+<td>whether auto expand parent treeNodes</td>
+<td>bool</td>
+<td>true</td>
 </tr>
 <tr>
 <td>checkedKeys</td>
@@ -378,8 +396,8 @@ ReactDOM.render(
 <td>[]</td>
 </tr>
 <tr>
-<td>defaultSelectedKeys</td>
-<td>default selected treeNodes</td>
+<td>defaultCheckedKeys</td>
+<td>default checked treeNodes</td>
 <td>String[]</td>
 <td>[]</td>
 </tr>
@@ -390,19 +408,37 @@ ReactDOM.render(
 <td>[]</td>
 </tr>
 <tr>
+<td>defaultSelectedKeys</td>
+<td>default selected treeNodes</td>
+<td>String[]</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>onExpand</td>
+<td>fire on treeNode expand or not</td>
+<td>function(node, expanded, expandedKeys)</td>
+<td>-</td>
+</tr>
+<tr>
 <td>onCheck</td>
 <td>click the treeNode/checkbox to fire</td>
-<td>function(e:{checked:bool,node,checkedKeys,event})</td>
+<td>function(checkedKeys, e:{checked: bool, checkedNodes, node, event})</td>
 <td>-</td>
 </tr>
 <tr>
 <td>onSelect</td>
 <td>click the treeNode to fire</td>
-<td>function(e:{selected:bool,node,checkedKeys,event})</td>
+<td>function(selectedKeys, e:{selected: bool, selectedNodes, node, event})</td>
 <td>-</td>
 </tr>
 <tr>
-<td>onDataLoaded</td>
+<td>filterTreeNode</td>
+<td>filter some treeNodes as you need. it should return true</td>
+<td>function(node)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>loadData</td>
 <td>load data asynchronously and the return value should be a promise</td>
 <td>function(node)</td>
 <td>-</td>
@@ -413,9 +449,60 @@ ReactDOM.render(
 <td>function({event,node})</td>
 <td>-</td>
 </tr>
+<tr>
+<td>onMouseEnter</td>
+<td>call when mouse enter a treeNode</td>
+<td>function({event,node})</td>
+<td>-</td>
+</tr>
+<tr>
+<td>onMouseLeave</td>
+<td>call when mouse leave a treeNode</td>
+<td>function({event,node})</td>
+<td>-</td>
+</tr>
+<tr>
+<td>draggable</td>
+<td>whether can drag treeNode. (drag events are not supported in Internet Explorer 8 and earlier versions or Safari 5.1 and earlier versions.)</td>
+<td>bool</td>
+<td>false</td>
+</tr>
+<tr>
+<td>onDragStart</td>
+<td>it execs when fire the tree&#39;s dragstart event</td>
+<td>function({event,node})</td>
+<td>-</td>
+</tr>
+<tr>
+<td>onDragEnter</td>
+<td>it execs when fire the tree&#39;s dragenter event</td>
+<td>function({event,node,expandedKeys})</td>
+<td>-</td>
+</tr>
+<tr>
+<td>onDragOver</td>
+<td>it execs when fire the tree&#39;s dragover event</td>
+<td>function({event,node})</td>
+<td>-</td>
+</tr>
+<tr>
+<td>onDragLeave</td>
+<td>it execs when fire the tree&#39;s dragleave event</td>
+<td>function({event,node})</td>
+<td>-</td>
+</tr>
+<tr>
+<td>onDrop</td>
+<td>it execs when fire the tree&#39;s drop event</td>
+<td>function({event, node, dragNode, dragNodesKeys})</td>
+<td>-</td>
+</tr>
 </tbody>
 </table>
-<h3 id="treenode-props">TreeNode props</h3><table>
+<h3 id="treenode-props">TreeNode props</h3><blockquote>
+<p>note: if you have a lot of TreeNode, like more than 1000,<br>make the parent node is collapsed by default, will obvious effect, very fast.<br>Because the children hide TreeNode will not insert into dom.</p>
+</blockquote>
+<table>
 <thead>
 <tr>
 <th>name</th>
@@ -438,16 +525,28 @@ ReactDOM.render(
 <td>false</td>
 </tr>
 <tr>
+<td>disableCheckbox</td>
+<td>whether disable the treeNode&#39; checkbox</td>
+<td>bool</td>
+<td>false</td>
+</tr>
+<tr>
 <td>title</td>
 <td>tree/subTree&#39;s title</td>
-<td>String</td>
+<td>String/node</td>
 <td>&#39;---&#39;</td>
 </tr>
 <tr>
 <td>key</td>
-<td>it&#39;s used with tree props&#39;s defaultExpandedKeys/defaultCheckedKeys/defaultSelectedKeys</td>
+<td>it&#39;s used with tree props&#39;s (default)ExpandedKeys / (default)CheckedKeys / (default)SelectedKeys. you&#39;d better to set it, and it must be unique in the tree&#39;s all treeNodes</td>
 <td>String</td>
 <td>treeNode&#39;s position</td>
+</tr>
+<tr>
+<td>isLeaf</td>
+<td>whether it&#39;s leaf node</td>
+<td>bool</td>
+<td>false</td>
 </tr>
 </tbody>
 </table>
