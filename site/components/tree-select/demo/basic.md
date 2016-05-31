@@ -1,8 +1,8 @@
-#  多选
+#  基本用法
 
 - order: 0
 
-多选。
+基本用法。
 
 ---
 
@@ -38,33 +38,34 @@ function generateData(x = 3, y = 2, z = 1, gData = []) {
 
 let gData = generateData();
 
-class MultipleDemo extends React.Component {
+class BasicDemo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             inputValue: '0-0-0-label',
-            multipleValue: [], 
+            value: '0-0-0-value'            
         };
     }
-    onMultipleChange(value) {
-        this.setState({multipleValue: value});
+    onChange(value) {
+        this.setState({value});
     }
     render() {
-        return <TreeSelect style={{width: 300}} 
+        return <TreeSelect style={{width: 300}}
             dropdownStyle={{maxHeight: 200, overflow: 'auto'}}
             placeholder={<i>请下拉选择</i>}
             searchPlaceholder="please search"
-            multiple
+            showSearch allowClear treeLine
             inputValue={this.state.inputValue}
-            value={this.state.multipleValue}
+            value={this.state.value}
             treeData={gData}
-            treeNodeFilterProp="title"
-            onChange={this.onMultipleChange.bind(this)}/>
+            treeNodeFilterProp="label"
+            filterTreeNode={false}
+            onChange={this.onChange.bind(this)} />
     }
 }
 
 ReactDOM.render(
-    <MultipleDemo></MultipleDemo>,
-  	document.getElementById('components-treeselect-demo-multiple')
+    <BasicDemo></BasicDemo>,
+  	document.getElementById('components-tree-select-demo-basic')
 );
 ````

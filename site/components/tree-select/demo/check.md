@@ -67,6 +67,6 @@ class CheckDemo extends React.Component {
 
 ReactDOM.render(
     <CheckDemo></CheckDemo>,
-  	document.getElementById('components-treeselect-demo-check')
+  	document.getElementById('components-tree-select-demo-check')
 );
 ````
