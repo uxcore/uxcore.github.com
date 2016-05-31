@@ -44,6 +44,7 @@
 |dropdownMatchSelectWidth|dropdown 部分是否和 select 部分同宽| boolean | true |
 |dropdownClassName | dropdown 部分的定制类名 | string | - |
 |notFoundContent   | 未找到选项时的提示文案   | string | not found |
+|showSearch | 显示搜索框 | bool | true |
 
 
 ### Option props

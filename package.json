@@ -34,7 +34,7 @@
     "uxcore-form": "~1.4.0",
     "uxcore-formatter": "~0.1.2",
     "uxcore-grid": "~1.2.0",
-    "uxcore-kuma": "~2.0.0",
+    "uxcore-kuma": "~2.1.0",
     "uxcore-layout": "~1.0.1",
     "uxcore-mention": "~0.1.4",
     "uxcore-menu": "~1.1.0",
@@ -53,7 +53,8 @@
     "uxcore-tooltip": "~0.3.2",
     "uxcore-totop": "~0.1.0",
     "uxcore-transfer": "~0.2.0",
-    "uxcore-tree": "~0.1.7",
+    "uxcore-tree": "~0.2.0",
+    "uxcore-tree-select": "~0.1.0",
     "uxcore-uploadcore": "~2.0.2",
     "uxcore-uploader": "~1.5.0",
     "uxcore-validator": "~0.2.0"

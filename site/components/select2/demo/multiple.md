@@ -8,11 +8,11 @@
 
 
 ````jsx
-var Select = require('uxcore-select2');
-var Option = Select.Option;
+let Select = require('uxcore-select2');
+let Option = Select.Option;
 
-var children = [];
-for (var i = 10; i < 36; i++) {
+let children = [];
+for (let i = 10; i < 36; i++) {
   children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
 }
 

@@ -11,13 +11,13 @@
 let Select = require('uxcore-select2');
 let {Option} = Select;
 
-var provinceData = ['浙江', '江苏'];
-var cityData = {
+let provinceData = ['浙江', '江苏'];
+let cityData = {
   '浙江': ['杭州', '宁波', '温州'],
   '江苏': ['南京', '苏州', '镇江']
 };
 
-var App = React.createClass({
+let App = React.createClass({
   getInitialState() {
     return {
       cities: cityData[provinceData[0]],
@@ -36,10 +36,10 @@ var App = React.createClass({
     });
   },
   render() {
-    var provinceOptions = provinceData.map(function(province) {
+    let provinceOptions = provinceData.map(function(province) {
       return <Option key={province}>{province}</Option>;
     });
-    var cityOptions = this.state.cities.map(function(city) {
+    let cityOptions = this.state.cities.map(function(city) {
       return <Option key={city}>{city}</Option>;
     });
     return <div>

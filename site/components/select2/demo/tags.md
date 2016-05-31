@@ -8,10 +8,10 @@ tags select，随意输入的内容（scroll the menu）
 
 
 ````jsx
-var Select = require('uxcore-select2');
-var Option = Select.Option;
+let Select = require('uxcore-select2');
+let Option = Select.Option;
 
-var children = [];
+let children = [];
 for (var i = 10; i < 36; i++) {
   children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
 }

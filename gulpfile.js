@@ -32,14 +32,14 @@ gulp.task('less_index', function(){
 var fs = require('fs');
 
 gulp.task('less_theme', function() {
-    return  gulp.src(['./style/theme/**.less'])
-                .pipe(less({
-                    plugins: [autoprefix, LessPluginInlineUrls]
-                }))
-                .pipe(cleanCSS({
-                    compatibility: 'ie8'
-                }))
-                .pipe(gulp.dest('./theme/static/style/'));
+    return  gulp.src(['./style/theme/blue.less'])
+        .pipe(less({
+            plugins: [autoprefix, LessPluginInlineUrls]
+        }))
+        .pipe(cleanCSS({
+            compatibility: 'ie8'
+        }))
+        .pipe(gulp.dest('./theme/static/style/'));
 })
 
 
