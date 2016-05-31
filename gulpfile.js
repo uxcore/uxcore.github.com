@@ -32,7 +32,7 @@ gulp.task('less_index', function(){
 var fs = require('fs');
 
 gulp.task('less_theme', function() {
-    return  gulp.src(['./style/theme/blue.less'])
+    return  gulp.src(['./style/theme/*.less'])
         .pipe(less({
             plugins: [autoprefix, LessPluginInlineUrls]
         }))
