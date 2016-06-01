@@ -33,8 +33,8 @@ ReactDOM.render(React.createElement(
   null,
   React.createElement(
     _uxcoreTree2['default'],
-    { className: 'myCls', onSelect: handleSelect, defaultSelectedKeys: ['0-1', '0-1-1'], multiple: true,
-      defaultExpandAll: true, showLine: true },
+    { onSelect: handleSelect, defaultSelectedKeys: ['0-1', '0-1-1'], multiple: true,
+      defaultExpandAll: true },
     React.createElement(
       TreeNode,
       { title: 'parent 1', key: '0-1' },
@@ -60,8 +60,8 @@ ReactDOM.render(React.createElement(
 
 ReactDOM.render(
     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">Tree</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"myCls"</span> <span class="hljs-attribute">onSelect</span>=<span class="hljs-value">{handleSelect}</span> <span class="hljs-attribute">defaultSelectedKeys</span>=<span class="hljs-value">{['0-1',</span> '<span class="hljs-attribute">0-1-1</span>']} <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{true}</span>
-          <span class="hljs-attribute">defaultExpandAll</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">showLine</span>=<span class="hljs-value">{true}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Tree</span> <span class="hljs-attribute">onSelect</span>=<span class="hljs-value">{handleSelect}</span> <span class="hljs-attribute">defaultSelectedKeys</span>=<span class="hljs-value">{['0-1',</span> '<span class="hljs-attribute">0-1-1</span>']} <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{true}</span>
+          <span class="hljs-attribute">defaultExpandAll</span>=<span class="hljs-value">{true}</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">TreeNode</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"parent 1"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"0-1"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">TreeNode</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"parent 1-0"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"0-1-1"</span>&gt;</span>
               <span class="hljs-tag">&lt;<span class="hljs-title">TreeNode</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"leaf"</span> /&gt;</span>
@@ -150,6 +150,10 @@ var _uxcoreTree = require('uxcore-tree');
 
 var _uxcoreTree2 = _interopRequireDefault(_uxcoreTree);
 
+var _uxcoreButton = require('uxcore-button');
+
+var _uxcoreButton2 = _interopRequireDefault(_uxcoreButton);
+
 var TreeNode = _uxcoreTree2['default'].TreeNode;
 
 var CheckedDemo = (function (_React$Component) {
@@ -212,7 +216,7 @@ var CheckedDemo = (function (_React$Component) {
           ),
           React.createElement(
             _uxcoreTree2['default'],
-            { showLine: true, defaultExpandAll: true, checkable: true,
+            { defaultExpandAll: true, checkable: true,
               onCheck: this.handleCheck, defaultCheckedKeys: ['p1', 'p22'], checkedKeys: this.state.checkedKeys,
               onSelect: this.handleSelect, defaultSelectedKeys: ['p11'], selectedKeys: this.state.selectedKeys, multiple: true },
             React.createElement(
@@ -239,8 +243,8 @@ var CheckedDemo = (function (_React$Component) {
           )
         ),
         React.createElement(
-          'button',
-          { className: 'kuma-button kuma-button-sm', onClick: this.handleClick },
+          _uxcoreButton2['default'],
+          { type: 'outline', size: 'small', onClick: this.handleClick },
           'check sth'
         )
       );
@@ -251,6 +255,7 @@ var CheckedDemo = (function (_React$Component) {
 })(React.Component);
 
 ReactDOM.render(React.createElement(CheckedDemo, null), document.getElementById('components-tree-demo-checked'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Tree <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-tree'</span>;
+<span class="hljs-keyword">import</span> Button <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-button'</span>;
 <span class="hljs-keyword">let</span> TreeNode = Tree.TreeNode;
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CheckedDemo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
@@ -288,7 +293,7 @@ ReactDOM.render(React.createElement(CheckedDemo, null), document.getElementById(
       <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
           <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>checked<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-title">Tree</span> <span class="hljs-attribute">showLine</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">defaultExpandAll</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">checkable</span>=<span class="hljs-value">{true}</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Tree</span> <span class="hljs-attribute">defaultExpandAll</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">checkable</span>=<span class="hljs-value">{true}</span>
                 <span class="hljs-attribute">onCheck</span>=<span class="hljs-value">{this.handleCheck}</span> <span class="hljs-attribute">defaultCheckedKeys</span>=<span class="hljs-value">{['p1',</span> '<span class="hljs-attribute">p22</span>']} <span class="hljs-attribute">checkedKeys</span>=<span class="hljs-value">{this.state.checkedKeys}</span>
                 <span class="hljs-attribute">onSelect</span>=<span class="hljs-value">{this.handleSelect}</span> <span class="hljs-attribute">defaultSelectedKeys</span>=<span class="hljs-value">{['p11']}</span> <span class="hljs-attribute">selectedKeys</span>=<span class="hljs-value">{this.state.selectedKeys}</span> <span class="hljs-attribute">multiple</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">TreeNode</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"parent 1"</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"p1"</span>&gt;</span>
@@ -304,7 +309,7 @@ ReactDOM.render(React.createElement(CheckedDemo, null), document.getElementById(
             <span class="hljs-tag">&lt;<span class="hljs-title">TreeNode</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">"p12"</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"leaf"</span>/&gt;</span>
           <span class="hljs-tag">&lt;/<span class="hljs-title">Tree</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-button kuma-button-sm"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleClick}</span>&gt;</span>check sth<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"outline"</span> <span class="hljs-attribute">size</span>=<span class="hljs-value">"small"</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.handleClick}</span>&gt;</span>check sth<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
     }
 }
