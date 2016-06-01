@@ -63,10 +63,17 @@ class Demo extends React.Component {
 
     let renderProps = {
       height: 400,
+      width: 800,
       showSearch: true,
       fetchUrl: urlPrefix + 'demo/data.json',
       jsxcolumns: columns,
-      renderModel: 'tree'
+      renderModel: 'tree',
+      rowSelection: {
+        onSelect: (checked, selectedRow, selectedRows) => {
+          console.log("selectedRows:", selectedRows);
+        },
+        onSelectAll: () => {}
+      }
     };
     return (<Table {...renderProps} ref="table" />);
   }
