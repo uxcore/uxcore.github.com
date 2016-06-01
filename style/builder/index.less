@@ -1,6 +1,18 @@
-.head-action {
-    float: right;
-    padding: 20px 0 0 0;
+@import '../variables';
+@import '../partial/header';
+
+.nav-list {
+    display: flex;
+}
+.site-nav {
+    position: static;
+}
+
+.builder-action {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-top: 14px;
     a {
         display: inline-block;
         margin-right: 20px;
@@ -25,17 +37,20 @@
     order: 2;
     display: flex;
     flex-wrap: wrap;
+    flex: 1 1 auto;
+    align-items: flex-start;
+    overflow: hidden;
     .demo-wrap {
-        flex: 1 0 0;
         padding: 20px;
-        min-width: 450px;
+        width: 450px;
+        flex: 1 0 auto;
     }
 }
 .editor-board {
     width: 230px;
     background-color:#0c1719;
     order: 1;
-    flex-shrink: 0;
+    flex: 0 0 auto;
     .editor-head {
         padding: 0 20px;
         height: 44px;

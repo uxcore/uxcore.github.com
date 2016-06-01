@@ -30,9 +30,9 @@ export default class Editor extends React.Component {
         });
     }
     
-    getVars() {
+    getVars(theme = this.state.curTheme) {
         let flatVars = {};
-        this.state.curTheme.forEach((d) => {
+        theme.forEach((d) => {
             d.vars.forEach((v) => {
                 flatVars[v.key] = v.value;
             });
@@ -64,6 +64,9 @@ export default class Editor extends React.Component {
             curTheme: theme,
             editorFoldedStatus: editorFoldedStatus 
         });
+        // apply theme first
+        let flatVars = this.getVars(theme);
+        this.props.onChangeVars(flatVars);
     }
     
     onChangeVariable(category, colorObj) {

@@ -7,8 +7,7 @@ import Actions from './actions';
 import Store from './store';
 
 import {THEMES} from './variables/config';
-
-console.log(THEMES);
+import '../js/navigation';
 
 class Builder extends React.Component {
     constructor(props) {
@@ -39,7 +38,6 @@ class Builder extends React.Component {
     }
     
     render() {
-        console.log('render index:', this.state)
         return (
             <div className="builder-container">
                 <style>{this.state.css}</style>

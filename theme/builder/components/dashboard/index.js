@@ -7,16 +7,25 @@ import Calendar from 'uxcore-calendar';
 import Select, { Option } from 'uxcore-select2';
 import Pagination from 'uxcore-pagination';
 import Tabs, { TabPane } from 'uxcore-tabs';
+import Badge from 'uxcore-badge';
+import Message from 'uxcore-message';
+import { Line, Circle } from 'uxcore-progress';
+import Switch from 'uxcore-switch';
+import Crumb from 'uxcore-crumb';
+import RateDemo from './demos/Rate';
+import TableDemo from './demos/Table';
+import FormDemo from './demos/Form';
 
-var steps = [{
+
+let steps = [{
     title: '已完成',
-    description: '这里是多信息的描述啊'
+    description: '信息的描述'
 }, {
     title: '进行中',
-    description: '这里是多信息的耶哦耶哦哦耶哦耶'
+    description: '信息的描述'
 }, {
     title: '待运行',
-    description: '这里是多信息的描述啊'
+    description: '信息的描述'
 }].map(function(s, i) {
     return (
         <Steps.Step key={i} title={s.title} description={s.description} />
@@ -35,21 +44,77 @@ export default class Dashboard extends React.Component {
             dialogVisible: !this.state.dialogVisible
         });
     }
+    
+    handleMessageClick() {
+        Message['success']('Message提示！')
+    }
+    
     render() {
         return (
             <div className="dashboard-wrapper">
+                
                 <div className="demo-wrap">
-                    <Button type="primary">一级按钮</Button>
-                    <Button type="outline">二级按钮</Button>
-                    <Button type="secondary">次要按钮</Button>
+                    <Crumb className="crumb-style crumb-root">
+                        <Crumb.Item href="#" className="crumb-item-style">首页</Crumb.Item>
+                        <Crumb.Item href="#">一级页面</Crumb.Item>
+                        <Crumb.Item href="#">二级页面</Crumb.Item>
+                        <Crumb.Item className="crumb-item-style">三级页面</Crumb.Item>
+                    </Crumb>
+                    <div style={{marginTop: 20}}>
+                        <FormDemo></FormDemo>
+                        <div style={{marginLeft: 100}}>
+                            <Calendar.CalendarPanel prefixCls="kuma-calendar" />
+                        </div>
+                    </div>
                 </div>
                 <div className="demo-wrap">
-                    <Button type="primary" onClick={this.toggleDialog.bind(this)}>对话框</Button>
+                    <TableDemo></TableDemo>
+                </div>
+                <div className="demo-wrap">
+                    <div style={{display: 'inline-block'}}>
+                        <Badge count={5}>
+                            <a style={{
+                                width: 50,
+                                height: 50,
+                                borderRadius: 3,
+                                display: 'inline-block',
+                                background: '#e8e8e8'
+                            }}></a>
+                        </Badge>
+                    </div>
+                    <div style={{display: 'inline-block', marginLeft: 20}}>
+                        <Badge dot={true}>
+                            <a style={{
+                                width: 50,
+                                height: 50,
+                                borderRadius: 3,
+                                display: 'inline-block',
+                                background: '#e8e8e8'
+                            }}></a>
+                        </Badge>
+                    </div>
+                </div>
+                <div className="demo-wrap">
+                    <RateDemo />
+                    <Switch checkedChildren="显示" unCheckedChildren="隐藏" disabled={false} />
+                    <Button type="primary" onClick={this.toggleDialog.bind(this)} style={{marginLeft: 20}}>对话框</Button>
+                    <Button type="primary" onClick={this.handleMessageClick.bind(this)} style={{marginLeft: 20}}>Message提示</Button>
                     <Dialog
                         title="UXCORE" visible={this.state.dialogVisible}
                         onOk={this.toggleDialog.bind(this)}
                         onCancel={this.toggleDialog.bind(this)}
                     />
+                </div>
+                <div className="demo-wrap">
+                    <div style={{marginBottom: 20}}>
+                        <Line percent={30} />
+                    </div>
+                    <div style={{display: 'inline-block', marginRight: 20}}>
+                        <Circle percent={70} status="exception" />
+                    </div>
+                    <div style={{display: 'inline-block'}}>
+                        <Circle percent={100} status="success" />
+                    </div>
                 </div>
                 <div className="demo-wrap">
                     <div>
@@ -75,10 +140,7 @@ export default class Dashboard extends React.Component {
                     </div>
                 </div>
                 <div className="demo-wrap">
-                    <Steps size="small" current={1}>{steps}</Steps>
-                </div>
-                <div className="demo-wrap">
-                    <Calendar.CalendarPanel prefixCls="kuma-calendar" />
+                    <Steps type="title-on-top" current={1}>{steps}</Steps>
                 </div>
                 <div className="demo-wrap">
                     <Tabs defaultActiveKey="1">
