@@ -36,7 +36,7 @@ gulp.task('less_theme', function() {
         .pipe(less({
             plugins: [autoprefix, LessPluginInlineUrls]
         }))
-        .pipe(minifyCss({compatibility: 'ie8'}))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('./theme/static/style/'));
 });
 
@@ -45,7 +45,7 @@ gulp.task('less_builder', function () {
         .pipe(less({
             plugins: [autoprefix, LessPluginInlineUrls]
         }))
-        .pipe(minifyCss({compatibility: 'ie8'}))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('./theme/static/style/builder/'));
 });
 
