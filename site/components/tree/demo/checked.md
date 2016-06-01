@@ -8,6 +8,7 @@
 
 ````jsx
 import Tree from 'uxcore-tree';
+import Button from 'uxcore-button';
 let TreeNode = Tree.TreeNode;
 
 class CheckedDemo extends React.Component {
@@ -45,7 +46,7 @@ class CheckedDemo extends React.Component {
       return <div>
         <div>
           <h2>checked</h2>
-          <Tree showLine={true} defaultExpandAll={true} checkable={true}
+          <Tree defaultExpandAll={true} checkable={true}
                 onCheck={this.handleCheck} defaultCheckedKeys={['p1', 'p22']} checkedKeys={this.state.checkedKeys}
                 onSelect={this.handleSelect} defaultSelectedKeys={['p11']} selectedKeys={this.state.selectedKeys} multiple>
             <TreeNode title="parent 1" key="p1">
@@ -61,7 +62,7 @@ class CheckedDemo extends React.Component {
             <TreeNode key="p12" title="leaf"/>
           </Tree>
         </div>
-        <button className="kuma-button kuma-button-sm" onClick={this.handleClick}>check sth</button>
+        <Button type="outline" size="small" onClick={this.handleClick}>check sth</Button>
       </div>
     }
 }
