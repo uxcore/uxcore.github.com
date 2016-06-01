@@ -1,4 +1,4 @@
-# 范围
+# 不可选区间
 
 - order: 3
 
@@ -10,12 +10,30 @@
 
 ````jsx
 var Calendar = require('uxcore-calendar');
-var disabledDate = function(current, value) {
-  // can not select days after today
-  return current.getTime() > Date.now();
-};
+function disabledDate(current, value) {
+    return current.getTime() > Date.now();
+}
+
+class Demo extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: new Date().getTime()
+        }
+    }
+    onSelect(value) {
+        console.log(value);
+        this.setState({
+            value: value
+        });
+    }
+    render() {
+        return <Calendar disabledDate={disabledDate} value={this.state.value} onSelect={this.onSelect.bind(this)} />
+    }
+
+}
 
 ReactDOM.render(
-  <Calendar disabledDate={disabledDate} />
+  <Demo />
 , document.getElementById('components-calendar-demo-range'));
 ````

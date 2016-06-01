@@ -3,7 +3,7 @@
 - category: Components
 - chinese: 选择器
 - order: 2
-- subtype: 表单及相关
+- subtype: Form Control
 
 ---
 
@@ -40,6 +40,12 @@
 |combobox | 输入框自动提示模式 |  | false |
 |size | 选择框大小 | String | 无 |
 |optionLabelProp| 选择 Option 的哪个 prop 作为选择框中的显示。| string | 'children' |
+|getPopupContainer| 弹出的菜单渲染在哪个容器中 | function(trigger:Node):Node | function(){return document.body;}|
+|dropdownMatchSelectWidth|dropdown 部分是否和 select 部分同宽| boolean | true |
+|dropdownClassName | dropdown 部分的定制类名 | string | - |
+|notFoundContent   | 未找到选项时的提示文案   | string | not found |
+|showSearch | 显示搜索框 | bool | true |
+
 
 ### Option props
 |参数|说明|类型|默认值|

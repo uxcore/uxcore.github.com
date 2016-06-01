@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var ghPages = require('gulp-gh-pages');
 var less = require('gulp-less');
-var minifyCss = require('gulp-minify-css');
+var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var watch = require('gulp-watch');
 var batch = require('gulp-batch');
@@ -25,30 +25,29 @@ gulp.task('less_index', function(){
         .pipe(less({
             plugins: [autoprefix, LessPluginInlineUrls]
         }))
-        .pipe(minifyCss({compatibility: 'ie8'}))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('./theme/static/style/'));
 });
 
 var fs = require('fs');
 
 gulp.task('less_theme', function() {
-    return gulp.src(['./style/theme/**.less'])
-                .pipe(less({
-                    plugins: [autoprefix, LessPluginInlineUrls]
-                }))
-                .pipe(minifyCss({compatibility: 'ie8'}))
-                .pipe(gulp.dest('./theme/static/style/'));
+    return gulp.src(['./style/theme/*.less'])
+        .pipe(less({
+            plugins: [autoprefix, LessPluginInlineUrls]
+        }))
+        .pipe(minifyCss({compatibility: 'ie8'}))
+        .pipe(gulp.dest('./theme/static/style/'));
 });
 
 gulp.task('less_builder', function () {
     return gulp.src(['./style/builder/index.less'])
-                .pipe(less({
-                    plugins: [autoprefix, LessPluginInlineUrls]
-                }))
-                .pipe(minifyCss({compatibility: 'ie8'}))
-                .pipe(gulp.dest('./theme/static/style/builder/'));
+        .pipe(less({
+            plugins: [autoprefix, LessPluginInlineUrls]
+        }))
+        .pipe(minifyCss({compatibility: 'ie8'}))
+        .pipe(gulp.dest('./theme/static/style/builder/'));
 });
-
 
 gulp.task('less', ['less_index', 'less_theme', 'less_builder'], function(){});
 

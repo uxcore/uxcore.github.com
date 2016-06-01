@@ -1,7 +1,7 @@
 # Pickable
 
 - category: Components
-- subtype: 表单及相关
+- subtype: Form Control
 - chinese:　筛选器
 
 ---

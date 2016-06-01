@@ -3,7 +3,7 @@
 - category: Components
 - chinese: 进度条
 - order: 16
-- subtype: 交互提醒
+- subtype: Presentation
 
 ---
 

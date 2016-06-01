@@ -28,6 +28,12 @@ window.UXCORE = {
 	'uxcore-message': require('uxcore-message'),
 	'uxcore-validator': require('uxcore-validator'),
 	'uxcore-pickable': require('uxcore-pickable'),
+	'uxcore-rate': require('uxcore-rate'),
+	'uxcore-switch': require('uxcore-switch'),
+	'uxcore-badge': require('uxcore-badge'),
+	'uxcore-carousel': require('uxcore-carousel'),
+	'uxcore-tree-select': require('uxcore-tree-select'),
+	'uxcore-load-more': require('uxcore-load-more'),
 	'classnames': require('classnames'),
 	'object-assign': require('object-assign')
 };

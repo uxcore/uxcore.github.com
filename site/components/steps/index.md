@@ -3,7 +3,7 @@
 - category: Components
 - chinese: 步骤条
 - order: 17
-- subtype: 交互提醒
+- subtype: Presentation
 
 ---
 

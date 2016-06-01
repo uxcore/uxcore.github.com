@@ -2,11 +2,35 @@
 
 - category: Components
 - chinese: 表格
-- description: uxcore table, will including checkbox, edit text field, column pick etc
 - order: 6
-- subtype: 表格
+- subtype: Matrix
 
 ---
+
+
+## API
+
+### 行内编辑用 
+
+* getData(): 返回表格的数据，并作校验。
+* addEmptyRow(): 添加一个空的新行。
+* addRow(rowData): 以指定数据添加一个新行。
+* delRow(rowData): 删除一个新行。
+* editRow(rowData): 使指定的行切换到编辑模式。
+* editAllRow(): 使所有行切换到编辑模式。
+* viewRow(rowData): 使指定的行切换到查看模式。
+* saveRow(rowData): 保存行的数据(同时切换至查看模式)。
+* saveAllRow(): 保存所有行的数据(同时切换至查看模式)。
+* resetRow(rowData): 重置行到数据（若保存过，则为保存过后的数据）。
+
+### 获取数据
+
+* fetchData(from): 使表格重新请求一次数据。
+    * @param from {string} {optional}: 这个参数会传入到 beforeFetch 的回调中。
+
+### 其他
+
+* toggleSubComp(rowData): 使指定的行显示或隐藏二级组件(subComp)。
 
 
 ## Props
@@ -18,14 +42,21 @@
 |height              |number              |optional  |100%        | -         |表格的高度|
 |showColumnPicker    |boolean             |optional  |true        | -         |是否显示列筛选按钮|
 |showPager           |boolean             |optional  |true        | -         |是否显示分页|
+|showPagerTotal      |boolean             |optional  |false       | 1.3.17    |是否显示分页的总数部分|
 |showHeader          |boolean             |optional  |true        | -         |是否显示表格头部|
+|showHeaderBorder    |boolean             |optional  |false       | 1.3.6     |是否显示头部列之间的分割线|
 |showMask            |boolean             |optional  |true        | -         |是否在 loading 的时候显示蒙层|
 |showSearch          |boolean             |optional  |false       | -         |是否显示内置的搜索栏| 
 |doubleClickToEdit   |boolean             |optional  |true        | -         |是否开启双击编辑|
+|fetchDataOnMount    |boolean             |optional  |true        | 1.3.18    |是否在组件 Mount 时立刻获取一次数据|
+|rowSelector         |string              |optional  |复选        | 1.3.20    |行选择是复选还是单选，支持 checkboxSelector 和 radioSelector|
+|locale              |string              |optional  |zh-cn       | 1.3.17    |国家化，目前支持 zh-cn/en-us|
 |emptyText           |string or element   |optional  |"暂无数据"   | -         |当没有数据时 Table 展示的文案|
 |searchBarPlaceholder|string              |optional  |"搜索表格内容"| 1.3.0     |searchBar 的占位符|
+|loadingText         |string              |optional  |"loading"   | 1.4.4     |加载数据时的文案|
 |headerHeight        |number              |optional  |40          | -         |表格头部的高度|
 |pageSize            |number              |optional  |10          | -         |每页显示多少条数据|
+|pagerSizeOptions    |array               |optional  |[10,20,30,40] | -       |显示的可选 pageSize|
 |queryKeys           |array               |optional  |[]          | -         |有哪些数据会传递给 subComp|
 |jsxdata             |object              |optional  |-           | -         |在远端数据还没有返回时用作默认数据|
 |fetchUrl            |string              |optional  |""          | -         |表格的数据源|
@@ -33,6 +64,7 @@
 |actionBar           |object/array        |optional  |null        | -         |表格内置的操作条配置，详细[见此](#actionbar)|
 |beforeFetch         |function(data, from)|optional  |noop        | -         |两个参数，data 表示表格请求数据时即将发送的参数，from 表示这次请求数据的行为从哪里产生，内置的有 `search`(搜索栏),`order`(排序) & `pagination`(分页)，该函数需要返回值，返回值为真正请求所携带的参数。|
 |processData         |function(data)      |optional  |noop        | -         |有时源返回的数据格式，并不符合 Table 的要求，可以通过此函数进行调整，参数 data 是返回数据中 content 字段的 value，该函数需要返回值，返回值为符合 content 字段 value 的数据结构。|
+|onFetchError        |function(result)    |optional  |noop        | 1.3.7     |在返回数据中 success 不是 true 的情况下触发，返回所有请求得到的数据|
 |addRowClassName     |function(rowData)   |optional  |noop        | -         |用于为特定的某几行添加特殊的 class，用于样式定制|
 |rowSelection        |object              |optional  |noop        | -         |选中复选框时触发的回调，rowSelection 是由回调函数组成的对象，包括 onSelect 和 onSelectAll，例子见此| 
 
@@ -40,7 +72,8 @@
 ### 折叠展开专用
 |Name            |Type                |Require   |Since Ver. |Default|Note |
 |---             |---                 |---       |---        |---    |---|
-|SubComp         |React Element       |optional  |-          | -     |传入二级组件|
+|SubComp         |React Element       |optional  |-          | -     |传入二级组件，已废弃，请使用 renderSubComp|
+|renderSubComp   |function(rowData)   |optional  |1.3.15     | -     |传入二级组件，该函数需要返回值，返回 false，表示不渲染二级，返回 jsx，则渲染该 jsx|
 
 
 ### Tree 模式专用
@@ -77,7 +110,8 @@
 |align           |string            |-         |optional |文字居中方式，默认 'left'|
 |disable         |boolean           |-         |optional |在 type 为 checkbox 时使用，是否禁用 checkbox，优先级高于 isDisable|
 |isDisable       |function(rowData) |1.3.1     |optional |在 tpye 为 checkbox 时使用，为一个回调函数，用于根据 rowData 去判断是否禁用该行的 checkbox|
-|canEdit         |function(rowData) |1.3.3     |optional |在 type 为可编辑表格的类别时使用，为一个回调函数，用于根据 rowData 去判断该行该列是否可以编辑|         
+|canEdit         |function(rowData) |1.3.3     |optional |在 type 为可编辑表格的类别时使用，为一个回调函数，用于根据 rowData 去判断该行该列是否可以编辑|
+|renderChildren  |function          |1.5.0     | -       |在 type 为 select 或 radio 时使用，通过返回 jsx 传入选项。|         
  
 
 
@@ -106,22 +140,6 @@ let columns = [
         { dataKey: 'action', title:'链接', width:100, render: function(cellData,rowData) {
             return <div><a href="#">{rowData.email}</a></div>
         }}
- ]
-
-```
-
-## 列配置项的例子2（带列群组, since ver. 1.3.0）
-```javascript
-
-let columns = [
-        { dataKey: 'check', type: 'checkbox', disable: false}, // custom checkbox column, dataKey can be anyone, true means checked.
-        {
-            group: "国家",
-            columns: [
-                { dataKey: 'country', title:'国家', width: 200,ordered:true},
-                { dataKey: 'country2', title:'国家2', width: 200,ordered:true},
-            ]
-        }
  ]
 
 ```
@@ -255,31 +273,21 @@ actions: [
             me.refs.grid.saveRow(rowData);
         },
         mode: Constants.MODE.EDIT,
-        render: (title) => { // 定制渲染
+        render: (title, rowData) => { // 定制渲染
             return title + '1'
         }
     }
 ]
 ```
 
-## API
+### 对于多行的支持
 
-### 行内编辑用 
+> 正常情况下，Table 中每个单元格按照一行缩略的方式展示，根据业务需要，有时可能需要展示多行，对此，Table 通过 prop `addRowClassName` 配合专属类名 `multiline` 来实现。示例如下：
 
-* getData(): 返回表格的数据，并作校验。
-* addEmptyRow(): 添加一个空的新行。
-* addRow(rowData): 以指定数据添加一个新行。
-* delRow(rowData): 删除一个新行。
-* editRow(rowData): 使指定的行切换到编辑模式。
-* viewRow(rowData): 使指定的行切换到查看模式。
-* saveRow(rowData): 保存行的数据(同时切换至查看模式)。
-* resetRow(rowData): 重置行到数据（若保存过，则为保存过后的数据）。
+```
+addRowClassName: function(rowData) {
+    return 'multiline';
+}
+```
 
-### 获取数据
-
-* fetchData(from): 使表格重新请求一次数据。
-    * @param from {string} {optional}: 这个参数会传入到 beforeFetch 的回调中。
-
-### 其他
-
-* toggleSubComp(rowData): 使指定的行显示或隐藏二级组件(subComp)。
+> 需要注意：当配置为 multiline 时，用户需自己处理上下间距的问题，处理的方式应为在 multiline 或其他专属类名作用域下进行设置，避免影响其他非 multiline 设置的行。

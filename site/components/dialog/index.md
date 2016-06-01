@@ -3,7 +3,7 @@
 - order: 1
 - category: Components
 - chinese: 对话框
-- subtype: 交互提醒
+- subtype: Presentation
 
 ---
 

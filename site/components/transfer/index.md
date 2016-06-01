@@ -3,7 +3,7 @@
 - category: Components
 - chinese: 双栏选择框
 - order: 11
-- subtype: 其它
+- subtype: Other
 
 ---
 

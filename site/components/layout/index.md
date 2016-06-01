@@ -4,7 +4,7 @@
 - chinese: 左右布局
 - description: helping you to make an adaptive layout fastly
 - order: 0
-- subtype: 布局
+- subtype: Layout
 
 ---
 

@@ -8,10 +8,10 @@
 
 
 ````jsx
-var Select = require('uxcore-select2');
-var Option = Select.Option;
+let Select = require('uxcore-select2');
+let Option = Select.Option;
 
-var Test = React.createClass({
+let Test = React.createClass({
   getInitialState() {
     return {
       options: []

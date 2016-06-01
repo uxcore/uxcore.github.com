@@ -3,7 +3,7 @@
 - category: Components
 - chinese: 文字提示
 - order: 4
-- subtype: 交互提醒
+- subtype: Presentation
 
 ---
 

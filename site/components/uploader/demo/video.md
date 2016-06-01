@@ -9,7 +9,31 @@
 ````jsx
 const Uploader = require('uxcore-uploader');
 
-ReactDOM.render((
-    <Uploader multiple={false} accept="videos" name='file' url='http://test.yanbingbing.com/upload.php' />
-), document.getElementById('components-uploader-demo-video'));
+class Demo1 extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            fileList: []
+        }
+    }
+
+    handleChange(fileList) {
+        this.setState({
+            fileList: fileList
+        })
+    }
+    render() {
+        return <Uploader autoPending={false}
+                    accept="videos"
+                    multiple={false} 
+                    isOnlyImg={false}
+                    fileList={this.state.fileList}
+                    onChange={this.handleChange.bind(this)} 
+                    name='file' 
+                    url='http://eternalsky.me:8122/file/upload' 
+                    locale="en" />
+    }
+}
+
+ReactDOM.render(<Demo1 />, document.getElementById('components-uploader-demo-video'));
 ````

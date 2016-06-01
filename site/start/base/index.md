@@ -24,15 +24,15 @@ npm install uxcore-kuma
 
 
 >   以下两个分别对应阿里橙、晴空蓝两种主题，引一者即可。  
->   http://g.alicdn.com/uxcore/uxcore-kuma/2.0.5/orange.css  
->   http://g.alicdn.com/uxcore/uxcore-kuma/2.0.5/blue.css  
+>   http://g.alicdn.com/uxcore/uxcore-kuma/2.0.6/orange.css  
+>   http://g.alicdn.com/uxcore/uxcore-kuma/2.0.6/blue.css  
 >     
 >   Iconfont：引入 uxcore-kuma 所需的 iconfont。  
 >   http://alinw.alicdn.com/??platform/common/s/1.1/global/global.css  
 >     
 >   For Production  
->   http://g.alicdn.com/uxcore/uxcore-kuma/2.0.5/orange.min.css  
->   http://g.alicdn.com/uxcore/uxcore-kuma/2.0.5/blue.min.css  
+>   http://g.alicdn.com/uxcore/uxcore-kuma/2.0.6/orange.min.css  
+>   http://g.alicdn.com/uxcore/uxcore-kuma/2.0.6/blue.min.css  
 
 
 ## 获取 UXCore React
@@ -40,7 +40,7 @@ npm install uxcore-kuma
 ### 通过 CDN
 
 
-> http://g.alicdn.com/uxcore/uxcore/0.1.4/uxcore.js
+> http://g.alicdn.com/uxcore/uxcore/0.1.4/uxcore.js   
 > http://g.alicdn.com/uxcore/uxcore/0.1.4/uxcore.min.js
 
 

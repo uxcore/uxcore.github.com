@@ -1,4 +1,4 @@
-# 带搜索框
+# 不带搜索框
 
 - order: 1
 
@@ -7,15 +7,15 @@
 ---
 
 ````jsx
-var Select = require('uxcore-select2');
-var Option = Select.Option;
+let Select = require('uxcore-select2');
+let Option = Select.Option;
 
 function handleChange(value) {
   console.log('selected ' + value);
 }
 
 ReactDOM.render(
-  <Select defaultValue="lucy" showSearch={true} style={{width:200}} onChange={handleChange}>
+  <Select defaultValue="lucy" showSearch={false} style={{width:200}} onChange={handleChange}>
     <Option value="jack">jack</Option>
     <Option value="lucy">lucy</Option>
     <Option value="disabled" disabled>disabled</Option>

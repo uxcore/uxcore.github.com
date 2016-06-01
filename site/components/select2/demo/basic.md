@@ -7,15 +7,11 @@
 ---
 
 ````jsx
-var Select = require('uxcore-select2');
-var Option = Select.Option;
-
-function handleChange(value) {
-  console.log('selected ' + value);
-}
+let Select = require('uxcore-select2');
+let Option = Select.Option;
 
 ReactDOM.render(
-  <Select defaultValue="lucy" style={{width:200}} onChange={handleChange}>
+  <Select defaultValue="lucy" style={{width:200}}>
     <Option value="jack">Jack</Option>
     <Option value="lucy">Lucy</Option>
     <Option value="disabled" disabled>Disabled</Option>
