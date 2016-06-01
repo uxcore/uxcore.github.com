@@ -1,0 +1,30 @@
+mixin demos
+	- var demos = []
+	- for page in resource.pages
+		- var pd = post.directory.replace(/\\/g, '/')
+		- if (pd.indexOf('/') !== 0)
+			- pd = '/' + pd;
+		- if (page.filepath.indexOf('site' + pd + '/demo/') === 0)
+			- demos.push(page)
+			- demos.sort(function(a, b){
+				- var oa = a.meta.order || 100;
+				- var ob = b.meta.order || 100;
+				- return parseInt(oa, 10) - parseInt(ob, 10)
+			- })
+	if demos.length > 0
+		h2.site-demos 
+			i.kuma-icon.kuma-icon-graph
+			|组件演示
+	each demo in demos
+		.code-box(id="code-box-#{demo.meta.id}")
+			.code-box-meta
+				.code-box-title
+					i.fa.fa-tag
+					a(href="#code-box-#{demo.meta.id}") #{demo.title}
+			.code-box-demo
+				div(id="#{demo.meta.id}")
+			.code-box-desc
+				!{demo.meta.description}
+				a.code-toggle
+					i.kuma-icon.kuma-icon-chevron-down
+			.code-box-markdown !{demo.meta.html}

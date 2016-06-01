@@ -12,7 +12,7 @@ exports.site = {
     description: package.description,
     repo: package.repository.url,
     issues: package.bugs.url,
-    homeLink: '/css/base/',
+    homeLink: '/start/base/',
     navigation: [
         {
             text: '开始使用',
@@ -33,6 +33,11 @@ exports.site = {
             text: '场景',
             link: '/scene/list/',
             id: 'scene'
+        },
+        {
+            text: '主题',
+            link: '/theme/builder',
+            id: 'theme'
         }
     ],
     features: [
@@ -62,10 +67,12 @@ exports.middlewares = [{
             publicPath: '/static/',
             lazy: true,
             stats: {
+                version: true,
                 hash: false,
                 cached: false,
                 cachedAssets: false,
-                colors: true
+                colors: true,
+                timings: true
             }
         });
         try {

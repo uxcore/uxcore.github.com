@@ -1,0 +1,150 @@
+{
+    "name": "蚂蚁蓝",
+    "data": [
+        {
+            "category": "字体",
+            "vars": [
+                {
+                    "title": "字体",
+                    "key": "base-font",
+                    "value": "tahoma, arial, 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Microsoft YaHei', 'SimSun', sans-serif",
+                    "type": "font-family"
+                }
+            ]
+        },
+        {
+            "category": "基础色",
+            "vars": [
+                {
+                    "title": "品牌色",
+                    "key": "brand-primary",
+                    "value": "#2599f2",
+                    "type": "color"
+                },
+                {
+                    "title": "子品牌色",
+                    "key": "brand-secondary",
+                    "value": "#2c2f33",
+                    "type": "color"
+                },
+                {
+                    "title": "补色",
+                    "key": "brand-complement",
+                    "value": "#00b3e8",
+                    "type": "color"
+                },
+                {
+                    "title": "辅色",
+                    "key": "brand-comosite",
+                    "value": "#00c587",
+                    "type": "color"
+                },
+                {
+                    "title": "浓度",
+                    "key": "brand-deep",
+                    "value": "#f37327",
+                    "type": "color"
+                }
+            ]
+        },
+        {
+            "category": "功能色",
+            "vars": [
+                {
+                    "title": "DANGER",
+                    "key": "brand-danger",
+                    "value": "#f04631",
+                    "type": "color"
+                },
+                {
+                    "title": "WARNING",
+                    "key": "brand-warning",
+                    "value": "#f5a12a",
+                    "type": "color"
+                },
+                {
+                    "title": "SUCCESS",
+                    "key": "brand-success",
+                    "value": "#66bd5c",
+                    "type": "color"
+                },
+                {
+                    "title": "INFO",
+                    "key": "brand-info",
+                    "value": "#45a8e6",
+                    "type": "color"
+                },
+                {
+                    "title": "QUERY",
+                    "key": "brand-query",
+                    "value": "#24bee8",
+                    "type": "color"
+                }
+            ]
+        },
+        {
+            "category": "灰色",
+            "vars": [
+                {
+                    "title": "灰色1",
+                    "key": "gray-dark",
+                    "value": "#333",
+                    "type": "color"
+                },
+                {
+                    "title": "灰色2",
+                    "key": "gray",
+                    "value": "#666",
+                    "type": "color"
+                },
+                {
+                    "title": "灰色3",
+                    "key": "gray-light",
+                    "value": "#999",
+                    "type": "color"
+                },
+                {
+                    "title": "灰色4",
+                    "key": "gray-lighter",
+                    "value": "#ccc",
+                    "type": "color"
+                }
+            ]
+        },
+        {
+            "category": "链接色",
+            "vars": [
+                {
+                    "title": "NORMAL",
+                    "key": "link-color",
+                    "value": "#3B8FD9",
+                    "type": "color"
+                },
+                {
+                    "title": "HOVER",
+                    "key": "link-hover-color",
+                    "value": "#1A78B8",
+                    "type": "color"
+                },
+                {
+                    "title": "ACTIVE",
+                    "key": "link-active-color",
+                    "value": "#1A78B8",
+                    "type": "color"
+                },
+                {
+                    "title": "VISITED",
+                    "key": "link-visited-color",
+                    "value": "#73461d",
+                    "type": "color"
+                },
+                {
+                    "title": "DISABLED",
+                    "key": "link-disabled-color",
+                    "value": "#ccc",
+                    "type": "color"
+                }
+            ]
+        }
+    ]
+}

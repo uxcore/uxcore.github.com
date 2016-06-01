@@ -32,21 +32,27 @@ gulp.task('less_index', function(){
 var fs = require('fs');
 
 gulp.task('less_theme', function() {
-    return  gulp.src(['./style/theme/*.less'])
+    return gulp.src(['./style/theme/*.less'])
         .pipe(less({
             plugins: [autoprefix, LessPluginInlineUrls]
         }))
-        .pipe(cleanCSS({
-            compatibility: 'ie8'
-        }))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('./theme/static/style/'));
-})
+});
 
+gulp.task('less_builder', function () {
+    return gulp.src(['./style/builder/index.less'])
+        .pipe(less({
+            plugins: [autoprefix, LessPluginInlineUrls]
+        }))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(gulp.dest('./theme/static/style/builder/'));
+});
 
-gulp.task('less', ['less_index', 'less_theme'], function(){});
+gulp.task('less', ['less_index', 'less_theme', 'less_builder'], function(){});
 
 gulp.task('watch', [], function(){
-    watch('./style/*.less', batch(function(e, done){
+    watch('./style/**/*.less', batch(function(e, done){
         gulp.start('less', done);
     }));
 });

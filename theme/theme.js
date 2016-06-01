@@ -43,54 +43,58 @@ function parseContent(content){
 
 exports.reader = function(post){
     var filepath = post.meta.filepath.toLowerCase();
-    if (filepath.indexOf('site/components') === 0) {
-      post.template = post.meta.template = 'components';
-    }
-    if (filepath.indexOf('site/css') === 0) {
-      post.template = post.meta.template = 'css';
-    }
-    if (filepath.indexOf('/demo/') > 0) {
-        post.template = post.meta.template = 'demos';
-    } 
-    if (filepath.indexOf('site/scene') === 0) {
-        post.template = post.meta.template = 'scene';
-    } if (filepath.indexOf('site/start') === 0) {
-        post.template = post.meta.template = 'start';
-    } else {
-        if (post.template === 'components') {
-            var moduleName = 'uxcore-' + post.directory.replace(post.template, '');
-            moduleName = moduleName.replace(/[/\\]/g, '');
-            var pkg = readFileFromNodeModules('package.json', moduleName);
-            if (pkg) {
-                pkg = JSON.parse(pkg);
-                if (pkg.repository && pkg.repository.url) {
-                    pkg.repository.url = pkg.repository.url.replace('git+', '');
-                }
-                post.pkg = pkg;
-                post.name = pkg.name;
-                if (!post.title) {
-                    post.title = pkg.name;
-                }
-                post.tags = {};
-                if (pkg.author) {
-                    post.tags.author = pkg.author;
-                } else if (pkg.maintainers) {
-                    post.tags.author = pkg.maintainers[0];
-                }
+    filepath = filepath.slice(5).split('/');
+    switch (filepath[0]) {
+        case 'home.md':
+            post.filename = post.meta.filename = 'index';
+            post.template = post.meta.template = 'home';
+            break;
+        case 'start':
+            post.template = post.meta.template = 'start';
+            break;
+        case 'css':
+        case 'components':
+        case 'scene':
+            if (filepath.indexOf('demo') !== -1) {
+                post.template = post.meta.template = 'demos';
+            } else {
+                post.template = post.meta.template = filepath[0];
             }
-            if (!post.html) {
-                var readme = readFileFromNodeModules('README.md', moduleName);
-                if (readme) {
-                    post.html = marked(parseContent(readme));
-                }
+            break;
+        case 'theme':
+            post.template = post.meta.template = 'builder';
+            break;
+        default:
+            break;
+    }
+    if (post.template === 'components') {
+        var moduleName = 'uxcore-' + post.directory.replace(post.template, '');
+        moduleName = moduleName.replace(/[/\\]/g, '');
+        var pkg = readFileFromNodeModules('package.json', moduleName);
+        if (pkg) {
+            pkg = JSON.parse(pkg);
+            if (pkg.repository && pkg.repository.url) {
+                pkg.repository.url = pkg.repository.url.replace('git+', '');
+            }
+            post.pkg = pkg;
+            post.name = pkg.name;
+            if (!post.title) {
+                post.title = pkg.name;
+            }
+            post.tags = {};
+            if (pkg.author) {
+                post.tags.author = pkg.author;
+            } else if (pkg.maintainers) {
+                post.tags.author = pkg.maintainers[0];
+            }
+        }
+        if (!post.html) {
+            var readme = readFileFromNodeModules('README.md', moduleName);
+            if (readme) {
+                post.html = marked(parseContent(readme));
             }
         }
     }
     post.meta.html = post.html;
-    if (filepath === 'site/home.md') {
-        post.filename = post.meta.filename = 'index';
-        post.template = post.meta.template = 'home';
-    }
-    // console.log(post);
     return post;
 };

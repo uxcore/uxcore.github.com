@@ -1,0 +1,205 @@
+@import '../variables';
+@import '../partial/header';
+
+.nav-list {
+    display: flex;
+}
+.site-nav {
+    position: static;
+}
+
+.builder-action {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-top: 14px;
+    a {
+        display: inline-block;
+        margin-right: 20px;
+        padding: 0 14px;
+        border: 1px solid #fff;
+        color: #fff;
+        opacity: .8;
+        line-height: 1.5;
+        border-radius: 3px;
+        font-size: 12px;
+        &:hover {
+            color: #fff;
+            opacity: 1;
+            text-decoration: none;
+        }
+    }
+}
+.builder-container {
+    display: flex;
+}
+.dashboard-wrapper {
+    order: 2;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    align-items: flex-start;
+    overflow: hidden;
+    .demo-wrap {
+        padding: 20px;
+        width: 450px;
+        flex: 1 0 auto;
+    }
+}
+.editor-board {
+    width: 230px;
+    background-color:#0c1719;
+    order: 1;
+    flex: 0 0 auto;
+    .editor-head {
+        padding: 0 20px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 16px;
+        .editor-title {
+            position: relative;
+            display: block;
+            color: #f5a12a;
+            transition: padding ease .375s;
+            &:hover {
+                text-decoration: none;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-top: 2px solid #f5a12a;
+                border-right: 2px solid #f5a12a;
+                transition: all ease .375s;
+            }
+            &.mode-pattern {
+                padding-left: 0;
+                &:after {
+                    right: 0;
+                    top: 15px;
+                    transform: rotate(45deg);
+                }
+            }
+            &.mode-customize {
+                padding-left: 20px;
+                &:after {
+                    left: 0;
+                    top: 15px;
+                    transform: rotate(-135deg);
+                }
+            }
+        }
+    }
+    > dl {
+        dt {
+            padding: 0 20px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, .06);
+            line-height: 40px;
+            color: #ccc;
+            font-size: 14px;
+        }
+        dd {
+            padding: 0 20px;
+        }
+        &.block {
+            dd {
+                display: none;
+            }
+            &.editorFolded {
+                dd {
+                    display: block;
+                }
+            }
+            dt {
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    right: 20px;
+                    top: 12px;
+                    width: 10px;
+                    height: 10px;
+                    border-top: 2px solid #ccc;
+                    border-right: 2px solid #ccc;
+                    transform: rotate(135deg);
+                }
+            }
+            .editor-grid {
+                padding: 18px 0;
+                > li {
+                    padding: 4px 0;
+                }
+            }
+            .variable-title {
+                display: inline-block;
+                width: 90px;
+                color: #999;
+                font-size: 14px;
+            }
+            .component-picker {
+                display: inline-block;
+                width: 100px;
+            }
+        }
+        .theme-chooser {
+            li {
+                padding: 10px 0;
+                color: #999;
+                line-height: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.component-color-picker {
+    position: relative;
+    .field {
+        padding: 6px;
+        width: 100%;
+        height: 32px;
+        border: 1px solid #ccc;
+        line-height: 20px;
+        box-sizing: border-box;
+    }
+    .picker {
+        position: absolute;
+        z-index: 2;
+    }
+    .pickerCover {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .color-preview {
+        position: absolute;
+        right: 6px;
+        top: 6px;
+        width: 20px;
+        height: 20px;
+    }
+}
+.component-font-picker {
+    position: relative;
+    .field {
+        padding: 6px;
+        width: 100%;
+        height: 32px;
+        border: 1px solid #ccc;
+        line-height: 20px;
+        box-sizing: border-box;
+    }
+    .font-preview {
+        position: absolute;
+        margin-top: 4px;
+        background-color: #fff;
+        padding: 4px;
+        white-space: nowrap;
+        border: 1px solid #eee;
+        line-height: 2;
+        z-index: 1;
+    }
+}
