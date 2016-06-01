@@ -1,8 +1,8 @@
 import Actions from './actions';
 import { saveAs, saveTextAs } from '../js/fileSaver';
 
-// let SERVER = 'http://eternalsky.me:8082';
-let SERVER = 'http://localhost:8082';
+let SERVER = 'http://eternalsky.me:8082';
+// let SERVER = 'http://localhost:8082';
 
 function _varsAdapter(vars){
     let submitData = {};
