@@ -35,6 +35,7 @@ window.UXCORE = {
 	'uxcore-tree-select': require('uxcore-tree-select'),
 	'uxcore-load-more': require('uxcore-load-more'),
 	'uxcore-multi-select': require('uxcore-multi-select'),
+	'uxcore-tinymce': require('uxcore-tinymce'),
 	'classnames': require('classnames'),
 	'object-assign': require('object-assign')
 };

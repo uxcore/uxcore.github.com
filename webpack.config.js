@@ -38,7 +38,7 @@ module.exports = {
                     var isNpmModule = !!path.match(/node_modules/);
                     return isNpmModule;
                 },
-                loader: 'babel-loader?stage=1'
+                loader: 'babel-loader?stage=1&cacheDirectory',
             }, {
                 test: /\.json$/,
                 loader: 'json'

@@ -229,14 +229,14 @@ html, body {
 			color: #666;
 			span {
 				display: inline-block;
-				margin-right: 4px;
+				margin-right: 10px;
 				margin-bottom: 2px;
 				padding: 0 8px;
-				height: 24px;
-				line-height: 24px;
+				height: 30px;
+				line-height: 30px;
 				background-color: #f5f5f5;
 				border: 1px solid #e0e0e0;
-				border-radius: 3px;
+				border-radius: 2px;
 			}
 			i {
 				margin-right: 8px;
@@ -343,13 +343,17 @@ html, body {
 	margin-top: 20px;
 	font-size: 16px;
 	.kuma-icon {
-		margin-right: 4px;
+		margin-right: 8px;
 		font-size: 18px;
 		color: #888;
 	}
 }
 .code-box {
 	margin-top: 20px;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 20px;
+	min-width: 500px;
 	background-color: @white;
 	border: 1px solid @borderColor;
 	&-meta {
@@ -359,12 +363,12 @@ html, body {
 		.code-box-title {
 			font-size: 14px;
 			a {
-				color: @text-color;
+				color: white;
 				font-style: normal;
 			}
 			.fa {
 				margin-right: 6px;
-				color: #888;
+				color: white;
 			}
 		}
 	}

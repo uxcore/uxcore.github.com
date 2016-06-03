@@ -53,6 +53,7 @@
     "uxcore-switch": "~0.1.1",
     "uxcore-table": "~1.6.0",
     "uxcore-tabs": "~0.4.0",
+    "uxcore-tinymce": "~0.2.2",
     "uxcore-tooltip": "~0.3.2",
     "uxcore-totop": "~0.2.0",
     "uxcore-transfer": "~0.2.0",
