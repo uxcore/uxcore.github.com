@@ -14,53 +14,25 @@
 	w.require = function(name){
 		return w.UXCORE[name];
 	}
-})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li><li data-id="theme"><a href="/theme/builder">主题</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">Presentation</h3><ul><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/badge">Badge<small>徽标</small></a></li><li class="current"><a href="/components/carousel">Carousel<small>轮播</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/load-more">LoadMore<small>加载更多</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">Form Control</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/multi-select">MultiSelect<small>复选择器</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/rate">Rate<small>评分</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/switch">Switch<small>开关</small></a></li><li><a href="/components/tinymce">Tinymce<small>富文本</small></a></li><li><a href="/components/tree-select">TreeSelect<small>树选择</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">Navigation</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">Tool</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">Layout</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">Other</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">Matrix</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Carousel</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>eternaslky</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-carousel.git" target="_blank">Carousel</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.2.1</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-yingyong"></i>组件演示</h2><div id="code-box-components-carousel-demo-basic" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-carousel-demo-basic">基本使用</a></div></div><div class="code-box-demo"><div id="components-carousel-demo-basic"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><style type="text/css">.demo h3 {
-  background: blue;
-  color: #fff;
-  height:200px;
-  font-size: 36px;
-  line-height: 200px;
-  position: relative;
-  text-align: center;
+})(window)</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li><li data-id="theme"><a href="/theme/builder">主题</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">Presentation</h3><ul><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/badge">Badge<small>徽标</small></a></li><li class="current"><a href="/components/carousel">Carousel<small>轮播</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/load-more">LoadMore<small>加载更多</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">Form Control</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/multi-select">MultiSelect<small>复选择器</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/rate">Rate<small>评分</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/switch">Switch<small>开关</small></a></li><li><a href="/components/tinymce">Tinymce<small>富文本</small></a></li><li><a href="/components/tree-select">TreeSelect<small>树选择</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">Navigation</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">Tool</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">Layout</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">Other</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">Matrix</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Carousel</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>eternaslky</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-carousel.git" target="_blank">Carousel</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.2.1</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-yingyong"></i>组件演示</h2><div id="code-box-components-carousel-demo-basic" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-carousel-demo-basic">基本使用</a></div></div><div class="code-box-demo"><div id="components-carousel-demo-basic"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><style type="text/css">.demo {
+    width: 400px;
+    height: 225px;
 }
 
-.demo {
-    width: 1000px;
-    height:200px;
-    margin:20px auto 0;
+.code-box {
+    width: 100%;
 }
 
-.kuma-carousel .slick-next:before {
-    // font-family: kuma;
-    // font-size: 16px;
-    // color: black;
-    // content: '\e643';
-}
+/* CSS END JS START*/</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.demo</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">400px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">225px</span></span></span>;
+}</span>
 
-/* CSS END JS START*/</style><div class="highlight"><pre><code class="css">.demo h3 {
-  background: blue;
-  color: #fff;
-  height:200px;
-  font-size: 36px;
-  line-height: 200px;
-  position: relative;
-  text-align: center;
-}
+<span class="hljs-class">.code-box</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
+}</span>
 
-.demo {
-    width: 1000px;
-    height:200px;
-    margin:20px auto 0;
-}
-
-.kuma-carousel .slick-next:before {
-    // font-family: kuma;
-    // font-size: 16px;
-    // color: black;
-    // content: '\e643';
-}
-
-/* CSS END JS START*/</code></pre></div><script>(function(){'use strict';
+<span class="hljs-comment">/* CSS END JS START*/</span></code></pre></div><script>(function(){'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
@@ -89,35 +61,24 @@ var Demo = (function (_React$Component) {
         value: function render() {
             return React.createElement(
                 'div',
-                null,
-                React.createElement(
-                    'div',
-                    { className: 'kuma-carousel' },
-                    React.createElement(
-                        'button',
-                        { type: 'button', 'data-role': 'none', className: 'slick-next', style: {
-                                display: 'block'
-                            } },
-                        ' Next'
-                    )
-                ),
+                { style: { width: 1000 } },
                 React.createElement(
                     Carousel,
                     { className: 'demo', autoplay: true, pauseOnHover: true },
                     React.createElement(
-                        'h3',
+                        'div',
                         null,
-                        '1'
+                        React.createElement('img', { src: 'http://www.wallcoo.com/human/City_Night_Scene_02/wallpapers/1680x1050/City_Night_Scene_photography_L10_30.jpg', style: { width: '100%' } })
                     ),
                     React.createElement(
-                        'h3',
+                        'div',
                         null,
-                        '2'
+                        React.createElement('img', { src: 'http://img5.imgtn.bdimg.com/it/u=3349768475,1559424970&fm=21&gp=0.jpg', style: { width: '100%' } })
                     ),
                     React.createElement(
-                        'h3',
+                        'div',
                         null,
-                        '3'
+                        React.createElement('img', { src: 'http://www.wallcoo.com/nature/beautiful_nature/wallpapers/1440x900/beautiful_nature_8433868.jpg', style: { width: '100%' } })
                     )
                 )
             );
@@ -143,16 +104,11 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
 
     render() {
         <span class="hljs-keyword">return</span> (
-            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"kuma-carousel"</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">data-role</span>=<span class="hljs-value">"none"</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"slick-next"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span>
-                        <span class="hljs-attribute">display:</span> '<span class="hljs-attribute">block</span>'
-                    }}&gt;</span> Next<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{width:</span> <span class="hljs-attribute">1000</span>}}&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-title">Carousel</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo"</span> <span class="hljs-attribute">autoplay</span>=<span class="hljs-value">{true}</span> <span class="hljs-attribute">pauseOnHover</span>=<span class="hljs-value">{true}</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://www.wallcoo.com/human/City_Night_Scene_02/wallpapers/1680x1050/City_Night_Scene_photography_L10_30.jpg"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{width:</span> '<span class="hljs-attribute">100</span>%'}} /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://img5.imgtn.bdimg.com/it/u=3349768475,1559424970&amp;fm=21&amp;gp=0.jpg"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{width:</span> '<span class="hljs-attribute">100</span>%'}} /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://www.wallcoo.com/nature/beautiful_nature/wallpapers/1440x900/beautiful_nature_8433868.jpg"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{width:</span> '<span class="hljs-attribute">100</span>%'}} /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-title">Carousel</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
         )</span>;
