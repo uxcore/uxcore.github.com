@@ -264,7 +264,132 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
 
 ReactDOM.render(
   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
-, document.getElementById('components-pickable-demo-simple'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="props">Props</h2><table>
+, document.getElementById('components-pickable-demo-simple'));</span></code></pre></div></div></div><div id="code-box-components-pickable-demo-single" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-pickable-demo-single">Single</a></div></div><div class="code-box-demo"><div id="components-pickable-demo-single"></div></div><div class="code-box-desc"><p>单选模式。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var classnames = require('classnames');
+
+var Pickable = require('uxcore-pickable');
+var Item = Pickable.Item;
+
+var Demo = (function (_React$Component) {
+  _inherits(Demo, _React$Component);
+
+  function Demo(props) {
+    _classCallCheck(this, Demo);
+
+    _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+    this.state = {
+      value: [1]
+    };
+  }
+
+  _createClass(Demo, [{
+    key: 'handleChange',
+    value: function handleChange(value) {
+      this.setState({
+        value: value
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var items = [{
+        text: '条件一',
+        value: 1,
+        num: 15
+      }, {
+        text: '条件二',
+        value: 2,
+        num: 20
+      }, {
+        text: '条件三',
+        value: 3,
+        disable: true
+      }];
+      return React.createElement(
+        'div',
+        null,
+        React.createElement(
+          'div',
+          null,
+          React.createElement(
+            Pickable,
+            { onChange: this.handleChange.bind(this), value: this.state.value, multiple: false },
+            items.map(function (item, index) {
+              return React.createElement(
+                Item,
+                { key: index, value: item.value, number: item.num, disabled: item.disable },
+                item.text
+              );
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return Demo;
+})(React.Component);
+
+;
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-pickable-demo-pickable'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">'classnames'</span>);
+
+<span class="hljs-keyword">const</span> Pickable = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-pickable'</span>);
+<span class="hljs-keyword">const</span> {Item} = Pickable;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+
+    constructor(props) {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+          value: [<span class="hljs-number">1</span>]
+        }
+    }
+
+    handleChange(value) {
+      <span class="hljs-keyword">this</span>.setState({
+        value: value
+      })
+    }
+
+    render() {
+      <span class="hljs-keyword">let</span> items = [{
+        text: <span class="hljs-string">'条件一'</span>,
+        value: <span class="hljs-number">1</span>,
+        num: <span class="hljs-number">15</span>
+      }, {
+        text: <span class="hljs-string">'条件二'</span>,
+        value: <span class="hljs-number">2</span>,
+        num: <span class="hljs-number">20</span>
+      }, {
+        text: <span class="hljs-string">'条件三'</span>,
+        value: <span class="hljs-number">3</span>,
+        disable: <span class="hljs-literal">true</span>
+      }];
+      <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">Pickable</span> <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{this.handleChange.bind(this)}</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{this.state.value}</span> <span class="hljs-attribute">multiple</span>=<span class="hljs-value">{false}</span>&gt;</span>
+            {items.map((item, index) =&gt; {
+              return <span class="hljs-tag">&lt;<span class="hljs-title">Item</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{index}</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">{item.value}</span> <span class="hljs-attribute">number</span>=<span class="hljs-value">{item.num}</span> <span class="hljs-attribute">disabled</span>=<span class="hljs-value">{item.disable}</span>&gt;</span>{item.text}<span class="hljs-tag">&lt;/<span class="hljs-title">Item</span>&gt;</span>
+            })}
+          <span class="hljs-tag">&lt;/<span class="hljs-title">Pickable</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>;</span>
+    }
+};
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
+, document.getElementById('components-pickable-demo-pickable'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="props">Props</h2><table>
 <thead>
 <tr>
 <th>配置项</th>
