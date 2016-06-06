@@ -55,5 +55,5 @@ class Demo extends React.Component {
 
 ReactDOM.render(
   <Demo />
-, document.getElementById('components-pickable-demo-pickable'));
+, document.getElementById('components-pickable-demo-single'));
 ````
