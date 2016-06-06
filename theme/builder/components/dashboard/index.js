@@ -54,6 +54,7 @@ export default class Dashboard extends React.Component {
             <div className="dashboard-wrapper">
                 
                 <div className="demo-wrap">
+                    <div className="wrap-title">表单</div>
                     <Crumb className="crumb-style crumb-root">
                         <Crumb.Item href="#" className="crumb-item-style">首页</Crumb.Item>
                         <Crumb.Item href="#">一级页面</Crumb.Item>

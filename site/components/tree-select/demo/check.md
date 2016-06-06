@@ -55,7 +55,7 @@ class CheckDemo extends React.Component {
             dropdownPopupAlign={{ overflow: { adjustY: 0, adjustX: 0 } }}
             placeholder={<i>请下拉选择</i>}
             searchPlaceholder="please search"
-            treeLine maxTagTextLength={10}
+            treeLine={false} maxTagTextLength={10}
             inputValue={null}
             value={this.state.value}
             treeData={gData}
