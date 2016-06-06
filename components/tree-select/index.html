@@ -89,7 +89,7 @@ var BasicDemo = (function (_React$Component) {
           '请下拉选择'
         ),
         searchPlaceholder: 'please search',
-        showSearch: true, allowClear: true, treeLine: true,
+        showSearch: false, allowClear: true, treeLine: false,
         inputValue: this.state.inputValue,
         value: this.state.value,
         treeData: gData,
@@ -149,7 +149,7 @@ ReactDOM.render(React.createElement(BasicDemo, null), document.getElementById('c
             <span class="hljs-attribute">dropdownStyle</span>=<span class="hljs-value">{{maxHeight:</span> <span class="hljs-attribute">200</span>, <span class="hljs-attribute">overflow:</span> '<span class="hljs-attribute">auto</span>'}}
             <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">{&lt;i</span>&gt;</span>请下拉选择<span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>}
             searchPlaceholder="please search"
-            showSearch allowClear treeLine
+            showSearch={false} allowClear treeLine={false}
             inputValue={this.state.inputValue}
             value={this.state.value}
             treeData={gData}
@@ -384,7 +384,7 @@ var CheckDemo = (function (_React$Component) {
           '请下拉选择'
         ),
         searchPlaceholder: 'please search',
-        treeLine: true, maxTagTextLength: 10,
+        treeLine: false, maxTagTextLength: 10,
         inputValue: null,
         value: this.state.value,
         treeData: gData,
@@ -445,7 +445,7 @@ ReactDOM.render(React.createElement(CheckDemo, null), document.getElementById('c
             <span class="hljs-attribute">dropdownPopupAlign</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">overflow:</span> { <span class="hljs-attribute">adjustY:</span> <span class="hljs-attribute">0</span>, <span class="hljs-attribute">adjustX:</span> <span class="hljs-attribute">0</span> } }}
             <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">{&lt;i</span>&gt;</span>请下拉选择<span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span>}
             searchPlaceholder="please search"
-            treeLine maxTagTextLength={10}
+            treeLine={false} maxTagTextLength={10}
             inputValue={null}
             value={this.state.value}
             treeData={gData}
