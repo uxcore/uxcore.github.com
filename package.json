@@ -43,7 +43,7 @@
     "uxcore-message": "~0.2.0",
     "uxcore-multi-select": "~0.2.0",
     "uxcore-pagination": "~0.2.1",
-    "uxcore-pickable": "^1.0.0",
+    "uxcore-pickable": "~1.1.0",
     "uxcore-popover": "~0.3.0",
     "uxcore-progress": "~1.1.0",
     "uxcore-radiogroup": "~1.2.0",
