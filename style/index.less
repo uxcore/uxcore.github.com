@@ -1,6 +1,6 @@
 @import "../node_modules/kuma-base/variable.less";
 @svg-path: "../node_modules/kuma-base/core/svg/orange";
-@import "../node_modules/kuma-base/core.less";
+// @import "../node_modules/kuma-base/core.less";
 @import "./variables.less";
 @import "./font.less";
 @import "./animation.less";
@@ -158,7 +158,7 @@ html, body {
 	min-width: 180px;
 	background-color: @grey;
 	.category-name {
-		margin: 8px 0 0;
+		margin: 8px 0;
 		padding-left: 10px;
 		font-size: 12px;
 		color: #999;
@@ -233,21 +233,21 @@ html, body {
 				margin-bottom: 2px;
 				padding: 0 8px;
 				height: 30px;
-				line-height: 30px;
+				line-height: 28px;
 				background-color: #f5f5f5;
-				border: 1px solid #e0e0e0;
-				border-radius: 2px;
+				border: 1px solid #dbdbdb;
+				border-radius: 3px;
 			}
 			i {
 				margin-right: 8px;
-				font-weight: 400;
-				font-size: 14px;
+				font-size: 16px;
 			}
 		}
 	}
 }
 .markdown {
 	@baseFontSize: 14px;
+	padding: 20px 0;
 	h1, h2, h3, h4, h5, h6 {
 		margin-top: 1em;
 	    margin-bottom: 16px;
@@ -310,15 +310,7 @@ html, body {
 	}
 	code {
 		margin: 0 3px;
-		padding: 2px 4px;
-		// background-color: #f7f7f7;
-		border-radius: 3px;
 		color: #c7254e;
-		font-family: Consolas, monospace;
-	}
-	pre {
-		padding: 4px;
-		border: 1px solid @borderColor;
 	}
 	img {
 		max-width: 100%;
@@ -418,13 +410,25 @@ html, body {
 			display: block;
 			border-top: 1px dashed #f0f0f0;
 		}
+		.highlight {
+			pre {
+				padding: .2em;
+				background-color: #fff;
+			}
+		}
 	}
 }
 .highlight {
 	position: relative;
 	padding: 8px 0;
 	pre {
+		padding: .85em 1em;
+		background-color: #f7f7f7;
 		overflow: hidden;
+	}
+	code {
+		font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+		line-height: 1.8;
 	}
 }
 .site-home {
