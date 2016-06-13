@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>uxcore - UXCORE UI Framework</title><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/style/index.css"><link id="J_ThemeSiteStyle" rel="stylesheet" href="/static/style/orange.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="/static/modernizr.js"></script><script>(function(W, D, M){
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>uxcore - React UI Component Set</title><meta name="description" content="React UI Compoennt Set"><meta name="baidu-site-verification" content="iSmq9nV3Mj"><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/style/index.css"><link id="J_ThemeSiteStyle" rel="stylesheet" href="/static/style/orange.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="/static/modernizr.js"></script><script>(function(W, D, M){
 	if (M.localstorage) {
 		var t = localStorage.getItem('theme');
 		W.theme = 'orange';
@@ -599,6 +599,13 @@ ReactDOM.render((
 <td>用于展示的文件列表</td>
 </tr>
 <tr>
+<td>isOnlyImg</td>
+<td>boolean</td>
+<td>是否以图片形式展示</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>core</td>
 <td>string/<code>Core</code></td>
 <td>null</td>
@@ -728,9 +735,11 @@ ReactDOM.render((
 </table>
 <h3 id="filelist-的最小格式-格式稍显麻烦，是为了-onchange-的返回值可以传回给-filelist">fileList 的最小格式 (格式稍显麻烦，是为了 onChange 的返回值可以传回给 fileList)</h3><div class="highlight"><pre><code class="javascript">[
     {
+        name: <span class="hljs-string">''</span>, <span class="hljs-comment">// 文件名称，列表形式必填</span>
+        ext: <span class="hljs-string">''</span>, <span class="hljs-comment">// 文件扩展名。例如 jpg。可选，不填时无法根据类型展示对应图标</span>
+        fileType: <span class="hljs-string">''</span>, <span class="hljs-comment">// 文件 mimetypes 类型。 例如 image/jpg。 可选，不填时无法根据类型展示对应图标</span>
         response: {
             url: xxx,  <span class="hljs-comment">// 文件链接，必填</span>
-            name: xxx, <span class="hljs-comment">// filename，必填 </span>
             canRemove: <span class="hljs-literal">true</span>, <span class="hljs-comment">// 是否可以删除，可选</span>
             downloadUrl: <span class="hljs-string">'xxxx'</span>, <span class="hljs-comment">// 下载 URL，可选</span>
         }
@@ -761,8 +770,8 @@ ReactDOM.render((
 </tr>
 </tbody>
 </table>
-<h3 id="filelist-的格式">fileList 的格式</h3><div class="highlight"><pre><code class="javascript">[
-    <span class="hljs-comment">// 上传后的文件的格式， responce 即服务器返回的值</span>
+<h3 id="onchange-的-filelist-的枚举格式有如下几种">onChange 的 fileList 的枚举格式有如下几种</h3><div class="highlight"><pre><code class="javascript">[
+    <span class="hljs-comment">// 上传后的文件的格式， response 即服务器返回的值</span>
     {
         type: <span class="hljs-string">'upload'</span>,
         ext: file.ext,
