@@ -47,6 +47,6 @@ $(function(){
 	require('./theme/js/navigation');
 	require('./theme/js/setting');
 	// require('./theme/js/home.canvas');
-	require('./theme/js/canvas');
+	// require('./theme/js/canvas');
 	require('./theme/js/doc');
 });
