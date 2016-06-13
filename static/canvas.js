@@ -22,7 +22,8 @@ var initCanvas = function() {
 	var commonCfg = {
 		stroke: 'white',
 		fill: 'transparent',
-		strokeWidth: 3,
+		// strokeWidth: 3,
+		strokeWidth: 6,
 		centeredRotation: true,
 		originX: 'center',
 		originY: 'center'
@@ -60,35 +61,37 @@ var initCanvas = function() {
 	var hexagon4 = new fabric.Polygon(util.deepcopy(points), util.extend(commonCfg, {
 		left: 70,
 		top: 108,
-		strokeWidth: 1,
+		// strokeWidth: 1,
 		opacity: 0
 	}));
 
 	var hexagon5 = new fabric.Polygon(util.deepcopy(points), util.extend(commonCfg, {
 		left: 160,
 		top: 56,
-		strokeWidth: 1,
+		// strokeWidth: 1,
 		opacity: 0
 	}));
 
 	var hexagon6 = new fabric.Polygon(util.deepcopy(points), util.extend(commonCfg, {
 		left: 160,
 		top: 160,
-		strokeWidth: 1,
+		// strokeWidth: 1,
 		opacity: 0
 	}));
 
 	var line1 = new fabric.Line(util.deepcopy(linePts), {
 		stroke: 'white',
 		originX: 'center',
-		strokeWidth: 2,
+		// strokeWidth: 2,
+		strokeWidth: 6,
 		top: 50,
 		left: 0
 	})
 
 	var line2 = new fabric.Line(util.deepcopy(linePts), {
 		stroke: 'white',
-		strokeWidth: 2,
+		// strokeWidth: 2,
+		strokeWidth: 6,
 		originX: 'center',
 		angle: -60,
 		top: 28,
