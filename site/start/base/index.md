@@ -4,106 +4,87 @@
 
 ---
 
-## 学习 React
+# [UXCore](http://uxco.re/)
 
-UXCore UI 基于 React.js 开发，如果你没有使用过 React，请先移步 [React 官网](https://facebook.github.io/react/docs/getting-started.html) 学习。
+[![npm version](https://img.shields.io/npm/v/uxcore.svg?style=flat-square)](https://www.npmjs.com/package/uxcore) [![Dependency Status](https://img.shields.io/david/uxcore/uxcore.svg?label=deps&style=flat-square)](https://david-dm.org/uxcore/uxcore) [![devDependency Status](https://img.shields.io/david/dev/uxcore/uxcore.svg?label=devDeps&style=flat-square)](https://david-dm.org/uxcore/uxcore#info=devDependencies)
 
+UXCore is a set of [React](http://facebook.github.io/react/) Components that is designed for enterprise-class pc backend application.
 
+* **Rich library:** more than 35 React Components available with high quality design.
 
-## 获取 UXCore 样式
+* **Focus on backend App:** Powerful but easy-to-use Form and Table.
 
-UXCore 通过 [uxcore-kuma](https://github.com/uxcore/kuma) 项目来统一管理组件的样式
+* **Customizable theme:** theme can be customized easily.
 
-### 通过 NPM
+Before posting an issue, please read the [CHANGELOG](https://github.com/uxcore/uxcore/releases) and the README and the documentation to check the recently updated.
 
-```bash
-npm install uxcore-kuma
+## For inner staff
+
+please see http://groups.alidemo.cn/uxcore/doc/ for details.  
+集团内部请查看 http://groups.alidemo.cn/uxcore/doc/ 了解详情。
+
+## CodePen
+
+The easiest way to start hacking on UXCore is using the following CodePen Demo:
+
+* **[UXCore Demo](http://codepen.io/eternalsky/pen/qZwNVL)**
+
+## [Starter kit](https://github.com/uxcore/starter-kit)
+
+If you're just getting started, you can download the starter kit. The starter kit is initialized by [NOWA](http://nowa-webpack.github.io/web/index.html?en) which is our project-level development and production solution collections.
+
+<a style="height: 48px;line-height: 48px;font-size:24px;text-align:center;width: 300px;background: #2599f2;color: white;display:block;border-radius: 5px;margin: 20px auto;text-decoration:none;" href="https://github.com/uxcore/starter-kit/archive/master.zip" target="_blank">Download Starter Kit 0.2</a>
+
+## Installation
+
+The fastest way to get started is to serve JavaScript from the CDN
+
+```html
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/??platform/common/s/1.1/global/global.css,uxcore/uxcore-kuma/2.0.7/orange.min.css">
+<script src="//g.alicdn.com/uxcore/uxcore/0.1.5/uxcore.min.js">
 ```
 
-### 通过 CDN
+if you'd like to use [npm](npmjs.com)
 
-
->   以下两个分别对应阿里橙、晴空蓝两种主题，引一者即可。  
->   http://g.alicdn.com/uxcore/uxcore-kuma/2.0.6/orange.css  
->   http://g.alicdn.com/uxcore/uxcore-kuma/2.0.6/blue.css  
->     
->   Iconfont：引入 uxcore-kuma 所需的 iconfont。  
->   http://alinw.alicdn.com/??platform/common/s/1.1/global/global.css  
->     
->   For Production  
->   http://g.alicdn.com/uxcore/uxcore-kuma/2.0.6/orange.min.css  
->   http://g.alicdn.com/uxcore/uxcore-kuma/2.0.6/blue.min.css  
-
-
-## 获取 UXCore React
-
-### 通过 CDN
-
-
-> http://g.alicdn.com/uxcore/uxcore/0.1.4/uxcore.js   
-> http://g.alicdn.com/uxcore/uxcore/0.1.4/uxcore.min.js
-
-
-> CDN 版本的 UXCore，会在全局生成 Uxcore 变量挂载所有组件，如使用 Uxcore.Table 来获取 Table 组件。
-
-> 注意：uxcore.js 并不包括 react.js，在引入 uxcore.js 前，需先在页面引入 react.js 及 react-dom.js。
-
-### 获取源代码
-
-UXCore 源代码托管在 [Github Uxcore](https://github.com/uxcore) 群组下。为了更好的发展，请不吝送出您的 STAR。
-
-### 通过 NPM
-
-UXCore 的每个组件都单独托管在 npm 上，您可以单独安装使用，如：希望引入表格(table) 组件，可以  
-
-```bash
-npm install uxcore-table
+```sh
+npm install uxcore
 ```
 
-UXCore React 组件编写采用了 ES2015 + JSX 的语法，强烈推荐使用 [Webpack](http://jamesknelson.com/using-es6-in-the-browser-with-babel-6-and-webpack/) + [Babel loader](https://github.com/babel/babel-loader) 的组合来管理 UXCore 的组件。  
-注意：UXCore 组件会直接调用全局变量 React，故使用前需先在页面引入 react 相关的库。
+## Usage
 
-## 3. 组件调用
+### For cdn
 
-### CDN 引用的方式
-
-#### HTML 代码
-
-```html  
-<!DOCTYPE html>
-<html>
-<head>
-<title>uxcore-demo</title>
-<meta charset="utf-8">
-<meta name="description" content="uxcore-demo">
-<link rel="stylesheet" href="http://g.alicdn.com/uxcore/uxcore-kuma/2.0.5/orange.css">
-<link rel="stylesheet" type="text/css" href="//g.alicdn.com/??platform/common/s/1.1/global/global.css" charset="utf-8">
-</head>
-<body>
-<div id="App"></div>
-<!-- 外部脚本资源加载 -->
-<!--[if lte IE 9]>
-<script src="//g.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,console-polyfill/0.2.1/index.js,respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-<script src="//g.alicdn.com/uxcore/uxcore-lib/??react/0.14.2/react-with-addons.min.js,react/0.14.2/react-dom.min.js,reflux/0.3.0/dist/reflux.min.js,lodash/3.10.1/lodash.min.js,jquery/1.11.3/jquery.min.js"></script>
-<!-- 使用 Uxcore.Mention 时，需要引入 rangy -->
-<!-- <script src="//g.alicdn.com/uxcore/uxcore-lib/rangy/1.3.0/rangy-core.min.js"></script> -->
-<!-- 使用 Uxcore.Tinymce 或 Uxcore.Form.EditorFormField 时，需要引入 tinymce -->
-<!-- <script src="//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-basic.min.js"></script> -->
-<script src="http://g.alicdn.com/uxcore/uxcore/0.1.4/uxcore.js"></script>
-
-</body>
-</html>
-
+```jsx
+const {Button} = Uxcore;
+ReactDOM.render(<Button />, mountNode);
 ```
 
-#### JS 代码
-
-```js  
-var Button = Uxcore.Button;
-
-React.render(<Button>Button</Button>, document.getElementById("App"));
+### For npm
+```jsx
+import {Button} from 'uxcore';
+ReactDOM.render(<Button />, mountNode);
 ```
 
-## 具体组件的使用请移步 [样式](/css/base/) 和 [组件](/components/button/) 页面。
+And import style mannally
+
+```jsx
+import 'uxcore/assets/iconfont.css';
+import 'uxcore/assets/orange.css';
+```
+
+## Browser Support
+
+Mainstream browsers and Internet Explorer 8+. For IE 8, see [react-ie8](https://github.com/xcatliu/react-ie8) to get support.  
+
+## Customization
+
+We have implemented two default themes(orange/blue) to render UXCore Components. Theme customization is simple using our online [design tools](http://uxco.re/theme/builder).
+
+## Contribute
+
+Yes please! See the [CONTRIBUTING](https://github.com/uxcore/uxcore/blob/master/CONTRIBUTING.md) for details.
+
+## License
+
+This project is licensed under the terms of the [MIT license](This project is licensed under the terms of the MIT license)
 

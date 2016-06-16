@@ -268,9 +268,9 @@ html, body {
 	}
 	p {
 		margin: @g-padding 0;
-		font-size: 14px;
+		font-size: 16px;
 	}
-	ul, ol, dl, blockquote, pre, address, fieldset, figure {
+	ul, ol, dl, blockquote, address, fieldset, figure {
 		margin: 1em 0;
 	}
 	h1 {
@@ -339,13 +339,13 @@ html, body {
 		> li {
 			list-style: circle;
 			margin-left: 20px;
-			padding-left: 8px;
+			// padding-left: 8px;
 			ul {
 				margin: .5em 0;
 			}
 			li {
 				margin-left: 20px;
-				padding-left: 8px;
+				// padding-left: 8px;
 				list-style: disc;
 			}
 		}
@@ -441,6 +441,23 @@ html, body {
 }
 .site-home {
 	min-height: 100%;
+}
+.site-start {
+	.highlight {
+		padding: 23px 0 10px;
+		&:after {
+			position: absolute;
+		    top: 0;
+		    right: 0;
+		    left: 0;
+		    padding: 3px 7px;
+		    font-size: 12px;
+		    font-weight: bold;
+		    color: #fafafa;
+		    background-color: #2599f2;
+		    content: "Code"
+		}
+	}
 }
 .kuma-form-row .kuma-button {
 	margin-left:50%;
