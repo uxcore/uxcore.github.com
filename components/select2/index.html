@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>uxcore - React UI Component Set</title><meta name="description" content="React UI Component Set"><meta name="google-site-verification" content="KFAGkw1GuB8rR3zO8O090v65MVhYI02Xl6B7-MoSFLk"><link href="/static/favicon.ico" rel="icon" type="image/x-icon"><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/style/index.css"><link id="J_ThemeSiteStyle" rel="stylesheet" href="/static/style/orange.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="/static/modernizr.js"></script><script>(function(W, D, M){
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>uxcore - React UI Component Set</title><meta name="description" content="React UI Component Set"><meta name="google-site-verification" content="KFAGkw1GuB8rR3zO8O090v65MVhYI02Xl6B7-MoSFLk"><meta name="keywords" content="uxcore, react, component, react component"><link href="/static/favicon.ico" rel="icon" type="image/x-icon"><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/style/index.css"><link id="J_ThemeSiteStyle" rel="stylesheet" href="/static/style/orange.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="/static/modernizr.js"></script><script>(function(W, D, M){
 	if (M.localstorage) {
 		var t = localStorage.getItem('theme');
 		W.theme = 'orange';
@@ -141,7 +141,142 @@ ReactDOM.render(
   <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">{['a10',</span> '<span class="hljs-attribute">c12</span>']} <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{handleChange}</span>&gt;</span>
     {children}
   <span class="hljs-tag">&lt;/<span class="hljs-title">Select</span>&gt;</span>
-, document.getElementById('components-select2-demo-multiple'));</span></code></pre></div></div></div><div id="code-box-components-select2-demo-tags" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-select2-demo-tags">标签</a></div></div><div class="code-box-demo"><div id="components-select2-demo-tags"></div></div><div class="code-box-desc"><p>tags select，随意输入的内容（scroll the menu）</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+, document.getElementById('components-select2-demo-multiple'));</span></code></pre></div></div></div><div id="code-box-components-select2-demo-multiple-singleline" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-select2-demo-multiple-singleline">多选 - 单行展示</a></div></div><div class="code-box-demo"><div id="components-select2-demo-multiple-singleline"></div></div><div class="code-box-desc"><p>在少数情况下，可能不希望多选框展开，这是可以使用样式覆盖</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Select = require('uxcore-select2');
+var Option = Select.Option;
+var classnames = require('classnames');
+
+var children = [];
+for (var i = 10; i < 36; i++) {
+    children.push(React.createElement(
+        Option,
+        { key: i.toString(36) + i },
+        i.toString(36) + i
+    ));
+}
+
+var Demo = (function (_React$Component) {
+    _inherits(Demo, _React$Component);
+
+    function Demo(props) {
+        _classCallCheck(this, Demo);
+
+        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+        this.state = {
+            value: ['a10', 'c12']
+        };
+    }
+
+    _createClass(Demo, [{
+        key: 'handleChange',
+        value: function handleChange(value) {
+            this.setState({
+                value: value
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                Select,
+                { multiple: true,
+                    className: classnames({
+                        'single-line': this.state.value.length > 6 ? true : false
+                    }),
+                    style: { width: 400 },
+                    value: this.state.value, onChange: this.handleChange.bind(this) },
+                children
+            );
+        }
+    }]);
+
+    return Demo;
+})(React.Component);
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-select2-demo-multiple-singleline'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">let</span> Select = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-select2'</span>);
+<span class="hljs-keyword">let</span> Option = Select.Option;
+<span class="hljs-keyword">let</span> classnames = <span class="hljs-built_in">require</span>(<span class="hljs-string">'classnames'</span>);
+
+<span class="hljs-keyword">let</span> children = [];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">10</span>; i &lt; <span class="hljs-number">36</span>; i++) {
+  children.push(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Option</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{i.toString(36)</span> + <span class="hljs-attribute">i</span>}&gt;</span>{i.toString(36) + i}<span class="hljs-tag">&lt;/<span class="hljs-title">Option</span>&gt;</span>)</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    constructor(props) {
+        <span class="hljs-keyword">super</span>(props);
+        <span class="hljs-keyword">this</span>.state = {
+            value: [<span class="hljs-string">'a10'</span>, <span class="hljs-string">'c12'</span>]
+        };
+    }
+
+    handleChange(value) {
+        <span class="hljs-keyword">this</span>.setState({
+            value: value
+        });
+    }
+
+    render() {
+        <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Select</span> <span class="hljs-attribute">multiple</span>
+                  <span class="hljs-attribute">className</span>=<span class="hljs-value">{classnames({</span>
+                    '<span class="hljs-attribute">single-line</span>'<span class="hljs-attribute">:</span> <span class="hljs-attribute">this.state.value.length</span> &gt;</span> 6 ? true : false
+                  })}
+                  style={{width:400}}
+                  value={this.state.value} onChange={this.handleChange.bind(this)}&gt;
+                    {children}
+                <span class="hljs-tag">&lt;/<span class="hljs-title">Select</span>&gt;</span>
+    }
+}
+ReactDOM.render(
+  <span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
+, document.getElementById('components-select2-demo-multiple-singleline'));</span></code></pre></div><style type="text/css">.single-line .kuma-select2-selection--multiple {
+    position: relative;
+    overflow: hidden;
+}
+
+.single-line .kuma-select2-selection--multiple .kuma-select2-selection__rendered {
+    position: absolute;
+    right: 20px;
+    white-space: nowrap;
+}
+
+.single-line .kuma-select2-selection--multiple .kuma-select2-selection__rendered .kuma-select2-selection__choice {
+    float: none;
+    display: inline-block;
+}
+.single-line .kuma-select2-selection--multiple .kuma-select2-selection__rendered .kuma-select2-search--inline {
+    float: none;
+    display: inline-block;
+    vertical-align: top
+}</style><div class="highlight"><pre><code class="css"><span class="hljs-class">.single-line</span> <span class="hljs-class">.kuma-select2-selection--multiple</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value"> hidden</span></span>;
+}</span>
+
+<span class="hljs-class">.single-line</span> <span class="hljs-class">.kuma-select2-selection--multiple</span> <span class="hljs-class">.kuma-select2-selection__rendered</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">right</span>:<span class="hljs-value"> <span class="hljs-number">20px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">white-space</span>:<span class="hljs-value"> nowrap</span></span>;
+}</span>
+
+<span class="hljs-class">.single-line</span> <span class="hljs-class">.kuma-select2-selection--multiple</span> <span class="hljs-class">.kuma-select2-selection__rendered</span> <span class="hljs-class">.kuma-select2-selection__choice</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value"> none</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline-block</span></span>;
+}</span>
+<span class="hljs-class">.single-line</span> <span class="hljs-class">.kuma-select2-selection--multiple</span> <span class="hljs-class">.kuma-select2-selection__rendered</span> <span class="hljs-class">.kuma-select2-search--inline</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value"> none</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> inline-block</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">vertical-align</span>:<span class="hljs-value"> top
+</span></span></span>}</code></pre></div></div></div><div id="code-box-components-select2-demo-tags" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-select2-demo-tags">标签</a></div></div><div class="code-box-demo"><div id="components-select2-demo-tags"></div></div><div class="code-box-desc"><p>tags select，随意输入的内容（scroll the menu）</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var Select = require('uxcore-select2');
 var Option = Select.Option;
