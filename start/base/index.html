@@ -10,44 +10,33 @@
 			D.getElementById('J_ThemeSiteStyle').setAttribute('href', '/static/style/' + t + '.css');
 		}
 	}	
-}(window, document, Modernizr));</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li><li data-id="theme"><a href="/theme/builder">主题</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li class="current"><a href="/start/base"><small>开始使用</small></a></li></ul></aside><article class="site-content"><div id="J-markdown" class="markdown"><h2 id="学习-react">学习 React</h2><p>UXCore UI 基于 React.js 开发，如果你没有使用过 React，请先移步 <a href="https://facebook.github.io/react/docs/getting-started.html">React 官网</a> 学习。</p>
-<h2 id="获取-uxcore-样式">获取 UXCore 样式</h2><p>UXCore 通过 <a href="https://github.com/uxcore/kuma">uxcore-kuma</a> 项目来统一管理组件的样式</p>
-<h3 id="通过-npm">通过 NPM</h3><div class="highlight"><pre><code class="bash">npm install uxcore-kuma</code></pre></div><h3 id="通过-cdn">通过 CDN</h3><blockquote>
-<p>  以下两个分别对应阿里橙、晴空蓝两种主题，引一者即可。<br>  <a href="http://g.alicdn.com/uxcore/uxcore-kuma/2.0.6/orange.css">http://g.alicdn.com/uxcore/uxcore-kuma/2.0.6/orange.css</a><br>  <a href="http://g.alicdn.com/uxcore/uxcore-kuma/2.0.6/blue.css">http://g.alicdn.com/uxcore/uxcore-kuma/2.0.6/blue.css</a>  </p>
-<p>  Iconfont：引入 uxcore-kuma 所需的 iconfont。<br>  <a href="http://alinw.alicdn.com/??platform/common/s/1.1/global/global.css">http://alinw.alicdn.com/??platform/common/s/1.1/global/global.css</a>  </p>
-<p>  For Production<br>  <a href="http://g.alicdn.com/uxcore/uxcore-kuma/2.0.6/orange.min.css">http://g.alicdn.com/uxcore/uxcore-kuma/2.0.6/orange.min.css</a><br>  <a href="http://g.alicdn.com/uxcore/uxcore-kuma/2.0.6/blue.min.css">http://g.alicdn.com/uxcore/uxcore-kuma/2.0.6/blue.min.css</a>  </p>
-</blockquote>
-<h2 id="获取-uxcore-react">获取 UXCore React</h2><h3 id="通过-cdn">通过 CDN</h3><blockquote>
-<p><a href="http://g.alicdn.com/uxcore/uxcore/0.1.4/uxcore.js">http://g.alicdn.com/uxcore/uxcore/0.1.4/uxcore.js</a><br><a href="http://g.alicdn.com/uxcore/uxcore/0.1.4/uxcore.min.js">http://g.alicdn.com/uxcore/uxcore/0.1.4/uxcore.min.js</a></p>
-<p>CDN 版本的 UXCore，会在全局生成 Uxcore 变量挂载所有组件，如使用 Uxcore.Table 来获取 Table 组件。</p>
-<p>注意：uxcore.js 并不包括 react.js，在引入 uxcore.js 前，需先在页面引入 react.js 及 react-dom.js。</p>
-</blockquote>
-<h3 id="获取源代码">获取源代码</h3><p>UXCore 源代码托管在 <a href="https://github.com/uxcore">Github Uxcore</a> 群组下。为了更好的发展，请不吝送出您的 STAR。</p>
-<h3 id="通过-npm">通过 NPM</h3><p>UXCore 的每个组件都单独托管在 npm 上，您可以单独安装使用，如：希望引入表格(table) 组件，可以  </p>
-<div class="highlight"><pre><code class="bash">npm install uxcore-table</code></pre></div><p>UXCore React 组件编写采用了 ES2015 + JSX 的语法，强烈推荐使用 <a href="http://jamesknelson.com/using-es6-in-the-browser-with-babel-6-and-webpack/">Webpack</a> + <a href="https://github.com/babel/babel-loader">Babel loader</a> 的组合来管理 UXCore 的组件。<br>注意：UXCore 组件会直接调用全局变量 React，故使用前需先在页面引入 react 相关的库。</p>
-<h2 id="3-组件调用">3. 组件调用</h2><h3 id="cdn-引用的方式">CDN 引用的方式</h3><h4 id="html-代码">HTML 代码</h4><div class="highlight"><pre><code class="xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>uxcore-demo<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"description"</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">"uxcore-demo"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://g.alicdn.com/uxcore/uxcore-kuma/2.0.5/orange.css"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"//g.alicdn.com/??platform/common/s/1.1/global/global.css"</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"utf-8"</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"App"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-comment">&lt;!-- 外部脚本资源加载 --&gt;</span>
-<span class="hljs-comment">&lt;!--[if lte IE 9]&gt;
-&lt;script src="//g.alicdn.com/uxcore/uxcore-lib/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,console-polyfill/0.2.1/index.js,respond.js/1.4.2/respond.min.js"&gt;&lt;/script&gt;
-&lt;![endif]--&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"//g.alicdn.com/uxcore/uxcore-lib/??react/0.14.2/react-with-addons.min.js,react/0.14.2/react-dom.min.js,reflux/0.3.0/dist/reflux.min.js,lodash/3.10.1/lodash.min.js,jquery/1.11.3/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-<span class="hljs-comment">&lt;!-- 使用 Uxcore.Mention 时，需要引入 rangy --&gt;</span>
-<span class="hljs-comment">&lt;!-- &lt;script src="//g.alicdn.com/uxcore/uxcore-lib/rangy/1.3.0/rangy-core.min.js"&gt;&lt;/script&gt; --&gt;</span>
-<span class="hljs-comment">&lt;!-- 使用 Uxcore.Tinymce 或 Uxcore.Form.EditorFormField 时，需要引入 tinymce --&gt;</span>
-<span class="hljs-comment">&lt;!-- &lt;script src="//g.alicdn.com/uxcore/uxcore-lib/tinymce/4.2.5/tinymce-basic.min.js"&gt;&lt;/script&gt; --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://g.alicdn.com/uxcore/uxcore/0.1.4/uxcore.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-
-<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre></div><h4 id="js-代码">JS 代码</h4><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">var</span> Button = Uxcore.Button;
-
-React.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Button</span>&gt;</span>Button<span class="hljs-tag">&lt;/<span class="hljs-title">Button</span>&gt;</span>, document.getElementById("App"));</span></code></pre></div><h2 id="具体组件的使用请移步-样式-和-组件-页面。">具体组件的使用请移步 <a href="/css/base/">样式</a> 和 <a href="/components/button/">组件</a> 页面。</h2></div></article></div><script src="http://s95.cnzz.com/z_stat.php?id=1259450590&amp;web_id=1259450590" language="JavaScript"></script><div id="site-footer" class="site-footer"><div class="footer-right">© 2015 Alibaba, Inc. Licensed under MIT license.</div><div class="footer-power"><span>DESIGNED BY</span><img src="/static/iux.png"><span>阿里巴巴信息平台前端团队</span></div></div></body></html>
+}(window, document, Modernizr));</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li><li data-id="theme"><a href="/theme/builder">主题</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><ul><li class="current"><a href="/start/base"><small>开始使用</small></a></li></ul></aside><article class="site-content site-start"><div id="J-markdown" class="markdown"><h1 id="uxcore"><a href="http://uxco.re/">UXCore</a></h1><p><a href="https://www.npmjs.com/package/uxcore"><img src="https://img.shields.io/npm/v/uxcore.svg?style=flat-square" alt="npm version"></a> <a href="https://david-dm.org/uxcore/uxcore"><img src="https://img.shields.io/david/uxcore/uxcore.svg?label=deps&amp;style=flat-square" alt="Dependency Status"></a> <a href="https://david-dm.org/uxcore/uxcore#info=devDependencies"><img src="https://img.shields.io/david/dev/uxcore/uxcore.svg?label=devDeps&amp;style=flat-square" alt="devDependency Status"></a></p>
+<p>UXCore is a set of <a href="http://facebook.github.io/react/">React</a> Components that is designed for enterprise-class pc backend application.</p>
+<ul>
+<li><p><strong>Rich library:</strong> more than 35 React Components available with high quality design.</p>
+</li>
+<li><p><strong>Focus on backend App:</strong> Powerful but easy-to-use Form and Table.</p>
+</li>
+<li><p><strong>Customizable theme:</strong> theme can be customized easily.</p>
+</li>
+</ul>
+<p>Before posting an issue, please read the <a href="https://github.com/uxcore/uxcore/releases">CHANGELOG</a> and the README and the documentation to check the recently updated.</p>
+<h2 id="for-inner-staff">For inner staff</h2><p>please see <a href="http://groups.alidemo.cn/uxcore/doc/">http://groups.alidemo.cn/uxcore/doc/</a> for details.<br>集团内部请查看 <a href="http://groups.alidemo.cn/uxcore/doc/">http://groups.alidemo.cn/uxcore/doc/</a> 了解详情。</p>
+<h2 id="codepen">CodePen</h2><p>The easiest way to start hacking on UXCore is using the following CodePen Demo:</p>
+<ul>
+<li><strong><a href="http://codepen.io/eternalsky/pen/qZwNVL">UXCore Demo</a></strong></li>
+</ul>
+<h2 id="starter-kit"><a href="https://github.com/uxcore/starter-kit">Starter kit</a></h2><p>If you&#39;re just getting started, you can download the starter kit. The starter kit is initialized by <a href="http://nowa-webpack.github.io/web/index.html?en">NOWA</a> which is our project-level development and production solution collections.</p>
+<p><a style="height: 48px;line-height: 48px;font-size:24px;text-align:center;width: 300px;background: #2599f2;color: white;display:block;border-radius: 5px;margin: 20px auto;text-decoration:none;" href="https://github.com/uxcore/starter-kit/archive/master.zip" target="_blank">Download Starter Kit 0.2</a></p>
+<h2 id="installation">Installation</h2><p>The fastest way to get started is to serve JavaScript from the CDN</p>
+<div class="highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"//g.alicdn.com/??platform/common/s/1.1/global/global.css,uxcore/uxcore-kuma/2.0.7/orange.min.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"//g.alicdn.com/uxcore/uxcore/0.1.5/uxcore.min.js"</span>&gt;</span><span class="undefined"></span></code></pre></div><p>if you&#39;d like to use <a href="npmjs.com">npm</a></p>
+<pre>npm install uxcore</pre><h2 id="usage">Usage</h2><h3 id="for-cdn">For cdn</h3><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> {Button} = Uxcore;
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Button</span> /&gt;</span>, mountNode);</span></code></pre></div><h3 id="for-npm">For npm</h3><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> {Button} <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore'</span>;
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Button</span> /&gt;</span>, mountNode);</span></code></pre></div><p>And import style mannally</p>
+<div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> <span class="hljs-string">'uxcore/assets/iconfont.css'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'uxcore/assets/orange.css'</span>;</code></pre></div><h2 id="browser-support">Browser Support</h2><p>Mainstream browsers and Internet Explorer 8+. For IE 8, see <a href="https://github.com/xcatliu/react-ie8">react-ie8</a> to get support.  </p>
+<h2 id="customization">Customization</h2><p>We have implemented two default themes(orange/blue) to render UXCore Components. Theme customization is simple using our online <a href="http://uxco.re/theme/builder">design tools</a>.</p>
+<h2 id="contribute">Contribute</h2><p>Yes please! See the <a href="https://github.com/uxcore/uxcore/blob/master/CONTRIBUTING.md">CONTRIBUTING</a> for details.</p>
+<h2 id="license">License</h2><p>This project is licensed under the terms of the <a href="This project is licensed under the terms of the MIT license">MIT license</a></p>
+</div></article></div><script src="http://s95.cnzz.com/z_stat.php?id=1259450590&amp;web_id=1259450590" language="JavaScript"></script><div id="site-footer" class="site-footer"><div class="footer-right">© 2015 Alibaba, Inc. Licensed under MIT license.</div><div class="footer-power"><span>DESIGNED BY</span><img src="/static/iux.png"><span>阿里巴巴信息平台前端团队</span></div></div></body></html>
