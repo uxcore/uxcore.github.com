@@ -37,7 +37,7 @@ If you're just getting started, you can download the starter kit. The starter ki
 
 ## Installation
 
-The fastest way to get started is to serve JavaScript from the CDN
+The fastest way to get started is to serve JavaScript and CSS from the CDN
 
 ```html
 <link rel="stylesheet" type="text/css" href="//g.alicdn.com/??platform/common/s/1.1/global/global.css,uxcore/uxcore-kuma/2.0.7/orange.min.css">
