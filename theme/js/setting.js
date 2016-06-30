@@ -7,8 +7,8 @@ let $themeLink = $("#J_ThemeStyle");
 let $themeSiteLink = $("#J_ThemeSiteStyle");
 
 const themeMap = {
-    'orange': ['阿里橙', '#ff8800'],
-    'blue': ['晴空蓝', '#289af0']
+    'orange': ['阿里橙', '#F37327'],
+    'blue': ['晴空蓝', '#2599f2']
 };
 
 let onSelectTheme = function(value){

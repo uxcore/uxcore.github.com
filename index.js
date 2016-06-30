@@ -36,6 +36,7 @@ window.UXCORE = {
 	'uxcore-load-more': require('uxcore-load-more'),
 	'uxcore-multi-select': require('uxcore-multi-select'),
 	'uxcore-tinymce': require('uxcore-tinymce'),
+	'uxcore-album': require('uxcore-album'),
 	'classnames': require('classnames'),
 	'object-assign': require('object-assign')
 };
@@ -47,6 +48,6 @@ $(function(){
 	require('./theme/js/navigation');
 	require('./theme/js/setting');
 	// require('./theme/js/home.canvas');
-	require('./theme/js/canvas');
+	// require('./theme/js/canvas');
 	require('./theme/js/doc');
 });

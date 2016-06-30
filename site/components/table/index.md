@@ -100,7 +100,7 @@
 |title           |string            |-         |required |列头|
 |width           |number            |-         |required |列宽|
 |hidden          |boolean           |-         |optional |是否隐藏，默认为 false|
-|order           |boolean           |-         |optional |是否显示内置的排序，默认为 false|
+|ordered           |boolean           |-         |optional |是否显示内置的排序，默认为 false|
 |type            |string            |-         |optional |包含 'money', 'card', 'cnmobile', 'checkbox', 'action', 'radio', 'text', 'select' 和 'custom'|
 |actions         |array             |-         |optional |当 type 是 action 的时候会用到，用于定义具体有哪些操作，格式见下方[说明](#actions)|
 |customField     |React Element     |-         |optional |当 type 是 custom 的时候会用到，用于传入自定义的 Field，用于行内编辑|
@@ -111,7 +111,7 @@
 |disable         |boolean           |-         |optional |在 type 为 checkbox 时使用，是否禁用 checkbox，优先级高于 isDisable|
 |isDisable       |function(rowData) |1.3.1     |optional |在 tpye 为 checkbox 时使用，为一个回调函数，用于根据 rowData 去判断是否禁用该行的 checkbox|
 |canEdit         |function(rowData) |1.3.3     |optional |在 type 为可编辑表格的类别时使用，为一个回调函数，用于根据 rowData 去判断该行该列是否可以编辑|
-|renderChildren  |function          |1.5.0     | -       |在 type 为 select 或 radio 时使用，通过返回 jsx 传入选项。|         
+|renderChildren  |function          |1.5.0     | -       |在 type 为 select 或 radio 时使用，通过返回 jsx 传入选项。|        
  
 
 

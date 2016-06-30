@@ -4,12 +4,16 @@ block content
 	#site-home.site-home
 		#site-banner.site-banner
 			canvas#canvas.canvas.translate.animated
+			script(src="//g.alicdn.com/platform/c/jquery/1.11.3/dist/jquery.min.js")
 			script(src="/static/fabric.min.js")
+			script(src="/static/canvas.js")
 			img.zoomInRight.animated.banner-title(src="//gtms02.alicdn.com/tps/i2/TB1IeBdKVXXXXXZXFXXMDVcGpXX-1026-137.png")
 			img.flash.animated.banner-des(src="//gtms02.alicdn.com/tps/i2/TB1FoxgKVXXXXXBXFXXvmCsWVXX-1280-150.png")
 			div.zoomInRight.animated.button-group
 				a.get-start.kuma-button.kuma-button-primary.kuma-button-lg(type="button", href="/start/base", target="_blank") 开始使用
-				a.contribute.kuma-button.kuma-button-lg.kuma-button-secondary(type="button", href="//github.com/uxcore", target="_blank") 贡献代码
+				a.star.kuma-button.kuma-button-lg.kuma-button-secondary(type="button", href="//github.com/uxcore/uxcore", target="_blank") 
+					span.gh-icon
+					span.gh-text Star
 
 		ul#site-feature.site-feature
 			each feature in config.site.features
