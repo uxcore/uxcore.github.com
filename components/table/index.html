@@ -83,13 +83,6 @@ var Demo = (function (_React$Component) {
                     "删除": function _(rowData) {
                         me.refs.grid.delRow(rowData);
                     }
-                },
-                beforeRender: function beforeRender(rowData, actionItems) {
-                    if (rowData.jsxid % 2 == 0) {
-                        return ['编辑'];
-                    } else {
-                        return ['编辑', '删除'];
-                    }
                 }
             }, { dataKey: 'action', title: '链接', width: 100, render: function render(rowData) {
                     return React.createElement(
@@ -184,14 +177,6 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
                 <span class="hljs-string">"删除"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>) </span>{
                     me.refs.grid.delRow(rowData);
                 }
-              },
-              beforeRender: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData,actionItems</span>) </span>{
-                 <span class="hljs-keyword">if</span>(rowData.jsxid%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>) {
-                    <span class="hljs-keyword">return</span> [<span class="hljs-string">'编辑'</span>];
-                 }<span class="hljs-keyword">else</span> {
-                    <span class="hljs-keyword">return</span> [<span class="hljs-string">'编辑'</span>,<span class="hljs-string">'删除'</span>];
-                 }
-
               }
             },
             { dataKey: <span class="hljs-string">'action'</span>, title:<span class="hljs-string">'链接'</span>, width:<span class="hljs-number">100</span>,render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>)</span>{
@@ -283,13 +268,6 @@ var Demo = (function (_React$Component) {
                     },
                     "del": function del(rowData) {
                         me.refs.grid.delRow(rowData);
-                    }
-                },
-                beforeRender: function beforeRender(rowData, actionItems) {
-                    if (rowData.jsxid % 2 == 0) {
-                        return ['clickme'];
-                    } else {
-                        return ['clickme', 'del'];
                     }
                 }
             }, { dataKey: 'action', title: '链接', width: 100, render: function render(rowData) {
@@ -400,14 +378,6 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
                 <span class="hljs-string">"del"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>) </span>{
                     me.refs.grid.delRow(rowData);
                 }
-              },
-              beforeRender: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData,actionItems</span>) </span>{
-                 <span class="hljs-keyword">if</span>(rowData.jsxid%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>) {
-                    <span class="hljs-keyword">return</span> [<span class="hljs-string">'clickme'</span>];
-                 }<span class="hljs-keyword">else</span> {
-                    <span class="hljs-keyword">return</span> [<span class="hljs-string">'clickme'</span>,<span class="hljs-string">'del'</span>];
-                 }
-
               }
             },
             { dataKey: <span class="hljs-string">'action'</span>, title:<span class="hljs-string">'链接'</span>, width:<span class="hljs-number">100</span>,render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>)</span>{
@@ -896,25 +866,13 @@ var Demo = (function (_React$Component) {
         key: 'render',
         value: function render() {
 
-            var columns = [
-            //{ dataKey: 'check', title: '复选框', type: 'checkbox'},
-            //{ dataKey: 'id', title: 'ID', width: 50,hidden:true,fixed:true},
-            { dataKey: 'country', title: '国家国家国家国家', width: 200, ordered: true, type: "money", delimiter: ',', fixed: true }, { dataKey: 'city', title: '城市', width: 150 }, { dataKey: 'firstName', title: "FristName", fixed: true, beforeRender: function beforeRender(rowData) {
-                    return "abc";
-                } }, { dataKey: 'lastName', title: "LastName" }, { dataKey: 'email', title: "Email", width: 200, ordered: true }, { dataKey: 'action1', title: '操作1', width: 100, type: "action", actions: {
+            var columns = [{ dataKey: 'country', title: '国家国家国家国家', width: 200, ordered: true, type: "money", delimiter: ',', fixed: true }, { dataKey: 'city', title: '城市', width: 150 }, { dataKey: 'firstName', title: "FristName", fixed: true }, { dataKey: 'lastName', title: "LastName" }, { dataKey: 'email', title: "Email", width: 200, ordered: true }, { dataKey: 'action1', title: '操作1', width: 100, type: "action", actions: {
                     "编辑": function _(rowData, actions) {
                         console.log(actions.addEmptyRow);
                         me.refs.grid.toggleSubComp(rowData);
                     },
                     "删除": function _(rowData) {
                         me.refs.grid.delRow(rowData);
-                    }
-                },
-                beforeRender: function beforeRender(rowData, actionItems) {
-                    if (rowData.jsxid % 2 == 0) {
-                        return ['编辑'];
-                    } else {
-                        return ['编辑', '删除'];
                     }
                 }
             }, { dataKey: 'action', title: '链接', width: 150, render: function render(cellData, rowData) {
@@ -927,8 +885,6 @@ var Demo = (function (_React$Component) {
                             rowData.email
                         )
                     );
-                }, beforeRender: function beforeRender(rowData) {
-                    return rowData.email;
                 }
             }];
 
@@ -969,13 +925,9 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
 
 
         <span class="hljs-keyword">let</span> columns = [
-            <span class="hljs-comment">//{ dataKey: 'check', title: '复选框', type: 'checkbox'},</span>
-            <span class="hljs-comment">//{ dataKey: 'id', title: 'ID', width: 50,hidden:true,fixed:true},</span>
             { dataKey: <span class="hljs-string">'country'</span>, title:<span class="hljs-string">'国家国家国家国家'</span>, width: <span class="hljs-number">200</span>,ordered:<span class="hljs-literal">true</span>, type: <span class="hljs-string">"money"</span>, delimiter: <span class="hljs-string">','</span>,fixed:<span class="hljs-literal">true</span>},
             { dataKey: <span class="hljs-string">'city'</span>,title:<span class="hljs-string">'城市'</span>, width: <span class="hljs-number">150</span>},
-            { dataKey: <span class="hljs-string">'firstName'</span>,title:<span class="hljs-string">"FristName"</span>,fixed:<span class="hljs-literal">true</span>,beforeRender:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>) </span>{
-                <span class="hljs-keyword">return</span> <span class="hljs-string">"abc"</span>;
-            } },  
+            { dataKey: <span class="hljs-string">'firstName'</span>,title:<span class="hljs-string">"FristName"</span>,fixed:<span class="hljs-literal">true</span>},  
             { dataKey: <span class="hljs-string">'lastName'</span> ,title:<span class="hljs-string">"LastName"</span>},
             { dataKey: <span class="hljs-string">'email'</span>,title:<span class="hljs-string">"Email"</span>,width: <span class="hljs-number">200</span>,ordered:<span class="hljs-literal">true</span> },
             { dataKey: <span class="hljs-string">'action1'</span>, title:<span class="hljs-string">'操作1'</span>, width:<span class="hljs-number">100</span>, type:<span class="hljs-string">"action"</span>,actions:{
@@ -986,20 +938,10 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
                 <span class="hljs-string">"删除"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>) </span>{
                     me.refs.grid.delRow(rowData);
                 }
-              },
-              beforeRender: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData,actionItems</span>) </span>{
-                 <span class="hljs-keyword">if</span>(rowData.jsxid%<span class="hljs-number">2</span>==<span class="hljs-number">0</span>) {
-                    <span class="hljs-keyword">return</span> [<span class="hljs-string">'编辑'</span>];
-                 }<span class="hljs-keyword">else</span> {
-                    <span class="hljs-keyword">return</span> [<span class="hljs-string">'编辑'</span>,<span class="hljs-string">'删除'</span>];
-                 }
-
               }
             },
             { dataKey: <span class="hljs-string">'action'</span>, title:<span class="hljs-string">'链接'</span>, width:<span class="hljs-number">150</span>,render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cellData,rowData</span>)</span>{
                <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>{rowData.email}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-              },beforeRender(rowData) {
-                return rowData.email;
               }
             }
         ];
