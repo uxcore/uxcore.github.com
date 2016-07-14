@@ -1,0 +1,744 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>uxcore - React UI Component Set</title><meta name="description" content="React UI Component Set"><meta name="google-site-verification" content="KFAGkw1GuB8rR3zO8O090v65MVhYI02Xl6B7-MoSFLk"><meta name="keywords" content="uxcore, react, component, react component"><link href="/static/favicon.ico" rel="icon" type="image/x-icon"><link rel="stylesheet" href="//g.alicdn.com/platform/common/s/1.1/global/global.css"><link rel="stylesheet" href="/static/style/index.css"><link id="J_ThemeSiteStyle" rel="stylesheet" href="/static/style/orange.css"><link rel="stylesheet" href="/static/github-gist.min.css"><script src="/static/modernizr.js"></script><script>(function(W, D, M){
+	if (M.localstorage) {
+		var t = localStorage.getItem('theme');
+		W.theme = 'orange';
+		if (t !== 'blue' && t !== 'orange') {
+			t = 'orange';
+		}
+		if (t && t !== W.theme) {
+			W.theme = t;
+			D.getElementById('J_ThemeSiteStyle').setAttribute('href', '/static/style/' + t + '.css');
+		}
+	}	
+}(window, document, Modernizr));</script><!--[if lt IE 9]><script src="//g.alicdn.com/platform/c/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,console-polyfill/0.2.1/index.min.js,respond.js/1.4.2/respond.min.js"></script><![endif]--><script src="//g.alicdn.com/platform/c/??jquery/1.11.3/dist/jquery.min.js,lodash/3.10.1/lodash.min.js,react/0.14.3/react-with-addons.min.js,react/0.14.3/react-dom.min.js,reflux/0.3.0/dist/reflux.min.js"></script><script src="//g.alicdn.com/platform/c/rangy/1.3.0/rangy-core.min.js"></script><script src="//g.alicdn.com/platform/c/tinymce/4.3.12/tinymce.min.js"></script><script src="/static/uxcore.js"></script><script>(function(w){
+    w.require = function(name){
+        return w.UXCORE[name];
+    }
+})(window)
+</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li><li data-id="theme"><a href="/theme/builder">主题</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">Presentation</h3><ul><li><a href="/components/album">Album<small>相册</small></a></li><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/badge">Badge<small>徽标</small></a></li><li><a href="/components/carousel">Carousel<small>轮播</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/load-more">LoadMore<small>加载更多</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">Form Control</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li class="current"><a href="/components/cascade-select">CascadeSelect<small>级联选择</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/multi-select">MultiSelect<small>复选择器</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/rate">Rate<small>评分</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/switch">Switch<small>开关</small></a></li><li><a href="/components/tinymce">Tinymce<small>富文本</small></a></li><li><a href="/components/tree-select">TreeSelect<small>树选择</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">Navigation</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">Tool</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">Layout</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">Other</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">Matrix</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>CascadeSelect</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>changming</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-cascade-select.git" target="_blank">CascadeSelect</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.1.1</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-yingyong"></i>组件演示</h2><div id="code-box-components-cascade-select-demo-basic" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-cascade-select-demo-basic">基本</a></div></div><div class="code-box-demo"><div id="components-cascade-select-demo-basic"></div></div><div class="code-box-desc"><p>最简单的用法。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CascadeSelect = require('uxcore-cascade-select');
+var options = [{
+  value: 'alibaba',
+  label: '阿里巴巴',
+  children: [{
+    value: 'platform',
+    label: '信息平台',
+    children: [{
+      value: 'fe',
+      label: '前端开发'
+    }]
+  }]
+}, {
+  value: 'beijing',
+  label: '日本',
+  children: [{
+    value: 'xicheng',
+    label: '西城',
+    children: [{
+      value: 'zhonggc',
+      label: '中观村大街'
+    }]
+  }]
+}, {
+  value: 'tianjin',
+  label: '天津',
+  children: [{
+    value: 'heping',
+    label: '和平区',
+    children: [{
+      value: 'nanjinglu',
+      label: '南京路'
+    }]
+  }, {
+    value: 'hexi',
+    label: '河西区',
+    children: [{
+      value: 'dagu',
+      label: '大沽路'
+    }]
+  }]
+}, {
+  value: 'zhejiang',
+  label: '浙江',
+  children: [{
+    value: 'hangzhou',
+    label: '杭州',
+    children: [{
+      value: 'xihu',
+      label: '西湖'
+    }]
+  }]
+}, {
+  value: 'jiangsu',
+  label: '江苏',
+  children: [{
+    value: 'nanjing',
+    label: '南京',
+    children: [{
+      value: 'zhonghuamen',
+      label: '中华门'
+    }]
+  }]
+}];
+
+var Demo = (function (_React$Component) {
+  _inherits(Demo, _React$Component);
+
+  function Demo(props) {
+    _classCallCheck(this, Demo);
+
+    _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+    this.state = {
+      xValue: ['jiangsu', 'nanjing', 'zhonghuamen'],
+      testValue: 1
+    };
+  }
+
+  _createClass(Demo, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        { className: 'demo-wrap' },
+        React.createElement(CascadeSelect, {
+          defaultValue: ['alibaba', 'platform', 'fe'],
+          options: options,
+          onChange: function (value, selected) {
+            return console.log(value, selected);
+          }
+        })
+      );
+    }
+  }]);
+
+  return Demo;
+})(React.Component);
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-cascade-select-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> CascadeSelect = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-cascade-select'</span>);
+<span class="hljs-keyword">const</span> options = [{
+  value: <span class="hljs-string">'alibaba'</span>,
+  label: <span class="hljs-string">'阿里巴巴'</span>,
+  children: [{
+    value: <span class="hljs-string">'platform'</span>,
+    label: <span class="hljs-string">'信息平台'</span>,
+    children: [{
+      value: <span class="hljs-string">'fe'</span>,
+      label: <span class="hljs-string">'前端开发'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'beijing'</span>,
+  label: <span class="hljs-string">'日本'</span>,
+  children: [{
+    value: <span class="hljs-string">'xicheng'</span>,
+    label: <span class="hljs-string">'西城'</span>,
+    children: [{
+      value: <span class="hljs-string">'zhonggc'</span>,
+      label: <span class="hljs-string">'中观村大街'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'tianjin'</span>,
+  label: <span class="hljs-string">'天津'</span>,
+  children: [{
+    value: <span class="hljs-string">'heping'</span>,
+    label: <span class="hljs-string">'和平区'</span>,
+    children: [{
+      value: <span class="hljs-string">'nanjinglu'</span>,
+      label: <span class="hljs-string">'南京路'</span>,
+    }],
+  }, {
+    value: <span class="hljs-string">'hexi'</span>,
+    label: <span class="hljs-string">'河西区'</span>,
+    children: [{
+      value: <span class="hljs-string">'dagu'</span>,
+      label: <span class="hljs-string">'大沽路'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'zhejiang'</span>,
+  label: <span class="hljs-string">'浙江'</span>,
+  children: [{
+    value: <span class="hljs-string">'hangzhou'</span>,
+    label: <span class="hljs-string">'杭州'</span>,
+    children: [{
+      value: <span class="hljs-string">'xihu'</span>,
+      label: <span class="hljs-string">'西湖'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'jiangsu'</span>,
+  label: <span class="hljs-string">'江苏'</span>,
+  children: [{
+    value: <span class="hljs-string">'nanjing'</span>,
+    label: <span class="hljs-string">'南京'</span>,
+    children: [{
+      value: <span class="hljs-string">'zhonghuamen'</span>,
+      label: <span class="hljs-string">'中华门'</span>,
+    }],
+  }],
+}];
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+
+  constructor(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      xValue : [<span class="hljs-string">'jiangsu'</span>, <span class="hljs-string">'nanjing'</span>, <span class="hljs-string">'zhonghuamen'</span>],
+      testValue: <span class="hljs-number">1</span>
+    };
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-wrap"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">CascadeSelect</span>
+          <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">{['alibaba',</span> '<span class="hljs-attribute">platform</span>', '<span class="hljs-attribute">fe</span>']}
+          <span class="hljs-attribute">options</span>=<span class="hljs-value">{options}</span>
+          <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{(value,</span> <span class="hljs-attribute">selected</span>) =&gt;</span> console.log(value, selected)}
+        /&gt;
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
+, document.getElementById('components-cascade-select-demo-basic'));</span></code></pre></div></div></div><div id="code-box-components-cascade-select-demo-clear" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-cascade-select-demo-clear">允许清空</a></div></div><div class="code-box-demo"><div id="components-cascade-select-demo-clear"></div></div><div class="code-box-desc"><p>最简单的用法。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CascadeSelect = require('uxcore-cascade-select');
+var options = [{
+  value: 'alibaba',
+  label: '阿里巴巴',
+  children: [{
+    value: 'platform',
+    label: '信息平台',
+    children: [{
+      value: 'fe',
+      label: '前端开发'
+    }]
+  }]
+}, {
+  value: 'beijing',
+  label: '日本',
+  children: [{
+    value: 'xicheng',
+    label: '西城',
+    children: [{
+      value: 'zhonggc',
+      label: '中观村大街'
+    }]
+  }]
+}, {
+  value: 'tianjin',
+  label: '天津',
+  children: [{
+    value: 'heping',
+    label: '和平区',
+    children: [{
+      value: 'nanjinglu',
+      label: '南京路'
+    }]
+  }, {
+    value: 'hexi',
+    label: '河西区',
+    children: [{
+      value: 'dagu',
+      label: '大沽路'
+    }]
+  }]
+}, {
+  value: 'zhejiang',
+  label: '浙江',
+  children: [{
+    value: 'hangzhou',
+    label: '杭州',
+    children: [{
+      value: 'xihu',
+      label: '西湖'
+    }]
+  }]
+}, {
+  value: 'jiangsu',
+  label: '江苏',
+  children: [{
+    value: 'nanjing',
+    label: '南京',
+    children: [{
+      value: 'zhonghuamen',
+      label: '中华门'
+    }]
+  }]
+}];
+
+var Demo = (function (_React$Component) {
+  _inherits(Demo, _React$Component);
+
+  function Demo(props) {
+    _classCallCheck(this, Demo);
+
+    _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+    this.state = {
+      xValue: ['jiangsu', 'nanjing', 'zhonghuamen'],
+      testValue: 1
+    };
+  }
+
+  _createClass(Demo, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        { className: 'demo-wrap' },
+        React.createElement(CascadeSelect, {
+          defaultValue: ['alibaba', 'platform', 'fe'],
+          options: options,
+          clearable: true,
+          onChange: function (value, selected) {
+            return console.log(value, selected);
+          }
+        })
+      );
+    }
+  }]);
+
+  return Demo;
+})(React.Component);
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-cascade-select-demo-clear'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> CascadeSelect = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-cascade-select'</span>);
+<span class="hljs-keyword">const</span> options = [{
+  value: <span class="hljs-string">'alibaba'</span>,
+  label: <span class="hljs-string">'阿里巴巴'</span>,
+  children: [{
+    value: <span class="hljs-string">'platform'</span>,
+    label: <span class="hljs-string">'信息平台'</span>,
+    children: [{
+      value: <span class="hljs-string">'fe'</span>,
+      label: <span class="hljs-string">'前端开发'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'beijing'</span>,
+  label: <span class="hljs-string">'日本'</span>,
+  children: [{
+    value: <span class="hljs-string">'xicheng'</span>,
+    label: <span class="hljs-string">'西城'</span>,
+    children: [{
+      value: <span class="hljs-string">'zhonggc'</span>,
+      label: <span class="hljs-string">'中观村大街'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'tianjin'</span>,
+  label: <span class="hljs-string">'天津'</span>,
+  children: [{
+    value: <span class="hljs-string">'heping'</span>,
+    label: <span class="hljs-string">'和平区'</span>,
+    children: [{
+      value: <span class="hljs-string">'nanjinglu'</span>,
+      label: <span class="hljs-string">'南京路'</span>,
+    }],
+  }, {
+    value: <span class="hljs-string">'hexi'</span>,
+    label: <span class="hljs-string">'河西区'</span>,
+    children: [{
+      value: <span class="hljs-string">'dagu'</span>,
+      label: <span class="hljs-string">'大沽路'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'zhejiang'</span>,
+  label: <span class="hljs-string">'浙江'</span>,
+  children: [{
+    value: <span class="hljs-string">'hangzhou'</span>,
+    label: <span class="hljs-string">'杭州'</span>,
+    children: [{
+      value: <span class="hljs-string">'xihu'</span>,
+      label: <span class="hljs-string">'西湖'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'jiangsu'</span>,
+  label: <span class="hljs-string">'江苏'</span>,
+  children: [{
+    value: <span class="hljs-string">'nanjing'</span>,
+    label: <span class="hljs-string">'南京'</span>,
+    children: [{
+      value: <span class="hljs-string">'zhonghuamen'</span>,
+      label: <span class="hljs-string">'中华门'</span>,
+    }],
+  }],
+}];
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+
+  constructor(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      xValue : [<span class="hljs-string">'jiangsu'</span>, <span class="hljs-string">'nanjing'</span>, <span class="hljs-string">'zhonghuamen'</span>],
+      testValue: <span class="hljs-number">1</span>
+    };
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-wrap"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">CascadeSelect</span>
+          <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">{['alibaba',</span> '<span class="hljs-attribute">platform</span>', '<span class="hljs-attribute">fe</span>']}
+          <span class="hljs-attribute">options</span>=<span class="hljs-value">{options}</span>
+          <span class="hljs-attribute">clearable</span>
+          <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{(value,</span> <span class="hljs-attribute">selected</span>) =&gt;</span> console.log(value, selected)}
+        /&gt;
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
+, document.getElementById('components-cascade-select-demo-clear'));</span></code></pre></div></div></div><div id="code-box-components-cascade-select-demo-disable" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-cascade-select-demo-disable">禁用</a></div></div><div class="code-box-demo"><div id="components-cascade-select-demo-disable"></div></div><div class="code-box-desc"><p>最简单的用法。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CascadeSelect = require('uxcore-cascade-select');
+var options = [{
+  value: 'alibaba',
+  label: '阿里巴巴',
+  children: [{
+    value: 'platform',
+    label: '信息平台',
+    children: [{
+      value: 'fe',
+      label: '前端开发'
+    }]
+  }]
+}, {
+  value: 'beijing',
+  label: '日本',
+  children: [{
+    value: 'xicheng',
+    label: '西城',
+    children: [{
+      value: 'zhonggc',
+      label: '中观村大街'
+    }]
+  }]
+}, {
+  value: 'tianjin',
+  label: '天津',
+  children: [{
+    value: 'heping',
+    label: '和平区',
+    children: [{
+      value: 'nanjinglu',
+      label: '南京路'
+    }]
+  }, {
+    value: 'hexi',
+    label: '河西区',
+    children: [{
+      value: 'dagu',
+      label: '大沽路'
+    }]
+  }]
+}, {
+  value: 'zhejiang',
+  label: '浙江',
+  children: [{
+    value: 'hangzhou',
+    label: '杭州',
+    children: [{
+      value: 'xihu',
+      label: '西湖'
+    }]
+  }]
+}, {
+  value: 'jiangsu',
+  label: '江苏',
+  children: [{
+    value: 'nanjing',
+    label: '南京',
+    children: [{
+      value: 'zhonghuamen',
+      label: '中华门'
+    }]
+  }]
+}];
+
+var Demo = (function (_React$Component) {
+  _inherits(Demo, _React$Component);
+
+  function Demo(props) {
+    _classCallCheck(this, Demo);
+
+    _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
+    this.state = {
+      xValue: ['jiangsu', 'nanjing', 'zhonghuamen'],
+      testValue: 1
+    };
+  }
+
+  _createClass(Demo, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        { className: 'demo-wrap' },
+        React.createElement(CascadeSelect, {
+          defaultValue: ['alibaba', 'platform', 'fe'],
+          options: options,
+          clearable: true,
+          disabled: true,
+          onChange: function (value, selected) {
+            return console.log(value, selected);
+          }
+        })
+      );
+    }
+  }]);
+
+  return Demo;
+})(React.Component);
+
+ReactDOM.render(React.createElement(Demo, null), document.getElementById('components-cascade-select-demo-disable'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> CascadeSelect = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-cascade-select'</span>);
+<span class="hljs-keyword">const</span> options = [{
+  value: <span class="hljs-string">'alibaba'</span>,
+  label: <span class="hljs-string">'阿里巴巴'</span>,
+  children: [{
+    value: <span class="hljs-string">'platform'</span>,
+    label: <span class="hljs-string">'信息平台'</span>,
+    children: [{
+      value: <span class="hljs-string">'fe'</span>,
+      label: <span class="hljs-string">'前端开发'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'beijing'</span>,
+  label: <span class="hljs-string">'日本'</span>,
+  children: [{
+    value: <span class="hljs-string">'xicheng'</span>,
+    label: <span class="hljs-string">'西城'</span>,
+    children: [{
+      value: <span class="hljs-string">'zhonggc'</span>,
+      label: <span class="hljs-string">'中观村大街'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'tianjin'</span>,
+  label: <span class="hljs-string">'天津'</span>,
+  children: [{
+    value: <span class="hljs-string">'heping'</span>,
+    label: <span class="hljs-string">'和平区'</span>,
+    children: [{
+      value: <span class="hljs-string">'nanjinglu'</span>,
+      label: <span class="hljs-string">'南京路'</span>,
+    }],
+  }, {
+    value: <span class="hljs-string">'hexi'</span>,
+    label: <span class="hljs-string">'河西区'</span>,
+    children: [{
+      value: <span class="hljs-string">'dagu'</span>,
+      label: <span class="hljs-string">'大沽路'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'zhejiang'</span>,
+  label: <span class="hljs-string">'浙江'</span>,
+  children: [{
+    value: <span class="hljs-string">'hangzhou'</span>,
+    label: <span class="hljs-string">'杭州'</span>,
+    children: [{
+      value: <span class="hljs-string">'xihu'</span>,
+      label: <span class="hljs-string">'西湖'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'jiangsu'</span>,
+  label: <span class="hljs-string">'江苏'</span>,
+  children: [{
+    value: <span class="hljs-string">'nanjing'</span>,
+    label: <span class="hljs-string">'南京'</span>,
+    children: [{
+      value: <span class="hljs-string">'zhonghuamen'</span>,
+      label: <span class="hljs-string">'中华门'</span>,
+    }],
+  }],
+}];
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+
+  constructor(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.state = {
+      xValue : [<span class="hljs-string">'jiangsu'</span>, <span class="hljs-string">'nanjing'</span>, <span class="hljs-string">'zhonghuamen'</span>],
+      testValue: <span class="hljs-number">1</span>
+    };
+  }
+
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"demo-wrap"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">CascadeSelect</span>
+          <span class="hljs-attribute">defaultValue</span>=<span class="hljs-value">{['alibaba',</span> '<span class="hljs-attribute">platform</span>', '<span class="hljs-attribute">fe</span>']}
+          <span class="hljs-attribute">options</span>=<span class="hljs-value">{options}</span>
+          <span class="hljs-attribute">clearable</span>
+          <span class="hljs-attribute">disabled</span>
+          <span class="hljs-attribute">onChange</span>=<span class="hljs-value">{(value,</span> <span class="hljs-attribute">selected</span>) =&gt;</span> console.log(value, selected)}
+        /&gt;
+      <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    )</span>;
+  }
+}
+
+ReactDOM.render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>
+, document.getElementById('components-cascade-select-demo-disable'));</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><h2 id="props">Props</h2><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prefixCls</td>
+<td>string</td>
+<td>false</td>
+<td><code>&#39;kuma-cascader&#39;</code></td>
+<td>默认的类名前缀</td>
+</tr>
+<tr>
+<td>className</td>
+<td>string</td>
+<td>false</td>
+<td><code>&#39;&#39;</code></td>
+<td>自定义类名</td>
+</tr>
+<tr>
+<td>options</td>
+<td>array</td>
+<td>false</td>
+<td><code>[]</code></td>
+<td>选项数据源，格式可见下方Demo</td>
+</tr>
+<tr>
+<td>value</td>
+<td>array</td>
+<td>false</td>
+<td><code>null</code></td>
+<td>可由外部控制的值</td>
+</tr>
+<tr>
+<td>defaultValue</td>
+<td>array</td>
+<td>false</td>
+<td><code>[]</code></td>
+<td>初始默认值</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>string</td>
+<td>false</td>
+<td><code>&#39;Please Select&#39;</code> or <code>&#39;请选择&#39;</code></td>
+<td>placeholder</td>
+</tr>
+<tr>
+<td>onChange</td>
+<td>function</td>
+<td>false</td>
+<td><code>function(value, selectedOptions)</code></td>
+<td>选择完成后回调</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>boolean</td>
+<td>false</td>
+<td><code>false</code></td>
+<td>是否禁用</td>
+</tr>
+<tr>
+<td>clearable</td>
+<td>boolean</td>
+<td>false</td>
+<td><code>false</code></td>
+<td>是否支持清除</td>
+</tr>
+<tr>
+<td>changeOnSelect</td>
+<td>boolean</td>
+<td>false</td>
+<td><code>false</code></td>
+<td>是否将每次选择立刻显示在控件中</td>
+</tr>
+<tr>
+<td>expandTrigger</td>
+<td>string</td>
+<td>false</td>
+<td><code>&#39;click&#39;</code></td>
+<td>次级菜单展开方式，支持 <code>click</code> 和 <code>hover</code></td>
+</tr>
+<tr>
+<td>beforeRender</td>
+<td>function</td>
+<td>false</td>
+<td><code>(value, selectedOptions) =&gt; selectedOptions.map(o =&gt; o.label).join(&#39; / &#39;)</code></td>
+<td>处理要显示的内容</td>
+</tr>
+<tr>
+<td>cascadeSize</td>
+<td>number</td>
+<td>false</td>
+<td><code>3</code></td>
+<td>级联的层级数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="demos">Demos</h2><h3 id="props-options">props.options</h3><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> options = [{
+  value: <span class="hljs-string">'zhejiang'</span>,
+  label: <span class="hljs-string">'浙江'</span>,
+  children: [{
+    value: <span class="hljs-string">'hangzhou'</span>,
+    label: <span class="hljs-string">'杭州'</span>,
+    children: [{
+      value: <span class="hljs-string">'xihu'</span>,
+      label: <span class="hljs-string">'西湖'</span>,
+    }],
+  }],
+}, {
+  value: <span class="hljs-string">'jiangsu'</span>,
+  label: <span class="hljs-string">'江苏'</span>,
+  children: [{
+    value: <span class="hljs-string">'nanjing'</span>,
+    label: <span class="hljs-string">'南京'</span>,
+    children: [{
+      value: <span class="hljs-string">'zhonghuamen'</span>,
+      label: <span class="hljs-string">'中华门'</span>,
+    }],
+  }],
+}];</code></pre></div></div></article></div><script src="http://s95.cnzz.com/z_stat.php?id=1259450590&amp;web_id=1259450590" language="JavaScript"></script><div id="site-footer" class="site-footer"><div class="footer-right">© 2015 Alibaba, Inc. Licensed under MIT license.</div><div class="footer-power"><span>DESIGNED BY</span><img src="/static/iux.png"><span>阿里巴巴信息平台前端团队</span></div></div></body></html>
