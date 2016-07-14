@@ -62,14 +62,6 @@ class Demo extends React.Component {
                 "del": function(rowData) {
                     me.refs.grid.delRow(rowData);
                 }
-              },
-              beforeRender: function(rowData,actionItems) {
-                 if(rowData.jsxid%2==0) {
-                    return ['clickme'];
-                 }else {
-                    return ['clickme','del'];
-                 }
-                 
               }
             },
             { dataKey: 'action', title:'链接', width:100,render: function(rowData){

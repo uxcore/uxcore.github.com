@@ -213,7 +213,7 @@ ReactDOM.render(
 .pageDemo .button1 .kuma-button {
   margin-right: 10px;
 }
-.pageDemo .kuma-uxform-row .kuma-uxform-field.kuma-cascade-date-uxform-field .kuma-calendar-picker {
+.pageDemo .kuma-uxform-row .kuma-uxform-field.kuma-cascade-date-uxform-field .kuma-calendar-picker-input {
   width: 120px;
 }
 
