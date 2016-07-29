@@ -33,6 +33,7 @@
 * toggleSubComp(rowData): 使指定的行显示或隐藏二级组件(subComp)。
 
 
+
 ## Props
 
 |Name                |Type                |Require   |Default     |Since Ver. |Note | 
@@ -43,6 +44,8 @@
 |showColumnPicker    |boolean             |optional  |true        | -         |是否显示列筛选按钮|
 |showPager           |boolean             |optional  |true        | -         |是否显示分页|
 |showPagerTotal      |boolean             |optional  |false       | 1.3.17    |是否显示分页的总数部分|
+|showPagerSizeChanger|boolean             |optional  |true        | 1.6.9     |是否可以改变分页的pageSize|
+|isMiniPager         |boolean             |optional  |true        | 1.6.9     |分页是否是mini的|
 |showHeader          |boolean             |optional  |true        | -         |是否显示表格头部|
 |showHeaderBorder    |boolean             |optional  |false       | 1.3.6     |是否显示头部列之间的分割线|
 |showMask            |boolean             |optional  |true        | -         |是否在 loading 的时候显示蒙层|
@@ -65,6 +68,9 @@
 |beforeFetch         |function(data, from)|optional  |noop        | -         |两个参数，data 表示表格请求数据时即将发送的参数，from 表示这次请求数据的行为从哪里产生，内置的有 `search`(搜索栏),`order`(排序) & `pagination`(分页)，该函数需要返回值，返回值为真正请求所携带的参数。|
 |processData         |function(data)      |optional  |noop        | -         |有时源返回的数据格式，并不符合 Table 的要求，可以通过此函数进行调整，参数 data 是返回数据中 content 字段的 value，该函数需要返回值，返回值为符合 content 字段 value 的数据结构。|
 |onFetchError        |function(result)    |optional  |noop        | 1.3.7     |在返回数据中 success 不是 true 的情况下触发，返回所有请求得到的数据|
+|onSearch            |function(searchTxt) |optional  |noop        | 1.6.1     |未配置 fetchUrl 的情况下触发，传回搜索的关键词|
+|onOrder             |function(column, orderType) | optional | noop | 1.6.1   |未配置 fetchUrl 的情况下触发，传回排序的列和排序方式|
+|onPagerChange       |function(current, pageSize) | optional | noop | 1.6.1   |未配置 fetchUrl 的情况下触发，传回要到达的分页和每页条数|
 |addRowClassName     |function(rowData)   |optional  |noop        | -         |用于为特定的某几行添加特殊的 class，用于样式定制|
 |rowSelection        |object              |optional  |noop        | -         |选中复选框时触发的回调，rowSelection 是由回调函数组成的对象，包括 onSelect 和 onSelectAll，例子见此| 
 
@@ -72,7 +78,7 @@
 ### 折叠展开专用
 |Name            |Type                |Require   |Since Ver. |Default|Note |
 |---             |---                 |---       |---        |---    |---|
-|SubComp         |React Element       |optional  |-          | -     |传入二级组件，已废弃，请使用 renderSubComp|
+|SubComp         |React Element       |optional  |-          | -     |传入二级组件，已废弃，请使用 renderSubComp, 自 1.7.0 版本后不再保证此部分功能的完整性。|
 |renderSubComp   |function(rowData)   |optional  |1.3.15     | -     |传入二级组件，该函数需要返回值，返回 false，表示不渲染二级，返回 jsx，则渲染该 jsx|
 
 
@@ -97,21 +103,22 @@
 |-----------     |----------        |---       |------   |-----  |
 |dataKey         |string            |-         |required |表格的数据中用于查看模式展示的字段|
 |editKey         |string            |-         |optional |表格的数据中用于编辑模式的字段，如对于 select 来说，此项应为选项里的 key| 
+|align           |string            |-         |optional |文字居中方式，默认 'left'|
 |title           |string            |-         |required |列头|
 |width           |number            |-         |required |列宽|
 |hidden          |boolean           |-         |optional |是否隐藏，默认为 false|
-|ordered           |boolean           |-         |optional |是否显示内置的排序，默认为 false|
-|type            |string            |-         |optional |包含 'money', 'card', 'cnmobile', 'checkbox', 'action', 'radio', 'text', 'select' 和 'custom'|
+|ordered         |boolean           |-         |optional |是否显示内置的排序，默认为 false|
+|type            |string            |-         |optional |包含 'money', 'card', 'cnmobile', 'checkboxSelector', 'action', 'radio', 'text', 'select' 和 'custom'|
 |actions         |array             |-         |optional |当 type 是 action 的时候会用到，用于定义具体有哪些操作，格式见下方[说明](#actions)|
 |customField     |React Element     |-         |optional |当 type 是 custom 的时候会用到，用于传入自定义的 Field，用于行内编辑|
 |render          |function          |-         |optional |在查看模式下，用户定制渲染的方式，返回一个 jsx 格式|
 |fixed           |boolean           |-         |optional |是否为固定列|
 |delimiter       |string            |-         |optional |在 type 是 'money', 'card', 'cnmobile' 的时候会用到，用于传入格式化的分隔符|
-|align           |string            |-         |optional |文字居中方式，默认 'left'|
-|disable         |boolean           |-         |optional |在 type 为 checkbox 时使用，是否禁用 checkbox，优先级高于 isDisable|
-|isDisable       |function(rowData) |1.3.1     |optional |在 tpye 为 checkbox 时使用，为一个回调函数，用于根据 rowData 去判断是否禁用该行的 checkbox|
+|disable         |boolean           |-         |optional |在 type 为 checkboxSelector 时使用，是否禁用 checkbox，优先级高于 isDisable|
+|isDisable       |function(rowData) |1.3.1     |optional |在 tpye 为 checkboxSelector 时使用，为一个回调函数，用于根据 rowData 去判断是否禁用该行的 checkbox|
 |canEdit         |function(rowData) |1.3.3     |optional |在 type 为可编辑表格的类别时使用，为一个回调函数，用于根据 rowData 去判断该行该列是否可以编辑|
-|renderChildren  |function          |1.5.0     | -       |在 type 为 select 或 radio 时使用，通过返回 jsx 传入选项。|        
+|config          |object            |1.5.0     |optional |在 type 为 text/select/radio 时使用，传入对应的配置项，配置项支持对应的组件(uxcore-selelct2等)大部分配置|
+|renderChildren  |function          |1.5.0     | -       |在 type 为 select/radio 时使用，通过返回 jsx 传入选项。|         
  
 
 
@@ -140,6 +147,22 @@ let columns = [
         { dataKey: 'action', title:'链接', width:100, render: function(cellData,rowData) {
             return <div><a href="#">{rowData.email}</a></div>
         }}
+ ]
+
+```
+
+## 列配置项的例子2（带列群组, since ver. 1.3.0）
+```javascript
+
+let columns = [
+        { dataKey: 'check', type: 'checkbox', disable: false}, // custom checkbox column, dataKey can be anyone, true means checked.
+        {
+            group: "国家",
+            columns: [
+                { dataKey: 'country', title:'国家', width: 200,ordered:true},
+                { dataKey: 'country2', title:'国家2', width: 200,ordered:true},
+            ]
+        }
  ]
 
 ```
