@@ -1042,6 +1042,22 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <td>是否显示分页的总数部分</td>
 </tr>
 <tr>
+<td>showPagerSizeChanger</td>
+<td>boolean</td>
+<td>optional</td>
+<td>true</td>
+<td>1.6.9</td>
+<td>是否可以改变分页的pageSize</td>
+</tr>
+<tr>
+<td>isMiniPager</td>
+<td>boolean</td>
+<td>optional</td>
+<td>true</td>
+<td>1.6.9</td>
+<td>分页是否是mini的</td>
+</tr>
+<tr>
 <td>showHeader</td>
 <td>boolean</td>
 <td>optional</td>
@@ -1218,6 +1234,30 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <td>在返回数据中 success 不是 true 的情况下触发，返回所有请求得到的数据</td>
 </tr>
 <tr>
+<td>onSearch</td>
+<td>function(searchTxt)</td>
+<td>optional</td>
+<td>noop</td>
+<td>1.6.1</td>
+<td>未配置 fetchUrl 的情况下触发，传回搜索的关键词</td>
+</tr>
+<tr>
+<td>onOrder</td>
+<td>function(column, orderType)</td>
+<td>optional</td>
+<td>noop</td>
+<td>1.6.1</td>
+<td>未配置 fetchUrl 的情况下触发，传回排序的列和排序方式</td>
+</tr>
+<tr>
+<td>onPagerChange</td>
+<td>function(current, pageSize)</td>
+<td>optional</td>
+<td>noop</td>
+<td>1.6.1</td>
+<td>未配置 fetchUrl 的情况下触发，传回要到达的分页和每页条数</td>
+</tr>
+<tr>
 <td>addRowClassName</td>
 <td>function(rowData)</td>
 <td>optional</td>
@@ -1253,7 +1293,7 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <td>optional</td>
 <td>-</td>
 <td>-</td>
-<td>传入二级组件，已废弃，请使用 renderSubComp</td>
+<td>传入二级组件，已废弃，请使用 renderSubComp, 自 1.7.0 版本后不再保证此部分功能的完整性。</td>
 </tr>
 <tr>
 <td>renderSubComp</td>
@@ -1351,6 +1391,13 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <td>表格的数据中用于编辑模式的字段，如对于 select 来说，此项应为选项里的 key</td>
 </tr>
 <tr>
+<td>align</td>
+<td>string</td>
+<td>-</td>
+<td>optional</td>
+<td>文字居中方式，默认 &#39;left&#39;</td>
+</tr>
+<tr>
 <td>title</td>
 <td>string</td>
 <td>-</td>
@@ -1383,7 +1430,7 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <td>string</td>
 <td>-</td>
 <td>optional</td>
-<td>包含 &#39;money&#39;, &#39;card&#39;, &#39;cnmobile&#39;, &#39;checkbox&#39;, &#39;action&#39;, &#39;radio&#39;, &#39;text&#39;, &#39;select&#39; 和 &#39;custom&#39;</td>
+<td>包含 &#39;money&#39;, &#39;card&#39;, &#39;cnmobile&#39;, &#39;checkboxSelector&#39;, &#39;action&#39;, &#39;radio&#39;, &#39;text&#39;, &#39;select&#39; 和 &#39;custom&#39;</td>
 </tr>
 <tr>
 <td>actions</td>
@@ -1421,25 +1468,18 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <td>在 type 是 &#39;money&#39;, &#39;card&#39;, &#39;cnmobile&#39; 的时候会用到，用于传入格式化的分隔符</td>
 </tr>
 <tr>
-<td>align</td>
-<td>string</td>
-<td>-</td>
-<td>optional</td>
-<td>文字居中方式，默认 &#39;left&#39;</td>
-</tr>
-<tr>
 <td>disable</td>
 <td>boolean</td>
 <td>-</td>
 <td>optional</td>
-<td>在 type 为 checkbox 时使用，是否禁用 checkbox，优先级高于 isDisable</td>
+<td>在 type 为 checkboxSelector 时使用，是否禁用 checkbox，优先级高于 isDisable</td>
 </tr>
 <tr>
 <td>isDisable</td>
 <td>function(rowData)</td>
 <td>1.3.1</td>
 <td>optional</td>
-<td>在 tpye 为 checkbox 时使用，为一个回调函数，用于根据 rowData 去判断是否禁用该行的 checkbox</td>
+<td>在 tpye 为 checkboxSelector 时使用，为一个回调函数，用于根据 rowData 去判断是否禁用该行的 checkbox</td>
 </tr>
 <tr>
 <td>canEdit</td>
@@ -1449,11 +1489,18 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <td>在 type 为可编辑表格的类别时使用，为一个回调函数，用于根据 rowData 去判断该行该列是否可以编辑</td>
 </tr>
 <tr>
+<td>config</td>
+<td>object</td>
+<td>1.5.0</td>
+<td>optional</td>
+<td>在 type 为 text/select/radio 时使用，传入对应的配置项，配置项支持对应的组件(uxcore-selelct2等)大部分配置</td>
+</tr>
+<tr>
 <td>renderChildren</td>
 <td>function</td>
 <td>1.5.0</td>
 <td>-</td>
-<td>在 type 为 select 或 radio 时使用，通过返回 jsx 传入选项。</td>
+<td>在 type 为 select/radio 时使用，通过返回 jsx 传入选项。</td>
 </tr>
 </tbody>
 </table>
@@ -1480,7 +1527,17 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
         { dataKey: <span class="hljs-string">'action'</span>, title:<span class="hljs-string">'链接'</span>, width:<span class="hljs-number">100</span>, render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cellData,rowData</span>) </span>{
             <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>{rowData.email}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
         }}
- ]</span></code></pre></div><h2 id="rowselection-的例子">rowSelection 的例子</h2><div class="highlight"><pre><code class="javascript">
+ ]</span></code></pre></div><h2 id="列配置项的例子2（带列群组-since-ver-1-3-0）">列配置项的例子2（带列群组, since ver. 1.3.0）</h2><div class="highlight"><pre><code class="javascript">
+<span class="hljs-keyword">let</span> columns = [
+        { dataKey: <span class="hljs-string">'check'</span>, type: <span class="hljs-string">'checkbox'</span>, disable: <span class="hljs-literal">false</span>}, <span class="hljs-comment">// custom checkbox column, dataKey can be anyone, true means checked.</span>
+        {
+            group: <span class="hljs-string">"国家"</span>,
+            columns: [
+                { dataKey: <span class="hljs-string">'country'</span>, title:<span class="hljs-string">'国家'</span>, width: <span class="hljs-number">200</span>,ordered:<span class="hljs-literal">true</span>},
+                { dataKey: <span class="hljs-string">'country2'</span>, title:<span class="hljs-string">'国家2'</span>, width: <span class="hljs-number">200</span>,ordered:<span class="hljs-literal">true</span>},
+            ]
+        }
+ ]</code></pre></div><h2 id="rowselection-的例子">rowSelection 的例子</h2><div class="highlight"><pre><code class="javascript">
 <span class="hljs-keyword">let</span> rowSelection = {
       onSelect: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">record, selected, selectedRows</span>) </span>{
           <span class="hljs-built_in">console</span>.log(record, selected, selectedRows);
