@@ -11,22 +11,111 @@
 
 ## API
 
-* formatter(arr): 对从数据源取到的数据进行处理，返回处理后的结果数组。
-* panelFormatter(obj): 自定义选择菜单的结构，返回html。
-* mentionFormatter(obj): 自定义插入编辑器中的文本，返回字符串。
+### Mention
+
+* formatter(arr): format the data form source.
+* panelFormatter(obj): customize the panel display.
 * onChange(e, value): onChange事件。
+
+### TinymceMention
+
+* formatter(arr): format the data form source.
+* panelFormatter(obj): customize the panel display.
+* mentionFormatter(obj): customize the insert content with this function.
+* onChange(e, value): Callback invoked when the editor's content has been changed.
+* onAdd(display, originData): Callback invoked when a mention has been added.
+
+### ContentEditableEditor
+
+* mentionFormatter(obj): customize the insert content with this function.
+* onChange(e, value): Callback invoked when the editor's content has been changed.
+* onAdd(display, originData): Callback invoked when a mention has been added.
+
+### TextareaEditor
+
+* mentionFormatter(obj): customize the insert content with this function.
+* onChange(e, value): Callback invoked when the editor's content has been changed.
+* onAdd(display, originData): Callback invoked when a mention has been added.
+
+### InputEditor
+
+* mentionFormatter(obj): customize the insert content with this function.
+* onChange(e, value): Callback invoked when the editor's content has been changed.
+* onAdd(display, originData): Callback invoked when a mention has been added.
+
 
 ## props
 
-|参数|说明|类型|默认值|
+### Mention
+
+|name|Description|Type|Default|
 |---|----|---|------|
 | prefixCls | class prefix | string | kuma-mention |
-| width | editor's width | number | 200 |
-| height | editor's height | number | 100 |
 | source | data source for mention content | array or function | [] |
 | delay | debounce of the request to data source | number | 100 |
 | matchRange | only match the string after delimiter which the length in this range | array | [2, 8] |
 | formatter | format the data form source | function | |
-| panelFormatter | customize whats's in your select panel with this function | function | |
-| mentionFormatter | customize what's in your mention node with this function | function | |
-| onChange | trigger when editor content change | function | |
+| panelFormatter | customize the panel display | function | |
+| onChange | trigger when editor content change | function(e, value) | |
+
+### TinymceMention
+
+|name|Description|Type|Default|
+|---|----|---|------|
+| prefixCls | class prefix | string | kuma-mention |
+| source | data source for mention content | array or function | [] |
+| delay | debounce of the request to data source | number | 100 |
+| matchRange | only match the string after delimiter which the length in this range | array | [2, 8] |
+| formatter | format the data form source | function | |
+| panelFormatter | customize the panel display | function | |
+| mentionFormatter | customize the insert content with this function | function | |
+| onChange | trigger when editor content change | function(e, value) | |
+| onAdd | Callback invoked when a mention has been added | function(display, originData) | |
+| insertMode | `ELEMENT_NODE` will insert mention content with a button, `TEXT_NODE` will insert with a text node | string | `ELEMENT_NODE` or `TEXT_NODE` |
+
+
+### ContentEditableEditor
+
+|name|Description|Type|Default|
+|---|----|---|------|
+| prefixCls | class prefix | string | kuma-mention |
+| width | editor's width | number | 200 |
+| height | editor's height | number | 100 |
+| placeholder | placeholder | string | '' |
+| mentionFormatter | customize the insert content with this function | function | |
+| onChange | Callback invoked when the editor's content has been changed | function(e, value) | |
+| onAdd | Callback invoked when a mention has been added | function(display, originData) | |
+| defaultValue | default values | string | |
+| readOnly | can not edit | boolean | |
+| delimiter | Defines the char sequence upon which to trigger querying the data source | string | '@' |
+
+
+### TextareaEditor
+
+|name|Description|Type|Default|
+|---|----|---|------|
+| prefixCls | class prefix | string | kuma-mention |
+| width | editor's width | number | 200 |
+| height | editor's height | number | 100 |
+| placeholder | placeholder | string | '' |
+| mentionFormatter | customize the insert content with this function | function | |
+| onChange | Callback invoked when the editor's content has been changed | function(e, value) | |
+| onAdd | Callback invoked when a mention has been added | function(display, originData) | |
+| defaultValue | default values | string | |
+| readOnly | can not edit | boolean | |
+| delimiter | Defines the char sequence upon which to trigger querying the data source | string | '@' |
+
+### InputEditor
+
+|name|Description|Type|Default|
+|---|----|---|------|
+| prefixCls | class prefix | string | kuma-mention |
+| width | editor's width | number | 200 |
+| height | editor's height | number | 30 |
+| placeholder | placeholder | string | '' |
+| mentionFormatter | customize the insert content with this function | function | |
+| onChange | Callback invoked when the editor's content has been changed | function(e, value) | |
+| onAdd | Callback invoked when a mention has been added | function(display, originData) | |
+| defaultValue | default values | string | |
+| readOnly | can not edit | boolean | |
+| delimiter | Defines the char sequence upon which to trigger querying the data source | string | '@' |

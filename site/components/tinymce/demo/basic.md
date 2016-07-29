@@ -7,9 +7,8 @@
 ---
 
 ````jsx
-const classnames = require('classnames');
-
-const Tinymce = require('uxcore-tinymce');
+import classnames from 'classnames';
+import Tinymce from 'uxcore-tinymce';
 
 class Demo extends React.Component {
 
@@ -30,12 +29,10 @@ class Demo extends React.Component {
     render() {
         let me = this;
         return (
-            <div style={{width: 1000}}>
-                <Tinymce
-                    onKeyup={me.handleKeyUp.bind(me)}
-                    onChange={me.handleChange.bind(me)}
-                    placeholder={'placeholder'}/>
-            </div>
+            <Tinymce
+                onKeyup={me.handleKeyUp.bind(me)}
+                onChange={me.handleChange.bind(me)}
+                placeholder={'placeholder'}/>
         );
     }
 };
