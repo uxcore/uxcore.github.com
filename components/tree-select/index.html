@@ -15,15 +15,17 @@
         return w.UXCORE[name];
     }
 })(window)
-</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li><li data-id="theme"><a href="/theme/builder">主题</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">Presentation</h3><ul><li><a href="/components/album">Album<small>相册</small></a></li><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/badge">Badge<small>徽标</small></a></li><li><a href="/components/carousel">Carousel<small>轮播</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/load-more">LoadMore<small>加载更多</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">Form Control</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/cascade-select">CascadeSelect<small>级联选择</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/multi-select">MultiSelect<small>复选择器</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/rate">Rate<small>评分</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/switch">Switch<small>开关</small></a></li><li><a href="/components/tinymce">Tinymce<small>富文本</small></a></li><li class="current"><a href="/components/tree-select">TreeSelect<small>树选择</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">Navigation</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">Tool</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">Layout</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">Other</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">Matrix</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>TreeSelect</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>biangang.bg</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-tree-select.git" target="_blank">TreeSelect</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.1.3</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-yingyong"></i>组件演示</h2><div id="code-box-components-tree-select-demo-basic" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-tree-select-demo-basic">基本用法</a></div></div><div class="code-box-demo"><div id="components-tree-select-demo-basic"></div></div><div class="code-box-desc"><p>基本用法。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li><li data-id="theme"><a href="/theme/builder">主题</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">Presentation</h3><ul><li><a href="/components/album">Album<small>相册</small></a></li><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/badge">Badge<small>徽标</small></a></li><li><a href="/components/carousel">Carousel<small>轮播</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/load-more">LoadMore<small>加载更多</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">Form Control</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/cascade-select">CascadeSelect<small>级联选择</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/multi-select">MultiSelect<small>复选择器</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/rate">Rate<small>评分</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/switch">Switch<small>开关</small></a></li><li><a href="/components/tinymce">Tinymce<small>富文本</small></a></li><li class="current"><a href="/components/tree-select">TreeSelect<small>树选择</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">Navigation</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">Tool</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">Layout</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">Other</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">Matrix</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>TreeSelect</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>biangang.bg</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-tree-select.git" target="_blank">TreeSelect</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.1.3</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-yingyong"></i>组件演示</h2><div id="code-box-components-tree-select-demo-basic" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-tree-select-demo-basic">基本用法</a></div></div><div class="code-box-demo"><div id="components-tree-select-demo-basic"></div></div><div class="code-box-desc">
+<p>基本用法。</p>
+<a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _get = function get(_x5, _x6, _x7) { var _again = true; _function: while (_again) { var object = _x5, property = _x6, receiver = _x7; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x5 = parent; _x6 = property; _x7 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var TreeSelect = require('uxcore-tree-select');
 
@@ -61,17 +63,19 @@ function generateData() {
 
 var gData = generateData();
 
-var BasicDemo = (function (_React$Component) {
+var BasicDemo = function (_React$Component) {
   _inherits(BasicDemo, _React$Component);
 
   function BasicDemo(props) {
     _classCallCheck(this, BasicDemo);
 
-    _get(Object.getPrototypeOf(BasicDemo.prototype), 'constructor', this).call(this, props);
-    this.state = {
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(BasicDemo).call(this, props));
+
+    _this.state = {
       inputValue: '0-0-0-label',
       value: '0-0-0-value'
     };
+    return _this;
   }
 
   _createClass(BasicDemo, [{
@@ -101,7 +105,7 @@ var BasicDemo = (function (_React$Component) {
   }]);
 
   return BasicDemo;
-})(React.Component);
+}(React.Component);
 
 ReactDOM.render(React.createElement(BasicDemo, null), document.getElementById('components-tree-select-demo-basic'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> TreeSelect = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-tree-select'</span>);
 
@@ -163,15 +167,17 @@ ReactDOM.render(React.createElement(BasicDemo, null), document.getElementById('c
 ReactDOM.render(
     <span class="hljs-tag">&lt;<span class="hljs-title">BasicDemo</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">BasicDemo</span>&gt;</span>,
       document.getElementById('components-tree-select-demo-basic')
-);</span></code></pre></div></div></div><div id="code-box-components-tree-select-demo-multiple" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-tree-select-demo-multiple">多选</a></div></div><div class="code-box-demo"><div id="components-tree-select-demo-multiple"></div></div><div class="code-box-desc"><p>多选。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+);</span></code></pre></div></div></div><div id="code-box-components-tree-select-demo-multiple" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-tree-select-demo-multiple">多选</a></div></div><div class="code-box-demo"><div id="components-tree-select-demo-multiple"></div></div><div class="code-box-desc">
+<p>多选。</p>
+<a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _get = function get(_x5, _x6, _x7) { var _again = true; _function: while (_again) { var object = _x5, property = _x6, receiver = _x7; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x5 = parent; _x6 = property; _x7 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var TreeSelect = require('uxcore-tree-select');
 
@@ -209,17 +215,19 @@ function generateData() {
 
 var gData = generateData();
 
-var MultipleDemo = (function (_React$Component) {
+var MultipleDemo = function (_React$Component) {
   _inherits(MultipleDemo, _React$Component);
 
   function MultipleDemo(props) {
     _classCallCheck(this, MultipleDemo);
 
-    _get(Object.getPrototypeOf(MultipleDemo.prototype), 'constructor', this).call(this, props);
-    this.state = {
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(MultipleDemo).call(this, props));
+
+    _this.state = {
       inputValue: '0-0-0-label',
       multipleValue: []
     };
+    return _this;
   }
 
   _createClass(MultipleDemo, [{
@@ -248,7 +256,7 @@ var MultipleDemo = (function (_React$Component) {
   }]);
 
   return MultipleDemo;
-})(React.Component);
+}(React.Component);
 
 ReactDOM.render(React.createElement(MultipleDemo, null), document.getElementById('components-tree-select-demo-multiple'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> TreeSelect = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-tree-select'</span>);
 
@@ -309,15 +317,17 @@ ReactDOM.render(React.createElement(MultipleDemo, null), document.getElementById
 ReactDOM.render(
     <span class="hljs-tag">&lt;<span class="hljs-title">MultipleDemo</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">MultipleDemo</span>&gt;</span>,
       document.getElementById('components-tree-select-demo-multiple')
-);</span></code></pre></div></div></div><div id="code-box-components-tree-select-demo-check" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-tree-select-demo-check">check select</a></div></div><div class="code-box-demo"><div id="components-tree-select-demo-check"></div></div><div class="code-box-desc"><p>check select</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+);</span></code></pre></div></div></div><div id="code-box-components-tree-select-demo-check" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-tree-select-demo-check">check select</a></div></div><div class="code-box-demo"><div id="components-tree-select-demo-check"></div></div><div class="code-box-desc">
+<p>check select</p>
+<a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _get = function get(_x5, _x6, _x7) { var _again = true; _function: while (_again) { var object = _x5, property = _x6, receiver = _x7; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x5 = parent; _x6 = property; _x7 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var TreeSelect = require('uxcore-tree-select');
 var SHOW_PARENT = TreeSelect.SHOW_PARENT;
@@ -356,16 +366,18 @@ function generateData() {
 
 var gData = generateData();
 
-var CheckDemo = (function (_React$Component) {
+var CheckDemo = function (_React$Component) {
   _inherits(CheckDemo, _React$Component);
 
   function CheckDemo(props) {
     _classCallCheck(this, CheckDemo);
 
-    _get(Object.getPrototypeOf(CheckDemo.prototype), 'constructor', this).call(this, props);
-    this.state = {
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CheckDemo).call(this, props));
+
+    _this.state = {
       value: '0-0-0-value'
     };
+    return _this;
   }
 
   _createClass(CheckDemo, [{
@@ -396,7 +408,7 @@ var CheckDemo = (function (_React$Component) {
   }]);
 
   return CheckDemo;
-})(React.Component);
+}(React.Component);
 
 ReactDOM.render(React.createElement(CheckDemo, null), document.getElementById('components-tree-select-demo-check'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">const</span> TreeSelect = <span class="hljs-built_in">require</span>(<span class="hljs-string">'uxcore-tree-select'</span>);
 <span class="hljs-keyword">const</span> SHOW_PARENT = TreeSelect.SHOW_PARENT;

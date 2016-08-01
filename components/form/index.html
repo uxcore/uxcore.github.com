@@ -15,15 +15,17 @@
         return w.UXCORE[name];
     }
 })(window)
-</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li><li data-id="theme"><a href="/theme/builder">主题</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">Presentation</h3><ul><li><a href="/components/album">Album<small>相册</small></a></li><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/badge">Badge<small>徽标</small></a></li><li><a href="/components/carousel">Carousel<small>轮播</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/load-more">LoadMore<small>加载更多</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">Form Control</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/cascade-select">CascadeSelect<small>级联选择</small></a></li><li class="current"><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/multi-select">MultiSelect<small>复选择器</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/rate">Rate<small>评分</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/switch">Switch<small>开关</small></a></li><li><a href="/components/tinymce">Tinymce<small>富文本</small></a></li><li><a href="/components/tree-select">TreeSelect<small>树选择</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">Navigation</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">Tool</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">Layout</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">Other</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">Matrix</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Form</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>eternalsky</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-form.git" target="_blank">Form</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.6.3</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-yingyong"></i>组件演示</h2><div id="code-box-components-form-demo-basic" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-basic">基本使用</a></div></div><div class="code-box-demo"><div id="components-form-demo-basic"></div></div><div class="code-box-desc"><p>无需任何绑定，只要插入几个标签，就可以完成一个表格的搭建。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li><li data-id="theme"><a href="/theme/builder">主题</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">Presentation</h3><ul><li><a href="/components/album">Album<small>相册</small></a></li><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/badge">Badge<small>徽标</small></a></li><li><a href="/components/carousel">Carousel<small>轮播</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/load-more">LoadMore<small>加载更多</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">Form Control</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/cascade-select">CascadeSelect<small>级联选择</small></a></li><li class="current"><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/multi-select">MultiSelect<small>复选择器</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/rate">Rate<small>评分</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/switch">Switch<small>开关</small></a></li><li><a href="/components/tinymce">Tinymce<small>富文本</small></a></li><li><a href="/components/tree-select">TreeSelect<small>树选择</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">Navigation</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">Tool</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">Layout</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">Other</h3><ul><li><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">Matrix</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Form</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>eternalsky</span><span class="github"><i class="fa fa-github"></i><a href="https://github.com/uxcore/uxcore-form.git" target="_blank">Form</a></span><span class="version"> <i class="fa fa-code-fork"></i>1.6.3</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-yingyong"></i>组件演示</h2><div id="code-box-components-form-demo-basic" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-basic">基本使用</a></div></div><div class="code-box-demo"><div id="components-form-demo-basic"></div></div><div class="code-box-desc">
+<p>无需任何绑定，只要插入几个标签，就可以完成一个表格的搭建。</p>
+<a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Button = require('uxcore-button');
 var Form = require('uxcore-form');
@@ -35,14 +37,16 @@ var Date = Form.DateFormField;
 var TextArea = Form.TextAreaFormField;
 var ButtonGroupFormField = Form.ButtonGroupFormField;
 
-var Demo = (function (_React$Component) {
+var Demo = function (_React$Component) {
     _inherits(Demo, _React$Component);
 
     function Demo(props) {
         _classCallCheck(this, Demo);
 
-        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
-        this.state = {};
+        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Demo).call(this, props));
+
+        _this.state = {};
+        return _this;
     }
 
     _createClass(Demo, [{
@@ -84,7 +88,7 @@ var Demo = (function (_React$Component) {
     }]);
 
     return Demo;
-})(React.Component);
+}(React.Component);
 
 ;
 
@@ -134,15 +138,17 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
     }
 };
 
-ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-basic'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-validator" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-validator">验证</a></div></div><div class="code-box-demo"><div id="components-form-demo-validator"></div></div><div class="code-box-desc"><p>自带验证函数，并且支持自己手写，并分为实时验证与非实时验证。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-basic'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-validator" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-validator">验证</a></div></div><div class="code-box-demo"><div id="components-form-demo-validator"></div></div><div class="code-box-desc">
+<p>自带验证函数，并且支持自己手写，并分为实时验证与非实时验证。</p>
+<a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Button = require('uxcore-button');
 var Form = require('uxcore-form');
@@ -156,16 +162,18 @@ var ButtonGroupFormField = Form.ButtonGroupFormField;
 var SelectFormField = Form.SelectFormField;
 var Validators = Form.Validators;
 
-var Demo = (function (_React$Component) {
+var Demo = function (_React$Component) {
     _inherits(Demo, _React$Component);
 
     function Demo(props) {
         _classCallCheck(this, Demo);
 
-        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
-        this.state = {
+        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Demo).call(this, props));
+
+        _this.state = {
             mode: true
         };
+        return _this;
     }
 
     _createClass(Demo, [{
@@ -223,7 +231,7 @@ var Demo = (function (_React$Component) {
     }]);
 
     return Demo;
-})(React.Component);
+}(React.Component);
 
 ;
 
@@ -295,15 +303,17 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
     }
 };
 
-ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-validator'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-horizon" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-horizon">横向排列</a></div></div><div class="code-box-demo"><div id="components-form-demo-horizon"></div></div><div class="code-box-desc"><p>无需任何设置，自动实现横排，并可以根据系数进行弹性布局。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-validator'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-horizon" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-horizon">横向排列</a></div></div><div class="code-box-demo"><div id="components-form-demo-horizon"></div></div><div class="code-box-desc">
+<p>无需任何设置，自动实现横排，并可以根据系数进行弹性布局。</p>
+<a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Button = require('uxcore-button');
 var Form = require('uxcore-form');
@@ -316,14 +326,16 @@ var TextArea = Form.TextAreaFormField;
 var ButtonGroupFormField = Form.ButtonGroupFormField;
 var Validators = Form.Validators;
 
-var Demo = (function (_React$Component) {
+var Demo = function (_React$Component) {
     _inherits(Demo, _React$Component);
 
     function Demo(props) {
         _classCallCheck(this, Demo);
 
-        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
-        this.state = {};
+        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Demo).call(this, props));
+
+        _this.state = {};
+        return _this;
     }
 
     _createClass(Demo, [{
@@ -366,7 +378,7 @@ var Demo = (function (_React$Component) {
     }]);
 
     return Demo;
-})(React.Component);
+}(React.Component);
 
 ;
 
@@ -424,15 +436,17 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
     }
 };
 
-ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-horizon'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-mode" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-mode">编辑查看模式</a></div></div><div class="code-box-demo"><div id="components-form-demo-mode"></div></div><div class="code-box-desc"><p>Form 支持编辑和查看两种模式，并且支持随时切换，从此两个页面变成一个页面。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-horizon'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-mode" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-mode">编辑查看模式</a></div></div><div class="code-box-demo"><div id="components-form-demo-mode"></div></div><div class="code-box-desc">
+<p>Form 支持编辑和查看两种模式，并且支持随时切换，从此两个页面变成一个页面。</p>
+<a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Button = require('uxcore-button');
 var Form = require('uxcore-form');
@@ -446,16 +460,18 @@ var ButtonGroupFormField = Form.ButtonGroupFormField;
 var SelectFormField = Form.SelectFormField;
 var Validators = Form.Validators;
 
-var Demo = (function (_React$Component) {
+var Demo = function (_React$Component) {
     _inherits(Demo, _React$Component);
 
     function Demo(props) {
         _classCallCheck(this, Demo);
 
-        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
-        this.state = {
+        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Demo).call(this, props));
+
+        _this.state = {
             mode: Constants.MODE.EDIT
         };
+        return _this;
     }
 
     _createClass(Demo, [{
@@ -514,7 +530,7 @@ var Demo = (function (_React$Component) {
     }]);
 
     return Demo;
-})(React.Component);
+}(React.Component);
 
 ;
 
@@ -584,15 +600,17 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
     }
 };
 
-ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-mode'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-search" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-search">搜索框</a></div></div><div class="code-box-demo"><div id="components-form-demo-search"></div></div><div class="code-box-desc"><p>提供复杂和精简的两种搜索模式。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-mode'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-search" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-search">搜索框</a></div></div><div class="code-box-demo"><div id="components-form-demo-search"></div></div><div class="code-box-desc">
+<p>提供复杂和精简的两种搜索模式。</p>
+<a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var classnames = require('classnames');
 var assign = require('object-assign');
@@ -604,14 +622,16 @@ var FormRowTitle = Form.FormRowTitle;
 var FormRow = Form.FormRow;
 var SearchFormField = Form.SearchFormField;
 
-var Demo = (function (_React$Component) {
+var Demo = function (_React$Component) {
     _inherits(Demo, _React$Component);
 
     function Demo(props) {
         _classCallCheck(this, Demo);
 
-        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
-        this.state = {};
+        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Demo).call(this, props));
+
+        _this.state = {};
+        return _this;
     }
 
     _createClass(Demo, [{
@@ -679,7 +699,7 @@ var Demo = (function (_React$Component) {
     }]);
 
     return Demo;
-})(React.Component);
+}(React.Component);
 
 ;
 
@@ -772,15 +792,20 @@ ReactDOM.render(React.createElement(Demo, null), document.getElementById('compon
     }
 };
 
-ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-search'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-comp" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-comp">组件通览 (默认值传递)</a></div></div><div class="code-box-demo"><div id="components-form-demo-comp"></div></div><div class="code-box-desc"><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Demo</span> /&gt;</span>, document.getElementById('components-form-demo-search'))</span></code></pre></div></div></div><div id="code-box-components-form-demo-comp" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-form-demo-comp">组件通览 (默认值传递)</a></div></div><div class="code-box-demo"><div id="components-form-demo-comp"></div></div><div class="code-box-desc">
+<p>目前 Form 已经提供了12种通用表单域，满足各种场景的需求。
+Form 中所有表单域的默认值由 jsxvalues 统一管理。</p>
+<a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var classnames = require('classnames');
 var Button = require('uxcore-button');
@@ -802,6 +827,7 @@ var OtherFormField = Form.OtherFormField;
 var ButtonGroupFormField = Form.ButtonGroupFormField;
 var EditorFormField = Form.EditorFormField;
 
+
 var CheckboxItem = CheckboxGroupFormField.Item;
 var RadioItem = RadioGroupFormField.Item;
 var Count = InputFormField.Count;
@@ -810,14 +836,15 @@ var RightAddon = InputFormField.RightAddon;
 
 var Option = SelectFormField.Option;
 
-var Demo = (function (_React$Component) {
+var Demo = function (_React$Component) {
     _inherits(Demo, _React$Component);
 
     function Demo(props) {
         _classCallCheck(this, Demo);
 
-        _get(Object.getPrototypeOf(Demo.prototype), 'constructor', this).call(this, props);
-        this.state = {
+        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Demo).call(this, props));
+
+        _this.state = {
             jsxvalues: {
                 test1: "我是测试",
                 fruit: "apple",
@@ -847,6 +874,7 @@ var Demo = (function (_React$Component) {
             },
             mode: Constants.MODE.EDIT
         };
+        return _this;
     }
 
     _createClass(Demo, [{
@@ -914,7 +942,6 @@ var Demo = (function (_React$Component) {
                     date: "2015-09-01",
                     checkbox: ["sea"]
                 },
-                // cascade: ["a", "ab"]
                 jsxdata: {
                     "bj": "北",
                     "nj": "南",
@@ -926,6 +953,8 @@ var Demo = (function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
+            var _React$createElement;
+
             var me = this;
             var data = {
                 test1: "我是测试",
@@ -936,7 +965,6 @@ var Demo = (function (_React$Component) {
                 checkbox: ["sea"]
             };
 
-            // cascade: ["a", "ab"]
             var casData = {
                 length: 3,
                 contents: [{
@@ -1088,7 +1116,7 @@ var Demo = (function (_React$Component) {
                             jsxname: 'city',
                             jsxrules: { validator: Validators.isNotEmpty, errMsg: "不能为空" },
                             disabled: false,
-                            afterFetch: function (obj) {
+                            afterFetch: function afterFetch(obj) {
                                 var data = {};
                                 obj.result.forEach(function (item, index) {
                                     data[item[1]] = item[0];
@@ -1107,33 +1135,32 @@ var Demo = (function (_React$Component) {
                             jsxfetchUrl: 'http://suggest.taobao.com/sug',
                             dataType: 'jsonp',
                             combobox: true,
-                            afterFetch: function (obj) {
+                            afterFetch: function afterFetch(obj) {
                                 var data = {};
                                 obj.result.forEach(function (item, index) {
                                     data[item[1]] = item[0];
                                 });
                                 return data;
                             } }),
-                        React.createElement(SelectFormField, {
+                        React.createElement(SelectFormField, (_React$createElement = {
                             jsxlabel: '多选模式',
                             jsxname: 'goods2',
                             multiple: true,
                             jsxfetchUrl: 'http://suggest.taobao.com/sug',
                             dataType: 'jsonp',
-                            beforeFetch: function (data) {
+                            beforeFetch: function beforeFetch(data) {
                                 if (data.q == undefined) {
                                     data.q = "a";
                                 }
                                 return data;
-                            },
-                            dataType: 'jsonp',
-                            afterFetch: function (obj) {
-                                var data = {};
-                                obj.result.forEach(function (item, index) {
-                                    data[item[1]] = item[0];
-                                });
-                                return data;
-                            } })
+                            }
+                        }, _defineProperty(_React$createElement, 'dataType', 'jsonp'), _defineProperty(_React$createElement, 'afterFetch', function afterFetch(obj) {
+                            var data = {};
+                            obj.result.forEach(function (item, index) {
+                                data[item[1]] = item[0];
+                            });
+                            return data;
+                        }), _React$createElement))
                     ),
                     React.createElement(
                         SelectFormField,
@@ -1185,7 +1212,7 @@ var Demo = (function (_React$Component) {
     }]);
 
     return Demo;
-})(React.Component);
+}(React.Component);
 
 ;
 

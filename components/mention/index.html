@@ -15,13 +15,17 @@
         return w.UXCORE[name];
     }
 })(window)
-</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li><li data-id="theme"><a href="/theme/builder">主题</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">Presentation</h3><ul><li><a href="/components/album">Album<small>相册</small></a></li><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/badge">Badge<small>徽标</small></a></li><li><a href="/components/carousel">Carousel<small>轮播</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/load-more">LoadMore<small>加载更多</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">Form Control</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/cascade-select">CascadeSelect<small>级联选择</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/multi-select">MultiSelect<small>复选择器</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/rate">Rate<small>评分</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/switch">Switch<small>开关</small></a></li><li><a href="/components/tinymce">Tinymce<small>富文本</small></a></li><li><a href="/components/tree-select">TreeSelect<small>树选择</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">Navigation</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">Tool</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">Layout</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">Other</h3><ul><li class="current"><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">Matrix</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Mention</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>vincent.bian</span><span class="github"><i class="fa fa-github"></i><a href="ssh://git@github.com/uxcore/mention.git" target="_blank">Mention</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.1.10</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-yingyong"></i>组件演示</h2><div id="code-box-components-mention-demo-simple" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-mention-demo-simple">基本用法</a></div></div><div class="code-box-demo"><div id="components-mention-demo-simple"></div></div><div class="code-box-desc"><p>最简单的用法。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+</script></head><body><nav id="J-head" class="site-nav"><a href="/"><img src="/static/uxcore.png" class="logo"></a><ul class="nav-list"><li data-id="start"><a href="/start/base/">开始使用</a></li><li data-id="css"><a href="/css/base/">样式</a></li><li data-id="components"><a href="/components/button/">组件</a></li><li data-id="scene"><a href="/scene/list/">场景</a></li><li data-id="theme"><a href="/theme/builder">主题</a></li></ul><img id="J_ThemeSelector" src="/static/iconfont-yifuhuanfu.png" class="theme-selector"><div id="J_ThemePickerBox" class="theme-picker-box"></div></nav><div id="J-main" class="kuma-layout-full site-main"><aside class="site-aside"><h3 class="category-name">Presentation</h3><ul><li><a href="/components/album">Album<small>相册</small></a></li><li><a href="/components/alert">Alert<small>警告提示</small></a></li><li><a href="/components/badge">Badge<small>徽标</small></a></li><li><a href="/components/carousel">Carousel<small>轮播</small></a></li><li><a href="/components/dialog">Dialog<small>对话框</small></a></li><li><a href="/components/dropdown">Dropdown<small>下拉菜单</small></a></li><li><a href="/components/load-more">LoadMore<small>加载更多</small></a></li><li><a href="/components/message">Message<small>全局提醒</small></a></li><li><a href="/components/popover">Popover<small>弹窗</small></a></li><li><a href="/components/progress">Progress<small>进度条</small></a></li><li><a href="/components/steps">Steps<small>步骤条</small></a></li><li><a href="/components/tooltip">Tooltip<small>文字提示</small></a></li></ul><h3 class="category-name">Form Control</h3><ul><li><a href="/components/button">Button<small>按钮</small></a></li><li><a href="/components/calendar">Calendar<small>日期选择框</small></a></li><li><a href="/components/cascade-select">CascadeSelect<small>级联选择</small></a></li><li><a href="/components/form">Form<small>表单</small></a></li><li><a href="/components/multi-select">MultiSelect<small>复选择器</small></a></li><li><a href="/components/pickable">Pickable<small>筛选器</small></a></li><li><a href="/components/rate">Rate<small>评分</small></a></li><li><a href="/components/select2">Select2<small>选择器</small></a></li><li><a href="/components/switch">Switch<small>开关</small></a></li><li><a href="/components/tinymce">Tinymce<small>富文本</small></a></li><li><a href="/components/tree-select">TreeSelect<small>树选择</small></a></li><li><a href="/components/uploader">Uploader<small>文件上传</small></a></li></ul><h3 class="category-name">Navigation</h3><ul><li><a href="/components/collapse">Collapse<small>折叠面板</small></a></li><li><a href="/components/crumb">Crumb<small>面包屑</small></a></li><li><a href="/components/menu">Menu<small>导航菜单</small></a></li><li><a href="/components/pagination">Pagination<small>分页</small></a></li><li><a href="/components/tabs">Tabs<small>选项卡</small></a></li><li><a href="/components/totop">Totop<small>返回顶部</small></a></li><li><a href="/components/tree">Tree<small>树形控件</small></a></li></ul><h3 class="category-name">Tool</h3><ul><li><a href="/components/formatter">Formatter<small>格式化</small></a></li><li><a href="/components/validator">Validator<small>基础校验</small></a></li></ul><h3 class="category-name">Layout</h3><ul><li><a href="/components/grid">Grid<small>栅格</small></a></li><li><a href="/components/layout">Layout<small>左右布局</small></a></li></ul><h3 class="category-name">Other</h3><ul><li class="current"><a href="/components/mention">Mention<small>At组件</small></a></li><li><a href="/components/transfer">Transfer<small>双栏选择框</small></a></li></ul><h3 class="category-name">Matrix</h3><ul><li><a href="/components/table">Table<small>表格</small></a></li></ul></aside><article class="site-content"><header class="post-title"><h1>Mention</h1><section class="meta"><span class="author"><i class="fa fa-user"></i>vincent.bian</span><span class="github"><i class="fa fa-github"></i><a href="ssh://git@github.com/uxcore/mention.git" target="_blank">Mention</a></span><span class="version"> <i class="fa fa-code-fork"></i>0.3.1</span></section></header><h2 class="site-demos"> <i class="kuma-icon kuma-icon-yingyong"></i>组件演示</h2><div id="code-box-components-mention-demo-contenteditable" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-mention-demo-contenteditable">在contenteditable容器中使用</a></div></div><div class="code-box-demo"><div id="components-mention-demo-contenteditable"></div></div><div class="code-box-desc">
+<p>可在contenteditable容器中使用。</p>
+<a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _uxcoreMention = require('uxcore-mention');
 
 var _uxcoreMention2 = _interopRequireDefault(_uxcoreMention);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var source = ['aaaaa', 'aabbb', 'aaccc', 'bbbcc', 'dddee', 'fffqq', 'pppaa', 'ppccc'];
 
 function formatter(data) {
     return data.map(function (item) {
@@ -30,18 +34,17 @@ function formatter(data) {
         };
     });
 }
-var source = ['aaaaa', 'aabbb', 'aaccc', 'bbbcc', 'dddee', 'fffqq', 'pppaa', 'ppccc'];
 
 ReactDOM.render(React.createElement(
-    _uxcoreMention2['default'],
+    _uxcoreMention2.default,
     {
-        width: '300',
-        height: '150',
         matchRange: [1, 6],
         source: source,
         formatter: formatter },
-    'default content'
-), document.getElementById('components-mention-demo-simple'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Mention <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-mention'</span>;
+    React.createElement(_uxcoreMention.ContenteditableEditor, { placeholder: '在此编辑' })
+), document.getElementById('components-mention-demo-contenteditable'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Mention, { ContenteditableEditor } <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-mention'</span>;
+
+<span class="hljs-keyword">let</span> source = [<span class="hljs-string">'aaaaa'</span>, <span class="hljs-string">'aabbb'</span>, <span class="hljs-string">'aaccc'</span>, <span class="hljs-string">'bbbcc'</span>, <span class="hljs-string">'dddee'</span>, <span class="hljs-string">'fffqq'</span>, <span class="hljs-string">'pppaa'</span>, <span class="hljs-string">'ppccc'</span>];
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatter</span>(<span class="hljs-params">data</span>)</span>{
     <span class="hljs-keyword">return</span> data.map((item) =&gt; {
@@ -50,77 +53,95 @@ ReactDOM.render(React.createElement(
         };
     });
 }
-<span class="hljs-keyword">let</span> source = [<span class="hljs-string">'aaaaa'</span>, <span class="hljs-string">'aabbb'</span>, <span class="hljs-string">'aaccc'</span>, <span class="hljs-string">'bbbcc'</span>, <span class="hljs-string">'dddee'</span>, <span class="hljs-string">'fffqq'</span>, <span class="hljs-string">'pppaa'</span>, <span class="hljs-string">'ppccc'</span>];
 
 ReactDOM.render(
     <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Mention</span>
-        <span class="hljs-attribute">width</span>=<span class="hljs-value">"300"</span>
-        <span class="hljs-attribute">height</span>=<span class="hljs-value">"150"</span>
         <span class="hljs-attribute">matchRange</span>=<span class="hljs-value">{[1,</span> <span class="hljs-attribute">6</span>]}
         <span class="hljs-attribute">source</span>=<span class="hljs-value">{source}</span>
         <span class="hljs-attribute">formatter</span>=<span class="hljs-value">{formatter}</span>&gt;</span>
-        default content
+        <span class="hljs-tag">&lt;<span class="hljs-title">ContenteditableEditor</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"在此编辑"</span> /&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">Mention</span>&gt;</span>,
-      document.getElementById('components-mention-demo-simple')
-);</span></code></pre></div></div></div><div id="code-box-components-mention-demo-person" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-mention-demo-person">at人</a></div></div><div class="code-box-demo"><div id="components-mention-demo-person"></div></div><div class="code-box-desc"><p>at人的用法。</p><a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){"use strict";
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+      document.getElementById('components-mention-demo-contenteditable')
+);</span></code></pre></div></div></div><div id="code-box-components-mention-demo-formelement" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-mention-demo-formelement">在表单元素中使用</a></div></div><div class="code-box-demo"><div id="components-mention-demo-formelement"></div></div><div class="code-box-desc">
+<p>在 textarea 和 input 中使用。</p>
+<a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
 
 var _uxcoreMention = require('uxcore-mention');
 
 var _uxcoreMention2 = _interopRequireDefault(_uxcoreMention);
 
-var mockData = [{
-    "emplId": "11111",
-    "nickNameCn": "小红",
-    "name": "小红",
-    "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
-}, {
-    "emplId": "22222",
-    "nickNameCn": "小黄",
-    "name": "小黄",
-    "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
-}, {
-    "emplId": "33333",
-    "nickNameCn": "小白",
-    "name": "小白",
-    "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
-}, {
-    "emplId": "44444",
-    "nickNameCn": "小黑",
-    "name": "小黑",
-    "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
-}, {
-    "emplId": "55555",
-    "nickNameCn": "小李",
-    "name": "小李",
-    "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
-}, {
-    "emplId": "66666",
-    "nickNameCn": "",
-    "name": "小明",
-    "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
-}, {
-    "emplId": "77777",
-    "nickNameCn": "",
-    "name": "小雷",
-    "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
-}, {
-    "emplId": "88888",
-    "nickNameCn": "小樱",
-    "name": "小樱",
-    "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
-}, {
-    "emplId": "99999",
-    "nickNameCn": "小健",
-    "name": "小健",
-    "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
-}, {
-    "emplId": "20030",
-    "nickNameCn": "小航",
-    "name": "小航",
-    "avatar": "//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"
-}];
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var source = ['aaaaa', 'aabbb', 'aaccc', 'bbbcc', 'dddee', 'fffqq', 'pppaa', 'ppccc'];
+
+function formatter(data) {
+    return data.map(function (item) {
+        return {
+            text: item
+        };
+    });
+}
+
+ReactDOM.render(React.createElement(
+    _uxcoreMention2.default,
+    {
+        matchRange: [1, 6],
+        source: source,
+        formatter: formatter },
+    React.createElement(_uxcoreMention.TextareaEditor, {
+        placeholder: '在此编辑' }),
+    React.createElement(_uxcoreMention.InputEditor, {
+        placeholder: '在此编辑' })
+), document.getElementById('components-mention-demo-formelement'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Mention, { TextareaEditor, InputEditor } <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-mention'</span>;
+
+<span class="hljs-keyword">let</span> source = [<span class="hljs-string">'aaaaa'</span>, <span class="hljs-string">'aabbb'</span>, <span class="hljs-string">'aaccc'</span>, <span class="hljs-string">'bbbcc'</span>, <span class="hljs-string">'dddee'</span>, <span class="hljs-string">'fffqq'</span>, <span class="hljs-string">'pppaa'</span>, <span class="hljs-string">'ppccc'</span>];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formatter</span>(<span class="hljs-params">data</span>)</span>{
+    <span class="hljs-keyword">return</span> data.map((item) =&gt; {
+        <span class="hljs-keyword">return</span> {
+            text: item
+        };
+    });
+}
+
+ReactDOM.render(
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Mention</span>
+        <span class="hljs-attribute">matchRange</span>=<span class="hljs-value">{[1,</span> <span class="hljs-attribute">6</span>]}
+        <span class="hljs-attribute">source</span>=<span class="hljs-value">{source}</span>
+        <span class="hljs-attribute">formatter</span>=<span class="hljs-value">{formatter}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">TextareaEditor</span>
+            <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"在此编辑"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">InputEditor</span>
+            <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"在此编辑"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Mention</span>&gt;</span>,
+      document.getElementById('components-mention-demo-formelement')
+);</span></code></pre></div></div></div><div id="code-box-components-mention-demo-tinymce" class="code-box"><div class="code-box-meta bg-primary-lighter-color"><div class="code-box-title"><i class="fa fa-tag"></i><a href="#code-box-components-mention-demo-tinymce">在tinymce中使用</a></div></div><div class="code-box-demo"><div id="components-mention-demo-tinymce"></div></div><div class="code-box-desc">
+<p>在 tinymce 中使用。</p>
+<a class="code-toggle"><i class="kuma-icon kuma-icon-chevron-down"></i></a></div><div class="code-box-markdown"><script>(function(){'use strict';
+
+var _uxcoreTinymce = require('uxcore-tinymce');
+
+var _uxcoreTinymce2 = _interopRequireDefault(_uxcoreTinymce);
+
+var _uxcoreMention = require('uxcore-mention');
+
+var _uxcoreMention2 = _interopRequireDefault(_uxcoreMention);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mockData = function () {
+    var size = 8,
+        data = [];
+    while (size -= 1) {
+        data.push({
+            emplId: new Array(6).join(size),
+            nickNameCn: '昵称' + (size + 2),
+            name: '名字' + (size + 1),
+            avatar: '//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg'
+        });
+    }
+    return data;
+}();
 
 function getPersonData(keyword, next) {
     setTimeout(function () {
@@ -130,90 +151,44 @@ function getPersonData(keyword, next) {
 
 function personDataFormatter(data) {
     data.forEach(function (item) {
-        item.displayName = item.name + (item.nickNameCn ? "(" + item.nickNameCn + ")" : '');
+        item.displayName = item.name + (item.nickNameCn ? '(' + item.nickNameCn + ')' : '');
     });
     return data;
 }
 
-function personPanelFormatter(data) {
-    return "<img src=\"" + data.avatar + "\" width=\"25\" height=\"25\" title=\"" + data.name + "\">" + data.displayName + " - " + data.emplId;
-}
-
 function personMentionFormatter(data) {
-    return "@" + data.name + "(" + data.emplId + ")";
+    return '@' + data.name + '(' + data.emplId + ')';
 }
 
-ReactDOM.render(React.createElement(_uxcoreMention2["default"], {
-    width: "400",
-    height: "200",
-    matchRange: [2, 6],
-    source: getPersonData,
-    formatter: personDataFormatter,
-    panelFormatter: personPanelFormatter,
-    mentionFormatter: personMentionFormatter }), document.getElementById('components-mention-demo-person'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Mention <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-mention'</span>;
+function personPanelFormatter(data) {
+    return '<img src="' + data.avatar + '" width="25" height="25" title="' + data.name + '">' + data.displayName + ' - ' + data.emplId;
+}
 
-<span class="hljs-keyword">let</span> mockData = [
+ReactDOM.render(React.createElement(
+    _uxcoreMention.TinymceMention,
     {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"11111"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">"小红"</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"小红"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"</span>
-    },
-    {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"22222"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">"小黄"</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"小黄"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"</span>
-    },
-    {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"33333"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">"小白"</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"小白"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"</span>
-    },
-    {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"44444"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">"小黑"</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"小黑"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"</span>
-    },
-    {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"55555"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">"小李"</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"小李"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"</span>
-    },
-    {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"66666"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"小明"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"</span>
-    },
-    {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"77777"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">""</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"小雷"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"</span>
-    },
-    {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"88888"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">"小樱"</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"小樱"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"</span>
-    },
-    {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"99999"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">"小健"</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"小健"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"</span>
-    },
-    {
-        <span class="hljs-string">"emplId"</span>: <span class="hljs-string">"20030"</span>,
-        <span class="hljs-string">"nickNameCn"</span>: <span class="hljs-string">"小航"</span>,
-        <span class="hljs-string">"name"</span>: <span class="hljs-string">"小航"</span>,
-        <span class="hljs-string">"avatar"</span>: <span class="hljs-string">"//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg"</span>
-    }
-];
+        insertMode: 'TEXT_NODE',
+        source: getPersonData,
+        formatter: personDataFormatter,
+        mentionFormatter: personMentionFormatter,
+        panelFormatter: personPanelFormatter },
+    React.createElement(_uxcoreTinymce2.default, {
+        placeholder: '在此编辑' })
+), document.getElementById('components-mention-demo-tinymce'));})()</script><div class="highlight"><pre><code class="javascript"><span class="hljs-keyword">import</span> Tinymce <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-tinymce'</span>;
+<span class="hljs-keyword">import</span> Mention, { TinymceMention } <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore-mention'</span>;
+
+<span class="hljs-keyword">let</span> mockData = (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">let</span> size = <span class="hljs-number">8</span>, data = [];
+  <span class="hljs-keyword">while</span> (size -= <span class="hljs-number">1</span>) {
+    data.push({
+      emplId: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-number">6</span>).join(size),
+      nickNameCn: <span class="hljs-string">`昵称<span class="hljs-subst">${size + 2}</span>`</span>, 
+      name: <span class="hljs-string">`名字<span class="hljs-subst">${size + 1}</span>`</span>,
+      avatar: <span class="hljs-string">'//gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg'</span>
+    });
+  }
+  <span class="hljs-keyword">return</span> data;
+}());
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getPersonData</span>(<span class="hljs-params">keyword, next</span>)</span>{
     setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
@@ -228,39 +203,60 @@ ReactDOM.render(React.createElement(_uxcoreMention2["default"], {
     <span class="hljs-keyword">return</span> data;
 }
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">personPanelFormatter</span>(<span class="hljs-params">data</span>)</span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;img src="<span class="hljs-subst">${data.avatar}</span>" width="25" height="25" title="<span class="hljs-subst">${data.name}</span>"&gt;<span class="hljs-subst">${data.displayName}</span> - <span class="hljs-subst">${data.emplId}</span>`</span>;
-}
-
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">personMentionFormatter</span>(<span class="hljs-params">data</span>)</span>{
     <span class="hljs-keyword">return</span> <span class="hljs-string">`@<span class="hljs-subst">${data.name}</span>(<span class="hljs-subst">${data.emplId}</span>)`</span>;
 }
 
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">personPanelFormatter</span>(<span class="hljs-params">data</span>)</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">`&lt;img src="<span class="hljs-subst">${data.avatar}</span>" width="25" height="25" title="<span class="hljs-subst">${data.name}</span>"&gt;<span class="hljs-subst">${data.displayName}</span> - <span class="hljs-subst">${data.emplId}</span>`</span>;
+}
+
 ReactDOM.render(
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Mention</span>
-        <span class="hljs-attribute">width</span>=<span class="hljs-value">"400"</span>
-        <span class="hljs-attribute">height</span>=<span class="hljs-value">"200"</span>
-        <span class="hljs-attribute">matchRange</span>=<span class="hljs-value">{[2,</span> <span class="hljs-attribute">6</span>]}
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">TinymceMention</span>
+        <span class="hljs-attribute">insertMode</span>=<span class="hljs-value">{'TEXT_NODE'}</span>
         <span class="hljs-attribute">source</span>=<span class="hljs-value">{getPersonData}</span>
         <span class="hljs-attribute">formatter</span>=<span class="hljs-value">{personDataFormatter}</span>
-        <span class="hljs-attribute">panelFormatter</span>=<span class="hljs-value">{personPanelFormatter}</span>
-        <span class="hljs-attribute">mentionFormatter</span>=<span class="hljs-value">{personMentionFormatter}</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">Mention</span>&gt;</span>,
-      document.getElementById('components-mention-demo-person')
+        <span class="hljs-attribute">mentionFormatter</span>=<span class="hljs-value">{personMentionFormatter}</span>
+        <span class="hljs-attribute">panelFormatter</span>=<span class="hljs-value">{personPanelFormatter}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Tinymce</span>
+            <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">{'在此编辑'}</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">TinymceMention</span>&gt;</span>,
+      document.getElementById('components-mention-demo-tinymce')
 );</span></code></pre></div></div></div><div id="J-markdown" class="markdown"><p>编辑框内at任何对象</p>
-<h2 id="api">API</h2><ul>
-<li>formatter(arr): 对从数据源取到的数据进行处理，返回处理后的结果数组。</li>
-<li>panelFormatter(obj): 自定义选择菜单的结构，返回html。</li>
-<li>mentionFormatter(obj): 自定义插入编辑器中的文本，返回字符串。</li>
+<h2 id="api">API</h2><h3 id="mention">Mention</h3><ul>
+<li>formatter(arr): format the data form source.</li>
+<li>panelFormatter(obj): customize the panel display.</li>
 <li>onChange(e, value): onChange事件。</li>
 </ul>
-<h2 id="props">props</h2><table>
+<h3 id="tinymcemention">TinymceMention</h3><ul>
+<li>formatter(arr): format the data form source.</li>
+<li>panelFormatter(obj): customize the panel display.</li>
+<li>mentionFormatter(obj): customize the insert content with this function.</li>
+<li>onChange(e, value): Callback invoked when the editor&#39;s content has been changed.</li>
+<li>onAdd(display, originData): Callback invoked when a mention has been added.</li>
+</ul>
+<h3 id="contenteditableeditor">ContentEditableEditor</h3><ul>
+<li>mentionFormatter(obj): customize the insert content with this function.</li>
+<li>onChange(e, value): Callback invoked when the editor&#39;s content has been changed.</li>
+<li>onAdd(display, originData): Callback invoked when a mention has been added.</li>
+</ul>
+<h3 id="textareaeditor">TextareaEditor</h3><ul>
+<li>mentionFormatter(obj): customize the insert content with this function.</li>
+<li>onChange(e, value): Callback invoked when the editor&#39;s content has been changed.</li>
+<li>onAdd(display, originData): Callback invoked when a mention has been added.</li>
+</ul>
+<h3 id="inputeditor">InputEditor</h3><ul>
+<li>mentionFormatter(obj): customize the insert content with this function.</li>
+<li>onChange(e, value): Callback invoked when the editor&#39;s content has been changed.</li>
+<li>onAdd(display, originData): Callback invoked when a mention has been added.</li>
+</ul>
+<h2 id="props">props</h2><h3 id="mention">Mention</h3><table>
 <thead>
 <tr>
-<th>参数</th>
-<th>说明</th>
-<th>类型</th>
-<th>默认值</th>
+<th>name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
@@ -269,18 +265,6 @@ ReactDOM.render(
 <td>class prefix</td>
 <td>string</td>
 <td>kuma-mention</td>
-</tr>
-<tr>
-<td>width</td>
-<td>editor&#39;s width</td>
-<td>number</td>
-<td>200</td>
-</tr>
-<tr>
-<td>height</td>
-<td>editor&#39;s height</td>
-<td>number</td>
-<td>100</td>
 </tr>
 <tr>
 <td>source</td>
@@ -308,20 +292,302 @@ ReactDOM.render(
 </tr>
 <tr>
 <td>panelFormatter</td>
-<td>customize whats&#39;s in your select panel with this function</td>
-<td>function</td>
-<td></td>
-</tr>
-<tr>
-<td>mentionFormatter</td>
-<td>customize what&#39;s in your mention node with this function</td>
+<td>customize the panel display</td>
 <td>function</td>
 <td></td>
 </tr>
 <tr>
 <td>onChange</td>
 <td>trigger when editor content change</td>
+<td>function(e, value)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tinymcemention">TinymceMention</h3><table>
+<thead>
+<tr>
+<th>name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prefixCls</td>
+<td>class prefix</td>
+<td>string</td>
+<td>kuma-mention</td>
+</tr>
+<tr>
+<td>source</td>
+<td>data source for mention content</td>
+<td>array or function</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>delay</td>
+<td>debounce of the request to data source</td>
+<td>number</td>
+<td>100</td>
+</tr>
+<tr>
+<td>matchRange</td>
+<td>only match the string after delimiter which the length in this range</td>
+<td>array</td>
+<td>[2, 8]</td>
+</tr>
+<tr>
+<td>formatter</td>
+<td>format the data form source</td>
 <td>function</td>
+<td></td>
+</tr>
+<tr>
+<td>panelFormatter</td>
+<td>customize the panel display</td>
+<td>function</td>
+<td></td>
+</tr>
+<tr>
+<td>mentionFormatter</td>
+<td>customize the insert content with this function</td>
+<td>function</td>
+<td></td>
+</tr>
+<tr>
+<td>onChange</td>
+<td>trigger when editor content change</td>
+<td>function(e, value)</td>
+<td></td>
+</tr>
+<tr>
+<td>onAdd</td>
+<td>Callback invoked when a mention has been added</td>
+<td>function(display, originData)</td>
+<td></td>
+</tr>
+<tr>
+<td>insertMode</td>
+<td><code>ELEMENT_NODE</code> will insert mention content with a button, <code>TEXT_NODE</code> will insert with a text node</td>
+<td>string</td>
+<td><code>ELEMENT_NODE</code> or <code>TEXT_NODE</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="contenteditableeditor">ContentEditableEditor</h3><table>
+<thead>
+<tr>
+<th>name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prefixCls</td>
+<td>class prefix</td>
+<td>string</td>
+<td>kuma-mention</td>
+</tr>
+<tr>
+<td>width</td>
+<td>editor&#39;s width</td>
+<td>number</td>
+<td>200</td>
+</tr>
+<tr>
+<td>height</td>
+<td>editor&#39;s height</td>
+<td>number</td>
+<td>100</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>placeholder</td>
+<td>string</td>
+<td>&#39;&#39;</td>
+</tr>
+<tr>
+<td>mentionFormatter</td>
+<td>customize the insert content with this function</td>
+<td>function</td>
+<td></td>
+</tr>
+<tr>
+<td>onChange</td>
+<td>Callback invoked when the editor&#39;s content has been changed</td>
+<td>function(e, value)</td>
+<td></td>
+</tr>
+<tr>
+<td>onAdd</td>
+<td>Callback invoked when a mention has been added</td>
+<td>function(display, originData)</td>
+<td></td>
+</tr>
+<tr>
+<td>defaultValue</td>
+<td>default values</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>readOnly</td>
+<td>can not edit</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>delimiter</td>
+<td>Defines the char sequence upon which to trigger querying the data source</td>
+<td>string</td>
+<td>&#39;@&#39;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="textareaeditor">TextareaEditor</h3><table>
+<thead>
+<tr>
+<th>name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prefixCls</td>
+<td>class prefix</td>
+<td>string</td>
+<td>kuma-mention</td>
+</tr>
+<tr>
+<td>width</td>
+<td>editor&#39;s width</td>
+<td>number</td>
+<td>200</td>
+</tr>
+<tr>
+<td>height</td>
+<td>editor&#39;s height</td>
+<td>number</td>
+<td>100</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>placeholder</td>
+<td>string</td>
+<td>&#39;&#39;</td>
+</tr>
+<tr>
+<td>mentionFormatter</td>
+<td>customize the insert content with this function</td>
+<td>function</td>
+<td></td>
+</tr>
+<tr>
+<td>onChange</td>
+<td>Callback invoked when the editor&#39;s content has been changed</td>
+<td>function(e, value)</td>
+<td></td>
+</tr>
+<tr>
+<td>onAdd</td>
+<td>Callback invoked when a mention has been added</td>
+<td>function(display, originData)</td>
+<td></td>
+</tr>
+<tr>
+<td>defaultValue</td>
+<td>default values</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>readOnly</td>
+<td>can not edit</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>delimiter</td>
+<td>Defines the char sequence upon which to trigger querying the data source</td>
+<td>string</td>
+<td>&#39;@&#39;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="inputeditor">InputEditor</h3><table>
+<thead>
+<tr>
+<th>name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prefixCls</td>
+<td>class prefix</td>
+<td>string</td>
+<td>kuma-mention</td>
+</tr>
+<tr>
+<td>width</td>
+<td>editor&#39;s width</td>
+<td>number</td>
+<td>200</td>
+</tr>
+<tr>
+<td>height</td>
+<td>editor&#39;s height</td>
+<td>number</td>
+<td>30</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>placeholder</td>
+<td>string</td>
+<td>&#39;&#39;</td>
+</tr>
+<tr>
+<td>mentionFormatter</td>
+<td>customize the insert content with this function</td>
+<td>function</td>
+<td></td>
+</tr>
+<tr>
+<td>onChange</td>
+<td>Callback invoked when the editor&#39;s content has been changed</td>
+<td>function(e, value)</td>
+<td></td>
+</tr>
+<tr>
+<td>onAdd</td>
+<td>Callback invoked when a mention has been added</td>
+<td>function(display, originData)</td>
+<td></td>
+</tr>
+<tr>
+<td>defaultValue</td>
+<td>default values</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>readOnly</td>
+<td>can not edit</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>delimiter</td>
+<td>Defines the char sequence upon which to trigger querying the data source</td>
+<td>string</td>
+<td>&#39;@&#39;</td>
 </tr>
 </tbody>
 </table>
