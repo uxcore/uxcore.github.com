@@ -1,8 +1,8 @@
-# 自定义页脚
+# 自定义
 
 - order: 2
 
-自定义页脚。
+自定义 & 垂直居中。
 
 ---
 
@@ -38,14 +38,13 @@ class CustomFooter extends React.Component {
 			显示对话框
 			</Button>
 			<Dialog ref="modal"
+				wrapClassName="vertical-center-dailog"
 				visible={this.state.visible}
 				title="对话框标题" onOk={this.handleOk} onCancel={this.handleCancel.bind(this)}
 				footer={[
 					<Button key="back" onClick={this.handleCancel.bind(this)}>返 回</Button>,
 					<Button key="submit" onClick={this.handleOk.bind(this)}>提 交</Button>
 				]}>
-				<p>对话框的内容</p>
-				<p>对话框的内容</p>
 				<p>对话框的内容</p>
 				<p>对话框的内容</p>
 				<p>对话框的内容</p>

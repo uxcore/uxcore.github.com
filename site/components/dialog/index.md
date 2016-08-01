@@ -31,14 +31,21 @@ ReactDOM.render(
 
 | 参数       | 说明           | 类型             | 默认值       |
 |------------|----------------|------------------|--------------|
-| title      | 标题           | React.Element    | 无           |
-| visible      | 对话框是否可见  | Boolean    | 无           |
-| mousePosition      | 鼠标位置，设置弹窗初始位置           | {x:number,y:number}   | 无           |
-| onOk       | 点击确定回调       | function         | 无           |
-| onCancel   | 点击遮罩层或右上角叉或取消按钮的回调  | function  | 无           |
-| width      | 宽度           | String or Number | 520           |
-| footer     | 底部内容       | React.Element    | 确定取消按钮 |
-| closable | 是否显示关闭图标和支持点击mask关闭 | Boolean | true |
+| title      | Title of the dialog | String | React.Element    | 无           |
+| visible      | current dialog's visible status  | Boolean    | false |
+| mousePosition |  set pageX and pageY of current mouse(it will cause transform origin to be set). | {x:number,y:number}   | 无 |
+| onOk       | the callback when ok clicked | function | 无 |
+| onCancel   | the callback when dialog closed  | function  | 无  |
+| width      | dialog width | String or Number | 520           |
+| footer     | footer of the dialog       | React.Element    |  |
+| closable | whether show close button and click mask to close | Boolean | true |
+| maskClosable | whether click mask to close, this prop will be ignored if set closable prop to false | Boolean | true |
+| locale     | 国际化(包括 `zh-cn`, `en-us`, 和 `pl-pl`)    | String     |  `zh-cn` |
+| className | additional className for dialog | string | |
+| wrapClassName | additional className for dialog wrap | string | `vertical-center-dailog` for vertical align the dialog |
+| style | Root style for dialog element.Such as width, height | Object | {} |
+| zIndex |  | Number | |
+| bodyStyle | body style for dialog body element.Such as height | Number | {} |
 
 ### Dialog.xxx()
 

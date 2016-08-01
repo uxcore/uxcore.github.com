@@ -7,9 +7,8 @@
 ---
 
 ````jsx
-const Steps = require('uxcore-steps');
-const Step = Steps.Step;
-const Button = require('uxcore-button');
+import Steps, { Step } from 'uxcore-steps';
+import Button from 'uxcore-button';
 
 let array = Array.apply(null, Array(Math.floor(Math.random() * 3) + 3));
 let steps = array.map(function(item, i) {

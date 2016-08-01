@@ -7,10 +7,9 @@
 ---
 
 ````jsx
-var Steps = require('uxcore-steps');
-var Step = Steps.Step;
+import Steps, { Step } from 'uxcore-steps';
 
-var steps = [{
+const steps = [{
     title: '已完成',
     description: '这里是多信息的描述啊'
 }, {
