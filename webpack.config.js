@@ -38,7 +38,16 @@ module.exports = {
                     var isNpmModule = !!path.match(/node_modules/);
                     return isNpmModule;
                 },
-                loader: 'babel-loader?stage=1&cacheDirectory',
+                loader: 'babel-loader',
+                query: {
+                    presets: ['react', 'es2015-ie', 'stage-0'],
+                    plugins: [
+                        'transform-es3-member-expression-literals',
+                        'transform-es3-property-literals',
+                        'add-module-exports',
+                    ],
+                    cacheDirectory: true,
+                }
             }, {
                 test: /\.json$/,
                 loader: 'json'
