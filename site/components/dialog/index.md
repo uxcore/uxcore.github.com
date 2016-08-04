@@ -31,7 +31,7 @@ ReactDOM.render(
 
 | 参数       | 说明           | 类型             | 默认值       |
 |------------|----------------|------------------|--------------|
-| title      | Title of the dialog | String | React.Element    | 无           |
+| title      | Title of the dialog | String or React.Element    | 无           |
 | visible      | current dialog's visible status  | Boolean    | false |
 | mousePosition |  set pageX and pageY of current mouse(it will cause transform origin to be set). | {x:number,y:number}   | 无 |
 | onOk       | the callback when ok clicked | function | 无 |

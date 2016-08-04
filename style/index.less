@@ -260,11 +260,13 @@ html, body {
 .markdown {
 	@baseFontSize: 14px;
 	padding: 20px 0;
+	font-size: @baseFontSize;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	h1, h2, h3, h4, h5, h6 {
 		margin-top: 1em;
-	    margin-bottom: 16px;
-	    font-weight: bold;
-	    line-height: 1.4
+		margin-bottom: 16px;
+		font-weight: bold;
+		line-height: 1.4
 	}
 	p {
 		margin: @g-padding 0;
@@ -311,6 +313,11 @@ html, body {
 	table {
 		width: 100%;
 		border: 1px solid @borderColor;
+		tr {
+			&:nth-child(2n) {
+				background-color: #f8f8f8;
+			}
+		}
 		th, td {
 			padding: 10px 8px;
 			border: 1px solid @borderColor;
