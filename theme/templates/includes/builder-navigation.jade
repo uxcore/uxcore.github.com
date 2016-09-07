@@ -4,7 +4,7 @@ nav#J-head.site-nav
 	ul.nav-list
 		each item in config.site.navigation
 			li(data-id="#{item.id}")
-				a(href="#{config.site.urlPrefix}#{item.link}")= item.text
+				a(href="#{item.link}")= item.text
 	.builder-action
 		a(href="javascript:void(0)")#J_DownloadCss 下载CSS
 		a(href="javascript:void(0)")#J_DownloadVariable 下载变量配置

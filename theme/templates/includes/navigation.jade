@@ -4,6 +4,6 @@ nav#J-head.site-nav
 	ul.nav-list
 		each item in config.site.navigation
 			li(data-id="#{item.id}")
-				a(href="#{config.site.urlPrefix}#{item.link}")= item.text
+				a(href="#{item.link}")= item.text
 	img#J_ThemeSelector.theme-selector(src="/static/iconfont-yifuhuanfu.png")
 	#J_ThemePickerBox.theme-picker-box

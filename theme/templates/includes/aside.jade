@@ -23,9 +23,9 @@ mixin aside(type)
 				each page in pages
 					if post.title === page.title
 						li.current
-							a(href="#{config.site.urlPrefix}/#{page.directory}") #{page.title}
+							a(href="/#{page.directory}") #{page.title}
 								small #{page.meta.chinese}
 					else
 						li
-							a(href="#{config.site.urlPrefix}/#{page.directory}") #{page.title}
+							a(href="/#{page.directory}") #{page.title}
 								small #{page.meta.chinese}
