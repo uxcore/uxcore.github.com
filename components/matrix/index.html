@@ -275,6 +275,9 @@ ReactDOM.render(
 </table>
 <h2 id="data-structure">Data structure</h2><div class="highlight"><pre><code class="javascript">{
   data: [
+    <span class="hljs-comment">// x,y 表示单元格相对左上角的偏移量，单位为1个单元格</span>
+    <span class="hljs-comment">// row, col 代表跨行跨列的数量，分别代表纵向跨行，和横向跨列</span>
+    <span class="hljs-comment">// text 是默认用来显示的字段</span>
     { x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span>, row: <span class="hljs-number">2</span>, col: <span class="hljs-number">2</span>, text: <span class="hljs-string">'1'</span> },
     { x: <span class="hljs-number">2</span>, y: <span class="hljs-number">0</span>, row: <span class="hljs-number">2</span>, col: <span class="hljs-number">2</span>, text: <span class="hljs-string">'2'</span> },
     { x: <span class="hljs-number">4</span>, y: <span class="hljs-number">0</span>, row: <span class="hljs-number">3</span>, col: <span class="hljs-number">1</span>, text: <span class="hljs-string">'3'</span> },
