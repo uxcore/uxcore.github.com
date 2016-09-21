@@ -29,8 +29,11 @@ let {
     CascadeSelectFormField,
     OtherFormField,
     ButtonGroupFormField,
-    EditorFormField
+    EditorFormField,
+    SwitchFormField,
+    PickableFormField,
 } = Form;
+
 
 let CheckboxItem = CheckboxGroupFormField.Item;
 let RadioItem = RadioGroupFormField.Item;
@@ -42,12 +45,16 @@ class Demo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            showPass: false,
             jsxvalues: {
                 test1: "我是测试",
                 fruit: "apple",
+                number: 1,
                 city: "nj",
-                textArea: "我是多行文本",
+                option: "1",
+                // textArea: "我是多行文本",
                 // date: "2015-09-01",
+                goods2: ["a", "b"],
                 checkbox: ["sea"],
                 dicts:{
                    datas:[
@@ -55,19 +62,14 @@ class Demo extends React.Component {
                         city: "hz",
                         email: "333",
                         name: "33"
-                      }, {
-                        city: "bj",
-                        email: "33322",
-                        name: "3322"
                       }
                    ]
                 },
-                cascade: ["a", "ab"],
-                editor: "a"
+                cascade: ["a", "ab"]
             },
             jsxdata: {
                 "bj": "北京",
-                "nj": "南京",
+                "nj": "南京南京南京南京南京南京南京南京南京南京南京南京南京南京",
                 "dj": "东京",
                 "xj": "西京"
             },
@@ -77,26 +79,20 @@ class Demo extends React.Component {
 
     handleClick() {
         let me = this;
-        console.log(me.refs.form.getValues());
+        console.log(JSON.stringify(me.refs.form.getValues(true)));
     }
 
     handleSetValues() {
         let me = this;
         me.refs.form.setValues({
-            test1: "我不是测试",
-            dicts:{
-                   datas:[
-                      {
-                        city: "hz",
-                        email: "手动设置value",
-                        name: "手动设置33"
-                      }, {
-                        city: "hz",
-                        email: "手动设置33322",
-                        name: "手动设置3322"
-                      }
-                   ]
-                }
+            test1: "我不是测试"
+        })
+    }
+
+    handleShowPassChange() {
+        let me = this;
+        me.setState({
+            showPass: !me.state.showPass
         })
     }
 
@@ -106,17 +102,29 @@ class Demo extends React.Component {
         })
     }
 
+    update() {
+        console.log('work')
+        this.forceUpdate();
+    }
+
     handleChange(value, name, pass) {
-        if (name == 'a') {
-            this.setState({
-                a: value[name]
-            })
+        console.log(value, name, pass);
+        let me = this;
+        // if (name == 'number') {
+        //     me.refs.form.setValues({
+        //         number: 1
+        //     })
+        // }
+    }
+
+    handleKeyDown(e) {
+        if (e.keyCode == Form.KeyCode.Enter) {
+            console.log('enter');
         }
-        else if (name == "b") {
-            this.setState({
-                b: value[name]
-            })
-        }
+    }
+
+    handleTextAreaBlur(e, pass) {
+        console.log(e, pass);
     }
 
     changeMode() {
@@ -131,7 +139,7 @@ class Demo extends React.Component {
             jsxvalues: {
                 test1: "我是测试22",
                 fruit: "apple",
-                city: "nj",
+                city: [],
                 textArea: "我是多行文本",
                 date: "2015-09-01",
                 checkbox: ["sea"],
@@ -242,10 +250,15 @@ class Demo extends React.Component {
             }},
             { dataKey: 'name',title:"姓名",width: 200,type:"text"},
             { dataKey: 'email',title:"Email",width: 200,type:"text"},
-            { dataKey: 'action1', title:'操作1', width:100, type:"action",items:[
-              {title:'增加', type:"addRow", cb: function(rowData){console.info(rowData)}},
-              {title:'删除', type:"delRow", cb: function(rowData){console.info(rowData)}}
-            ]}
+            { dataKey: 'action1', title:'操作1', width:100, type:"action",actions:{
+                "增加": function(rowData) {
+                    me.refs.grid.addEmptyRow();
+                },
+                "删除": function(rowData) {
+                    me.refs.grid.delRow(rowData);
+                }
+              }
+            }
         ];
 
 
@@ -253,16 +266,35 @@ class Demo extends React.Component {
             jsxcolumns:columns
         };
 
+        const itemsData = [{
+          text: '条件一',
+          value: 1,
+          num: 15
+        }, {
+          text: '条件二',
+          value: 2,
+          num: 20
+        }, {
+          text: '条件三',
+          value: 3,
+          disable: true
+        }];
+
         return (
             <div className="demo">
                 <Form ref="form" instantValidate={true} jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
                     <FormRowTitle jsxtitle="我是行标题"/>
                     <FormRow>
                         <InputFormField
+                         labelMatchInputHeight
                          required={true}
                          jsxname="test1"
-                         jsxlabel="普通输入框"
+                         jsxdisabled={false}
+                         autoTrim={false}
+                         jsxlabel="普通输入框普通输入框"
                          jsxtips="请输入数字"
+                         validateOnBlur={false}
+                         onKeyDown={me.handleKeyDown.bind(me)}
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}>
                             <LeftAddon>
                                 <i className="kuma-icon kuma-icon-phone"></i>
@@ -276,6 +308,8 @@ class Demo extends React.Component {
                           jsxname="number"
                           jsxlabel="数字输入框"
                           jsxtype="money"
+                          delimiter=","
+                          fixedNum={4}
                           jsxplaceholder="输入数字"
                           jsxtips="数字和一般的输入框不同"
                           jsxrules={[
@@ -299,27 +333,51 @@ class Demo extends React.Component {
                             <CheckboxItem value="sea" text="大海"/>
                         </CheckboxGroupFormField>
                     </FormRow>
-                    <TextAreaFormField jsxname="textArea" jsxlabel="多行文本框" jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}/>
+                    <InputFormField jsxname="pass" jsxlabel="请输入密码" inputType={me.state.showPass ? 'text' : 'password'}>
+                        <RightAddon>
+                            <i className={classnames({
+                                "kuma-icon": true,
+                                "kuma-icon-privacy": !me.state.showPass,
+                                "kuma-icon-public": me.state.showPass
+                            })} onClick={me.handleShowPassChange.bind(me)}></i>
+                        </RightAddon>
+                    </InputFormField>
+                    <FormRow>
+                        <SwitchFormField jsxname="switch" jsxlabel="开关" checkedChildren="显示" unCheckedChildren="隐藏" />
+                        <PickableFormField
+                          jsxlabel="test:"
+                          jsxname="test"
+                          multiple={true}
+                          type="hook" 
+                        >
+                            {itemsData.map(function(data,index) {
+                              return (
+                                <PickableFormField.Item key={index} value={data.value} number={data.num} disabled={data.disable}>{data.text}</PickableFormField.Item>
+                              )
+                            })}
+                        </PickableFormField>
+                    </FormRow>
+                    <TextAreaFormField jsxname="textArea"
+                                        jsxlabel="多行文本框"
+                                        jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}
+                                        jsxplaceholder="测试"
+                                        validateOnBlur={false}
+                                        onBlur={me.handleTextAreaBlur.bind(me)}/>
                     <FormRowTitle jsxtitle="我是行标题2"/>
                     <FormRow>
                         <SelectFormField
                          jsxlabel="单选"
                          jsxname="city"
+                         allowClear={true}
                          jsxrules={{validator: Validators.isNotEmpty, errMsg: "不能为空"}}
                          disabled={false}
-                         afterFetch={(obj) => {
-                            let data = {};
-                            obj.result.forEach((item, index) => {
-                                data[item[1]] = item[0];
-                            });
-                            return data;
-                         }}
                          jsxdata={me.state.jsxdata}/>
-                        <DateFormField format="yyyy-MM-dd HH:mm:ss" jsxname="date" jsxlabel="日期"/>
+                        <DateFormField format="yyyy-MM-dd HH:mm:ss" jsxname="date" jsxlabel="日期" jsxto={"2016-05-24"} locale="zh-cn" />
                     </FormRow>
                     <FormRow>
                         <SelectFormField
                          jsxlabel="单选 combo 模式"
+                         disabled={false}
                          jsxname="goods"
                          jsxfetchUrl="http://suggest.taobao.com/sug"
                          dataType="jsonp"
@@ -336,8 +394,12 @@ class Demo extends React.Component {
                          jsxname="goods2"
                          multiple={true}
                          jsxfetchUrl="http://suggest.taobao.com/sug"
-                         dataType="jsonp"
+                         jsxdata={{
+                            "a": "A",
+                            'b': "B"
+                         }}
                          beforeFetch={function(data) {
+                            console.log(data);
                             if (data.q == undefined) {
                                 data.q = "a"
                             }
@@ -355,23 +417,29 @@ class Demo extends React.Component {
                     <SelectFormField
                         jsxname="option"
                         jsxlabel="传 option">
-                        <Option value="1">1</Option>
-                        <Option value="2">2</Option>
-                        <Option value="3">3</Option>
+                        <Option value="1">第一个选项</Option>
+                        <Option value="2">第二个选项</Option>
+                        <Option value="3">第三个选项</Option>
                     </SelectFormField>
                     <FormRowTitle jsxtitle="级联类"/>
-                    <DateFormField jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" format="yyyy/MM/dd"/>
+                    <DateFormField showTime jsxtype="cascade" jsxname="casDate" jsxlabel="级联日期" format="yyyy/MM/dd" />
                     <CascadeSelectFormField
                      jsxdata={casData}
+                     allowClear
+                     jsxplaceholder={['选项一', '选项二', '选项三']}
                      jsxname="cascade"
                      jsxlabel="级联选择"/>
                     <EditorFormField jsxname="editor"
                                      jsxlabel="富文本编辑器"
-                                     jsxcontent="1"/>
+                                     placeholder="测试" />
 
                     <ButtonGroupFormField>
-                        <Button size="medium" action="submit" onClick={me.handleClick.bind(me)}>提交</Button>
-                        <Button size="medium" type="secondary" action="reset">重置</Button>
+                        <Button size="medium" onClick={me.handleClick.bind(me)}>提交</Button>
+                        <Button size="medium" type="secondary" action="reset">取消</Button>
+                        <Button type="secondary" onClick={me.handleSetValues.bind(me)}>手动setValues</Button>
+                        <Button size="medium" type="secondary" onClick={me.handleValueChange.bind(me)}>修改 props</Button>
+                        <Button type="secondary" onClick={me.changeMode.bind(me)}>转变模式</Button>
+                        <Button type="secondary" onClick={me.update.bind(me)}>强制刷新</Button>
                     </ButtonGroupFormField>
                 </Form>
             </div>

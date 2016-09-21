@@ -12,7 +12,7 @@
 
 ## Usage
 
-> see demo/FormDemo.js for details  
+> see Demos for details  
 > 每一个 field 需要按照 Form -> FormRow -> FormField 的方式进行嵌套，允许 Form -> FormField 的嵌套，会自动增加 FormRow 这一层，并默认占一整行。
 
 
@@ -107,8 +107,10 @@
 |jsxplaceholder|string|optional|""|占位符|-|
 |jsxdisabled|boolean|optional|false|disable 状态|-|
 |validateOnBlur|boolean|optional|false|验证是否是在 blur 的时候出发，默认情况是在 change 时触发，此项为 true 后，onChange 的 pass 永远为 true，相对应的 onBlur 的 pass 会随之变化|1.2.10|
+|onKeyDown|function(e)|optional|noop|监听键盘事件|
 |onBlur|function(e, pass)|optional|noop|输入框 blur 时触发，第二个参数为验证是否通过，若 validateOnBlur 为 false，则 pass 永远为 true|1.2.10|
 |onFocus|function(e)|optional|noop|输入框获取焦点时触发|1.2.10|
+|renderView|function(value)|optional|noop|自定义渲染 view 状态，参数是默认渲染的值|1.6.0|
 |autoTrim|boolean|optional|-|自动去除值两端的空格|1.2.12|
 |inputType|string|optional|'text'|input 的 type，目前支持 "text" 和 "password"|1.2.23|
 
@@ -140,6 +142,7 @@
 |---|---|---|---|---|
 |jsxplaceholder|string|optional|""|占位符|
 |validateOnBlur|boolean|optional|false|验证是否是在 blur 的时候出发，默认情况是在 change 时触发，此项为 true 后，onChange 的 pass 永远为 true，相对应的 onBlur 的 pass 会随之变化|1.2.11|
+|onKeyDown|function(e)|optional|noop|监听键盘事件|
 |onBlur|function(e, pass)|optional|noop|输入框 blur 时触发，第二个参数为验证是否通过，若 validateOnBlur 为 false，则 pass 永远为 true|1.2.11|
 |onFocus|function(e)|optional|noop|输入框获取焦点时触发|1.2.11|
 |autoTrim|boolean|optional|-|自动去除值两端的空格|1.2.12|
@@ -157,9 +160,9 @@
 
 ```javascript
 <RadioGroupFormField>
-    <Item value="1" text="a" />
-    <Item value="2" text="b" />
-    <Item value="3" text="c" />
+    <Item value="1" text="a">
+    <Item value="2" text="b">
+    <Item value="3" text="c">
 </RadioGroupFormField>
 ```
 
@@ -174,7 +177,25 @@
 |afterFetch|func|optional|-|会传入返回的数据， 将其处理为 jsxdata 的格式并返回|
 |dataType|string|optional|'json'|发送 ajax 请求的类型|
 
-> 此外，SelectFormField 还支持 [uxcore-select2](https://www.npmjs.com/package/uxcore-select2) 除 onSelect/onDeselect/onChange 外的全部属性，FormField 所有的 change 回调，由 Form 代理。
+#### jsxdata 的格式
+jsxdata 目前支持两种格式
+
+```js
+// Object
+{
+    a: "A",
+    b: "B"
+}
+// Array
+[
+    {
+        value: 'a',
+        text: 'A'
+    }
+]
+```
+
+> 此外，SelectFormField 还支持 [uxcore-select2](https://www.npmjs.com/package/uxcore-select2) 除 onSelect/onDeselect 外的全部属性。
 
 ### SearchFormField
 
@@ -203,9 +224,9 @@
 
 ```javascript
 <CheckboxGroupFormField>
-    <Item value="1" text="a" disabled={true} />
-    <Item value="2" text="b" />
-    <Item value="3" text="c" />
+    <Item value="1" text="a" disabled={true}>
+    <Item value="2" text="b">
+    <Item value="3" text="c">
 </CheckboxGroupFormField>
 ```
 
@@ -216,6 +237,7 @@
 |jsxtype|string|optional|single|single/cascade 单独、级联|
 |jsxfrom|string|optional|-|开始日期|
 |jsxto|string|optional|-|结束日期|
+|panel|string|optional|"day"|何种面板,枚举值为"month","year"和"day"|
 
 除此之外，支持除 onSelect，[uxcore-calendar](https://www.npmjs.com/package/uxcore-calendar) 的所有 props。
 
@@ -232,9 +254,18 @@
 
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|
-|jsxdata|object|required|-|目前级联选择框，只支持直接传入 data 初始化，格式见 Usage 中的 casData，length 为必须传的 key，告诉 field 有几层级联。|
+|jsxdata|object|required|-|级联选择框，只支持直接传入 data 初始化，格式见 Usage 中的 casData，length 为必须传的 key，告诉 field 有几层级联。|
 |jsxplaceholder|string|optional|"请下拉选择"|占位符|
 |jsxstyle|object|optional|-|与 react 传入 style 的方式相同，修改选择框的样式|
+
+### PickableFormField
+
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|multiple|boolean|optional|true|是否支持多选|
+|value|string/number|required|-|pickable Item 对应的值|
+|type|string|optional|normal|样式风格，可选值为normal,simple,hook|
+|max|number|optional|99|最大显示的数字，超过 max，显示 max+|
 
 ### EditorFormField
 

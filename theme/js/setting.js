@@ -6,6 +6,10 @@ let $themeSelector = $("#J_ThemeSelector");
 let $themeLink = $("#J_ThemeStyle");
 let $themeSiteLink = $("#J_ThemeSiteStyle");
 
+if (location.pathname !== "/") {
+    $themeSelector.show();
+}
+
 const themeMap = {
     'orange': ['阿里橙', '#F37327'],
     'blue': ['晴空蓝', '#2599f2']

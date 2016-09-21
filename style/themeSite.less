@@ -7,9 +7,7 @@ body {
 		background-color: lighten(@brand-primary, 20%);
 	}
 	.site-feature {
-		// background-image: linear-gradient(lighten(@brand-primary, 20%), white 10%);
 		background: #eee;
-		// color: darken(@brand-primary, 20%);
 	}
 	.site-aside {
 		li {
@@ -27,6 +25,12 @@ body {
 					}
 				}
 			}
+		}
+	}
+	.code-box-desc {
+		&:hover {
+			background: @bg-hover-color;
+			transition: all 0.5s ease;
 		}
 	}
 }

@@ -23,7 +23,7 @@ mixin demos
 					a(href="#code-box-#{demo.meta.id}") #{demo.title}
 			.code-box-demo
 				div(id="#{demo.meta.id}")
-			.code-box-desc
+			.code-box-desc(title="点击查看详细代码")
 				!{demo.meta.description}
 				a.code-toggle
 					i.kuma-icon.kuma-icon-chevron-down
