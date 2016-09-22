@@ -12,7 +12,7 @@
     "url": "http://github.com/uxcore/uxcore.github.com/issues"
   },
   "scripts": {
-    "start": "gulp less && nico server --watch",
+    "start": "gulp less && nico server --watch && gulp watch",
     "clean": "rm -rf _site",
     "deploy": "npm run clean && webpack --config webpack.config.min.js && gulp less && nico build -C nico.production.js && gulp deploy"
   },

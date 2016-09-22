@@ -6,7 +6,8 @@ var pkg = require('./package');
 module.exports = {
     entry: {
         uxcore: './index.js',
-        builder: './theme/builder/index.js'
+        builder: './theme/builder/index.js',
+        setting: './theme/js/setting.js'
     },
 
     resolve: {

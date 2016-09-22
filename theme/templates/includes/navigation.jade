@@ -5,5 +5,7 @@ nav#J-head.site-nav
 		each item in config.site.navigation
 			li(data-id="#{item.id}")
 				a(href="#{item.link}")= item.text
+	div#J_ComponentsSearch.component-search
+	div#J_ComponentsList.component-list #{JSON.stringify(resource.pages)}
 	img#J_ThemeSelector.theme-selector(src="/static/iconfont-yifuhuanfu.png")
 	#J_ThemePickerBox.theme-picker-box

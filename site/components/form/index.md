@@ -1,7 +1,8 @@
 # Form
 
 - order: 7
-- description: stupid form
+- description: form
+- category: Components
 - screenshots: example/screenshot.png
 - chinese: 表单
 - subtype: Form Control

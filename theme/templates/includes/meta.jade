@@ -3,19 +3,19 @@ mixin meta
 		h1 #{post.title}
 		if post.pkg
 			section.meta
-				span.author
+				span.author.clickable
 					i.fa.fa-user
 					if post.tags.author
 						if post.tags.author.email
 							a(href="mailto:#{post.tags.author.email}") #{post.tags.author.name}
 						else
 							|#{post.tags.author.name}
-				span.github
+				span.github.clickable
 					i.fa.fa-github
 					a(href="https://github.com/uxcore/#{post.pkg.name}", target="_blank") #{post.pkg.name}
 				span.version 
 					i.fa.fa-code-fork
 					|#{post.pkg.version}
-				span.changelog
+				span.changelog.clickable
 					i.fa.fa-history
 					a(href="https://github.com/uxcore/#{post.pkg.name}/blob/master/HISTORY.md", target="_blank") Changelog

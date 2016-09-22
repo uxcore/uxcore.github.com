@@ -245,14 +245,30 @@ html, body {
 				margin-bottom: 2px;
 				padding: 0 8px;
 				height: 30px;
-				line-height: 28px;
+				line-height: 30px;
 				background-color: #f5f5f5;
-				border: 1px solid #dbdbdb;
+				// border: 1px solid #dbdbdb;
 				border-radius: 3px;
+			}
+			.clickable {
+				a {
+					text-decoration: none;
+
+				}
+				&:hover {
+					transition: all 0.5s ease;
+					background: darken(#f5f5f5, 10%);
+					color: white;
+					a {
+						color: white;
+						transition: all 0.5s ease;
+					}
+				}
 			}
 			i {
 				margin-right: 8px;
 				font-size: 16px;
+				vertical-align: middle;
 			}
 		}
 	}
@@ -312,7 +328,7 @@ html, body {
 	}
 	table {
 		width: 100%;
-		border: 1px solid @borderColor;
+		// border: 1px solid @borderColor;
 		tr {
 			&:nth-child(2n) {
 				background-color: #f8f8f8;
@@ -320,7 +336,7 @@ html, body {
 		}
 		th, td {
 			padding: 10px 8px;
-			border: 1px solid @borderColor;
+			// border: 1px solid @borderColor;
 		}
 		th {
 			background-color: #f0f0f0;
@@ -480,4 +496,39 @@ a[title="站长统计"] {
 
 .code-box-desc {
 	cursor: pointer;
+}
+
+.component-search {
+	position: absolute;
+	display: inline-block;
+	top: 7px;
+	right: 50px;
+	.kuma-select2-arrow {
+		display: none;
+	}
+	.kuma-select2-selection {
+		border: none;
+		border-radius: 3px;
+		.kuma-select2-selection__placeholder {
+			color: white;
+		}
+	}
+	.kuma-select2-search__field,
+	.kuma-select2-selection-selected-value {
+		color: white;
+	}
+
+}
+
+.component-search-dropdown {
+	.component-search-dropdown-item-left {
+		float: left;
+	}
+	.component-search-dropdown-item-right {
+		float: right;
+	}
+}
+
+.component-list {
+	display: none;
 }

@@ -52,8 +52,6 @@ gulp.task('less_builder', function () {
 gulp.task('less', ['less_index', 'less_theme', 'less_builder'], function(){});
 
 gulp.task('watch', [], function(){
-    watch('./style/**/*.less', batch(function(e, done){
-        gulp.start('less', done);
-    }));
+    gulp.watch('./style/**/*.less', ['less']);
 });
 

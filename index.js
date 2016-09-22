@@ -48,6 +48,6 @@ window.UXCORE = {
  */
 $(function(){
 	require('./theme/js/navigation');
-	require('./theme/js/setting');
+	// require('./theme/js/setting');
 	require('./theme/js/doc');
 });
