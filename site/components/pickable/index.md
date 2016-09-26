@@ -2,7 +2,7 @@
 
 - category: Components
 - subtype: Form Control
-- chinese:　筛选器
+- chinese: 筛选器
 
 ---
 

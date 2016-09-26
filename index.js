@@ -39,6 +39,8 @@ window.UXCORE = {
 	'uxcore-tinymce': require('uxcore-tinymce'),
 	'uxcore-album': require('uxcore-album'),
 	'uxcore-cascade-select': require('uxcore-cascade-select'),
+	'uxcore-animate': require('uxcore-animate'),
+	'uxcore-tag': require('uxcore-tag'),
 	'classnames': require('classnames'),
 	'object-assign': require('object-assign')
 };

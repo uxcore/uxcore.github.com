@@ -8,6 +8,13 @@ $(function() {
     const $themeSiteLink = $("#J_ThemeSiteStyle");
     const $componentsSearch = $("#J_ComponentsSearch")[0];
     const $componentsList = $("#J_ComponentsList");
+    const $demo = $("#J_Demos");
+    let demos = [];
+    if ($demo.length > 0) {
+        demos = JSON.parse($demo.text());
+    }
+
+    console.log(demos);
 
     const compAllList = JSON.parse($componentsList.text());
     const compListKeys = Object.keys(compAllList).filter((item) => /index\.md/.test(item));
@@ -124,7 +131,7 @@ $(function() {
                 ))}
             </Select>
         </div>
-    , $componentsSearch)
+    , $componentsSearch);
 
     $themeSelector.on("click", function(e) {
         e.stopPropagation();

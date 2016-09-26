@@ -12,7 +12,7 @@
     "url": "http://github.com/uxcore/uxcore.github.com/issues"
   },
   "scripts": {
-    "start": "gulp less && nico server --watch && gulp watch",
+    "start": "gulp less && nico server --watch",
     "clean": "rm -rf _site",
     "deploy": "npm run clean && webpack --config webpack.config.min.js && gulp less && nico build -C nico.production.js && gulp deploy"
   },
@@ -24,6 +24,7 @@
     "react-mixin": "~3.0.5",
     "uxcore-album": "~0.1.1",
     "uxcore-alert": "~0.2.1",
+    "uxcore-animate": "^0.1.2",
     "uxcore-badge": "~0.1.1",
     "uxcore-button": "~0.4.0",
     "uxcore-calendar": "~0.6.0",
@@ -56,6 +57,7 @@
     "uxcore-switch": "~0.1.1",
     "uxcore-table": "~1.9.0",
     "uxcore-tabs": "~0.4.0",
+    "uxcore-tag": "^1.0.2",
     "uxcore-tinymce": "~0.2.2",
     "uxcore-tooltip": "~0.3.2",
     "uxcore-totop": "~0.2.0",
