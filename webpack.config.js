@@ -47,7 +47,7 @@ module.exports = {
                         'transform-es3-property-literals',
                         'add-module-exports',
                     ],
-                    cacheDirectory: true,
+                    cacheDirectory: false,
                 }
             }, {
                 test: /\.json$/,
@@ -58,5 +58,9 @@ module.exports = {
             }
         ]
     },
-    devtool: 'eval'
+    plugins: [
+        new webpack.SourceMapDevToolPlugin({
+            columns: false
+        }),
+    ]
 };

@@ -14,8 +14,6 @@ $(function() {
         demos = JSON.parse($demo.text());
     }
 
-    console.log(demos);
-
     const compAllList = JSON.parse($componentsList.text());
     const compListKeys = Object.keys(compAllList).filter((item) => /index\.md/.test(item));
     const compList = [];

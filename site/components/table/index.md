@@ -104,12 +104,13 @@
 |dataKey         |string            |-         |required |表格的数据中用于查看模式展示的字段|
 |editKey         |string            |-         |optional |表格的数据中用于编辑模式的字段，如对于 select 来说，此项应为选项里的 key| 
 |align           |string            |-         |optional |文字居中方式，默认 'left'|
-|title           |string            |-         |required |列头|
+|title           |string/func       |-         |required |列头标题，可以是个函数，根据返回值进行渲染|
 |width           |number            |-         |required |列宽|
 |hidden          |boolean           |-         |optional |是否隐藏，默认为 false|
 |ordered         |boolean           |-         |optional |是否显示内置的排序，默认为 false|
 |type            |string            |-         |optional |包含 'money', 'card', 'cnmobile', 'checkboxSelector', 'action', 'radio', 'text', 'select' 和 'custom'|
 |actions         |array             |-         |optional |当 type 是 action 的时候会用到，用于定义具体有哪些操作，格式见下方[说明](#actions)|
+|collapseNum     |number            |1.9.4     |optional |当 type 是 action 的时候会用到，默认 3，指定超过多少个 action 时折叠|
 |customField     |React Element     |-         |optional |当 type 是 custom 的时候会用到，用于传入自定义的 Field，用于行内编辑|
 |render          |function          |-         |optional |在查看模式下，用户定制渲染的方式，返回一个 jsx 格式|
 |fixed           |boolean           |-         |optional |是否为固定列|
@@ -117,7 +118,7 @@
 |disable         |boolean           |-         |optional |在 type 为 checkboxSelector 时使用，是否禁用 checkbox，优先级高于 isDisable|
 |isDisable       |function(rowData) |1.3.1     |optional |在 tpye 为 checkboxSelector 时使用，为一个回调函数，用于根据 rowData 去判断是否禁用该行的 checkbox|
 |canEdit         |function(rowData) |1.3.3     |optional |在 type 为可编辑表格的类别时使用，为一个回调函数，用于根据 rowData 去判断该行该列是否可以编辑|
-|config          |object            |1.5.0     |optional |在 type 为 text/select/radio 时使用，传入对应的配置项，配置项支持对应的组件(uxcore-selelct2等)大部分配置|
+|config          |object            |1.5.0     |optional |在 type 为 text/select/radio 时使用，传入对应的配置项，配置项与对应的组件(uxcore-selelct2)相同|
 |renderChildren  |function          |1.5.0     | -       |在 type 为 select/radio 时使用，通过返回 jsx 传入选项。|         
  
 

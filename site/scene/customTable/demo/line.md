@@ -1,8 +1,8 @@
-# 自定义行的渲染方式
+# 线条风格的表格
 
-- order: 1
+- order: 2
 
-通过判断 rowData，可以给指定的行加上独特的 className
+通过 className="kuma-uxtable-border-line"，可以切换另一种表格样式风格。
 
 ---
 
@@ -16,9 +16,6 @@ class Demo extends React.Component {
         this.state = {
         }
     }
-
-    
-
     render() {
         let tableProps = {
             width: 700,
@@ -39,11 +36,7 @@ class Demo extends React.Component {
                 {dataKey: 'name', title: '姓名', width: 300},
                 {dataKey: 'pinyin', title: '拼音', width: 300}
             ],
-            addRowClassName: (rowData) => {
-                if (rowData.name == "小李") {
-                    return "focus"
-                }
-            }
+            className: 'kuma-uxtable-border-line',
         }
         return (
             <div className="page-demo1">
@@ -56,7 +49,7 @@ class Demo extends React.Component {
 
 ReactDOM.render(
   <Demo />
-, document.getElementById('scene-customtable-demo-row'));
+, document.getElementById('scene-customtable-demo-line'));
 
 /* JS END CSS START*/
 ````

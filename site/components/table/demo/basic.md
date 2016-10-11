@@ -74,7 +74,7 @@ class Demo extends React.Component {
         let fetchUrl = './demo/data.json';
         
         let renderProps={
-           
+            height: 400,
             actionColumn: {
                'edit': function() {},
                'del': function() {}

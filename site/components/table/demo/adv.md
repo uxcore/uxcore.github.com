@@ -17,13 +17,6 @@ class Demo extends React.Component {
         }
     }
 
-    onModifyRow(value,dataKey,record) {
-        //doValidate
-        //debugger;
-        //return false;
-        return true;
-    }
-
       render () {
         
         let me=this;
@@ -37,16 +30,6 @@ class Demo extends React.Component {
           }
         };
 
-        let doAction= function(rowData,e) {
-            let el=$(e.target);
-            if(el.hasClass('action')) {
-               if( el.data('type') =='edit') {
-                  console.info(rowData,el.data('type'));
-               }else if(el.data('type') =='del') {
-                 console.info(rowData,el.data('type'));
-               }
-            }
-        }
         // title, width, type, hidden,dataKey
         let columns = [
             { dataKey: 'id', title: 'ID', width: 50,hidden:true},
@@ -71,24 +54,11 @@ class Demo extends React.Component {
         ]
 
         let fetchUrl = './demo/data.json';
-        let renderSubProps={
-            showHeader:false,
-            showPager:false,
-            //showMask:false,
-            jsxcolumns:columns,
-            fetchUrl: fetchUrl,
-            queryKeys:["dataKey","firstName"],
-            onModifyRow: this.onModifyRow
-        };
 
         let renderProps={
-           
-            actionColumn: {
-               'edit': function() {},
-               'del': function() {}
-            },
+            height: 400,
             actionBar: {
-               'action button': function(type, table) { 
+               '操作条': function(type, table) { 
                    alert(type);
                 },
             },
@@ -96,7 +66,6 @@ class Demo extends React.Component {
             fetchParams: {},
             fetchUrl: fetchUrl,
             jsxcolumns:columns,
-            //onModifyRow: this.onModifyRow,
             rowSelection: rowSelection
         };
         return (<Table {...renderProps}  ref="grid"/>);
