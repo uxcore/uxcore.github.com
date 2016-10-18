@@ -18,7 +18,9 @@ Dropdown
 API
 ---
 
-| 参数    | 说明         | 类型        | 默认值      |
-|---------|--------------|-------------|-------------|
-| trigger | 触发下来行为 | array       | `['hover']` |
-| overlay | 菜单节点     | uxcore-menu | 无          |
+| 参数           | 说明         | 类型          | 默认值      |
+|----------------|--------------|---------------|-------------|
+| trigger        | 触发下来行为 | array         | `['hover']` |
+| overlay        | 菜单节点     | react element | 无          |
+| onVisibleChange|当 visible 改变时触发|Function| noop        |
+| visible        |是否可见      | boolean       | false       |

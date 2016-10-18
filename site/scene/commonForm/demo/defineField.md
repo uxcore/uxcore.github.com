@@ -8,16 +8,17 @@
 
 ````jsx
 
-let Form = require("uxcore-form");
-let Button = require("uxcore-button");
-let deepcopy = require('deepcopy');
+const Form = require("uxcore-form");
+const Button = require("uxcore-button");
+const deepcopy = require('deepcopy');
+const assign = require('object-assign');
 
-let {
-    Field,
+const {
+    FormField,
     OtherFormField: Other
 } = Form;
 
-class DoubleInputFormField extends Form.FormField {
+class DoubleInputFormField extends FormField {
     constructor(props) {
         super(props);
     }
@@ -60,6 +61,10 @@ class DoubleInputFormField extends Form.FormField {
 }
 
 DoubleInputFormField.displayName = "DoubleInputFormField" // 重要，必须 displayName 中带有 FormField 才可以被识别为 FormField。
+
+// 如果你的代码需要兼容 IE，以下两行不可缺少。
+DoubleInputFormField.defaultProps = assign({}, FormField.defaultProps);
+DoubleInputFormField.propTypes = assign({}, FormField.propTypes);
 
 class Demo extends React.Component {
     constructor(props) {
