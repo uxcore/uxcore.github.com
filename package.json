@@ -14,7 +14,8 @@
   "scripts": {
     "start": "gulp less && nico server --watch",
     "clean": "rm -rf _site",
-    "deploy": "npm run clean && webpack --config webpack.config.min.js && gulp less && nico build -C nico.production.js && gulp deploy"
+    "deploy": "npm run clean && webpack --config webpack.config.min.js && gulp less && nico build -C nico.production.js && gulp deploy",
+    "coding": "npm run clean && webpack --config webpack.config.min.js && gulp less && nico build -C nico.production.js && gulp coding"
   },
   "dependencies": {
     "classnames": "~2.2.0",

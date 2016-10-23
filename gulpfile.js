@@ -20,6 +20,14 @@ gulp.task('deploy', function() {
     }));
 });
 
+gulp.task('coding', function() {
+  return gulp.src('./_site/**/*')
+    .pipe(ghPages({
+        origin: 'coding',
+        branch: 'master'
+    }));
+});
+
 gulp.task('less_index', function(){
     return gulp.src(['./style/index.less'])
         .pipe(less({
