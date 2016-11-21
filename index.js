@@ -41,6 +41,7 @@ window.UXCORE = {
 	'uxcore-cascade-select': require('uxcore-cascade-select'),
 	'uxcore-animate': require('uxcore-animate'),
 	'uxcore-tag': require('uxcore-tag'),
+	'uxcore-empty-data': require('uxcore-empty-data'),
 	'classnames': require('classnames'),
 	'object-assign': require('object-assign')
 };
