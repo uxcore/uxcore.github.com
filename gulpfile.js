@@ -23,6 +23,7 @@ gulp.task('deploy', function() {
 gulp.task('coding', function() {
   return gulp.src('./_site/**/*')
     .pipe(ghPages({
+        // remoteUrl: 'https://git.coding.net/uxcore/uxcore.git',
         origin: 'coding',
         branch: 'master'
     }));
