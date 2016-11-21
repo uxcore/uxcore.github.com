@@ -25,7 +25,8 @@ gulp.task('coding', function() {
     .pipe(ghPages({
         remoteUrl: 'https://git.coding.net/uxcore/uxcore.git',
         origin: 'coding',
-        branch: 'master'
+        branch: 'master',
+        push: false,
     }));
 });
 
