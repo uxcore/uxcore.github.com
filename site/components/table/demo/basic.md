@@ -71,7 +71,7 @@ class Demo extends React.Component {
             }
         ]
 
-        let fetchUrl = './demo/data.json';
+        let fetchUrl = '/components/table/demo/data.json';
         
         let renderProps={
             height: 400,

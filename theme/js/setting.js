@@ -18,6 +18,8 @@ $(function() {
     const compListKeys = Object.keys(compAllList).filter((item) => /index\.md/.test(item));
     const compList = [];
 
+    console.log(compAllList);
+
     compListKeys.forEach((item) => {
         const seg = compAllList[item];
         if (seg.meta && seg.meta.category === "Components") {

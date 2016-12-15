@@ -7,6 +7,7 @@ window.UXCORE = {
 	'uxcore-tooltip': require('uxcore-tooltip'),
 	'uxcore-tabs': require('uxcore-tabs'),
 	'uxcore-form': require('uxcore-form'),
+	'uxcore-form-field': require('uxcore-form-field'),
 	'uxcore-grid': require('uxcore-grid'),
 	'uxcore-table': require('uxcore-table'),
 	'uxcore-dropdown': require('uxcore-dropdown'),
@@ -42,6 +43,7 @@ window.UXCORE = {
 	'uxcore-animate': require('uxcore-animate'),
 	'uxcore-tag': require('uxcore-tag'),
 	'uxcore-empty-data': require('uxcore-empty-data'),
+	'uxcore-timeline': require('uxcore-timeline'),
 	'classnames': require('classnames'),
 	'object-assign': require('object-assign')
 };

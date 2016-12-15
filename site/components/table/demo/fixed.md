@@ -6,6 +6,7 @@
 
 ````jsx
 
+
 let Table = require('uxcore-table');
 
 class Demo extends React.Component {
@@ -45,7 +46,7 @@ class Demo extends React.Component {
             height:300,
             showSearch: true,
             fetchParams: {},
-            fetchUrl: './demo/data.json',
+            fetchUrl: '/components/table/demo/data.json',
             jsxcolumns:columns,
             beforeFetch: (sendData, from) => { return sendData;},
             processData: (data) => {return data;}           

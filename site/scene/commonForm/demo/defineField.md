@@ -12,27 +12,24 @@ const Form = require("uxcore-form");
 const Button = require("uxcore-button");
 const deepcopy = require('deepcopy');
 const assign = require('object-assign');
+const FormField = require('uxcore-form-field');
 
 const {
-    FormField,
     OtherFormField: Other
 } = Form;
 
 class DoubleInputFormField extends FormField {
     constructor(props) {
         super(props);
+        // 这里不要直接覆盖 this.state = {};
+        // 如果希望增加 state，使用扩展。
+        // this.state = assign({}, this.state, {xxx: 1})
     }
 
     // 改写 addSpecificClass，增加该 FormField 专属的 class
 
     addSpecificClass() {
-        let me = this;
-        if (me.props.jsxprefixCls == "kuma-uxform-field") {
-            return me.props.jsxprefixCls + " kuma-doubleinput-uxform-field" ;
-        }
-        else {
-            return me.props.jsxprefixCls
-        }
+        return "kuma-doubleinput-uxform-field"
     }
 
 
@@ -63,6 +60,7 @@ class DoubleInputFormField extends FormField {
 DoubleInputFormField.displayName = "DoubleInputFormField" // 重要，必须 displayName 中带有 FormField 才可以被识别为 FormField。
 
 // 如果你的代码需要兼容 IE，以下两行不可缺少。
+// 即使不需要兼容 IE，也不可直接覆盖，如 DoubleInputFormField.defaultProps = {};
 DoubleInputFormField.defaultProps = assign({}, FormField.defaultProps);
 DoubleInputFormField.propTypes = assign({}, FormField.propTypes);
 

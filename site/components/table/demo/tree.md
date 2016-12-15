@@ -10,8 +10,6 @@
 
 let classnames = require('classnames');
 let Table = require('uxcore-table');
-let urlPrefix = './';
-
 
 class Demo extends React.Component {
 
@@ -65,7 +63,7 @@ class Demo extends React.Component {
       height: 400,
       width: 800,
       showSearch: true,
-      fetchUrl: urlPrefix + 'demo/data.json',
+      fetchUrl: '/components/table/demo/data.json',
       jsxcolumns: columns,
       renderModel: 'tree',
       rowSelection: {

@@ -33,15 +33,15 @@ The easiest way to start hacking on UXCore is using the following CodePen Demo:
 
 If you're just getting started, you can download the starter kit. The starter kit is initialized by [NOWA](http://nowa-webpack.github.io/web/index.html?en) which is our project-level development and production solution collections.
 
-<a style="height: 48px;line-height: 48px;font-size:24px;text-align:center;width: 300px;background: #2599f2;color: white;display:block;border-radius: 5px;margin: 20px auto;text-decoration:none;" href="https://github.com/uxcore/starter-kit/archive/master.zip" target="_blank">Download Starter Kit 0.2</a>
+<a style="height: 48px;line-height: 48px;font-size:24px;text-align:center;width: 300px;background: #2599f2;color: white;display:block;border-radius: 5px;margin: 20px auto;text-decoration:none;" href="https://github.com/uxcore/starter-kit/archive/master.zip" target="_blank">Download Starter Kit</a>
 
 ## Installation
 
 The fastest way to get started is to serve JavaScript and CSS from the CDN
 
 ```html
-<link rel="stylesheet" type="text/css" href="//g.alicdn.com/??platform/common/s/1.1/global/global.css,uxcore/uxcore-kuma/2.0.7/orange.min.css">
-<script src="//g.alicdn.com/uxcore/uxcore/0.1.5/uxcore.min.js">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/??platform/common/s/1.1/global/global.css,uxcore/uxcore-kuma/2.0.19/orange.min.css">
+<script src="//g.alicdn.com/uxcore/uxcore/0.1.9/uxcore.min.js">
 ```
 
 if you'd like to use [npm](npmjs.com)

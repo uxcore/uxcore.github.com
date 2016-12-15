@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var ghPages = require('gulp-gh-pages');
+var ghPages = require('./gulp-gh-pages');
 var less = require('gulp-less');
 var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
@@ -23,10 +23,9 @@ gulp.task('deploy', function() {
 gulp.task('coding', function() {
   return gulp.src('./_site/**/*')
     .pipe(ghPages({
-        remoteUrl: 'https://git.coding.net/uxcore/uxcore.git',
+        // remoteUrl: 'https://git.coding.net/uxcore/uxcore.git',
         origin: 'coding',
         branch: 'master',
-        push: false,
     }));
 });
 

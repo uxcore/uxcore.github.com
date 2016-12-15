@@ -6,6 +6,11 @@ nav#J-head.site-nav
 			li(data-id="#{item.id}")
 				a(href="#{item.link}")= item.text
 	div#J_ComponentsSearch.component-search
-	div#J_ComponentsList.component-list #{JSON.stringify(resource.pages)}
+	- var pages = {};
+	- for page, name in resource.pages
+		- const newPage = JSON.parse(JSON.stringify(page));
+		- delete newPage.meta.html;
+		- pages[name] = newPage;
+	div#J_ComponentsList.component-list #{JSON.stringify(pages)}
 	img#J_ThemeSelector.theme-selector(src="/static/iconfont-yifuhuanfu.png")
 	#J_ThemePickerBox.theme-picker-box

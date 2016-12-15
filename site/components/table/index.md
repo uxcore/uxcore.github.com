@@ -23,6 +23,7 @@
 * saveAllRow(): 保存所有行的数据(同时切换至查看模式)。
 * resetRow(rowData): 重置行到数据（若保存过，则为保存过后的数据）。
 
+
 ### 获取数据
 
 * fetchData(from): 使表格重新请求一次数据。
@@ -310,7 +311,7 @@ actions: [
 
 ```
 addRowClassName: function(rowData) {
-    return 'multiline';
+    return "multiline";
 }
 ```
 
