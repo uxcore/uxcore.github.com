@@ -4,6 +4,7 @@
 
 目前 Form 已经提供了12种通用表单域，满足各种场景的需求。
 Form 中所有表单域的默认值由 jsxvalues 统一管理。
+通用表单域不满足业务需求？[点此查看如何自定义表单域](/scene/commonForm/#code-box-scene-commonform-demo-definefield)
 
 ---
 

@@ -29,9 +29,25 @@
 * fetchData(from): 使表格重新请求一次数据。
     * @param from {string} {optional}: 这个参数会传入到 beforeFetch 的回调中。
 
+### 创建一个 CellField
+
+* createCellField(options)
+
+|Name                |Type                |Require   |Default     |Since Ver. |Note | 
+|---                 |---                 |---       |---         |---        |---|
+|options.component           |React Element       |yes       |input       |1.12.8     |被包裹的组件，需要提供 value 和 onChange，或相同功能的 API |
+|options.valuePropName       |string              |No        |value       |1.12.8     |与 value 对应的 prop 名字 |
+|options.changePropName      |string              |No        |onChange    |1.12.8     |与 onChange 对应的 prop 名字|
+|options.processValue        |func                |No        | -          |1.12.8     |针对 value（editKey 对应字段）的处理函数|
+|options.processText         |func                |No        | -          |1.12.8     |针对 text (dataKey 对应字段) 的处理函数|
+
 ### 其他
 
 * toggleSubComp(rowData): 使指定的行显示或隐藏二级组件(subComp)。
+* moveRowUp(rowData): 使指定的行向上移动一行
+* movewRowDown(rowData): 使指定的行向下移动一行
+
+
 
 
 
@@ -88,7 +104,7 @@
 |Name            |Type                |Require   |Since Ver. |Default|Note |
 |---             |---                 |---       |---        |---    |---|
 |renderModel     |string              |optional  |-          |''     |使用 tree 模式时，此项为 'tree'|
-|levels          |number              |optional  |-          |1      |tree 模式默认展开的级数|
+|levels          |number              |optional  |-          |0      |tree 模式默认展开的级数|
 
 ### 行内编辑表格专用
 
@@ -191,28 +207,28 @@ let rowSelection = {
 
 ```javascript
    {
-    "content":{
-        "data":[
-            {   
-                "id":'1'
-                "grade":"grade1",
-                "email":"email1",
-                "firstName":"firstName1",
-                "lastName":"lastName1",
-                "birthDate":"birthDate1",
-                "country":"country1",
-                "city":"city1"
-            }
-            ...
-    
-        ],
-        "currentPage":1,
-        "totalCount":30
-    },
-    "success": true,
-    "errorCode": "",
-    "errorMsg": ""
-    }
+	"content":{
+		"data":[
+			{	
+				"id":'1'
+				"grade":"grade1",
+				"email":"email1",
+				"firstName":"firstName1",
+				"lastName":"lastName1",
+				"birthDate":"birthDate1",
+				"country":"country1",
+				"city":"city1"
+			}
+			...
+	
+		],
+		"currentPage":1,
+		"totalCount":30
+	},
+	"success": true,
+	"errorCode": "",
+	"errorMsg": ""
+	}
 
 ```
 
@@ -311,7 +327,7 @@ actions: [
 
 ```
 addRowClassName: function(rowData) {
-    return "multiline";
+    return 'multiline';
 }
 ```
 

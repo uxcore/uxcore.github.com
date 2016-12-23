@@ -48,6 +48,7 @@ class DoubleInputFormField extends FormField {
     renderField() {
         let me = this;
         let arr = [];
+        // 这里注意取值使用 state.value，完成和 Form 的通信。
         let values = me.state.value || [];
         arr.push(<input className="kuma-input" value={values[0]} onChange={me.handleChange.bind(me, 0)} key="input1"/>);
         arr.push(<span className="split" key="split">-</span>);

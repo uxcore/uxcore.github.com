@@ -47,9 +47,6 @@ class Demo extends React.Component {
         let me = this;
         return (
             <div className="demo-basic">
-                <style>
-                    {".required {font-family:Simsun} .demo-basic-form {width: 532px} .form-select {background: #ccc; border-radius: 5px; padding-top: 15px; width: 530px; margin-bottom: 40px;}"}
-                </style>
                 <Form ref="form" className="demo-basic-form" jsxvalues={{
                     theme: "Form 展示",
                     location: "Uxcore 站点",
@@ -76,4 +73,12 @@ class Demo extends React.Component {
 };
 
 ReactDOM.render(<Demo />, document.getElementById('components-form-demo-mode'))
+````
+
+````css
+// css start 
+
+.required {font-family:Simsun} 
+.demo-basic-form {width: 532px} 
+.form-select {background: #ccc; border-radius: 5px; padding-top: 15px; width: 530px; margin-bottom: 40px;}
 ````

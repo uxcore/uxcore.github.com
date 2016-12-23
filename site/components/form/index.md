@@ -11,12 +11,6 @@
 
 ---
 
-## Usage
-
-> see Demos for details  
-> 每一个 field 需要按照 Form -> FormRow -> FormField 的方式进行嵌套，允许 Form -> FormField 的嵌套，会自动增加 FormRow 这一层，并默认占一整行。
-
-
 ## API
 
 ### Form
@@ -33,6 +27,18 @@
 
 * isDirty() 获取目前的数据是否没有通过检测，返回 true 或 false。
 
+#### Form.createFormField(options)
+
+自定义一个 FormField
+
+|Name                |Type                |Require   |Default     |Since Ver. |Note | 
+|---                 |---                 |---       |---         |---        |---|
+|options.component           |React Element       |yes       |input       |1.8.12    |被包裹的组件，需要提供 value 和 onChange，或相同功能的 API |
+|options.valuePropName       |string              |No        |value       |1.8.12    |与 value 对应的 prop 名字 |
+|options.changePropName      |string              |No        |onChange    |1.8.12    |与 onChange 对应的 prop 名字|
+|options.processValue        |func(value, ...other)                |No        | -          |1.8.12    |针对 value（editKey 对应字段）的处理函数|
+|options.renderView         |func(value)                |No        | `val => JSON.stringify(val)`         |1.8.12    |定制化渲染 view 状态|
+
 ## props
 
 ### Form
@@ -45,6 +51,7 @@
 |jsxvalues|object|optional|-|传入表单的初始值，格式见 Usage，每一个 key 与 formField 中的 jsxname 相对应，注意是初始值，不要把 onChange 中的变化同步到这里|
 |jsxonChange|function(values, name, pass)|optional|noop|当表单中值有变化时触发，传回 values，格式同 jsxvalues，同时传回发生变化的表单域的 name，以及该表单域是否通过校验|
 |instantValidate|boolean|optional|true|是否开启即时校验|
+|asyncValidate|boolean|optional|false|是否开启异步校验模式，目前仅支持全局配置|
 
 ### jsxvalues 的格式
 ```javascript
@@ -151,8 +158,21 @@
 
 > 配置 autosize 的同时，还可以通过样式指定 min-height 和 max-height
 
+* 插件：
+    * Count，通过 TextAreaFormField.TextAreaCount 取得，一个内置的计数器，用法如下：
+
+    ```javascript
+    <TextAreaFormField>
+        <TextAreaCount total={100}>
+    </TextAreaFormField>
+    ```
+
 
 ### RadioGroupFormField
+
+| 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
+|---|---|---|---|---|
+|jsxdisabled|boolean|optional|false|disable 状态|
 
 * Item：通过 RadioGroupFormField.Item 取得，有两个 props
     * value
@@ -239,6 +259,7 @@ jsxdata 目前支持两种格式
 |jsxfrom|string|optional|-|开始日期|
 |jsxto|string|optional|-|结束日期|
 |panel|string|optional|"day"|何种面板,枚举值为"month","year"和"day"|
+|autoMatchWidth|boolean|optional|false|从 1.8.11 版本支持，在级联状态下输入框自动匹配宽度|
 
 除此之外，支持除 onSelect，[uxcore-calendar](https://www.npmjs.com/package/uxcore-calendar) 的所有 props。
 
@@ -273,25 +294,15 @@ jsxdata 目前支持两种格式
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|
 |placeholder|string|optional|""|占位符|
-|jsxcontent|string|optional|""|由于 tinymce 的默认值传法的特殊性，EditorFormField 的默认值通过此 prop 传入|
+|jsxcontent|string|optional|""|已废弃，默认值直接通过 Form 的 jsxvalues 即可传递|
 |jsxconfig|object|optional|{}|用户自定义的配置项，tinyMCE 的配置项，官方文档中所有 init 部分的配置在这里完成，详细见 http://www.tinymce.com/wiki.php/Configuration|
+
+#### API
+
+setContent(content)：设置 EditorFormField 的值，很不幸，EditorFormField 无法做成完全受控的组件，因为 setContent 操作会导致搜狗等中文输入法使用障碍，因此 EditorFormField 的值重置通过这个 API 来完成，或者也可以使用 Form 的 setValues 方法。
 
 
 ### OtherFormField
 
 > OtherFormField 是一个特殊的 FormField，它用来和其他 FormField 一起完成布局（比如在一行排列等），如果需要一些装饰类的东西，可以以子元素的形式传入到这个 Field 里。
-> 他也可以用于布局中的占位。 
-
-### ButtonGroupFormField
-
-> ButtonGroupFormField 是一个特殊的 FormField，它用来生成一些特定的表单按钮，这是为了与 Grid 相结合而准备的。如果需要自定义一些按钮，请使用 OtherFormField 和 uxcore-button 相结合来使用。  
-你可以像这样使用它：  
-```javascript
-var Button = require('uxcore-button');
-<ButtonGroupFormField>
-    {// handleClick 会被传入一个参数 data，取得的值和 API getValues() 相同}
-    <Button action="submit" onClick={this.handleClick.bind(this)}/>
-    {// 目前只支持 submit 和 reset 两种 action}
-    <Button action="reset"/>
-</ButtonGroupFormField>
-```
+> 他也可以用于布局中的占位。
