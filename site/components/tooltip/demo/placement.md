@@ -14,7 +14,7 @@ const Button = require('uxcore-button');
 
 class Demo extends React.Component {
   render(){
-    let overlay = <div style={{height: 50, width: 100, lineHeight: '50px'}}>提示文字</div>
+    let overlay = <div>提示文字</div>
     return (
       <div className="demo">
         <div className="container">

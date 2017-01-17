@@ -26,20 +26,52 @@ class HoverDemo extends React.Component {
             </div>
           </div>;
         return (
-            <div>
-                <Popover title="这是标题，可以隐藏" overlay={overlay} placement="top">
-                    <Button>从上弹出</Button>
-                </Popover>
-                <Popover title="这是标题，可以隐藏" overlay={overlay} placement="bottom">
-                    <Button>从下弹出</Button>
-                </Popover>
-                <Popover title="这是标题，可以隐藏" overlay={overlay} placement="left">
-                    <Button>从左弹出</Button>
-                </Popover>
-                <Popover overlay={overlay} placement="right">
-                    <Button>从右弹出，没有标题</Button>
-                </Popover>
-            </div>
+            <div style={{ marginLeft: 100 }}>
+          <div style={{ marginLeft: 60 }}>
+            <Popover placement="topLeft" title={'上左'} overlay={overlay}>
+              <Button type="outline">上左</Button>
+            </Popover>
+            <Popover placement="top" title={'上边'} overlay={overlay}>
+              <Button type="outline" style={{marginLeft: 10}}>上边</Button>
+            </Popover>
+            <Popover placement="topRight" title={'上右'} overlay={overlay}>
+              <Button type="outline" style={{marginLeft: 10}}>上右</Button>
+            </Popover>
+          </div>
+          <div style={{ width: 60, float: 'left' }}>
+            <Popover placement="leftTop" title={'左上'} overlay={overlay}>
+              <Button type="outline">左上</Button>
+            </Popover>
+            <Popover placement="left" title={'左边'} overlay={overlay}>
+              <Button type="outline" style={{marginTop: 5}}>左边</Button>
+            </Popover>
+            <Popover placement="leftBottom" title={'左下'} overlay={overlay}>
+              <Button type="outline" style={{marginTop: 5}}>左下</Button>
+            </Popover>
+          </div>
+          <div style={{ width: 60, marginLeft: 260 }}>
+            <Popover placement="rightTop" title={'右上'} overlay={overlay}>
+              <Button type="outline" >右上</Button>
+            </Popover>
+            <Popover placement="right" title={'右边'} overlay={overlay}>
+              <Button type="outline" style={{marginTop: 5}}>右边</Button>
+            </Popover>
+            <Popover placement="rightBottom" title={'右下'} overlay={overlay}>
+              <Button type="outline" style={{marginTop: 5}}>右下</Button>
+            </Popover>
+          </div>
+          <div style={{ marginLeft: 60, clear: 'both' }}>
+            <Popover placement="bottomLeft" title={'下左'} overlay={overlay}>
+              <Button type="outline">下左</Button>
+            </Popover>
+            <Popover placement="bottom" title={'下边'} overlay={overlay}>
+              <Button type="outline" style={{marginLeft: 10}}>下边</Button>
+            </Popover>
+            <Popover placement="bottomRight" title={'下右'} overlay={overlay}>
+              <Button type="outline" style={{marginLeft: 10}}>下右</Button>
+            </Popover>
+          </div>
+        </div>
         );
     }
 };
