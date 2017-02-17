@@ -52,6 +52,9 @@ exports.reader = function(post){
         case 'start':
             post.template = post.meta.template = 'start';
             break;
+        case 'about':
+            post.template = post.meta.template = 'about';
+            break;
         case 'css':
         case 'components':
         case 'scene':

@@ -1,0 +1,11 @@
+extends layout
+include ./includes/aside
+include ./includes/meta
+include ./includes/markdown
+include ./includes/demos
+
+block content
+    +aside('about')
+    article.site-content.site-start
+        +demos()
+        +markdown(post)
