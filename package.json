@@ -1,5 +1,5 @@
 {
-  "name": "uxcore-site",
+  "name": "uxcore.js",
   "version": "0.0.1",
   "description": "React UI Component Set",
   "author": "vincent.bian",
@@ -38,7 +38,7 @@
     "uxcore-dialog": "~0.5.0",
     "uxcore-dropdown": "~0.4.0",
     "uxcore-empty-data": "^0.1.2",
-    "uxcore-form": "~1.9.0",
+    "uxcore-form": "~1.10.0",
     "uxcore-form-field": "^0.2.5",
     "uxcore-formatter": "~0.1.2",
     "uxcore-grid": "~1.2.0",
