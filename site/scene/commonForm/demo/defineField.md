@@ -1,6 +1,6 @@
 # 表单的扩展1 -- 自定义一个 FormField
 
-- order: 0
+- order: 1
 
 通过继承 Form.FormField，用户可以自己定义特制的 FormField，以满足各种业务上的需求。  
  定制的 FormField 同样可以使用 Form 带来通用配置，如布局、样式、校验、值的管理等等。
