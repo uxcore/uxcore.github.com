@@ -27,7 +27,7 @@ class HoverDemo extends React.Component {
           </div>;
         return (
             <div style={{ marginLeft: 100 }}>
-          <div style={{ marginLeft: 60 }}>
+          <div style={{ marginLeft: 78 }}>
             <Popover placement="topLeft" title={'上左'} overlay={overlay}>
               <Button type="outline">上左</Button>
             </Popover>
@@ -38,7 +38,7 @@ class HoverDemo extends React.Component {
               <Button type="outline" style={{marginLeft: 10}}>上右</Button>
             </Popover>
           </div>
-          <div style={{ width: 60, float: 'left' }}>
+          <div style={{ width: 78, float: 'left' }}>
             <Popover placement="leftTop" title={'左上'} overlay={overlay}>
               <Button type="outline">左上</Button>
             </Popover>
@@ -49,7 +49,7 @@ class HoverDemo extends React.Component {
               <Button type="outline" style={{marginTop: 5}}>左下</Button>
             </Popover>
           </div>
-          <div style={{ width: 60, marginLeft: 260 }}>
+          <div style={{ width: 78, marginLeft: 332 }}>
             <Popover placement="rightTop" title={'右上'} overlay={overlay}>
               <Button type="outline" >右上</Button>
             </Popover>
@@ -60,7 +60,7 @@ class HoverDemo extends React.Component {
               <Button type="outline" style={{marginTop: 5}}>右下</Button>
             </Popover>
           </div>
-          <div style={{ marginLeft: 60, clear: 'both' }}>
+          <div style={{ marginLeft: 78, clear: 'both' }}>
             <Popover placement="bottomLeft" title={'下左'} overlay={overlay}>
               <Button type="outline">下左</Button>
             </Popover>

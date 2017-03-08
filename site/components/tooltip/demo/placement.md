@@ -2,7 +2,7 @@
 
 - order: 1
 
-目前支持12个方向。
+目前支持 12 个方向。
 
 ---
 
@@ -23,7 +23,7 @@ class Demo extends React.Component {
               <Button size="small" type="outline">上左</Button>
             </Tooltip>
             <Tooltip overlay={overlay} placement="top" trigger={['click']}>
-              <Button style={{marginLeft: 10}} size="small" type="outline">上</Button>
+              <Button style={{marginLeft: 10}} size="small" type="outline">上边</Button>
             </Tooltip>
             <Tooltip overlay={overlay} placement="topRight" trigger={['click']}>
               <Button style={{marginLeft: 10}} size="small" type="outline">上右</Button>
@@ -34,7 +34,7 @@ class Demo extends React.Component {
               <Button size="small" type="outline">下左</Button>
             </Tooltip>
             <Tooltip overlay={overlay} placement="bottom" trigger={['click']}>
-              <Button style={{marginLeft: 10}} size="small" type="outline">下</Button>
+              <Button style={{marginLeft: 10}} size="small" type="outline">下边</Button>
             </Tooltip>
             <Tooltip overlay={overlay} placement="bottomRight" trigger={['click']}>
               <Button style={{marginLeft: 10}} size="small" type="outline">下右</Button>
@@ -45,7 +45,7 @@ class Demo extends React.Component {
               <Button size="small" type="outline">左上</Button>
             </Tooltip>
             <Tooltip overlay={overlay} placement="left" trigger={['click']}>
-              <Button style={{marginTop: 10}} size="small" type="outline">左</Button>
+              <Button style={{marginTop: 10}} size="small" type="outline">左边</Button>
             </Tooltip>
             <Tooltip overlay={overlay} placement="leftBottom" trigger={['click']}>
               <Button style={{marginTop: 10}} size="small" type="outline">左下</Button>
@@ -56,7 +56,7 @@ class Demo extends React.Component {
               <Button size="small" type="outline">右上</Button>
             </Tooltip>
             <Tooltip overlay={overlay} placement="right" trigger={['click']}>
-              <Button style={{marginTop: 10}} size="small" type="outline">右</Button>
+              <Button style={{marginTop: 10}} size="small" type="outline">右边</Button>
             </Tooltip>
             <Tooltip overlay={overlay} placement="rightBottom" trigger={['click']}>
               <Button style={{marginTop: 10}} size="small" type="outline">右下</Button>
@@ -79,37 +79,33 @@ ReactDOM.render(
   padding: 0;
 }
 .demo .container {
-  width: 200px;
   height: 170px;
+  width: 350px;
   position: relative;
 }
 .demo .container .top {
   position: absolute;
   top: 0;
-  left: 100px;
-  margin-left: -79px;
+  left: 80px;
 }
 .demo .container .bottom {
   position: absolute;
   bottom: 0;
-  left: 100px;
-  margin-left: -79px;
+  left: 80px;
 }
 .demo .container .left,
 .demo .container .right {
-  width: 50px;
+  width: 58px;
   position: absolute;
 }
 .demo .container .left {
   left: 0;
   text-align: left;
-  top: 85px;
-  margin-top: -49px;
+  top: 35px;
 }
 .demo .container .right {
   right: 0;
   text-align: right;
-  top: 85px;
-  margin-top: -49px;
+  top: 35px;
 }
 ````
