@@ -1,4 +1,4 @@
-# COA段信息展示(dialog)
+# COA段信息展示(Dialog)
 
 - order: 0
 
