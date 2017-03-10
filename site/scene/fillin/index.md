@@ -1,8 +1,8 @@
 # FillIn
 
-- order: 0
-- category: tableform
-- subtype: 表格表单
+- order: 1
+- category: common
+- subtype: 站点常用
 - chinese: 填写页
 
 ---
