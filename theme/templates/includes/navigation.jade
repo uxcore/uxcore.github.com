@@ -8,7 +8,7 @@ nav#J-head.site-nav
 	div#J_ComponentsSearch.component-search
 	- var pages = {};
 	- for page, name in resource.pages
-		- const newPage = JSON.parse(JSON.stringify(page));
+		- var newPage = JSON.parse(JSON.stringify(page));
 		- delete newPage.meta.html;
 		- pages[name] = newPage;
 	div#J_ComponentsList.component-list #{JSON.stringify(pages)}
