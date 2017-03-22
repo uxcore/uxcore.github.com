@@ -48,7 +48,8 @@ exports.site = {
         {name: 'xitongdingzhi', title: '定制化', des: '在视觉规范的基础上，基于不同产品定位，提供定制化皮肤'}, 
         {name: 'maintain', title: '可靠', des: '整合 React、Babel、Reflux 等开源技术，一整套开发调试方案'}
     ],
-    urlPrefix: ''
+    urlPrefix: '',
+    timeStamp: Date.now(),
 };
 exports.engine = 'jade';
 exports.package = package;

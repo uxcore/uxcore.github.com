@@ -8,8 +8,8 @@ html
 		meta(name="keywords", content="uxcore, react, component, react component")
 		link(href="/static/favicon.ico", rel="icon", type="image/x-icon")
 		link(rel="stylesheet", href="//alinw.alicdn.com/platform/common/s/1.1/global/global.css")
-		link(rel="stylesheet", href="#{config.site.urlPrefix}/static/style/index.css")
-		link#J_ThemeSiteStyle(rel="stylesheet", href="#{config.site.urlPrefix}/static/style/orange.css")
+		link(rel="stylesheet", href="#{config.site.urlPrefix}/static/style/index.css?_t=#{config.site.timeStamp}")
+		link#J_ThemeSiteStyle(rel="stylesheet", href="#{config.site.urlPrefix}/static/style/orange.css?_t=#{config.site.timeStamp}")
 		link(rel="stylesheet", href="#{config.site.urlPrefix}/static/github-gist.min.css")
 		script(src="#{config.site.urlPrefix}/static/modernizr.js")
 		script.
@@ -30,7 +30,7 @@ html
 		script(src="//alinw.alicdn.com/platform/c/??es5-shim/4.1.12/es5-shim.min.js,es5-shim/4.1.12/es5-sham.min.js,console-polyfill/0.2.1/index.min.js,respond.js/1.4.2/respond.min.js")
 		<![endif]-->
 		script(src="//alinw.alicdn.com/platform/c/??jquery/1.11.3/dist/jquery.min.js,react/0.14.3/react-with-addons.min.js,react/0.14.3/react-dom.min.js")
-		script(src="#{config.site.urlPrefix}/static/setting.js")
+		script(src="#{config.site.urlPrefix}/static/setting.js?_t=#{config.site.timeStamp}")
 		block script
 	body
 		include ./includes/navigation

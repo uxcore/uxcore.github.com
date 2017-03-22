@@ -46,8 +46,10 @@ window.UXCORE = {
 	'uxcore-timeline': require('uxcore-timeline'),
 	'uxcore-float-nav': require('uxcore-float-nav'),
 	'uxcore-cascade-multi-select': require('uxcore-cascade-multi-select'),
+	'uxcore-icon': require('uxcore-icon'),
 	'classnames': require('classnames'),
-	'object-assign': require('object-assign')
+	'object-assign': require('object-assign'),
+	'react-clipboard.js': require('react-clipboard.js'),
 };
 
 /*
