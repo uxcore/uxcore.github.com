@@ -50,7 +50,6 @@ class Demo3 extends React.Component {
     render() {
         return <div>
             <Uploader fileList={this.state.fileList} 
-                    autoPending={false} 
                     multiple={true} 
                     isOnlyImg={true} 
                     accept="images" 

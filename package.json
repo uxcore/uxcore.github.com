@@ -23,7 +23,7 @@
     "react": "~0.14.0",
     "react-dom": "~0.14.0",
     "react-mixin": "~3.0.5",
-    "uxcore": "^0.8.0",
+    "uxcore": "^0.9.0",
     "uxcore-album": "~0.3.0",
     "uxcore-alert": "~0.2.1",
     "uxcore-animate": "^0.2.0",
@@ -57,7 +57,7 @@
     "uxcore-popover": "~0.4.0",
     "uxcore-progress": "~1.1.0",
     "uxcore-radiogroup": "~1.2.0",
-    "uxcore-rate": "~0.2.0",
+    "uxcore-rate": "~0.3.0",
     "uxcore-select2": "~0.4.0",
     "uxcore-steps": "~1.1.2",
     "uxcore-switch": "~0.1.1",
@@ -71,8 +71,7 @@
     "uxcore-transfer": "~0.3.0",
     "uxcore-tree": "~0.2.0",
     "uxcore-tree-select": "~0.2.0",
-    "uxcore-uploadcore": "~2.0.2",
-    "uxcore-uploader": "~1.5.0",
+    "uxcore-uploader": "^1.0.0",
     "uxcore-validator": "~0.2.0"
   },
   "devDependencies": {

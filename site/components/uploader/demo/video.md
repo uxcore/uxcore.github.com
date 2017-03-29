@@ -23,7 +23,7 @@ class Demo1 extends React.Component {
         })
     }
     render() {
-        return <Uploader autoPending={false}
+        return <Uploader
                     accept="videos"
                     multiple={false} 
                     isOnlyImg={false}

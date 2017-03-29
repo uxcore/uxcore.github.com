@@ -24,7 +24,7 @@ class Demo1 extends React.Component {
         })
     }
     render() {
-        return <Uploader autoPending={false} 
+        return <Uploader
                     multiple={false} 
                     isOnlyImg={false}
                     fileList={this.state.fileList}

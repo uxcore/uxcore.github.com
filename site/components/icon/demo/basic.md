@@ -97,6 +97,23 @@ const icons = [
   'kulian-line',
   'xiaolian-full',
   'xianshi',
+  'chuangjiansiyoumoban',
+  'jinggao',
+  'biaodanlei-tongyongqingchu',
+  'suo',
+  'biaoqian-qingchu',
+  'biaoqianxuanze-duoxuan-gou',
+  'jinggao-full',
+  'yiwen-full',
+  'chenggong-full',
+  'tishi-full',
+  'wangwang',
+  'dianhua',
+  'dingding',
+  'youxiang-full',
+  'loading-icon-round',
+  'caozuo-shoucang-full',
+  'aite',
 ];
 
 class Demo extends React.Component {

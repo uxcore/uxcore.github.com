@@ -23,14 +23,15 @@ class Demo1 extends React.Component {
         })
     }
     render() {
-        return <Uploader autoPending={false} 
+        return <Uploader
                     multiple={false} 
                     isOnlyImg={false}
                     fileList={this.state.fileList}
                     onChange={this.handleChange.bind(this)} 
                     name='file' 
                     url='http://eternalsky.me:8122/file/upload' 
-                    locale="en" />
+                    locale="en" 
+                />
     }
 }
 
