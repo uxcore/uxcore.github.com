@@ -1,8 +1,8 @@
-# 不带搜索框
+# 不显示搜索框
 
 - order: 1
 
-在浮层内顶部有搜索框的单项选择器。
+当不需要搜索功能时，可以将 showSearch 置为 false
 
 ---
 
@@ -15,7 +15,7 @@ function handleChange(value) {
 }
 
 ReactDOM.render(
-  <Select defaultValue="lucy" showSearch={false} style={{width:200}} onChange={handleChange}>
+  <Select defaultValue="lucy" showSearch={false} style={{width:200}} onChange={handleChange} dropdownClassName="kuma-select2-selected-has-icon">
     <Option value="jack">jack</Option>
     <Option value="lucy">lucy</Option>
     <Option value="disabled" disabled>disabled</Option>

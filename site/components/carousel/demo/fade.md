@@ -1,6 +1,6 @@
-# 基本使用
+# 淡入淡出
 
-- order: 0
+- order: 1
 
 ---
 
@@ -35,7 +35,7 @@ class Demo extends React.Component {
     render() {
         return (
             <div style={{width: 1000}}>
-                <Carousel className="demo" autoplay pauseOnHover>
+                <Carousel className="demo" autoplay pauseOnHover fade>
                     <div><img src="http://www.wallcoo.com/human/City_Night_Scene_02/wallpapers/1680x1050/City_Night_Scene_photography_L10_30.jpg" style={{width: '100%'}} /></div>
                     <div><img src="http://img5.imgtn.bdimg.com/it/u=3349768475,1559424970&fm=21&gp=0.jpg" style={{width: '100%'}} /></div>
                     <div><img src="http://www.wallcoo.com/nature/beautiful_nature/wallpapers/1440x900/beautiful_nature_8433868.jpg" style={{width: '100%'}} /></div>
@@ -47,7 +47,7 @@ class Demo extends React.Component {
 
 ReactDOM.render(
     <Demo />
-, document.getElementById('components-carousel-demo-basic'));
+, document.getElementById('components-carousel-demo-fade'));
 
 ````
 

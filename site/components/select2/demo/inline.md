@@ -1,6 +1,6 @@
 # 不带边框选择
 
-- order: 7
+- order: 8
 
 不带边框选择。
 
@@ -15,12 +15,9 @@ ReactDOM.render(
         className="kuma-select2-inline"
         placeholder="请选择"
         showSearch={false}
-        dropdownMatchSelectWidth={false}
-        dropdownClassName="kuma-select2-inline-dropdown"
-        dropdownAlign={{'offset': [0, -1]}}
-        dropdownStyle={{width: 200}}>
+        dropdownClassName="kuma-select2-inline-dropdown">
         <Option value="jack">Jack</Option>
-        <Option value="lucy">LucyLucyLucyLucyLucyLucyLucyLucy</Option>
+        <Option value="lucy">Lucy</Option>
         <Option value="disabled" disabled>Disabled</Option>
         <Option value="yiminghe">yiminghe</Option>
     </Select>

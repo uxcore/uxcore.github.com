@@ -301,7 +301,7 @@ class Demo extends React.Component {
                                 <i className="kuma-icon kuma-icon-phone"></i>
                             </LeftAddon>
                             <RightAddon>
-                                <span>元</span>
+                                <span style={{ lineHeight: '24px' }}>元</span>
                             </RightAddon>
                             <Count total={20}/>
                         </InputFormField>

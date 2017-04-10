@@ -2,7 +2,7 @@
 
 - order: 4
 
-tags select，随意输入的内容（scroll the menu）
+这种模式下可以让输入的值成为一个选项。
 
 ---
 
@@ -22,6 +22,7 @@ function handleChange(value) {
 
 ReactDOM.render(
   <Select
+    dropdownClassName="kuma-select2-selected-has-icon"
    style={{width:400}}
   tags defaultValue={['name2', 'name3']} onChange={handleChange}>
     {children}

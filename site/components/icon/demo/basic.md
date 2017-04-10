@@ -114,6 +114,14 @@ const icons = [
   'loading-icon-round',
   'caozuo-shoucang-full',
   'aite',
+  'huxiangguanzhu',
+  'zengjia1',
+  'duigou',
+  'zidingyilie',
+  'suoxiao',
+  'fangda',
+  'fanyi',
+  'fanyi-full',
 ];
 
 class Demo extends React.Component {

@@ -2,7 +2,8 @@
 
 - order: 3
 
-在少数情况下，可能不希望多选框展开，这时可以使用样式覆盖。这并不是我们推荐的交互形式，因为选择区域的收缩，也可能会损失一些功能。
+在少数情况下，可能不希望多选框展开，这时可以使用样式覆盖。  
+我们不推荐这种交互形式，因为选择区域的收缩，可能会损失一些功能。
 
 ---
 
@@ -33,6 +34,7 @@ class Demo extends React.Component {
 
     render() {
         return <Select multiple
+                  dropdownClassName="kuma-select2-selected-has-icon"
                   className={classnames({
                     'single-line': this.state.value.length > 6 ? true : false
                   })}

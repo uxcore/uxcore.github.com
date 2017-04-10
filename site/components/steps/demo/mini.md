@@ -28,6 +28,6 @@ const steps = [{
 });
 
 ReactDOM.render(
-    <Steps size="small" current={1}>{steps}</Steps>
+    <Steps showIcon={false} current={1}>{steps}</Steps>
 , document.getElementById('components-steps-demo-mini'));
 ````

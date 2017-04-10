@@ -30,8 +30,8 @@ class Demo extends React.Component {
         let me = this;
         return (
             <Tag onAdd={this.onAdd}>
-                {this.state.list.map(item => (
-                    <Item>{item}</Item>
+                {this.state.list.map((item, index) => (
+                    <Item key={index}>{item}</Item>
                 ))}
             </Tag>
         );

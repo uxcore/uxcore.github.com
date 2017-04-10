@@ -18,6 +18,7 @@ function handleChange(value) {
 ReactDOM.render(
     <Select defaultValue="lucy"
         style={{width:200}}
+        dropdownClassName="kuma-select2-selected-has-icon"
         showSearch={false}
         onChange={handleChange}>
         <OptGroup label="Manager">

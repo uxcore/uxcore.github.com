@@ -23,6 +23,7 @@ function handleChange(value) {
 ReactDOM.render(
   <Select multiple
   style={{width:400}}
+  dropdownClassName="kuma-select2-selected-has-icon"
   defaultValue={['a10', 'c12']} onChange={handleChange}>
     {children}
   </Select>

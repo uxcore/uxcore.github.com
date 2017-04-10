@@ -43,11 +43,11 @@ let App = React.createClass({
       return <Option key={city}>{city}</Option>;
     });
     return <div>
-      <Select defaultValue={provinceData[0]} style={{width:150}} onChange={this.handleProvinceChange}>
+      <Select defaultValue={provinceData[0]} style={{width:150}} onChange={this.handleProvinceChange} dropdownClassName="kuma-select2-selected-has-icon">
         {provinceOptions}
       </Select>
       &nbsp;
-      <Select value={this.state.secondCity} style={{width:150}} onChange={this.onSecondCityChange}>
+      <Select value={this.state.secondCity} style={{width:150}} onChange={this.onSecondCityChange} dropdownClassName="kuma-select2-selected-has-icon">
         {cityOptions}
       </Select>
     </div>;

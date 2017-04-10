@@ -46,6 +46,8 @@ window.UXCORE = {
 	'uxcore-timeline': require('uxcore-timeline'),
 	'uxcore-float-nav': require('uxcore-float-nav'),
 	'uxcore-cascade-multi-select': require('uxcore-cascade-multi-select'),
+	'uxcore-checkbox-group': require('uxcore-checkbox-group'),
+	'uxcore-radiogroup': require('uxcore-radiogroup'),
 	'uxcore-icon': require('uxcore-icon'),
 	'classnames': require('classnames'),
 	'object-assign': require('object-assign'),

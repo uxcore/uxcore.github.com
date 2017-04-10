@@ -28,6 +28,6 @@ const steps = [{
 });
 
 ReactDOM.render(
-    <Steps direction="vertical" size="small" current={1}>{steps}</Steps>
+    <Steps direction="vertical" showIcon={false} current={1}>{steps}</Steps>
 , document.getElementById('components-steps-demo-verticalmini'));
 ````

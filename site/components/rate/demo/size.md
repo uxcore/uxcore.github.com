@@ -1,6 +1,6 @@
-# Tip 显示在下方
+# 大尺寸
 
-- order: 1
+- order: 2
 
 ---
 
@@ -36,7 +36,7 @@ class Demo extends React.Component {
   render() {
     return (
       <div className="rate-demo-wrp">
-        <Rate className="rate-demo" tipShow="always" total={this.state.total} value={this.state.value} scoreTips={this.scoreTips} onChange={this.onChange.bind(this)}/>
+        <Rate className="rate-demo" tipShow="always" total={this.state.total} value={this.state.value} scoreTips={this.scoreTips} onChange={this.onChange.bind(this)} size="large" />
       </div>
     );
   }
@@ -44,7 +44,7 @@ class Demo extends React.Component {
 
 ReactDOM.render(
     <Demo />
-, document.getElementById('components-rate-demo-bottom'));
+, document.getElementById('components-rate-demo-size'));
 ````
 
 ````css
