@@ -1,7 +1,7 @@
 $(function() {
     const Select = require('uxcore-select2');
     const Option = Select.Option;
-    const themeList = ['orange', 'blue'];
+    const themeList = ['orange', 'blue', 'green'];
     const $themePicker = $("#J_ThemePickerBox");
     const $themeSelector = $("#J_ThemeSelector");
     const $themeLink = $("#J_ThemeStyle");
@@ -30,7 +30,8 @@ $(function() {
     });
     const themeMap = {
         'orange': ['阿里橙', '#F37327'],
-        'blue': ['晴空蓝', '#2599f2']
+        'blue': ['晴空蓝', '#2599f2'],
+        'green': ['清爽绿', '#40b370'],
     };
 
     let onSelectTheme = function(value){

@@ -42,12 +42,6 @@ ReactDOM.render(
 ````
 
 ````css
-.kuma-popover-wrap + .kuma-popover-wrap {
-  margin-left: 20px;
-}
-.kuma-popover {
-  width: 280px;
-}
 .demoContent {
   height: 60px;
   line-height: 60px;

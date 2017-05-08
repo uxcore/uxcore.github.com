@@ -26,7 +26,7 @@ class HoverDemo extends React.Component {
             </div>
           </div>;
         return (
-            <div style={{ marginLeft: 100 }}>
+            <div style={{ marginLeft: 150 }}>
           <div style={{ marginLeft: 78 }}>
             <Popover placement="topLeft" title={'上左'} overlay={overlay}>
               <Button type="outline">上左</Button>
@@ -83,12 +83,6 @@ ReactDOM.render(
 ````
 
 ````css
-.kuma-popover-wrap + .kuma-popover-wrap {
-  margin-left: 20px;
-}
-.kuma-popover {
-  width: 280px;
-}
 .demoContent {
   height: 60px;
   line-height: 60px;

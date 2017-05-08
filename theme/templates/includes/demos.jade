@@ -19,7 +19,7 @@ mixin demos
 		div#J_NavBar
 	each demo in demos
 		.code-box(id="code-box-#{demo.meta.id}")
-			.code-box-meta.bg-primary-lighter-color
+			.code-box-meta
 				.code-box-title
 					i.fa.fa-tag
 					a(href="#code-box-#{demo.meta.id}") #{demo.title}
