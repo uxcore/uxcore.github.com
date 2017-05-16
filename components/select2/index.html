@@ -744,13 +744,13 @@ ReactDOM.render(
 <tr>
 <td>onSelect</td>
 <td>被选中时调用，参数为选中的option value值</td>
-<td>function</td>
+<td>function(value, option:Option)</td>
 <td>无</td>
 </tr>
 <tr>
 <td>onDeselect</td>
 <td>取消选中时调用，参数为选中的option value值，仅在multiple或tags模式下生效</td>
-<td>function</td>
+<td>function(value)</td>
 <td>无</td>
 </tr>
 <tr>
@@ -758,6 +758,12 @@ ReactDOM.render(
 <td>选中option，或input的value变化(combobox模式下)时，调用此函数</td>
 <td>function</td>
 <td>无</td>
+</tr>
+<tr>
+<td>onSearch</td>
+<td>搜索框值发生变化时调用</td>
+<td>function(key)</td>
+<td>noop</td>
 </tr>
 <tr>
 <td>allowClear</td>
@@ -825,12 +831,6 @@ ReactDOM.render(
 <td>string</td>
 <td>not found</td>
 </tr>
-<tr>
-<td>showSearch</td>
-<td>显示搜索框</td>
-<td>bool</td>
-<td>true</td>
-</tr>
 </tbody>
 </table>
 <h3 id="option-props">Option props</h3><table>
@@ -858,6 +858,12 @@ ReactDOM.render(
 <tr>
 <td>value</td>
 <td>默认根据此属性值进行筛选</td>
+<td>String</td>
+<td>-</td>
+</tr>
+<tr>
+<td>title</td>
+<td>如果你不满意自动生成的 title，你可以用这个 prop 来修改</td>
 <td>String</td>
 <td>-</td>
 </tr>
