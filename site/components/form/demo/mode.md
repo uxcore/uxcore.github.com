@@ -18,7 +18,7 @@ let {
     InputFormField: Input,
     DateFormField: Date,
     TextAreaFormField: TextArea,
-    ButtonGroupFormField,
+    OtherFormField,
     SelectFormField,
     Validators
 } = Form;
@@ -61,10 +61,10 @@ class Demo extends React.Component {
                     <TextArea jsxname="content" jsxlabel="内容" required={true} jsxrules={[
                         {validator: Validators.isNotEmpty, errMsg: "不能为空"}
                     ]}/>
-                    <ButtonGroupFormField>
-                        <Button onClick={me.handleSubmit.bind(me)}>确定</Button>
+                    <OtherFormField>
+                        <Button style={{ marginLeft: '88px' }}  onClick={me.handleSubmit.bind(me)}>确定</Button>
                         <Button type="secondary" onClick={me.handleChangeMode.bind(me)}>转换模式</Button>
-                    </ButtonGroupFormField>
+                    </OtherFormField>
                 </Form>
             </div>
         )

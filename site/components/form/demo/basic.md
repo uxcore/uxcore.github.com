@@ -18,7 +18,8 @@ let {
     InputFormField: Input,
     DateFormField: Date,
     TextAreaFormField: TextArea,
-    ButtonGroupFormField
+    ButtonGroupFormField,
+    OtherFormField: Other,
 } = Form;
 
 
@@ -45,9 +46,9 @@ class Demo extends React.Component {
                     <Input jsxname="location" jsxlabel="地点"  jsxplaceholder="请输入地点"/>
                     <Date jsxname="date" jsxlabel="时间" jsxtype="cascade"/>
                     <TextArea jsxname="content" jsxlabel="内容" />
-                    <ButtonGroupFormField>
-                        <Button size="large" onClick={me.handleSubmit.bind(me)}>确定</Button>
-                    </ButtonGroupFormField>
+                    <Other>
+                        <Button style={{ marginLeft: '88px' }} onClick={me.handleSubmit.bind(me)}>确定</Button>
+                    </Other>
                 </Form>
             </div>
         )

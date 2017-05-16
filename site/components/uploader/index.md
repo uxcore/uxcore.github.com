@@ -20,7 +20,7 @@
 | name               | type          | default | Since Ver. |  description |
 |----------          |---------------|---------|------------|------------|
 |className           |               |         |            | |
-|locale              | string        | zh-cn   | 1.1.10     | 国际化，目前支持 `zh-cn` 和 `en-us`|
+|locale              | string        | zh-cn   | 1.1.10     | 国际化，目前支持 `zh-cn`, `en-us` 和 `pl-pl`|
 |fileList            | array         | []      | 1.2.3      |用于展示的文件列表|
 |isOnlyImg           | boolean       | 是否以图片形式展示 |   |  |
 |core                | string/`Core` | null    |            | 唯一标识或者UploadCore对象, 防止重复创建, 当传入UploadCore对象时,下列参数和事件设置均无效 |
@@ -38,10 +38,10 @@
 |queueCapcity        | int           | 0       |            | 队列容量，0无限 |
 |autoPending         | bool          | true    |            | 是否选择后自动等待上传 |
 |multiple            | bool          | true    |            | 是否多选 | 
-|accept              | string/array  | null    |            | 允许文件类型 |
+|accept              | string/array  | null    |            | 允许文件类型, [chrome 下的已知问题](http://stackoverflow.com/questions/39187857/inputfile-accept-image-open-dialog-so-slow-with-chrome) |
 |sizeLimit           | size          | 0       |            | 文件大小限制, 0表示不限制 |
 |preventDuplicate    | bool          | false   |            | 是否防止文件重复 |
-
+|actionOnQueueLimit  | string        | error   | 1.5.10     | 当队列超长时采取的策略：error, 抛错；cover, 覆盖 |
 ### fileList 的最小格式 (格式稍显麻烦，是为了 onChange 的返回值可以传回给 fileList)
 
 ```javascript
@@ -113,7 +113,6 @@
 |onfileuploadprogress | `File`, `Progress` | 文件上传进度中 |
 |onfileuploadend | `File` | 文件上传结束 |
 |onfileuploadcompleting | `FileResponse` |  文件上传结束时 |
-|onfileuploadsuccess | `File`, `FileResponse` | 文件上传成功 |
 |onfileuploadcompleted | `File`, `Status`| 文件上传完成了 |
 |onfilestatuschange | `File`, `Status` | 文件状态发生变化 |
 |onfilecancel | `File` | 文件退出 |

@@ -49,7 +49,7 @@ class HoverDemo extends React.Component {
               <Button type="outline" style={{marginTop: 5}}>左下</Button>
             </Popover>
           </div>
-          <div style={{ width: 78, marginLeft: 332 }}>
+          <div style={{ width: 78, marginLeft: 310 }}>
             <Popover placement="rightTop" title={'右上'} overlay={overlay}>
               <Button type="outline" >右上</Button>
             </Popover>

@@ -28,6 +28,7 @@
 |---|---|---|---|---|
 |className|string|optional|''|额外的className|
 |tag|string|require|''|tag的值|
+|type|string|optional| | 枚举值 `show`, `success`, `warning`, `info`, `danger` |
 |count|number|optional|0|标签后面的数字|
 |canAddCount|boolean|optional|false|是否可以增加数字|
 |canDelete|boolean|optional|false|是否可以删除标签| 

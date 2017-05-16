@@ -1,8 +1,8 @@
-# Single
+# 精简的多选模式
 
-- order: 2
+- order: 3
 
-单选模式。
+带对勾的样式
 
 ---
 
@@ -43,7 +43,7 @@ class Demo extends React.Component {
       }];
       return <div>
         <div>
-          <Pickable onChange={this.handleChange.bind(this)} value={this.state.value} multiple={false}>
+          <Pickable onChange={this.handleChange.bind(this)} value={this.state.value} type="simpleHook">
             {items.map((item, index) => {
               return <Item key={index} value={item.value} number={item.num} disabled={item.disable}>{item.text}</Item>
             })}
@@ -55,5 +55,5 @@ class Demo extends React.Component {
 
 ReactDOM.render(
   <Demo />
-, document.getElementById('components-pickable-demo-single'));
+, document.getElementById('components-pickable-demo-hook-single'));
 ````

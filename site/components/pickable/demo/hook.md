@@ -1,6 +1,6 @@
-# Hook Type
+# 多选模式
 
-- order: 1
+- order: 2
 
 带对勾的样式
 

@@ -18,7 +18,7 @@ let {
     InputFormField: Input,
     DateFormField: Date,
     TextAreaFormField: TextArea,
-    ButtonGroupFormField,
+    OtherFormField,
     Validators
 } = Form;
 
@@ -53,9 +53,9 @@ class Demo extends React.Component {
                     <TextArea jsxname="content" jsxlabel="内容" required={true} jsxrules={[
                         {validator: Validators.isNotEmpty, errMsg: "不能为空"}
                     ]}/>
-                    <ButtonGroupFormField>
-                        <Button size="large" onClick={me.handleSubmit.bind(me)}>确定</Button>
-                    </ButtonGroupFormField>
+                    <OtherFormField>
+                        <Button style={{ marginLeft: '88px' }} onClick={me.handleSubmit.bind(me)}>确定</Button>
+                    </OtherFormField>
                 </Form>
             </div>
         )

@@ -434,14 +434,14 @@ class Demo extends React.Component {
                                      jsxlabel="富文本编辑器"
                                      placeholder="测试" />
 
-                    <ButtonGroupFormField>
-                        <Button size="medium" onClick={me.handleClick.bind(me)}>提交</Button>
-                        <Button size="medium" type="secondary" action="reset">取消</Button>
+                    <OtherFormField>
+                        <Button style={{ marginLeft: '88px' }} onClick={me.handleClick.bind(me)}>提交</Button>
+                        <Button type="secondary" action="reset">取消</Button>
                         <Button type="secondary" onClick={me.handleSetValues.bind(me)}>手动setValues</Button>
-                        <Button size="medium" type="secondary" onClick={me.handleValueChange.bind(me)}>修改 props</Button>
+                        <Button type="secondary" onClick={me.handleValueChange.bind(me)}>修改 props</Button>
                         <Button type="secondary" onClick={me.changeMode.bind(me)}>转变模式</Button>
                         <Button type="secondary" onClick={me.update.bind(me)}>强制刷新</Button>
-                    </ButtonGroupFormField>
+                    </OtherFormField>
                 </Form>
             </div>
         );

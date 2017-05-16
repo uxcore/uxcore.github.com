@@ -1,8 +1,7 @@
-# Simple Type
+# 精简的单选模式
 
 - order: 1
 
-精简模式，可以附带数字。
 
 ---
 
@@ -43,7 +42,7 @@ class Demo extends React.Component {
       }];
       return <div>
         <div>
-          <Pickable onChange={this.handleChange.bind(this)} value={this.state.value} type="simple">
+          <Pickable onChange={this.handleChange.bind(this)} value={this.state.value} type="simple" multiple={false}>
             {items.map((item, index) => {
               return <Item key={index} value={item.value} disabled={item.disable}>{item.text}</Item>
             })}

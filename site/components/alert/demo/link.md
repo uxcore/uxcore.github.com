@@ -1,4 +1,4 @@
-# 关闭文字替换图标
+# 带链接
 
 - order: 3
 
@@ -20,7 +20,7 @@ class Demo extends React.Component {
     render() {
         return (
             <div>
-                <Alert message={' 这是一个 message'} type="message" closable={true} closeText="不再显示" />
+                <Alert message={<span> 这是一个 message <a>[不再提示]</a></span>} type="message" closable={true} />
             </div>
         );
     }
@@ -28,5 +28,5 @@ class Demo extends React.Component {
 
 ReactDOM.render(
   <Demo />
-, document.getElementById('components-alert-demo-closetext'));
+, document.getElementById('components-alert-demo-link'));
 ````

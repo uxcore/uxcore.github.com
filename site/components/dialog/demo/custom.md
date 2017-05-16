@@ -9,7 +9,7 @@
 ````jsx
 import Dialog from 'uxcore-dialog';
 import Button from 'uxcore-button';
-let confirm = Dialog.confirm;
+const confirm = Dialog.confirm;
 
 function showConfirm(){
   confirm({

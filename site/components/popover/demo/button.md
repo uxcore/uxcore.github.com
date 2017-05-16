@@ -28,15 +28,10 @@ class HoverDemo extends React.Component {
 
     render() {
         let me = this;
-        let overlay = <div>
-            <div className="demoContent">
-                <i className="kuma-icon kuma-icon-information"></i>
-                <span>这是一个气泡弹窗</span>
-            </div>
-          </div>;
+        let overlay = <div style={{ marginBottom: '20px' }}><span>目标删除后将不可恢复，如有子目标将会删除！</span></div>;
         return (
             <div>
-                <Popover title="这是标题，可以隐藏" overlay={overlay} placement="top" trigger="click" showButton={true}>
+                <Popover title="您确定要删除该目标吗？" overlay={overlay} placement="top" trigger="click" showButton={true}>
                     <Button>点击弹出</Button>
                 </Popover>
             </div>

@@ -12,6 +12,7 @@ const Icon = require('uxcore-icon');
 console.log(Icon);
 
 const icons = [
+  'dingding',
   'xiala',
   'liucheng',
   'bingtu',
@@ -109,7 +110,6 @@ const icons = [
   'tishi-full',
   'wangwang',
   'dianhua',
-  'dingding',
   'youxiang-full',
   'loading-icon-round',
   'caozuo-shoucang-full',
@@ -122,6 +122,28 @@ const icons = [
   'fangda',
   'fanyi',
   'fanyi-full',
+  'option-yixuan-gou',
+  'shouqi',
+  'renwufull',
+  'zhankai',
+  'qiehuanyingwen',
+  'xiaoxitixingfull',
+  'qiehuanzhongwen',
+  'wailian',
+  'jinggaocopy',
+  'xinxitishicopy',
+  'chenggongtishicopy',
+  'cuowu-fullcopy',
+  'yiwencopy',
+  'fanhuidingbu',
+  'pingjia',
+  'guanyu',
+  'qiuzhu',
+  'shouce',
+  'xiazai1',
+  'shu1',
+  'huibiao',
+  'guanbi',
 ];
 
 class Demo extends React.Component {
