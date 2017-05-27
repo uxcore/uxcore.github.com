@@ -23,7 +23,6 @@ class Demo extends React.Component {
         return (
             <div>
                 <Alert className="alert1" message={' 这是一个 message'} type="message" />
-                <Alert message={' 这是一个 question'} type="question" />
                 <Alert message={' 这是一个 success'} type="success" />
                 <Alert message={' 这是一个 warning'} type="warning" />
                 <Alert message={' 这是一个 error'} type="error" />

@@ -49,7 +49,6 @@ class Demo extends React.Component {
                     value={this.state.value}
                     disabled={this.state.disabled}
                     placeholder="默认提示"
-                    titleBreakStr="、"
                     optionLabelProp="text"
                     showSelectAll={true}
                     showClear={true}
