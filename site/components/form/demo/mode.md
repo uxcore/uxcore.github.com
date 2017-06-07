@@ -57,7 +57,7 @@ class Demo extends React.Component {
                     <Input jsxname="location" jsxlabel="地点" required={true} jsxplaceholder="请输入地点" jsxrules={[
                         {validator: Validators.isNotEmpty, errMsg: "不能为空"}
                     ]}/>
-                    <Date jsxname="date" jsxlabel="时间" jsxtype="cascade"/>
+                    <Date jsxname="date" jsxlabel="时间" jsxtype="cascade" autoMatchWidth />
                     <TextArea jsxname="content" jsxlabel="内容" required={true} jsxrules={[
                         {validator: Validators.isNotEmpty, errMsg: "不能为空"}
                     ]}/>

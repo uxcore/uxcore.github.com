@@ -11,10 +11,11 @@ Form 中所有表单域的默认值由 jsxvalues 统一管理。
 
 
 ````jsx
-let classnames = require('classnames');
-let Button = require('uxcore-button');
-let Form = require('uxcore-form');
-let {
+const classnames = require('classnames');
+const Button = require('uxcore-button');
+const Form = require('uxcore-form');
+const PickableFormField = require('uxcore-pickable-form-field');
+const {
     Constants,
     FormRowTitle,
     FormRow,
@@ -28,18 +29,16 @@ let {
     DateFormField,
     CheckboxGroupFormField,
     CascadeSelectFormField,
-    OtherFormField,
+    OtherFormFieconstld,
     ButtonGroupFormField,
     EditorFormField,
     SwitchFormField,
-    PickableFormField,
+    OtherFormField,
 } = Form;
-
-
-let CheckboxItem = CheckboxGroupFormField.Item;
-let RadioItem = RadioGroupFormField.Item;
-let {Count, LeftAddon, RightAddon} = InputFormField;
-let Option = SelectFormField.Option;
+const CheckboxItem = CheckboxGroupFormField.Item;
+const RadioItem = RadioGroupFormField.Item;
+const { Count, LeftAddon, RightAddon } = InputFormField;
+const Option = SelectFormField.Option;
 
 class Demo extends React.Component {
 

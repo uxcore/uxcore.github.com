@@ -49,6 +49,8 @@ window.UXCORE = {
 	'uxcore-checkbox-group': require('uxcore-checkbox-group'),
 	'uxcore-radiogroup': require('uxcore-radiogroup'),
 	'uxcore-icon': require('uxcore-icon'),
+	'uxcore-pickable-form-field': require('uxcore-pickable-form-field'),
+	'uxcore-title': require('uxcore-title'),
 	'classnames': require('classnames'),
 	'object-assign': require('object-assign'),
 	'react-clipboard.js': require('react-clipboard.js'),

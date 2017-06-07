@@ -44,7 +44,7 @@ class Demo extends React.Component {
                 <Form ref="form" className="demo-basic-form">
                     <Input jsxname="theme" jsxlabel="主题"  jsxplaceholder="请输入主题"/>
                     <Input jsxname="location" jsxlabel="地点"  jsxplaceholder="请输入地点"/>
-                    <Date jsxname="date" jsxlabel="时间" jsxtype="cascade"/>
+                    <Date jsxname="date" jsxlabel="时间" jsxtype="cascade" autoMatchWidth />
                     <TextArea jsxname="content" jsxlabel="内容" />
                     <Other>
                         <Button style={{ marginLeft: '88px' }} onClick={me.handleSubmit.bind(me)}>确定</Button>
