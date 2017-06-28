@@ -1718,9 +1718,12 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <li>editRow(rowData): 使指定的行切换到编辑模式。</li>
 <li>editAllRow(): 使所有行切换到编辑模式。</li>
 <li>viewRow(rowData): 使指定的行切换到查看模式。</li>
+<li>viewAllRow(): 使所有行切换到查看模式。</li>
 <li>saveRow(rowData): 保存行的数据(同时切换至查看模式)。</li>
 <li>saveAllRow(): 保存所有行的数据(同时切换至查看模式)。</li>
 <li>resetRow(rowData): 重置行到数据（若保存过，则为保存过后的数据）。</li>
+<li>resetAllRow(): 重置所有行的数据（若保存过，则为保存过后的数据）。</li>
+<li>resetAndViewAllRow(): 重置所有行数据（若保存过，则为保存过后的数据）并切换至查看模式。</li>
 </ul>
 <h3 id="获取数据">获取数据</h3><ul>
 <li>fetchData(from): 使表格重新请求一次数据。<ul>
@@ -1788,7 +1791,7 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <h3 id="其他">其他</h3><ul>
 <li>toggleSubComp(rowData): 使指定的行显示或隐藏二级组件(subComp)。</li>
 <li>moveRowUp(rowData): 使指定的行向上移动一行</li>
-<li>movewRowDown(rowData): 使指定的行向下移动一行</li>
+<li>moveRowDown(rowData): 使指定的行向下移动一行</li>
 </ul>
 <h2 id="props">Props</h2><table>
 <thead>
@@ -1862,7 +1865,7 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <td>isMiniPager</td>
 <td>boolean</td>
 <td>optional</td>
-<td>true</td>
+<td>false</td>
 <td>1.6.9</td>
 <td>分页是否是mini的</td>
 </tr>
@@ -2256,6 +2259,13 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <td>当 type 是 action 的时候会用到，默认 3，指定超过多少个 action 时折叠</td>
 </tr>
 <tr>
+<td>actionType</td>
+<td>string</td>
+<td>1.9.4</td>
+<td>optional</td>
+<td>当 type 是 action 的时候会用到，默认 link，枚举值：link/button</td>
+</tr>
+<tr>
 <td>customField</td>
 <td>React Element</td>
 <td>-</td>
@@ -2274,7 +2284,14 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <td>boolean</td>
 <td>-</td>
 <td>optional</td>
-<td>是否为固定列</td>
+<td>是否固定在左侧，固定列不可以和折叠展开面板混合使用</td>
+</tr>
+<tr>
+<td>rightFixed</td>
+<td>boolean</td>
+<td>1.14.0</td>
+<td>optional</td>
+<td>是否固定在右侧，固定列不可以和折叠展开面板混合使用</td>
 </tr>
 <tr>
 <td>delimiter</td>
@@ -2360,6 +2377,9 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
       },
       onSelectAll: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">record, data</span>) </span>{
           <span class="hljs-built_in">console</span>.log(record, data);
+      },
+      isDisabled: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">rowData</span>) </span>{
+          <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
       }
 };</code></pre></div><h2 id="返回的数据格式">返回的数据格式</h2><ul>
 <li>数据格式的约定<a href="http://gitlab.alibaba-inc.com/alinw/yosemite/issues/18">见此</a> </li>
