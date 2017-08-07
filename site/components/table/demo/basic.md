@@ -10,25 +10,10 @@ let Table = require('uxcore-table');
 
 class Demo extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-           data:this.props.data
-        }
-    }
-
-    onModifyRow(value,dataKey,record) {
-        //doValidate
-        //debugger;
-        //return false;
-        return true;
-    }
-
       render () {
-        
-        let me=this;
+        const me = this;
         // 通过 rowSelection 对象表明需要行选择
-        let rowSelection = {
+        const rowSelection = {
           onSelect: function(record, selected, selectedRows) {
             console.log(record, selected, selectedRows);
           },
@@ -37,30 +22,18 @@ class Demo extends React.Component {
           }
         };
 
-        let doAction= function(rowData,e) {
-            let el=$(e.target);
-            if(el.hasClass('action')) {
-               if( el.data('type') =='edit') {
-                  console.info(rowData,el.data('type'));
-               }else if(el.data('type') =='del') {
-                 console.info(rowData,el.data('type'));
-               }
-            }
-        }
-        // title, width, type, hidden,dataKey
-        let columns = [
-            { dataKey: 'id', title: 'ID', width: 50,hidden:true},
-            { dataKey: 'country', title:'国家', width: 200,ordered:true},
-            { dataKey: 'city',title:'城市', width: 150,ordered:true },
-            { dataKey: 'firstName',title:"FristName" },  
-            { dataKey: 'lastName' ,title:"LastName"},
-            { dataKey: 'email',title:"Email",width: 200,ordered:true },
-            { dataKey: 'action1', title:'操作1', width:100, type:"action",actions:{
-                "编辑": function(rowData, actions) {
+        const columns = [
+            { dataKey: 'country', title:'国家', width: 200, ordered: true},
+            { dataKey: 'city',title:'城市', width: 150, ordered: true },
+            { dataKey: 'firstName',title: 'FristName' },  
+            { dataKey: 'lastName' ,title: 'LastName'},
+            { dataKey: 'email',title: 'Email', width: 200,ordered: true },
+            { dataKey: 'action1', title: '操作1', width:100, type: 'action', actions: {
+                '编辑': function(rowData, actions) {
                     console.log(actions.addEmptyRow);
                     me.refs.grid.toggleSubComp(rowData);
                 },
-                "删除": function(rowData) {
+                '删除': function(rowData) {
                     me.refs.grid.delRow(rowData);
                 }
               }
@@ -69,16 +42,17 @@ class Demo extends React.Component {
                return <div><a href="#">111</a></div>
               }
             }
-        ]
+        ];
 
-        let fetchUrl = '/components/table/demo/data.json';
+        const fetchUrl = '/components/table/demo/data.json';
         
-        let renderProps={
+        const renderProps={
             height: 400,
             actionColumn: {
                'edit': function() {},
                'del': function() {}
             },
+            className: 'kuma-uxtable-split-line',
             fetchParams: {},
             showColumnPicker:false,
             fetchUrl: fetchUrl,

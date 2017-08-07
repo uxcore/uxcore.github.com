@@ -126,6 +126,7 @@ class Demo extends React.Component {
       jsxdata: mockData,
       jsxcolumns: columns,
       showPager: false,
+      className: 'kuma-uxtable-split-line',
     };
 
     return (

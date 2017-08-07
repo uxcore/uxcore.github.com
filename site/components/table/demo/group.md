@@ -131,7 +131,7 @@ class Demo extends React.Component {
         height: 400,
       pagerSizeOptions: [5, 10, 15, 20],
       actionBar: {
-        'Action Button': function(type, table) {
+        'Action': function(type, table) {
           me.setState({
             text: 2
           });

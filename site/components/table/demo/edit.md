@@ -8,32 +8,32 @@
 
 ````jsx
 
-let classnames = require('classnames');
-let Validator = require('uxcore-validator');
-let Button = require('uxcore-button');
-let Select = require('uxcore-select2');
-let {Option} = Select; 
-let RadioGroup = require('uxcore-radiogroup');
-let RadioItem = RadioGroup.Item;
-let Table = require('uxcore-table');
-let {Constants} = Table
-let mockData = {
-    "data": [
+const classnames = require('classnames');
+const Validator = require('uxcore-validator');
+const Button = require('uxcore-button');
+const Select = require('uxcore-select2');
+const { Option } = Select; 
+const RadioGroup = require('uxcore-radiogroup');
+const RadioItem = RadioGroup.Item;
+const Table = require('uxcore-table');
+const { Constants } = Table;
+const mockData = {
+    data: [
         {
-            "email":"xw@abc.com",
-            "nameId": "xiaowang",
-            "name":"小王",
-            "cityId": "bj",
-            "city":"北京"
+            email:'xw@abc.com',
+            nameId: 'xiaowang',
+            name: '小王',
+            cityId: 'bj',
+            city: '北京'
         },
         {
-            "email":"xl@abc.com",
-            "nameId": "xiaoli",
-            "name":"小李",
-            "cityId": "hz",
-            "city":"杭州"
-        }
-    ]
+            email: 'xl@abc.com',
+            nameId: 'xiaoli',
+            name: '小李',
+            cityId: 'hz',
+            city: '杭州',
+        },
+    ],
 }
 
 class Demo extends React.Component {
@@ -41,7 +41,7 @@ class Demo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-           data:mockData,
+           data :mockData,
            showOtherColumn: false
         }
     }
@@ -56,20 +56,34 @@ class Demo extends React.Component {
     }
 
     render () {
-        let me = this;
-        let columns = [
+        const me = this;
+        const columns = [
             { dataKey: 'jsxid', title: 'jsxid', width: 80},
-            { dataKey: 'city', editKey: 'cityId',title:'城市', width: 200, type:'select', renderChildren: () => {
+            { dataKey: 'city', editKey: 'cityId',title:'城市', width: 200, type:'select', 
+            renderChildren: () => {
                 return [{id: 'bj', name: '北京'},{id: 'hz', name: '杭州'}].map((item) => {
                     return <Option key={item.id}>{item.name}</Option>
                 });
             }, config: {filterOption: false}},
-            { dataKey: 'name', editKey: 'nameId', title:"姓名", width: 200, type:"radio", renderChildren: () => {
+            { dataKey: 'name', editKey: 'nameId', title:"姓名", width: 200, type:"radio", 
+            renderChildren: () => {
                 return [{id: 'xiaoli', name: '小李'}, {id: 'xiaowang', name: '小王'}].map((item) => {
                     return <RadioItem key={item.id} text={item.name} value={item.id} />
                 });
             }},  
-            { dataKey: 'email', title: "Email", width: 200,type:"text", rules: {validator: Validator.isEmail, errMsg: ""}},
+            { 
+                dataKey: 'email', title: "Email", width: 200, type:"text",
+                required: true,
+                rules: (cellData) => {
+                    if (cellData.length === 0) {
+                        return '不能为空';
+                    }
+                    if (!Validator.isEmail(cellData)) {
+                        return '必须是一个合法的邮件地址';
+                    }
+                    return true;
+                }
+            },
             { dataKey: 'action1', title: '操作1', width:100, type:"action", actions: [
                     {
                         title: '编辑',
@@ -104,11 +118,12 @@ class Demo extends React.Component {
         ];
 
 
-        let renderProps={
+        const renderProps={
             width: 1000,
-            showPager:false,
+            showPager: false,
             fetchParams: {},
             jsxdata: me.state.data,
+            className: 'kuma-uxtable-split-line',
             actionBar: {
                 '新增行': () => {
                     me.refs.grid.addEmptyRow();
@@ -123,7 +138,7 @@ class Demo extends React.Component {
         return (
             <div>
                 <Table {...renderProps}  ref="grid"/>
-                <Button onClick={me.getTableValues.bind(me)}>获取 Table 的值</Button>
+                <Button onClick={me.getTableValues.bind(me)} style={{ marginTop: '12px' }}>获取 Table 的值</Button>
             </div>
         );
       }

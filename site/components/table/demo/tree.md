@@ -8,22 +8,15 @@
 
 ````jsx
 
-let classnames = require('classnames');
-let Table = require('uxcore-table');
+const classnames = require('classnames');
+const Table = require('uxcore-table');
 
 class Demo extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: this.props.data
-    }
-  }
-
   render() {
 
-    let me = this;
-    let columns = [
+    const me = this;
+    const columns = [
       {
         dataKey: 'id',
         title: 'ID',
@@ -59,7 +52,7 @@ class Demo extends React.Component {
       }
     ];
 
-    let renderProps = {
+    const renderProps = {
       height: 400,
       width: 800,
       showSearch: true,

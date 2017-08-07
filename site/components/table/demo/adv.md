@@ -6,22 +6,15 @@
 
 ````jsx
 
-let Table = require('uxcore-table');
+const Table = require('uxcore-table');
 
 class Demo extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-           data:this.props.data
-        }
-    }
-
       render () {
         
-        let me=this;
+        const me = this;
         // 通过 rowSelection 对象表明需要行选择
-        let rowSelection = {
+        const rowSelection = {
           onSelect: function(record, selected, selectedRows) {
             console.log(record, selected, selectedRows);
           },
@@ -30,19 +23,18 @@ class Demo extends React.Component {
           }
         };
 
-        // title, width, type, hidden,dataKey
-        let columns = [
-            { dataKey: 'id', title: 'ID', width: 50,hidden:true},
-            { dataKey: 'country', title:'国家', width: 200,ordered:true},
-            { dataKey: 'city',title:'城市', width: 150,ordered:true },
-            { dataKey: 'firstName',title:"FristName" },  
-            { dataKey: 'lastName' ,title:"LastName"},
-            { dataKey: 'email',title:"Email",width: 200,ordered:true },
-            { dataKey: 'action1', title:'操作1', width:100, type:"action",actions:{
-                "clickme": function(rowData, actions) {
-                    alert('thanks clickme,'+rowData.firstName)
+       const columns = [
+            { dataKey: 'country', title:'国家', width: 200, ordered: true},
+            { dataKey: 'city',title:'城市', width: 150, ordered: true },
+            { dataKey: 'firstName',title: 'FristName' },  
+            { dataKey: 'lastName' ,title: 'LastName'},
+            { dataKey: 'email',title: 'Email', width: 200,ordered: true },
+            { dataKey: 'action1', title: '操作1', width:100, type: 'action', actions: {
+                '编辑': function(rowData, actions) {
+                    console.log(actions.addEmptyRow);
+                    me.refs.grid.toggleSubComp(rowData);
                 },
-                "del": function(rowData) {
+                '删除': function(rowData) {
                     me.refs.grid.delRow(rowData);
                 }
               }
@@ -51,21 +43,22 @@ class Demo extends React.Component {
                return <div><a href="#">111</a></div>
               }
             }
-        ]
+        ];
 
-        let fetchUrl = '/components/table/demo/data.json';
+        const fetchUrl = '/components/table/demo/data.json';
 
-        let renderProps={
+        const renderProps={
             height: 400,
             actionBar: {
                '操作条': function(type, table) { 
                    alert(type);
                 },
             },
-            showSearch:true,
+            className: 'kuma-uxtable-split-line',
+            showSearch: true,
             fetchParams: {},
             fetchUrl: fetchUrl,
-            jsxcolumns:columns,
+            jsxcolumns: columns,
             rowSelection: rowSelection
         };
         return (<Table {...renderProps}  ref="grid"/>);
