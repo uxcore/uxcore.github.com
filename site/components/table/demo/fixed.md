@@ -42,7 +42,6 @@ class Demo extends React.Component {
         ];
 
         let renderProps={
-            width: 800, //在左列固定模式下，width是必须要給的
             height:300,
             showSearch: true,
             fetchParams: {},

@@ -46,18 +46,4 @@ ReactDOM.render(
 ````
 
 ````css
-.demoContent {
-  height: 60px;
-  line-height: 60px;
-  font-size: 14px;
-}
-.demoContent .kuma-icon {
-  font-size: 18px;
-  color: #ff7e29;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-.demoButton .kuma-button + .kuma-button {
-  margin-left: 10px;
-}
 ````

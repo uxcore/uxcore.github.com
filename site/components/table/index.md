@@ -19,9 +19,12 @@
 * editRow(rowData): 使指定的行切换到编辑模式。
 * editAllRow(): 使所有行切换到编辑模式。
 * viewRow(rowData): 使指定的行切换到查看模式。
+* viewAllRow(): 使所有行切换到查看模式。
 * saveRow(rowData): 保存行的数据(同时切换至查看模式)。
 * saveAllRow(): 保存所有行的数据(同时切换至查看模式)。
 * resetRow(rowData): 重置行到数据（若保存过，则为保存过后的数据）。
+* resetAllRow(): 重置所有行的数据（若保存过，则为保存过后的数据）。
+* resetAndViewAllRow(): 重置所有行数据（若保存过，则为保存过后的数据）并切换至查看模式。
 
 
 ### 获取数据
@@ -45,7 +48,7 @@
 
 * toggleSubComp(rowData): 使指定的行显示或隐藏二级组件(subComp)。
 * moveRowUp(rowData): 使指定的行向上移动一行
-* movewRowDown(rowData): 使指定的行向下移动一行
+* moveRowDown(rowData): 使指定的行向下移动一行
 
 
 
@@ -62,7 +65,7 @@
 |showPager           |boolean             |optional  |true        | -         |是否显示分页|
 |showPagerTotal      |boolean             |optional  |false       | 1.3.17    |是否显示分页的总数部分|
 |showPagerSizeChanger|boolean             |optional  |true        | 1.6.9     |是否可以改变分页的pageSize|
-|isMiniPager         |boolean             |optional  |true        | 1.6.9     |分页是否是mini的|
+|isMiniPager         |boolean             |optional  |false        | 1.6.9     |分页是否是mini的|
 |showHeader          |boolean             |optional  |true        | -         |是否显示表格头部|
 |showHeaderBorder    |boolean             |optional  |false       | 1.3.6     |是否显示头部列之间的分割线|
 |showMask            |boolean             |optional  |true        | -         |是否在 loading 的时候显示蒙层|
@@ -128,9 +131,11 @@
 |type            |string            |-         |optional |包含 'money', 'card', 'cnmobile', 'checkboxSelector', 'action', 'radio', 'text', 'select' 和 'custom'|
 |actions         |array             |-         |optional |当 type 是 action 的时候会用到，用于定义具体有哪些操作，格式见下方[说明](#actions)|
 |collapseNum     |number            |1.9.4     |optional |当 type 是 action 的时候会用到，默认 3，指定超过多少个 action 时折叠|
+|actionType      |string            |1.9.4     |optional |当 type 是 action 的时候会用到，默认 link，枚举值：link/button|
 |customField     |React Element     |-         |optional |当 type 是 custom 的时候会用到，用于传入自定义的 Field，用于行内编辑|
 |render          |function          |-         |optional |在查看模式下，用户定制渲染的方式，返回一个 jsx 格式|
-|fixed           |boolean           |-         |optional |是否为固定列|
+|fixed           |boolean           |-         |optional |是否固定在左侧，固定列不可以和折叠展开面板混合使用|
+|rightFixed      |boolean           |1.14.0    |optional |是否固定在右侧，固定列不可以和折叠展开面板混合使用|
 |delimiter       |string            |-         |optional |在 type 是 'money', 'card', 'cnmobile' 的时候会用到，用于传入格式化的分隔符|
 |disable         |boolean           |-         |optional |在 type 为 checkboxSelector 时使用，是否禁用 checkbox，优先级高于 isDisable|
 |isDisable       |function(rowData) |1.3.1     |optional |在 tpye 为 checkboxSelector 时使用，为一个回调函数，用于根据 rowData 去判断是否禁用该行的 checkbox|
@@ -195,6 +200,9 @@ let rowSelection = {
       },
       onSelectAll: function(record, data) {
           console.log(record, data);
+      },
+      isDisabled: function(rowData) {
+          return false;
       }
 };
 

@@ -434,12 +434,12 @@ class Demo extends React.Component {
                                      placeholder="测试" />
 
                     <OtherFormField>
-                        <Button style={{ marginLeft: '88px' }} onClick={me.handleClick.bind(me)}>提交</Button>
-                        <Button type="secondary" action="reset">取消</Button>
-                        <Button type="secondary" onClick={me.handleSetValues.bind(me)}>手动setValues</Button>
-                        <Button type="secondary" onClick={me.handleValueChange.bind(me)}>修改 props</Button>
-                        <Button type="secondary" onClick={me.changeMode.bind(me)}>转变模式</Button>
-                        <Button type="secondary" onClick={me.update.bind(me)}>强制刷新</Button>
+                        <Button style={{ marginLeft: '88px', marginRight: '8px' }} onClick={me.handleClick.bind(me)}>提交</Button>
+                        <Button style={{ marginRight: '8px' }} type="secondary" action="reset">取消</Button>
+                        <Button style={{ marginRight: '8px' }} type="secondary" onClick={me.handleSetValues.bind(me)}>手动setValues</Button>
+                        <Button style={{ marginRight: '8px' }} type="secondary" onClick={me.handleValueChange.bind(me)}>修改 props</Button>
+                        <Button style={{ marginRight: '8px' }} type="secondary" onClick={me.changeMode.bind(me)}>转变模式</Button>
+                        <Button style={{ marginRight: '8px' }} type="secondary" onClick={me.update.bind(me)}>强制刷新</Button>
                     </OtherFormField>
                 </Form>
             </div>

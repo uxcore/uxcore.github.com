@@ -62,8 +62,8 @@ class Demo extends React.Component {
                         {validator: Validators.isNotEmpty, errMsg: "不能为空"}
                     ]}/>
                     <OtherFormField>
-                        <Button style={{ marginLeft: '88px' }}  onClick={me.handleSubmit.bind(me)}>确定</Button>
-                        <Button type="secondary" onClick={me.handleChangeMode.bind(me)}>转换模式</Button>
+                        <Button style={{ marginLeft: '88px', marginRight: '8px' }}  onClick={me.handleSubmit.bind(me)}>确定</Button>
+                        <Button style={{ marginRight: '8px' }} type="secondary" onClick={me.handleChangeMode.bind(me)}>转换模式</Button>
                     </OtherFormField>
                 </Form>
             </div>

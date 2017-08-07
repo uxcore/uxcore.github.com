@@ -37,11 +37,11 @@ If you're just getting started, you can download the starter kit. The starter ki
 
 ## Installation
 
-The fastest way to get started is to serve JavaScript and CSS from the CDN
+The fastest way to get started is to serve JavaScript from the CDN
 
 ```html
-<link rel="stylesheet" type="text/css" href="//g.alicdn.com/??platform/common/s/1.1/global/global.css,uxcore/uxcore-kuma/2.1.1/orange.min.css">
-<script src="//g.alicdn.com/uxcore/uxcore/0.1.28/uxcore.min.js">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/??platform/common/s/1.1/global/global.css,uxcore/uxcore-kuma/2.2.1/orange.min.css">
+<script src="//g.alicdn.com/uxcore/uxcore/0.1.29/uxcore.min.js">
 ```
 
 if you'd like to use [npm](npmjs.com)
@@ -62,15 +62,38 @@ ReactDOM.render(<Button />, mountNode);
 ### For npm
 ```jsx
 import {Button} from 'uxcore';
+// or
+import Button from 'uxcore/lib/Button';
 ReactDOM.render(<Button />, mountNode);
 ```
 
 And import style mannally
 
-```jsx
-import 'uxcore/assets/iconfont.css';
-import 'uxcore/assets/orange.css';
+```less
+@import '~uxcore/assets/iconfont.css';
+@import '~uxcore/assets/orange.css';
 ```
+
+### import component as required
+
+Install the component
+
+```sh
+npm install uxcore-button kuma-base
+```
+
+```jsx
+import Button from 'uxcore-button';
+```
+
+And import style in your less file
+
+```less
+@import '~kuma-base/theme/blue.less'; // or orange.less global variables which components need
+@import '~kuma-base/core.less'; // base element style and reset
+@import '~uxcore-button/src/Button.less'; // component style
+```
+
 
 ## Browser Support
 
