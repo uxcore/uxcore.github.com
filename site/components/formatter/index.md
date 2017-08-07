@@ -9,7 +9,7 @@
 ## Usage
 ``` js
 var Formatter = require("uxcore-formatter");
-console.log(Formatter.date(new Date(), 'YYYY-MM-DD');
+console.log(Formatter.date(new Date(), 'YYYY-MM-DD'));
 ```
 
 ## API
