@@ -47,7 +47,7 @@
     "uxcore-icon": "^0.1.2",
     "uxcore-layout": "~1.0.1",
     "uxcore-load-more": "^0.1.2",
-    "uxcore-matrix": "^0.2.0",
+    "uxcore-matrix": "^0.3.0",
     "uxcore-mention": "~0.3.0",
     "uxcore-menu": "^1.6.0",
     "uxcore-message": "~0.4.0",
@@ -73,7 +73,7 @@
     "uxcore-transfer": "~0.3.0",
     "uxcore-tree": "~0.2.0",
     "uxcore-tree-select": "~0.2.0",
-    "uxcore-uploader": "^2.0.0",
+    "uxcore-uploader": "^3.0.0",
     "uxcore-validator": "~0.2.0"
   },
   "devDependencies": {

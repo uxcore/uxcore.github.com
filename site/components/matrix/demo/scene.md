@@ -48,14 +48,16 @@ class Demo extends React.Component {
 
   customRender(cellData) {
     const style = {
-      lineHeight: '40px',
+      lineHeight: '50px',
       textAlign: 'left',
-      padding: '0 10px',
+      padding: '0 20px',
       overflow: 'hidden',
     };
     if (cellData.type === 'title') {
       style.textAlign = 'right';
-      style.background = '#f5f5f5';
+      style.color = 'rgba(0, 0, 0, 0.8)';
+      style.fontWeight = 'bold';
+      style.background = 'rgba(31,56,88,0.04)';
     }
     let content = cellData.text;
     if (cellData.type === 'link') {
