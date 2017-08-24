@@ -96,7 +96,6 @@ class Demo extends React.Component {
             title: '操作一',
             callback: (rowData) => {
             },
-            isDisable: () => true,
           },
           {
             title: '操作二',
@@ -104,9 +103,11 @@ class Demo extends React.Component {
             },
           },
           {
-            title: '操作三',
+            title: '禁用',
             callback: (rowData) => {
             },
+            isDisable: () => true,
+            
           },
           {
             title: '操作四',
