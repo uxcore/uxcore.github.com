@@ -34,7 +34,7 @@
     "uxcore-cascade-multi-select": "^0.5.0",
     "uxcore-cascade-select": "^0.3.0",
     "uxcore-checkbox-group": "^1.1.4",
-    "uxcore-collapse": "^1.2.0",
+    "uxcore-collapse": "^2.0.0",
     "uxcore-crumb": "~0.2.0",
     "uxcore-dialog": "~0.7.0",
     "uxcore-dropdown": "~0.4.0",
