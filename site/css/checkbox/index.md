@@ -35,4 +35,6 @@
     <input class="kuma-checkbox" type="checkbox" disabled><s></s>
     禁用
 </label>
+<s class="kuma-checkbox-partial"></s>部分选中
+<s class="kuma-checkbox-partial-disabled"></s>部分选中被禁用
 ````

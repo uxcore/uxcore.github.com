@@ -1,8 +1,8 @@
-# 禁用
+# 尺寸
 
-- order: 2
+- order: 1
 
-最简单的用法。
+提供 large、middle、small 三种尺寸
 
 ---
 
@@ -83,15 +83,21 @@ class Demo extends React.Component {
   }
 
   render() {
-    return (
-      <div className="demo-wrap">
-        <CascadeSelect
+    const cascader = (
+      <CascadeSelect
           defaultValue={['alibaba', 'platform', 'fe']}
           options={options}
           clearable
-          disabled
           onChange={(value, selected) => console.log(value, selected)}
         />
+    );
+    return (
+      <div className="demo-wrap">
+        {['large', 'middle', 'small'].map((size) => {
+          return (
+            <div style={{ marginBottom: '4px' }}>{React.cloneElement(cascader, { size })}</div>
+          )
+        })}
       </div>
     );
   }
@@ -99,5 +105,5 @@ class Demo extends React.Component {
 
 ReactDOM.render(
   <Demo />
-, document.getElementById('components-cascade-select-demo-disable'));
+, document.getElementById('components-cascade-select-demo-size'));
 ````

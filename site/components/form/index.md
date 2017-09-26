@@ -17,7 +17,7 @@
 
 ### Form
 
-* getValues(force) 获取目前的 values 和 pass（是否通过检测）。  
+* getValues(force) 获取目前的 values 和 pass（是否通过检测）。
 参数：
     * force `Boolean`: 强制校验或不校验，undefined 时则忽略此配置。
 
@@ -31,9 +31,7 @@
 
 #### Form.createFormField(options)
 
-自定义一个 FormField
-
-|Name                |Type                |Require   |Default     |Since Ver. |Note | 
+|Name                |Type                |Require   |Default     |Since Ver. |Note |
 |---                 |---                 |---       |---         |---        |---|
 |options.component           |React Element       |yes       |input       |1.8.12    |被包裹的组件，需要提供 value 和 onChange，或相同功能的 API |
 |options.valuePropName       |string              |No        |value       |1.8.12    |与 value 对应的 prop 名字 |
@@ -54,6 +52,8 @@
 |jsxonChange|function(values, name, pass)|optional|noop|当表单中值有变化时触发，传回 values，格式同 jsxvalues，同时传回发生变化的表单域的 name，以及该表单域是否通过校验|
 |instantValidate|boolean|optional|true|是否开启即时校验|
 |asyncValidate|boolean|optional|false|是否开启异步校验模式，目前仅支持全局配置|
+|verticalAlign|boolean|optional|false|表单域是否竖排|
+|size|string|optional|large|尺寸，支持 large、middle、small|
 
 ### jsxvalues 的格式
 ```javascript
@@ -86,8 +86,9 @@
 |jsxtips|string|optional|""|说明文字|
 |jsxrules|object/array|optional|-|validators，具体用法和格式见 Usage，Form 已经提供了一些现成的 validator 供使用。也可以自己编写|
 |instantValidate|boolean|optional|true|是否开启即时校验|
+|verticalAlign|boolean|optional|false|表单域是否竖排|
 
-### Validators 
+### Validators
 
 > Form 提供了一些通用的 validator，通过 Form.Validators 来引入。用法还是见 Usage 和 `demo/formDemo.js` 包括：
 > 所有的 validator 返回 true，表示通过。
@@ -243,13 +244,20 @@ jsxdata 目前支持两种格式
     * value
     * text：显示的值
     * disabled：该 Item 的 disable 状态。
+    * addon: 额外指定的信息，例如tips
 * 使用方式：
 
 ```javascript
 <CheckboxGroupFormField>
-    <Item value="1" text="a" disabled={true}>
-    <Item value="2" text="b">
-    <Item value="3" text="c">
+    <Item value="1" text="a" disabled={true} />
+    <Item value="2" text="b" />
+    <Item value="3" text="c"
+        addon={
+            <Tooltip overlay={<div>提示</div>}>
+                <i className='kuma-icon kuma-icon-caution' style={{color: 'blue', fontSize: '12px', 'marginLeft': '3px'}} />
+            </Tooltip>
+        }
+    />
 </CheckboxGroupFormField>
 ```
 
@@ -281,6 +289,7 @@ jsxdata 目前支持两种格式
 |jsxdata|object|required|-|级联选择框，只支持直接传入 data 初始化，格式见 Usage 中的 casData，length 为必须传的 key，告诉 field 有几层级联。|
 |jsxplaceholder|string|optional|"请下拉选择"|占位符|
 |jsxstyle|object|optional|-|与 react 传入 style 的方式相同，修改选择框的样式|
+|getPopupContainer|function():React Element|optional| - | 弹出的菜单渲染在哪个容器中，需返回一个 DOM Node|
 
 ### PickableFormField
 

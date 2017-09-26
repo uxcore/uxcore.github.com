@@ -23,6 +23,7 @@
 
 ### Select props
 
+
 |参数|说明|类型|默认值|
 |---|----|---|------|
 |value | 指定当前选中的条目 | string/Array | 无 |
@@ -39,12 +40,12 @@
 |searchPlaceholder | 搜索框默认文字 | string | 无 |
 |optionFilterProp | 输入项过滤对应的 option 属性 | string | value |
 |combobox | 输入框自动提示模式 |  | false |
-|size | 选择框大小 | String | 无 |
 |optionLabelProp| 选择 Option 的哪个 prop 作为选择框中的显示。| string | 'children' |
 |getPopupContainer| 弹出的菜单渲染在哪个容器中 | function(trigger:Node):Node | function(){return document.body;}|
 |dropdownMatchSelectWidth|dropdown 部分是否和 select 部分同宽| boolean | true |
 |dropdownClassName | dropdown 部分的定制类名 | string | - |
 |notFoundContent   | 未找到选项时的提示文案   | string | not found |
+|size | 尺寸，枚举值 `large`, `small`, `middle` | string | large |
 
 
 ### Option props
