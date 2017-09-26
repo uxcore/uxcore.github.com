@@ -1,6 +1,6 @@
 # 自定义状态
 
-- order: 6
+- order: 8
 
 可以使用 status 定义每个步骤的状态。
 
@@ -31,6 +31,6 @@ const steps = [{
     );
 });
 ReactDOM.render(
-    <Steps>{steps}</Steps>
+    <Steps type="bottom-desc">{steps}</Steps>
 , document.getElementById('components-steps-demo-custom'));
 ````
