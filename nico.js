@@ -34,10 +34,14 @@ exports.site = {
             link: '/scene/list/',
             id: 'scene'
         },
+        // {
+        //     text: '主题',
+        //     link: '/theme/builder',
+        //     id: 'theme'
+        // },
         {
-            text: '主题',
-            link: '/theme/builder',
-            id: 'theme'
+            text: '关于我们',
+            link: '/about/contact/'
         }
     ],
     features: [

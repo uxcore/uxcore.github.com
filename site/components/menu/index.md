@@ -24,17 +24,20 @@
 | defaultOpenKeys | 初始展开的菜单项 key 数组 |  |  |
 | onSelect | 被选中时调用，参数 {item, key, selectedKeys} 对象 | function | 无 |
 | onDeselect | 取消选中时调用，参数 {item, key, selectedKeys} 对象，仅在 multiple 生效 | function | 无 |
+| onOpenChange | 菜单打开或关闭时调用，参数 openKeys 数组 | function | 无 |
+| onOpen | 同 onOpenChange，为了兼容旧版本保留的方法，将来会移除。参数 {openKeys} 对象 | function | 无 |
+| onClose | 同 onOpenChange，为了兼容旧版本保留的方法，将来会移除。参数 {openKeys} 对象 | function | 无 |
 | onClick | 点击 menuitem 调用此函数，参数为 {item, key} | function | 无 |
 | style | 根节点样式 | object |  |
 
-### Menu.Item
+### Item
 
 | 配置项 | 说明 | 类型 | 默认值 |
 |---|---|---|---|
 | disabled | 是否禁用 | Boolean | false |
 | key | item 的唯一标志 | String |  |
 
-### Menu.SubMenu
+### SubMenu
 
 | 配置项 | 说明 | 类型 | 默认值 |
 |---|---|---|---|
