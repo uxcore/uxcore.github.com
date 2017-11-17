@@ -5,32 +5,32 @@
 ---
 
 ````jsx
-import classnames from "classnames";
+import classnames from 'classnames';
 import Button from 'uxcore-button';
 import EmptyData from 'uxcore-empty-data';
 
 
 class Demo extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        return (
-            <div className="fillErrorDemo">
-              <div className="errorLeft">
-                 <EmptyData style={{ width: '220px', height: '220px' }} type="large" />
-              </div>
-              <div className="errorRight">
-                <div className="tips">
-                  <p className="tipsTitle">哎呀！导出失败了</p>
-                  <p className="tipsContent">请亲尝试重新导出一次哦～</p>
-                  <p className="errorTips">您访问的页面不存在，请确认链接无误后再试。紧急情况下可前往<a>https://go.alibaba-inc.com</a>寻求帮助</p>
-                </div>
-              </div>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="fillErrorDemo">
+        <div className="errorLeft">
+          <EmptyData style={{ width: '220px', height: '220px' }} type="large" />
+        </div>
+        <div className="errorRight">
+          <div className="tips">
+            <p className="tipsTitle">哎呀！导出失败了</p>
+            <p className="tipsContent">请亲尝试重新导出一次哦～</p>
+            <p className="errorTips">您访问的页面不存在，请确认链接无误后再试。紧急情况下可前往<a>https://go.alibaba-inc.com</a>寻求帮助</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 ReactDOM.render(

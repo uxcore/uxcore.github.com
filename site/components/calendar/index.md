@@ -14,7 +14,7 @@
 当用户需要输入一个日期/时间，可以点击标准输入框，弹出日期面板进行选择。支持键盘操作。
 
 ```js
-var Calendar = require('uxcore-calendar');
+const Calendar = require('uxcore-calendar');
 ReactDOM.render(
   (<Calendar />),
   document.getElementById('target')

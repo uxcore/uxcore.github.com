@@ -124,7 +124,7 @@ class Demo extends React.Component {
     super(props);
     this.state = {
       demo10: ['bingjiang', 'ningbo', 'anhui', 'shandong', 'jiangsu', 'longname-0'],
-    }
+    };
   }
 
   render() {

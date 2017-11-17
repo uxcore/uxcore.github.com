@@ -7,15 +7,15 @@
 ---
 
 ````jsx
-let Select = require('uxcore-select2');
-let Option = Select.Option;
+const Select = require('uxcore-select2');
+const Option = Select.Option;
 
 function handleChange(value) {
-  console.log('selected ' + value);
+  console.log(`selected ${value}`);
 }
 
 ReactDOM.render(
-  <Select defaultValue="lucy" showSearch={false} style={{width:200}} onChange={handleChange} dropdownClassName="kuma-select2-selected-has-icon">
+  <Select defaultValue="lucy" showSearch={false} style={{ width: 200 }} onChange={handleChange} dropdownClassName="kuma-select2-selected-has-icon">
     <Option value="jack">jack</Option>
     <Option value="lucy">lucy</Option>
     <Option value="disabled" disabled>disabled</Option>

@@ -9,27 +9,27 @@
 ---
 
 ````jsx
-var Calendar = require('uxcore-calendar');
+const Calendar = require('uxcore-calendar');
 function disabledDate(current, value) {
-    return current.getTime() > Date.now();
+  return current.getTime() > Date.now();
 }
 
 class Demo extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: new Date().getTime()
-        }
-    }
-    onSelect(value) {
-        console.log(value);
-        this.setState({
-            value: value
-        });
-    }
-    render() {
-        return <Calendar disabledDate={disabledDate} value={this.state.value} onSelect={this.onSelect.bind(this)} />
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: new Date().getTime(),
+    };
+  }
+  onSelect(value) {
+    console.log(value);
+    this.setState({
+      value,
+    });
+  }
+  render() {
+    return <Calendar disabledDate={disabledDate} value={this.state.value} onSelect={this.onSelect.bind(this)} />;
+  }
 
 }
 

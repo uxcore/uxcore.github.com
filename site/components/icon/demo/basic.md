@@ -184,7 +184,7 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, document.getElementById('components-icon-demo-basic'))
+ReactDOM.render(<Demo />, document.getElementById('components-icon-demo-basic'));
 ````
 
 ````css

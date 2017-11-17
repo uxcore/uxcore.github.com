@@ -9,22 +9,22 @@
 
 
 ````jsx
-let Select = require('uxcore-select2');
-let Option = Select.Option;
+const Select = require('uxcore-select2');
+const Option = Select.Option;
 
-let Test = React.createClass({
+const Test = React.createClass({
   getInitialState() {
     return {
-      options: []
+      options: [],
     };
   },
   handleChange(value) {
-    var options;
+    let options;
     if (!value || value.indexOf('@') >= 0) {
       options = [];
     } else {
-      options = ['gmail.com', '163.com', 'qq.com'].map(function(domain) {
-        var email = value + '@' + domain;
+      options = ['gmail.com', '163.com', 'qq.com'].map((domain) => {
+        const email = `${value}@${domain}`;
         return <Option key={email}>{email}</Option>;
       });
     }
@@ -36,18 +36,19 @@ let Test = React.createClass({
   render() {
     return (
       <div>
-        <Select 
+        <Select
           combobox
           dropdownClassName="kuma-select2-selected-has-icon"
-          style={{width:200}}
+          style={{ width: 200 }}
           onChange={this.handleChange}
-          searchPlaceholder="请输入账户名">
+          searchPlaceholder="请输入账户名"
+        >
           {this.state.options}
         </Select>
-        <span style={{marginLeft: '8px' }}>选中的值：{this.state.value}</span>
-    </div>
+        <span style={{ marginLeft: '8px' }}>选中的值：{this.state.value}</span>
+      </div>
     );
-  }
+  },
 });
 
 ReactDOM.render(<Test />, document.getElementById('components-select2-demo-combobox'));

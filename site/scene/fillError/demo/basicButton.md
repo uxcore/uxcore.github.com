@@ -5,41 +5,41 @@
 ---
 
 ````jsx
-import classnames from "classnames";
+import classnames from 'classnames';
 import Button from 'uxcore-button';
 import EmptyData from 'uxcore-empty-data';
 
 class Demo extends React.Component {
-    constructor(props) {
-        super(props);
-        this.onMainClick = this.onMainClick.bind(this);
-    }
-    onMainClick(e) {
-      console.log(111);
-      alert(e.target.innerText);
-    }
-    onSecondaryClick(e) {
-      alert(e.target.innerText);
-    }
-    render() {
-        return (
-            <div className="fillErrorDemo">
-              <div className="errorLeft">
-               <EmptyData style={{ width: '220px', height: '220px' }} type="large" />
-              </div>
-              <div className="errorRight">
-                <div className="tips">
-                  <p className="tipsTitle">页面出错了</p>
-                  <p className="errorTips">您访问的页面不存在，请确认链接无误后再试。紧急情况下可前往<a href="https://go.alibaba-inc.com">https://go.alibaba-inc.com</a>寻求帮助</p>
-                  <div className="errorButtons">
-                    <Button type="primary" onClick={this.onMainClick}>一级按钮</Button>
-                    <Button type="secondary" onClick={this.onSecondaryClick}>次要按钮</Button>
-                  </div>
-                </div>
-              </div>
+  constructor(props) {
+    super(props);
+    this.onMainClick = this.onMainClick.bind(this);
+  }
+  onMainClick(e) {
+    console.log(111);
+    alert(e.target.innerText);
+  }
+  onSecondaryClick(e) {
+    alert(e.target.innerText);
+  }
+  render() {
+    return (
+      <div className="fillErrorDemo">
+        <div className="errorLeft">
+          <EmptyData style={{ width: '220px', height: '220px' }} type="large" />
+        </div>
+        <div className="errorRight">
+          <div className="tips">
+            <p className="tipsTitle">页面出错了</p>
+            <p className="errorTips">您访问的页面不存在，请确认链接无误后再试。紧急情况下可前往<a href="https://go.alibaba-inc.com">https://go.alibaba-inc.com</a>寻求帮助</p>
+            <div className="errorButtons">
+              <Button type="primary" onClick={this.onMainClick}>一级按钮</Button>
+              <Button type="secondary" onClick={this.onSecondaryClick}>次要按钮</Button>
             </div>
-        );
-    }
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 ReactDOM.render(

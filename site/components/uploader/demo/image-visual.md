@@ -13,51 +13,52 @@ const Uploader = require('uxcore-uploader');
 const Button = require('uxcore-button');
 
 class Demo3 extends React.Component {
-    constructor(props) {
-        super(props);
-        this.fileList = [
-            {
-                response: {
-                    url: 'http://gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg', 
-                    name: '测试用',
-                }
-            },
-            {
-                response: {
-                    url: 'http://gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg', 
-                    name: '测试用'
-                }
-            }
-        ]
-        this.state = {
-            fileList: this.fileList
-        }
-    }
-    handleChange(fileList) {
-        let me = this;
-        console.log(fileList);
-        me.setState({
-            fileList: fileList
-        });
-    }
+  constructor(props) {
+    super(props);
+    this.fileList = [
+      {
+        response: {
+          url: 'http://gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg',
+          name: '测试用',
+        },
+      },
+      {
+        response: {
+          url: 'http://gtms02.alicdn.com/tps/i2/TB1Xe3SMpXXXXX6XpXXTCU0QpXX-300-300.jpg',
+          name: '测试用',
+        },
+      },
+    ];
+    this.state = {
+      fileList: this.fileList,
+    };
+  }
+  handleChange(fileList) {
+    const me = this;
+    console.log(fileList);
+    me.setState({
+      fileList,
+    });
+  }
 
-    render() {
-        return <div>
-            <Uploader fileList={this.state.fileList} 
-                    multiple
-                    isOnlyImg
-                    isVisual
-                    accept="jpg,jpeg,png,gif,webp,bmp" 
-                    name='file' 
-                    url='http://eternalsky.me:8122/file/upload'
-                    onCancel={ function(file) { console.log(file) }} 
-                    onChange={this.handleChange.bind(this)} />
-        </div>
-    }
+  render() {
+    return (<div>
+      <Uploader fileList={this.state.fileList}
+        multiple
+        isOnlyImg
+        isVisual
+        accept="jpg,jpeg,png,gif,webp,bmp"
+        name="file"
+        url="http://eternalsky.me:8122/file/upload"
+        onCancel={function (file) { console.log(file); }}
+        onChange={this.handleChange.bind(this)}
+      />
+    </div>);
+  }
 }
 
 
 ReactDOM.render((
-    <Demo3 />
+  <Demo3 />
 ), document.getElementById('components-uploader-demo-image-visual'));
 ````

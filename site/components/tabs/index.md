@@ -8,19 +8,19 @@
 ---
 
 ```js
-var Tabs = require('uxcore-tabs');
-var TabPane = Tabs.TabPane;
+const Tabs = require('uxcore-tabs');
+const TabPane = Tabs.TabPane;
 
-var callback = function(key){
+const callback = function (key) {
 
-}
+};
 
 ReactDOM.render(
   (
     <Tabs defaultActiveKey="2" onChange={callback}>
-      <TabPane tab='tab 1' key="1">first</TabPane>
-      <TabPane tab='tab 2' key="2">second</TabPane>
-      <TabPane tab='tab 3' key="3">third</TabPane>
+      <TabPane tab="tab 1" key="1">first</TabPane>
+      <TabPane tab="tab 2" key="2">second</TabPane>
+      <TabPane tab="tab 3" key="3">third</TabPane>
     </Tabs>
   ),
   document.getElementById('t2'));

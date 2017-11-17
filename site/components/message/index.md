@@ -22,9 +22,9 @@
 
 ```js
 Message.config({
-	className: 'xxx',  // 在 uxcore-kuma 样式基础上定制时使用
-	prefixCls: 'xxx'  // 类名前缀，不想使用 uxcore-kuma 样式时使用
-})
+  className: 'xxx',  // 在 uxcore-kuma 样式基础上定制时使用
+  prefixCls: 'xxx',  // 类名前缀，不想使用 uxcore-kuma 样式时使用
+});
 ```
 
 

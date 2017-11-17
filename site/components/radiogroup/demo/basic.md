@@ -8,34 +8,34 @@
 
 ````jsx
 
-let RadioGroup = require('uxcore-radiogroup');
-let {Item} = RadioGroup;
+const RadioGroup = require('uxcore-radiogroup');
+const { Item } = RadioGroup;
 
 class Demo extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          value: 'apple',
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 'apple',
+    };
+  }
 
-    handleChange(value) {
-        let me = this;
-        me.setState({
-            value: value
-        });
-    }
+  handleChange(value) {
+    const me = this;
+    me.setState({
+      value,
+    });
+  }
 
-    render() {
-        let me = this;
-        return (
-            <RadioGroup value={me.state.value} onChange={me.handleChange.bind(me)}>
-                <Item value="apple" text="苹果"/>  
-                <Item value="banana" text="香蕉"/>  
-                <Item value="orange" text="橘子" disabeld />  
-            </RadioGroup> 
-        );
-    }
+  render() {
+    const me = this;
+    return (
+      <RadioGroup value={me.state.value} onChange={me.handleChange.bind(me)}>
+        <Item value="apple" text="苹果" />
+        <Item value="banana" text="香蕉" />
+        <Item value="orange" text="橘子" disabeld />
+      </RadioGroup>
+    );
+  }
 }
 
 ReactDOM.render(

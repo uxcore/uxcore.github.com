@@ -7,40 +7,40 @@
 ---
 
 ````jsx
-let Button = require('uxcore-button');
-let Popover = require('uxcore-popover');
+const Button = require('uxcore-button');
+const Popover = require('uxcore-popover');
 
 class HoverDemo extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
-    handleOk() {
-        console.log('ok')
-    }
+  handleOk() {
+    console.log('ok');
+  }
 
-    handleCancel() {
-        console.log('cancel')
-    }
+  handleCancel() {
+    console.log('cancel');
+  }
 
-    render() {
-        let me = this;
-        let overlay = <div style={{ marginBottom: '20px' }}><span>目标删除后将不可恢复，如有子目标将会删除！</span></div>;
-        return (
-            <div>
-                <Popover title="您确定要删除该目标吗？" overlay={overlay} placement="top" trigger="click" showButton={true}>
-                    <Button>点击弹出</Button>
-                </Popover>
-            </div>
-        );
-    }
-};
+  render() {
+    const me = this;
+    const overlay = <div style={{ marginBottom: '20px' }}><span>目标删除后将不可恢复，如有子目标将会删除！</span></div>;
+    return (
+      <div>
+        <Popover title="您确定要删除该目标吗？" overlay={overlay} placement="top" trigger="click" showButton>
+          <Button>点击弹出</Button>
+        </Popover>
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(
-	<HoverDemo />,
+	                    <HoverDemo />,
   	document.getElementById('components-popover-demo-button')
 );
 ````

@@ -8,28 +8,28 @@
 
 ````jsx
 
-let Alert = require('uxcore-alert');
-let Button = require('uxcore-button');
+const Alert = require('uxcore-alert');
+const Button = require('uxcore-button');
 
 class Demo extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
-    render() {
-        return (
-            <div>
-                <Alert className="alert1" message={' 这是一个 message'} type="message" />
-                <Alert message={' 这是一个 success'} type="success" />
-                <Alert message={' 这是一个 warning'} type="warning" />
-                <Alert message={' 这是一个 error'} type="error" />
-            </div>
-        );
-    }
-};
+  render() {
+    return (
+      <div>
+        <Alert className="alert1" message={' 这是一个 message'} type="message" />
+        <Alert message={' 这是一个 success'} type="success" />
+        <Alert message={' 这是一个 warning'} type="warning" />
+        <Alert message={' 这是一个 error'} type="error" />
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(
   <Demo />

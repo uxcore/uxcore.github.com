@@ -249,16 +249,16 @@ jsxdata 目前支持两种格式
 
 ```javascript
 <CheckboxGroupFormField>
-    <Item value="1" text="a" disabled={true} />
-    <Item value="2" text="b" />
-    <Item value="3" text="c"
-        addon={
-            <Tooltip overlay={<div>提示</div>}>
-                <i className='kuma-icon kuma-icon-caution' style={{color: 'blue', fontSize: '12px', 'marginLeft': '3px'}} />
-            </Tooltip>
+  <Item value="1" text="a" disabled />
+  <Item value="2" text="b" />
+  <Item value="3" text="c"
+    addon={
+      <Tooltip overlay={<div>提示</div>}>
+        <i className="kuma-icon kuma-icon-caution" style={{ color: 'blue', fontSize: '12px', marginLeft: '3px' }} />
+      </Tooltip>
         }
-    />
-</CheckboxGroupFormField>
+  />
+</CheckboxGroupFormField>;
 ```
 
 ### DateFormField

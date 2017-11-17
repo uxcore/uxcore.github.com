@@ -39,7 +39,7 @@ const config = [{
   // 设置第二级不可选
   checkable: false,
 }, {
-}]
+}];
 ```
 > 不传 config 时，checkable: true
 
@@ -54,7 +54,7 @@ const config = [{
   checkable: true,
 }, {
   checkable: true,
-}]
+}];
 ```
 
 ### Props.options
@@ -103,7 +103,7 @@ const value = ['xihu', 'bingjiang'];
 <CascadeMultiSelect
   options={options}
   value={['xihu', 'nanjing']}
-/>
+/>;
 ```
 
 ### onSelect

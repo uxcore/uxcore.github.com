@@ -7,26 +7,26 @@
 ---
 
 ````jsx
-let Calendar = require('uxcore-calendar');
-let YearCalendar = Calendar.YearCalendar;
+const Calendar = require('uxcore-calendar');
+const YearCalendar = Calendar.YearCalendar;
 
 
 class Demo extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: '2016-01-02'
-        }
-    }
-    onSelect(value) {
-        console.log(value);
-        this.setState({
-            value: value
-        });
-    }
-    render() {
-        return <YearCalendar value={this.state.value} onSelect={this.onSelect.bind(this)} />
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '2016-01-02',
+    };
+  }
+  onSelect(value) {
+    console.log(value);
+    this.setState({
+      value,
+    });
+  }
+  render() {
+    return <YearCalendar value={this.state.value} onSelect={this.onSelect.bind(this)} />;
+  }
 
 }
 

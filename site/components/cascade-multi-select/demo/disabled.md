@@ -123,7 +123,7 @@ class Demo extends React.Component {
     super(props);
     this.state = {
       demo3: ['xihu'],
-    }
+    };
   }
 
   render() {

@@ -12,31 +12,31 @@ const { Item } = Tag;
 
 class Demo extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            list: ['用户体验', '精品打造', '精益求精'],
-        };
-        this.onAdd = this.onAdd.bind(this);
-    }
-    
-    onAdd(value) {
-        this.setState({
-            list: this.state.list.concat([value]),
-        });
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: ['用户体验', '精品打造', '精益求精'],
+    };
+    this.onAdd = this.onAdd.bind(this);
+  }
 
-    render() {
-        let me = this;
-        return (
-            <Tag onAdd={this.onAdd}>
-                {this.state.list.map((item, index) => (
-                    <Item key={index}>{item}</Item>
+  onAdd(value) {
+    this.setState({
+      list: this.state.list.concat([value]),
+    });
+  }
+
+  render() {
+    const me = this;
+    return (
+      <Tag onAdd={this.onAdd}>
+        {this.state.list.map((item, index) => (
+          <Item key={index}>{item}</Item>
                 ))}
-            </Tag>
-        );
-    }
-};
+      </Tag>
+    );
+  }
+}
 
 ReactDOM.render(
   <Demo />

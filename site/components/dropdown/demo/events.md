@@ -12,11 +12,11 @@ const Dropdown = require('uxcore-dropdown');
 const Menu = require('uxcore-menu');
 const Button = require('uxcore-button');
 
-var onClick = function ({key}){
-  alert('选中了菜单' + key);
+const onClick = function ({ key }) {
+  alert(`选中了菜单${key}`);
 };
 
-var menu = <Menu onClick={onClick}>
+const menu = (<Menu onClick={onClick}>
   <Menu.Item>
     <a target="_blank" href="http://www.alipay.com/">第一个菜单项</a>
   </Menu.Item>
@@ -26,12 +26,12 @@ var menu = <Menu onClick={onClick}>
   <Menu.Item>
     <a target="_blank" href="http://www.tmall.com/">第三个菜单项</a>
   </Menu.Item>
-</Menu>;
+</Menu>);
 
 ReactDOM.render(
-    <Dropdown overlay={menu}>
-        <Button>触发事件</Button>
-    </Dropdown>,
+  <Dropdown overlay={menu}>
+    <Button>触发事件</Button>
+  </Dropdown>,
     document.getElementById('components-dropdown-demo-events')
 );
 ````

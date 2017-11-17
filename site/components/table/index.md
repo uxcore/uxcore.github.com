@@ -148,45 +148,52 @@
 ### 列配置项的例子
 ```javascript
 
-let columns = [
-        { dataKey: 'check', type: 'checkbox', isDisable: function(rowData) {return /city/.test(rowData.city)}}, // 定制 checkbox 列，dataKey 对应的应是一个 bool 值，表明是否被选中。
-        { dataKey: 'country', title:'国家', width: 200,ordered:true},
-        { dataKey: 'action1', title:'操作1', width:100, type:"action",actions: [
-            {
-                title: '编辑',
-                callback: (rowData) => {
-                    me.refs.grid.editRow(rowData);
-                },
-                mode: Constants.MODE.VIEW
-            },
-            {
-                title: '保存',
-                callback: (rowData) => {
-                    me.refs.grid.saveRow(rowData);
-                },
-                mode: Constants.MODE.EDIT
-            }
-        ]},
-        { dataKey: 'action', title:'链接', width:100, render: function(cellData,rowData) {
-            return <div><a href="#">{rowData.email}</a></div>
-        }}
- ]
+const columns = [
+        { dataKey: 'check', type: 'checkbox', isDisable(rowData) { return /city/.test(rowData.city); } }, // 定制 checkbox 列，dataKey 对应的应是一个 bool 值，表明是否被选中。
+        { dataKey: 'country', title: '国家', width: 200, ordered: true },
+  { dataKey: 'action1',
+    title: '操作1',
+    width: 100,
+    type: 'action',
+    actions: [
+      {
+        title: '编辑',
+        callback: (rowData) => {
+          me.refs.grid.editRow(rowData);
+        },
+        mode: Constants.MODE.VIEW,
+      },
+      {
+        title: '保存',
+        callback: (rowData) => {
+          me.refs.grid.saveRow(rowData);
+        },
+        mode: Constants.MODE.EDIT,
+      },
+    ] },
+  { dataKey: 'action',
+    title: '链接',
+    width: 100,
+    render(cellData, rowData) {
+      return <div><a href="#">{rowData.email}</a></div>;
+    } },
+];
 
 ```
 
 ## 列配置项的例子2（带列群组, since ver. 1.3.0）
 ```javascript
 
-let columns = [
-        { dataKey: 'check', type: 'checkbox', disable: false}, // custom checkbox column, dataKey can be anyone, true means checked.
-        {
-            group: "国家",
-            columns: [
-                { dataKey: 'country', title:'国家', width: 200,ordered:true},
-                { dataKey: 'country2', title:'国家2', width: 200,ordered:true},
-            ]
-        }
- ]
+const columns = [
+        { dataKey: 'check', type: 'checkbox', disable: false }, // custom checkbox column, dataKey can be anyone, true means checked.
+  {
+    group: '国家',
+    columns: [
+                { dataKey: 'country', title: '国家', width: 200, ordered: true },
+                { dataKey: 'country2', title: '国家2', width: 200, ordered: true },
+    ],
+  },
+];
 
 ```
 
@@ -194,16 +201,16 @@ let columns = [
 
 ```javascript
 
-let rowSelection = {
-      onSelect: function(record, selected, selectedRows) {
-          console.log(record, selected, selectedRows);
-      },
-      onSelectAll: function(record, data) {
-          console.log(record, data);
-      },
-      isDisabled: function(rowData) {
-          return false;
-      }
+const rowSelection = {
+  onSelect(record, selected, selectedRows) {
+    console.log(record, selected, selectedRows);
+  },
+  onSelectAll(record, data) {
+    console.log(record, data);
+  },
+  isDisabled(rowData) {
+    return false;
+  },
 };
 
 ```
@@ -308,25 +315,24 @@ actionBar: [
 ### actions 配置的例子
 
 ```javascript
-actions: [
-    {
-        title: '编辑', // 操作名称
-        callback: (rowData) => { // 操作回调
-            me.refs.grid.editRow(rowData);
-        },
-        mode: Constants.MODE.VIEW // 非必要参数，只在何种模式下显示
+[
+  {
+    title: '编辑', // 操作名称
+    callback: (rowData) => { // 操作回调
+      me.refs.grid.editRow(rowData);
     },
-    {
-        title: '保存',
-        callback: (rowData) => {
-            me.refs.grid.saveRow(rowData);
-        },
-        mode: Constants.MODE.EDIT,
-        render: (title, rowData) => { // 定制渲染
-            return title + '1'
-        }
-    }
-]
+    mode: Constants.MODE.VIEW, // 非必要参数，只在何种模式下显示
+  },
+  {
+    title: '保存',
+    callback: (rowData) => {
+      me.refs.grid.saveRow(rowData);
+    },
+    mode: Constants.MODE.EDIT,
+    render: (title, rowData) =>  // 定制渲染
+             `${title}1`,
+  },
+];
 ```
 
 ### 对于多行的支持

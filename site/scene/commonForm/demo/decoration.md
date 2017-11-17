@@ -9,69 +9,69 @@
 
 ````jsx
 
-let Form = require("uxcore-form");
-let Button = require("uxcore-button");
-let Table = require("uxcore-table");
+const Form = require('uxcore-form');
+const Button = require('uxcore-button');
+const Table = require('uxcore-table');
 
-let {
-    InputFormField: Input, 
+const {
+    InputFormField: Input,
     FormRow,
-    Validators, 
-    OtherFormField: Other
+    Validators,
+    OtherFormField: Other,
 } = Form;
 
 class Demo extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            values: {}
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      values: {},
+    };
+  }
 
-    handleClick() {
-        let me = this;
-        alert(JSON.stringify(me.refs.form.getValues(true)));
-    }
+  handleClick() {
+    const me = this;
+    alert(JSON.stringify(me.refs.form.getValues(true)));
+  }
 
-    render() {
-        let me = this;
-        let tableProps = {
-            width: 700,
-            jsxdata: {
-                data: [
-                    {
-                        "name": '小王',
-                        "pinyin": 'xiaowang'
-                    },
-                    {
-                        "name": '小李',
-                        "pinyin": 'xiaoli'
-                    }
-                    
-                ]
-            },
-            jsxcolumns: [
-                {dataKey: 'name', title: '姓名', width: 300},
-                {dataKey: 'pinyin', title: '拼音', width: 300}
-            ]
-        };
-        return (
-            <div className="page-demo3">
-                <Form jsxvalues={me.state.values} ref="form">
-                    <FormRow>
-                        <Input jsxlabel="A" jsxname="a" jsxrules={{validator: Validators.isNum, errMsg: "必须为数字"}}/>
-                        <Other>
-                            <span className="yuan">元</span>
-                        </Other>
-                    </FormRow>
-                    <Other className="other">
-                        <Table {...tableProps}/>
-                        <Button onClick={me.handleClick.bind(me)} className="confirmButton">确定</Button>
-                    </Other>
-                </Form>
-            </div>
-        )
-    }
+  render() {
+    const me = this;
+    const tableProps = {
+      width: 700,
+      jsxdata: {
+        data: [
+          {
+            name: '小王',
+            pinyin: 'xiaowang',
+          },
+          {
+            name: '小李',
+            pinyin: 'xiaoli',
+          },
+
+        ],
+      },
+      jsxcolumns: [
+                { dataKey: 'name', title: '姓名', width: 300 },
+                { dataKey: 'pinyin', title: '拼音', width: 300 },
+      ],
+    };
+    return (
+      <div className="page-demo3">
+        <Form jsxvalues={me.state.values} ref="form">
+          <FormRow>
+            <Input jsxlabel="A" jsxname="a" jsxrules={{ validator: Validators.isNum, errMsg: '必须为数字' }} />
+            <Other>
+              <span className="yuan">元</span>
+            </Other>
+          </FormRow>
+          <Other className="other">
+            <Table {...tableProps} />
+            <Button onClick={me.handleClick.bind(me)} className="confirmButton">确定</Button>
+          </Other>
+        </Form>
+      </div>
+    );
+  }
 
 }
 

@@ -13,23 +13,23 @@ import Button from 'uxcore-button';
 
 class Demo extends React.Component {
 
-    constructor(props) {
-      super(props);
-      this.state = {
-      };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
-    render() {
-      return (
-        <div>
-          <EmptyData style={{ width: '200px' }} type="large">
-            <div>你还没有创建目标哦</div>
-            <Button type="outline" style={{ marginTop: '10px' }}>添加目标</Button>
-          </EmptyData>
-        </div>
-      );
-    }
-};
+  render() {
+    return (
+      <div>
+        <EmptyData style={{ width: '200px' }} type="large">
+          <div>你还没有创建目标哦</div>
+          <Button type="outline" style={{ marginTop: '10px' }}>添加目标</Button>
+        </EmptyData>
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(
   <Demo />

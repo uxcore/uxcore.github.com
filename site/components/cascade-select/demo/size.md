@@ -77,27 +77,25 @@ class Demo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      xValue : ['jiangsu', 'nanjing', 'zhonghuamen'],
-      testValue: 1
+      xValue: ['jiangsu', 'nanjing', 'zhonghuamen'],
+      testValue: 1,
     };
   }
 
   render() {
     const cascader = (
       <CascadeSelect
-          defaultValue={['alibaba', 'platform', 'fe']}
-          options={options}
-          clearable
-          onChange={(value, selected) => console.log(value, selected)}
-        />
+        defaultValue={['alibaba', 'platform', 'fe']}
+        options={options}
+        clearable
+        onChange={(value, selected) => console.log(value, selected)}
+      />
     );
     return (
       <div className="demo-wrap">
-        {['large', 'middle', 'small'].map((size) => {
-          return (
-            <div style={{ marginBottom: '4px' }}>{React.cloneElement(cascader, { size })}</div>
-          )
-        })}
+        {['large', 'middle', 'small'].map(size => (
+          <div style={{ marginBottom: '4px' }}>{React.cloneElement(cascader, { size })}</div>
+          ))}
       </div>
     );
   }

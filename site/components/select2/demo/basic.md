@@ -7,11 +7,11 @@
 ---
 
 ````jsx
-let Select = require('uxcore-select2');
-let Option = Select.Option;
+const Select = require('uxcore-select2');
+const Option = Select.Option;
 
 ReactDOM.render(
-  <Select defaultValue="lucy" style={{width:200}} dropdownClassName="kuma-select2-selected-has-icon">
+  <Select defaultValue="lucy" style={{ width: 200 }} dropdownClassName="kuma-select2-selected-has-icon">
     <Option value="jack">Jack</Option>
     <Option value="lucy">Lucy</Option>
     <Option value="disabled" disabled>Disabled</Option>

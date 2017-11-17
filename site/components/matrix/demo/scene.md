@@ -34,7 +34,7 @@ const data = {
     { x: 5, y: 2, row: 1, col: 3, type: 'link', text: '开票信息可点击' },
     { x: 0, y: 3, row: 1, col: 1, type: 'title', text: '备注' },
     { x: 1, y: 3, row: 1, col: 7, type: 'normal', text: '吧啦的哈佛哈开的奶茶啊我会成为啊' },
-  ]
+  ],
 };
 
 class Demo extends React.Component {
@@ -89,7 +89,7 @@ class Demo extends React.Component {
 }
 
 ReactDOM.render(
-    <Demo />,
+  <Demo />,
     document.getElementById('components-matrix-demo-scene')
 );
 ````

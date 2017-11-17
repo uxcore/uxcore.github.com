@@ -125,23 +125,23 @@ class Demo extends React.Component {
     super(props);
     this.state = {
       demo5: ['bingjiang', 'ningbo', 'anhui', 'shandong'],
-    }
+    };
   }
 
   render() {
     return (
       <div style={{ margin: 15 }}>
         <CascadeMultiSelect
-            config={
-              [{
-                checkable: false,
-              }, {
-                checkable: false,
-              }, {}]
+          config={
+          [{
+            checkable: false,
+          }, {
+            checkable: false,
+          }, {}]
             }
-            options={options2}
-            value={this.state.demo5}
-          />
+          options={options2}
+          value={this.state.demo5}
+        />
       </div>
     );
   }

@@ -7,13 +7,13 @@
 ---
 
 ````jsx
-var Button = require('uxcore-button');
+const Button = require('uxcore-button');
 
 ReactDOM.render(
-	<div>
-		<Button type="primary">primary</Button>&nbsp;
-		<Button type="secondary">secondary</Button>&nbsp;
-		<Button type="outline">outline</Button>
+	                    <div>
+		                    <Button type="primary">primary</Button>&nbsp;
+		                    <Button type="secondary">secondary</Button>&nbsp;
+		                    <Button type="outline">outline</Button>
 	</div>
 , document.getElementById('components-button-demo-type'));
 ````

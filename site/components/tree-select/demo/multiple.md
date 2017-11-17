@@ -18,7 +18,7 @@ function generateData(x = 3, y = 2, z = 1, gData = []) {
     const children = [];
     for (let i = 0; i < x; i++) {
       const key = `${preKey}-${i}`;
-      tns.push({label: `${key}-label`, value: `${key}-value`, key, disabled: key === '0-0-0-1' ? true : false});
+      tns.push({ label: `${key}-label`, value: `${key}-value`, key, disabled: key === '0-0-0-1' });
       if (i < y) {
         children.push(key);
       }
@@ -36,35 +36,36 @@ function generateData(x = 3, y = 2, z = 1, gData = []) {
   return gData;
 }
 
-let gData = generateData();
+const gData = generateData();
 
 class MultipleDemo extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            inputValue: '0-0-0-label',
-            multipleValue: [], 
-        };
-    }
-    onMultipleChange(value) {
-        this.setState({multipleValue: value});
-    }
-    render() {
-        return <TreeSelect style={{width: 300}} 
-            dropdownStyle={{maxHeight: 200, overflow: 'auto'}}
-            placeholder={<i>请下拉选择</i>}
-            searchPlaceholder="please search"
-            multiple
-            inputValue={this.state.inputValue}
-            value={this.state.multipleValue}
-            treeData={gData}
-            treeNodeFilterProp="title"
-            onChange={this.onMultipleChange.bind(this)}/>
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: '0-0-0-label',
+      multipleValue: [],
+    };
+  }
+  onMultipleChange(value) {
+    this.setState({ multipleValue: value });
+  }
+  render() {
+    return (<TreeSelect style={{ width: 300 }}
+      dropdownStyle={{ maxHeight: 200, overflow: 'auto' }}
+      placeholder={<i>请下拉选择</i>}
+      searchPlaceholder="please search"
+      multiple
+      inputValue={this.state.inputValue}
+      value={this.state.multipleValue}
+      treeData={gData}
+      treeNodeFilterProp="title"
+      onChange={this.onMultipleChange.bind(this)}
+    />);
+  }
 }
 
 ReactDOM.render(
-    <MultipleDemo></MultipleDemo>,
+  <MultipleDemo />,
   	document.getElementById('components-tree-select-demo-multiple')
 );
 ````

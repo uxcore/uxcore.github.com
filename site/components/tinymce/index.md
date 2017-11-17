@@ -61,7 +61,7 @@ const EVENTS = [
   'BeforeGetContent', 'GetContent', 'VisualAid', 'remove', 'submit', 'reset',
   'BeforeAddUndo', 'AddUndo', 'change', 'undo', 'redo', 'ClearUndos',
   'ObjectSelected', 'ObjectResizeStart', 'ObjectResized', 'PreProcess',
-  'PostProcess', 'focus', 'blur'
+  'PostProcess', 'focus', 'blur',
 ];
 ```
 > 事件的具体含义和触发机制参考：`https://github.com/tinymce/tinymce/blob/master/tools/docs/tinymce.Editor.js#L5-L12`

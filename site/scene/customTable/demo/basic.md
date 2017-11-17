@@ -8,48 +8,49 @@
 
 ````jsx
 
-let Table = require("uxcore-table");
+const Table = require('uxcore-table');
 
 class Demo extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
-    
 
-    render() {
-        let tableProps = {
-            width: 700,
-            jsxdata: {
-                data: [
-                    {
-                        "name": '小王',
-                        "pinyin": 'xiaowang'
-                    },
-                    {
-                        "name": '小李',
-                        "pinyin": 'xiaoli'
-                    }
-                    
-                ]
-            },
-            jsxcolumns: [
-                {dataKey: 'name', title: '姓名', width: 300, render: (cellData, rowData) => {
-                    return <span>{cellData + '同学'}</span>
-                }},
-                {dataKey: 'pinyin', title: '拼音', width: 300, render: (cellData, rowData) => {
-                    return <span>{cellData + 'tongxue'}</span>
-                }}
-            ]
-        }
-        return (
-            <div className="page-demo1">
-                <Table {...tableProps}/>
-            </div>
-        )
-    }
+  render() {
+    const tableProps = {
+      width: 700,
+      jsxdata: {
+        data: [
+          {
+            name: '小王',
+            pinyin: 'xiaowang',
+          },
+          {
+            name: '小李',
+            pinyin: 'xiaoli',
+          },
+
+        ],
+      },
+      jsxcolumns: [
+        { dataKey: 'name',
+          title: '姓名',
+          width: 300,
+          render: (cellData, rowData) => <span>{`${cellData}同学`}</span> },
+        { dataKey: 'pinyin',
+          title: '拼音',
+          width: 300,
+          render: (cellData, rowData) => <span>{`${cellData}tongxue`}</span> },
+      ],
+    };
+    return (
+      <div className="page-demo1">
+        <Table {...tableProps} />
+      </div>
+    );
+  }
 
 }
 

@@ -121,19 +121,19 @@ class Demo extends React.Component {
         dataKey: 'action',
         title: '链接',
         width: 100,
-        render: function(rowData) {
-          return <div><a href="#">111</a></div>
-        }
-      }
-    ]
+        render(rowData) {
+          return <div><a href="#">111</a></div>;
+        },
+      },
+    ];
     const fetchUrl = 'http://eternalsky.me:8122/file/getGridJson.jsonp';
     const renderProps = {
-        height: 400,
+      height: 400,
       pagerSizeOptions: [5, 10, 15, 20],
       actionBar: {
-        'Action': function(type, table) {
+        Action(type, table) {
           me.setState({
-            text: 2
+            text: 2,
           });
         },
       },
@@ -146,11 +146,11 @@ class Demo extends React.Component {
     };
     return (
       <div>
-            <Table {...renderProps}  ref="table" className="kuma-uxtable-border-line" />
-        </div>
-      );
+        <Table {...renderProps} ref="table" className="kuma-uxtable-border-line" />
+      </div>
+    );
   }
 }
 
-ReactDOM.render(<Demo />, document.getElementById('components-table-demo-group'))
+ReactDOM.render(<Demo />, document.getElementById('components-table-demo-group'));
 ````

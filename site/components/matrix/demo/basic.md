@@ -17,7 +17,7 @@ const data = {
     { x: 4, y: 0, row: 3, col: 1, text: '3' },
     { x: 0, y: 2, row: 1, col: 3, text: '4' },
     { x: 3, y: 2, row: 1, col: 1, text: '5' },
-  ]
+  ],
 };
 
 class Demo extends React.Component {
@@ -45,7 +45,7 @@ class Demo extends React.Component {
 }
 
 ReactDOM.render(
-    <Demo />,
+  <Demo />,
     document.getElementById('components-matrix-demo-basic')
 );
 ````

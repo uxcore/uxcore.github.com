@@ -20,7 +20,7 @@ const tagData = [
     count: 1,
     canAddCount: true,
     createByOwner: true,
-  }
+  },
 ];
 
 class Demo extends React.Component {

@@ -5,48 +5,48 @@
 ---
 
 ````jsx
-let Grid = require('uxcore-grid');
-let classnames = require('classnames');
-let {Row, Col} = Grid;
+const Grid = require('uxcore-grid');
+const classnames = require('classnames');
+const { Row, Col } = Grid;
 
 class Demo extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
-    render() {
-        return (
-            <div>
-              <Grid fluid={true}>
-                  <Row className="show-grid">
-                      <Col xs={24} md={16}><code>&lt;{'Col xs={24} md={16}'} /&gt;</code></Col>
-                      <Col xs={12} md={8}><code>&lt;{'Col xs={12} md={8}'} /&gt;</code></Col>
-                  </Row>
+  render() {
+    return (
+      <div>
+        <Grid fluid>
+          <Row className="show-grid">
+            <Col xs={24} md={16}><code>&lt;{'Col xs={24} md={16}'} /&gt;</code></Col>
+            <Col xs={12} md={8}><code>&lt;{'Col xs={12} md={8}'} /&gt;</code></Col>
+          </Row>
 
-                  <Row className="show-grid">
-                      <Col xs={12} md={8}><code>&lt;{'Col xs={12} md={8}'} /&gt;</code></Col>
-                      <Col xs={12} md={8}><code>&lt;{'Col xs={12} md={8}'} /&gt;</code></Col>
-                      <Col xs={12} md={8}><code>&lt;{'Col xs={12} md={8}'} /&gt;</code></Col>
-                  </Row>
+          <Row className="show-grid">
+            <Col xs={12} md={8}><code>&lt;{'Col xs={12} md={8}'} /&gt;</code></Col>
+            <Col xs={12} md={8}><code>&lt;{'Col xs={12} md={8}'} /&gt;</code></Col>
+            <Col xs={12} md={8}><code>&lt;{'Col xs={12} md={8}'} /&gt;</code></Col>
+          </Row>
 
-                  <Row className="show-grid">
-                       <Col xs={12} xsOffset={12}><code>&lt;{'Col xs={12} xsOffset={12}'} /&gt;</code></Col>
-                  </Row>
+          <Row className="show-grid">
+            <Col xs={12} xsOffset={12}><code>&lt;{'Col xs={12} xsOffset={12}'} /&gt;</code></Col>
+          </Row>
 
-                  <Row className="show-grid">
-                      <Col md={12} mdPush={12}><code>&lt;{'Col md={12} mdPush={12}'} /&gt;</code></Col>
-                      <Col md={12} mdPull={12}><code>&lt;{'Col md={12} mdPull={12}'} /&gt;</code></Col>
-                  </Row>
-              </Grid>
-            </div>
-        );
-    }
-};
+          <Row className="show-grid">
+            <Col md={12} mdPush={12}><code>&lt;{'Col md={12} mdPush={12}'} /&gt;</code></Col>
+            <Col md={12} mdPull={12}><code>&lt;{'Col md={12} mdPull={12}'} /&gt;</code></Col>
+          </Row>
+        </Grid>
+      </div>
+    );
+  }
+}
 
-ReactDOM.render(<Demo />, document.getElementById('components-grid-demo-basic'))
+ReactDOM.render(<Demo />, document.getElementById('components-grid-demo-basic'));
 ````
 
 ````css

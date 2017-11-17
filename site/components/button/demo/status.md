@@ -5,7 +5,7 @@
 ---
 
 ````jsx
-var Button = require('uxcore-button');
+const Button = require('uxcore-button');
 
 ReactDOM.render(
   <Button disabled>disabled</Button>

@@ -46,17 +46,17 @@
 
 ```javascript
 [
-    {
-        name: '', // 文件名称，列表形式必填
-        ext: '', // 文件扩展名。例如 jpg。可选，不填时无法根据类型展示对应图标
-        fileType: '', // 文件 mimetypes 类型。 例如 image/jpg。 可选，不填时无法根据类型展示对应图标
-        response: {
-            url: xxx,  // 文件链接，必填
-            canRemove: true, // 是否可以删除，可选
-            downloadUrl: 'xxxx', // 下载 URL，可选
-        }
-    }
-]
+  {
+    name: '', // 文件名称，列表形式必填
+    ext: '', // 文件扩展名。例如 jpg。可选，不填时无法根据类型展示对应图标
+    fileType: '', // 文件 mimetypes 类型。 例如 image/jpg。 可选，不填时无法根据类型展示对应图标
+    response: {
+      url: xxx,  // 文件链接，必填
+      canRemove: true, // 是否可以删除，可选
+      downloadUrl: 'xxxx', // 下载 URL，可选
+    },
+  },
+];
 
 ```
 
@@ -73,24 +73,24 @@
 ```javascript
 [
     // 上传后的文件的格式， response 即服务器返回的值
-    {
-        type: 'upload',
-        ext: file.ext,
-        name: file.name,
-        response: JSON.parse(file.response.rawResponse.rawResponse)
-    },
+  {
+    type: 'upload',
+    ext: file.ext,
+    name: file.name,
+    response: JSON.parse(file.response.rawResponse.rawResponse),
+  },
     // 预览用文件的格式， `props.fileList` 相关， responce 即 `props.fileList` 里传入的格式。
-    {
-        type: 'list',
-        response: file
-    },
+  {
+    type: 'list',
+    response: file,
+  },
     // 被删除的文件的格式
-    {
-        type: 'delete',
-        subType: 'list/upload', // 与上面两种类型对应，用于解析 response
-        response: file // 与上面的 subType 相对应
-    }
-]
+  {
+    type: 'delete',
+    subType: 'list/upload', // 与上面两种类型对应，用于解析 response
+    response: file, // 与上面的 subType 相对应
+  },
+];
 ```
 
 

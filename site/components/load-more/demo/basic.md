@@ -5,9 +5,9 @@
 ---
 
 ````jsx
-let classnames = require('classnames');
+const classnames = require('classnames');
 
-let LoadMore = require('uxcore-load-more');
+const LoadMore = require('uxcore-load-more');
 
 let loadTimes = 0;
 
@@ -17,42 +17,41 @@ class Demo extends React.Component {
     super(props);
     this.state = {
       loadState: 'loaded', // loading noMore
-      lines: []
-    }
+      lines: [],
+    };
   }
 
   onLoadMore() {
-    let me = this;
+    const me = this;
 
     me.setState({
-      loadState: 'loading'
-    })
+      loadState: 'loading',
+    });
 
-    setTimeout(function () {
-      let lines = me.state.lines;
+    setTimeout(() => {
+      const lines = me.state.lines;
 
       if (++loadTimes < 5) {
         for (let i = 0; i < 50; i++) {
-          lines.push(<p key={loadTimes + '-' + i}>第{loadTimes}次加载，当前是第{i + 1}条数据</p>)
+          lines.push(<p key={`${loadTimes}-${i}`}>第{loadTimes}次加载，当前是第{i + 1}条数据</p>);
         }
 
         me.setState({
-          lines: lines,
-          loadState: 'loaded'
-        })
+          lines,
+          loadState: 'loaded',
+        });
       } else {
         me.setState({
-          loadState: 'noMore'
-        })
+          loadState: 'noMore',
+        });
       }
-    }, 1000)
-
+    }, 1000);
   }
 
   render() {
-    let me = this;
+    const me = this;
 
-    let props = {
+    const props = {
       status: me.state.loadState,
       className: 'demo-class-name',
       trigger: ['view', 'click'],
@@ -62,19 +61,19 @@ class Demo extends React.Component {
 
       loadText: '查看更多',
       loadingText: '加载中',
-      noMoreText: '没有更多'
-    }
+      noMoreText: '没有更多',
+    };
 
     return (
       <div className="demo-content">
         {me.state.lines}
-        <LoadMore {...props}/>
+        <LoadMore {...props} />
       </div>
     );
   }
 }
 
-ReactDOM.render(<Demo />, document.getElementById('components-load-more-demo-basic'))
+ReactDOM.render(<Demo />, document.getElementById('components-load-more-demo-basic'));
 ````
 
 ````css

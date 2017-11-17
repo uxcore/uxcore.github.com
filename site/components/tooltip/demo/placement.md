@@ -13,8 +13,8 @@ const Tooltip = require('uxcore-tooltip');
 const Button = require('uxcore-button');
 
 class Demo extends React.Component {
-  render(){
-    let overlay = <div>提示文字</div>
+  render() {
+    const overlay = <div>提示文字</div>;
     return (
       <div className="demo">
         <div className="container">
@@ -23,10 +23,10 @@ class Demo extends React.Component {
               <Button size="small" type="outline">上左</Button>
             </Tooltip>
             <Tooltip overlay={overlay} placement="top" trigger={['click']}>
-              <Button style={{marginLeft: 10}} size="small" type="outline">上边</Button>
+              <Button style={{ marginLeft: 10 }} size="small" type="outline">上边</Button>
             </Tooltip>
             <Tooltip overlay={overlay} placement="topRight" trigger={['click']}>
-              <Button style={{marginLeft: 10}} size="small" type="outline">上右</Button>
+              <Button style={{ marginLeft: 10 }} size="small" type="outline">上右</Button>
             </Tooltip>
           </div>
           <div className="bottom">
@@ -34,10 +34,10 @@ class Demo extends React.Component {
               <Button size="small" type="outline">下左</Button>
             </Tooltip>
             <Tooltip overlay={overlay} placement="bottom" trigger={['click']}>
-              <Button style={{marginLeft: 10}} size="small" type="outline">下边</Button>
+              <Button style={{ marginLeft: 10 }} size="small" type="outline">下边</Button>
             </Tooltip>
             <Tooltip overlay={overlay} placement="bottomRight" trigger={['click']}>
-              <Button style={{marginLeft: 10}} size="small" type="outline">下右</Button>
+              <Button style={{ marginLeft: 10 }} size="small" type="outline">下右</Button>
             </Tooltip>
           </div>
           <div className="left">
@@ -45,10 +45,10 @@ class Demo extends React.Component {
               <Button size="small" type="outline">左上</Button>
             </Tooltip>
             <Tooltip overlay={overlay} placement="left" trigger={['click']}>
-              <Button style={{marginTop: 10}} size="small" type="outline">左边</Button>
+              <Button style={{ marginTop: 10 }} size="small" type="outline">左边</Button>
             </Tooltip>
             <Tooltip overlay={overlay} placement="leftBottom" trigger={['click']}>
-              <Button style={{marginTop: 10}} size="small" type="outline">左下</Button>
+              <Button style={{ marginTop: 10 }} size="small" type="outline">左下</Button>
             </Tooltip>
           </div>
           <div className="right">
@@ -56,10 +56,10 @@ class Demo extends React.Component {
               <Button size="small" type="outline">右上</Button>
             </Tooltip>
             <Tooltip overlay={overlay} placement="right" trigger={['click']}>
-              <Button style={{marginTop: 10}} size="small" type="outline">右边</Button>
+              <Button style={{ marginTop: 10 }} size="small" type="outline">右边</Button>
             </Tooltip>
             <Tooltip overlay={overlay} placement="rightBottom" trigger={['click']}>
-              <Button style={{marginTop: 10}} size="small" type="outline">右下</Button>
+              <Button style={{ marginTop: 10 }} size="small" type="outline">右下</Button>
             </Tooltip>
           </div>
         </div>

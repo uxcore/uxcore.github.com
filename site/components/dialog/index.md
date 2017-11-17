@@ -15,13 +15,14 @@
 
 ## Usage
 ```js
-var Dialog = require('uxcore-dialog');
+const Dialog = require('uxcore-dialog');
 ReactDOM.render(
   (<Dialog title="第一个 Dialog"
-      visible={this.state.visible}
-      onOk={this.handleOk.bind(this)}
-      onCancel={this.handleCancel.bind(this)}>
-      <p>对话框的内容</p>
+    visible={this.state.visible}
+    onOk={this.handleOk.bind(this)}
+    onCancel={this.handleCancel.bind(this)}
+  >
+    <p>对话框的内容</p>
   </Dialog>),
   document.getElementById('content')
 );

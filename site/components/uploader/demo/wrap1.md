@@ -11,30 +11,31 @@ const Uploader = require('uxcore-uploader');
 const Button = require('uxcore-button');
 
 class Demo1 extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            fileList: []
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      fileList: [],
+    };
+  }
 
-    handleChange(fileList) {
-        this.setState({
-            fileList: fileList
-        })
-    }
-    render() {
-        return <Uploader
-                    multiple={false} 
-                    isOnlyImg={false}
-                    fileList={this.state.fileList}
-                    onChange={this.handleChange.bind(this)} 
-                    name='file' 
-                    url='http://eternalsky.me:8122/file/upload' 
-                    locale="en">
-                    <a>自定义文字上传</a>
-                </Uploader>
-    }
+  handleChange(fileList) {
+    this.setState({
+      fileList,
+    });
+  }
+  render() {
+    return (<Uploader
+      multiple={false}
+      isOnlyImg={false}
+      fileList={this.state.fileList}
+      onChange={this.handleChange.bind(this)}
+      name="file"
+      url="http://eternalsky.me:8122/file/upload"
+      locale="en"
+    >
+      <a>自定义文字上传</a>
+    </Uploader>);
+  }
 }
 
 

@@ -8,49 +8,48 @@
 
 ````jsx
 
-let Table = require("uxcore-table");
+const Table = require('uxcore-table');
 
 class Demo extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
-    
 
-    render() {
-        let tableProps = {
-            width: 700,
-            jsxdata: {
-                data: [
-                    {
-                        "name": '小王',
-                        "pinyin": 'xiaowang'
-                    },
-                    {
-                        "name": '小李',
-                        "pinyin": 'xiaoli'
-                    }
-                    
-                ]
-            },
-            jsxcolumns: [
-                {dataKey: 'name', title: '姓名', width: 300},
-                {dataKey: 'pinyin', title: '拼音', width: 300}
-            ],
-            addRowClassName: (rowData) => {
-                if (rowData.name == "小李") {
-                    return "focus"
-                }
-            }
+  render() {
+    const tableProps = {
+      width: 700,
+      jsxdata: {
+        data: [
+          {
+            name: '小王',
+            pinyin: 'xiaowang',
+          },
+          {
+            name: '小李',
+            pinyin: 'xiaoli',
+          },
+
+        ],
+      },
+      jsxcolumns: [
+                { dataKey: 'name', title: '姓名', width: 300 },
+                { dataKey: 'pinyin', title: '拼音', width: 300 },
+      ],
+      addRowClassName: (rowData) => {
+        if (rowData.name == '小李') {
+          return 'focus';
         }
-        return (
-            <div className="page-demo1">
-                <Table {...tableProps}/>
-            </div>
-        )
-    }
+      },
+    };
+    return (
+      <div className="page-demo1">
+        <Table {...tableProps} />
+      </div>
+    );
+  }
 
 }
 

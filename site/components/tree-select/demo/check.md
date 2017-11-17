@@ -19,7 +19,7 @@ function generateData(x = 3, y = 2, z = 1, gData = []) {
     const children = [];
     for (let i = 0; i < x; i++) {
       const key = `${preKey}-${i}`;
-      tns.push({label: `${key}-label`, value: `${key}-value`, key, disabled: key === '0-0-0-1' ? true : false});
+      tns.push({ label: `${key}-label`, value: `${key}-value`, key, disabled: key === '0-0-0-1' });
       if (i < y) {
         children.push(key);
       }
@@ -37,36 +37,37 @@ function generateData(x = 3, y = 2, z = 1, gData = []) {
   return gData;
 }
 
-let gData = generateData();
+const gData = generateData();
 
 class CheckDemo extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: '0-0-0-value'      
-        };
-    }
-    onChange(value) {
-        this.setState({value});
-    }
-    render() {
-        return <TreeSelect style={{width: 300}} 
-            dropdownStyle={{maxHeight: 200, overflow: 'auto'}}
-            dropdownPopupAlign={{ overflow: { adjustY: 0, adjustX: 0 } }}
-            placeholder={<i>请下拉选择</i>}
-            searchPlaceholder="please search"
-            treeLine={false} maxTagTextLength={10}
-            inputValue={null}
-            value={this.state.value}
-            treeData={gData}
-            treeNodeFilterProp="title"
-            treeCheckable showCheckedStrategy={SHOW_PARENT}
-            onChange={this.onChange.bind(this)} />
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '0-0-0-value',
+    };
+  }
+  onChange(value) {
+    this.setState({ value });
+  }
+  render() {
+    return (<TreeSelect style={{ width: 300 }}
+      dropdownStyle={{ maxHeight: 200, overflow: 'auto' }}
+      dropdownPopupAlign={{ overflow: { adjustY: 0, adjustX: 0 } }}
+      placeholder={<i>请下拉选择</i>}
+      searchPlaceholder="please search"
+      treeLine={false} maxTagTextLength={10}
+      inputValue={null}
+      value={this.state.value}
+      treeData={gData}
+      treeNodeFilterProp="title"
+      treeCheckable showCheckedStrategy={SHOW_PARENT}
+      onChange={this.onChange.bind(this)}
+    />);
+  }
 }
 
 ReactDOM.render(
-    <CheckDemo></CheckDemo>,
+  <CheckDemo />,
   	document.getElementById('components-tree-select-demo-check')
 );
 ````

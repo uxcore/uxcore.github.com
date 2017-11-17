@@ -11,13 +11,13 @@ import Title from 'uxcore-title';
 
 class Demo extends React.Component {
 
-    render() {
-        let me = this;
-        return (
-            <Title type="secondary">能力项设置</Title>
-        );
-    }
-};
+  render() {
+    const me = this;
+    return (
+      <Title type="secondary">能力项设置</Title>
+    );
+  }
+}
 
 ReactDOM.render(
   <Demo />

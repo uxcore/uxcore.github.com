@@ -11,26 +11,26 @@ import Dialog from 'uxcore-dialog';
 import Button from 'uxcore-button';
 const confirm = Dialog.confirm;
 
-function showConfirm(){
+function showConfirm() {
   confirm({
     title: '您是否确认要删除这项内容',
     content: '一些解释',
-    onOk: function() {
+    onOk() {
       alert('确定');
     },
-    onCancel: function() {}
+    onCancel() {},
   });
 }
 
 class ConfirmDemo extends React.Component {
-	render(){
-		return (<Button onClick={showConfirm.bind(this)}>
+  render() {
+    return (<Button onClick={showConfirm.bind(this)}>
 			  确认对话框
-		</Button>);
-	}
+		                                  </Button>);
+  }
 }
 
 ReactDOM.render(
-    <ConfirmDemo />, document.getElementById('components-dialog-demo-custom'));
+  <ConfirmDemo />, document.getElementById('components-dialog-demo-custom'));
 
 ````

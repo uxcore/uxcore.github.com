@@ -9,40 +9,41 @@
 
 
 ````jsx
-let Select = require('uxcore-select2');
-let Option = Select.Option;
-let classnames = require('classnames');
+const Select = require('uxcore-select2');
+const Option = Select.Option;
+const classnames = require('classnames');
 
-let children = [];
+const children = [];
 for (let i = 10; i < 36; i++) {
   children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
 }
 
 class Demo extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: ['a10', 'c12']
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: ['a10', 'c12'],
+    };
+  }
 
-    handleChange(value) {
-        this.setState({
-            value: value
-        });
-    }
+  handleChange(value) {
+    this.setState({
+      value,
+    });
+  }
 
-    render() {
-        return <Select multiple
-                  dropdownClassName="kuma-select2-selected-has-icon"
-                  className={classnames({
-                    'single-line': this.state.value.length > 6 ? true : false
-                  })}
-                  style={{width:400}}
-                  value={this.state.value} onChange={this.handleChange.bind(this)}>
-                    {children}
-                </Select>
-    }
+  render() {
+    return (<Select multiple
+      dropdownClassName="kuma-select2-selected-has-icon"
+      className={classnames({
+        'single-line': this.state.value.length > 6,
+      })}
+      style={{ width: 400 }}
+      value={this.state.value} onChange={this.handleChange.bind(this)}
+    >
+      {children}
+    </Select>);
+  }
 }
 ReactDOM.render(
   <Demo />

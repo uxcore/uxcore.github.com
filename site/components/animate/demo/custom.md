@@ -14,50 +14,51 @@ const Select = require('uxcore-select2');
 const { Option } = Select;
 
 class AwesomeComponent extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (
-            <div style={{ display: !!this.props.visible ? 'inline-block' : 'none' }} className="awesome-component-wrap bg-primary-color">
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div style={{ display: this.props.visible ? 'inline-block' : 'none' }} className="awesome-component-wrap bg-primary-color">
               动画展示区域
-            </div>
-        )
-    }
+      </div>
+    );
+  }
 }
 
 class Demo extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            visible: true,
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: true,
+    };
+  }
 
-    showComponent() {
-        this.setState({
-            visible: !this.state.visible,
-        });
-    }
+  showComponent() {
+    this.setState({
+      visible: !this.state.visible,
+    });
+  }
 
-    render() {
-        return (
-            <div>
-                <div style={{ height: '60px' }}>
-                    <Animate showProp="visible" transitionName={"custom"} transitionAppear onEnd={(key, exists) => {
-                      console.log(key, exists);
-                    }}>
-                        <AwesomeComponent key="awesome" visible={this.state.visible} />
-                    </Animate>
-                </div>
-                <div style={{padding: '10px 0px' }}>
-                    <Button type="outline" onClick={this.showComponent.bind(this)} style={{ marginLeft: '10px' }}>显示/隐藏</Button>
-                </div>
-            </div>
-        );
-    }
-};
+  render() {
+    return (
+      <div>
+        <div style={{ height: '60px' }}>
+          <Animate showProp="visible" transitionName={'custom'} transitionAppear onEnd={(key, exists) => {
+            console.log(key, exists);
+          }}
+          >
+            <AwesomeComponent key="awesome" visible={this.state.visible} />
+          </Animate>
+        </div>
+        <div style={{ padding: '10px 0px' }}>
+          <Button type="outline" onClick={this.showComponent.bind(this)} style={{ marginLeft: '10px' }}>显示/隐藏</Button>
+        </div>
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(
   <Demo />

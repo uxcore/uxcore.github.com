@@ -9,22 +9,21 @@
 ````jsx
 import Mention, { ContenteditableEditor } from 'uxcore-mention';
 
-let source = ['aaaaa', 'aabbb', 'aaccc', 'bbbcc', 'dddee', 'fffqq', 'pppaa', 'ppccc'];
+const source = ['aaaaa', 'aabbb', 'aaccc', 'bbbcc', 'dddee', 'fffqq', 'pppaa', 'ppccc'];
 
-function formatter(data){
-    return data.map((item) => {
-        return {
-            text: item
-        };
-    });
+function formatter(data) {
+  return data.map(item => ({
+    text: item,
+  }));
 }
 
 ReactDOM.render(
-	<Mention
-		matchRange={[1, 6]}
-		source={source}
-		formatter={formatter}>
-		<ContenteditableEditor placeholder="在此编辑" />
+	                    <Mention
+  matchRange={[1, 6]}
+  source={source}
+  formatter={formatter}
+                   >
+		                    <ContenteditableEditor placeholder="在此编辑" />
 	</Mention>,
   	document.getElementById('components-mention-demo-contenteditable')
 );

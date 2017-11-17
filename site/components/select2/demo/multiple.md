@@ -8,23 +8,24 @@
 
 
 ````jsx
-let Select = require('uxcore-select2');
-let Option = Select.Option;
+const Select = require('uxcore-select2');
+const Option = Select.Option;
 
-let children = [];
+const children = [];
 for (let i = 10; i < 36; i++) {
   children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
 }
 
 function handleChange(value) {
-  console.log('selected ' + value);
+  console.log(`selected ${value}`);
 }
 
 ReactDOM.render(
   <Select multiple
-  style={{width:400}}
-  dropdownClassName="kuma-select2-selected-has-icon"
-  defaultValue={['a10', 'c12']} onChange={handleChange}>
+    style={{ width: 400 }}
+    dropdownClassName="kuma-select2-selected-has-icon"
+    defaultValue={['a10', 'c12']} onChange={handleChange}
+  >
     {children}
   </Select>
 , document.getElementById('components-select2-demo-multiple'));

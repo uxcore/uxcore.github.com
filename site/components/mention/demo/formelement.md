@@ -9,25 +9,26 @@
 ````jsx
 import Mention, { TextareaEditor, InputEditor } from 'uxcore-mention';
 
-let source = ['aaaaa', 'aabbb', 'aaccc', 'bbbcc', 'dddee', 'fffqq', 'pppaa', 'ppccc'];
+const source = ['aaaaa', 'aabbb', 'aaccc', 'bbbcc', 'dddee', 'fffqq', 'pppaa', 'ppccc'];
 
-function formatter(data){
-    return data.map((item) => {
-        return {
-            text: item
-        };
-    });
+function formatter(data) {
+  return data.map(item => ({
+    text: item,
+  }));
 }
 
 ReactDOM.render(
-	<Mention
-		matchRange={[1, 6]}
-		source={source}
-		formatter={formatter}>
-		<TextareaEditor
-			placeholder="在此编辑" />
-		<InputEditor
-			placeholder="在此编辑" />
+	                    <Mention
+  matchRange={[1, 6]}
+  source={source}
+  formatter={formatter}
+                   >
+		                    <TextareaEditor
+  placeholder="在此编辑"
+                    />
+		                    <InputEditor
+  placeholder="在此编辑"
+                    />
 	</Mention>,
   	document.getElementById('components-mention-demo-formelement')
 );

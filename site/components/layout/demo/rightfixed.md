@@ -6,27 +6,26 @@
 ---
 
 ````jsx
-let Layout = require('uxcore-layout');
-let {Left, Right} = Layout;
-let classnames = require('classnames');
+const Layout = require('uxcore-layout');
+const { Left, Right } = Layout;
+const classnames = require('classnames');
 
 class Demo extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        return <div>
-            <Layout className="layoutDemo">
-                <Left width={190} className="left">左</Left>
-                <Right adaptive={true} className="right">右</Right>
-            </Layout>
-        </div>
-        
-    }
+  render() {
+    return (<div>
+      <Layout className="layoutDemo">
+        <Left width={190} className="left">左</Left>
+        <Right adaptive className="right">右</Right>
+      </Layout>
+    </div>);
+  }
 }
 
-ReactDOM.render(<Demo />, document.getElementById('components-layout-demo-rightfixed'))
+ReactDOM.render(<Demo />, document.getElementById('components-layout-demo-rightfixed'));
 ````
 
 ````css

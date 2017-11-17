@@ -9,77 +9,78 @@
 
 ````jsx
 
-const Form = require("uxcore-form");
-const Button = require("uxcore-button");
+const Form = require('uxcore-form');
+const Button = require('uxcore-button');
 
 const {
-    OtherFormField: Other
+    OtherFormField: Other,
 } = Form;
 
 // 组件拥有 prop `value` 和 `onChange`
 // 当然也可以不叫 `value` 和 `onChange`，只需要根据文档，传入对应的 prop 名即可。
 
 class DoubleInput extends React.Component {
-    handleChange(index, e) {
-        const me = this;
-        const value = e.currentTarget.value;
-        const stateValue = (me.props.value || []).slice(0);
-        stateValue[index] = value;
-        me.props.onChange(stateValue);
-    }
-    render() {
-        const me = this;
-        const arr = [];
-        const values = me.props.value || [];
-        arr.push(<input className="kuma-input" value={values[0]} onChange={me.handleChange.bind(me, 0)} key="input1"/>);
-        arr.push(<span className="split" key="split">-</span>);
-        arr.push(<input className="kuma-input" value={values[1]} onChange={me.handleChange.bind(me, 1)} key="input2"/>);
-        return (
-            <div>{arr}</div>
-        );
-    }
+  handleChange(index, e) {
+    const me = this;
+    const value = e.currentTarget.value;
+    const stateValue = (me.props.value || []).slice(0);
+    stateValue[index] = value;
+    me.props.onChange(stateValue);
+  }
+  render() {
+    const me = this;
+    const arr = [];
+    const values = me.props.value || [];
+    arr.push(<input className="kuma-input" value={values[0]} onChange={me.handleChange.bind(me, 0)} key="input1" />);
+    arr.push(<span className="split" key="split">-</span>);
+    arr.push(<input className="kuma-input" value={values[1]} onChange={me.handleChange.bind(me, 1)} key="input2" />);
+    return (
+      <div>{arr}</div>
+    );
+  }
 }
 
 const DoubleInputFormField = Form.createFormField({
-    component: <DoubleInput />,
-    fieldName: 'DoubleInputFormField',
+  component: <DoubleInput />,
+  fieldName: 'DoubleInputFormField',
 });
 
 class Demo extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            values: {}
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      values: {},
+    };
+  }
 
-    handleClick() {
-        let me = this;
-        alert(JSON.stringify(me.refs.form.getValues()));
-    }
+  handleClick() {
+    const me = this;
+    alert(JSON.stringify(me.refs.form.getValues()));
+  }
 
-    handleReset() {
-        let me = this;
-        me.refs.form.resetValues();
-    }
+  handleReset() {
+    const me = this;
+    me.refs.form.resetValues();
+  }
 
-    render() {
-        let me = this;
-        
+  render() {
+    const me = this;
+
         // FormField 通用的 props 都可以使用。
-        return (
-            <div className="page-demo3">
-                <Form ref="form" jsxvalues={{
-                    double: [2, 4]
-                }}> 
-                    <DoubleInputFormField jsxlabel="双输入框" jsxname="double" className="kuma-doubleinput-uxform-field"/>
-                    <Other className="other">
-                        <Button onClick={me.handleClick.bind(this)}>确定</Button>
-                    </Other>
-                </Form>
-            </div>
-        )
-    }
+    return (
+      <div className="page-demo3">
+        <Form ref="form" jsxvalues={{
+          double: [2, 4],
+        }}
+        >
+          <DoubleInputFormField jsxlabel="双输入框" jsxname="double" className="kuma-doubleinput-uxform-field" />
+          <Other className="other">
+            <Button onClick={me.handleClick.bind(this)}>确定</Button>
+          </Other>
+        </Form>
+      </div>
+    );
+  }
 
 }
 

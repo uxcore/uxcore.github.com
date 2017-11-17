@@ -7,15 +7,15 @@
 ---
 
 ````jsx
-let Select = require('uxcore-select2');
-let Option = Select.Option;
+const Select = require('uxcore-select2');
+const Option = Select.Option;
 
 function handleChange(value) {
-  console.log('selected ' + value);
+  console.log(`selected ${value}`);
 }
 
 const select = (
-  <Select defaultValue="lucy" showSearch={false} style={{ width:200, display: 'block', marginBottom: '4px' }} onChange={handleChange} dropdownClassName="kuma-select2-selected-has-icon">
+  <Select defaultValue="lucy" showSearch={false} style={{ width: 200, display: 'block', marginBottom: '4px' }} onChange={handleChange} dropdownClassName="kuma-select2-selected-has-icon">
     <Option value="jack">jack</Option>
     <Option value="lucy">lucy</Option>
     <Option value="disabled" disabled>disabled</Option>
@@ -25,11 +25,9 @@ const select = (
 
 ReactDOM.render(
   <div>
-    {['large', 'middle', 'small'].map((size) => {
-      return React.cloneElement(select, {
-        size,
-      })
-    })}
+    {['large', 'middle', 'small'].map(size => React.cloneElement(select, {
+      size,
+    }))}
   </div>
 , document.getElementById('components-select2-demo-size'));
 ````

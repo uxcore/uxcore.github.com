@@ -77,8 +77,8 @@ class Demo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      xValue : ['jiangsu', 'nanjing', 'zhonghuamen'],
-      testValue: 1
+      xValue: ['jiangsu', 'nanjing', 'zhonghuamen'],
+      testValue: 1,
     };
   }
 

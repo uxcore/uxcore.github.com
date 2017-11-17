@@ -48,15 +48,15 @@ class Demo extends React.Component {
       showOtherColumn: false,
       value: {
         num: 1,
-        action: 'link'
-      }
+        action: 'link',
+      },
     };
   }
 
   handleChange(value, name, pass) {
     this.setState({
       value,
-    })
+    });
   }
 
   render() {
@@ -107,7 +107,7 @@ class Demo extends React.Component {
             callback: (rowData) => {
             },
             isDisable: () => true,
-            
+
           },
           {
             title: '操作四',
@@ -147,5 +147,5 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, document.getElementById('components-table-demo-actioncolumn'))
+ReactDOM.render(<Demo />, document.getElementById('components-table-demo-actioncolumn'));
 ````

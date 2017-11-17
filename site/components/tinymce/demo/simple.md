@@ -12,36 +12,37 @@ import Tinymce from 'uxcore-tinymce';
 
 class Demo extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
-    handleKeyUp(e, editor) {
-        console.log(editor.getContent());
-    }
+  handleKeyUp(e, editor) {
+    console.log(editor.getContent());
+  }
 
-    handleChange(e, editor) {
-        console.log(editor.getContent());
-    }
+  handleChange(e, editor) {
+    console.log(editor.getContent());
+  }
 
-    render() {
-        let me = this;
-        const config = {
-            menubar: false,
-            toolbar1: 'fontselect fontsizeselect | bold italic underline strikethrough removeformat | forecolor backcolor',
-            toolbar2: false,
-            statusbar: false
-        };
-        return (
-            <Tinymce
-                onKeyup={me.handleKeyUp.bind(me)}
-                onChange={me.handleChange.bind(me)} 
-                config={config} />
-        );
-    }
-};
+  render() {
+    const me = this;
+    const config = {
+      menubar: false,
+      toolbar1: 'fontselect fontsizeselect | bold italic underline strikethrough removeformat | forecolor backcolor',
+      toolbar2: false,
+      statusbar: false,
+    };
+    return (
+      <Tinymce
+        onKeyup={me.handleKeyUp.bind(me)}
+        onChange={me.handleChange.bind(me)}
+        config={config}
+      />
+    );
+  }
+}
 
 ReactDOM.render(
   <Demo />

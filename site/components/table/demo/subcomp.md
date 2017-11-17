@@ -105,7 +105,7 @@ class Demo extends React.Component {
             <Table {...subProps} />
           </div>
         );
-      }
+      },
     };
     return (
       <div>
@@ -115,7 +115,7 @@ class Demo extends React.Component {
   }
 }
 
-ReactDOM.render(<Demo />, document.getElementById('components-table-demo-subcomp'))
+ReactDOM.render(<Demo />, document.getElementById('components-table-demo-subcomp'));
 ````
 
 ````css

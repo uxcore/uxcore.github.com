@@ -14,14 +14,13 @@ const Table = require('uxcore-table');
 class Demo extends React.Component {
 
   render() {
-
     const me = this;
     const columns = [
       {
         dataKey: 'id',
         title: 'ID',
         width: 50,
-        hidden: true
+        hidden: true,
       },
       {
         dataKey: 'country',
@@ -29,27 +28,27 @@ class Demo extends React.Component {
         width: 200,
         ordered: true,
         type: 'money',
-        delimiter: ','
+        delimiter: ',',
       },
       {
         dataKey: 'city',
         title: '城市',
-        width: 150
+        width: 150,
       },
       {
         dataKey: 'firstName',
-        title: 'FristName'
+        title: 'FristName',
       },
       {
         dataKey: 'lastName',
-        title: 'LastName'
+        title: 'LastName',
       },
       {
         dataKey: 'email',
         title: 'Email',
         width: 200,
-        ordered: true
-      }
+        ordered: true,
+      },
     ];
 
     const renderProps = {
@@ -61,14 +60,14 @@ class Demo extends React.Component {
       renderModel: 'tree',
       rowSelection: {
         onSelect: (checked, selectedRow, selectedRows) => {
-          console.log("selectedRows:", selectedRows);
+          console.log('selectedRows:', selectedRows);
         },
-        onSelectAll: () => {}
-      }
+        onSelectAll: () => {},
+      },
     };
     return (<Table {...renderProps} ref="table" />);
   }
 }
 
-ReactDOM.render(<Demo />, document.getElementById('components-table-demo-tree'))
+ReactDOM.render(<Demo />, document.getElementById('components-table-demo-tree'));
 ````

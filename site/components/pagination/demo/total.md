@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-var Pagination = require('uxcore-pagination');
+const Pagination = require('uxcore-pagination');
 
 function onChange(page) {
   console.log(page);

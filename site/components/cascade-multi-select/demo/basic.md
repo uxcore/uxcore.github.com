@@ -98,7 +98,7 @@ class Demo extends React.Component {
     super(props);
     this.state = {
       demo1: ['shanghai'],
-    }
+    };
   }
 
   render() {

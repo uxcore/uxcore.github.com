@@ -13,28 +13,28 @@ const { RangeCalendar } = Calendar;
 
 
 class Demo extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-    onRangeSelect(value) {
-      this.setState({
-        rangeValue: value,
-      });
-    }
-    
-    render() {
-        return (
-          <RangeCalendar
-            value={this.state.rangeValue}
-            onSelect={(v, formatted) => {
-              console.log(v, formatted);
-              this.onRangeSelect(v, formatted);
-            }}
-          />
-        )
-    }
+  onRangeSelect(value) {
+    this.setState({
+      rangeValue: value,
+    });
+  }
+
+  render() {
+    return (
+      <RangeCalendar
+        value={this.state.rangeValue}
+        onSelect={(v, formatted) => {
+          console.log(v, formatted);
+          this.onRangeSelect(v, formatted);
+        }}
+      />
+    );
+  }
 
 }
 

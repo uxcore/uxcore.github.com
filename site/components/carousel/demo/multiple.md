@@ -20,36 +20,41 @@
 
 
 ````jsx
-let classnames = require('classnames');
+const classnames = require('classnames');
 
-let Carousel = require('uxcore-carousel');
+const Carousel = require('uxcore-carousel');
 
 class Demo extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
-    render() {
-        return (
-            <div style={{width: 1000}}>
-                <Carousel className="demo-multiple" autoplay pauseOnHover slidesToShow={3}>
-                    <div style={{margin: '0px 2px'}}><img src="http://www.wallcoo.com/human/City_Night_Scene_02/wallpapers/1680x1050/City_Night_Scene_photography_L10_30.jpg" style={{width: '100%'}} /></div>
-                    <div style={{margin: '0px 2px'}}><img src="http://img5.imgtn.bdimg.com/it/u=3349768475,1559424970&fm=21&gp=0.jpg" style={{width: '100%'}} /></div>
-                    <div style={{margin: '0px 2px'}}><img src="http://www.wallcoo.com/nature/beautiful_nature/wallpapers/1440x900/beautiful_nature_8433868.jpg" style={{width: '100%'}} /></div>
-                    <div style={{margin: '0px 2px'}}><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492084455&di=cb9117133fb7743cde278f746a7acb99&imgtype=jpg&er=1&src=http%3A%2F%2Fp3.gexing.com%2FG1%2FM00%2FFB%2F28%2FrBACFFHs2LKRyBHRAAOL2yRa9PY192.jpg" style={{width: '100%'}} /></div>
-                    <div style={{margin: '0px 2px'}}><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1491489840544&di=b7731be39b1048bf5c7b6f1984b5f3b5&imgtype=0&src=http%3A%2F%2Fimg15.3lian.com%2F2015%2Ff3%2F02%2Fd%2F112.jpg" style={{width: '100%'}} /></div>
-                    <div style={{margin: '0px 2px'}}><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1491489855424&di=581e5fb8de019cd02d51a5fe1732959c&imgtype=0&src=http%3A%2F%2Fh9.86.cc%2Fwalls%2F20160309%2F1440x900_abed1184e563a22.jpg" style={{width: '100%'}} /></div>
-                </Carousel>
-            </div>
-        );
-    }
-};
+  render() {
+    const images = [
+      'https://img.alicdn.com/tfs/TB1.kR0aTnI8KJjy0FfXXcdoVXa-400-225.jpg',
+      'https://img.alicdn.com/tfs/TB1HSBZaIrI8KJjy0FhXXbfnpXa-400-225.jpg',
+      'https://img.alicdn.com/tfs/TB1GmBZaIrI8KJjy0FhXXbfnpXa-400-225.jpg',
+      'https://img.alicdn.com/tfs/TB1mYJ_aLDH8KJjy1XcXXcpdXXa-400-225.jpg',
+      'https://img.alicdn.com/tfs/TB11MV_aLDH8KJjy1XcXXcpdXXa-400-225.jpg',
+      'https://img.alicdn.com/tfs/TB11Op4aMnD8KJjy1XdXXaZsVXa-400-225.jpg',
+    ];
+    return (
+      <div style={{ width: 1000 }}>
+        <Carousel className="demo-multiple" autoplay pauseOnHover slidesToShow={3}>
+          {images.map(url => (
+            <div style={{ margin: '0px 2px' }}><img src={url} style={{ width: '100%' }} /></div>
+                        ))}
+        </Carousel>
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(
-    <Demo />
+  <Demo />
 , document.getElementById('components-carousel-demo-multiple'));
 
 ````

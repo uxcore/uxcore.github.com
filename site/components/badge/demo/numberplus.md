@@ -5,48 +5,49 @@
 ---
 
 ````jsx
-let Badge = require('uxcore-badge');
-let Button = require('uxcore-button');
+const Badge = require('uxcore-badge');
+const Button = require('uxcore-button');
 
 class Demo extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            count2: 1,
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      count2: 1,
+    };
+  }
 
-    handlePlus() {
-        this.setState({
-            count2: this.state.count2 + 1
-        });
-    }
+  handlePlus() {
+    this.setState({
+      count2: this.state.count2 + 1,
+    });
+  }
 
-    handleMinus() {
-        this.setState({
-            count2: this.state.count2 - 1
-        });
-    }
+  handleMinus() {
+    this.setState({
+      count2: this.state.count2 - 1,
+    });
+  }
 
-    render() {
-        return (
-            <div>
-                <Badge count={this.state.count2}>
-                    <a href="#" className="head-example"></a>
-                </Badge>
-                <Button size="small" type="outline" onClick={this.handlePlus.bind(this)} style={{
-                    marginRight: 10,
-                    marginLeft: 20
-                }}>+</Button>
-                <Button size="small" type="outline" onClick={this.handleMinus.bind(this)}>-</Button>
-            </div>
-        );
-    }
-};
+  render() {
+    return (
+      <div>
+        <Badge count={this.state.count2}>
+          <a href="#" className="head-example" />
+        </Badge>
+        <Button size="small" type="outline" onClick={this.handlePlus.bind(this)} style={{
+          marginRight: 10,
+          marginLeft: 20,
+        }}
+        >+</Button>
+        <Button size="small" type="outline" onClick={this.handleMinus.bind(this)}>-</Button>
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(
-    <Demo />
+  <Demo />
 , document.getElementById('components-badge-demo-numberplus'));
 /* JS END CSS START*/
 ````

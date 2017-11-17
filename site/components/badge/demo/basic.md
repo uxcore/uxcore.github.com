@@ -5,27 +5,27 @@
 ---
 
 ````jsx
-let Badge = require('uxcore-badge');
+const Badge = require('uxcore-badge');
 
 class Demo extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
-    render() {
-        return (
-            <Badge count={5}>
-                <a href="#" className="head-example"></a>
-            </Badge>
-        );
-    }
-};
+  render() {
+    return (
+      <Badge count={5}>
+        <a href="#" className="head-example" />
+      </Badge>
+    );
+  }
+}
 
 ReactDOM.render(
-    <Demo />
+  <Demo />
 , document.getElementById('components-badge-demo-basic'));
 /* JS END CSS START*/
 ````

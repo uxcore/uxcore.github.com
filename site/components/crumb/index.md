@@ -9,7 +9,7 @@
 ## Usage
 
 ```js
-var Crumb = require('uxcore-crumb');
+const Crumb = require('uxcore-crumb');
 
 React.render(
   (
