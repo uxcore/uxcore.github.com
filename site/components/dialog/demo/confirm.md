@@ -15,9 +15,9 @@ class CustomFooter extends React.Component {
     super(props);
     this.state = {
       loading: false,
-      		visible: false,
-    	};
-  	}
+      visible: false,
+    };
+  }
   showModal() {
     this.setState({
       visible: true,
@@ -26,7 +26,7 @@ class CustomFooter extends React.Component {
   handleOk() {
     this.setState({ loading: true });
     setTimeout(() => {
-		  this.setState({ loading: false, visible: false });
+      this.setState({ loading: false, visible: false });
     }, 3000);
   }
   handleCancel() {
@@ -34,23 +34,23 @@ class CustomFooter extends React.Component {
   }
   render() {
     return (<div>
-			                                                                                                                <Button onClick={this.showModal.bind(this)}>
-			显示对话框
+      <Button onClick={this.showModal.bind(this)}>
+        显示对话框
 			</Button>
-			                                                                                                                <Dialog ref="modal"
-  wrapClassName="vertical-center-dailog"
-  visible={this.state.visible}
-  title="对话框标题" onOk={this.handleOk} onCancel={this.handleCancel.bind(this)}
-  footer={[
-    <Button key="back" onClick={this.handleCancel.bind(this)} size="small" type="secondary">返 回</Button>,
-    <Button key="submit" onClick={this.handleOk.bind(this)} size="small">提 交</Button>,
-  ]}
-                                                                                                             >
-				                                      <p>对话框的内容</p>
-				                                      <p>对话框的内容</p>
-				                                      <p>对话框的内容</p>
-			</Dialog>
-		                                                                          </div>);
+      <Dialog ref="modal"
+        wrapClassName="vertical-center-dailog"
+        visible={this.state.visible}
+        title="对话框标题" onOk={this.handleOk} onCancel={this.handleCancel.bind(this)}
+        footer={[
+          <Button key="back" onClick={this.handleCancel.bind(this)} size="small" type="secondary">返 回</Button>,
+          <Button key="submit" onClick={this.handleOk.bind(this)} size="small">提 交</Button>,
+        ]}
+      >
+        <p>对话框的内容</p>
+        <p>对话框的内容</p>
+        <p>对话框的内容</p>
+      </Dialog>
+    </div>);
   }
 }
 

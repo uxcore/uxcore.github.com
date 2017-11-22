@@ -18,15 +18,17 @@ function showConfirm() {
     onOk() {
       alert('确定');
     },
-    onCancel() {},
+    onCancel() { },
   });
 }
 
 class ConfirmDemo extends React.Component {
   render() {
-    return (<Button onClick={showConfirm.bind(this)}>
-			  确认对话框
-		                                                                          </Button>);
+    return (
+      <Button onClick={showConfirm.bind(this)}>
+        确认对话框
+      </Button>
+    );
   }
 }
 

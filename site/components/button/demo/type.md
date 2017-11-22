@@ -15,5 +15,5 @@ ReactDOM.render(
     <Button type="secondary">secondary</Button>&nbsp;
     <Button type="outline">outline</Button>
   </div>
-, document.getElementById('components-button-demo-type'));
+  , document.getElementById('components-button-demo-type'));
 ````

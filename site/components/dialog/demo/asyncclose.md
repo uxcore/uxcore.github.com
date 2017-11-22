@@ -17,10 +17,10 @@ class AsyncCloseDemo extends React.Component {
       ModalText: '对话框的内容',
       visible: false,
     };
-  	}
+  }
   show() {
     this.setState({
-		  visible: true,
+      visible: true,
     });
   }
   handleOk() {
@@ -28,10 +28,10 @@ class AsyncCloseDemo extends React.Component {
       ModalText: '对话框将在两秒后关闭',
     });
     setTimeout(() => {
-		  this.setState({
-		    visible: false,
-    ModalText: '对话框的内容',
-		  });
+      this.setState({
+        visible: false,
+        ModalText: '对话框的内容',
+      });
     }, 2000);
   }
   handleCancel() {
@@ -42,16 +42,16 @@ class AsyncCloseDemo extends React.Component {
   }
   render() {
     return (
-		                                                                                                                  <div>
-			                                        <Button onClick={this.show.bind(this)}>显示对话框</Button>
-			                                        <Dialog title="对话框标题"
-  visible={this.state.visible}
-  onOk={this.handleOk.bind(this)}
-  onCancel={this.handleCancel.bind(this)}
-                                         >
-				                                        <p>{this.state.ModalText}</p>
-			</Dialog>
-		</div>
+      <div>
+        <Button onClick={this.show.bind(this)}>显示对话框</Button>
+        <Dialog title="对话框标题"
+          visible={this.state.visible}
+          onOk={this.handleOk.bind(this)}
+          onCancel={this.handleCancel.bind(this)}
+        >
+          <p>{this.state.ModalText}</p>
+        </Dialog>
+      </div>
     );
   }
 }

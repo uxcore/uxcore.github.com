@@ -31,7 +31,7 @@ class HoverDemo extends React.Component {
 }
 
 ReactDOM.render(
-	                                        <HoverDemo />,
-  	document.getElementById('components-popover-demo-click')
+  <HoverDemo />,
+  document.getElementById('components-popover-demo-click')
 );
 ````

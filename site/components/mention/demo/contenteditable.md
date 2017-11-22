@@ -18,13 +18,13 @@ function formatter(data) {
 }
 
 ReactDOM.render(
-	                                        <Mention
-  matchRange={[1, 6]}
-  source={source}
-  formatter={formatter}
-                                       >
-		                                        <ContenteditableEditor placeholder="在此编辑" />
-	</Mention>,
-  	document.getElementById('components-mention-demo-contenteditable')
+  <Mention
+    matchRange={[1, 6]}
+    source={source}
+    formatter={formatter}
+  >
+    <ContenteditableEditor placeholder="在此编辑" />
+  </Mention>,
+  document.getElementById('components-mention-demo-contenteditable')
 );
 ````

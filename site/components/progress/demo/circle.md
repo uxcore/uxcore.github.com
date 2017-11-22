@@ -11,9 +11,9 @@ const { Circle } = require('uxcore-progress');
 
 ReactDOM.render(
   <div>
-		                                                                                  <div style={{ display: 'inline-block' }}>
-  <Circle percent={70} status="exception" />
-</div>
+    <div style={{ display: 'inline-block' }}>
+      <Circle percent={70} status="exception" />
+    </div>
     <div style={{ display: 'inline-block' }}>
       <Circle percent={100} status="success" />
     </div>
@@ -21,5 +21,5 @@ ReactDOM.render(
       <Circle percent={50} showInfo />
     </div>
   </div>
-, document.getElementById('components-progress-demo-circle'));
+  , document.getElementById('components-progress-demo-circle'));
 ````

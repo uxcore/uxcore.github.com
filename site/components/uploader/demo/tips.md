@@ -38,7 +38,7 @@ class Demo1 extends React.Component {
 }
 
 ReactDOM.render(
-	                                        <Demo1 />,
-  	document.getElementById('components-uploader-demo-tips')
+  <Demo1 />,
+  document.getElementById('components-uploader-demo-tips')
 );
 ````

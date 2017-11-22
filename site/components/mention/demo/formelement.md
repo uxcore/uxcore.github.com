@@ -18,18 +18,18 @@ function formatter(data) {
 }
 
 ReactDOM.render(
-	                                        <Mention
-  matchRange={[1, 6]}
-  source={source}
-  formatter={formatter}
-                                       >
-		                                        <TextareaEditor
-  placeholder="在此编辑"
-                                        />
-		                                        <InputEditor
-  placeholder="在此编辑"
-                                        />
-	</Mention>,
-  	document.getElementById('components-mention-demo-formelement')
+  <Mention
+    matchRange={[1, 6]}
+    source={source}
+    formatter={formatter}
+  >
+    <TextareaEditor
+      placeholder="在此编辑"
+    />
+    <InputEditor
+      placeholder="在此编辑"
+    />
+  </Mention>,
+  document.getElementById('components-mention-demo-formelement')
 );
 ````

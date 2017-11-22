@@ -14,7 +14,7 @@ function info() {
   Dialog.info({
     title: '这是一条通知信息',
     content: '一些附加信息一些附加信息一些附加信息',
-    onOk() {},
+    onOk() { },
   });
 }
 
@@ -34,11 +34,13 @@ function error() {
 
 class InfoDemo extends React.Component {
   render() {
-    return (<div>
-		                                                                                                                    <Button onClick={info}>信息提示</Button>&nbsp;
-		                                                                                                                    <Button onClick={success}>成功提示</Button>&nbsp;
-		                                                                                                                    <Button onClick={error}>失败提示</Button>
-		                                                                          </div>);
+    return (
+      <div>
+        <Button onClick={info}>信息提示</Button>&nbsp;
+        <Button onClick={success}>成功提示</Button>&nbsp;
+		    <Button onClick={error}>失败提示</Button>
+      </div>
+    );
   }
 }
 

@@ -46,17 +46,17 @@ function personPanelFormatter(data) {
 }
 
 ReactDOM.render(
-	                                        <TinymceMention
-  insertMode={'TEXT_NODE'}
-  source={getPersonData}
-  formatter={personDataFormatter}
-  mentionFormatter={personMentionFormatter}
-  panelFormatter={personPanelFormatter}
-                                       >
-  <Tinymce
-    placeholder={'在此编辑'}
-  />
-</TinymceMention>,
-  	document.getElementById('components-mention-demo-tinymce')
+  <TinymceMention
+    insertMode={'TEXT_NODE'}
+    source={getPersonData}
+    formatter={personDataFormatter}
+    mentionFormatter={personMentionFormatter}
+    panelFormatter={personPanelFormatter}
+  >
+    <Tinymce
+      placeholder={'在此编辑'}
+    />
+  </TinymceMention>,
+  document.getElementById('components-mention-demo-tinymce')
 );
 ````
