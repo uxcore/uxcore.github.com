@@ -5,6 +5,7 @@ module.exports = {
         "ReactDOM": true,
         "SaltUI": true,
         "mountNode": true,
+        "document": true,
     },
     "plugins": [
         "react",
@@ -22,6 +23,7 @@ module.exports = {
         "import/extensions": "off",
         "react/forbid-prop-types": "off",
         "react/react-in-jsx-scope": "off",
-        "react/jsx-filename-extension": "off"
+        "react/jsx-filename-extension": "off",
+        "react/jsx-no-bind": "off"
     }
 };

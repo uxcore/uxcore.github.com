@@ -7,6 +7,11 @@
 ---
 
 
+````css
+.demo-size {
+  max-width: 652px;
+}
+````
 
 ````jsx
 const Button = require('uxcore-button');
@@ -36,7 +41,7 @@ class Demo extends React.Component {
   }
 
   handleSubmit() {
-    console.log(this.refs.form.getValues());
+    console.log(this.form.getValues());
   }
 
   handleChange(values) {
@@ -48,10 +53,7 @@ class Demo extends React.Component {
   render() {
     const me = this;
     return (
-      <div className="demo-basic">
-        <style>
-          {'.required {font-family:Simsun} .demo-basic-form {width: 532px}'}
-        </style>
+      <div className="demo-size">
         <Form
           ref={(c) => { this.form = c; }}
           className="demo-basic-form"
@@ -59,17 +61,20 @@ class Demo extends React.Component {
           jsxonChange={(values) => { this.handleChange(values); }}
           size={this.state.values.size}
         >
-          <Select jsxname="size" jsxlabel="尺寸" jsxdata={[
-                        { value: 'large', text: '大' },
-                        { value: 'middle', text: '中' },
-                        { value: 'small', text: '小' },
-          ]}
+          <Select
+            jsxname="size"
+            jsxlabel="尺寸"
+            jsxdata={[
+              { value: 'large', text: '大' },
+              { value: 'middle', text: '中' },
+              { value: 'small', text: '小' },
+            ]}
           />
           <Input jsxname="location" jsxlabel="地点" jsxplaceholder="请输入地点" />
           <Date jsxname="date" jsxlabel="时间" jsxtype="cascade" autoMatchWidth />
           <TextArea jsxname="content" jsxlabel="内容" />
           <Other>
-            <Button style={{ marginLeft: '88px' }} onClick={me.handleSubmit.bind(me)}>确定</Button>
+            <Button style={{ marginLeft: '88px', marginTop: this.state.values.size === 'small' ? '12px' : '16px' }} onClick={me.handleSubmit.bind(me)}>确定</Button>
           </Other>
         </Form>
       </div>

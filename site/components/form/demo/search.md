@@ -8,6 +8,12 @@
 
 
 
+````css
+.demo-search {
+  max-width: 652px;
+}
+````
+
 ````jsx
 const classnames = require('classnames');
 const assign = require('object-assign');
@@ -39,19 +45,6 @@ class Demo extends React.Component {
       dataType: 'jsonp',
       placeholder: '搜索商品',
       jsxfetchUrl: 'http://suggest.taobao.com/sug',
-      advancedOptions: [
-        {
-          value: '1',
-          text: '选项一',
-        },
-        {
-          value: '2',
-          text: '选项二',
-        },
-      ],
-      advancedConfig: {
-        placeholder: '高级选项',
-      },
       classOptions: [
         {
           value: '1',
@@ -86,7 +79,7 @@ class Demo extends React.Component {
 
 
     return (
-      <div className="demo">
+      <div className="demo-search">
         <Form ref="form">
           <FormRowTitle jsxtitle="标准搜索" />
           <SearchFormField {...searchOptions} />

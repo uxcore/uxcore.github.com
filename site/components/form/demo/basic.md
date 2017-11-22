@@ -7,19 +7,21 @@
 ---
 
 
+````css
+.demo-basic {
+  max-width: 652px;
+}
+````
 
 ````jsx
 const Button = require('uxcore-button');
 const Form = require('uxcore-form');
+
 const {
-    Constants,
-    FormRowTitle,
-    FormRow: Row,
-    InputFormField: Input,
-    DateFormField: Date,
-    TextAreaFormField: TextArea,
-    ButtonGroupFormField,
-    OtherFormField: Other,
+  InputFormField: Input,
+  DateFormField: Date,
+  TextAreaFormField: TextArea,
+  OtherFormField: Other,
 } = Form;
 
 
@@ -31,23 +33,19 @@ class Demo extends React.Component {
   }
 
   handleSubmit() {
-    console.log(this.refs.form.getValues());
+    console.log(this.form.getValues());
   }
 
   render() {
-    const me = this;
     return (
       <div className="demo-basic">
-        <style>
-          {'.required {font-family:Simsun} .demo-basic-form {width: 532px}'}
-        </style>
-        <Form ref="form" className="demo-basic-form">
+        <Form ref={(c) => { this.form = c; }} className="demo-basic-form">
           <Input jsxname="theme" jsxlabel="主题" jsxplaceholder="请输入主题" />
           <Input jsxname="location" jsxlabel="地点" jsxplaceholder="请输入地点" />
           <Date jsxname="date" jsxlabel="时间" jsxtype="cascade" autoMatchWidth />
-          <TextArea jsxname="content" jsxlabel="内容" />
+          <TextArea jsxname="content" jsxlabel="内容" inputBoxMaxWidth="large" />
           <Other>
-            <Button style={{ marginLeft: '88px' }} onClick={me.handleSubmit.bind(me)}>确定</Button>
+            <Button style={{ marginLeft: '88px', marginTop: '16px' }} onClick={() => { this.handleSubmit(); }}>确定</Button>
           </Other>
         </Form>
       </div>
@@ -57,3 +55,5 @@ class Demo extends React.Component {
 
 ReactDOM.render(<Demo />, document.getElementById('components-form-demo-basic'));
 ````
+
+

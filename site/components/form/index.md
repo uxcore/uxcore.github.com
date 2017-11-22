@@ -87,6 +87,7 @@
 |jsxrules|object/array|optional|-|validators，具体用法和格式见 Usage，Form 已经提供了一些现成的 validator 供使用。也可以自己编写|
 |instantValidate|boolean|optional|true|是否开启即时校验|
 |verticalAlign|boolean|optional|false|表单域是否竖排|
+|inputBoxMaxWidth|string|optional| - | 泛指的输入框的最大宽度，通常用于较宽页面  |
 
 ### Validators
 
@@ -249,16 +250,16 @@ jsxdata 目前支持两种格式
 
 ```javascript
 <CheckboxGroupFormField>
-  <Item value="1" text="a" disabled />
-  <Item value="2" text="b" />
-  <Item value="3" text="c"
-    addon={
-      <Tooltip overlay={<div>提示</div>}>
-        <i className="kuma-icon kuma-icon-caution" style={{ color: 'blue', fontSize: '12px', marginLeft: '3px' }} />
-      </Tooltip>
+    <Item value="1" text="a" disabled={true} />
+    <Item value="2" text="b" />
+    <Item value="3" text="c"
+        addon={
+            <Tooltip overlay={<div>提示</div>}>
+                <i className='kuma-icon kuma-icon-caution' style={{color: 'blue', fontSize: '12px', 'marginLeft': '3px'}} />
+            </Tooltip>
         }
-  />
-</CheckboxGroupFormField>;
+    />
+</CheckboxGroupFormField>
 ```
 
 ### DateFormField

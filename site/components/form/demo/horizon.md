@@ -8,6 +8,12 @@
 
 
 
+````css
+.demo-horizon {
+  max-width: 652px;
+}
+````
+
 ````jsx
 const Button = require('uxcore-button');
 const Form = require('uxcore-form');
@@ -56,7 +62,7 @@ class Demo extends React.Component {
           ]}
           />
           <OtherFormField>
-            <Button style={{ marginLeft: '88px' }} onClick={me.handleSubmit.bind(me)}>确定</Button>
+            <Button style={{ marginLeft: '88px', marginTop: '16px' }} onClick={me.handleSubmit.bind(me)}>确定</Button>
           </OtherFormField>
         </Form>
       </div>

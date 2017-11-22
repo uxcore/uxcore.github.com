@@ -15,15 +15,17 @@
 
 ## Usage
 ```js
+
 const Dialog = require('uxcore-dialog');
+
 ReactDOM.render(
-  (<Dialog title="第一个 Dialog"
+  <Dialog title="第一个 Dialog"
     visible={this.state.visible}
     onOk={this.handleOk.bind(this)}
     onCancel={this.handleCancel.bind(this)}
   >
     <p>对话框的内容</p>
-  </Dialog>),
+  </Dialog>,
   document.getElementById('content')
 );
 ```
@@ -32,7 +34,7 @@ ReactDOM.render(
 
 | 参数       | 说明           | 类型             | 默认值       |
 |------------|----------------|------------------|--------------|
-| title      | Title of the dialog | String or React.Element    | 无           |
+| title      | Title of the dialog | String | React.Element    | 无           |
 | visible      | current dialog's visible status  | Boolean    | false |
 | mousePosition |  set pageX and pageY of current mouse(it will cause transform origin to be set). | {x:number,y:number}   | 无 |
 | onOk       | the callback when ok clicked | function | 无 |
@@ -47,6 +49,7 @@ ReactDOM.render(
 | style | Root style for dialog element.Such as width, height | Object | {} |
 | zIndex |  | Number | |
 | bodyStyle | body style for dialog body element.Such as height | Number | {} |
+| htmlClassName | the className added to html element when dialog is visible | String | '' |
 
 ### Dialog.xxx()
 
@@ -65,4 +68,10 @@ ReactDOM.render(
 | onOk       | 点击确定回调，参数为关闭函数，返回 promise 时 resolve 后自动关闭      | function         | 无           |
 | onCancel | 取消回调，参数为关闭函数，返回 promise 时 resolve 后自动关闭       | function         | 无           |
 | width      | 宽度           | String or Number | 416           |
+| buttonSize  |  按钮的尺寸，'small', 'medium', 'large' 三种可选 | String | 'medium'|
 | iconClassName | 图标样式名 | String | kuma-icon-caution |
+| icon       | 自定义图标 | Icon Element |  uxcore-icon 的实例，http://uxco.re/components/icon/   |
+| timer | 弹框自动关闭, 2000表示2s以后关闭 | Number, false or null | false |
+| htmlClassName | the className added to html element when dialog is visible | String | '' |
+| okText   | 确认按钮文字 , 0.7.1 版本后支持 | string | - |
+| cancelText | 取消按钮文字	, 0.7.1 版本后支持 | string | - |

@@ -9,6 +9,11 @@ Form 中所有表单域的默认值由 jsxvalues 统一管理。
 ---
 
 
+````css
+.demo-comp .other {
+  padding-top: 16px;
+}
+````
 
 ````jsx
 const classnames = require('classnames');
@@ -289,7 +294,7 @@ class Demo extends React.Component {
     }];
 
     return (
-      <div className="demo">
+      <div className="demo-comp">
         <Form ref="form" instantValidate jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
           <FormRowTitle jsxtitle="我是行标题" />
           <FormRow>
@@ -449,7 +454,7 @@ class Demo extends React.Component {
             placeholder="测试"
           />
 
-          <OtherFormField>
+          <OtherFormField className="other">
             <Button style={{ marginLeft: '88px', marginRight: '8px' }} onClick={me.handleClick.bind(me)}>提交</Button>
             <Button style={{ marginRight: '8px' }} type="secondary" action="reset">取消</Button>
             <Button style={{ marginRight: '8px' }} type="secondary" onClick={me.handleSetValues.bind(me)}>手动setValues</Button>

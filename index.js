@@ -53,7 +53,7 @@ window.UXCORE = {
 	'uxcore-title': require('uxcore-title'),
 	'classnames': require('classnames'),
 	'object-assign': require('object-assign'),
-	'react-clipboard.js': require('react-clipboard.js'),
+	'react-clipboard.js': require('react-clipboard.js').default,
 };
 
 /*

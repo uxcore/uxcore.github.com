@@ -14,10 +14,10 @@ const Button = require('uxcore-button');
 const Table = require('uxcore-table');
 
 const {
-    InputFormField: Input,
-    FormRow,
-    Validators,
-    OtherFormField: Other,
+  InputFormField: Input,
+  FormRow,
+  Validators,
+  OtherFormField: Other,
 } = Form;
 
 class Demo extends React.Component {
@@ -30,7 +30,7 @@ class Demo extends React.Component {
 
   handleClick() {
     const me = this;
-    alert(JSON.stringify(me.refs.form.getValues(true)));
+    alert(JSON.stringify(me.form.getValues(true)));
   }
 
   render() {
@@ -47,17 +47,16 @@ class Demo extends React.Component {
             name: '小李',
             pinyin: 'xiaoli',
           },
-
         ],
       },
       jsxcolumns: [
-                { dataKey: 'name', title: '姓名', width: 300 },
-                { dataKey: 'pinyin', title: '拼音', width: 300 },
+        { dataKey: 'name', title: '姓名', width: 300 },
+        { dataKey: 'pinyin', title: '拼音', width: 300 },
       ],
     };
     return (
       <div className="page-demo3">
-        <Form jsxvalues={me.state.values} ref="form">
+        <Form jsxvalues={me.state.values} ref={(c) => {this.form = c;}}>
           <FormRow>
             <Input jsxlabel="A" jsxname="a" jsxrules={{ validator: Validators.isNum, errMsg: '必须为数字' }} />
             <Other>
@@ -72,7 +71,6 @@ class Demo extends React.Component {
       </div>
     );
   }
-
 }
 
 ReactDOM.render(
@@ -83,7 +81,7 @@ ReactDOM.render(
 ````
 ````css
 .page-demo3 .other {
-    padding-left: 100px
+    padding-left: 88px
 }
 
 .page-demo3 .confirmButton {
