@@ -800,19 +800,25 @@ ReactDOM.render(
 <tr>
 <td>multiple</td>
 <td>支持多选</td>
-<td></td>
+<td>bool</td>
 <td>false</td>
 </tr>
 <tr>
 <td>filterOption</td>
-<td>是否根据输入项进行筛选</td>
-<td></td>
+<td>是否根据输入结果过滤选项，默认是使用 optionFilterProp 对应的 Option 属性来过滤</td>
+<td>bool/function(inputValue, Option)</td>
+<td>true</td>
+</tr>
+<tr>
+<td>showSearch</td>
+<td>是否在单选模式下显示搜索</td>
+<td>bool</td>
 <td>true</td>
 </tr>
 <tr>
 <td>tags</td>
 <td>可以把随意输入的条目作为tag，输入项不需要与下拉选项匹配</td>
-<td></td>
+<td>bool</td>
 <td>false</td>
 </tr>
 <tr>
@@ -866,7 +872,7 @@ ReactDOM.render(
 <tr>
 <td>combobox</td>
 <td>输入框自动提示模式</td>
-<td></td>
+<td>bool</td>
 <td>false</td>
 </tr>
 <tr>
