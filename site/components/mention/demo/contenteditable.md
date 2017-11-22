@@ -18,12 +18,12 @@ function formatter(data) {
 }
 
 ReactDOM.render(
-	                    <Mention
+	                                        <Mention
   matchRange={[1, 6]}
   source={source}
   formatter={formatter}
-                   >
-		                    <ContenteditableEditor placeholder="在此编辑" />
+                                       >
+		                                        <ContenteditableEditor placeholder="在此编辑" />
 	</Mention>,
   	document.getElementById('components-mention-demo-contenteditable')
 );

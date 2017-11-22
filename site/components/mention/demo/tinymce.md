@@ -46,13 +46,13 @@ function personPanelFormatter(data) {
 }
 
 ReactDOM.render(
-	                    <TinymceMention
+	                                        <TinymceMention
   insertMode={'TEXT_NODE'}
   source={getPersonData}
   formatter={personDataFormatter}
   mentionFormatter={personMentionFormatter}
   panelFormatter={personPanelFormatter}
-                   >
+                                       >
   <Tinymce
     placeholder={'在此编辑'}
   />

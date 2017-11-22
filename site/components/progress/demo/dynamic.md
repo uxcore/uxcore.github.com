@@ -57,6 +57,6 @@ class Demo extends React.Component {
 }
 
 ReactDOM.render(
-	                    <Demo />
+	                                        <Demo />
 , document.getElementById('components-progress-demo-dynamic'));
 ````

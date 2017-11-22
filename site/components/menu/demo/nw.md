@@ -33,13 +33,13 @@ class Demo extends React.Component {
 
   render() {
     return (
-			                                                                  <Menu onClick={this.handleClick.bind(this)}
+			                                                                                                                              <Menu onClick={this.handleClick.bind(this)}
   style={{ width: 240 }}
   className="kuma-menu-none-border"
   defaultOpenKeys={['sub1']}
   selectedKeys={[this.state.current]}
   mode="inline"
-                                                               >
+                                                                                                                           >
   <SubMenu key="sub1" title={<span><i className="kuma-icon kuma-icon-email" /><span>导航一</span></span>}>
     <Menu.Item key="1">选项1</Menu.Item>
     <Menu.Item key="2">选项2</Menu.Item>

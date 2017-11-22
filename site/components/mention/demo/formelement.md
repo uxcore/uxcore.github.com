@@ -18,17 +18,17 @@ function formatter(data) {
 }
 
 ReactDOM.render(
-	                    <Mention
+	                                        <Mention
   matchRange={[1, 6]}
   source={source}
   formatter={formatter}
-                   >
-		                    <TextareaEditor
+                                       >
+		                                        <TextareaEditor
   placeholder="在此编辑"
-                    />
-		                    <InputEditor
+                                        />
+		                                        <InputEditor
   placeholder="在此编辑"
-                    />
+                                        />
 	</Mention>,
   	document.getElementById('components-mention-demo-formelement')
 );

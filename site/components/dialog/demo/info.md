@@ -35,10 +35,10 @@ function error() {
 class InfoDemo extends React.Component {
   render() {
     return (<div>
-		                                                        <Button onClick={info}>信息提示</Button>&nbsp;
-		                                                        <Button onClick={success}>成功提示</Button>&nbsp;
-		                                                        <Button onClick={error}>失败提示</Button>
-		                                  </div>);
+		                                                                                                                    <Button onClick={info}>信息提示</Button>&nbsp;
+		                                                                                                                    <Button onClick={success}>成功提示</Button>&nbsp;
+		                                                                                                                    <Button onClick={error}>失败提示</Button>
+		                                                                          </div>);
   }
 }
 

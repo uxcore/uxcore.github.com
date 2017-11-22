@@ -26,7 +26,7 @@ class ConfirmDemo extends React.Component {
   render() {
     return (<Button onClick={showConfirm.bind(this)}>
 			  确认对话框
-		                                  </Button>);
+		                                                                          </Button>);
   }
 }
 

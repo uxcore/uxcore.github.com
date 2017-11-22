@@ -54,9 +54,9 @@ class Demo extends React.Component {
       text: '条件八',
       value: 8,
     }, {
-        text: '条件九',
-        value: 9,
-      }];
+      text: '条件九',
+      value: 9,
+    }];
 
     return (<div style={{ width: 350 }}>
       <div>

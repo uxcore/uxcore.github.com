@@ -24,9 +24,9 @@ class BasicDemo extends React.Component {
   }
   render() {
     return (
-			                                                      <div>
-				                    <Button onClick={this.show.bind(this)}>显示对话框</Button>
-				                    <Dialog title="第一个 Dialog"
+			                                                                                                                  <div>
+				                                        <Button onClick={this.show.bind(this)}>显示对话框</Button>
+				                                        <Dialog title="第一个 Dialog"
   visible={this.state.visible}
   onOk={() => {
     this.setState({
@@ -38,10 +38,10 @@ class BasicDemo extends React.Component {
       visible: false,
     });
   }}
-                      >
-					                    <p>对话框的内容</p>
-					                    <p>对话框的内容</p>
-					                    <p>对话框的内容</p>
+                                          >
+					                                        <p>对话框的内容</p>
+					                                        <p>对话框的内容</p>
+					                                        <p>对话框的内容</p>
 				</Dialog>
 			</div>
     );

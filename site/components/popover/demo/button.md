@@ -40,7 +40,7 @@ class HoverDemo extends React.Component {
 }
 
 ReactDOM.render(
-	                    <HoverDemo />,
+	                                        <HoverDemo />,
   	document.getElementById('components-popover-demo-button')
 );
 ````

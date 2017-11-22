@@ -181,11 +181,11 @@ class Demo extends React.Component {
                 <OtherFormField jsxflex={2}>
                   <div className="demo-updown" onClick={me.handleSearchClick.bind(me)}>
                     <a href="javascript:;">高级查询</a><i className={classnames({
-                        "kuma-icon": true,
-                        "kuma-icon-title-up": me.state.showAdSearch,
-                        "kuma-icon-title-down": !me.state.showAdSearch,
-                      })}
-                      ></i>
+                      'kuma-icon': true,
+                      'kuma-icon-title-up': me.state.showAdSearch,
+                      'kuma-icon-title-down': !me.state.showAdSearch,
+                    })}
+                    />
                   </div>
                 </OtherFormField>
               </FormRow>
@@ -209,10 +209,10 @@ class Demo extends React.Component {
                   jsxname="select2"
                   jsxlabel="名称"
                   afterFetch={(obj) => {
-                    let data = {};
+                    const data = {};
                     obj.result.forEach((item, index) => {
-                        data[item[1]] = item[0];
-                      });
+                      data[item[1]] = item[0];
+                    });
                     console.log(data);
                     return data;
                   }}
