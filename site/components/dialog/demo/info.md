@@ -38,7 +38,7 @@ class InfoDemo extends React.Component {
       <div>
         <Button onClick={info}>信息提示</Button>&nbsp;
         <Button onClick={success}>成功提示</Button>&nbsp;
-		    <Button onClick={error}>失败提示</Button>
+        <Button onClick={error}>失败提示</Button>
       </div>
     );
   }
@@ -46,5 +46,4 @@ class InfoDemo extends React.Component {
 
 ReactDOM.render(
   <InfoDemo />, document.getElementById('components-dialog-demo-info'));
-
 ````
