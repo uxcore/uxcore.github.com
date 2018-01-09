@@ -89,40 +89,11 @@ class Demo extends React.Component {
         width: 200,
         ordered: true,
       }, {
-        dataKey: 'action1',
-        title: '操作1',
-        width: 100,
-        type: 'action',
-        actions: [{
-          title: 'click',
-          callback() {
-            alert('click');
-          },
-          mode: 'edit',
-        }, {
-          title: '删除',
-          callback() {
-            alert('删除');
-          },
-          mode: 'view',
-        }, {
-          title: 'view',
-          callback() {
-            alert('view');
-          },
-          mode: 'edit',
-        }, {
-          title: 'view',
-          callback() {
-            alert('view');
-          },
-        }],
-      }, {
         dataKey: 'action',
         title: '链接',
         width: 100,
-        render(rowData) {
-          return <div><a href="#">111</a></div>;
+        render() {
+          return <div><a>111</a></div>;
         },
       },
     ];
@@ -131,7 +102,7 @@ class Demo extends React.Component {
       height: 400,
       pagerSizeOptions: [5, 10, 15, 20],
       actionBar: {
-        Action(type, table) {
+        Action() {
           me.setState({
             text: 2,
           });
@@ -146,7 +117,7 @@ class Demo extends React.Component {
     };
     return (
       <div>
-        <Table {...renderProps} ref="table" className="kuma-uxtable-border-line" />
+        <Table {...renderProps} className="kuma-uxtable-border-line" />
       </div>
     );
   }

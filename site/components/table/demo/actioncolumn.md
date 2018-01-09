@@ -53,14 +53,13 @@ class Demo extends React.Component {
     };
   }
 
-  handleChange(value, name, pass) {
+  handleChange(value) {
     this.setState({
       value,
     });
   }
 
   render() {
-    const me = this;
     const columns = [
       {
         dataKey: 'jsxid',
@@ -94,30 +93,24 @@ class Demo extends React.Component {
         actions: [
           {
             title: '操作一',
-            callback: (rowData) => {
-            },
+            callback: (rowData) => { console.log(rowData); },
           },
           {
             title: '操作二',
-            callback: (rowData) => {
-            },
+            callback: (rowData) => { console.log(rowData); },
           },
           {
             title: '禁用',
-            callback: (rowData) => {
-            },
+            callback: (rowData) => { console.log(rowData); },
             isDisable: () => true,
-
           },
           {
             title: '操作四',
-            callback: (rowData) => {
-            },
+            callback: (rowData) => { console.log(rowData); },
           },
           {
             title: '操作五',
-            callback: (rowData) => {
-            },
+            callback: (rowData) => { console.log(rowData); },
           },
         ],
       },
@@ -141,7 +134,7 @@ class Demo extends React.Component {
             </RadioGroupFormField>
           </FormRow>
         </Form>
-        <Table {...renderProps} ref="grid" />
+        <Table {...renderProps} />
       </div>
     );
   }

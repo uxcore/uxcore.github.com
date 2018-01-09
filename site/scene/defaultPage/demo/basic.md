@@ -1,20 +1,15 @@
-# 填缺页
+# 缺省页
 
 - order: 0
+
+点击查看代码
 
 ---
 
 ````jsx
-import classnames from 'classnames';
-import Button from 'uxcore-button';
 import EmptyData from 'uxcore-empty-data';
 
-
 class Demo extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="fillErrorDemo">
@@ -34,8 +29,9 @@ class Demo extends React.Component {
 }
 
 ReactDOM.render(
-  <Demo />
-, document.getElementById('scene-fillerror-demo-basic'));
+  <Demo />,
+  document.getElementById('scene-fillerror-demo-basic')
+);
 
 /* JS END CSS START*/
 ````

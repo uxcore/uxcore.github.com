@@ -8,6 +8,7 @@
 
 ````jsx
 import Tree from 'uxcore-tree';
+
 const TreeNode = Tree.TreeNode;
 
 function handleSelect(e) {
@@ -16,7 +17,10 @@ function handleSelect(e) {
 
 ReactDOM.render(
   <div>
-    <Tree onSelect={handleSelect} defaultSelectedKeys={['0-1', '0-1-1']} multiple
+    <Tree
+      onSelect={handleSelect} 
+      defaultSelectedKeys={['0-1', '0-1-1']}
+      multiple
       defaultExpandAll
     >
       <TreeNode title="parent 1" key="0-1">

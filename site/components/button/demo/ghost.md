@@ -18,12 +18,18 @@ ReactDOM.render(
         padding: '10px 0',
       }}
     >
-      <Button style={{ marginLeft: '12px' }} ghost type="secondary">secondary</Button>
-      <Button style={{ marginLeft: '12px' }} ghost type="outline">outline</Button>
-      <Button style={{ marginLeft: '12px' }} ghost type="white">white</Button>
-      <Button style={{ marginLeft: '12px' }} ghost disabled type="secondary">secondary disabled</Button>
-      <Button style={{ marginLeft: '12px' }} ghost disabled type="outline">outline disabled</Button>
-      <Button style={{ marginLeft: '12px' }} ghost type="white" disabled>white disabled</Button>
+      <div>
+        <Button style={{ marginLeft: '12px' }} ghost type="secondary">secondary</Button>
+        <Button style={{ marginLeft: '12px' }} ghost type="outline">outline</Button>
+        <Button style={{ marginLeft: '12px' }} ghost type="white">white</Button>
+        <Button style={{ marginLeft: '12px' }} ghost danger type="secondary">danger</Button>
+      </div>
+      <div style={{ marginTop: 12 }}>
+        <Button style={{ marginLeft: '12px' }} ghost disabled type="secondary">secondary disabled</Button>
+        <Button style={{ marginLeft: '12px' }} ghost disabled type="outline">outline disabled</Button>
+        <Button style={{ marginLeft: '12px' }} ghost type="white" disabled>white disabled</Button>
+        <Button style={{ marginLeft: '12px' }} ghost danger disabled type="secondary">danger</Button>
+      </div>
     </div>
   </div>
 , document.getElementById('components-button-demo-ghost'));

@@ -1,8 +1,8 @@
-# 位置
+# 黑色
 
-- order: 1
+- order: 2
 
-目前支持 12 个方向。
+黑色版本
 
 ---
 
@@ -19,46 +19,46 @@ class Demo extends React.Component {
       <div className="demo">
         <div className="container">
           <div className="top">
-            <Tooltip overlay={overlay} placement="topLeft" trigger={['click']}>
+            <Tooltip overlayClassName="kuma-tooltip-dark" overlay={overlay} placement="topLeft" trigger={['click']}>
               <Button size="small" type="outline">上左</Button>
             </Tooltip>
-            <Tooltip overlay={overlay} placement="top" trigger={['click']}>
+            <Tooltip overlayClassName="kuma-tooltip-dark" overlay={overlay} placement="top" trigger={['click']}>
               <Button style={{ marginLeft: 10 }} size="small" type="outline">上边</Button>
             </Tooltip>
-            <Tooltip overlay={overlay} placement="topRight" trigger={['click']}>
+            <Tooltip overlayClassName="kuma-tooltip-dark" overlay={overlay} placement="topRight" trigger={['click']}>
               <Button style={{ marginLeft: 10 }} size="small" type="outline">上右</Button>
             </Tooltip>
           </div>
           <div className="bottom">
-            <Tooltip overlay={overlay} placement="bottomLeft" trigger={['click']}>
+            <Tooltip overlayClassName="kuma-tooltip-dark" overlay={overlay} placement="bottomLeft" trigger={['click']}>
               <Button size="small" type="outline">下左</Button>
             </Tooltip>
-            <Tooltip overlay={overlay} placement="bottom" trigger={['click']}>
+            <Tooltip overlayClassName="kuma-tooltip-dark" overlay={overlay} placement="bottom" trigger={['click']}>
               <Button style={{ marginLeft: 10 }} size="small" type="outline">下边</Button>
             </Tooltip>
-            <Tooltip overlay={overlay} placement="bottomRight" trigger={['click']}>
+            <Tooltip overlayClassName="kuma-tooltip-dark" overlay={overlay} placement="bottomRight" trigger={['click']}>
               <Button style={{ marginLeft: 10 }} size="small" type="outline">下右</Button>
             </Tooltip>
           </div>
           <div className="left">
-            <Tooltip overlay={overlay} placement="leftTop" trigger={['click']}>
+            <Tooltip overlayClassName="kuma-tooltip-dark" overlay={overlay} placement="leftTop" trigger={['click']}>
               <Button size="small" type="outline">左上</Button>
             </Tooltip>
-            <Tooltip overlay={overlay} placement="left" trigger={['click']}>
+            <Tooltip overlayClassName="kuma-tooltip-dark" overlay={overlay} placement="left" trigger={['click']}>
               <Button style={{ marginTop: 10 }} size="small" type="outline">左边</Button>
             </Tooltip>
-            <Tooltip overlay={overlay} placement="leftBottom" trigger={['click']}>
+            <Tooltip overlayClassName="kuma-tooltip-dark" overlay={overlay} placement="leftBottom" trigger={['click']}>
               <Button style={{ marginTop: 10 }} size="small" type="outline">左下</Button>
             </Tooltip>
           </div>
           <div className="right">
-            <Tooltip overlay={overlay} placement="rightTop" trigger={['click']}>
+            <Tooltip overlayClassName="kuma-tooltip-dark" overlay={overlay} placement="rightTop" trigger={['click']}>
               <Button size="small" type="outline">右上</Button>
             </Tooltip>
-            <Tooltip overlay={overlay} placement="right" trigger={['click']}>
+            <Tooltip overlayClassName="kuma-tooltip-dark" overlay={overlay} placement="right" trigger={['click']}>
               <Button style={{ marginTop: 10 }} size="small" type="outline">右边</Button>
             </Tooltip>
-            <Tooltip overlay={overlay} placement="rightBottom" trigger={['click']}>
+            <Tooltip overlayClassName="kuma-tooltip-dark" overlay={overlay} placement="rightBottom" trigger={['click']}>
               <Button style={{ marginTop: 10 }} size="small" type="outline">右下</Button>
             </Tooltip>
           </div>
@@ -70,7 +70,7 @@ class Demo extends React.Component {
 
 ReactDOM.render(
   <Demo />
-, document.getElementById('components-tooltip-demo-placement'));
+, document.getElementById('components-tooltip-demo-black'));
 
 /* JS END CSS START */
 ````

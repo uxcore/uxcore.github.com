@@ -7,40 +7,6 @@
 
 ---
 
-## Usage
-
-```javascript
-const Transfer = require('../src');
-
-const mockData = [];
-const len = Math.random() * 10 + 10;
-for (let i = 0; i < len; i++) {
-  mockData.push({
-    name: `内容${i + 1}`,
-    value: (i + 1),
-    description: `内容${i + 1}的描述`,
-    chosen: Math.random() * 2 > 1,
-  });
-}
-
-class TransferDemo extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  _handleChange(data) {
-    console.log(data);
-  }
-
-  render() {
-    const me = this;
-    return (
-      <Transfer data={mockData} onChange={me._handleChange.bind(me)} />
-    );
-  }
-}
-```
-
 ## API
 
 * selectItems(arr): 使对应 value 的变成高亮状态 (selected)。    

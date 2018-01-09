@@ -27,7 +27,13 @@
 参数：
     * data `Object`: 和 jsxvalues 的格式相同。
 
-* isDirty() 获取目前的数据是否没有通过检测，返回 true 或 false。
+* isDirty() 获取目前的表单是否没有通过检测，返回 true 或 false。
+
+* doValidate(force, always) 获取目前的表单是否通过检测，返回 true 或者 false。
+    * force：是否强制校验，无视不校验的规则。
+    * always：强制校验通过或者失败，通常可以用于清空出错状态。
+
+* doValidateAndScroll(force, always) 获取目前的表单是否通过检测并滚动至第一个出错的 field，参数同上。6.0 版本以后支持
 
 #### Form.createFormField(options)
 
@@ -318,3 +324,20 @@ setContent(content)：设置 EditorFormField 的值，很不幸，EditorFormFiel
 
 > OtherFormField 是一个特殊的 FormField，它用来和其他 FormField 一起完成布局（比如在一行排列等），如果需要一些装饰类的东西，可以以子元素的形式传入到这个 Field 里。
 > 他也可以用于布局中的占位。
+
+### ButtonGroupFormField
+
+> ButtonGroupFormField 是一个特殊的 FormField，它用来生成一些特定的表单按钮，这是为了与 Grid 相结合而准备的。如果需要自定义一些按钮，请使用 OtherFormField 和 uxcore-button 相结合来使用。
+你可以像这样使用它：
+```javascript
+var Button = require('uxcore-button');
+<ButtonGroupFormField>
+    {// handleClick 会被传入一个参数 data，取得的值和 API getValues() 相同}
+    <Button action="submit" onClick={this.handleClick.bind(this)}/>
+    {// 目前只支持 submit 和 reset 两种 action}
+    <Button action="reset"/>
+</ButtonGroupFormField>
+```
+
+
+

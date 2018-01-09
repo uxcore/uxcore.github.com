@@ -27,10 +27,12 @@ class Demo extends React.Component {
 
   renderArticle() {
     return (
-      <div className="article" style={{
-        marginRight: '200px',
-        fontSize: '14px',
-      }}
+      <div 
+        className="article"
+        style={{
+          marginRight: '200px',
+          fontSize: '14px',
+        }}
       >
         <h1>唐纳德·特朗普</h1>
         <div>唐纳德·特朗普，第45任美国总统，1946年6月14日生于美国纽约，政治家、商人、作家、主持人。特朗普1968年从宾夕法尼亚大学沃顿商学院毕业后，进入其父的房地产公司工作，并在1971年开始掌管公司运营。在随后几十年间，特朗普开始建立自己的房地产王国，人称“地产之王”。</div>
@@ -115,6 +117,19 @@ class Demo extends React.Component {
 }
 
 ReactDOM.render(
-  <Demo />
-, document.getElementById('components-float-nav-demo-basic'));
+  <Demo />, document.getElementById('components-float-nav-demo-basic'));
+````
+
+````css
+h1 {
+  margin: 20px 0;
+}
+
+h2 {
+  margin: 16px 0;
+}
+
+h3 {
+  margin: 12px 0;
+}
 ````

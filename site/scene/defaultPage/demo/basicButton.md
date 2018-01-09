@@ -1,11 +1,12 @@
-# 填缺页 (带按钮)
+# 缺省页 (带按钮)
 
 - order: 1
+
+点击查看代码
 
 ---
 
 ````jsx
-import classnames from 'classnames';
 import Button from 'uxcore-button';
 import EmptyData from 'uxcore-empty-data';
 
@@ -15,7 +16,6 @@ class Demo extends React.Component {
     this.onMainClick = this.onMainClick.bind(this);
   }
   onMainClick(e) {
-    console.log(111);
     alert(e.target.innerText);
   }
   onSecondaryClick(e) {
@@ -43,8 +43,9 @@ class Demo extends React.Component {
 }
 
 ReactDOM.render(
-  <Demo />
-, document.getElementById('scene-fillerror-demo-basicbutton'));
+  <Demo />,
+  document.getElementById('scene-fillerror-demo-basicbutton')
+);
 
 /* JS END CSS START*/
 ````

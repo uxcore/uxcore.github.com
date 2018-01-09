@@ -13,7 +13,8 @@ module.exports = {
         "markdown",
     ],
     "env": {
-        "es6": true
+        "es6": true,
+        "browser": true,
     },
     "parser": "babel-eslint",
     "rules": {
@@ -24,6 +25,7 @@ module.exports = {
         "react/forbid-prop-types": "off",
         "react/react-in-jsx-scope": "off",
         "react/jsx-filename-extension": "off",
-        "react/jsx-no-bind": "off"
+        "react/jsx-no-bind": "off",
+        "class-methods-use-this": "off"
     }
 };

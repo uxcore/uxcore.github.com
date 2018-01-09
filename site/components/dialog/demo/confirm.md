@@ -36,9 +36,8 @@ class CustomFooter extends React.Component {
     return (<div>
       <Button onClick={this.showModal.bind(this)}>
         显示对话框
-      </Button>                                                           
-      <Dialog 
-        ref="modal"
+      </Button>
+      <Dialog
         wrapClassName="vertical-center-dailog"
         visible={this.state.visible}
         title="对话框标题" onOk={this.handleOk} onCancel={this.handleCancel.bind(this)}

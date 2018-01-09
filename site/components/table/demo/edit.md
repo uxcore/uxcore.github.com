@@ -90,7 +90,7 @@ class Demo extends React.Component {
       },
       { dataKey: 'action1',
         title: '操作1',
-        width: 100,
+        width: 200,
         type: 'action',
         actions: [
           {

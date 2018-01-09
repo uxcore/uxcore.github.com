@@ -68,6 +68,7 @@ class Demo extends React.Component {
       rowSelection,
       className: 'kuma-uxtable-split-line',
       renderSubComp: (rowData) => {
+        console.log(rowData);
         const subProps = {
           jsxcolumns: [
             {

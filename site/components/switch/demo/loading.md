@@ -1,6 +1,6 @@
-# 受控
+# 加载状态
 
-- order: 2
+- order: 3
 
 ---
 
@@ -23,13 +23,18 @@ class Demo extends React.Component {
         }}
       >
         <Switch
+          loading={this.state.loading}
           checked={this.state.checked}
-          checkedChildren="显示"
-          unCheckedChildren="隐藏"
-          onChange={() => {
+          onChange={(checked) => {
             this.setState({
-              checked: !this.state.checked,
+              loading: true,
             });
+            setTimeout(() => {
+              this.setState({
+                checked,
+                loading: false,
+              });
+            }, 2000);
           }}
         />
       </div>
@@ -38,6 +43,5 @@ class Demo extends React.Component {
 }
 
 ReactDOM.render(
-  <Demo />
-, document.getElementById('components-switch-demo-control'));
+  <Demo />, document.getElementById('components-switch-demo-loading'));
 ````
