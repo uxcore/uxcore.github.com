@@ -44,14 +44,14 @@ class Demo extends React.Component {
 
 ReactDOM.render(
   <Demo />,
-  document.getElementById('scene-fillerror-demo-basicbutton')
+  document.getElementById('scene-defaultpage-demo-basicbutton')
 );
 
 /* JS END CSS START*/
 ````
 
 ````css
-#scene-fillerror-demo-basic {
+#scene-defaultpage-demo-basic {
   position:relative;
   height:500px;
 }

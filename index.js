@@ -52,6 +52,7 @@ window.UXCORE = {
 	'uxcore-pickable-form-field': require('uxcore-pickable-form-field'),
 	'uxcore-title': require('uxcore-title'),
 	'uxcore-button-group': require('uxcore-button-group'),
+	'uxcore-cell-field': require('uxcore-cell-field'),
 	'classnames': require('classnames'),
 	'object-assign': require('object-assign'),
 	'react-clipboard.js': require('react-clipboard.js').default,

@@ -33,6 +33,7 @@
     "uxcore-carousel": "^0.3.0",
     "uxcore-cascade-multi-select": "^0.7.0",
     "uxcore-cascade-select": "^0.5.0",
+    "uxcore-cell-field": "^0.2.2",
     "uxcore-checkbox-group": "^1.1.4",
     "uxcore-collapse": "^2.0.0",
     "uxcore-crumb": "^0.2.0",
