@@ -40,7 +40,7 @@ class Demo extends React.Component {
   }
 
   handleSubmit() {
-    console.log(this.form.getValues());
+    console.log(this.form.getValues(true));
   }
 
   handleModeChange(values, name) {

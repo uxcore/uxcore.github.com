@@ -50,6 +50,7 @@ class Demo extends React.Component {
   render() {
     const tableProps = {
       ref: (c) => { this.table = c; },
+      width: 700,
       jsxdata: {
         data: [
           {

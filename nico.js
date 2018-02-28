@@ -31,7 +31,7 @@ exports.site = {
         },
         {
             text: '场景',
-            link: '/scene/list/',
+            link: '/scene/defaultPage/',
             id: 'scene'
         },
         // {

@@ -2,7 +2,7 @@
 
 - order: 4
 
-行内编辑表格
+行内编辑表格，除了内置的几种可编辑列之外，我们还提供了自定义可编辑列的方法，请点击相应 [场景](/scene/customTable/#code-box-scene-customtable-demo-custom-edit) 查看
 
 ---
 
@@ -48,7 +48,7 @@ class Demo extends React.Component {
 
 
   getTableValues() {
-    console.log(this.refs.grid.getData());
+    console.log(this.table.getData());
   }
 
   handleTableChange(data, dataKey, pass) {
@@ -96,28 +96,28 @@ class Demo extends React.Component {
           {
             title: '编辑',
             callback: (rowData) => {
-              me.refs.grid.editRow(rowData);
+              me.table.editRow(rowData);
             },
             mode: Constants.MODE.VIEW,
           },
           {
             title: '保存',
             callback: (rowData) => {
-              me.refs.grid.saveRow(rowData);
+              me.table.saveRow(rowData);
             },
             mode: Constants.MODE.EDIT,
           },
           {
             title: '删除',
             callback: (rowData) => {
-              me.refs.grid.delRow(rowData);
+              me.table.delRow(rowData);
             },
             mode: Constants.MODE.VIEW,
           },
           {
             title: '重置',
             callback: (rowData) => {
-              me.refs.grid.resetRow(rowData);
+              me.table.resetRow(rowData);
             },
             mode: Constants.MODE.EDIT,
           },
@@ -134,18 +134,17 @@ class Demo extends React.Component {
       className: 'kuma-uxtable-split-line',
       actionBar: {
         新增行: () => {
-          me.refs.grid.addEmptyRow();
+          me.table.addEmptyRow();
         },
       },
       jsxcolumns: columns,
-      beforeFetch: (sendData) => { sendData.id = 1; return sendData; },
       processData: data => data,
       onChange: me.handleTableChange,
     };
 
     return (
       <div>
-        <Table {...renderProps} ref="grid" />
+        <Table {...renderProps} ref={(c) => { this.table = c; }} />
         <Button onClick={me.getTableValues.bind(me)} style={{ marginTop: '12px' }}>获取 Table 的值</Button>
       </div>
     );
