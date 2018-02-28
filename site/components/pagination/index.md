@@ -26,7 +26,7 @@
 |pageSize|每页条数|number|10|
 |onChange|页码改变的回调，参数是改变后的页码|function|noop|
 |showTotal|是否显示共多少条|boolean|false|
-|showQuickJump|是否可以快速跳转至某页|bool|false|
+|showQuickJumper|是否可以快速跳转至某页|bool|false|
 |showSizeChanger|是否可以改变 pageSize|bool|false|
 |sizeOptions|sizeChanger 显示的可选 pageSize|array|[10, 20, 30, 40]|
 |onShowSizeChange|pageSize 变化的回调|function|noop|
