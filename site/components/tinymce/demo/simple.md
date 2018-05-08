@@ -8,7 +8,7 @@
 
 ````jsx
 import classnames from 'classnames';
-import Tinymce from 'uxcore-tinymce';
+import { Tinymce } from 'uxcore';
 
 class Demo extends React.Component {
 

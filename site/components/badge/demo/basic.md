@@ -5,7 +5,7 @@
 ---
 
 ````jsx
-const Badge = require('uxcore-badge');
+import { Badge } from 'uxcore';
 
 class Demo extends React.Component {
 

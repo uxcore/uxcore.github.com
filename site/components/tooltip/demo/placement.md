@@ -9,8 +9,8 @@
 ````jsx
 
 
-const Tooltip = require('uxcore-tooltip');
-const Button = require('uxcore-button');
+import { Tooltip } from 'uxcore';
+import { Button } from 'uxcore';
 
 class Demo extends React.Component {
   render() {

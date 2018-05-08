@@ -8,8 +8,8 @@
 
 ````jsx
 
-import Album from 'uxcore-album';
-import Button from 'uxcore-button';
+import { Album } from 'uxcore';
+import { Button } from 'uxcore';
 
 const { Photo } = Album;
 

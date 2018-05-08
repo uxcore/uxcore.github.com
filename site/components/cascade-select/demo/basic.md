@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-const CascadeSelect = require('uxcore-cascade-select');
+import { CascadeSelect } from 'uxcore';
 const options = [{
   value: 'alibaba',
   label: '阿里巴巴',

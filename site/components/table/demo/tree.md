@@ -9,7 +9,7 @@
 ````jsx
 
 const classnames = require('classnames');
-const Table = require('uxcore-table');
+import { Table } from 'uxcore';
 
 class Demo extends React.Component {
 

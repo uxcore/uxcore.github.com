@@ -110,16 +110,16 @@ gulp.task('demo-rename', () => {
       mds.forEach((md) => {
         const mdPath = `${compPath}/${md}`;
         const file = fs.readFileSync(mdPath, 'utf-8');
-        const newFile = file.replace(/const (.+) = require.+/g, (match, s1) => {
+        const newFile = file.replace(/const (.+) = require\('uxcore.+/g, (match, s1) => {
           if (s1.indexOf('{') !== -1) {
             return match;
           }
-          return `import { ${s1} } from 'uxcore`;
-        }).replace(/import (.+) from.*/g, (match, s1) => {
+          return `import { ${s1} } from 'uxcore';`;
+        }).replace(/import (.+) from 'uxcore.*/g, (match, s1) => {
           if (s1.indexOf('{') !== -1) {
             return match;
           }
-          return `import { ${s1} } from 'uxcore`;
+          return `import { ${s1} } from 'uxcore';`;
         });
         fs.writeFileSync(mdPath, newFile);
       });

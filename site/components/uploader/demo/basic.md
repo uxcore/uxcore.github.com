@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-const Uploader = require('uxcore-uploader');
+import { Uploader } from 'uxcore';
 
 class Demo1 extends React.Component {
   constructor(props) {

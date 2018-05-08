@@ -9,7 +9,7 @@
 ---
 
 ````jsx
-const Calendar = require('uxcore-calendar');
+import { Calendar } from 'uxcore';
 function disabledDate(current, value) {
   return current.getTime() > Date.now();
 }

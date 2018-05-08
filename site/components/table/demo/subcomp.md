@@ -7,7 +7,7 @@ Table 允许用户传入自定义行展开内容。
 ---
 
 ````jsx
-const Table = require('uxcore-table');
+import { Table } from 'uxcore';
 
 class Demo extends React.Component {
   render() {

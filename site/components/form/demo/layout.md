@@ -13,8 +13,8 @@
 ````
 
 ````jsx
-const Button = require('uxcore-button');
-const Form = require('uxcore-form');
+import { Button } from 'uxcore';
+import { Form } from 'uxcore';
 const {
     Constants,
     FormRowTitle,

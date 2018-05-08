@@ -18,7 +18,7 @@
 const classnames = require('classnames');
 const assign = require('object-assign');
 
-const Form = require('uxcore-form');
+import { Form } from 'uxcore';
 
 const {
     Constants,

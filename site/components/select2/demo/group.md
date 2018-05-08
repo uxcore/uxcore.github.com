@@ -8,7 +8,7 @@ option分组
 
 
 ````jsx
-const Select = require('uxcore-select2');
+import { Select } from 'uxcore';
 const { Option, OptGroup } = Select;
 
 function handleChange(value) {

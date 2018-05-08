@@ -9,7 +9,7 @@
 ````jsx
 const classnames = require('classnames');
 
-const Totop = require('uxcore-totop');
+import { Totop } from 'uxcore';
 
 class Demo extends React.Component {
 

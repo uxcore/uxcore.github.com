@@ -8,8 +8,8 @@
 ---
 
 ````jsx
-const Dropdown = require('uxcore-dropdown');
-const Menu = require('uxcore-menu');
+import { Dropdown } from 'uxcore';
+import { Menu } from 'uxcore';
 
 const menu = (<Menu>
   <Menu.Item>

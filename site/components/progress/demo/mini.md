@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-const Progress = require('uxcore-progress');
+import { Progress } from 'uxcore';
 
 ReactDOM.render(
   <div style={{ width: 170 }}>

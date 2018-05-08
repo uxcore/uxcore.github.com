@@ -8,8 +8,8 @@
 
 ````jsx
 
-const Table = require('uxcore-table');
-const Form = require('uxcore-form');
+import { Table } from 'uxcore';
+import { Form } from 'uxcore';
 
 const {
   InputFormField,

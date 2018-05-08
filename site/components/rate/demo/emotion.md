@@ -7,8 +7,8 @@
 ````jsx
 const classnames = require('classnames');
 
-const Rate = require('uxcore-rate');
-const Icon = require('uxcore-icon');
+import { Rate } from 'uxcore';
+import { Icon } from 'uxcore';
 
 class Demo extends React.Component {
 

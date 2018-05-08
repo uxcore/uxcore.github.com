@@ -9,13 +9,13 @@
 ````jsx
 
 const classnames = require('classnames');
-const Validator = require('uxcore-validator');
-const Button = require('uxcore-button');
-const Select = require('uxcore-select2');
+import { Validator } from 'uxcore';
+import { Button } from 'uxcore';
+import { Select } from 'uxcore';
 const { Option } = Select;
-const RadioGroup = require('uxcore-radiogroup');
+import { RadioGroup } from 'uxcore';
 const RadioItem = RadioGroup.Item;
-const Table = require('uxcore-table');
+import { Table } from 'uxcore';
 const { Constants } = Table;
 const mockData = {
   data: [

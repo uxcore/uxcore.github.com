@@ -5,7 +5,7 @@
 ---
 
 ````jsx
-const Switch = require('uxcore-switch');
+import { Switch } from 'uxcore';
 
 class Demo extends React.Component {
 

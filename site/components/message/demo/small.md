@@ -8,8 +8,8 @@
 
 ````jsx
 
-const Message = require('uxcore-message');
-const Button = require('uxcore-button');
+import { Message } from 'uxcore';
+import { Button } from 'uxcore';
 
 const handleClick = (type) => {
   Message[type]({

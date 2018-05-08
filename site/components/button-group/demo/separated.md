@@ -9,8 +9,8 @@
 ---
 
 ````jsx
-const Button = require('uxcore-button');
-const ButtonGroup = require('uxcore-button-group');
+import { Button } from 'uxcore';
+import { ButtonGroup } from 'uxcore';
 
 ReactDOM.render(
   <div>

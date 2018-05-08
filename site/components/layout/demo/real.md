@@ -4,11 +4,11 @@
 ---
 
 ````jsx
-const Layout = require('uxcore-layout');
-const Menu = require('uxcore-menu');
-const Form = require('uxcore-form');
-const Button = require('uxcore-button');
-const Table = require('uxcore-table');
+import { Layout } from 'uxcore';
+import { Menu } from 'uxcore';
+import { Form } from 'uxcore';
+import { Button } from 'uxcore';
+import { Table } from 'uxcore';
 const { Left, Right } = Layout;
 const SubMenu = Menu.SubMenu;
 const {

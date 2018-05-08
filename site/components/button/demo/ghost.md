@@ -8,7 +8,7 @@
 ---
 
 ````jsx
-const Button = require('uxcore-button');
+import { Button } from 'uxcore';
 
 ReactDOM.render(
   <div style={{ background: 'rgba(31, 56, 88, 0.4)' }}>

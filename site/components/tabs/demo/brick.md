@@ -7,7 +7,7 @@ BRICK
 ---
 
 ````jsx
-const Tabs = require('uxcore-tabs');
+import { Tabs } from 'uxcore';
 const TabPane = Tabs.TabPane;
 
 ReactDOM.render(

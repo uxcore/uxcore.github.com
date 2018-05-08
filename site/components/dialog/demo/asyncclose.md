@@ -7,8 +7,8 @@
 ---
 
 ````jsx
-import Dialog from 'uxcore-dialog';
-import Button from 'uxcore-button';
+import { Dialog } from 'uxcore';
+import { Button } from 'uxcore';
 
 class AsyncCloseDemo extends React.Component {
   constructor(props) {

@@ -9,7 +9,7 @@
 ````jsx
 
 import Album, { Photo } from 'uxcore-album';
-import Form from 'uxcore-form';
+import { Form } from 'uxcore';
 
 const { SwitchFormField, SelectFormField, FormRow } = Form;
 

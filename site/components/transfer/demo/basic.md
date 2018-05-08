@@ -7,8 +7,8 @@
 ---
 
 ````jsx
-import Button from 'uxcore-button';
-import Transfer from 'uxcore-transfer';
+import { Button } from 'uxcore';
+import { Transfer } from 'uxcore';
 
 const mockData = [];
 const len = (Math.random() * 10) + 40;

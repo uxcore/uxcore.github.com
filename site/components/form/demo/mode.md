@@ -18,8 +18,8 @@ Form 支持编辑和查看两种模式，并且支持随时切换，从此两个
 
 ````jsx
 
-const Button = require('uxcore-button');
-const Form = require('uxcore-form');
+import { Button } from 'uxcore';
+import { Form } from 'uxcore';
 const {
   Constants,
   FormRowTitle,

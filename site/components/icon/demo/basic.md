@@ -6,8 +6,8 @@
 
 ````jsx
 const Clipboard = require('react-clipboard.js');
-const Message = require('uxcore-message');
-const Icon = require('uxcore-icon');
+import { Message } from 'uxcore';
+import { Icon } from 'uxcore';
 const icons = [
   'dingding',
   'xiala',

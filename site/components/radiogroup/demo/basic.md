@@ -8,7 +8,7 @@
 
 ````jsx
 
-const RadioGroup = require('uxcore-radiogroup');
+import { RadioGroup } from 'uxcore';
 const { Item } = RadioGroup;
 
 class Demo extends React.Component {

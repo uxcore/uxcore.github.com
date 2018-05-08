@@ -8,7 +8,7 @@
 
 ````jsx
 
-import FloatNav from 'uxcore-float-nav';
+import { FloatNav } from 'uxcore';
 
 const { NavItem } = FloatNav;
 

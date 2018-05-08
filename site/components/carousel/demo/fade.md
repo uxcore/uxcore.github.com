@@ -24,7 +24,7 @@ fade 为 true 时，切换效果为淡入淡出
 ````jsx
 const classnames = require('classnames');
 
-const Carousel = require('uxcore-carousel');
+import { Carousel } from 'uxcore';
 
 class Demo extends React.Component {
 

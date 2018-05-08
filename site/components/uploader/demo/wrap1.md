@@ -7,8 +7,8 @@
 ---
 
 ````jsx
-const Uploader = require('uxcore-uploader');
-const Button = require('uxcore-button');
+import { Uploader } from 'uxcore';
+import { Button } from 'uxcore';
 
 class Demo1 extends React.Component {
   constructor(props) {

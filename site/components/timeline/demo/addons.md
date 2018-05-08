@@ -8,7 +8,7 @@
 
 ````jsx
 
-const Timeline = require('uxcore-timeline');
+import { Timeline } from 'uxcore';
 
 class Demo extends React.Component {
 

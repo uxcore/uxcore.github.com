@@ -7,8 +7,8 @@
 ---
 
 ````jsx
-const Button = require('uxcore-button');
-const Popover = require('uxcore-popover');
+import { Button } from 'uxcore';
+import { Popover } from 'uxcore';
 
 class HoverDemo extends React.Component {
 

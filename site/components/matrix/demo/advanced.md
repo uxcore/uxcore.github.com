@@ -6,7 +6,7 @@
 
 ````jsx
 
-const Matrix = require('uxcore-matrix');
+import { Matrix } from 'uxcore';
 
 const data = {
   data: [

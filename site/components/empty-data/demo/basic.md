@@ -8,7 +8,7 @@
 
 ````jsx
 
-import EmptyData from 'uxcore-empty-data';
+import { EmptyData } from 'uxcore';
 
 class Demo extends React.Component {
 

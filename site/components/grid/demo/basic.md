@@ -5,7 +5,7 @@
 ---
 
 ````jsx
-const Grid = require('uxcore-grid');
+import { Grid } from 'uxcore';
 const classnames = require('classnames');
 const { Row, Col } = Grid;
 

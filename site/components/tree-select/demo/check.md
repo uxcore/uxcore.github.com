@@ -7,7 +7,7 @@ check select
 ---
 
 ````jsx
-const TreeSelect = require('uxcore-tree-select');
+import { TreeSelect } from 'uxcore';
 const SHOW_PARENT = TreeSelect.SHOW_PARENT;
 
 function generateData(x = 3, y = 2, z = 1, gData = []) {

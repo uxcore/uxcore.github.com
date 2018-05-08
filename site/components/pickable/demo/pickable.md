@@ -7,7 +7,7 @@
 ````jsx
 const classnames = require('classnames');
 
-const Pickable = require('uxcore-pickable');
+import { Pickable } from 'uxcore';
 const { Item } = Pickable;
 
 class Demo extends React.Component {

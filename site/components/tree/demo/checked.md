@@ -7,8 +7,8 @@
 ---
 
 ````jsx
-import Tree from 'uxcore-tree';
-import Button from 'uxcore-button';
+import { Tree } from 'uxcore';
+import { Button } from 'uxcore';
 const TreeNode = Tree.TreeNode;
 
 class CheckedDemo extends React.Component {

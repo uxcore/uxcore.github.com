@@ -7,8 +7,8 @@
 ---
 
 ````jsx
-import Dialog from 'uxcore-dialog';
-import Button from 'uxcore-button';
+import { Dialog } from 'uxcore';
+import { Button } from 'uxcore';
 const confirm = Dialog.confirm;
 
 function showConfirm() {

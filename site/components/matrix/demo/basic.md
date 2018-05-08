@@ -8,7 +8,7 @@ Matrix 的基本使用，根据数据决定如何跨行跨列。
 
 ````jsx
 
-const Matrix = require('uxcore-matrix');
+import { Matrix } from 'uxcore';
 
 const data = {
   data: [

@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-const Menu = require('uxcore-menu');
+import { Menu } from 'uxcore';
 const SubMenu = Menu.SubMenu;
 const MenuItem = Menu.Item;
 

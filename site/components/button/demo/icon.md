@@ -6,8 +6,8 @@
 ---
 
 ````jsx
-const Button = require('uxcore-button');
-const Icon = require('uxcore-icon');
+import { Button } from 'uxcore';
+import { Icon } from 'uxcore';
 
 ReactDOM.render(
   <div>

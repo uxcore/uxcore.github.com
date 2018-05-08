@@ -8,7 +8,7 @@
 
 
 ````jsx
-const Select = require('uxcore-select2');
+import { Select } from 'uxcore';
 const { Option } = Select;
 
 const provinceData = ['浙江', '江苏'];

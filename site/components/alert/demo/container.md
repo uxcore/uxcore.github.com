@@ -6,8 +6,8 @@
 
 ````jsx
 
-const Alert = require('uxcore-alert');
-const Button = require('uxcore-button');
+import { Alert } from 'uxcore';
+import { Button } from 'uxcore';
 
 class Demo extends React.Component {
 

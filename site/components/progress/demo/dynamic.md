@@ -8,7 +8,7 @@
 
 ````jsx
 const { Line, Circle } = require('uxcore-progress');
-const Button = require('uxcore-button');
+import { Button } from 'uxcore';
 
 class Demo extends React.Component {
 

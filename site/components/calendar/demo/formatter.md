@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-const Calendar = require('uxcore-calendar');
+import { Calendar } from 'uxcore';
 
 class Demo extends React.Component {
   constructor(props) {

@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-const CascadeMultiSelect = require('uxcore-cascade-multi-select');
+import { CascadeMultiSelect } from 'uxcore';
 const options2 = [
   {
     value: 'zhejiang',

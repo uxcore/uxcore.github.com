@@ -6,7 +6,7 @@
 ---
 
 ````jsx
-const Layout = require('uxcore-layout');
+import { Layout } from 'uxcore';
 const { Left, Right } = Layout;
 const classnames = require('classnames');
 

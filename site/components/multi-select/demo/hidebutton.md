@@ -10,7 +10,7 @@
 
 const classnames = require('classnames');
 
-const MultiSelect = require('uxcore-multi-select');
+import { MultiSelect } from 'uxcore';
 
 const Item = MultiSelect.Item;
 

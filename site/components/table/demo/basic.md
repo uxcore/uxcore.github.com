@@ -6,7 +6,7 @@
 
 ````jsx
 
-const Table = require('uxcore-table');
+import { Table } from 'uxcore';
 
 class Demo extends React.Component {
   render() {

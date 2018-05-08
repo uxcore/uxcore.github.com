@@ -7,7 +7,7 @@
 ````jsx
 const classnames = require('classnames');
 
-const Rate = require('uxcore-rate');
+import { Rate } from 'uxcore';
 
 class Demo extends React.Component {
 

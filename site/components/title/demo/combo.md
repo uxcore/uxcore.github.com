@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-import Title from 'uxcore-title';
+import { Title } from 'uxcore';
 
 class Demo extends React.Component {
 

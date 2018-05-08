@@ -5,8 +5,8 @@
 ---
 
 ````jsx
-const Badge = require('uxcore-badge');
-const Button = require('uxcore-button');
+import { Badge } from 'uxcore';
+import { Button } from 'uxcore';
 
 class Demo extends React.Component {
 

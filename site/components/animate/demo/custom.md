@@ -8,9 +8,9 @@
 
 ````jsx
 
-const Button = require('uxcore-button');
-const Animate = require('uxcore-animate');
-const Select = require('uxcore-select2');
+import { Button } from 'uxcore';
+import { Animate } from 'uxcore';
+import { Select } from 'uxcore';
 const { Option } = Select;
 
 class AwesomeComponent extends React.Component {

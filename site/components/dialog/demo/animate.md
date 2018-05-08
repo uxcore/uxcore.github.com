@@ -7,9 +7,9 @@ CSS3 动画
 ---
 
 ````jsx
-import Dialog from 'uxcore-dialog';
-import Select from 'uxcore-select2';
-import Button from 'uxcore-button';
+import { Dialog } from 'uxcore';
+import { Select } from 'uxcore';
+import { Button } from 'uxcore';
 
 class BasicDemo extends React.Component {
   constructor(props) {

@@ -7,7 +7,7 @@
 ````jsx
 const classnames = require('classnames');
 
-const Crumb = require('uxcore-crumb');
+import { Crumb } from 'uxcore';
 
 class Demo extends React.Component {
 

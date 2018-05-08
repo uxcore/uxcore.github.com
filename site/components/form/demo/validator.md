@@ -15,10 +15,10 @@
 
 ````jsx
 
-const Button = require('uxcore-button');
-const Form = require('uxcore-form');
-const Icon = require('uxcore-icon');
-const Tooltip = require('uxcore-tooltip');
+import { Button } from 'uxcore';
+import { Form } from 'uxcore';
+import { Icon } from 'uxcore';
+import { Tooltip } from 'uxcore';
 
 const {
   InputFormField: Input,

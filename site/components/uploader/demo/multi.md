@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-const Uploader = require('uxcore-uploader');
+import { Uploader } from 'uxcore';
 
 ReactDOM.render((
   <Uploader multiple name="file" url="http://test.yanbingbing.com/upload.php" />

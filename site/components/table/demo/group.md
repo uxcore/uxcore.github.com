@@ -8,8 +8,8 @@
 
 ````jsx
 
-const Table = require('uxcore-table');
-const Button = require('uxcore-button');
+import { Table } from 'uxcore';
+import { Button } from 'uxcore';
 
 // 第一列为radio的demo
 class Demo extends React.Component {

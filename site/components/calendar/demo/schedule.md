@@ -7,7 +7,7 @@ Calendar 通过开放 contentRender 参数来完成日期渲染上的定制，�
 ---
 
 ````jsx
-const Calendar = require('uxcore-calendar');
+import { Calendar } from 'uxcore';
 
 
 class Demo extends React.Component {

@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-import Tree from 'uxcore-tree';
+import { Tree } from 'uxcore';
 const TreeNode = Tree.TreeNode;
 
 function handleCheck(info) {

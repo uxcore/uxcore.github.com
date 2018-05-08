@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-import Tinymce from 'uxcore-tinymce';
+import { Tinymce } from 'uxcore';
 import Mention, { TinymceMention } from 'uxcore-mention';
 
 const mockData = (function () {

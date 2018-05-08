@@ -22,7 +22,7 @@
 ````jsx
 const classnames = require('classnames');
 
-const Carousel = require('uxcore-carousel');
+import { Carousel } from 'uxcore';
 
 class Demo extends React.Component {
 

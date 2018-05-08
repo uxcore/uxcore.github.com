@@ -5,7 +5,7 @@
 ---
 
 ````jsx
-const CascadeMultiSelect = require('uxcore-cascade-multi-select');
+import { CascadeMultiSelect } from 'uxcore';
 const { CascadeMultiModal } = CascadeMultiSelect;
 const options2 = [
   {

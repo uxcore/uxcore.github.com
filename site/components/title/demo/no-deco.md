@@ -7,9 +7,9 @@
 ---
 
 ````jsx
-import Title from 'uxcore-title';
-import Tooltip from 'uxcore-tooltip';
-import Icon from 'uxcore-icon';
+import { Title } from 'uxcore';
+import { Tooltip } from 'uxcore';
+import { Icon } from 'uxcore';
 
 class Demo extends React.Component {
   render() {

@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-const Tag = require('uxcore-tag');
+import { Tag } from 'uxcore';
 const { Item } = Tag;
 
 class Demo extends React.Component {

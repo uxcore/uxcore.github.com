@@ -7,7 +7,7 @@
 ````jsx
 const classnames = require('classnames');
 
-const LoadMore = require('uxcore-load-more');
+import { LoadMore } from 'uxcore';
 
 let loadTimes = 0;
 

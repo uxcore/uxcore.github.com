@@ -8,7 +8,7 @@
 
 ````jsx
 
-const CheckboxGroup = require('uxcore-checkbox-group');
+import { CheckboxGroup } from 'uxcore';
 
 const Item = CheckboxGroup.Item;
 
