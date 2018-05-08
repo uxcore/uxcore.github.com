@@ -8,11 +8,11 @@
 
 ````jsx
 
-const Form = require('uxcore-form');
-const Button = require('uxcore-button');
+import { Form } from 'uxcore';
+import { Button } from 'uxcore';
 const deepcopy = require('deepcopy');
 const assign = require('object-assign');
-const FormField = require('uxcore-form-field');
+import { FormField } from 'uxcore';
 
 const {
     OtherFormField: Other,

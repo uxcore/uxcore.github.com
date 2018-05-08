@@ -5,20 +5,16 @@
 ---
 
 ````jsx
-/*
- * 讲解：
- *
- */
-require('./pageHome.less');
+
 /*
  * 讲解：
  * Uxcore 的文档站点为：http://uxco.re/
  * 这里包括了所有通用组件的使用说明。
  */
-const Table = require('uxcore-table');
-const Button = require('uxcore-button');
-const Form = require('uxcore-form');
-const Dialog = require('uxcore-dialog');
+import { Table } from 'uxcore';
+import { Button } from 'uxcore';
+import { Form } from 'uxcore';
+import { Dialog } from 'uxcore';
 /*
  * 讲解：从 Form 中取出 Form 的零件用以配置生成一个完整的 Form。
  * Form 的使用文档见：http://uxco.re/components/form/

@@ -7,8 +7,8 @@
 ---
 
 ````jsx
-import Button from 'uxcore-button';
-import EmptyData from 'uxcore-empty-data';
+import { Button } from 'uxcore';
+import { EmptyData } from 'uxcore';
 
 class Demo extends React.Component {
   constructor(props) {

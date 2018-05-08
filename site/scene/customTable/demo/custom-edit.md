@@ -8,9 +8,9 @@
 
 ````jsx
 
-const Table = require('uxcore-table');
-const CellField = require('uxcore-cell-field');
-const Select = require('uxcore-select2');
+import { Table } from 'uxcore';
+import { CellField } from 'uxcore';
+import { Select } from 'uxcore';
 
 const options = {
   xw: '小王',

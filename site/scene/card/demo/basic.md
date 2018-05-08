@@ -6,9 +6,9 @@
 
 ````jsx
 const classnames = require('classnames');
-const Form = require('uxcore-form');
-const Button = require('uxcore-button');
-const Dialog = require('uxcore-dialog');
+import { Form } from 'uxcore';
+import { Button } from 'uxcore';
+import { Dialog } from 'uxcore';
 const {
     InputFormField: Input,
     FormRow,

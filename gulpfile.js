@@ -101,7 +101,7 @@ gulp.task('create_demo', (done) => {
 });
 
 gulp.task('demo-rename', () => {
-  const rootPath = './site/components';
+  const rootPath = './site/scene';
   const comps = fs.readdirSync(rootPath);
   comps.forEach((comp) => {
     try {
@@ -110,17 +110,12 @@ gulp.task('demo-rename', () => {
       mds.forEach((md) => {
         const mdPath = `${compPath}/${md}`;
         const file = fs.readFileSync(mdPath, 'utf-8');
-        const newFile = file.replace(/const (.+) = require\('uxcore.+/g, (match, s1) => {
-          if (s1.indexOf('{') !== -1) {
-            return match;
-          }
-          return `import { ${s1} } from 'uxcore';`;
-        }).replace(/import (.+) from 'uxcore.*/g, (match, s1) => {
-          if (s1.indexOf('{') !== -1) {
-            return match;
-          }
-          return `import { ${s1} } from 'uxcore';`;
-        });
+        const newFile = file.replace(/const (.+) = require\((.+)\)/g, (match, s1, s2) =>
+          // if (s1.indexOf('{') !== -1) {
+          //   return match;
+          // }
+          `import { ${s1} } from ${s2};`
+        );
         fs.writeFileSync(mdPath, newFile);
       });
     } catch (e) {

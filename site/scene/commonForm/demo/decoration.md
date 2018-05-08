@@ -9,9 +9,9 @@
 
 ````jsx
 
-const Form = require('uxcore-form');
-const Button = require('uxcore-button');
-const Table = require('uxcore-table');
+import { Form } from 'uxcore';
+import { Button } from 'uxcore';
+import { Table } from 'uxcore';
 
 const {
   InputFormField: Input,

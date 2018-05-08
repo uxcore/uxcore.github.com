@@ -9,8 +9,8 @@
 
 ````jsx
 
-const Form = require('uxcore-form');
-const Button = require('uxcore-button');
+import { Form } from 'uxcore';
+import { Button } from 'uxcore';
 
 const {
     OtherFormField: Other,
