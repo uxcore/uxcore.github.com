@@ -114,7 +114,7 @@ gulp.task('demo-rename', () => {
           // if (s1.indexOf('{') !== -1) {
           //   return match;
           // }
-          `import { ${s1} } from ${s2};`
+          `import ${s1} from ${s2};`
         );
         fs.writeFileSync(mdPath, newFile);
       });

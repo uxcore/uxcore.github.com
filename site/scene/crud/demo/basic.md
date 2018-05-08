@@ -25,7 +25,7 @@ const { FormRow, InputFormField, OtherFormField, Validators, ButtonGroupFormFiel
  * 讲解：object-assign 是一个非常实用的用于对象拷贝和扩展的函数
  * 详细说明见 https://www.npmjs.com/package/object-assign
  */
-const assign = require('object-assign');
+import assign from 'object-assign';;
 
 
 /*

@@ -10,8 +10,8 @@
 
 import { Form } from 'uxcore';
 import { Button } from 'uxcore';
-const deepcopy = require('deepcopy');
-const assign = require('object-assign');
+import deepcopy from 'deepcopy';;
+import assign from 'object-assign';;
 import { FormField } from 'uxcore';
 
 const {
