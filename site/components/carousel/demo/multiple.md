@@ -20,7 +20,7 @@
 
 
 ````jsx
-const classnames = require('classnames');
+import classnames from 'classnames';;
 
 import { Carousel } from 'uxcore';
 

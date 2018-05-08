@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-const classnames = require('classnames');
+import classnames from 'classnames';;
 
 import { Pickable } from 'uxcore';
 const { Item } = Pickable;

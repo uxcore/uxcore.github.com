@@ -6,7 +6,7 @@
 
 ````jsx
 import { Grid } from 'uxcore';
-const classnames = require('classnames');
+import classnames from 'classnames';;
 const { Row, Col } = Grid;
 
 class Demo extends React.Component {

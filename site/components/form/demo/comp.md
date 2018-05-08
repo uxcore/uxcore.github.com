@@ -16,7 +16,7 @@ Form 中所有表单域的默认值由 jsxvalues 统一管理。
 ````
 
 ````jsx
-const classnames = require('classnames');
+import classnames from 'classnames';;
 import { Button } from 'uxcore';
 import { Form } from 'uxcore';
 import { PickableFormField } from 'uxcore';

@@ -5,7 +5,7 @@
 ---
 
 ````jsx
-const Clipboard = require('react-clipboard.js');
+import Clipboard from 'react-clipboard.js';;
 import { Message } from 'uxcore';
 import { Icon } from 'uxcore';
 const icons = [

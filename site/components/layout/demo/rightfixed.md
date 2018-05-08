@@ -8,7 +8,7 @@
 ````jsx
 import { Layout } from 'uxcore';
 const { Left, Right } = Layout;
-const classnames = require('classnames');
+import classnames from 'classnames';;
 
 class Demo extends React.Component {
   constructor(props) {

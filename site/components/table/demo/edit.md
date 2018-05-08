@@ -8,7 +8,7 @@
 
 ````jsx
 
-const classnames = require('classnames');
+import classnames from 'classnames';;
 import { Validator } from 'uxcore';
 import { Button } from 'uxcore';
 import { Select } from 'uxcore';

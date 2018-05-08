@@ -8,7 +8,7 @@
 
 ````jsx
 
-const classnames = require('classnames');
+import classnames from 'classnames';;
 
 import { MultiSelect } from 'uxcore';
 

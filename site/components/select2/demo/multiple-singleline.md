@@ -11,7 +11,7 @@
 ````jsx
 import { Select } from 'uxcore';
 const Option = Select.Option;
-const classnames = require('classnames');
+import classnames from 'classnames';;
 
 const children = [];
 for (let i = 10; i < 36; i++) {

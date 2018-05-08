@@ -22,7 +22,7 @@ const {
 } = Form;
 const MenuItem = Menu.Item;
 const Item = CheckboxGroupFormField.Item;
-const classnames = require('classnames');
+import classnames from 'classnames';;
 
 const casData = {
   length: 2,

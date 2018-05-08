@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-const { Circle } = require('uxcore-progress');
+import { Circle } from 'uxcore-progress';;
 
 ReactDOM.render(
   <div>

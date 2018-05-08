@@ -22,7 +22,7 @@ fade 为 true 时，切换效果为淡入淡出
 
 
 ````jsx
-const classnames = require('classnames');
+import classnames from 'classnames';;
 
 import { Carousel } from 'uxcore';
 

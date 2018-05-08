@@ -5,7 +5,7 @@
 ---
 
 ````jsx
-const classnames = require('classnames');
+import classnames from 'classnames';;
 
 import { Rate } from 'uxcore';
 import { Icon } from 'uxcore';

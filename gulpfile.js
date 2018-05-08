@@ -101,7 +101,7 @@ gulp.task('create_demo', (done) => {
 });
 
 gulp.task('demo-rename', () => {
-  const rootPath = './site/scene';
+  const rootPath = './site/components';
   const comps = fs.readdirSync(rootPath);
   comps.forEach((comp) => {
     try {

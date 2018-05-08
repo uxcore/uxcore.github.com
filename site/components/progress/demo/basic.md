@@ -7,7 +7,7 @@
 ---
 
 ````jsx
-const { Line } = require('uxcore-progress');
+import { Line } from 'uxcore-progress';;
 
 ReactDOM.render(
   <div>

@@ -15,8 +15,8 @@
 ````
 
 ````jsx
-const classnames = require('classnames');
-const assign = require('object-assign');
+import classnames from 'classnames';;
+import assign from 'object-assign';;
 
 import { Form } from 'uxcore';
 
