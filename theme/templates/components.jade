@@ -5,21 +5,14 @@ include ./includes/markdown
 include ./includes/demos
 
 block script
-    script(src="//alinw.alicdn.com/platform/c/??lodash/3.10.1/lodash.min.js,reflux/0.3.0/dist/reflux.min.js")
-    script(src="//alinw.alicdn.com/platform/c/rangy/1.3.0/rangy-core.min.js")
-    script(src="//alinw.alicdn.com/platform/c/tinymce/4.3.12/tinymce.min.js")
+    script(src="//g.alicdn.com/platform/c/??lodash/3.10.1/lodash.min.js")
+    script(src="//g.alicdn.com/platform/c/rangy/1.3.0/rangy-core.min.js")
+    script(src="//g.alicdn.com/platform/c/tinymce/4.3.12/tinymce.min.js")
     script(src="#{config.site.urlPrefix}/static/uxcore.js")
-    script.
-        (function(w){
-            w.require = function(name){
-                return w.UXCORE[name];
-            }
-        })(window)
 
 block content
     +aside('components')
     article.site-content
-        +meta(post)
         +demos()
         +markdown(post)
 

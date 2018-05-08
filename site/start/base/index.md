@@ -40,8 +40,8 @@ If you're just getting started, you can download the starter kit. The starter ki
 The fastest way to get started is to serve JavaScript from the CDN
 
 ```html
-<link rel="stylesheet" type="text/css" href="//g.alicdn.com/??platform/common/s/1.1/global/global.css,uxcore/uxcore/0.19.8/orange.min.css">
-<script src="//g.alicdn.com/uxcore/uxcore/0.19.8/uxcore.min.js">
+<link rel="stylesheet" type="text/css" href="//g.alicdn.com/??platform/common/s/1.1/global/global.css,uxcore/uxcore/0.19.25/orange.min.css">
+<script src="//g.alicdn.com/uxcore/uxcore/0.19.25/uxcore.min.js">
 ```
 
 if you'd like to use [npm](npmjs.com)
