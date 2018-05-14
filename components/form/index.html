@@ -2319,7 +2319,7 @@ ReactDOM.render(&lt;Demo /&gt;, document.getElementById('components-form-demo-co
 <li>always：强制校验通过或者失败，通常可以用于清空出错状态。</li>
 </ul>
 </li>
-<li><p>doValidateAndScroll(force, always) 获取目前的表单是否通过检测并滚动至第一个出错的 field，参数同上。6.0 版本以后支持</p>
+<li><p>doValidateAndScroll(force, always) 获取目前的表单是否通过检测并滚动至第一个出错的 field，参数同上。</p>
 </li>
 </ul>
 <h4 id="form-createformfield-options">Form.createFormField(options)</h4><table>
@@ -2893,6 +2893,9 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
         text: <span class="hljs-string">'A'</span>
     }
 ]</code></pre></div><blockquote>
+<p>配置 jsxfetchUrl 后，会在组件渲染后立刻以空搜索值发起一次请求，我们强烈建议服务端完善空值搜索的请求处理逻辑，返回热点数据和用户关联数据，以提供更好的选择体验。</p>
+</blockquote>
+<blockquote>
 <p>此外，SelectFormField 还支持 <a href="https://www.npmjs.com/package/uxcore-select2">uxcore-select2</a> 除 onSelect/onDeselect 外的全部属性。</p>
 </blockquote>
 <h3 id="searchformfield">SearchFormField</h3><table>
@@ -3066,6 +3069,27 @@ validator 也可以自己定义，会传入相应的表单值，根据判断，�
 <td>optional</td>
 <td>&quot;&quot;</td>
 <td>目前支持 &quot;money&quot;, &quot;cnmobile&quot; 和 &quot;card&quot;, 提供三种格式化显示的方法。&quot;money&quot;的格式为<code>123 121 121.213 121</code>,&quot;cnmobile&quot;的格式为 <code>86 1565 7263 8223</code>, &quot;card&quot; 的格式为 <code>3321 3123 3243 4343</code></td>
+</tr>
+<tr>
+<td>fixedNum</td>
+<td>number</td>
+<td>optional</td>
+<td>-</td>
+<td>锁定小数位</td>
+</tr>
+<tr>
+<td>delimiter</td>
+<td>string</td>
+<td>optional</td>
+<td>&#39; &#39;</td>
+<td>分隔符</td>
+</tr>
+<tr>
+<td>formatOnBlur</td>
+<td>bool</td>
+<td>optional</td>
+<td>false</td>
+<td>在失焦时进行格式化（6.2.0 后支持）</td>
 </tr>
 </tbody>
 </table>
