@@ -4,6 +4,7 @@
 @import "./variables.less";
 @import "./font.less";
 @import "./animation.less";
+@import "./markdown.less";
 @import "//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css";
 
 html, body {
@@ -273,100 +274,7 @@ html, body {
 		}
 	}
 }
-.markdown {
-	@baseFontSize: 14px;
-	padding: 20px 0;
-	font-size: @baseFontSize;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-	h1, h2, h3, h4, h5, h6 {
-		margin-top: 1em;
-		margin-bottom: 16px;
-		font-weight: bold;
-		line-height: 1.4
-	}
-	p {
-		margin: @g-padding 0;
-		font-size: 16px;
-	}
-	ul, ol, dl, blockquote, address, fieldset, figure {
-		margin: 1em 0;
-	}
-	h1 {
-		font-size: @baseFontSize * 1.5;
-		padding-bottom: 0.3em;
-	    line-height: 1.2;
-	    border-bottom: 1px solid #eee;
-	}
-	h2 {
-		font-size: @baseFontSize * 1.4;
-		padding-bottom: 0.3em;
-	    line-height: 1.225;
-	    border-bottom: 1px solid #eee;
-	}
-	h3 {
-		font-size: @baseFontSize * 1.3;
-		line-height: 1.43
-	}
-	h4 {
-		font-size: @baseFontSize * 1.2;
-	}
-	h5 {
-		font-size: @baseFontSize * 1.1;
-	}
-	h6 {
-		font-size: @baseFontSize;
-	}
-	hr {
-		height: 1px;
-		background-color: #dfdfdf;
-		border: 0 none;
-		overflow: hidden;
-	}
-	blockquote {
-		padding: 5px 0 5px 15px;
-		border-left: 5px solid #ddd;
-	}
-	table {
-		width: 100%;
-		// border: 1px solid @borderColor;
-		tr {
-			&:nth-child(2n) {
-				background-color: #f8f8f8;
-			}
-		}
-		th, td {
-			padding: 10px 8px;
-			// border: 1px solid @borderColor;
-		}
-		th {
-			background-color: #f0f0f0;
-			font-weight: 700;
-			text-align: left;
-		}
-	}
-	code {
-		margin: 0 3px;
-		color: #c7254e;
-	}
-	img {
-		max-width: 100%;
-	}
-	> ul {
-		> li {
-			list-style: circle;
-			margin-left: 20px;
-			// padding-left: 8px;
-			ul {
-				margin: .5em 0;
-			}
-			li {
-				margin-left: 20px;
-				// padding-left: 8px;
-				list-style: disc;
-			}
-		}
-	}
-}
+
 .site-demos {
 	margin-top: 20px;
 	font-size: 16px;

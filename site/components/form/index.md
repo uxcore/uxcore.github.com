@@ -33,7 +33,7 @@
     * force：是否强制校验，无视不校验的规则。
     * always：强制校验通过或者失败，通常可以用于清空出错状态。
 
-* doValidateAndScroll(force, always) 获取目前的表单是否通过检测并滚动至第一个出错的 field，参数同上。6.0 版本以后支持
+* doValidateAndScroll(force, always) 获取目前的表单是否通过检测并滚动至第一个出错的 field，参数同上。
 
 #### Form.createFormField(options)
 
@@ -226,6 +226,8 @@ jsxdata 目前支持两种格式
 ]
 ```
 
+> 配置 jsxfetchUrl 后，会在组件渲染后立刻以空搜索值发起一次请求，我们强烈建议服务端完善空值搜索的请求处理逻辑，返回热点数据和用户关联数据，以提供更好的选择体验。
+
 > 此外，SelectFormField 还支持 [uxcore-select2](https://www.npmjs.com/package/uxcore-select2) 除 onSelect/onDeselect 外的全部属性。
 
 ### SearchFormField
@@ -286,6 +288,9 @@ jsxdata 目前支持两种格式
 |---|---|---|---|---|
 |jsxplaceholder|string|optional|""|占位符|
 |jsxtype|string|optional|""|目前支持 "money", "cnmobile" 和 "card", 提供三种格式化显示的方法。"money"的格式为`123 121 121.213 121`,"cnmobile"的格式为 `86 1565 7263 8223`, "card" 的格式为 `3321 3123 3243 4343`|
+|fixedNum|number|optional| - | 锁定小数位 |
+|delimiter|string|optional| ' ' | 分隔符 |
+|formatOnBlur|bool|optional| false | 在失焦时进行格式化（6.2.0 后支持） |
 
 
 

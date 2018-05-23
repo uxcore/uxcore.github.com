@@ -1,8 +1,10 @@
+
 - order: 0
 - category: START
 - chinese: 开始使用
 
 ---
+
 
 # [UXCore](http://uxco.re/)
 
@@ -10,104 +12,75 @@
 
 UXCore is a set of [React](http://facebook.github.io/react/) Components that is designed for enterprise-class pc backend application.
 
-* **Rich library:** more than 35 React Components available with high quality design.
+* **丰富的组件功能：** 超过 50 个高质量组件供使用
 
-* **Focus on backend App:** Powerful but easy-to-use Form and Table.
+* **专注于企业级中后台应用场景：** 强大易用的表单表格
 
-* **Customizable theme:** theme can be customized easily.
+* **精心设计的视觉风格：**  深耕中后台场景，让工作变得简单幸福。
 
-Before posting an issue, please read the [CHANGELOG](https://github.com/uxcore/uxcore/releases) and the README and the documentation to check the recently updated.
 
-## For inner staff
+点击 [文档站点](http://uxco.re/) 获取动态演示例子。 
 
-please see http://groups.alidemo.cn/uxcore/doc/ for details.  
-集团内部请查看 http://groups.alidemo.cn/uxcore/doc/ 了解详情。
+在提 issue 之前, 请阅读 [更新日志](https://github.com/uxcore/uxcore/releases) 获取最新的功能更新。
 
-## CodePen
 
-The easiest way to start hacking on UXCore is using the following CodePen Demo:
-
-* **[UXCore Demo](http://codepen.io/eternalsky/pen/qZwNVL)**
-
-## [Starter kit](https://github.com/uxcore/starter-kit)
-
-If you're just getting started, you can download the starter kit. The starter kit is initialized by [NOWA](http://nowa-webpack.github.io/web/index.html?en) which is our project-level development and production solution collections.
-
-<a style="height: 48px;line-height: 48px;font-size:24px;text-align:center;width: 300px;background: #2599f2;color: white;display:block;border-radius: 5px;margin: 20px auto;text-decoration:none;" href="https://github.com/uxcore/starter-kit/archive/master.zip" target="_blank">Download Starter Kit</a>
-
-## Installation
-
-The fastest way to get started is to serve JavaScript from the CDN
-
-```html
-<link rel="stylesheet" type="text/css" href="//g.alicdn.com/??platform/common/s/1.1/global/global.css,uxcore/uxcore/0.19.25/orange.min.css">
-<script src="//g.alicdn.com/uxcore/uxcore/0.19.25/uxcore.min.js">
-```
-
-if you'd like to use [npm](npmjs.com)
+## 安装
 
 ```sh
-npm install uxcore
+npm install uxcore --save
 ```
 
-## Usage
+## 使用
 
-### For cdn
+### 引入 js
 
 ```jsx
-const {Button} = Uxcore;
+import { Button } from 'uxcore';
 ReactDOM.render(<Button />, mountNode);
 ```
 
-### For npm
-```jsx
-import {Button} from 'uxcore';
-// or
-import Button from 'uxcore/lib/Button';
-ReactDOM.render(<Button />, mountNode);
-```
+### 按需引入 js
 
-And import style mannally
+*  使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (推荐)
+
+  ```js
+  // .babelrc or babel-loader option
+  {
+    "plugins": [
+      ["import", { libraryName: "uxcore", camel2DashComponentName: false }]
+    ]
+  }
+  ```
+
+
+* 或者，手动引入
+
+  ```js
+  import Button from 'uxcore/lib/Button';
+  ```
+
+### 引入样式包
 
 ```less
 @import '~uxcore/assets/iconfont.css';
 @import '~uxcore/assets/orange.css';
 ```
 
-### import component as required
 
-Install the component
+## 浏览器支持
 
-```sh
-npm install uxcore-button kuma-base
-```
+主流浏览器及 IE9+
 
-```jsx
-import Button from 'uxcore-button';
-```
+## 项目共建
 
-And import style in your less file
+我们非常欢迎您一起将 uxcore 做的更好! 查看 [CONTRIBUTING 文档](https://github.com/uxcore/uxcore/blob/master/CONTRIBUTING.md) 获取详细信息。
 
-```less
-@import '~kuma-base/theme/blue.less'; // or orange.less global variables which components need
-@import '~kuma-base/core.less'; // base element style and reset
-@import '~uxcore-button/src/Button.less'; // component style
-```
+## 许可
+
+本项目基于 [MIT 协议](https://github.com/uxcore/uxcore/blob/master/LICENSE) 进行开发和发布
 
 
-## Browser Support
 
-Mainstream browsers and Internet Explorer 8+. For IE 8, see [react-ie8](https://github.com/xcatliu/react-ie8) to get support.  
 
-## Customization
 
-We have implemented two default themes(orange/blue) to render UXCore Components. Theme customization is simple using our online [design tools](http://uxco.re/theme/builder).
-
-## Contribute
-
-Yes please! See the [CONTRIBUTING](https://github.com/uxcore/uxcore/blob/master/CONTRIBUTING.md) for details.
-
-## License
-
-This project is licensed under the terms of the [MIT license](This project is licensed under the terms of the MIT license)
 

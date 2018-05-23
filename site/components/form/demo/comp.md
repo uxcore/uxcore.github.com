@@ -84,12 +84,12 @@ class Demo extends React.Component {
 
   handleClick() {
     const me = this;
-    console.log(JSON.stringify(me.refs.form.getValues(true)));
+    console.log(JSON.stringify(me.form.getValues(true)));
   }
 
   handleSetValues() {
     const me = this;
-    me.refs.form.setValues({
+    me.form.setValues({
       test1: '我不是测试',
     });
   }
@@ -102,7 +102,7 @@ class Demo extends React.Component {
   }
 
   handleFormClick(data) {
-    this.refs.form.setState({
+    this.form.setState({
       mode: Constants.MODE.VIEW,
     });
   }
@@ -116,10 +116,14 @@ class Demo extends React.Component {
     console.log(value, name, pass);
     const me = this;
         // if (name == 'number') {
-        //     me.refs.form.setValues({
+        //     me.form.setValues({
         //         number: 1
         //     })
         // }
+  }
+
+  handleReset() {
+    this.form.resetValues();
   }
 
   handleKeyDown(e) {
@@ -295,7 +299,13 @@ class Demo extends React.Component {
 
     return (
       <div className="demo-comp">
-        <Form ref="form" instantValidate jsxmode={me.state.mode} jsxvalues={me.state.jsxvalues} jsxonChange={me.handleChange.bind(me)}>
+        <Form
+          ref={(c) => { this.form = c; }}
+          instantValidate
+          jsxmode={me.state.mode}
+          jsxvalues={me.state.jsxvalues}
+          jsxonChange={me.handleChange.bind(me)}
+        >
           <FormRowTitle jsxtitle="我是行标题" />
           <FormRow>
             <InputFormField
@@ -424,11 +434,11 @@ class Demo extends React.Component {
               }}
               dataType="jsonp"
               afterFetch={(obj) => {
-                const data = {};
-                obj.result.forEach((item, index) => {
-                  data[item[1]] = item[0];
+                const newData = {};
+                obj.result.forEach((item) => {
+                  newData[item[1]] = item[0];
                 });
-                return data;
+                return newData;
               }}
             />
           </FormRow>
@@ -449,14 +459,15 @@ class Demo extends React.Component {
             jsxname="cascade"
             jsxlabel="级联选择"
           />
-          <EditorFormField jsxname="editor"
+          <EditorFormField
+            jsxname="editor"
             jsxlabel="富文本编辑器"
             placeholder="测试"
           />
 
           <OtherFormField className="other">
             <Button style={{ marginLeft: '88px', marginRight: '8px' }} onClick={me.handleClick.bind(me)}>提交</Button>
-            <Button style={{ marginRight: '8px' }} type="secondary" action="reset">取消</Button>
+            <Button style={{ marginRight: '8px' }} type="secondary" onClick={me.handleReset.bind(me)}>重置</Button>
             <Button style={{ marginRight: '8px' }} type="secondary" onClick={me.handleSetValues.bind(me)}>手动setValues</Button>
             <Button style={{ marginRight: '8px' }} type="secondary" onClick={me.handleValueChange.bind(me)}>修改 props</Button>
             <Button style={{ marginRight: '8px' }} type="secondary" onClick={me.changeMode.bind(me)}>转变模式</Button>
