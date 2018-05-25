@@ -30,7 +30,9 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
 <span class="hljs-string">"plugins"</span>: [
   [<span class="hljs-string">"import"</span>, { libraryName: <span class="hljs-string">"uxcore"</span>, camel2DashComponentName: <span class="hljs-literal">false</span> }]
 ]
-}</code></pre></div></li>
+}</code></pre></div><p>然后只需从 uxcore 引入模块即可。</p>
+<div class="highlight"><pre><code class="javascript"><span class="hljs-comment">// babel-plugin-import 会帮助你按需加载 JS</span>
+<span class="hljs-keyword">import</span> { Button } <span class="hljs-keyword">from</span> <span class="hljs-string">'uxcore'</span>;</code></pre></div></li>
 </ul>
 <ul>
 <li><p>或者，手动引入</p>
