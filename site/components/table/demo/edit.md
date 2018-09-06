@@ -127,7 +127,6 @@ class Demo extends React.Component {
 
 
     const renderProps = {
-      width: 1000,
       showPager: false,
       fetchParams: {},
       jsxdata: me.state.data,

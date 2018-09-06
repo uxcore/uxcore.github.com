@@ -14,7 +14,7 @@ class Demo extends React.Component {
   render() {
     const me = this;
     const columns = [
-      { dataKey: 'country', title: '国家', width: 200, ordered: true, type: 'money', delimiter: ',' },
+      { dataKey: 'country', title: '国家', width: 200, ordered: true, fixed: true },
       { dataKey: 'city', title: '城市', width: 150 },
       { dataKey: 'firstName', title: 'FristName', width: 200 },
       { dataKey: 'firstName', title: 'FristName', width: 200 },

@@ -4,7 +4,6 @@ const less = require('gulp-less');
 const cleanCSS = require('gulp-clean-css');
 const ejs = require('gulp-ejs');
 const rename = require('gulp-rename');
-const replace = require('gulp-replace');
 const fs = require('fs-extra');
 const LessPluginAutoPrefix = require('less-plugin-autoprefix');
 const LessPluginInlineUrls = require('less-plugin-inline-urls');

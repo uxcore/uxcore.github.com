@@ -17,31 +17,26 @@ class Demo extends React.Component {
     const me = this;
     const columns = [
       {
-        dataKey: 'id',
-        title: 'ID',
-        width: 50,
-        hidden: true,
-      },
-      {
         dataKey: 'country',
         title: '国家国家国家国家',
         width: 200,
-        ordered: true,
-        type: 'money',
-        delimiter: ',',
       },
       {
         dataKey: 'city',
         title: '城市',
-        width: 150,
+        width: 200,
       },
       {
         dataKey: 'firstName',
         title: 'FristName',
+        width: 200,
+        
       },
       {
         dataKey: 'lastName',
         title: 'LastName',
+        width: 200,
+        
       },
       {
         dataKey: 'email',
@@ -53,7 +48,7 @@ class Demo extends React.Component {
 
     const renderProps = {
       height: 400,
-      width: 800,
+      // width: 800,
       showSearch: true,
       fetchUrl: '/components/table/demo/data.json',
       jsxcolumns: columns,

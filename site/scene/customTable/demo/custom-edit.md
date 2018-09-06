@@ -8,9 +8,7 @@
 
 ````jsx
 
-import { Table } from 'uxcore';
-import { CellField } from 'uxcore';
-import { Select } from 'uxcore';
+import { Table, Select } from 'uxcore';
 
 const options = {
   xw: '小王',
@@ -18,7 +16,7 @@ const options = {
 };
 
 // Table 里也可以导出 createCellField
-const CustomCellField = CellField.createCellField({
+const CustomCellField = Table.createCellField({
   component: (
     <Select
       style={{ width: 150 }}

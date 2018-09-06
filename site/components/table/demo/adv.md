@@ -34,11 +34,14 @@ class Demo extends React.Component {
 
     const renderProps = {
       height: 400,
-      actionBar: {
-        操作条(type, table) {
-          alert(type);
-        },
-      },
+      actionBar: [
+        {
+          title: '工具条',
+          callback: () => {
+            alert('工具条');
+          },
+        }
+      ],
       className: 'kuma-uxtable-split-line',
       showSearch: true,
       fetchParams: {},

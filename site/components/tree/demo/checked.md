@@ -1,75 +1,109 @@
-#  checked
+#  受控模式
 
 - order: 2
 
-受控组件，外部传入参数，控制树对象节点
+常用模式，通常对树结构数据需要精确控制时需要使用 受控模式。
 
 ---
 
 ````jsx
 import { Tree } from 'uxcore';
-import { Button } from 'uxcore';
+
 const TreeNode = Tree.TreeNode;
 
-class CheckedDemo extends React.Component {
-  constructor(props) {
-    super(props);
-    ['handleClick', 'handleCheck', 'handleSelect'].forEach((m) => {
-      this[m] = this[m].bind(this);
-    });
-    this.state = {
-      checkedKeys: [],
-      selectedKeys: [],
-    };
+const treeData = [{
+  title: '0-0',
+  key: '0-0',
+  children: [{
+    title: '0-0-0',
+    key: '0-0-0',
+    children: [
+      { title: '0-0-0-0', key: '0-0-0-0' },
+      { title: '0-0-0-1', key: '0-0-0-1' },
+      { title: '0-0-0-2', key: '0-0-0-2' },
+    ],
+  }, {
+    title: '0-0-1',
+    key: '0-0-1',
+    children: [
+      { title: '0-0-1-0', key: '0-0-1-0' },
+      { title: '0-0-1-1', key: '0-0-1-1' },
+      { title: '0-0-1-2', key: '0-0-1-2' },
+    ],
+  }, {
+    title: '0-0-2',
+    key: '0-0-2',
+  }],
+}, {
+  title: '0-1',
+  key: '0-1',
+  children: [
+    { title: '0-1-0-0', key: '0-1-0-0' },
+    { title: '0-1-0-1', key: '0-1-0-1' },
+    { title: '0-1-0-2', key: '0-1-0-2' },
+  ],
+}, {
+  title: '0-2',
+  key: '0-2',
+}];
+
+class Demo extends React.Component {
+  state = {
+    expandedKeys: ['0-0-0', '0-0-1'],
+    autoExpandParent: true,
+    checkedKeys: ['0-0-0'],
+    selectedKeys: [],
   }
-  handleClick() {
+  onExpand = (expandedKeys) => {
+    console.log('onExpand', arguments);
+    // if not set autoExpandParent to false, if children expanded, parent can not collapse.
+    // or, you can remove all expanded children keys.
     this.setState({
-      checkedKeys: ['p11'],
-      selectedKeys: ['p21', 'p11'],
+      expandedKeys,
+      autoExpandParent: false,
     });
   }
-  handleCheck(info) {
-    console.log('check: ', info);
-    this.setState({
-      checkedKeys: ['p21'],
-      selectedKeys: ['p1', 'p21'],
-    });
+  onCheck = (checkedKeys) => {
+    console.log('onCheck', checkedKeys);
+    this.setState({ checkedKeys });
   }
-  handleSelect(info) {
-    console.log('selected: ', info);
-    this.setState({
-      checkedKeys: ['p21'],
-      selectedKeys: ['p21'],
+  onSelect = (selectedKeys, info) => {
+    console.log('onSelect', info);
+    this.setState({ selectedKeys });
+  }
+  renderTreeNodes = (data) => {
+    return data.map((item) => {
+      if (item.children) {
+        return (
+          <TreeNode title={item.title} key={item.key} dataRef={item}>
+            {this.renderTreeNodes(item.children)}
+          </TreeNode>
+        );
+      }
+      return <TreeNode {...item} />;
     });
   }
   render() {
-    return (<div>
-      <div>
-        <h2>checked</h2>
-        <Tree defaultExpandAll checkable
-          onCheck={this.handleCheck} defaultCheckedKeys={['p1', 'p22']} checkedKeys={this.state.checkedKeys}
-          onSelect={this.handleSelect} defaultSelectedKeys={['p11']} selectedKeys={this.state.selectedKeys} multiple
-        >
-          <TreeNode title="parent 1" key="p1">
-            <TreeNode key="p10" title="leaf" />
-            <TreeNode title="parent 1-1" key="p11">
-              <TreeNode title="parent 2-1" key="p21">
-                <TreeNode title="test" />
-                <TreeNode title={<span>sss</span>} />
-              </TreeNode>
-              <TreeNode key="p22" title="leaf" />
-            </TreeNode>
-          </TreeNode>
-          <TreeNode key="p12" title="leaf" />
-        </Tree>
-      </div>
-      <Button type="outline" size="small" onClick={this.handleClick}>check sth</Button>
-    </div>);
+    return (
+      <Tree
+        checkable
+        onExpand={this.onExpand}
+        expandedKeys={this.state.expandedKeys}
+        autoExpandParent={this.state.autoExpandParent}
+        onCheck={this.onCheck}
+        checkedKeys={this.state.checkedKeys}
+        onSelect={this.onSelect}
+        selectedKeys={this.state.selectedKeys}
+      >
+        {this.renderTreeNodes(treeData)}
+      </Tree>
+    );
   }
 }
 
+
 ReactDOM.render(
-  <CheckedDemo />,
+  <Demo />,
   document.getElementById('components-tree-demo-checked')
 );
 ````
