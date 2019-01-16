@@ -13,7 +13,7 @@ const options = [{
   label: '阿里巴巴',
   children: [{
     value: 'platform',
-    label: '信息平台',
+    label: '企业智能事业部',
     children: [{
       value: 'fe',
       label: '前端开发',

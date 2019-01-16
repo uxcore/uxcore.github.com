@@ -30,3 +30,4 @@ theme/**/*.map
 _site/**/*
 *.sublime-*
 .vscode
+count
