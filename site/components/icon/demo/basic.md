@@ -194,7 +194,7 @@ class Demo extends React.Component {
             className="demo-item-clipboard"
             component="div"
             key={index}
-            data-clipboard-text={`<Icon name="${name}" />`}
+            data-clipboard-text={`<Icon usei name="${name}" />`}
             onSuccess={() => {
               Message.success('代码已复制到粘贴板');
             }}
