@@ -168,6 +168,14 @@ const icons = [
   'nav-right',
   'nav-top',
   'nav-left',
+  'dianzifapiao',
+  'caozuo-bianji',
+  'zhixiang-houtui',
+  'zhixiang-qianjin',
+  'zhongyaoshijian',
+  'drag',
+  'more-dot',
+  'menu',
 ];
 
 class Demo extends React.Component {
