@@ -52,7 +52,10 @@ var initCanvas = function() {
 		opacity: 0
 	}));
 
-	var hexagon3 = new fabric.Polygon(util.deepcopy(points), util.extend(commonCfg, {}));
+	var hexagon3 = new fabric.Polygon(util.deepcopy(points), util.extend(commonCfg, {
+		// left: 190,
+		// top: 212
+	}));
 
 	var hexagon4 = new fabric.Polygon(util.deepcopy(points), util.extend(commonCfg, {
 		left: 70,
