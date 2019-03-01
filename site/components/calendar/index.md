@@ -39,6 +39,7 @@ ReactDOM.render(
 |allowClear| 是否支持清空 | boolean | true |
 |onOpenChange | 在下拉面板展开、收起时调用 | function(open) | noop |
 |defaultOpenValue| 在值为空的情况下，日历面板默认展示的值 | boolean |  |
+|firstDayOfWeek | 星期起始天设置(1对应周一 / 2对应周二 / ... / 7对应周日) | number | 7 |
 
 ### props
 
