@@ -10,7 +10,7 @@
 
 ## API
 
-### 行内编辑用 
+### 行内编辑用
 
 * getData(): 返回表格的数据，并作校验。
 * addEmptyRow(): 添加一个空的新行。
@@ -36,7 +36,7 @@
 
 * createCellField(options)
 
-|Name                |Type                |Require   |Default     |Since Ver. |Note | 
+|Name                |Type                |Require   |Default     |Since Ver. |Note |
 |---                 |---                 |---       |---         |---        |---|
 |options.component           |React Element       |yes       |input       |1.12.8     |被包裹的组件，需要提供 value 和 onChange，或相同功能的 API |
 |options.valuePropName       |string              |No        |value       |1.12.8     |与 value 对应的 prop 名字 |
@@ -56,7 +56,7 @@
 
 ## Props
 
-|Name                |Type                |Require   |Default     |Since Ver. |Note | 
+|Name                |Type                |Require   |Default     |Since Ver. |Note |
 |---                 |---                 |---       |---         |---        |---|
 |jsxcolumns          |array               |required  |null        | -         |表格列配置项，具体见[这里](#jsxcolumns)|
 |width               |number              |optional  |1000        | -         |表格的宽度|
@@ -69,7 +69,7 @@
 |showHeader          |boolean             |optional  |true        | -         |是否显示表格头部|
 |showHeaderBorder    |boolean             |optional  |false       | 1.3.6     |是否显示头部列之间的分割线|
 |showMask            |boolean             |optional  |true        | -         |是否在 loading 的时候显示蒙层|
-|showSearch          |boolean             |optional  |false       | -         |是否显示内置的搜索栏| 
+|showSearch          |boolean             |optional  |false       | -         |是否显示内置的搜索栏|
 |doubleClickToEdit   |boolean             |optional  |true        | -         |是否开启双击编辑|
 |fetchDataOnMount    |boolean             |optional  |true        | 1.3.18    |是否在组件 Mount 时立刻获取一次数据|
 |rowSelector         |string              |optional  |复选        | 1.3.20    |行选择是复选还是单选，支持 checkboxSelector 和 radioSelector|
@@ -92,8 +92,11 @@
 |onOrder             |function(column, orderType) | optional | noop | 1.6.1   |未配置 fetchUrl 的情况下触发，传回排序的列和排序方式|
 |onPagerChange       |function(current, pageSize) | optional | noop | 1.6.1   |未配置 fetchUrl 的情况下触发，传回要到达的分页和每页条数|
 |addRowClassName     |function(rowData)   |optional  |noop        | -         |用于为特定的某几行添加特殊的 class，用于样式定制|
-|rowSelection        |object              |optional  |noop        | -         |选中复选框时触发的回调，rowSelection 是由回调函数组成的对象，包括 onSelect 和 onSelectAll，例子见此| 
-
+|rowSelection        |object              |optional  |noop        | -         |选中复选框时触发的回调，rowSelection 是由回调函数组成的对象，包括 onSelect 和 onSelectAll，例子见此|
+|rowGroupKey         |string              |optional  |            | 8.2.0     |用于行分组，可选值为 columns 设置中 dataKey，使用对应的列内容做行分组 |
+|defaultEditable     |boolean             |optional  |false       | 10.4.16   |默认开启行编辑模式|
+|useListActionBar    |boolean             |optional  |false       | 10.5.0    |新版listActionBar开关，actionBar配置，详细[见此](#actionbar)|
+|getTooltipContainer |function()          |optional  |null        | 10.5.2    |单元格编辑状态下，tooltip位置可控
 
 ### 折叠展开专用
 |Name            |Type                |Require   |Since Ver. |Default|Note |
@@ -119,10 +122,10 @@
 
 ### 列配置项(jsxcolumns)
 
-|Key Name        |Type              |Since Ver.|Require  |Note   | 
+|Key Name        |Type              |Since Ver.|Require  |Note   |
 |-----------     |----------        |---       |------   |-----  |
 |dataKey         |string            |-         |required |表格的数据中用于查看模式展示的字段|
-|editKey         |string            |-         |optional |表格的数据中用于编辑模式的字段，如对于 select 来说，此项应为选项里的 key| 
+|editKey         |string            |-         |optional |表格的数据中用于编辑模式的字段，如对于 select 来说，此项应为选项里的 key|
 |align           |string            |-         |optional |文字居中方式，默认 'left'|
 |title           |string/func       |-         |required |列头标题，可以是个函数，根据返回值进行渲染|
 |width           |number            |-         |required |列宽|
@@ -141,8 +144,8 @@
 |isDisable       |function(rowData) |1.3.1     |optional |在 tpye 为 checkboxSelector 时使用，为一个回调函数，用于根据 rowData 去判断是否禁用该行的 checkbox|
 |canEdit         |function(rowData) |1.3.3     |optional |在 type 为可编辑表格的类别时使用，为一个回调函数，用于根据 rowData 去判断该行该列是否可以编辑|
 |config          |object            |1.5.0     |optional |在 type 为 text/select/radio 时使用，传入对应的配置项，配置项与对应的组件(uxcore-selelct2)相同|
-|renderChildren  |function          |1.5.0     | -       |在 type 为 select/radio 时使用，通过返回 jsx 传入选项。|         
- 
+|renderChildren  |function          |1.5.0     | -       |在 type 为 select/radio 时使用，通过返回 jsx 传入选项。|
+
 
 
 ### 列配置项的例子
@@ -218,13 +221,13 @@ const rowSelection = {
 
 ## 返回的数据格式
 
-* 数据格式的约定[见此](http://gitlab.alibaba-inc.com/alinw/yosemite/issues/18) 
+* 数据格式的约定[见此](http://gitlab.alibaba-inc.com/alinw/yosemite/issues/18)
 
 ```javascript
    {
 	"content":{
 		"data":[
-			{	
+			{
 				"id":'1'
 				"grade":"grade1",
 				"email":"email1",
@@ -235,7 +238,7 @@ const rowSelection = {
 				"city":"city1"
 			}
 			...
-	
+
 		],
 		"currentPage":1,
 		"totalCount":30
@@ -252,7 +255,7 @@ const rowSelection = {
 ```javascript
 {
     "data":[
-        {   
+        {
             "id":'1'
             "grade":"grade1",
             "email":"email1",
@@ -273,6 +276,139 @@ const rowSelection = {
 ### ActionBar 配置的例子
 
 ```javascript
+
+// 当启用useListActionBar时，actionBar上的所有功能将在`actionBar`内配置完成
+actionBar: {
+    className: 'my-list-action-bar',
+    // 是否显示行全选
+    showSelectAll: true,
+    // 按钮配置
+    buttons: [
+      {
+        title: 'Action Button',
+        render() {
+          return (
+            <Button type={'primary'}>切换子表格状态</Button>
+          )
+        },
+        keepActiveInCustomView: false,
+        callback: () => {
+          this.forceUpdate();
+          console.log(me.table.getData());
+          me.table.toggleSubComp(me.table.getData().data.datas);
+        },
+      },
+      {
+        title: '按钮',
+        keepActiveInCustomView: false,
+        // size: 'large',
+        type: 'primary',
+        // className: 'xxxxx',
+        callback: () => {
+          me.table.selectAll(true);
+        }
+      }
+    ],
+    // 文案提示，支持function
+    actionBarTip: '已经为您找到记录123条',
+    // 自定义内容
+    customBarItem: {
+      render() {
+        return (
+          <p style={{color: 'red'}} onClick={(e) => {console.log(e)}}>自定义内容</p>
+        )
+      }
+    },
+    // 行排序
+    rowOrder: {
+      iconName: 'paixu-jiangxu',
+      // keepActiveInCustomView: true,
+      defaultValue: {
+        text: '排序方式一',
+        value: '123'
+      },
+      items: [
+        {
+          text: '排序方式一',
+          value: '123'
+        },
+        {
+          text: '排序方式二',
+          value: '456'
+        }
+      ],
+      onChange(data) {
+        console.log(data)
+      }
+    },
+    // 列排序
+    columnsOrder: {
+      iconName: 'huxiangguanzhu',
+      // keepActiveInCustomView: true,
+      title: '列排序',
+      includeActionColumn: false,  // 优先级低于fixed和rightFixed
+      onChange(dragInfo, data) {
+        console.log(data)
+      }
+    },
+    // 列选择
+    columnsPicker: {
+      iconName: 'zidingyilie',
+      title: '自定义列',
+      keepActiveInCustomView: true,
+      onChange(data) {
+        console.log(data)
+      }
+    },
+    // 自定义视图，支持返回promise和component
+    customView: {
+      render(data, currentPage) {
+        console.log(data, currentPage);
+        // return (
+        //   <Test name={'自定义的View'}/>
+        // )
+        return new Promise(function(resolve) {
+          setTimeout(() => {
+            resolve(<Test name={'自定义的View'}/>)
+          })
+        })
+      }
+    },
+    // 是否显示迷你翻页器
+    showMiniPager: true,
+    // 搜索框
+    search: {
+      // placeholder: '请输入搜索关键字',
+      onSearch() {
+        console.log(234234)
+      }
+    },
+    // 在自定义视图下移出翻页器
+    removePagerInCustomView: true,
+    // 超链接
+    linkBar: [
+      {
+        title: '修改columns',
+        callback: () => {
+          this.setState({
+            columns: this.state.columns.filter(item => {
+              return item.title === 'LastName'
+                || item.title === 'Email'
+                || item.title === '操作1'
+            })
+          })
+        },
+      },
+      {
+        title: '操作外链二',
+        callback: () => {
+          alert(2);
+        },
+      },
+    ],
+}
+
+----------以下为10.5.0之前的actionBar配置，不推荐使用----------
 
 // actionBar 支持传入一个对象
 actionBar: {
@@ -307,8 +443,9 @@ actionBar: [
             me.refs.grid.saveAllRow();
         }
     }
-    
+
 ]
+
 ```
 
 

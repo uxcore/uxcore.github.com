@@ -56,14 +56,14 @@ class Demo extends React.Component {
       },
       className: 'kuma-uxtable-split-line',
       rowGroupKey: 'company',
-      footer: ({ data, column, from, rowGroupData = [] }) => {
+      footer: ({ data, column, from, rowGroupData = {} }) => {
         if (column.dataKey === 'title') {
           return '合计';
         }
         if (column.dataKey === 'money') {
           let total = 0;
           if (from === 'rowGroup') {
-            rowGroupData.forEach((rowData) => {
+            rowGroupData.items && rowGroupData.items.length && rowGroupData.items.forEach((rowData) => {
               total += parseInt(rowData.money, 10);
             });
           } else {

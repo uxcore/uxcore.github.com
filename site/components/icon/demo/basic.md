@@ -176,6 +176,7 @@ const icons = [
   'drag',
   'more-dot',
   'menu',
+
 ];
 
 class Demo extends React.Component {
@@ -224,7 +225,7 @@ ReactDOM.render(<Demo />, document.getElementById('components-icon-demo-basic'))
   padding: 5px;
   background: #fafafa;
   border-radius: 3px;
-  
+
 }
 
 .demo-item icon {

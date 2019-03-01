@@ -68,7 +68,6 @@ class Demo extends React.Component {
       rowSelection,
       className: 'kuma-uxtable-split-line',
       renderSubComp: (rowData) => {
-        console.log(rowData);
         const subProps = {
           jsxcolumns: [
             {
@@ -122,7 +121,7 @@ ReactDOM.render(<Demo />, document.getElementById('components-table-demo-subcomp
 ````css
 .sub-box {
     border: 1px dashed yellowgreen;
-    
+
 }
 .sub-box > div {
     display: inline-block;

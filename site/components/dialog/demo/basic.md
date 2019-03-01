@@ -28,6 +28,7 @@ class BasicDemo extends React.Component {
         <Button onClick={this.show.bind(this)}>显示对话框</Button>
         <Dialog title="第一个 Dialog"
           visible={this.state.visible}
+          draggable={true}
           onOk={() => {
             this.setState({
               visible: false,

@@ -46,6 +46,7 @@
 |dropdownClassName | dropdown 部分的定制类名 | string | - |
 |notFoundContent   | 未找到选项时的提示文案   | string | not found |
 |size | 尺寸，枚举值 `large`, `small`, `middle` | string | large |
+|rcRef | 对react-select的引用，方便直接调用rcSelect的API | function | (r) => {} |
 
 
 ### Option props
