@@ -1,8 +1,10 @@
-# 百分比布局
+# 百分比布局 + 可调整列宽
 
 - order: 2
 
-表格的列按照百分比布局，同时支持和列固定的组合。拖动屏幕边缘，调整宽度试一试~
+表格的列按照百分比布局，同时支持和列固定的组合。拖动屏幕边缘，调整表格整体宽度试一试~
+
+列标题处支持拖拽调整列宽。
 
 ---
 
@@ -28,7 +30,8 @@ class Demo extends React.Component {
         edit() {},
         del() {},
       },
-      className: 'kuma-uxtable-split-line',
+      columnResizeable: true,
+      className: 'kuma-uxtable-border-line',
       fetchParams: {},
       showColumnPicker: false,
       fetchUrl,

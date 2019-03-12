@@ -14,7 +14,7 @@ ReactDOM.render(
     <Button type="primary">primary</Button>&nbsp;
     <Button type="secondary">secondary</Button>&nbsp;
     <Button type="outline">outline</Button>&nbsp;
-    <Button type="white">white</Button>&nbsp;
+    <Button ghost type="white">white</Button>&nbsp;
     <Button type="text">text</Button>&nbsp;
   </div>
   , document.getElementById('components-button-demo-type'));

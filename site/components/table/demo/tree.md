@@ -30,19 +30,41 @@ class Demo extends React.Component {
         dataKey: 'firstName',
         title: 'FristName',
         width: 200,
-        
+
       },
       {
         dataKey: 'lastName',
         title: 'LastName',
         width: 200,
-        
+        order: true,
       },
       {
-        dataKey: 'email',
-        title: 'Email',
-        width: 200,
-        ordered: true,
+        title: '操作',
+        type: 'action',
+        rightFixed: true,
+        width: '300px',
+        collapseNum: 5,
+        actions: [
+          {
+            title: '新增子行',
+            callback: (rowData) => {
+              this.table.addSubRowFromTop({
+                "country": `中国`,
+                "city": "杭州",
+                "firstName": `FirstName_${setTimeout(0)}`,
+                "lastName": "LastName",
+              }, rowData, () => {
+                console.log(this.table.getData())
+              })
+            }
+          },
+          {
+            title: '删除',
+            callback: (rowData) => {
+              this.table.delRow(rowData);
+            },
+          }
+        ],
       },
     ];
 
@@ -60,7 +82,7 @@ class Demo extends React.Component {
         onSelectAll: () => {},
       },
     };
-    return (<Table {...renderProps} ref="table" />);
+    return (<Table {...renderProps} ref={(c) => {this.table = c}} />);
   }
 }
 
